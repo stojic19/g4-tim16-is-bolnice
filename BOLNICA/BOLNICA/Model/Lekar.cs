@@ -1,7 +1,3 @@
-// File:    Lekar.cs
-// Author:  Jelena
-// Created: Monday, March 22, 2021 7:13:56 PM
-// Purpose: Definition of Class Lekar
 
 using System;
 

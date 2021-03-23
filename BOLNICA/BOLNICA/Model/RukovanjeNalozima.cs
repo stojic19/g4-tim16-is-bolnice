@@ -1,7 +1,3 @@
-// File:    RukovanjeNalozima.cs
-// Author:  Jelena
-// Created: Monday, March 22, 2021 19:52:40
-// Purpose: Definition of Class RukovanjeNalozima
 
 using System;
 

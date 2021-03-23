@@ -69,6 +69,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Lekar.cs" />
+    <Compile Include="Model\Nalog.cs" />
+    <Compile Include="Model\Osoba.cs" />
+    <Compile Include="Model\Pacijent.cs" />
+    <Compile Include="Model\Prostor.cs" />
+    <Compile Include="Model\RukovanjeNalozima.cs" />
+    <Compile Include="Model\RukovanjeProstorom.cs" />
+    <Compile Include="Model\RukovanjeTerminima.cs" />
+    <Compile Include="Model\Sekretar.cs" />
+    <Compile Include="Model\SpecijalizacijeLekara.cs" />
+    <Compile Include="Model\Termin.cs" />
+    <Compile Include="Model\Uloge.cs" />
+    <Compile Include="Model\Upravnik.cs" />
+    <Compile Include="Model\VrsteNaloga.cs" />
+    <Compile Include="Model\VrsteProstora.cs" />
+    <Compile Include="Model\VrsteTermina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,7 +1,3 @@
-// File:    RukovanjeTerminima.cs
-// Author:  Jelena
-// Created: Monday, March 22, 2021 19:23:03
-// Purpose: Definition of Class RukovanjeTerminima
 
 using System;
 
