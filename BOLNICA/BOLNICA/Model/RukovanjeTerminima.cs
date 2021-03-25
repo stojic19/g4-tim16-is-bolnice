@@ -1,9 +1,11 @@
 
 using System;
+using System.Collections.Generic;
 
 public class RukovanjeTerminima
 {
    private String imeFajla;
+   public List<Termin> sviTermini = new List<Termin>();
    
    public Termin ZakaziTermin(Termin t)
    {
@@ -20,27 +22,27 @@ public class RukovanjeTerminima
       throw new NotImplementedException();
    }
    
-   public Termin PertraziPoId(String idTermina)
+   public Termin PretraziPoId(String idTermina)
    {
       throw new NotImplementedException();
    }
    
-   public Termin PretraziPoLekaru(String korImeLekara)
+   public List<Termin> PretraziPoLekaru(String korImeLekara)
    {
       throw new NotImplementedException();
    }
    
-   public Termin PretraziPoProstoriji(String idProstorije)
+   public List<Termin> PretraziPoProstoriji(String idProstorije)
    {
       throw new NotImplementedException();
    }
    
-   public Termin PretraziPoPacijentu(String korImePacijenta)
+   public List<Termin> PretraziPoPacijentu(String korImePacijenta)
    {
       throw new NotImplementedException();
    }
    
-   public List<Termin> SviTermini()
+   public List<Termin> PretraziSveTermine()
    {
       throw new NotImplementedException();
    }
