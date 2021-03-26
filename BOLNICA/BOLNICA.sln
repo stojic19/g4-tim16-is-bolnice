@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOLNICA", "BOLNICA\BOLNICA.csproj", "{C0A7B29B-6C4C-4739-B3B0-2DFCFA8238E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolnica", "Bolnica\Bolnica.csproj", "{00CDEA78-83E3-4A46-A629-5BBB8AE64715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0A7B29B-6C4C-4739-B3B0-2DFCFA8238E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0A7B29B-6C4C-4739-B3B0-2DFCFA8238E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0A7B29B-6C4C-4739-B3B0-2DFCFA8238E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0A7B29B-6C4C-4739-B3B0-2DFCFA8238E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CDEA78-83E3-4A46-A629-5BBB8AE64715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CDEA78-83E3-4A46-A629-5BBB8AE64715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CDEA78-83E3-4A46-A629-5BBB8AE64715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CDEA78-83E3-4A46-A629-5BBB8AE64715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D52A93BD-B75A-4E8D-9303-0920374C8C8E}
+		SolutionGuid = {5125DB3F-81DB-4492-86CA-EDD4C73C0CFB}
 	EndGlobalSection
 EndGlobal

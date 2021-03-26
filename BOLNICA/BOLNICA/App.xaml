@@ -1,7 +1,7 @@
-﻿<Application x:Class="BOLNICA.App"
+﻿<Application x:Class="Bolnica.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:BOLNICA"
+             xmlns:local="clr-namespace:Bolnica"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
