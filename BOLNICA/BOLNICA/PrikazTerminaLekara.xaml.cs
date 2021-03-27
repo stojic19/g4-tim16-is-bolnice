@@ -20,9 +20,9 @@ namespace Bolnica
     public partial class PrikazTerminaLekara : Window
     {
 
-        public  static ObservableCollection<Termin> Termini { get; set; }
+        public static ObservableCollection<Termin> Termini { get; set; }
 
-        public  PrikazTerminaLekara()
+        public PrikazTerminaLekara()
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace Bolnica
             Termini = new ObservableCollection<Termin>();
 
             foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
-             {
+            {
                 Termini.Add(t);
             }
 
@@ -53,19 +53,23 @@ namespace Bolnica
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+            izabranZaBrisanje = (Termin)dataGridTermini.SelectedItem;
+
+            if (izabranZaBrisanje != null)
+            {
+
+                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar();
+                otkazivanje.Show();
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
             MainWindow glavniProzor = new MainWindow();
             glavniProzor.Show();
             this.Close();
         }
+
+        public static Termin izabranZaBrisanje = null;
     }
 }

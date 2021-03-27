@@ -39,11 +39,11 @@
 
         <TextBox Name="idPacijenta" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.6,0,19.2" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
-       
+
         <Label Content="Vrsta termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
 
-        <ComboBox  Name="vrTermina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,18.4,0,18" 
+        <ComboBox Name="vrTermina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,18.4,0,18" SelectedIndex="0"
                    Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
 
             <ComboBoxItem HorizontalAlignment="Left">Pregled</ComboBoxItem>
@@ -60,13 +60,13 @@
         <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="4" Margin="0,19.2,19.6,19.6" Height="30" Width="150"/>
 
-        <DatePicker Name="datum" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  />
+        <DatePicker  Name="datum" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  />
 
         <Label Content="Vreme početka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="5" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
         <ComboBox Name="pocVreme" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" 
-                  Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                  Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
             <ComboBoxItem HorizontalAlignment="Center">07:00</ComboBoxItem>
             <ComboBoxItem HorizontalAlignment="Center">07:30</ComboBoxItem>
             <ComboBoxItem HorizontalAlignment="Center">08:00</ComboBoxItem>
@@ -102,10 +102,11 @@
 
 
         <ComboBox  Name="hMin" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="126.4,18.2,0,18.2" 
-                   Height="30" Width="49" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Left">
+                   Height="30" Width="49" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SelectedIndex="0">
 
-            <ComboBoxItem HorizontalAlignment="Center">h</ComboBoxItem>
             <ComboBoxItem HorizontalAlignment="Center">min</ComboBoxItem>
+            <ComboBoxItem HorizontalAlignment="Center">h</ComboBoxItem>
+
 
         </ComboBox>
 

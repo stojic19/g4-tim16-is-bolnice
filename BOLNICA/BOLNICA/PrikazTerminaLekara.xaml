@@ -9,8 +9,8 @@
     <Grid Background="LightBlue">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="379*"/>
-            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="763*"/>
+            <ColumnDefinition Width="181*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -18,11 +18,10 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,21.4,20" Background="WhiteSmoke"
+                  SelectionMode="Single" Grid.RowSpan="3" Margin="20,20,22.2,20.2" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="67*"/>
@@ -38,11 +37,14 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Column="1" Grid.Row="0" Content="Zakazivanje termina" Width="115" Height="40" Margin="33.6,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="1" Content="Izmena termina" Width="115" Height="40" Margin="33.6,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="2" Content="Otkazivanje termina" Width="115" Height="40" Margin="33.6,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="3" Content="Pretraga termina" Width="115" Height="40" Margin="33.6,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="4" Content="Nazad" Width="115" Height="40" Margin="33.6,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_4" Background="WhiteSmoke"/>
+        <Button Grid.Column="1" Grid.Row="0" Content="Zakazivanje termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="Izmena termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="Otkazivanje termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="Nazad" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke"/>
 
 
     </Grid>

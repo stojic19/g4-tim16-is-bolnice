@@ -43,12 +43,36 @@ namespace Model
             }
         }
 
-        public Boolean OtkaziTermin(String idTermina)
+        public static Boolean OtkaziTermin(String idTermina)
         {
-            throw new NotImplementedException();
+            Termin t = null;
+
+            foreach (Termin termin in sviTermini)
+            {
+                if (termin.IdTermina.Equals(idTermina))
+                    t = termin;
+            }
+
+            if (t == null)
+            {
+                return false;
+            }
+
+            sviTermini.Remove(t);
+            PrikazTerminaLekara.Termini.Remove(t);
+
+            if (sviTermini.Contains(t) || PrikazTerminaLekara.Termini.Contains(t))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public Boolean OtkaziPregled(String idTermina) {
+
             Termin t = PretraziPoId(idTermina);
             sviTermini.Remove(t);
             PrikazTerminaPacijent.Termini.Remove(t);
