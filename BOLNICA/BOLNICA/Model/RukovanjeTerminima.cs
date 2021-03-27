@@ -48,6 +48,17 @@ namespace Model
             throw new NotImplementedException();
         }
 
+        public Boolean OtkaziPregled(String idTermina) {
+            Termin t = PretraziPoId(idTermina);
+            sviTermini.Remove(t);
+            PrikazTerminaPacijent.Termini.Remove(t);
+
+            if (t == null)
+                return false;
+
+            return true;
+        }
+
         public Boolean IzmeniTermin(String idTermina)
         {
             throw new NotImplementedException();
@@ -55,7 +66,12 @@ namespace Model
 
         public Termin PretraziPoId(String idTermina)
         {
-            throw new NotImplementedException();
+            foreach(Termin termin in sviTermini)
+            {
+                if (termin.IdTermina.Equals(idTermina))
+                    return termin;
+            }
+            return null;
         }
 
         public List<Termin> PretraziPoLekaru(String korImeLekara)
