@@ -42,9 +42,6 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //ZakazivanjeTerminaLekar zakazivanje = new ZakazivanjeTerminaLekar();
-           // zakazivanje.Show();
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
