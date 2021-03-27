@@ -18,22 +18,31 @@ namespace Bolnica
     
     public partial class ZakazivanjeTerminaLekar : Window
     {
+
+        public static int brojTermina = 0;
+        
         public ZakazivanjeTerminaLekar()
         {
             InitializeComponent();
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PrikazTerminaLekara prikaz = new PrikazTerminaLekara();
-            prikaz.Show();
             this.Close();
+        }
+
+        public int GenerisanjeIdTermina()
+        {
+
+            return brojTermina++;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            String idTermina = this.idTermina.Text;
+            String idTermina = "L" + GenerisanjeIdTermina().ToString();
+
             String idLekara = this.idLekara.Text;
             Lekar lekar = new Lekar(idLekara);
             String idPacijenta = this.idPacijenta.Text;
