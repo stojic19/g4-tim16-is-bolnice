@@ -45,7 +45,9 @@ namespace Bolnica
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-
+            PrikazTerminaPacijent prikaz = new PrikazTerminaPacijent();
+            prikaz.Show();
+            this.Close();
         }
 
     }
