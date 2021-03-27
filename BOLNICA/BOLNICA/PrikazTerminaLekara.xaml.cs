@@ -53,12 +53,12 @@ namespace Bolnica
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-            izabranZaBrisanje = (Termin)dataGridTermini.SelectedItem;
+            Termin izabranZaBrisanje = (Termin)dataGridTermini.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
 
-                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar();
+                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar(izabranZaBrisanje);
                 otkazivanje.Show();
             }
         }
@@ -69,7 +69,6 @@ namespace Bolnica
             glavniProzor.Show();
             this.Close();
         }
-
-        public static Termin izabranZaBrisanje = null;
+       
     }
 }
