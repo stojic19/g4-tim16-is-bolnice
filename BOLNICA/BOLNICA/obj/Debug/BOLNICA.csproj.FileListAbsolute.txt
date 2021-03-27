@@ -15,3 +15,5 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.ex
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.pdb
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaLekara.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaLekara.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaLekar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaLekar.baml

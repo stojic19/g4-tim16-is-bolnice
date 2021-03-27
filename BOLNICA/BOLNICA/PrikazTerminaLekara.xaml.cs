@@ -30,8 +30,6 @@ namespace Bolnica
 
             Termini = new ObservableCollection<Termin>();
 
-            //Termini.Add(new Termin("231", VrsteTermina.operacija, DateTime.Now, DateTime.Now, new Prostor("231"), new Pacijent("312"), new Lekar("dsadsa")));
-
             foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
              {
                 Termini.Add(t);
@@ -42,8 +40,8 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //ZakazivanjeTerminaLekar zakazivanje = new ZakazivanjeTerminaLekar();
-           // zakazivanje.Show();
+            ZakazivanjeTerminaLekar zakazivanje = new ZakazivanjeTerminaLekar();
+            zakazivanje.Show();
 
         }
 
