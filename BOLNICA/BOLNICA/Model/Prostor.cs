@@ -7,13 +7,18 @@ using System;
 
 namespace Model
 {
-   public class Prostor
-   {
-      public String idProstora;
-      public VrsteProstora vrstaProstora;
-      public int sprat;
-      public float kvadratura;
-      public int brojKreveta;
-   
-   }
+    public class Prostor
+    {
+        public String IdProstora { get; set; }
+        public VrsteProstora vrstaProstora;
+        public int sprat;
+        public float kvadratura;
+        public int brojKreveta;
+
+    public Prostor(string idProstora, VrsteProstora vrstaProstora)
+        {
+            IdProstora = idProstora;
+            this.vrstaProstora = vrstaProstora;
+        }
+    }
 }

@@ -3,6 +3,7 @@
 // Created: Friday, March 26, 2021 12:40:47 PM
 // Purpose: Definition of Class RukovanjeTerminima
 
+using Bolnica;
 using System;
 using System.Collections.Generic;
 
@@ -12,9 +13,19 @@ namespace Model
     {
         private String imeFajla;
 
-        public Termin ZakaziTermin(Termin t)
+        public static Termin ZakaziTermin(Termin t)
         {
-            throw new NotImplementedException();
+            sviTermini.Add(t);
+            PrikazTerminaLekara.Termini.Add(t);
+
+            if (sviTermini.Contains(t))
+            {
+                return t;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Boolean OtkaziTermin(String idTermina)
@@ -47,12 +58,12 @@ namespace Model
             throw new NotImplementedException();
         }
 
-        public List<Termin> DobaviSveTermine()
+        public static List<Termin> DobaviSveTermine()
         {
-            throw new NotImplementedException();
+            return sviTermini;
         }
 
-        public List<Termin> sviTermini;
+        public static List<Termin> sviTermini = new List<Termin>();
 
     }
 }

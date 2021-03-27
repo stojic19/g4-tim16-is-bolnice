@@ -9,7 +9,11 @@ namespace Model
 {
    public class Pacijent : Osoba
    {
-      public String korisnickoIme;
-   
-   }
+      public String korisnickoIme { get; set; }
+
+        public Pacijent(string korisnickoIme)
+        {
+            this.korisnickoIme = korisnickoIme;
+        }
+    }
 }
