@@ -63,6 +63,32 @@ namespace Model
         {
             throw new NotImplementedException();
         }
+        public Boolean IzmeniPregled(String idTermina, String lekarW, String datumW, String vremeW)
+        {
+            Termin t = PretraziPoId(idTermina);
+            if (!t.Lekar.korisnickoIme.Equals(lekarW))
+            {
+                t.Lekar.korisnickoIme = lekarW;
+            }
+
+            if (!t.Datum.Equals(datumW))
+            {
+                t.Datum = datumW;
+            }
+
+            if (!t.PocetnoVreme.Equals(vremeW))
+            {
+                t.PocetnoVreme = vremeW;
+            }
+
+            OtkaziPregled(idTermina);
+            ZakaziPregled(t);
+
+
+
+            return true;
+
+        }
 
         public Termin PretraziPoId(String idTermina)
         {

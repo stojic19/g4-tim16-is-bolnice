@@ -1,0 +1,58 @@
+﻿<Window x:Class="Bolnica.IzmenaTerminaPacijent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="IzmenaTerminaPacijent" Height="750" Width="430">
+    <Grid Background="LightBlue">
+        <StackPanel Margin="20 100">
+            <Label>Lekar</Label>
+
+            <TextBox x:Name="lekar"  AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+            <Label>Pacijent</Label>
+
+            <TextBox Name="pacijent" IsReadOnly="True"></TextBox>
+
+            <Label>Datum</Label>
+            <DatePicker Name="datum"></DatePicker>
+            <Label>Vreme</Label>
+            <ComboBox Name="vreme" Margin="00 00 00 20" IsEditable="True">
+                <ComboBoxItem HorizontalAlignment="Center">07:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">07:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">08:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">08:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">09:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">09:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">10:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">10:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">11:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">11:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">12:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">12:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">13:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">13:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">14:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">14:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">15:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">15:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">16:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">16:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">17:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">17:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">18:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">18:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">19:00</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">19:30</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Center">20:00</ComboBoxItem>
+
+
+            </ComboBox>
+
+            <Button Click="Button_Click">Potvrdi</Button>
+            <Button Click="Button_Click_1">Odustani</Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

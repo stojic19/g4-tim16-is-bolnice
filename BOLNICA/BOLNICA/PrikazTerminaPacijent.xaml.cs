@@ -48,6 +48,20 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (dataGridTerminiPacijenta.SelectedIndex != -1)
+            {
+                RukovanjeTerminima rukovanje = new RukovanjeTerminima();
+
+                String id = (((Termin)dataGridTerminiPacijenta.SelectedItem).IdTermina);
+
+                Termin termin = rukovanje.PretraziPoId(id);
+                IzmenaTerminaPacijent izmena = new IzmenaTerminaPacijent(termin);
+                izmena.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite termin za izmenu!");
+            }
 
         }
 
