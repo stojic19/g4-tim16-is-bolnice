@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +21,28 @@ namespace Bolnica
     /// </summary>
     public partial class PrikazTerminaPacijent : Window
     {
+        public static ObservableCollection<Termin> Termini { get; set; }
+
         public PrikazTerminaPacijent()
         {
             InitializeComponent();
+
+            this.DataContext = this;
+
+            Termini = new ObservableCollection<Termin>();
+
+            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            {
+                Termini.Add(t);
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            ZakazivanjeTerminaPacijent zakazivanje = new ZakazivanjeTerminaPacijent();
+            zakazivanje.Show();
 
         }
 
@@ -42,8 +59,10 @@ namespace Bolnica
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
-            mw.Show();
             this.Close();
+            mw.Show();
         }
+
+       
     }
 }

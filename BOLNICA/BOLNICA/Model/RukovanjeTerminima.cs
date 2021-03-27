@@ -27,6 +27,21 @@ namespace Model
                 return null;
             }
         }
+        public static Termin ZakaziPregled(Termin t)
+        {
+            sviTermini.Add(t);
+
+            PrikazTerminaPacijent.Termini.Add(t);
+
+            if (sviTermini.Contains(t))
+            {
+                return t;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public Boolean OtkaziTermin(String idTermina)
         {
