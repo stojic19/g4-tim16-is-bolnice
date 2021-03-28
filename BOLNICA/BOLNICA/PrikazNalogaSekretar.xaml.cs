@@ -25,12 +25,20 @@ namespace Bolnica
         {
             InitializeComponent();
 
+            this.DataContext = this;
+
+            NaloziPacijenata = new ObservableCollection<Pacijent>();
+
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.SviNalozi())
+            {
+                NaloziPacijenata.Add(p);
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //ZakazivanjeTerminaPacijent zakazivanje = new ZakazivanjeTerminaPacijent();
-            //zakazivanje.Show();
+            DodavanjeNalogaSekretar dodavanje = new DodavanjeNalogaSekretar();
+            dodavanje.Show();
 
         }
 
@@ -40,8 +48,8 @@ namespace Bolnica
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).korisnickoIme);
                 Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
-                //IzmenaTerminaPacijent izmena = new IzmenaTerminaPacijent(termin);
-                //izmena.Show();
+                IzmenaNalogaSekretar izmena = new IzmenaNalogaSekretar(pacijent.korisnickoIme);
+                izmena.Show();
             }
             else
             {
@@ -54,7 +62,10 @@ namespace Bolnica
         {
 
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
-                RukovanjeNalozimaPacijenata.UkolniNalog(((Pacijent)dataGridNaloziPacijenata.SelectedItem).korisnickoIme);
+            {
+                UklanjanjeNalogaSekretar uklanjanje = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).korisnickoIme);
+                uklanjanje.Show();
+            }
             else
                 MessageBox.Show("Izaberite nalog za uklanjanje!");
 

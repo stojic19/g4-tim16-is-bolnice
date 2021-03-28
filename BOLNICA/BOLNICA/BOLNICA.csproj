@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodavanjeNalogaSekretar.xaml.cs">
+      <DependentUpon>DodavanjeNalogaSekretar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeProstora.xaml.cs">
       <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,9 @@
     <Compile Include="PrikazTerminaPacijent.xaml.cs">
       <DependentUpon>PrikazTerminaPacijent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UklanjanjeNalogaSekretar.xaml.cs">
+      <DependentUpon>UklanjanjeNalogaSekretar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
@@ -94,6 +100,10 @@
     <Compile Include="ZakazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
+    <Page Include="DodavanjeNalogaSekretar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodavanjeProstora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazTerminaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UklanjanjeNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
