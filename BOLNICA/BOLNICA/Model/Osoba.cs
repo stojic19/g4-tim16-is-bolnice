@@ -1,7 +1,3 @@
-// File:    Osoba.cs
-// Author:  Jelena
-// Created: Friday, March 26, 2021 12:40:47 PM
-// Purpose: Definition of Class Osoba
 
 using System;
 
@@ -9,16 +5,16 @@ namespace Model
 {
    public class Osoba
    {
-      public String ime;
-      public String prezime;
-      public DateTime datumRodjenja;
-      public String jmbg;
-      public String adresaStanovanja;
-      public String kontaktTelefon;
-      public Uloge uloga;
-      public String email;
-      
-      public Nalog nalog;
-   
-   }
+        public String ime { get; set; }
+        public String prezime { get; set; }
+        public DateTime datumRodjenja { get; set; }
+        public String jmbg { get; set; }
+        public String adresaStanovanja { get; set; }
+        public String kontaktTelefon { get; set; }
+        public Uloge uloga { get; set; }
+        public String email { get; set; }
+
+        public Nalog nalog { get; set; }
+
+    }
 }
