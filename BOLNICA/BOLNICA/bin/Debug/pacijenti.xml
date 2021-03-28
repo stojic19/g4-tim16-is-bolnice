@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pacijent>
+    <Ime>Aleksa</Ime>
+    <Prezime>Stojić</Prezime>
+    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+    <Jmbg>1901</Jmbg>
+    <AdresaStanovanja>Kninska</AdresaStanovanja>
+    <KontaktTelefon>062</KontaktTelefon>
+    <Uloga>pacijent</Uloga>
+    <Email>asns@gmail.com</Email>
+    <KorisnickoIme>leksann</KorisnickoIme>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Magdalena</Ime>
+    <Prezime>Reljin</Prezime>
+    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
+    <Jmbg>1234</Jmbg>
+    <AdresaStanovanja>Telepska 16</AdresaStanovanja>
+    <KontaktTelefon>066</KontaktTelefon>
+    <Uloga>pacijent</Uloga>
+    <Email>rema@gmail.com</Email>
+    <KorisnickoIme>reljmag</KorisnickoIme>
+  </Pacijent>
+</ArrayOfPacijent>

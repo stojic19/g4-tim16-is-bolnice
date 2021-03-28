@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for IzmenaNalogaSekretar.xaml
-    /// </summary>
+
     public partial class IzmenaNalogaSekretar : Window
     {
         String izabran = null;
@@ -30,14 +28,14 @@ namespace Bolnica
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(id);
 
 
-            idPacijenta.Text = p.korisnickoIme;
-            ime.Text = p.ime;
-            prezime.Text = p.prezime;
-            datum.SelectedDate = p.datumRodjenja;
-            jmbg.Text = p.jmbg;
-            adresa.Text = p.adresaStanovanja;
-            telefon.Text = p.kontaktTelefon;
-            email.Text = p.email;
+            idPacijenta.Text = p.KorisnickoIme;
+            ime.Text = p.Ime;
+            prezime.Text = p.Prezime;
+            datum.SelectedDate = p.DatumRodjenja;
+            jmbg.Text = p.Jmbg;
+            adresa.Text = p.AdresaStanovanja;
+            telefon.Text = p.KontaktTelefon;
+            email.Text = p.Email;
         
         }
 

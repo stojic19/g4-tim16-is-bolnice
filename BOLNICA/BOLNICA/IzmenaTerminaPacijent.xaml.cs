@@ -27,7 +27,7 @@ namespace Bolnica
             InitializeComponent();
             str = termin.IdTermina;
             lekar.Text = termin.Lekar.korisnickoIme;
-            pacijent.Text = termin.Pacijent.korisnickoIme;
+            pacijent.Text = termin.Pacijent.KorisnickoIme;
             datum.SelectedDate = DateTime.Parse(termin.Datum);
             vreme.Text = termin.PocetnoVreme;
 

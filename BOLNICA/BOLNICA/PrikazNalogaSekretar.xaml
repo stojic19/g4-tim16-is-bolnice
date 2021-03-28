@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="PrikazNalogaSekretar" Height="450" Width="850" WindowStartupLocation="CenterScreen">
+        Title="Nalozi pacijenata" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="638*"/>
+            <ColumnDefinition Width="690*"/>
             <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
 
@@ -22,16 +22,16 @@
 
         <DataGrid x:Name="dataGridNaloziPacijenata" ItemsSource="{Binding NaloziPacijenata}" IsReadOnly="true"
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20.4,20" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Korisničko ime" Binding="{Binding korisnickoIme}"/>
-                <DataGridTextColumn Header="Ime" Binding="{Binding ime}" />
-                <DataGridTextColumn Header="Prezime" Binding="{Binding prezime}"/>
-                <DataGridTextColumn Header="Datum rođenja" Binding="{Binding datumRodjenja }"/>
-                <DataGridTextColumn Header="JMBG" Binding="{Binding jmbg}"/>
-                <DataGridTextColumn Header="Adresa stanovanja" Binding="{Binding adresaStanovanja}"/>
-                <DataGridTextColumn Header="Kontakt telefon" Binding="{Binding kontaktTelefon}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}"/>
+                <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
+                <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}"/>
+                <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja }"/>
+                <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}"/>
+                <DataGridTextColumn Header="Adresa stanovanja" Binding="{Binding AdresaStanovanja}"/>
+                <DataGridTextColumn Header="Kontakt telefon" Binding="{Binding KontaktTelefon}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Column="1" Grid.Row="0" Content="Dodavanje naloga" Margin="34.6,22,36.2,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>

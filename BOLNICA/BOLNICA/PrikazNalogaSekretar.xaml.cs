@@ -46,9 +46,9 @@ namespace Bolnica
         {
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
-                String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).korisnickoIme);
+                String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
-                IzmenaNalogaSekretar izmena = new IzmenaNalogaSekretar(pacijent.korisnickoIme);
+                IzmenaNalogaSekretar izmena = new IzmenaNalogaSekretar(pacijent.KorisnickoIme);
                 izmena.Show();
             }
             else
@@ -63,7 +63,7 @@ namespace Bolnica
 
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
-                UklanjanjeNalogaSekretar uklanjanje = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).korisnickoIme);
+                UklanjanjeNalogaSekretar uklanjanje = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 uklanjanje.Show();
             }
             else

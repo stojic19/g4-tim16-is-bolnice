@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Bolnica
         public MainWindow()
         {
             InitializeComponent();
+            RukovanjeNalozimaPacijenata.Ucitaj();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

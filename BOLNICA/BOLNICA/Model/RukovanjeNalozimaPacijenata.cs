@@ -2,6 +2,8 @@
 using Bolnica;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Model
 {
@@ -13,8 +15,17 @@ namespace Model
 
         public static Pacijent DodajNalog(Pacijent p)
         {
+            foreach (Pacijent p1 in sviNaloziPacijenata)
+            {
+                if (p1.KorisnickoIme.Equals(p.KorisnickoIme) || p1.Jmbg.Equals(p.Jmbg))
+                {
+                    return null;
+                }
+            }
             sviNaloziPacijenata.Add(p);
             PrikazNalogaSekretar.NaloziPacijenata.Add(p);
+
+            Sacuvaj();
 
             if (sviNaloziPacijenata.Contains(p))
             {
@@ -30,16 +41,19 @@ namespace Model
         {
             Pacijent p = PretraziPoId(idNaloga);
 
-            p.ime = ime;
-            p.prezime = prezime;
-            p.datumRodjenja = datum;
-            p.jmbg = adresa;
-            p.kontaktTelefon = telefon;
-            p.email = email;
+            p.Ime = ime;
+            p.Prezime = prezime;
+            p.DatumRodjenja = datum;
+            p.Jmbg = jmbg;
+            p.AdresaStanovanja = adresa;
+            p.KontaktTelefon = telefon;
+            p.Email = email;
 
             int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(p);
             PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);
             PrikazNalogaSekretar.NaloziPacijenata.Insert(indeks, p);
+
+            Sacuvaj();
 
             return true;
         }
@@ -56,6 +70,8 @@ namespace Model
             sviNaloziPacijenata.Remove(p);
             PrikazNalogaSekretar.NaloziPacijenata.Remove(p);
 
+            Sacuvaj();
+
             if (sviNaloziPacijenata.Contains(p) || PrikazNalogaSekretar.NaloziPacijenata.Contains(p))
             {
                 return false;
@@ -70,7 +86,7 @@ namespace Model
         {
             foreach (Pacijent p in sviNaloziPacijenata)
             {
-                if (p.korisnickoIme.Equals(idNaloga))
+                if (p.KorisnickoIme.Equals(idNaloga))
                     return p;
             }
             return null;
@@ -81,5 +97,28 @@ namespace Model
             return sviNaloziPacijenata;
         }
 
+        public static List<Pacijent> Ucitaj()
+        {
+            if (File.ReadAllText("pacijenti.xml").Trim().Equals(""))
+            {
+                return new List<Pacijent>();
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("pacijenti.xml");
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
+                sviNaloziPacijenata = (List<Pacijent>)serializer.Deserialize(fileStream);
+                fileStream.Close();
+                return sviNaloziPacijenata;
+            }
+        }
+
+        public static void Sacuvaj()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
+            TextWriter fileStream = new StreamWriter("pacijenti.xml");
+            serializer.Serialize(fileStream, sviNaloziPacijenata);
+            fileStream.Close();
+        }
     }
 }

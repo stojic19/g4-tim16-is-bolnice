@@ -10,23 +10,24 @@ namespace Model
 {
    public class Pacijent : Osoba, INotifyPropertyChanged
     {
-      public String korisnickoIme { get; set; }
+      public String KorisnickoIme { get; set; }
 
+        public Pacijent() { }
         public Pacijent(string korisnickoIme)
         {
-            this.korisnickoIme = korisnickoIme;
+            this.KorisnickoIme = korisnickoIme;
         }
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, string jmbg, string adresa, string telefon, string email)
         {
-            this.korisnickoIme = korisnickoIme;
-            this.ime = ime;
-            this.prezime = prezime;
-            this.datumRodjenja = datum;
-            this.adresaStanovanja = adresa;
-            this.jmbg = jmbg;
-            this.kontaktTelefon = telefon;
-            this.email = email;
-            this.uloga = Uloge.pacijent;
+            this.KorisnickoIme = korisnickoIme;
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.DatumRodjenja = datum;
+            this.AdresaStanovanja = adresa;
+            this.Jmbg = jmbg;
+            this.KontaktTelefon = telefon;
+            this.Email = email;
+            this.Uloga = Uloge.pacijent;
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)

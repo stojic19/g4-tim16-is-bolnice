@@ -31,7 +31,7 @@ namespace Bolnica
 
            
                 idLekara.Text = t.Lekar.korisnickoIme;
-                idPacijenta.Text = t.Pacijent.korisnickoIme;
+            idPacijenta.Text = t.Pacijent.KorisnickoIme;
                 if (t.VrstaTermina == VrsteTermina.operacija)
                 {
                     vrTermina.Text = "Operacija";

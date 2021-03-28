@@ -5,16 +5,16 @@ namespace Model
 {
    public class Osoba
    {
-        public String ime { get; set; }
-        public String prezime { get; set; }
-        public DateTime datumRodjenja { get; set; }
-        public String jmbg { get; set; }
-        public String adresaStanovanja { get; set; }
-        public String kontaktTelefon { get; set; }
-        public Uloge uloga { get; set; }
-        public String email { get; set; }
+        public String Ime { get; set; }
+        public String Prezime { get; set; }
+        public DateTime DatumRodjenja { get; set; }
+        public String Jmbg { get; set; }
+        public String AdresaStanovanja { get; set; }
+        public String KontaktTelefon { get; set; }
+        public Uloge Uloga { get; set; }
+        public String Email { get; set; }
 
-        public Nalog nalog { get; set; }
+        public Nalog Nalog { get; set; }
 
     }
 }
