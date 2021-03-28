@@ -26,6 +26,7 @@ namespace Bolnica
             InitializeComponent();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeTerminima.DeserijalizacijaTermina();
+            RukovanjeProstorom.DeserijalizacijaProstora();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -60,6 +61,7 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeProstorom.SerijalizacijaProstora();
         }
     }
 }

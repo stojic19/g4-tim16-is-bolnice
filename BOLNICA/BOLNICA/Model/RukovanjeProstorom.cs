@@ -1,6 +1,8 @@
 using Bolnica;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Model
 {
@@ -42,6 +44,33 @@ namespace Model
         {
 
             return prostori;
+        }
+
+        public static List<Prostor> DeserijalizacijaProstora()
+        {
+            if (File.ReadAllText("termini.xml").Trim().Equals(""))
+            {
+                return prostori;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("prostori.xml");
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
+                prostori = (List<Prostor>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return prostori;
+
+            }
+
+        }
+
+        public static void SerijalizacijaProstora()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
+            TextWriter tw = new StreamWriter("prostori.xml");
+            xmlSerializer.Serialize(tw, prostori);
+            tw.Close();
+
         }
 
     }

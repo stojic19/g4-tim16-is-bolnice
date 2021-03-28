@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Raspored prostora" Height="450" Width="950" WindowStartupLocation="CenterScreen">
+        Title="Raspored prostora" Height="450" Width="950" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="LightBlue">
 
         <Grid.ColumnDefinitions>
