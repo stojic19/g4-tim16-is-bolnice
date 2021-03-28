@@ -21,6 +21,7 @@ namespace Bolnica
         String izabran = null;
         public OtkazivanjeTerminaLekar(String idTermina)
         {
+            izabran = idTermina;
             InitializeComponent();
         }
 
