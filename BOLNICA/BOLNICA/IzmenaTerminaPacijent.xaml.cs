@@ -42,7 +42,7 @@ namespace Bolnica
 
             if (datum.HasValue)
             {
-                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             }
 
             RukovanjeTerminima.IzmeniPregled(str, lekar.Text, formatirano, vreme.Text);

@@ -48,7 +48,7 @@ namespace Bolnica
 
             if (datum.HasValue)
             {
-                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             }
 
             String vremePocetka = vreme.Text;

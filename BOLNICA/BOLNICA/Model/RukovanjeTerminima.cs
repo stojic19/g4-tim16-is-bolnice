@@ -140,10 +140,9 @@ namespace Model
                 t.PocetnoVreme = vremeW;
             }
 
-            OtkaziPregled(idTermina);
-            ZakaziPregled(t);
-
-
+            int indeks = PrikazTerminaPacijent.Termini.IndexOf(t);
+            PrikazTerminaPacijent.Termini.RemoveAt(indeks);
+            PrikazTerminaPacijent.Termini.Insert(indeks, t);
 
             return true;
 
