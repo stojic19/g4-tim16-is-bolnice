@@ -45,13 +45,8 @@ namespace Model
 
         public static Boolean OtkaziTermin(String idTermina)
         {
-            Termin t = null;
 
-            foreach (Termin termin in sviTermini)
-            {
-                if (termin.IdTermina.Equals(idTermina))
-                    t = termin;
-            }
+            Termin t = PretraziPoId(idTermina);
 
             if (t == null)
             {
@@ -71,7 +66,7 @@ namespace Model
             }
         }
 
-        public Boolean OtkaziPregled(String idTermina) {
+        public static Boolean OtkaziPregled(String idTermina) {
 
             Termin t = PretraziPoId(idTermina);
             sviTermini.Remove(t);
@@ -83,11 +78,41 @@ namespace Model
             return true;
         }
 
-        public Boolean IzmeniTermin(String idTermina)
+        public static Boolean IzmeniTermin(String idTermina, String idLekara, int vrstaTermina, String idProstorije, String datum, String pocVr, String trajanje, int hMin)
         {
-            throw new NotImplementedException();
+            Termin t = PretraziPoId(idTermina);
+
+                t.Lekar.korisnickoIme = idLekara;
+            if (vrstaTermina == 0)
+            {
+                t.VrstaTermina = VrsteTermina.pregled;
+            }
+            else
+            {
+                t.VrstaTermina = VrsteTermina.operacija;
+            }
+                
+                t.Prostor.IdProstora = idProstorije;
+                t.Datum = datum;
+                t.PocetnoVreme = pocVr;
+
+            if (hMin == 0)
+            {
+                t.Trajanje = Double.Parse(trajanje);
+            }
+            else
+            {
+                t.Trajanje = Double.Parse(trajanje) * 60;
+            }
+
+            int indeks = PrikazTerminaLekara.Termini.IndexOf(t);
+            PrikazTerminaLekara.Termini.RemoveAt(indeks);
+            PrikazTerminaLekara.Termini.Insert(indeks, t);
+
+            return true;
         }
-        public Boolean IzmeniPregled(String idTermina, String lekarW, String datumW, String vremeW)
+
+        public static Boolean IzmeniPregled(String idTermina, String lekarW, String datumW, String vremeW)
         {
             Termin t = PretraziPoId(idTermina);
             if (!t.Lekar.korisnickoIme.Equals(lekarW))
@@ -114,7 +139,7 @@ namespace Model
 
         }
 
-        public Termin PretraziPoId(String idTermina)
+        public static Termin PretraziPoId(String idTermina)
         {
             foreach(Termin termin in sviTermini)
             {

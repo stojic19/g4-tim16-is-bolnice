@@ -47,7 +47,14 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Termin izabranZaMenjanje = (Termin)dataGridTermini.SelectedItem;
 
+            if (izabranZaMenjanje != null)
+            {
+
+                IzmenaTerminaLekar izmena = new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina);
+                izmena.Show();
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -58,8 +65,12 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar(izabranZaBrisanje);
+                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar(izabranZaBrisanje.IdTermina);
                 otkazivanje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite termin koji želite da otkažete!");
             }
         }
 

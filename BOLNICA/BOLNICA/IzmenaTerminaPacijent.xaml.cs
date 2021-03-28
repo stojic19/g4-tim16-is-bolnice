@@ -37,17 +37,15 @@ namespace Bolnica
         {
 
 
-            RukovanjeTerminima rukovanje = new RukovanjeTerminima();
-
             DateTime? datum = this.datum.SelectedDate;
             String formatirano = null;
 
             if (datum.HasValue)
             {
-                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                formatirano = datum.Value.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             }
 
-            rukovanje.IzmeniPregled(str, lekar.Text, formatirano, vreme.Text);
+            RukovanjeTerminima.IzmeniPregled(str, lekar.Text, formatirano, vreme.Text);
 
             this.Close();
 

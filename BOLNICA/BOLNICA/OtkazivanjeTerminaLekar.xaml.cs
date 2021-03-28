@@ -18,11 +18,10 @@ namespace Bolnica
 
     public partial class OtkazivanjeTerminaLekar : Window
     {
-        Termin izabran = null;
-        public OtkazivanjeTerminaLekar(Termin t)
+        String izabran = null;
+        public OtkazivanjeTerminaLekar(String idTermina)
         {
             InitializeComponent();
-            izabran = t;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,7 +32,7 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeTerminima.OtkaziTermin(izabran.IdTermina);
+            RukovanjeTerminima.OtkaziTermin(izabran);
             this.Close();
         }
     }

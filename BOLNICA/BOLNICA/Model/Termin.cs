@@ -1,8 +1,9 @@
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-    public class Termin
+    public class Termin : INotifyPropertyChanged
     {
         public String IdTermina { get; set; }
         
@@ -25,6 +26,15 @@ namespace Model
             Prostor = prostor;
             Pacijent = pacijent;
             Lekar = lekar;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
         }
     }
 }
