@@ -13,6 +13,7 @@ namespace Model
 
         public static List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
 
+        
         public static Pacijent DodajNalog(Pacijent p)
         {
             foreach (Pacijent p1 in sviNaloziPacijenata)
@@ -24,6 +25,11 @@ namespace Model
             }
             sviNaloziPacijenata.Add(p);
             PrikazNalogaSekretar.NaloziPacijenata.Add(p);
+
+            foreach (Pacijent pac in sviNaloziPacijenata)
+            {
+                Console.WriteLine(pac.KorisnickoIme);
+            }
 
             Sacuvaj();
 
@@ -87,7 +93,10 @@ namespace Model
             foreach (Pacijent p in sviNaloziPacijenata)
             {
                 if (p.KorisnickoIme.Equals(idNaloga))
+                {
+
                     return p;
+                }
             }
             return null;
         }

@@ -15,29 +15,21 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjeTerminaPacijent.xaml
-    /// </summary>
     public partial class ZakazivanjeTerminaPacijent : Window
     {
-        public static int broj = 1;
+
         public ZakazivanjeTerminaPacijent()
         {
             InitializeComponent();
         }
 
-
-        public int napravi_sifru()
-        {
-
-            return broj++;
-        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String idTermina = "T" + (napravi_sifru().ToString());
+            String idTermina = RukovanjeTerminima.generisiIDTermina();
 
-            Lekar l = new Lekar(lekar.Text);
-            Pacijent p = new Pacijent(pacijent.Text);
+            Lekar l = RukovanjeTerminima.pretraziLekare(lekar.Text);
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(pacijent.Text);
+
             String idProstorije = null;
 
             VrsteTermina vrstaTermina = VrsteTermina.pregled;

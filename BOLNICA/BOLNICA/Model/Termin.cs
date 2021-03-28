@@ -36,5 +36,10 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

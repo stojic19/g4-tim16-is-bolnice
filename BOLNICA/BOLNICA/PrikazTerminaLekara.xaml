@@ -26,10 +26,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="67*"/>
                 <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="80*"/>
-                <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.korisnickoIme}" Width="95*"/>
-                <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.korisnickoIme}" Width="95*"/>
-                <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding}" Width="105*"/>
-                <!--Dodati prezime i ime-->
+                <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="95*"/>
+                <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.KorisnickoIme}" Width="95*"/>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="80*"/>
                 <DataGridTextColumn Header="Pocetak" Binding="{Binding PocetnoVreme}" Width="55*"/>
                 <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>

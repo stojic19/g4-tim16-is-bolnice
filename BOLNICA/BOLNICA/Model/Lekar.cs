@@ -4,18 +4,18 @@ namespace Model
 {
     public class Lekar : Osoba
     {
-        public String korisnickoIme { get; set; }
+        public String KorisnickoIme { get; set; }
         public SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
         public Boolean dostupnost = false;
         public Lekar() { }
         public Lekar(string korisnickoIme)
         {
-            this.korisnickoIme = korisnickoIme;
+            this.KorisnickoIme = korisnickoIme;
         }
 
         public Lekar(string korisnickoIme, SpecijalizacijeLekara specijalizacija, bool dostupnost)
         {
-            this.korisnickoIme = korisnickoIme;
+            this.KorisnickoIme = korisnickoIme;
             this.specijalizacija = specijalizacija;
             this.dostupnost = dostupnost;
         }

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for IzmenaTerminaLekar.xaml
-    /// </summary>
     public partial class IzmenaTerminaLekar : Window
     {
         String izabran = null ;
@@ -30,7 +27,7 @@ namespace Bolnica
             Termin t = RukovanjeTerminima.PretraziPoId(id);
 
            
-                idLekara.Text = t.Lekar.korisnickoIme;
+                idLekara.Text = t.Lekar.KorisnickoIme;
             idPacijenta.Text = t.Pacijent.KorisnickoIme;
                 if (t.VrstaTermina == VrsteTermina.operacija)
                 {

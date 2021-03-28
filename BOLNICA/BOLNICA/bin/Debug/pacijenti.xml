@@ -22,4 +22,26 @@
     <Email>rema@gmail.com</Email>
     <KorisnickoIme>reljmag</KorisnickoIme>
   </Pacijent>
+  <Pacijent>
+    <Ime>Jelena</Ime>
+    <Prezime>Hrnjak</Prezime>
+    <DatumRodjenja>2021-03-18T00:00:00</DatumRodjenja>
+    <Jmbg>21312</Jmbg>
+    <AdresaStanovanja>Bt</AdresaStanovanja>
+    <KontaktTelefon>231241</KontaktTelefon>
+    <Uloga>pacijent</Uloga>
+    <Email>jh@gmail.com</Email>
+    <KorisnickoIme>jelenah</KorisnickoIme>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Marko</Ime>
+    <Prezime>Andjelic</Prezime>
+    <DatumRodjenja>2021-03-25T00:00:00</DatumRodjenja>
+    <Jmbg>24141</Jmbg>
+    <AdresaStanovanja>negde</AdresaStanovanja>
+    <KontaktTelefon>21321</KontaktTelefon>
+    <Uloga>pacijent</Uloga>
+    <Email>markic@gmail.com</Email>
+    <KorisnickoIme>andjelic</KorisnickoIme>
+  </Pacijent>
 </ArrayOfPacijent>

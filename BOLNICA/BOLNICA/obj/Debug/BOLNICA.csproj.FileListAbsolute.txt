@@ -290,3 +290,21 @@ C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnic
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.Properties.Resources.resources
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.baml

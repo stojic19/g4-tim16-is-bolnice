@@ -1,7 +1,3 @@
-// File:    Pacijent.cs
-// Author:  Jelena
-// Created: Friday, March 26, 2021 12:40:47 PM
-// Purpose: Definition of Class Pacijent
 
 using System;
 using System.ComponentModel;
@@ -16,6 +12,11 @@ namespace Model
         public Pacijent(string korisnickoIme)
         {
             this.KorisnickoIme = korisnickoIme;
+        }
+
+        public String imePrezime()
+        {
+            return (this.Ime + this.Prezime);
         }
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, string jmbg, string adresa, string telefon, string email)
         {

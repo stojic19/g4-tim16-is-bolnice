@@ -19,7 +19,7 @@
 
         <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da otkažete termin?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
 
-        <Button Click="Button_Click" Grid.Row="1" Grid.Column="0" Content="Otkaži" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
+        <Button Click="Button_Click" Grid.Row="1" Grid.Column="0" Content="Odustani" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
         <Button Click="Button_Click_1" Grid.Row="1" Grid.Column="1" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
 
     </Grid>

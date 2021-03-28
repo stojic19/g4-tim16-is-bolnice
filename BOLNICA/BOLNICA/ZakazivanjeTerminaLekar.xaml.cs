@@ -19,8 +19,6 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : Window
     {
 
-        public static int brojTermina = 0;
-        
         public ZakazivanjeTerminaLekar()
         {
             InitializeComponent();
@@ -32,21 +30,19 @@ namespace Bolnica
             this.Close();
         }
 
-        public int GenerisanjeIdTermina()
-        {
-
-            return brojTermina++;
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            String idTermina = "L" + GenerisanjeIdTermina().ToString();
+            String idTermina = RukovanjeTerminima.generisiIDTermina();
 
             String idLekara = this.idLekara.Text;
-            Lekar lekar = new Lekar(idLekara);
+
+            Lekar lekar = RukovanjeTerminima.pretraziLekare(idLekara);
+
             String idPacijenta = this.idPacijenta.Text;
-            Pacijent pacijent = new Pacijent(idPacijenta);
+
+            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
+            
             String idProstorije = this.idProstorije.Text;
 
             VrsteTermina vrstaTermina;
@@ -63,7 +59,7 @@ namespace Bolnica
                 vrstaProstorije = VrsteProstora.ordinacija;
             }
 
-            Prostor prostor = new Prostor(idProstorije, vrstaProstorije);
+            Prostor prostor = RukovanjeProstorom.PretraziPoId(idProstorije);
 
             DateTime? datum = this.datum.SelectedDate;
             String formatirano = null;

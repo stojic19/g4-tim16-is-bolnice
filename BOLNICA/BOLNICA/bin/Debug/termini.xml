@@ -5,25 +5,95 @@
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>08:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>29/12/2021</Datum>
+    <Datum>27/03/2021</Datum>
     <Prostor>
-      <IdProstora />
+      <IdProstora>123</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>0</Sprat>
       <Kvadratura>0</Kvadratura>
       <BrojKreveta>0</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <Uloga>lekar</Uloga>
-      <KorisnickoIme>p</KorisnickoIme>
+      <Ime>Marko</Ime>
+      <Prezime>Andjelic</Prezime>
+      <DatumRodjenja>2021-03-25T00:00:00</DatumRodjenja>
+      <Jmbg>24141</Jmbg>
+      <AdresaStanovanja>negde</AdresaStanovanja>
+      <KontaktTelefon>21321</KontaktTelefon>
+      <Uloga>pacijent</Uloga>
+      <Email>markic@gmail.com</Email>
+      <KorisnickoIme>andjelic</KorisnickoIme>
     </Pacijent>
     <Lekar>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <Uloga>lekar</Uloga>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <korisnickoIme>l</korisnickoIme>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T0</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>08:00</PocetnoVreme>
+    <Trajanje>240</Trajanje>
+    <Datum>26/03/2021</Datum>
+    <Prostor>
+      <IdProstora>2</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>23</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>2021-03-18T00:00:00</DatumRodjenja>
+      <Jmbg>21312</Jmbg>
+      <AdresaStanovanja>Bt</AdresaStanovanja>
+      <KontaktTelefon>231241</KontaktTelefon>
+      <Uloga>pacijent</Uloga>
+      <Email>jh@gmail.com</Email>
+      <KorisnickoIme>jelenah</KorisnickoIme>
+    </Pacijent>
+    <Lekar>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <Uloga>lekar</Uloga>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T2</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>08:30</PocetnoVreme>
+    <Trajanje>120</Trajanje>
+    <Datum>20/03/2021</Datum>
+    <Prostor>
+      <IdProstora>P2</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>23</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
+      <Jmbg>1234</Jmbg>
+      <AdresaStanovanja>Telepska 16</AdresaStanovanja>
+      <KontaktTelefon>066</KontaktTelefon>
+      <Uloga>pacijent</Uloga>
+      <Email>rema@gmail.com</Email>
+      <KorisnickoIme>reljmag</KorisnickoIme>
+    </Pacijent>
+    <Lekar>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <Uloga>lekar</Uloga>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
     </Lekar>
   </Termin>
 </ArrayOfTermin>

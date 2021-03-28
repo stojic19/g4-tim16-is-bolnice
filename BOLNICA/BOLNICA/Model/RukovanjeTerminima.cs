@@ -1,8 +1,3 @@
-// File:    RukovanjeTerminima.cs
-// Author:  Jelena
-// Created: Friday, March 26, 2021 12:40:47 PM
-// Purpose: Definition of Class RukovanjeTerminima
-
 using Bolnica;
 using System;
 using System.Collections.Generic;
@@ -14,6 +9,32 @@ namespace Model
     public class RukovanjeTerminima
     {
         private String imeFajla;
+
+        public static List<Termin> sviTermini = new List<Termin>();
+        public static List<Lekar> sviLekari = new List<Lekar>();
+
+        public static void PrivremenaInicijalizacijaLekara()
+        {
+
+            sviLekari.Add(new Lekar("AleksaStojic"));
+            sviLekari.Add(new Lekar("MarkoAndjelic"));
+            sviLekari.Add(new Lekar("MagdalenaReljin"));
+            sviLekari.Add(new Lekar("JelenaHrnjak"));
+        }
+
+        public static Lekar pretraziLekare(String id)
+        {
+            foreach(Lekar l in sviLekari)
+            {
+
+                if (l.KorisnickoIme.Equals(id))
+                {
+                    return l;
+                }
+            }
+
+            return null;
+        }
 
         public static Termin ZakaziTermin(Termin t)
         {
@@ -94,7 +115,7 @@ namespace Model
         {
             Termin t = PretraziPoId(idTermina);
 
-                t.Lekar.korisnickoIme = idLekara;
+                t.Lekar.KorisnickoIme = idLekara;
             if (vrstaTermina == 0)
             {
                 t.VrstaTermina = VrsteTermina.pregled;
@@ -127,9 +148,9 @@ namespace Model
         public static Boolean IzmeniPregled(String idTermina, String lekarW, String datumW, String vremeW)
         {
             Termin t = PretraziPoId(idTermina);
-            if (!t.Lekar.korisnickoIme.Equals(lekarW))
+            if (!t.Lekar.KorisnickoIme.Equals(lekarW))
             {
-                t.Lekar.korisnickoIme = lekarW;
+                t.Lekar.KorisnickoIme = lekarW;
             }
 
             if (!t.Datum.Equals(datumW))
@@ -160,6 +181,35 @@ namespace Model
             return null;
         }
 
+        public static String generisiIDTermina()
+        {
+            bool pronadjen = false;
+
+            int i = 0;
+
+            for (i = 0 ; i < sviTermini.Count ; i++)
+            {
+                foreach(Termin t in sviTermini)
+                {
+                    if(t.IdTermina.Equals("T" + i.ToString()))
+                    {
+                        pronadjen = true;
+                        break;
+                    }
+                  
+                }
+
+                if (!pronadjen)
+                {
+                    return ("T" + i.ToString()) ;
+                    
+                }
+                pronadjen = false;
+            }
+
+            return ("T" + i.ToString());
+        }
+
         public List<Termin> PretraziPoLekaru(String korImeLekara)
         {
             throw new NotImplementedException();
@@ -175,12 +225,13 @@ namespace Model
             throw new NotImplementedException();
         }
 
+
+
         public static List<Termin> DobaviSveTermine()
         {
             return sviTermini;
         }
 
-        public static List<Termin> sviTermini = new List<Termin>();
 
         public static List<Termin> DeserijalizacijaTermina()
         {

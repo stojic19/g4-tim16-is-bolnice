@@ -21,4 +21,11 @@
     <Kvadratura>50</Kvadratura>
     <BrojKreveta>0</BrojKreveta>
   </Prostor>
+  <Prostor>
+    <IdProstora>P2</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>4</Sprat>
+    <Kvadratura>23</Kvadratura>
+    <BrojKreveta>0</BrojKreveta>
+  </Prostor>
 </ArrayOfProstor>

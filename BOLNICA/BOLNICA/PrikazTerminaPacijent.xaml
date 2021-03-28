@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="PrikazTerminaPacijent" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="PrikazTerminaPacijent" Height="450" Width="950" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="638*"/>
@@ -24,14 +24,14 @@
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20.4,20" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}"/>
-                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" />
-                <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.korisnickoIme}"/>
-                <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.korisnickoIme }"/>
-                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
-                <DataGridTextColumn Header="Pocetak termina" Binding="{Binding PocetnoVreme}"/>
-                <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}"/>
-                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}"/>
+                <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="67*"/>
+                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="78*"/>
+                <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="95*"/>
+                <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.KorisnickoIme }" Width="95*"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="65*"/>
+                <DataGridTextColumn Header="Pocetak termina" Binding="{Binding PocetnoVreme}" Width="92*"/>
+                <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="61*"/>
+                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="65*"/>
 
             </DataGrid.Columns>
         </DataGrid>

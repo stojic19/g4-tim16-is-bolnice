@@ -35,9 +35,17 @@ namespace Model
             throw new NotImplementedException();
         }
 
-        public Prostor PretraziPoId(String idProstora)
+        public static Prostor PretraziPoId(String idProstora)
         {
-            throw new NotImplementedException();
+            foreach(Prostor p in prostori)
+            {
+                if (p.IdProstora.Equals(idProstora))
+                {
+                    return p;
+                }
+            }
+
+            return null;
         }
 
         public static List<Prostor> SviProstori()

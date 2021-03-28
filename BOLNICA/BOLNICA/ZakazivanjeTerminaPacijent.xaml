@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="ZakazivanjeTerminaPacijent" Height="750" Width="430">
+        Title="ZakazivanjeTerminaPacijent" Height="750" Width="430" WindowStartupLocation="CenterScreen">
     <Grid Background="LightBlue">
         <StackPanel Margin="20 100">
             <Label>Lekar</Label>

@@ -16,14 +16,12 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
