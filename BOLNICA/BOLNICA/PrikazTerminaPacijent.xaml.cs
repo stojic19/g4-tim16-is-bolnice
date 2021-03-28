@@ -66,11 +66,19 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            
-            if (dataGridTerminiPacijenta.SelectedIndex != -1)
-                RukovanjeTerminima.OtkaziPregled(((Termin)dataGridTerminiPacijenta.SelectedItem).IdTermina);
+
+            Termin izabranZaBrisanje = (Termin)dataGridTerminiPacijenta.SelectedItem;
+
+            if (izabranZaBrisanje != null)
+            {
+
+                OtkazivanjeTerminaPacijent otkazivanje = new OtkazivanjeTerminaPacijent(izabranZaBrisanje.IdTermina);
+                otkazivanje.Show();
+            }
             else
-                MessageBox.Show("Izaberite termin za otkazivanje!");
+            {
+                MessageBox.Show("Izaberite termin koji želite da otkažete!");
+            }
 
         }
 

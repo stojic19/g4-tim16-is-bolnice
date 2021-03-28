@@ -69,13 +69,23 @@ namespace Model
         public static Boolean OtkaziPregled(String idTermina) {
 
             Termin t = PretraziPoId(idTermina);
+
+            if (t == null)
+            {
+                return false;
+            }
+
             sviTermini.Remove(t);
             PrikazTerminaPacijent.Termini.Remove(t);
 
-            if (t == null)
+            if (sviTermini.Contains(t) || PrikazTerminaPacijent.Termini.Contains(t))
+            {
                 return false;
-
-            return true;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public static Boolean IzmeniTermin(String idTermina, String idLekara, int vrstaTermina, String idProstorije, String datum, String pocVr, String trajanje, int hMin)
