@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,52 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for DodavanjeProstora.xaml
-    /// </summary>
+
     public partial class DodavanjeProstora : Window
     {
+
         public DodavanjeProstora()
         {
             InitializeComponent();
         }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            String idProstora = this.idProstora.Text;
+
+            VrsteProstora vrstaProstora;
+
+            if (this.vrstaProstora.Text.Equals("Ordinacija"))
+            {
+                vrstaProstora = VrsteProstora.ordinacija;
+            }
+            else if (this.vrstaProstora.Text.Equals("sala"))
+            {
+                vrstaProstora = VrsteProstora.sala;
+            }
+            else
+            {
+                vrstaProstora = VrsteProstora.soba;
+            }
+
+            int sprat = int.Parse(this.sprat.Text);
+            float kvadratura = float.Parse(this.kvadratura.Text);
+            int brojKreveta = int.Parse(this.brojKreveta.Text);
+
+
+            Prostor p = new Prostor(idProstora, vrstaProstora, sprat, kvadratura, brojKreveta);
+            RukovanjeProstorom.DodajProstor(p);
+
+            this.Close();
+
+        }
+
     }
 }

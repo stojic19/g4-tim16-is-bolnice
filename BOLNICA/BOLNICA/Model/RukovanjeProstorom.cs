@@ -1,8 +1,4 @@
-// File:    RukovanjeProstorom.cs
-// Author:  Jelena
-// Created: Friday, March 26, 2021 12:40:47 PM
-// Purpose: Definition of Class RukovanjeProstorom
-
+using Bolnica;
 using System;
 using System.Collections.Generic;
 
@@ -12,11 +8,21 @@ namespace Model
     {
         private String imeFajla;
         public static List<Prostor> prostori = new List<Prostor>();
-        public Prostor DodajProstor(Prostor p)
-        {
-            throw new NotImplementedException();
-        }
 
+        public static Prostor DodajProstor(Prostor p)
+        {
+            prostori.Add(p);
+            PrikazProstora.Prostori.Add(p);
+
+            if (prostori.Contains(p))
+            {
+                return p;
+            }
+            else
+            {
+                return null;
+            }
+        }
         public Boolean IzmeniProstor(String idProstora)
         {
             throw new NotImplementedException();
@@ -34,6 +40,7 @@ namespace Model
 
         public static List<Prostor> SviProstori()
         {
+
             return prostori;
         }
 

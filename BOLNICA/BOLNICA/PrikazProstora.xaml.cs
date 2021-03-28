@@ -48,10 +48,6 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-
-
-
-
             IzmenaProstora izmena = new IzmenaProstora();
             izmena.Show();
 
@@ -60,14 +56,8 @@ namespace Bolnica
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-
-
-
-
-
             UklanjanjeProstora uklanjanje = new UklanjanjeProstora();
             uklanjanje.Show();
-
 
         }
 

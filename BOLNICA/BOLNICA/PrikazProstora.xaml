@@ -26,11 +26,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID Prostora" Binding="{Binding IdProstora}" Width="67*"/>
                 <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="80*"/>
-                <DataGridTextColumn Header="Sprat" Binding="{Binding sprat}" Width="95*"/>
-                <DataGridTextColumn Header="Kvadratura" Binding="{Binding kvadratura}" Width="95*"/>
-                <DataGridTextColumn Header="Broj Kreveta" Binding="{Binding brojKreveta}" Width="105*"/>
+                <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="95*"/>
+                <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>
+                <DataGridTextColumn Header="Broj Kreveta" Binding="{Binding BrojKreveta}" Width="105*"/>
 
-                <DataGridTextColumn Header="Zauzet" Binding="{Binding zauzet}" Width="80*"/>
+
 
 
             </DataGrid.Columns>

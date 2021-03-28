@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="DodavanjeProstora" Height="450" Width="800">
-    <Grid>
-        
+        Title="Dodavanje prostora" Height="590" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="60*"/>-->
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Broj prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
+
+        <TextBox  Name="idProstora" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+
+        <Label Content="Vrsta prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="1" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
+        <ComboBox Name="vrstaProstora" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,29.4,0,29.4" SelectedIndex="0"
+                   Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
+            <ComboBoxItem HorizontalAlignment="Left">Ordinacija</ComboBoxItem>
+            <ComboBoxItem HorizontalAlignment="Left">Sala</ComboBoxItem>
+            <ComboBoxItem HorizontalAlignment="Left">Soba</ComboBoxItem>
+
+        </ComboBox>
+
+
+        <Label Content="Sprat:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="2" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
+
+        <TextBox Name="sprat" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+
+        <Label Content="Kvadratura:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="3" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+
+        <TextBox Name="kvadratura" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+
+        <Label Content="Broj kreveta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="4" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+
+        <TextBox Name="brojKreveta" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+
+
     </Grid>
 </Window>
