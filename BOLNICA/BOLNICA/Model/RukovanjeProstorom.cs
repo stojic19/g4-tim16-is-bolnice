@@ -11,7 +11,7 @@ namespace Model
     public class RukovanjeProstorom
     {
         private String imeFajla;
-
+        public static List<Prostor> prostori = new List<Prostor>();
         public Prostor DodajProstor(Prostor p)
         {
             throw new NotImplementedException();
@@ -32,9 +32,9 @@ namespace Model
             throw new NotImplementedException();
         }
 
-        public List<Prostor> SviProstori()
+        public static List<Prostor> SviProstori()
         {
-            throw new NotImplementedException();
+            return prostori;
         }
 
     }

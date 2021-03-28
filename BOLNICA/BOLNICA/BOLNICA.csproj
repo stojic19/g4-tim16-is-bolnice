@@ -55,8 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodavanjeProstora.xaml.cs">
+      <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaNalogaSekretar.xaml.cs">
       <DependentUpon>IzmenaNalogaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaProstora.xaml.cs">
+      <DependentUpon>IzmenaProstora.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmenaTerminaLekar.xaml.cs">
       <DependentUpon>IzmenaTerminaLekar.xaml</DependentUpon>
@@ -73,8 +79,14 @@
     <Compile Include="PrikazNalogaSekretar.xaml.cs">
       <DependentUpon>PrikazNalogaSekretar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrikazProstora.xaml.cs">
+      <DependentUpon>PrikazProstora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrikazTerminaPacijent.xaml.cs">
       <DependentUpon>PrikazTerminaPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UklanjanjeProstora.xaml.cs">
+      <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
     <Compile Include="ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
@@ -82,7 +94,15 @@
     <Compile Include="ZakazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
+    <Page Include="DodavanjeProstora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzmenaNalogaSekretar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaProstora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,11 +138,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PrikazProstora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrikazTerminaLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazTerminaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UklanjanjeProstora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

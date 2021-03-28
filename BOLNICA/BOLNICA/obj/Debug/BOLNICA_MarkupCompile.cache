@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
+C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
 Bolnica
 none
 false
 DEBUG;TRACE
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
-11-1672957297
+C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
+15895332623
 
-311542896642
+35-1652489990
 13-1505183044
-IzmenaNalogaSekretar.xaml;IzmenaTerminaLekar.xaml;IzmenaTerminaPacijent.xaml;MainWindow.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PrikazNalogaSekretar.xaml;PrikazTerminaLekara.xaml;PrikazTerminaPacijent.xaml;ZakazivanjeTerminaLekar.xaml;ZakazivanjeTerminaPacijent.xaml;
+DodavanjeProstora.xaml;IzmenaNalogaSekretar.xaml;IzmenaProstora.xaml;IzmenaTerminaLekar.xaml;IzmenaTerminaPacijent.xaml;MainWindow.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PrikazNalogaSekretar.xaml;PrikazProstora.xaml;PrikazTerminaLekara.xaml;PrikazTerminaPacijent.xaml;UklanjanjeProstora.xaml;ZakazivanjeTerminaLekar.xaml;ZakazivanjeTerminaPacijent.xaml;
 
 False
 
