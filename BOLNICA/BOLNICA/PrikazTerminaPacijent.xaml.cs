@@ -84,11 +84,16 @@ namespace Bolnica
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            RukovanjeTerminima.SerijalizacijaTermina();
             MainWindow mw = new MainWindow();
             this.Close();
             mw.Show();
         }
 
-       
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeTerminima.SerijalizacijaTermina();
+
+        }
     }
 }

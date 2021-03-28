@@ -28,7 +28,7 @@ namespace Bolnica
             str = termin.IdTermina;
             lekar.Text = termin.Lekar.korisnickoIme;
             pacijent.Text = termin.Pacijent.KorisnickoIme;
-            datum.SelectedDate = DateTime.Parse(termin.Datum);
+            datum.SelectedDate = DateTime.ParseExact(termin.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             vreme.Text = termin.PocetnoVreme;
 
         }

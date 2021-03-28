@@ -11,7 +11,7 @@ namespace Model
         public int Sprat { get; set; }
         public float Kvadratura { get; set; }
         public int BrojKreveta { get; set; }
-
+        public Prostor() { }
         public Prostor(string idProstora, VrsteProstora vrstaProstora)
         {
             IdProstora = idProstora;

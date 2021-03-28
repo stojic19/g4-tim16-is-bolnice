@@ -6,6 +6,8 @@
 using Bolnica;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Model
 {
@@ -179,6 +181,35 @@ namespace Model
         }
 
         public static List<Termin> sviTermini = new List<Termin>();
+
+        public static List<Termin> DeserijalizacijaTermina()
+        {
+            if (File.ReadAllText("termini.xml").Trim().Equals(""))
+            {
+                return sviTermini;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("termini.xml");
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+                sviTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return sviTermini;
+
+            }
+
+        }
+
+        public static void SerijalizacijaTermina()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+            TextWriter tw = new StreamWriter("termini.xml");
+            xmlSerializer.Serialize(tw, sviTermini);
+            tw.Close();
+
+        }
+
+
 
     }
 }

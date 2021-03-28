@@ -7,7 +7,7 @@ namespace Model
         public String korisnickoIme { get; set; }
         public SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
         public Boolean dostupnost = false;
-
+        public Lekar() { }
         public Lekar(string korisnickoIme)
         {
             this.korisnickoIme = korisnickoIme;

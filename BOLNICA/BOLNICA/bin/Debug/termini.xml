@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Termin>
+    <IdTermina>T1</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>08:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>29/12/2021</Datum>
+    <Prostor>
+      <IdProstora />
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>0</Sprat>
+      <Kvadratura>0</Kvadratura>
+      <BrojKreveta>0</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <Uloga>lekar</Uloga>
+      <KorisnickoIme>p</KorisnickoIme>
+    </Pacijent>
+    <Lekar>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <Uloga>lekar</Uloga>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+      <korisnickoIme>l</korisnickoIme>
+    </Lekar>
+  </Termin>
+</ArrayOfTermin>

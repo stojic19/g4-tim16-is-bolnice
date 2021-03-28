@@ -25,6 +25,7 @@ namespace Bolnica
         {
             InitializeComponent();
             RukovanjeNalozimaPacijenata.Ucitaj();
+            RukovanjeTerminima.DeserijalizacijaTermina();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -56,5 +57,9 @@ namespace Bolnica
             this.Close();
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeTerminima.SerijalizacijaTermina();
+        }
     }
 }

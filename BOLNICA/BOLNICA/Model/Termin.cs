@@ -15,7 +15,7 @@ namespace Model
         public Prostor Prostor { get; set; }
         public Pacijent Pacijent { get; set; }
         public Lekar Lekar { get; set; }
-
+        public Termin() { }
         public Termin(string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, string datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
         {
             IdTermina = idTermina;

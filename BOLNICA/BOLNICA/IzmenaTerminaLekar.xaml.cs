@@ -41,7 +41,7 @@ namespace Bolnica
                     vrTermina.Text= "Pregled";
                 }
                 idProstorije.Text = t.Prostor.IdProstora;
-                datum.SelectedDate = DateTime.Parse(t.Datum);
+            datum.SelectedDate = DateTime.ParseExact(t.Datum,"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 pocVreme.Text = t.PocetnoVreme;
                 trajanje.Text = t.Trajanje.ToString();
             
