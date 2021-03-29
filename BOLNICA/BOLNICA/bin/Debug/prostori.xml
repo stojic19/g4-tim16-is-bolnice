@@ -28,11 +28,4 @@
     <Kvadratura>6</Kvadratura>
     <BrojKreveta>6</BrojKreveta>
   </Prostor>
-  <Prostor>
-    <IdProstora>p232</IdProstora>
-    <VrstaProstora>ordinacija</VrstaProstora>
-    <Sprat>2</Sprat>
-    <Kvadratura>22</Kvadratura>
-    <BrojKreveta>2</BrojKreveta>
-  </Prostor>
 </ArrayOfProstor>

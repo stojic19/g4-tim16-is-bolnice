@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace Bolnica
+/// <summary>
+/// Interaction logic for UklanjanjeProstora.xaml
+/// </summary>
 {
-    /// <summary>
-    /// Interaction logic for UklanjanjeProstora.xaml
-    /// </summary>
     public partial class UklanjanjeProstora : Window
     {
-        public UklanjanjeProstora()
+        String izabran = null;
+        public UklanjanjeProstora(String idProstora)
         {
+            izabran = idProstora;
             InitializeComponent();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            RukovanjeProstorom.UkloniProstor(izabran);
+            this.Close();
         }
     }
 }
+

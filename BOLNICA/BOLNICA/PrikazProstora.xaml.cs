@@ -56,14 +56,28 @@ namespace Bolnica
                 IzmenaProstora izmena = new IzmenaProstora(izabranZaMenjanje.IdProstora);
                 izmena.Show();
             }
+            else
+            {
+                MessageBox.Show("Izaberite prostor koji želite da izmenite!");
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-            UklanjanjeProstora uklanjanje = new UklanjanjeProstora();
-            uklanjanje.Show();
 
+            Prostor izabranZaBrisanje = (Prostor)dataGridProstori.SelectedItem;
+
+            if (izabranZaBrisanje != null)
+            {
+
+                UklanjanjeProstora uklanjanje = new UklanjanjeProstora(izabranZaBrisanje.IdProstora);
+                uklanjanje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite prostor koji želite da otkažete!");
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

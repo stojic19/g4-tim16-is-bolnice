@@ -54,9 +54,28 @@ namespace Model
             return true;
         }
 
-        public Boolean UkloniProstor(String idProstora)
+        public static Boolean UkloniProstor(String idProstora)
         {
-            throw new NotImplementedException();
+            Prostor p = PretraziPoId(idProstora);
+
+            if (p == null)
+            {
+                return false;
+            }
+
+            prostori.Remove(p);
+            PrikazProstora.Prostori.Remove(p);
+
+            SerijalizacijaProstora();
+
+            if (prostori.Contains(p) || PrikazProstora.Prostori.Contains(p))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public static Prostor PretraziPoId(String idProstora)
@@ -104,6 +123,7 @@ namespace Model
             tw.Close();
 
         }
+
 
     }
 }
