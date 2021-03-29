@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -29,6 +30,7 @@ namespace Bolnica
             Prostor p = RukovanjeProstorom.PretraziPoId(id);
 
             IdProstora.Text = id;
+
 
             if (p.VrstaProstora == VrsteProstora.ordinacija)
             {
@@ -56,6 +58,17 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (!stari.Equals(IdProstora.Text))
+            {
+                foreach (Prostor p1 in RukovanjeProstorom.SviProstori())
+                {
+                    if (p1.IdProstora.Equals(IdProstora.Text))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Već postoji unet Id prostora!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
             RukovanjeProstorom.IzmeniProstor(stari, IdProstora.Text, VrstaProstora.SelectedIndex, Sprat.Text, Kvadratura.Text, BrojKreveta.Text);
 
             this.Close();

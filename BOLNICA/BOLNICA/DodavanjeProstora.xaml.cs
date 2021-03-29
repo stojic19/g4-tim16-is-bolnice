@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -34,6 +35,14 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             String idProstora = this.idProstora.Text;
+            foreach (Prostor p1 in RukovanjeProstorom.SviProstori())
+            {
+                if (p1.IdProstora.Equals(this.idProstora.Text))
+                {
+                    System.Windows.Forms.MessageBox.Show("Već postoji uneto Id prostora!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             VrsteProstora vrstaProstora;
 

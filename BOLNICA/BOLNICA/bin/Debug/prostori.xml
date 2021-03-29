@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
-    <IdProstora>P1</IdProstora>
+    <IdProstora>p22</IdProstora>
     <VrstaProstora>sala</VrstaProstora>
     <Sprat>3</Sprat>
-    <Kvadratura>3</Kvadratura>
-    <BrojKreveta>1</BrojKreveta>
+    <Kvadratura>35</Kvadratura>
+    <BrojKreveta>3</BrojKreveta>
   </Prostor>
   <Prostor>
-    <IdProstora>P3</IdProstora>
+    <IdProstora>p11</IdProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>1</Sprat>
-    <Kvadratura>5</Kvadratura>
-    <BrojKreveta>0</BrojKreveta>
+    <Kvadratura>1</Kvadratura>
+    <BrojKreveta>2</BrojKreveta>
   </Prostor>
   <Prostor>
-    <IdProstora>P2</IdProstora>
+    <IdProstora>p13</IdProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>6</Sprat>
-    <Kvadratura>6</Kvadratura>
-    <BrojKreveta>1</BrojKreveta>
-  </Prostor>
-  <Prostor>
-    <IdProstora>P4</IdProstora>
-    <VrstaProstora>soba</VrstaProstora>
-    <Sprat>5</Sprat>
-    <Kvadratura>20</Kvadratura>
-    <BrojKreveta>6</BrojKreveta>
+    <Kvadratura>40</Kvadratura>
+    <BrojKreveta>4</BrojKreveta>
   </Prostor>
 </ArrayOfProstor>
