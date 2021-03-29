@@ -18,14 +18,17 @@ namespace Bolnica
 
     public partial class IzmenaProstora : Window
     {
-        String izabran = null;
+        String stari = null;
+       
 
         public IzmenaProstora(String id)//korisnik unosi informacije
         {
             InitializeComponent();
 
-            izabran = id;
+            stari = id;
             Prostor p = RukovanjeProstorom.PretraziPoId(id);
+
+            IdProstora.Text = id;
 
             if (p.VrstaProstora == VrsteProstora.ordinacija)
             {
@@ -53,7 +56,7 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeProstorom.IzmeniProstor(izabran, VrstaProstora.SelectedIndex, Sprat.Text, Kvadratura.Text, BrojKreveta.Text);
+            RukovanjeProstorom.IzmeniProstor(stari, IdProstora.Text, VrstaProstora.SelectedIndex, Sprat.Text, Kvadratura.Text, BrojKreveta.Text);
 
             this.Close();
         }

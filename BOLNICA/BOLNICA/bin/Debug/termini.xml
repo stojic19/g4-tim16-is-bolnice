@@ -1,31 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
+    <IdTermina>T0</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>09:30</PocetnoVreme>
+    <Trajanje>180</Trajanje>
+    <Datum>26/03/2021</Datum>
+    <Prostor>
+      <IdProstora>P3</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>5</Kvadratura>
+      <BrojKreveta>0</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+      <Jmbg>1901</Jmbg>
+      <AdresaStanovanja>Kninska</AdresaStanovanja>
+      <KontaktTelefon>062</KontaktTelefon>
+      <Uloga>pacijent</Uloga>
+      <Email>asns@gmail.com</Email>
+      <KorisnickoIme>leksann</KorisnickoIme>
+      <VrstaNaloga>regularan</VrstaNaloga>
+    </Pacijent>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <Uloga>lekar</Uloga>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+    </Lekar>
+  </Termin>
+  <Termin>
     <IdTermina>T1</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
+    <PocetnoVreme>07:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>27/03/2021</Datum>
+    <Datum>25/03/2021</Datum>
     <Prostor>
-      <IdProstora>123</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>0</Sprat>
-      <Kvadratura>0</Kvadratura>
-      <BrojKreveta>0</BrojKreveta>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>sala</VrstaProstora>
+      <Sprat>3</Sprat>
+      <Kvadratura>3</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
     </Prostor>
     <Pacijent>
       <Ime>Marko</Ime>
       <Prezime>Andjelic</Prezime>
-      <DatumRodjenja>2021-03-25T00:00:00</DatumRodjenja>
-      <Jmbg>24141</Jmbg>
-      <AdresaStanovanja>negde</AdresaStanovanja>
-      <KontaktTelefon>21321</KontaktTelefon>
+      <DatumRodjenja>2021-03-01T00:00:00</DatumRodjenja>
+      <Jmbg>3333</Jmbg>
+      <AdresaStanovanja>Fruskogorska</AdresaStanovanja>
+      <KontaktTelefon>065</KontaktTelefon>
       <Uloga>pacijent</Uloga>
-      <Email>markic@gmail.com</Email>
-      <KorisnickoIme>andjelic</KorisnickoIme>
+      <Email>maan@gmail.com</Email>
+      <KorisnickoIme>markoa</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <Uloga>lekar</Uloga>
       <specijalizacija>nema</specijalizacija>
@@ -34,31 +71,33 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T0</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
-    <Trajanje>240</Trajanje>
+    <IdTermina>T2</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>07:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
     <Datum>26/03/2021</Datum>
     <Prostor>
-      <IdProstora>2</IdProstora>
+      <IdProstora>P2</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>23</Kvadratura>
+      <Sprat>6</Sprat>
+      <Kvadratura>6</Kvadratura>
       <BrojKreveta>1</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-03-18T00:00:00</DatumRodjenja>
-      <Jmbg>21312</Jmbg>
-      <AdresaStanovanja>Bt</AdresaStanovanja>
-      <KontaktTelefon>231241</KontaktTelefon>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-02-25T00:00:00</DatumRodjenja>
+      <Jmbg>1111</Jmbg>
+      <AdresaStanovanja>Telepska</AdresaStanovanja>
+      <KontaktTelefon>063</KontaktTelefon>
       <Uloga>pacijent</Uloga>
-      <Email>jh@gmail.com</Email>
-      <KorisnickoIme>jelenah</KorisnickoIme>
+      <Email>rema@gmail.com</Email>
+      <KorisnickoIme>reljmag</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <Uloga>lekar</Uloga>
       <specijalizacija>nema</specijalizacija>
@@ -67,36 +106,38 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T2</IdTermina>
+    <IdTermina>T3</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:30</PocetnoVreme>
-    <Trajanje>120</Trajanje>
-    <Datum>20/03/2021</Datum>
+    <PocetnoVreme>12:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>22/05/2021</Datum>
     <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>23</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
+      <IdProstora>P4</IdProstora>
+      <VrstaProstora>soba</VrstaProstora>
+      <Sprat>5</Sprat>
+      <Kvadratura>20</Kvadratura>
+      <BrojKreveta>6</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
-      <Jmbg>1234</Jmbg>
-      <AdresaStanovanja>Telepska 16</AdresaStanovanja>
-      <KontaktTelefon>066</KontaktTelefon>
+      <Jmbg>2222</Jmbg>
+      <AdresaStanovanja>Topolska</AdresaStanovanja>
+      <KontaktTelefon>064</KontaktTelefon>
       <Uloga>pacijent</Uloga>
-      <Email>rema@gmail.com</Email>
-      <KorisnickoIme>reljmag</KorisnickoIme>
+      <Email>jehr@gmail.com</Email>
+      <KorisnickoIme>jelenah</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <Ime>Marko</Ime>
+      <Prezime>Andjelic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <Uloga>lekar</Uloga>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
     </Lekar>
   </Termin>
 </ArrayOfTermin>

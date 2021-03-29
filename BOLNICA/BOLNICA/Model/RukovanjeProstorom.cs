@@ -25,9 +25,9 @@ namespace Model
                 return null;
             }
         }
-        public static Boolean IzmeniProstor(String idProstora, int vrstaProstora, String Sprat, String Kvadratura, String BrojKreveta)
+        public static Boolean IzmeniProstor(String stari, String idProstora, int vrstaProstora, String Sprat, String Kvadratura, String BrojKreveta)
         {
-            Prostor p = PretraziPoId(idProstora);
+            Prostor p = PretraziPoId(stari);
 
             p.IdProstora = idProstora;
 

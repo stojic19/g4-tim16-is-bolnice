@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,7 +29,18 @@ namespace Bolnica
             String idTermina = RukovanjeTerminima.generisiIDTermina();
 
             Lekar l = RukovanjeTerminima.pretraziLekare(lekar.Text);
+
+            if (lekar == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(pacijent.Text);
+            if (pacijent == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             String idProstorije = null;
 

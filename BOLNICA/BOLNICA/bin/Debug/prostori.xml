@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
-    <IdProstora>2</IdProstora>
-    <VrstaProstora>ordinacija</VrstaProstora>
-    <Sprat>2</Sprat>
-    <Kvadratura>23</Kvadratura>
+    <IdProstora>P1</IdProstora>
+    <VrstaProstora>sala</VrstaProstora>
+    <Sprat>3</Sprat>
+    <Kvadratura>3</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
   </Prostor>
   <Prostor>
-    <IdProstora>1</IdProstora>
+    <IdProstora>P3</IdProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>1</Sprat>
-    <Kvadratura>1</Kvadratura>
-    <BrojKreveta>0</BrojKreveta>
-  </Prostor>
-  <Prostor>
-    <IdProstora>123</IdProstora>
-    <VrstaProstora>soba</VrstaProstora>
-    <Sprat>1</Sprat>
-    <Kvadratura>1</Kvadratura>
+    <Kvadratura>5</Kvadratura>
     <BrojKreveta>0</BrojKreveta>
   </Prostor>
   <Prostor>
@@ -26,6 +19,13 @@
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>6</Sprat>
     <Kvadratura>6</Kvadratura>
+    <BrojKreveta>1</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>P4</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>5</Sprat>
+    <Kvadratura>20</Kvadratura>
     <BrojKreveta>6</BrojKreveta>
   </Prostor>
 </ArrayOfProstor>

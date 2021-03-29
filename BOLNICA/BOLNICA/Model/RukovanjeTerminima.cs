@@ -16,10 +16,11 @@ namespace Model
         public static void PrivremenaInicijalizacijaLekara()
         {
 
-            sviLekari.Add(new Lekar("AleksaStojic"));
-            sviLekari.Add(new Lekar("MarkoAndjelic"));
-            sviLekari.Add(new Lekar("MagdalenaReljin"));
-            sviLekari.Add(new Lekar("JelenaHrnjak"));
+            sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic"));
+            sviLekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic"));
+            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin"));
+            sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak"));
+
         }
 
         public static Lekar pretraziLekare(String id)
@@ -115,7 +116,9 @@ namespace Model
         {
             Termin t = PretraziPoId(idTermina);
 
-                t.Lekar.KorisnickoIme = idLekara;
+
+            t.Lekar = pretraziLekare(idLekara);
+
             if (vrstaTermina == 0)
             {
                 t.VrstaTermina = VrsteTermina.pregled;
@@ -124,10 +127,11 @@ namespace Model
             {
                 t.VrstaTermina = VrsteTermina.operacija;
             }
-                
-                t.Prostor.IdProstora = idProstorije;
-                t.Datum = datum;
-                t.PocetnoVreme = pocVr;
+
+
+            t.Prostor = RukovanjeProstorom.PretraziPoId(idProstorije);
+            t.Datum = datum;
+            t.PocetnoVreme = pocVr;
 
             if (hMin == 0)
             {
@@ -150,7 +154,7 @@ namespace Model
             Termin t = PretraziPoId(idTermina);
             if (!t.Lekar.KorisnickoIme.Equals(lekarW))
             {
-                t.Lekar.KorisnickoIme = lekarW;
+                t.Lekar = pretraziLekare(lekarW);
             }
 
             if (!t.Datum.Equals(datumW))

@@ -8,9 +8,11 @@ namespace Model
         public SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
         public Boolean dostupnost = false;
         public Lekar() { }
-        public Lekar(string korisnickoIme)
+        public Lekar(string korisnickoIme, string ime, string prezime)
         {
             this.KorisnickoIme = korisnickoIme;
+            this.Ime = ime;
+            this.Prezime = prezime;
         }
 
         public Lekar(string korisnickoIme, SpecijalizacijeLekara specijalizacija, bool dostupnost)

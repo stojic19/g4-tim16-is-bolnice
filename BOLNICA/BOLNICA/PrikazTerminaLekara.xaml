@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Raspored Lekara" Height="450" Width="950" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+         Title="Raspored Lekara" Height="550" Width="1200" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="LightBlue">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="763*"/>
-            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="450*"/>
+            <ColumnDefinition Width="97*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -21,27 +21,31 @@
         </Grid.RowDefinitions>
 
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="3" Margin="20,20,22.2,20.2" Background="WhiteSmoke"
+                  SelectionMode="Single" Grid.RowSpan="3" Margin="20,20,22,20.2" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="67*"/>
-                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="80*"/>
-                <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="95*"/>
-                <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.KorisnickoIme}" Width="95*"/>
+                <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="70*"/>
+                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="90*"/>
+                <DataGridTextColumn Header="ID lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="100*"/>
+                <DataGridTextColumn Header="Ime lekara" Binding="{Binding Lekar.Ime}" Width="95*"/>
+                <DataGridTextColumn Header="Prezime lekara" Binding="{Binding Lekar.Prezime}" Width="95*"/>
+                <DataGridTextColumn Header="ID pacijenta" Binding="{Binding Pacijent.KorisnickoIme}" Width="95*"/>
+                <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
+                <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="80*"/>
                 <DataGridTextColumn Header="Pocetak" Binding="{Binding PocetnoVreme}" Width="55*"/>
                 <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>
-                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="60*"/>
+                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="65*"/>
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Column="1" Grid.Row="0" Content="Zakazivanje termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+        <Button Grid.Column="1" Grid.Row="0" Content="Zakazivanje termina" Margin="32,33,32.6,32.6" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="1" Content="Izmena termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+        <Button Grid.Column="1" Grid.Row="1" Content="Izmena termina" Margin="32,33.4,32.6,32.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="2" Content="Otkazivanje termina" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+        <Button Grid.Column="1" Grid.Row="2" Content="Otkazivanje termina" Margin="32,32.6,32.6,32.2" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
-        <Button Grid.Column="1" Grid.Row="3" Content="Nazad" Margin="31.8,33,33,32.6" VerticalContentAlignment="Center" 
+        <Button Grid.Column="1" Grid.Row="3" Content="Nazad" Margin="32,32.8,32.6,33" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke"/>
 
 
