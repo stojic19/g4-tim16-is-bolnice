@@ -48,9 +48,14 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            IzmenaProstora izmena = new IzmenaProstora();
-            izmena.Show();
+            Prostor izabranZaMenjanje = (Prostor)dataGridProstori.SelectedItem;
 
+            if (izabranZaMenjanje != null)
+            {
+
+                IzmenaProstora izmena = new IzmenaProstora(izabranZaMenjanje.IdProstora);
+                izmena.Show();
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

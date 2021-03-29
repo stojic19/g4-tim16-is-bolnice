@@ -11,21 +11,28 @@
     <IdProstora>1</IdProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>1</Sprat>
-    <Kvadratura>45</Kvadratura>
+    <Kvadratura>1</Kvadratura>
     <BrojKreveta>0</BrojKreveta>
   </Prostor>
   <Prostor>
     <IdProstora>123</IdProstora>
-    <VrstaProstora>ordinacija</VrstaProstora>
+    <VrstaProstora>soba</VrstaProstora>
     <Sprat>1</Sprat>
-    <Kvadratura>50</Kvadratura>
+    <Kvadratura>1</Kvadratura>
     <BrojKreveta>0</BrojKreveta>
   </Prostor>
   <Prostor>
     <IdProstora>P2</IdProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
-    <Sprat>4</Sprat>
-    <Kvadratura>23</Kvadratura>
-    <BrojKreveta>0</BrojKreveta>
+    <Sprat>6</Sprat>
+    <Kvadratura>6</Kvadratura>
+    <BrojKreveta>6</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>p232</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>22</Kvadratura>
+    <BrojKreveta>2</BrojKreveta>
   </Prostor>
 </ArrayOfProstor>

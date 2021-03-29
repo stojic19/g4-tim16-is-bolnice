@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,47 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for IzmenaProstora.xaml
-    /// </summary>
+
     public partial class IzmenaProstora : Window
     {
-        public IzmenaProstora()
+        String izabran = null;
+
+        public IzmenaProstora(String id)//korisnik unosi informacije
         {
             InitializeComponent();
+
+            izabran = id;
+            Prostor p = RukovanjeProstorom.PretraziPoId(id);
+
+            if (p.VrstaProstora == VrsteProstora.ordinacija)
+            {
+                VrstaProstora.Text = "Ordinacija";
+            }
+            else if (p.VrstaProstora == VrsteProstora.sala)
+            {
+                VrstaProstora.Text = "Sala";
+            }
+            else
+            {
+                VrstaProstora.Text = "Soba";
+            }
+
+            Sprat.Text = p.Sprat.ToString();
+            Kvadratura.Text = p.Sprat.ToString();
+            BrojKreveta.Text = p.BrojKreveta.ToString();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            RukovanjeProstorom.IzmeniProstor(izabran, VrstaProstora.SelectedIndex, Sprat.Text, Kvadratura.Text, BrojKreveta.Text);
+
+            this.Close();
         }
     }
 }

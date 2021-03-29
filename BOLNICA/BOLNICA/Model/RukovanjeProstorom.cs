@@ -25,9 +25,33 @@ namespace Model
                 return null;
             }
         }
-        public Boolean IzmeniProstor(String idProstora)
+        public static Boolean IzmeniProstor(String idProstora, int vrstaProstora, String Sprat, String Kvadratura, String BrojKreveta)
         {
-            throw new NotImplementedException();
+            Prostor p = PretraziPoId(idProstora);
+
+            p.IdProstora = idProstora;
+
+            if (vrstaProstora == 0)
+            {
+                p.VrstaProstora = VrsteProstora.ordinacija;
+            }
+            else if (vrstaProstora == 1)
+            {
+                p.VrstaProstora = VrsteProstora.sala;
+            }
+            else
+            {
+                p.VrstaProstora = VrsteProstora.soba;
+            }
+            p.Sprat = int.Parse(Sprat);
+            p.Kvadratura = float.Parse(Kvadratura);
+            p.BrojKreveta = int.Parse(BrojKreveta);
+
+            int indeks = PrikazProstora.Prostori.IndexOf(p);
+            PrikazProstora.Prostori.RemoveAt(indeks);
+            PrikazProstora.Prostori.Insert(indeks, p);
+
+            return true;
         }
 
         public Boolean UkloniProstor(String idProstora)
