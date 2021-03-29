@@ -2,7 +2,7 @@
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pacijent>
     <Ime>Aleksa</Ime>
-    <Prezime>Stojić</Prezime>
+    <Prezime>Stojic</Prezime>
     <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
     <Jmbg>1901</Jmbg>
     <AdresaStanovanja>Kninska</AdresaStanovanja>
@@ -10,38 +10,66 @@
     <Uloga>pacijent</Uloga>
     <Email>asns@gmail.com</Email>
     <KorisnickoIme>leksann</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
   <Pacijent>
     <Ime>Magdalena</Ime>
     <Prezime>Reljin</Prezime>
-    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
-    <Jmbg>1234</Jmbg>
-    <AdresaStanovanja>Telepska 16</AdresaStanovanja>
-    <KontaktTelefon>066</KontaktTelefon>
+    <DatumRodjenja>2021-02-25T00:00:00</DatumRodjenja>
+    <Jmbg>1111</Jmbg>
+    <AdresaStanovanja>Telepska</AdresaStanovanja>
+    <KontaktTelefon>063</KontaktTelefon>
     <Uloga>pacijent</Uloga>
     <Email>rema@gmail.com</Email>
     <KorisnickoIme>reljmag</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
   <Pacijent>
     <Ime>Jelena</Ime>
     <Prezime>Hrnjak</Prezime>
-    <DatumRodjenja>2021-03-18T00:00:00</DatumRodjenja>
-    <Jmbg>21312</Jmbg>
-    <AdresaStanovanja>Bt</AdresaStanovanja>
-    <KontaktTelefon>231241</KontaktTelefon>
+    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
+    <Jmbg>2222</Jmbg>
+    <AdresaStanovanja>Topolska</AdresaStanovanja>
+    <KontaktTelefon>064</KontaktTelefon>
     <Uloga>pacijent</Uloga>
-    <Email>jh@gmail.com</Email>
+    <Email>jehr@gmail.com</Email>
     <KorisnickoIme>jelenah</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
   <Pacijent>
     <Ime>Marko</Ime>
     <Prezime>Andjelic</Prezime>
-    <DatumRodjenja>2021-03-25T00:00:00</DatumRodjenja>
-    <Jmbg>24141</Jmbg>
-    <AdresaStanovanja>negde</AdresaStanovanja>
-    <KontaktTelefon>21321</KontaktTelefon>
+    <DatumRodjenja>2021-03-01T00:00:00</DatumRodjenja>
+    <Jmbg>3333</Jmbg>
+    <AdresaStanovanja>Fruskogorska</AdresaStanovanja>
+    <KontaktTelefon>065</KontaktTelefon>
     <Uloga>pacijent</Uloga>
-    <Email>markic@gmail.com</Email>
-    <KorisnickoIme>andjelic</KorisnickoIme>
+    <Email>maan@gmail.com</Email>
+    <KorisnickoIme>markoa</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Mirko</Ime>
+    <Prezime>Stanic</Prezime>
+    <DatumRodjenja>2021-03-29T13:12:24.7430496+02:00</DatumRodjenja>
+    <Jmbg>1999</Jmbg>
+    <AdresaStanovanja />
+    <KontaktTelefon />
+    <Uloga>pacijent</Uloga>
+    <Email />
+    <KorisnickoIme />
+    <VrstaNaloga>gost</VrstaNaloga>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Milan</Ime>
+    <Prezime>Milanovic</Prezime>
+    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
+    <Jmbg>5555</Jmbg>
+    <AdresaStanovanja>Milano</AdresaStanovanja>
+    <KontaktTelefon>123</KontaktTelefon>
+    <Uloga>pacijent</Uloga>
+    <Email>milimili@gmail.com</Email>
+    <KorisnickoIme>milmil</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
 </ArrayOfPacijent>

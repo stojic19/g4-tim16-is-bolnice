@@ -16,13 +16,6 @@ namespace Model
         
         public static Pacijent DodajNalog(Pacijent p)
         {
-            foreach (Pacijent p1 in sviNaloziPacijenata)
-            {
-                if (p1.KorisnickoIme.Equals(p.KorisnickoIme) || p1.Jmbg.Equals(p.Jmbg))
-                {
-                    return null;
-                }
-            }
             sviNaloziPacijenata.Add(p);
             PrikazNalogaSekretar.NaloziPacijenata.Add(p);
 
@@ -43,7 +36,7 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniNalog(String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email)
+        public static Boolean IzmeniNalog(String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email,VrsteNaloga vrstaNaloga)
         {
             Pacijent p = PretraziPoId(idNaloga);
 
@@ -54,6 +47,7 @@ namespace Model
             p.AdresaStanovanja = adresa;
             p.KontaktTelefon = telefon;
             p.Email = email;
+            p.VrstaNaloga = vrstaNaloga;
 
             int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(p);
             PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);

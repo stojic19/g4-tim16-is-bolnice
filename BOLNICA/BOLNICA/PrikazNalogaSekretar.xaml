@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Nalozi pacijenata" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="Nalozi pacijenata" Height="450" Width="1050" WindowStartupLocation="CenterScreen">
     <Grid Background="LightBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="690*"/>
+            <ColumnDefinition Width="770*"/>
             <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
 
@@ -24,6 +24,7 @@
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20.4,20" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Vrsta naloga" Binding="{Binding VrstaNaloga}"/>
                 <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}"/>
                 <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
                 <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}"/>
