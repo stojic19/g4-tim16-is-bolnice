@@ -29,18 +29,9 @@ namespace Bolnica
             String idTermina = RukovanjeTerminima.generisiIDTermina();
 
             Lekar l = RukovanjeTerminima.pretraziLekare(lekar.Text);
-
-            if (lekar == null)
-            {
-                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+          
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(pacijent.Text);
-            if (pacijent == null)
-            {
-                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
 
             String idProstorije = null;
 
@@ -58,6 +49,26 @@ namespace Bolnica
             String vremePocetka = vreme.Text;
 
             Double trajanje = 30;
+
+
+            if (this.lekar.Text.Equals("") || this.pacijent.Text.Equals("") || !datum.HasValue || vreme.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            if (l == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (p == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Termin t = new Termin(idTermina, vrstaTermina, vremePocetka, trajanje, formatirano, prostor, p, l);
             RukovanjeTerminima.ZakaziPregled(t);

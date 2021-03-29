@@ -112,11 +112,11 @@
     <Trajanje>30</Trajanje>
     <Datum>22/05/2021</Datum>
     <Prostor>
-      <IdProstora>P4</IdProstora>
-      <VrstaProstora>soba</VrstaProstora>
-      <Sprat>5</Sprat>
-      <Kvadratura>20</Kvadratura>
-      <BrojKreveta>6</BrojKreveta>
+      <IdProstora>P3</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>6</Sprat>
+      <Kvadratura>6</Kvadratura>
+      <BrojKreveta>4</BrojKreveta>
     </Prostor>
     <Pacijent>
       <Ime>Jelena</Ime>

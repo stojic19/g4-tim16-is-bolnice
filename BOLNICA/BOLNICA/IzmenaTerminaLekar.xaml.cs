@@ -55,7 +55,22 @@ namespace Bolnica
             DateTime? datum = this.datum.SelectedDate;
             String formatirano = null;
 
-            if(RukovanjeTerminima.pretraziLekare(idLekara.Text) == null)
+
+            if (datum.HasValue)
+            {
+                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+
+            if (this.idLekara.Text.Equals("") || this.idProstorije.Text.Equals("") || this.trajanje.Text.Equals("") 
+                || !datum.HasValue || pocVreme.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            if (RukovanjeTerminima.pretraziLekare(idLekara.Text) == null)
             {
                     System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -67,10 +82,6 @@ namespace Bolnica
                 return;
             }
 
-            if (datum.HasValue)
-            {
-                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
 
 
             RukovanjeTerminima.IzmeniTermin(izabran, idLekara.Text, vrTermina.SelectedIndex, idProstorije.Text, formatirano, pocVreme.Text, trajanje.Text, hMin.SelectedIndex);

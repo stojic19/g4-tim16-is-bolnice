@@ -43,6 +43,14 @@ namespace Bolnica
                 formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             }
 
+
+            if (this.lekar.Text.Equals("") || !datum.HasValue || vreme.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
             if (RukovanjeTerminima.pretraziLekare(lekar.Text) == null)
             {
                 System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
