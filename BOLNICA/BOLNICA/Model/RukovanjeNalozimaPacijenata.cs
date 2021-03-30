@@ -36,10 +36,11 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniNalog(String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email,VrsteNaloga vrstaNaloga)
+        public static Boolean IzmeniNalog(String stariId,String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email,VrsteNaloga vrstaNaloga)
         {
-            Pacijent p = PretraziPoId(idNaloga);
+            Pacijent p = PretraziPoId(stariId);
 
+            p.KorisnickoIme = idNaloga;
             p.Ime = ime;
             p.Prezime = prezime;
             p.DatumRodjenja = datum;

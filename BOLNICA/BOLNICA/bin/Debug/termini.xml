@@ -20,7 +20,6 @@
       <Jmbg>1901</Jmbg>
       <AdresaStanovanja>Kninska</AdresaStanovanja>
       <KontaktTelefon>062</KontaktTelefon>
-      <Uloga>pacijent</Uloga>
       <Email>asns@gmail.com</Email>
       <KorisnickoIme>leksann</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
@@ -29,10 +28,9 @@
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <Uloga>lekar</Uloga>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
     </Lekar>
   </Termin>
   <Termin>
@@ -55,7 +53,6 @@
       <Jmbg>3333</Jmbg>
       <AdresaStanovanja>Fruskogorska</AdresaStanovanja>
       <KontaktTelefon>065</KontaktTelefon>
-      <Uloga>pacijent</Uloga>
       <Email>maan@gmail.com</Email>
       <KorisnickoIme>markoa</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
@@ -64,10 +61,9 @@
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <Uloga>lekar</Uloga>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
     </Lekar>
   </Termin>
   <Termin>
@@ -90,7 +86,6 @@
       <Jmbg>1111</Jmbg>
       <AdresaStanovanja>Telepska</AdresaStanovanja>
       <KontaktTelefon>063</KontaktTelefon>
-      <Uloga>pacijent</Uloga>
       <Email>rema@gmail.com</Email>
       <KorisnickoIme>reljmag</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
@@ -99,10 +94,9 @@
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <Uloga>lekar</Uloga>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
     </Lekar>
   </Termin>
   <Termin>
@@ -125,7 +119,6 @@
       <Jmbg>2222</Jmbg>
       <AdresaStanovanja>Topolska</AdresaStanovanja>
       <KontaktTelefon>064</KontaktTelefon>
-      <Uloga>pacijent</Uloga>
       <Email>jehr@gmail.com</Email>
       <KorisnickoIme>jelenah</KorisnickoIme>
       <VrstaNaloga>regularan</VrstaNaloga>
@@ -134,10 +127,9 @@
       <Ime>Marko</Ime>
       <Prezime>Andjelic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <Uloga>lekar</Uloga>
+      <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
-      <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
     </Lekar>
   </Termin>
 </ArrayOfTermin>

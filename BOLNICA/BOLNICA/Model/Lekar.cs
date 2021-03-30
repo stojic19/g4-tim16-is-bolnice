@@ -4,7 +4,6 @@ namespace Model
 {
     public class Lekar : Osoba
     {
-        public String KorisnickoIme { get; set; }
         public SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
         public Boolean dostupnost = false;
         public Lekar() { }

@@ -6,7 +6,6 @@ namespace Model
 {
    public class Pacijent : Osoba, INotifyPropertyChanged
     {
-      public String KorisnickoIme { get; set; }
       public VrsteNaloga VrstaNaloga { get; set; }
 
         public Pacijent() { }
@@ -29,9 +28,7 @@ namespace Model
             this.Jmbg = jmbg;
             this.KontaktTelefon = telefon;
             this.Email = email;
-            this.Uloga = Uloge.pacijent;
             this.VrstaNaloga = vrstaNaloga;
-   
         }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)

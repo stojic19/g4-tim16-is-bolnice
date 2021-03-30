@@ -56,18 +56,69 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (!izabran.Equals(idPacijenta.Text))
+            if (ime.Text.Equals(""))
             {
-                foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+                System.Windows.Forms.MessageBox.Show("Morate uneti ime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (prezime.Text.Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate uneti prezime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (jmbg.Text.Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            VrsteNaloga vrsteNaloga;
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
+            if(p.VrstaNaloga == VrsteNaloga.regularan && tipNaloga.Text.Equals("Gost"))
+            {
+                System.Windows.Forms.MessageBox.Show("Regularan nalog se ne može promeniti u gostujući!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tipNaloga.SelectedIndex = 0;
+                return;
+            }
+            if (tipNaloga.Text.Equals("Regularan"))
+            {
+                vrsteNaloga = VrsteNaloga.regularan;
+
+                if (idPacijenta.Text.Equals(""))
                 {
-                    if (p1.KorisnickoIme.Equals(idPacijenta.Text))
+                    System.Windows.Forms.MessageBox.Show("Morate uneti korisničko ime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (adresa.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Morate uneti adresu pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (telefon.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Morate uneti kontakt telefon pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (email.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Morate uneti email pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!p.KorisnickoIme.Equals(idPacijenta.Text))
+                {
+                    foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
                     {
-                        System.Windows.Forms.MessageBox.Show("Već postoji uneto korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        if (p1.KorisnickoIme.Equals(idPacijenta.Text))
+                        {
+                            System.Windows.Forms.MessageBox.Show("Već postoji uneto korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                 }
             }
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
+            else
+            {
+                vrsteNaloga = VrsteNaloga.gost;
+            }
             if (!p.Jmbg.Equals(jmbg.Text))
             {
                 foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
@@ -79,7 +130,7 @@ namespace Bolnica
                     }
                 }
             }
-            RukovanjeNalozimaPacijenata.IzmeniNalog(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
+            RukovanjeNalozimaPacijenata.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
             this.Close();
         }
     }

@@ -9,7 +9,6 @@ namespace Model
 {
    public class Upravnik : Osoba
    {
-      public String korisnickoIme;
-   
+
    }
 }

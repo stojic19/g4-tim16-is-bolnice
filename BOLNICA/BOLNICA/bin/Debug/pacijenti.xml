@@ -7,7 +7,6 @@
     <Jmbg>1901</Jmbg>
     <AdresaStanovanja>Kninska</AdresaStanovanja>
     <KontaktTelefon>062</KontaktTelefon>
-    <Uloga>pacijent</Uloga>
     <Email>asns@gmail.com</Email>
     <KorisnickoIme>leksann</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
@@ -19,7 +18,6 @@
     <Jmbg>1111</Jmbg>
     <AdresaStanovanja>Telepska</AdresaStanovanja>
     <KontaktTelefon>063</KontaktTelefon>
-    <Uloga>pacijent</Uloga>
     <Email>rema@gmail.com</Email>
     <KorisnickoIme>reljmag</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
@@ -31,7 +29,6 @@
     <Jmbg>2222</Jmbg>
     <AdresaStanovanja>Topolska</AdresaStanovanja>
     <KontaktTelefon>064</KontaktTelefon>
-    <Uloga>pacijent</Uloga>
     <Email>jehr@gmail.com</Email>
     <KorisnickoIme>jelenah</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
@@ -43,7 +40,6 @@
     <Jmbg>3333</Jmbg>
     <AdresaStanovanja>Fruskogorska</AdresaStanovanja>
     <KontaktTelefon>065</KontaktTelefon>
-    <Uloga>pacijent</Uloga>
     <Email>maan@gmail.com</Email>
     <KorisnickoIme>markoa</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
@@ -55,7 +51,6 @@
     <Jmbg>1999</Jmbg>
     <AdresaStanovanja />
     <KontaktTelefon />
-    <Uloga>pacijent</Uloga>
     <Email />
     <KorisnickoIme />
     <VrstaNaloga>gost</VrstaNaloga>
@@ -67,9 +62,8 @@
     <Jmbg>5555</Jmbg>
     <AdresaStanovanja>Milano</AdresaStanovanja>
     <KontaktTelefon>123</KontaktTelefon>
-    <Uloga>pacijent</Uloga>
     <Email>milimili@gmail.com</Email>
-    <KorisnickoIme>milmil</KorisnickoIme>
+    <KorisnickoIme>mimi</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
 </ArrayOfPacijent>
