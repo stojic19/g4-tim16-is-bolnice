@@ -36,7 +36,7 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            PrikazNalogaSekretar prikaz = new PrikazNalogaSekretar();
+            GlavniProzorSekretar prikaz = new GlavniProzorSekretar();
             prikaz.Show();
             this.Close();
         }

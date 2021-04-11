@@ -59,14 +59,23 @@
     <Compile Include="DodavanjeNalogaSekretar.xaml.cs">
       <DependentUpon>DodavanjeNalogaSekretar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodavanjeObavestenja.xaml.cs">
+      <DependentUpon>DodavanjeObavestenja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeProstora.xaml.cs">
       <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlavniProzorSekretar.xaml.cs">
+      <DependentUpon>GlavniProzorSekretar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaNalogaSekretar.xaml.cs">
       <DependentUpon>IzmenaNalogaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaObavestenja.xaml.cs">
+      <DependentUpon>IzmenaObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmenaProstora.xaml.cs">
       <DependentUpon>IzmenaProstora.xaml</DependentUpon>
@@ -83,9 +92,15 @@
     <Compile Include="Model\Alergeni.cs" />
     <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\Lek.cs" />
+    <Compile Include="Model\Obavestenje.cs" />
+    <Compile Include="Model\Pol.cs" />
     <Compile Include="Model\Recept.cs" />
+    <Compile Include="Model\RukovanjeObavestenjimaSekratar.cs" />
     <Compile Include="Model\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
+    <Compile Include="ObavestenjaSekretar.xaml.cs">
+      <DependentUpon>ObavestenjaSekretar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OtkazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
@@ -104,6 +119,9 @@
     <Compile Include="UklanjanjeNalogaSekretar.xaml.cs">
       <DependentUpon>UklanjanjeNalogaSekretar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UklanjanjeObavestenja.xaml.cs">
+      <DependentUpon>UklanjanjeObavestenja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
@@ -117,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodavanjeObavestenja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DodavanjeProstora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,9 +147,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GlavniProzorSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="IzmenaNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaObavestenja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaProstora.xaml">
       <SubType>Designer</SubType>
@@ -157,6 +187,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ObavestenjaSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="OtkazivanjeTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -184,6 +218,10 @@
     <Page Include="UklanjanjeNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UklanjanjeObavestenja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UklanjanjeProstora.xaml">
       <SubType>Designer</SubType>
