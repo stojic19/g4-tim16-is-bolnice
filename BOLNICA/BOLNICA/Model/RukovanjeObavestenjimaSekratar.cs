@@ -6,6 +6,8 @@
 using Bolnica;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Model
 {
@@ -23,8 +25,13 @@ namespace Model
             {
                 Console.WriteLine(oba.IdObavestenja);
             }
-            //Sacuvaj();
+            Sacuvaj();
 
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
+                p.Obavestenje.Add(o);
+            }
+            
             if (svaObavestenja.Contains(o))
             {
                 return o;
@@ -46,7 +53,20 @@ namespace Model
             ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
             ObavestenjaSekretar.SvaObavestenja.Insert(indeks, o1);
 
-            //Sacuvaj();
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
+                foreach(Obavestenje o2 in p.Obavestenje)
+                {
+                 if(o2.IdObavestenja.Equals(o.IdObavestenja))
+                    {
+                        o2.Naslov = o.Naslov;
+                        o2.Tekst = o.Tekst;
+                        break;
+                    }
+                }
+            }
+
+            Sacuvaj();
 
             return true;
         }
@@ -63,7 +83,12 @@ namespace Model
             svaObavestenja.Remove(o);
             ObavestenjaSekretar.SvaObavestenja.Remove(o);
 
-            //Sacuvaj();
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
+                p.Obavestenje.Remove(o);
+            }
+
+            Sacuvaj();
 
             if (svaObavestenja.Contains(o) || ObavestenjaSekretar.SvaObavestenja.Contains(o))
             {
@@ -87,10 +112,33 @@ namespace Model
             return null;
         }
       
-      public static List<Obavestenje> SvaObavestenja(String idKorisnika)
+      public static List<Obavestenje> SvaObavestenja()
       {
             return svaObavestenja;
       }
-   
-   }
+
+        public static List<Obavestenje> Ucitaj()
+        {
+            if (File.ReadAllText("obavestenja.xml").Trim().Equals(""))
+            {
+                return new List<Obavestenje>();
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("obavestenja.xml");
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
+                svaObavestenja = (List<Obavestenje>)serializer.Deserialize(fileStream);
+                fileStream.Close();
+                return svaObavestenja;
+            }
+        }
+
+        public static void Sacuvaj()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
+            TextWriter fileStream = new StreamWriter("obavestenja.xml");
+            serializer.Serialize(fileStream, svaObavestenja);
+            fileStream.Close();
+        }
+    }
 }

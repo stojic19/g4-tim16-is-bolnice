@@ -13,7 +13,6 @@ namespace Model
 
         public static List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
 
-
         public static Pacijent DodajNalog(Pacijent p)
         {
             sviNaloziPacijenata.Add(p);
@@ -36,7 +35,7 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
+        public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum,Pol pol, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
         {
             Pacijent p = PretraziPoId(stariId);
 
@@ -44,11 +43,13 @@ namespace Model
             p.Ime = ime;
             p.Prezime = prezime;
             p.DatumRodjenja = datum;
+            p.Pol = pol;
             p.Jmbg = jmbg;
             p.AdresaStanovanja = adresa;
             p.KontaktTelefon = telefon;
             p.Email = email;
             p.VrstaNaloga = vrstaNaloga;
+            p.ZdravstveniKarton.IDPacijenta = idNaloga;
 
             int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(p);
             PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);

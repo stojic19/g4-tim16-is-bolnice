@@ -14,6 +14,7 @@
       <BrojKreveta>0</BrojKreveta>
     </Prostor>
     <Pacijent>
+      <obavestenje />
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
       <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
@@ -22,13 +23,18 @@
       <KontaktTelefon>062</KontaktTelefon>
       <Email>asns@gmail.com</Email>
       <KorisnickoIme>leksann</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <obavestenje />
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
@@ -47,6 +53,7 @@
       <BrojKreveta>1</BrojKreveta>
     </Prostor>
     <Pacijent>
+      <obavestenje />
       <Ime>Marko</Ime>
       <Prezime>Andjelic</Prezime>
       <DatumRodjenja>2021-03-01T00:00:00</DatumRodjenja>
@@ -55,13 +62,18 @@
       <KontaktTelefon>065</KontaktTelefon>
       <Email>maan@gmail.com</Email>
       <KorisnickoIme>markoa</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <obavestenje />
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
@@ -80,6 +92,7 @@
       <BrojKreveta>1</BrojKreveta>
     </Prostor>
     <Pacijent>
+      <obavestenje />
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
       <DatumRodjenja>2021-02-25T00:00:00</DatumRodjenja>
@@ -88,13 +101,18 @@
       <KontaktTelefon>063</KontaktTelefon>
       <Email>rema@gmail.com</Email>
       <KorisnickoIme>reljmag</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <obavestenje />
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
@@ -113,6 +131,7 @@
       <BrojKreveta>4</BrojKreveta>
     </Prostor>
     <Pacijent>
+      <obavestenje />
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
@@ -121,13 +140,18 @@
       <KontaktTelefon>064</KontaktTelefon>
       <Email>jehr@gmail.com</Email>
       <KorisnickoIme>jelenah</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
     </Pacijent>
     <Lekar>
+      <obavestenje />
       <Ime>Marko</Ime>
       <Prezime>Andjelic</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
@@ -146,6 +170,7 @@
       <BrojKreveta>3</BrojKreveta>
     </Prostor>
     <Pacijent>
+      <obavestenje />
       <Ime>NJEMU</Ime>
       <Prezime>RECEPT</Prezime>
       <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
@@ -154,6 +179,8 @@
       <KontaktTelefon>telefon</KontaktTelefon>
       <Email>mejl</Email>
       <KorisnickoIme>imanalog</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
         <alergeni />
@@ -165,10 +192,13 @@
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
+      <obavestenje />
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>

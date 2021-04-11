@@ -37,7 +37,14 @@ namespace Bolnica
             {
                 tipNaloga.SelectedIndex = 1;
             }
-          
+            if (p.Pol == Pol.zenski)
+            {
+                pol.SelectedIndex = 0;
+            }
+            else
+            {
+                pol.SelectedIndex = 1;
+            }
 
             idPacijenta.Text = p.KorisnickoIme;
             ime.Text = p.Ime;
@@ -130,7 +137,7 @@ namespace Bolnica
                     }
                 }
             }
-            RukovanjeNalozimaPacijenata.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
+            RukovanjeNalozimaPacijenata.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
             this.Close();
         }
     }

@@ -22,7 +22,6 @@ namespace Bolnica
     public partial class DodavanjeObavestenja : Window
     {
         //private String idObavestenja;
-        //private String brojac;
 
         public DodavanjeObavestenja()
         {
@@ -30,8 +29,28 @@ namespace Bolnica
            
             InitializeComponent();
 
-            idObavestenja.Text = "O000";
+            idObavestenja.Text = generisiIdObavestenja();
             datum.SelectedDate = DateTime.Now;
+        }
+        private String generisiIdObavestenja()
+        {
+            int brojac = RukovanjeObavestenjimaSekratar.SvaObavestenja().Count;
+            bool postoji;
+            do
+            {
+                postoji = false;
+                foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.SvaObavestenja())
+                {
+                    if (o.IdObavestenja.Equals("O" + brojac.ToString()))
+                    {
+                        postoji = true;
+                        brojac++;
+                        break;
+                    }
+                }
+            } while (postoji);
+
+            return "O" + brojac.ToString();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

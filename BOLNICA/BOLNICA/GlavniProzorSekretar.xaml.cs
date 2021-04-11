@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Bolnica
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            RukovanjeNalozimaPacijenata.Ucitaj();
             PrikazNalogaSekretar prikaz = new PrikazNalogaSekretar();
             prikaz.Show();
             this.Close();
@@ -29,6 +31,7 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            RukovanjeObavestenjimaSekratar.Ucitaj();
             ObavestenjaSekretar prikaz = new ObavestenjaSekretar();
             prikaz.Show();
             this.Close();
@@ -40,7 +43,9 @@ namespace Bolnica
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //TO DO
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

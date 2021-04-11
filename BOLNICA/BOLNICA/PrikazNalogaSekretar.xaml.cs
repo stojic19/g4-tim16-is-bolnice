@@ -73,9 +73,9 @@ namespace Bolnica
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+            GlavniProzorSekretar gps = new GlavniProzorSekretar();
             this.Close();
-            mw.Show();
+            gps.Show();
         }
     }
 }
