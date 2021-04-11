@@ -85,5 +85,17 @@ namespace Bolnica
         {
             RukovanjeTerminima.SerijalizacijaTermina();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Termin izabran = (Termin)dataGridTermini.SelectedItem;
+
+            if (izabran != null)
+            {
+                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme);
+                karton.Show();
+                this.Close();
+            }
+        }
     }
 }

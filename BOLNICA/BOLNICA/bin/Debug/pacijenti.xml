@@ -66,4 +66,23 @@
     <KorisnickoIme>mimi</KorisnickoIme>
     <VrstaNaloga>regularan</VrstaNaloga>
   </Pacijent>
+  <Pacijent>
+    <Ime>NJEMU</Ime>
+    <Prezime>RECEPT</Prezime>
+    <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
+    <Jmbg>123</Jmbg>
+    <AdresaStanovanja>adresa</AdresaStanovanja>
+    <KontaktTelefon>telefon</KontaktTelefon>
+    <Email>mejl</Email>
+    <KorisnickoIme>imanalog</KorisnickoIme>
+    <VrstaNaloga>regularan</VrstaNaloga>
+    <ZdravstveniKarton>
+      <alergeni />
+      <anamneza />
+      <IDPacijenta>imanalog</IDPacijenta>
+      <Alergeni />
+      <Recepti />
+      <Anamneza />
+    </ZdravstveniKarton>
+  </Pacijent>
 </ArrayOfPacijent>

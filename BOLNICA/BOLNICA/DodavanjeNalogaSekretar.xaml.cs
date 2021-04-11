@@ -78,17 +78,19 @@ namespace Bolnica
             {
                 vrsteNaloga = VrsteNaloga.gost;
             }
-            
+
             foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
             {
-                    if (p1.Jmbg.Equals(jmbg.Text))
-                    {
-                        System.Windows.Forms.MessageBox.Show("Već postoji uneti jmbg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                if (p1.Jmbg.Equals(jmbg.Text))
+                {
+                    System.Windows.Forms.MessageBox.Show("Već postoji uneti jmbg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-            
+
             Pacijent p = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga);
+            p.ZdravstveniKarton = new ZdravstveniKarton(p.KorisnickoIme); //DODALA JELENA DA BI RADIO RECEPT
+            p.ZdravstveniKarton.Recepti = new List<Recept>();
             RukovanjeNalozimaPacijenata.DodajNalog(p);
             this.Close();
         }

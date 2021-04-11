@@ -13,7 +13,7 @@ namespace Model
 
         public static List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
 
-        
+
         public static Pacijent DodajNalog(Pacijent p)
         {
             sviNaloziPacijenata.Add(p);
@@ -36,7 +36,7 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniNalog(String stariId,String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email,VrsteNaloga vrstaNaloga)
+        public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
         {
             Pacijent p = PretraziPoId(stariId);
 
@@ -124,5 +124,7 @@ namespace Model
             serializer.Serialize(fileStream, sviNaloziPacijenata);
             fileStream.Close();
         }
+
+
     }
 }

@@ -62,6 +62,9 @@
     <Compile Include="DodavanjeProstora.xaml.cs">
       <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodavanjeRecepta.xaml.cs">
+      <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmenaNalogaSekretar.xaml.cs">
       <DependentUpon>IzmenaNalogaSekretar.xaml</DependentUpon>
     </Compile>
@@ -74,10 +77,14 @@
     <Compile Include="IzmenaTerminaPacijent.xaml.cs">
       <DependentUpon>IzmenaTerminaPacijent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KartonLekar.xaml.cs">
+      <DependentUpon>KartonLekar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Alergeni.cs" />
     <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\Lek.cs" />
     <Compile Include="Model\Recept.cs" />
+    <Compile Include="Model\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
     <Compile Include="OtkazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaLekar.xaml</DependentUpon>
@@ -114,6 +121,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodavanjeRecepta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="IzmenaNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +140,10 @@
     <Page Include="IzmenaTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KartonLekar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\Back.png" />
+    <Resource Include="Slike\menu.png" />
+    <Resource Include="Slike\srce-vece.png" />
+    <Resource Include="Slike\srce.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

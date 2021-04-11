@@ -132,4 +132,45 @@
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
+  <Termin>
+    <IdTermina>T4</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>07:30</PocetnoVreme>
+    <Trajanje>20</Trajanje>
+    <Datum>12/04/2021</Datum>
+    <Prostor>
+      <IdProstora>P2</IdProstora>
+      <VrstaProstora>sala</VrstaProstora>
+      <Sprat>3</Sprat>
+      <Kvadratura>3</Kvadratura>
+      <BrojKreveta>3</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>NJEMU</Ime>
+      <Prezime>RECEPT</Prezime>
+      <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
+      <Jmbg>123</Jmbg>
+      <AdresaStanovanja>adresa</AdresaStanovanja>
+      <KontaktTelefon>telefon</KontaktTelefon>
+      <Email>mejl</Email>
+      <KorisnickoIme>imanalog</KorisnickoIme>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <alergeni />
+        <anamneza />
+        <IDPacijenta>imanalog</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneza />
+      </ZdravstveniKarton>
+    </Pacijent>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
 </ArrayOfTermin>

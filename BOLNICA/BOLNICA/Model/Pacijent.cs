@@ -1,12 +1,15 @@
 
+using Bolnica;
 using System;
 using System.ComponentModel;
 
 namespace Model
 {
-   public class Pacijent : Osoba, INotifyPropertyChanged
+    public class Pacijent : Osoba, INotifyPropertyChanged
     {
-      public VrsteNaloga VrstaNaloga { get; set; }
+        public VrsteNaloga VrstaNaloga { get; set; }
+
+        public ZdravstveniKarton ZdravstveniKarton { get; set; }
 
         public Pacijent() { }
         public Pacijent(string korisnickoIme)
@@ -18,7 +21,8 @@ namespace Model
         {
             return (this.Ime + this.Prezime);
         }
-        public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, string jmbg, string adresa, string telefon, string email,VrsteNaloga vrstaNaloga)
+
+        public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
@@ -30,6 +34,9 @@ namespace Model
             this.Email = email;
             this.VrstaNaloga = vrstaNaloga;
         }
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {
@@ -38,5 +45,8 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+
+
     }
 }
