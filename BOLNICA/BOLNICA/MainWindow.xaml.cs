@@ -52,7 +52,7 @@ namespace Bolnica
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             PacijentGlavniProzor prikaz = new PacijentGlavniProzor();
-            //RukovanjeTerminima.InicijalizacijaSTermina();
+              //RukovanjeTerminima.InicijalizacijaSTermina();
             prikaz.Show();
             this.Close();
         }

@@ -44,7 +44,9 @@ namespace Bolnica
 
         private void izmeni_Click(object sender, RoutedEventArgs e)
         {
-
+            TerminZaPomeranje = (Termin)dataGridTerminiPacijenta.SelectedItem;
+            PomeranjeTerminaPacijent p = new PomeranjeTerminaPacijent((Termin)dataGridTerminiPacijenta.SelectedItem);
+            p.Show();
         }
 
         private void otkazi_Click(object sender, RoutedEventArgs e)

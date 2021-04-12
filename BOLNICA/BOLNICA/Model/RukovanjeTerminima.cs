@@ -259,6 +259,7 @@ namespace Model
 
             sviTermini.Remove(PrikazRasporedaPacijent.TerminZaPomeranje);
             sviTermini.Add(novi);
+            slobodniTermini.Remove(novi);
             slobodniTermini.Add(PrikazRasporedaPacijent.TerminZaPomeranje);
 
             int indeks = PrikazRasporedaPacijent.Termini.IndexOf(PrikazRasporedaPacijent.TerminZaPomeranje);

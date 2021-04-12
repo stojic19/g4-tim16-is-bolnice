@@ -91,9 +91,6 @@
     <Compile Include="IzmenaTerminaLekar.xaml.cs">
       <DependentUpon>IzmenaTerminaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaTerminaPacijent.xaml.cs">
-      <DependentUpon>IzmenaTerminaPacijent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="KartonLekar.xaml.cs">
       <DependentUpon>KartonLekar.xaml</DependentUpon>
     </Compile>
@@ -118,11 +115,20 @@
     <Compile Include="PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PomeranjeTerminaPacijent.xaml.cs">
+      <DependentUpon>PomeranjeTerminaPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PotvrdiPomeranjePacijent.xaml.cs">
+      <DependentUpon>PotvrdiPomeranjePacijent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PotvrdiZakazivanjePacijent.xaml.cs">
       <DependentUpon>PotvrdiZakazivanjePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazDatumaPacijentKodIzabranog.xaml.cs">
       <DependentUpon>PrikazDatumaPacijentKodIzabranog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikaziDatumeZaPomeranjePacijent.xaml.cs">
+      <DependentUpon>PrikaziDatumeZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazNalogaSekretar.xaml.cs">
       <DependentUpon>PrikazNalogaSekretar.xaml</DependentUpon>
@@ -139,11 +145,11 @@
     <Compile Include="PrikazSlobodnihDatumaPacijent.xaml.cs">
       <DependentUpon>PrikazSlobodnihDatumaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikazTerminaPacijent.xaml.cs">
-      <DependentUpon>PrikazTerminaPacijent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PrikazVremenaTerminaPacijent.xaml.cs">
       <DependentUpon>PrikazVremenaTerminaPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazVremenaZaPomeranjePacijent.xaml.cs">
+      <DependentUpon>PrikazVremenaZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="UklanjanjeNalogaSekretar.xaml.cs">
       <DependentUpon>UklanjanjeNalogaSekretar.xaml</DependentUpon>
@@ -159,9 +165,6 @@
     </Compile>
     <Compile Include="ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ZakazivanjeTerminaPacijent.xaml.cs">
-      <DependentUpon>ZakazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
     <Page Include="DodavanjeNalogaSekretar.xaml">
       <SubType>Designer</SubType>
@@ -199,10 +202,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmenaTerminaPacijent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="KartonLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -235,11 +234,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PomeranjeTerminaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PotvrdiPomeranjePacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PotvrdiZakazivanjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazDatumaPacijentKodIzabranog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikaziDatumeZaPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,11 +278,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazTerminaPacijent.xaml">
+    <Page Include="PrikazVremenaTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazVremenaTerminaPacijent.xaml">
+    <Page Include="PrikazVremenaZaPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,10 +305,6 @@
     <Page Include="ZakazivanjeTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ZakazivanjeTerminaPacijent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
