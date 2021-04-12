@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
+C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
 Bolnica
 none
 false
 DEBUG;TRACE
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
-24-2007535771
+C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
+32-182068326
 
-521907446105
-14-1290796308
-DodavanjeNalogaSekretar.xaml;DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;DodavanjeRecepta.xaml;GlavniProzorSekretar.xaml;IzmenaNalogaSekretar.xaml;IzmenaObavestenja.xaml;IzmenaProstora.xaml;IzmenaTerminaLekar.xaml;IzmenaTerminaPacijent.xaml;KartonLekar.xaml;MainWindow.xaml;ObavestenjaSekretar.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PrikazNalogaSekretar.xaml;PrikazProstora.xaml;PrikazTerminaLekara.xaml;PrikazTerminaPacijent.xaml;UklanjanjeNalogaSekretar.xaml;UklanjanjeObavestenja.xaml;UklanjanjeProstora.xaml;ZakazivanjeTerminaLekar.xaml;ZakazivanjeTerminaPacijent.xaml;
+60-2105969923
+16-1938864817
+DodavanjeNalogaSekretar.xaml;DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;DodavanjeRecepta.xaml;GlavniProzorSekretar.xaml;IzmenaNalogaSekretar.xaml;IzmenaObavestenja.xaml;IzmenaProstora.xaml;IzmenaTerminaLekar.xaml;IzmenaTerminaPacijent.xaml;KartonLekar.xaml;MainWindow.xaml;ObavestenjaSekretar.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PacijentGlavniProzor.xaml;PotvrdiZakazivanjePacijent.xaml;PrikazDatumaPacijentKodIzabranog.xaml;PrikazNalogaSekretar.xaml;PrikazObavestenjaPacijent.xaml;PrikazProstora.xaml;PrikazRasporedaPacijent.xaml;PrikazSlobodnihDatumaPacijent.xaml;PrikazTerminaLekara.xaml;PrikazTerminaPacijent.xaml;PrikazVremenaTerminaPacijent.xaml;UklanjanjeNalogaSekretar.xaml;UklanjanjeObavestenja.xaml;UklanjanjeProstora.xaml;ZakazivanjeSaPrioritetomPacijent.xaml;ZakazivanjeTerminaLekar.xaml;ZakazivanjeTerminaPacijent.xaml;
 
-False
+True
 

@@ -2,6 +2,7 @@ using Bolnica;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace Model
@@ -11,6 +12,8 @@ namespace Model
         private String imeFajla;
 
         public static List<Termin> sviTermini = new List<Termin>();
+        public static List<Termin> slobodniTermini = new List<Termin>();
+
         public static List<Lekar> sviLekari = new List<Lekar>();
 
         public static void PrivremenaInicijalizacijaLekara()
@@ -22,7 +25,54 @@ namespace Model
             sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak"));
 
         }
+        public static void InicijalizacijaSTermina()
+        {
 
+
+            slobodniTermini.Add(new Termin("T11", VrsteTermina.pregled, "09:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "09:30", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "11:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T14", VrsteTermina.pregled, "08:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "09:00", 30, "19/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T20", VrsteTermina.pregled, "19:00", 30, "19/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T21", VrsteTermina.pregled, "11:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T22", VrsteTermina.pregled, "08:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T23", VrsteTermina.pregled, "15:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+
+
+            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "16/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "16/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "13/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "15/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "15/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "11/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T27", VrsteTermina.pregled, "09:00", 30, "12/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T28", VrsteTermina.pregled, "11:00", 30, "01/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+        }
+        public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
+        {
+            List<Termin> pomocna = new List<Termin>();
+
+            foreach (Termin t in slobodniTermini)
+            {
+
+                if (t.Datum.Equals(izabraniTermin.Datum) && izabraniTermin.Lekar.KorisnickoIme.Equals(t.Lekar.KorisnickoIme))
+                {
+                    pomocna.Add(t);
+                   
+
+
+                }
+
+
+            }
+
+            List<Termin> vreme = pomocna.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
+
+            return vreme;
+        }
         public static Lekar pretraziLekare(String id)
         {
             foreach(Lekar l in sviLekari)
@@ -53,9 +103,12 @@ namespace Model
         }
         public static Termin ZakaziPregled(Termin t)
         {
+           
             sviTermini.Add(t);
-
-            PrikazTerminaPacijent.Termini.Add(t);
+            slobodniTermini.Remove(t);
+            PrikazRasporedaPacijent.Termini.Add(t);
+            SerijalizacijaSlobodnihTermina();
+            SerijalizacijaTermina();
 
             if (sviTermini.Contains(t))
             {
@@ -65,6 +118,25 @@ namespace Model
             {
                 return null;
             }
+        }
+
+        public static List<Termin> PretraziPoLekaruIIntervalu(DateTime pocetni, DateTime krajnji, String kImeLekara)
+        {
+            List<Termin> datumi = new List<Termin>();
+            List<Termin> konacna = new List<Termin>();
+
+            datumi = ProveriDatum(pocetni, krajnji);
+
+            foreach (Termin termin in datumi)
+            {
+                if (termin.Lekar.KorisnickoIme.Equals(kImeLekara))
+                    konacna.Add(termin);
+            }
+
+
+
+
+            return konacna;
         }
 
         public static Boolean OtkaziTermin(String idTermina)
@@ -90,7 +162,8 @@ namespace Model
             }
         }
 
-        public static Boolean OtkaziPregled(String idTermina) {
+        public static Boolean OtkaziPregled(String idTermina)
+        {
 
             Termin t = PretraziPoId(idTermina);
 
@@ -100,9 +173,11 @@ namespace Model
             }
 
             sviTermini.Remove(t);
-            PrikazTerminaPacijent.Termini.Remove(t);
+            t.Pacijent = null;
+            slobodniTermini.Add(t);
+            PrikazRasporedaPacijent.Termini.Remove(t);
 
-            if (sviTermini.Contains(t) || PrikazTerminaPacijent.Termini.Contains(t))
+            if (sviTermini.Contains(t) || PrikazRasporedaPacijent.Termini.Contains(t))
             {
                 return false;
             }
@@ -167,12 +242,40 @@ namespace Model
                 t.PocetnoVreme = vremeW;
             }
 
-            int indeks = PrikazTerminaPacijent.Termini.IndexOf(t);
-            PrikazTerminaPacijent.Termini.RemoveAt(indeks);
-            PrikazTerminaPacijent.Termini.Insert(indeks, t);
+            int indeks = PrikazRasporedaPacijent.Termini.IndexOf(t);
+            PrikazRasporedaPacijent.Termini.RemoveAt(indeks);
+            PrikazRasporedaPacijent.Termini.Insert(indeks, t);
 
             return true;
 
+        }
+
+        public static void PomeriPregled(String idTermina)
+        {
+            // PrikazTerminaPacijent.TerminZaPomeranje.Pacijent=null;
+            PretraziPoId(PrikazRasporedaPacijent.TerminZaPomeranje.IdTermina).Pacijent = null;
+            Termin novi = PretraziSlobodnePoId(idTermina);
+            novi.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId("leksann");
+
+            sviTermini.Remove(PrikazRasporedaPacijent.TerminZaPomeranje);
+            sviTermini.Add(novi);
+            slobodniTermini.Add(PrikazRasporedaPacijent.TerminZaPomeranje);
+
+            int indeks = PrikazRasporedaPacijent.Termini.IndexOf(PrikazRasporedaPacijent.TerminZaPomeranje);
+            PrikazRasporedaPacijent.Termini.RemoveAt(indeks);
+            PrikazRasporedaPacijent.Termini.Insert(indeks, novi);
+            PrikazRasporedaPacijent.TerminZaPomeranje = null;
+
+        }
+
+        public static Termin PretraziSlobodnePoId(String idTermina)
+        {
+            foreach (Termin termin in slobodniTermini)
+            {
+                if (termin.IdTermina.Equals(idTermina))
+                    return termin;
+            }
+            return null;
         }
 
         public static Termin PretraziPoId(String idTermina)
@@ -183,6 +286,146 @@ namespace Model
                     return termin;
             }
             return null;
+        }
+
+        public static List<Termin> ProveriDatum(DateTime d1, DateTime d2)
+        {
+            List<Termin> pomocna = new List<Termin>();
+
+
+
+            foreach (Termin t in slobodniTermini)
+            {
+                DateTime datum = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                if (DateTime.Compare(datum, d1) >= 0 && DateTime.Compare(datum, d2) <= 0)
+                {
+                    pomocna.Add(t);
+
+                }
+
+            }
+
+            List<Termin> datumi = pomocna.OrderBy(user => DateTime.ParseExact(user.Datum, "dd/MM/yyyy", null)).ToList();
+
+
+            return datumi;
+        }
+
+        public static List<Termin> ProveriDatumILekara(DateTime d1, DateTime d2)
+        {
+            List<Termin> pomocna = new List<Termin>();
+
+            foreach (Termin t in slobodniTermini)
+            {
+                DateTime datum = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                if (DateTime.Compare(datum, d1) >= 0 && DateTime.Compare(datum, d2) <= 0)
+                {
+                    pomocna.Add(t);
+
+
+
+                }
+
+            }
+
+            List<Termin> datumi = pomocna.OrderBy(user => DateTime.ParseExact(user.Datum, "dd/MM/yyyy", null)).ToList();
+            return datumi;
+        }
+
+
+
+        public static bool ProveriMogucnostPomeranjaDatum(string datumPregleda)
+        {
+            DateTime trenutni1 = DateTime.Now;
+            DateTime trenutni = trenutni1.AddDays(1);
+
+            String[] sadasnji = trenutni.ToString().Split(' ');
+
+            String KONACNI = "";
+
+            String[] brojevi = sadasnji[0].Split('/');
+
+            if (brojevi[1].Length == 1)
+                KONACNI += "0" + brojevi[1] + "/";
+            else
+                KONACNI += brojevi[1] + "/";
+
+
+
+            if (brojevi[0].Length == 1)
+                KONACNI += "0" + brojevi[0] + "/";
+            else
+                KONACNI += brojevi[0] + "/";
+
+
+
+
+
+            KONACNI += brojevi[2];
+            //Console.WriteLine("konacniiiiiiiiiiiiiiiiiiiiiiiiiii   " + KONACNI);
+           // Console.WriteLine("pregledeeeeeeeeeeeeeeeeeeeeeeeeeeeeed   " + datumPregleda);
+            if (datumPregleda.Equals(KONACNI))
+                return true;
+
+
+
+            return false;
+        }
+
+        public static bool ProveriMogucnostPomeranjaVreme(String vreme)
+        {
+
+            String sadasnji = DateTime.Now.ToString("HH:mm");
+            Console.WriteLine(sadasnji);
+            // string []splits1= sadasnji.Split(' ');
+            string[] splits2 = sadasnji.Split(':');
+
+            string[] pregled = vreme.Split(':');
+            int sat = Int32.Parse(splits2[0]);
+            int minut = Int32.Parse(splits2[1]);
+            //Console.WriteLine("**********************************SADA");
+           // Console.WriteLine(sat);
+           // Console.WriteLine(minut);
+            int satPregleda = Int32.Parse(pregled[0]);
+            int minutPregleda = Int32.Parse(pregled[1]);
+
+           // Console.WriteLine("**********************************PREGLED");
+            //Console.WriteLine(satPregleda);
+           // Console.WriteLine(minutPregleda);
+
+            if (satPregleda < sat)
+                return false;
+            else if (satPregleda == sat && minut == minutPregleda)
+                return false;
+            else if (satPregleda == sat && minut > minutPregleda)
+                return false;
+
+
+
+            return true;
+        }
+        public static List<Termin> NadjiDatumeZaPomeranje(Termin izabraniTermin)
+        {
+            List<Termin> povratna = new List<Termin>();
+
+
+            DateTime pocetni = DateTime.ParseExact(izabraniTermin.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime pocetnaGranica = pocetni.AddDays(-2);
+            DateTime krajnjaGranica = pocetni.AddDays(2);
+
+            foreach (Termin t in slobodniTermini)
+            {
+                DateTime d = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                if (DateTime.Compare(pocetnaGranica, d) <= 0 && DateTime.Compare(d, krajnjaGranica) <= 0 && izabraniTermin.Lekar.KorisnickoIme.Equals(t.Lekar.KorisnickoIme))
+                {
+
+                    povratna.Add(t);
+                }
+
+            }
+
+
+            return povratna;
         }
 
         public static String generisiIDTermina()
@@ -264,6 +507,34 @@ namespace Model
 
         }
 
+
+        public static List<Termin> DeserijalizacijaSlobodnihTermina()
+        {
+            if (File.ReadAllText("slobodniTermini.xml").Trim().Equals(""))
+            {
+                return slobodniTermini;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead("slobodniTermini.xml");
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+                slobodniTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return slobodniTermini;
+
+            }
+
+        }
+
+
+        public static void SerijalizacijaSlobodnihTermina()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
+            TextWriter tw = new StreamWriter("slobodniTermini.xml");
+            xmlSerializer.Serialize(tw, slobodniTermini);
+            tw.Close();
+
+        }
 
 
     }

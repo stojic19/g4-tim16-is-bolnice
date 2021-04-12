@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Bolnica.ZakazivanjeSaPrioritetomPacijent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="20 100">
+        <Label>Lekar</Label>
+
+        <TextBox Name="lekar"></TextBox>
+       <!-- <Label>Pacijent</Label>
+
+        <TextBox Name="pacijent"></TextBox>  
+        -->
+        <Label>Datum od</Label> 
+        <DatePicker Name="datum"></DatePicker>
+        <Label>Datum do</Label>
+        <DatePicker Name="datum1"></DatePicker>
+        <Label>Prioritet</Label>
+
+        <ComboBox Name="PrioritetCombo"  Margin="00 00 00 30">
+            <ComboBoxItem>lekar</ComboBoxItem>
+            <ComboBoxItem>datum</ComboBoxItem>
+        </ComboBox>
+        <Button Name="nastavi" Click="Button_Click">Nastavi</Button>
+       
+
+    </StackPanel>
+</UserControl>

@@ -1,9 +1,10 @@
 
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-   public class Osoba
+   public class Osoba: INotifyPropertyChanged
    {
         public String Ime { get; set; }
         public String Prezime { get; set; }
@@ -17,6 +18,8 @@ namespace Model
         public String Lozinka { get; set; }
 
         public Pol Pol { get; set; }
+
+        public Osoba() { }
 
         public System.Collections.Generic.List<Obavestenje> obavestenje;
 
@@ -78,6 +81,16 @@ namespace Model
         {
             if (obavestenje != null)
                 obavestenje.Clear();
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
         }
     }
 }

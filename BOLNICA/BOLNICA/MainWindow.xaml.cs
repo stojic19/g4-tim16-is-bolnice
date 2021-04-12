@@ -23,9 +23,10 @@ namespace Bolnica
             InitializeComponent();
             RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
             RukovanjeTerminima.DeserijalizacijaTermina();
+                RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
         }
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             PrikazProstora prikaz = new PrikazProstora();
@@ -50,7 +51,8 @@ namespace Bolnica
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            PrikazTerminaPacijent prikaz = new PrikazTerminaPacijent();
+            PacijentGlavniProzor prikaz = new PacijentGlavniProzor();
+            //RukovanjeTerminima.InicijalizacijaSTermina();
             prikaz.Show();
             this.Close();
         }
@@ -58,6 +60,7 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
         }
     }

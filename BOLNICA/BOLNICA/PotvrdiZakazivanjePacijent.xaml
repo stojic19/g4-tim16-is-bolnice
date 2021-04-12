@@ -1,0 +1,28 @@
+﻿<Window x:Class="Bolnica.PotvrdiZakazivanjePacijent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="PotvrdiZakazivanjePacijent" Height="700" Width="350" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <StackPanel Margin="20 100">
+            <Label>Lekar</Label>
+
+            <TextBox x:Name="TextLekar"  AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+            <!--<Label>Pacijent</Label>
+
+            <TextBox Name="TextPacijent" IsReadOnly="True"></TextBox>
+            -->
+            <Label>Datum</Label>
+            <TextBox Name="TextDatum" ></TextBox>
+            <Label>Vreme</Label>
+            <TextBox Name="TextVreme" Margin="00 00 00 30"></TextBox>
+
+            <Button Click="Button_Click">Potvrdi</Button>
+            <Button Click="Button_Click_1">Odustani</Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

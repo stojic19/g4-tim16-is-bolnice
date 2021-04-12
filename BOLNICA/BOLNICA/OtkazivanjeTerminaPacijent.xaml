@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="OtkazivanjeTerminaPacijent" Height="150" Width="330" WindowStartupLocation="CenterScreen">
+        Title="OtkazivanjeTerminaPacijent" Height="150" Width="330" WindowStartupLocation="CenterOwner">
     <Grid Background="LightBlue">
 
         <Grid.ColumnDefinitions>

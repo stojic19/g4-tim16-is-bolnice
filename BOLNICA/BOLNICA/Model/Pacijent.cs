@@ -5,22 +5,31 @@ using System.ComponentModel;
 
 namespace Model
 {
-    public class Pacijent : Osoba, INotifyPropertyChanged
+    public class Pacijent : Osoba
+
+
     {
+      
         public VrsteNaloga VrstaNaloga { get; set; }
 
         public ZdravstveniKarton ZdravstveniKarton { get; set; }
+        
 
         public Pacijent() { }
-        public Pacijent(string korisnickoIme)
+
+
+
+      
+    public Pacijent(string korisnickoIme)
         {
             this.KorisnickoIme = korisnickoIme;
         }
-
+       
         public String imePrezime()
         {
             return (this.Ime + this.Prezime);
         }
+
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum,Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
@@ -39,15 +48,14 @@ namespace Model
         }
 
 
+       
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
+
+
+
+
+
+
 
 
 
