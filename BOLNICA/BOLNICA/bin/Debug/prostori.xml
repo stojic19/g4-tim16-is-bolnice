@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
-    <IdProstora>P2</IdProstora>
-    <VrstaProstora>sala</VrstaProstora>
-    <Sprat>3</Sprat>
-    <Kvadratura>3</Kvadratura>
-    <BrojKreveta>3</BrojKreveta>
+    <IdProstora>P33</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>66</Sprat>
+    <Kvadratura>6</Kvadratura>
+    <BrojKreveta>3212</BrojKreveta>
   </Prostor>
   <Prostor>
     <IdProstora>P1</IdProstora>

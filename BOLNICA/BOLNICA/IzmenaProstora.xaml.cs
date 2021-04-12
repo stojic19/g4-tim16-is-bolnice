@@ -46,7 +46,7 @@ namespace Bolnica
             }
 
             Sprat.Text = p.Sprat.ToString();
-            Kvadratura.Text = p.Sprat.ToString();
+            Kvadratura.Text = p.Kvadratura.ToString();
             BrojKreveta.Text = p.BrojKreveta.ToString();
 
         }
