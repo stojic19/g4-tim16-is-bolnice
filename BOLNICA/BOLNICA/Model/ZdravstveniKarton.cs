@@ -11,57 +11,12 @@ namespace Model
         public ZdravstveniKarton(string iDPacijenta)
         {
             IDPacijenta = iDPacijenta;
+            Alergeni = new System.Collections.Generic.List<Alergeni>();
         }
 
-        public System.Collections.Generic.List<Alergeni> alergeni;
+        public System.Collections.Generic.List<Alergeni> Alergeni { get; set; }
 
-        public System.Collections.Generic.List<Alergeni> Alergeni
-        {
-            get
-            {
-                if (alergeni == null)
-                    alergeni = new System.Collections.Generic.List<Alergeni>();
-                return alergeni;
-            }
-            set
-            {
-                RemoveAllAlergeni();
-                if (value != null)
-                {
-                    foreach (Alergeni oAlergeni in value)
-                        AddAlergeni(oAlergeni);
-                }
-            }
-        }
-
-
-        public void AddAlergeni(Alergeni newAlergeni)
-        {
-            if (newAlergeni == null)
-                return;
-            if (this.alergeni == null)
-                this.alergeni = new System.Collections.Generic.List<Alergeni>();
-            if (!this.alergeni.Contains(newAlergeni))
-                this.alergeni.Add(newAlergeni);
-        }
-
-        public void RemoveAlergeni(Alergeni oldAlergeni)
-        {
-            if (oldAlergeni == null)
-                return;
-            if (this.alergeni != null)
-                if (this.alergeni.Contains(oldAlergeni))
-                    this.alergeni.Remove(oldAlergeni);
-        }
-
-        public void RemoveAllAlergeni()
-        {
-            if (alergeni != null)
-                alergeni.Clear();
-        }
         public System.Collections.Generic.List<Recept> Recepti { get; set; }
-
-
 
         public System.Collections.Generic.List<Anamneza> anamneza;
 

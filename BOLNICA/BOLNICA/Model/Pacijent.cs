@@ -46,17 +46,5 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
         }
 
-
-       
-
-
-
-
-
-
-
-
-
-
     }
 }

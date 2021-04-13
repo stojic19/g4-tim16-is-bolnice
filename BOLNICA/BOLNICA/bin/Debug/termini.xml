@@ -14,7 +14,6 @@
       <BrojKreveta>2</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <obavestenje />
       <Ime>NEBRISIGA</Ime>
       <Prezime>DOLOGOVANJA</Prezime>
       <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
@@ -25,10 +24,8 @@
       <KorisnickoIme>imanalog</KorisnickoIme>
       <Lozinka>kgjbdkf</Lozinka>
       <Pol>muski</Pol>
-      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <alergeni />
         <anamneza />
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
@@ -37,13 +34,11 @@
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
-      <obavestenje />
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
       <Pol>zenski</Pol>
-      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
@@ -62,7 +57,6 @@
       <BrojKreveta>2</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <obavestenje />
       <Ime>NEBRISIGA</Ime>
       <Prezime>DOLOGOVANJA</Prezime>
       <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
@@ -73,10 +67,8 @@
       <KorisnickoIme>imanalog</KorisnickoIme>
       <Lozinka>kgjbdkf</Lozinka>
       <Pol>muski</Pol>
-      <Obavestenje />
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <alergeni />
         <anamneza />
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
@@ -85,13 +77,11 @@
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
-      <obavestenje />
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
       <Pol>zenski</Pol>
-      <Obavestenje />
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>

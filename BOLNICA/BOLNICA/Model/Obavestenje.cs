@@ -16,6 +16,17 @@ namespace Model
         public DateTime Datum { get; set; }
         public bool JeProcitano { get; set; }
 
+        public String IdPrimaoca { get; set; }
+
+        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum,String idPrimaoca)
+        {
+            IdObavestenja = idObavestenja;
+            Naslov = naslov;
+            Tekst = tekst;
+            Datum = datum;
+            JeProcitano = false;
+            IdPrimaoca = idPrimaoca;
+        }
         public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum)
         {
             IdObavestenja = idObavestenja;
@@ -23,6 +34,7 @@ namespace Model
             Tekst = tekst;
             Datum = datum;
             JeProcitano = false;
+            IdPrimaoca = null;
         }
         public Obavestenje() { }
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
 Bolnica
 none
 false
 DEBUG;TRACE
-C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
-33108251587
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
+371677009720
 
-61-2017051559
-16-1938864817
-DodavanjeNalogaSekretar.xaml;DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;DodavanjeRecepta.xaml;GlavniProzorSekretar.xaml;IzmenaNalogaSekretar.xaml;IzmenaObavestenja.xaml;IzmenaProstora.xaml;IzmenaTerminaLekar.xaml;KartonLekar.xaml;MainWindow.xaml;ObavestenjaSekretar.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PacijentGlavniProzor.xaml;PomeranjeTerminaPacijent.xaml;PotvrdiPomeranjePacijent.xaml;PotvrdiZakazivanjePacijent.xaml;PrikazDatumaPacijentKodIzabranog.xaml;PrikaziDatumeZaPomeranjePacijent.xaml;PrikazNalogaSekretar.xaml;PrikazObavestenjaPacijent.xaml;PrikazProstora.xaml;PrikazRasporedaPacijent.xaml;PrikazSlobodnihDatumaPacijent.xaml;PrikazTerminaLekara.xaml;PrikazVremenaTerminaPacijent.xaml;PrikazVremenaZaPomeranjePacijent.xaml;UklanjanjeNalogaSekretar.xaml;UklanjanjeObavestenja.xaml;UklanjanjeProstora.xaml;ZakazivanjeSaPrioritetomPacijent.xaml;ZakazivanjeTerminaLekar.xaml;
+65788118283
+161151054097
+Sekretar\Alergeni\AlergeniSekretar.xaml;Sekretar\Alergeni\DodavanjeAlergena.xaml;Sekretar\Alergeni\IzmenaAlergena.xaml;Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml;Sekretar\Obavestenja\DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;DodavanjeRecepta.xaml;Sekretar\GlavniProzorSekretar.xaml;Sekretar\Nalozi\IzmenaNalogaSekretar.xaml;Sekretar\Obavestenja\IzmenaObavestenja.xaml;IzmenaProstora.xaml;IzmenaTerminaLekar.xaml;KartonLekar.xaml;MainWindow.xaml;Sekretar\Obavestenja\ObavestenjaSekretar.xaml;OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PacijentGlavniProzor.xaml;PomeranjeTerminaPacijent.xaml;PotvrdiPomeranjePacijent.xaml;PotvrdiZakazivanjePacijent.xaml;PrikazDatumaPacijentKodIzabranog.xaml;PrikaziDatumeZaPomeranjePacijent.xaml;Sekretar\Nalozi\PrikazNalogaSekretar.xaml;PrikazObavestenjaPacijent.xaml;PrikazProstora.xaml;PrikazRasporedaPacijent.xaml;PrikazSlobodnihDatumaPacijent.xaml;PrikazTerminaLekara.xaml;PrikazVremenaTerminaPacijent.xaml;PrikazVremenaZaPomeranjePacijent.xaml;Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml;Sekretar\Obavestenja\UklanjanjeObavestenja.xaml;Sekretar\Alergeni\UklanjanjeAlergena.xaml;UklanjanjeProstora.xaml;ZakazivanjeSaPrioritetomPacijent.xaml;ZakazivanjeTerminaLekar.xaml;
 
-False
+True
 

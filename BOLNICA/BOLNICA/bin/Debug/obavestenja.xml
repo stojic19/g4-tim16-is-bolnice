@@ -2,9 +2,9 @@
 <ArrayOfObavestenje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Obavestenje>
     <IdObavestenja>O0</IdObavestenja>
-    <Naslov>Prvo obavestenje</Naslov>
-    <Tekst>Prvo obavestenje</Tekst>
-    <Datum>2021-04-11T19:38:51.9032376+02:00</Datum>
+    <Naslov>Prvo</Naslov>
+    <Tekst>Tekst prvog obavestenja</Tekst>
+    <Datum>2021-04-13T14:30:03.4431541+02:00</Datum>
     <JeProcitano>false</JeProcitano>
   </Obavestenje>
 </ArrayOfObavestenje>

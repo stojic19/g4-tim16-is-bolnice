@@ -4,16 +4,32 @@
 // Purpose: Definition of Class Alergeni
 
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
    public class Alergeni
    {
-      public String idAlergena;
-      public String opisReakcije;
-      public String vremeZaPojavu;
-      
-      public Lek lek;
-   
-   }
+        public String IdAlergena { get; set; }
+        public String OpisReakcije { get; set; }
+        public String VremeZaPojavu { get; set; }
+
+        public Lek lek;
+        public Alergeni() { }
+        public Alergeni(string idAlergena, string opisReakcije, string vremeZaPojavu)
+        {
+            IdAlergena = idAlergena;
+            OpisReakcije = opisReakcije;
+            VremeZaPojavu = vremeZaPojavu;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+    }
 }

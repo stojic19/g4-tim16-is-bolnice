@@ -9,7 +9,7 @@ namespace Model
 {
     public class RukovanjeNalozimaPacijenata
     {
-        private String imeFajla;
+        private static String imeFajla = "pacijenti.xml";
 
         public static List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
 
@@ -104,13 +104,13 @@ namespace Model
 
         public static List<Pacijent> Ucitaj()
         {
-            if (File.ReadAllText("pacijenti.xml").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<Pacijent>();
             }
             else
             {
-                FileStream fileStream = File.OpenRead("pacijenti.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
                 sviNaloziPacijenata = (List<Pacijent>)serializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -121,11 +121,9 @@ namespace Model
         public static void Sacuvaj()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
-            TextWriter fileStream = new StreamWriter("pacijenti.xml");
+            TextWriter fileStream = new StreamWriter(imeFajla);
             serializer.Serialize(fileStream, sviNaloziPacijenata);
             fileStream.Close();
         }
-
-
     }
 }

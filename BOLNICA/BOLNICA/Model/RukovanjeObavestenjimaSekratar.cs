@@ -13,7 +13,7 @@ namespace Model
 {
    public class RukovanjeObavestenjimaSekratar
    {
-      private String imeFajla;
+      private static String imeFajla = "obavestenja.xml";
       public static List<Obavestenje> svaObavestenja = new List<Obavestenje>();
       
       public static Obavestenje DodajObavestenje(Obavestenje o)
@@ -27,11 +27,6 @@ namespace Model
             }
             Sacuvaj();
 
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
-            {
-                p.Obavestenje.Add(o);
-            }
-            
             if (svaObavestenja.Contains(o))
             {
                 return o;
@@ -53,19 +48,6 @@ namespace Model
             ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
             ObavestenjaSekretar.SvaObavestenja.Insert(indeks, o1);
 
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
-            {
-                foreach(Obavestenje o2 in p.Obavestenje)
-                {
-                 if(o2.IdObavestenja.Equals(o.IdObavestenja))
-                    {
-                        o2.Naslov = o.Naslov;
-                        o2.Tekst = o.Tekst;
-                        break;
-                    }
-                }
-            }
-
             Sacuvaj();
 
             return true;
@@ -82,11 +64,6 @@ namespace Model
 
             svaObavestenja.Remove(o);
             ObavestenjaSekretar.SvaObavestenja.Remove(o);
-
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
-            {
-                p.Obavestenje.Remove(o);
-            }
 
             Sacuvaj();
 
@@ -119,13 +96,13 @@ namespace Model
 
         public static List<Obavestenje> Ucitaj()
         {
-            if (File.ReadAllText("obavestenja.xml").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return new List<Obavestenje>();
             }
             else
             {
-                FileStream fileStream = File.OpenRead("obavestenja.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
                 svaObavestenja = (List<Obavestenje>)serializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -136,7 +113,7 @@ namespace Model
         public static void Sacuvaj()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
-            TextWriter fileStream = new StreamWriter("obavestenja.xml");
+            TextWriter fileStream = new StreamWriter(imeFajla);
             serializer.Serialize(fileStream, svaObavestenja);
             fileStream.Close();
         }
