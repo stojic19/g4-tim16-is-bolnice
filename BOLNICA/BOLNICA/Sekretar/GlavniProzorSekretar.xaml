@@ -24,8 +24,8 @@
             <Bold>Obavestenja</Bold>
         </Button>
 
-        <Button Background="FloralWhite" IsEnabled="False" Grid.Column="0" Grid.Row="1" Width="200" Height="60" Margin="30" Click="Button_Click_3" FontFamily="Times New Roman" FontSize="15px">
-            <Bold>To do</Bold>
+        <Button Background="FloralWhite" Grid.Column="0" Grid.Row="1" Width="200" Height="60" Margin="30" Click="Button_Click_3" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>Termini pregleda</Bold>
         </Button>
 
         <Button Background="FloralWhite"  Grid.Column="1" Grid.Row="1" Width="200" Height="60" Margin="30" Click="Button_Click_4" FontFamily="Times New Roman" FontSize="15px">

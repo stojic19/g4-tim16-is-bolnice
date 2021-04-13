@@ -1,4 +1,5 @@
 using Bolnica;
+using Bolnica.Sekretar.Pregled;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -119,6 +120,24 @@ namespace Model
             }
         }
 
+        public static Termin ZakaziPregledSekretar(Termin t)
+        {
+            sviTermini.Add(t);
+            slobodniTermini.Remove(t);
+            SerijalizacijaSlobodnihTermina();
+            SerijalizacijaTermina();
+            TerminiPregledaSekretar.TerminiPregleda.Add(t);
+
+            if (sviTermini.Contains(t))
+            {
+                return t;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static List<Termin> PretraziPoLekaruIIntervalu(DateTime pocetni, DateTime krajnji, String kImeLekara)
         {
             List<Termin> datumi = new List<Termin>();
@@ -162,7 +181,33 @@ namespace Model
                 return true;
             }
         }
+        public static Boolean OtkaziPregledSekretar(String idTermina)
+        {
 
+            Termin t = PretraziPoId(idTermina);
+
+            if (t == null)
+            {
+                return false;
+            }
+
+            sviTermini.Remove(t);
+            t.Pacijent = null;
+            slobodniTermini.Add(t);
+            TerminiPregledaSekretar.TerminiPregleda.Remove(t);
+
+            SerijalizacijaSlobodnihTermina();
+            SerijalizacijaTermina();
+
+            if (sviTermini.Contains(t) || TerminiPregledaSekretar.TerminiPregleda.Contains(t))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static Boolean OtkaziPregled(String idTermina)
         {
 

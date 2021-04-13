@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Sekretar.Pregled;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,9 @@ namespace Bolnica
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //TO DO
+            TerminiPregledaSekretar tps = new TerminiPregledaSekretar();
+            tps.Show();
+            this.Close();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
