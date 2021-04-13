@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>T17</IdTermina>
+    <IdTermina>T29</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
+    <PocetnoVreme>09:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>30/04/2021</Datum>
+    <Datum>03/05/2021</Datum>
     <Prostor>
       <IdProstora>P1</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
@@ -13,6 +13,29 @@
       <Kvadratura>1</Kvadratura>
       <BrojKreveta>2</BrojKreveta>
     </Prostor>
+    <Pacijent>
+      <obavestenje />
+      <Ime>NEBRISIGA</Ime>
+      <Prezime>DOLOGOVANJA</Prezime>
+      <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
+      <Jmbg>8746871647</Jmbg>
+      <AdresaStanovanja>Nova 32</AdresaStanovanja>
+      <KontaktTelefon>65237547235</KontaktTelefon>
+      <Email>imanalog@gmail.com</Email>
+      <KorisnickoIme>imanalog</KorisnickoIme>
+      <Lozinka>kgjbdkf</Lozinka>
+      <Pol>muski</Pol>
+      <Obavestenje />
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <alergeni />
+        <anamneza />
+        <IDPacijenta>imanalog</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneza />
+      </ZdravstveniKarton>
+    </Pacijent>
     <Lekar>
       <obavestenje />
       <Ime>Jelena</Ime>
@@ -38,6 +61,29 @@
       <Kvadratura>1</Kvadratura>
       <BrojKreveta>2</BrojKreveta>
     </Prostor>
+    <Pacijent>
+      <obavestenje />
+      <Ime>NEBRISIGA</Ime>
+      <Prezime>DOLOGOVANJA</Prezime>
+      <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
+      <Jmbg>8746871647</Jmbg>
+      <AdresaStanovanja>Nova 32</AdresaStanovanja>
+      <KontaktTelefon>65237547235</KontaktTelefon>
+      <Email>imanalog@gmail.com</Email>
+      <KorisnickoIme>imanalog</KorisnickoIme>
+      <Lozinka>kgjbdkf</Lozinka>
+      <Pol>muski</Pol>
+      <Obavestenje />
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <alergeni />
+        <anamneza />
+        <IDPacijenta>imanalog</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneza />
+      </ZdravstveniKarton>
+    </Pacijent>
     <Lekar>
       <obavestenje />
       <Ime>Magdalena</Ime>

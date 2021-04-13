@@ -47,5 +47,10 @@ namespace Bolnica
             mainWindow.Show();
             this.Close();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+        }
     }
 }

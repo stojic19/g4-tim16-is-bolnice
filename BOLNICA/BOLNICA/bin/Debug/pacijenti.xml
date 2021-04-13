@@ -2,99 +2,16 @@
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pacijent>
     <obavestenje />
-    <Ime>Aleksa</Ime>
-    <Prezime>Stojic</Prezime>
-    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
-    <Jmbg>1901</Jmbg>
-    <AdresaStanovanja>Kninska</AdresaStanovanja>
-    <KontaktTelefon>062</KontaktTelefon>
-    <Email>asns@gmail.com</Email>
-    <KorisnickoIme>leksann</KorisnickoIme>
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>regularan</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>Magdalena</Ime>
-    <Prezime>Reljin</Prezime>
-    <DatumRodjenja>2021-02-25T00:00:00</DatumRodjenja>
-    <Jmbg>1111</Jmbg>
-    <AdresaStanovanja>Telepska</AdresaStanovanja>
-    <KontaktTelefon>063</KontaktTelefon>
-    <Email>rema@gmail.com</Email>
-    <KorisnickoIme>reljmag</KorisnickoIme>
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>regularan</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>Jelena</Ime>
-    <Prezime>Hrnjak</Prezime>
-    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
-    <Jmbg>2222</Jmbg>
-    <AdresaStanovanja>Topolska</AdresaStanovanja>
-    <KontaktTelefon>064</KontaktTelefon>
-    <Email>jehr@gmail.com</Email>
-    <KorisnickoIme>jelenah</KorisnickoIme>
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>regularan</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>Marko</Ime>
-    <Prezime>Andjelic</Prezime>
-    <DatumRodjenja>2021-03-01T00:00:00</DatumRodjenja>
-    <Jmbg>3333</Jmbg>
-    <AdresaStanovanja>Fruskogorska</AdresaStanovanja>
-    <KontaktTelefon>065</KontaktTelefon>
-    <Email>maan@gmail.com</Email>
-    <KorisnickoIme>markoa</KorisnickoIme>
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>regularan</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>Mirko</Ime>
-    <Prezime>Stanic</Prezime>
-    <DatumRodjenja>2021-03-29T13:12:24.7430496+02:00</DatumRodjenja>
-    <Jmbg>1999</Jmbg>
-    <AdresaStanovanja />
-    <KontaktTelefon />
-    <Email />
-    <KorisnickoIme />
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>gost</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>Milan</Ime>
-    <Prezime>Milanovic</Prezime>
-    <DatumRodjenja>2021-02-22T00:00:00</DatumRodjenja>
-    <Jmbg>5555</Jmbg>
-    <AdresaStanovanja>Milano</AdresaStanovanja>
-    <KontaktTelefon>123</KontaktTelefon>
-    <Email>milimili@gmail.com</Email>
-    <KorisnickoIme>mimi</KorisnickoIme>
-    <Pol>zenski</Pol>
-    <Obavestenje />
-    <VrstaNaloga>regularan</VrstaNaloga>
-  </Pacijent>
-  <Pacijent>
-    <obavestenje />
-    <Ime>NJEMU</Ime>
-    <Prezime>RECEPT</Prezime>
-    <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
-    <Jmbg>123</Jmbg>
-    <AdresaStanovanja>adresa</AdresaStanovanja>
-    <KontaktTelefon>telefon</KontaktTelefon>
-    <Email>mejl</Email>
+    <Ime>NEBRISIGA</Ime>
+    <Prezime>DOLOGOVANJA</Prezime>
+    <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
+    <Jmbg>8746871647</Jmbg>
+    <AdresaStanovanja>Nova 32</AdresaStanovanja>
+    <KontaktTelefon>65237547235</KontaktTelefon>
+    <Email>imanalog@gmail.com</Email>
     <KorisnickoIme>imanalog</KorisnickoIme>
-    <Pol>zenski</Pol>
+    <Lozinka>kgjbdkf</Lozinka>
+    <Pol>muski</Pol>
     <Obavestenje />
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>

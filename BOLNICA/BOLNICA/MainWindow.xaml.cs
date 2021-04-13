@@ -25,6 +25,7 @@ namespace Bolnica
             RukovanjeTerminima.DeserijalizacijaTermina();
                 RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
+            RukovanjeNalozimaPacijenata.Ucitaj();
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -62,6 +63,7 @@ namespace Bolnica
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
+            RukovanjeNalozimaPacijenata.Sacuvaj();
         }
     }
 }

@@ -17,9 +17,8 @@ namespace Model
 
         public Pacijent() { }
 
+    
 
-
-      
     public Pacijent(string korisnickoIme)
         {
             this.KorisnickoIme = korisnickoIme;

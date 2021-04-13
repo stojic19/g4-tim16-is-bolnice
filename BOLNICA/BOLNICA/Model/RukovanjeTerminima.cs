@@ -106,7 +106,6 @@ namespace Model
            
             sviTermini.Add(t);
             slobodniTermini.Remove(t);
-            PrikazRasporedaPacijent.Termini.Add(t);
             SerijalizacijaSlobodnihTermina();
             SerijalizacijaTermina();
 
@@ -150,6 +149,8 @@ namespace Model
             }
 
             sviTermini.Remove(t);
+            t.Pacijent = null;
+            slobodniTermini.Add(t);
             PrikazTerminaLekara.Termini.Remove(t);
 
             if (sviTermini.Contains(t) || PrikazTerminaLekara.Termini.Contains(t))
