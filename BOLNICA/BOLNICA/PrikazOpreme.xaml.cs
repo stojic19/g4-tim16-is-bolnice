@@ -53,8 +53,8 @@ namespace Bolnica
             if (izabranZaMenjanje != null)
             {
 
-                /*IzmenaOpreme izmena = new IzmenaOpreme(izabranZaMenjanje.IdOpreme);*/
-               // izmena.Show();
+                IzmenaOpreme izmena = new IzmenaOpreme(izabranZaMenjanje.IdOpreme);
+                izmena.Show();
             }
             else
             {
