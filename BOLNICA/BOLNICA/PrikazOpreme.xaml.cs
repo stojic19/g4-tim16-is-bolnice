@@ -71,8 +71,8 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-               /* UklanjanjeOpreme uklanjanje = new UklanjanjeOpreme(izabranZaBrisanje.IdOpreme);*/
-               // uklanjanje.Show();
+               UklanjanjeOpreme uklanjanje = new UklanjanjeOpreme(izabranZaBrisanje.IdOpreme);
+               uklanjanje.Show();
             }
             else
             {
