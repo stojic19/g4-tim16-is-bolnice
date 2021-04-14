@@ -64,6 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodavanjeOpreme.xaml.cs">
+      <DependentUpon>DodavanjeOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaOpreme.xaml.cs">
+      <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Oprema.cs" />
+    <Compile Include="PrikazOpreme.xaml.cs">
+      <DependentUpon>PrikazOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RukovanjeOpremom.cs" />
     <Compile Include="Sekretar\Alergeni\AlergeniSekretar.xaml.cs">
       <DependentUpon>AlergeniSekretar.xaml</DependentUpon>
     </Compile>
@@ -187,18 +198,34 @@
     <Compile Include="Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs">
       <DependentUpon>ZakazivanjePregledaTerminiSekretar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UklanjanjeOpreme.xaml.cs">
+      <DependentUpon>UklanjanjeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpravnikGlavniProzor.xaml.cs">
       <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VrsteOpreme.cs" />
     <Compile Include="ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
+    <Page Include="DodavanjeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\Alergeni\AlergeniSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -364,6 +391,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UklanjanjeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -694,3 +694,11 @@ C:\Users\Korisnik\Desktop\SIMS PROJEKAT\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS PROJEKAT\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaSekretar.baml
 C:\Users\Korisnik\Desktop\SIMS PROJEKAT\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.baml
 C:\Users\Korisnik\Desktop\SIMS PROJEKAT\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikGlavniProzor.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.baml

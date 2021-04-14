@@ -48,7 +48,7 @@
                 HorizontalContentAlignment="Center" Click="Prostorije_Click" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
 
             <Button Grid.Row="0" Content="Oprema" Margin="98.8,0,2.6,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Oprema_Click" Background="WhiteSmoke" Grid.ColumnSpan="2" Grid.Column="1"/>
+                HorizontalContentAlignment="Center" Click="Oprema_Click" Background="WhiteSmoke" Grid.ColumnSpan="2" Grid.Column="1" Height="35" VerticalAlignment="Top"/>
 
         </Grid>
 
