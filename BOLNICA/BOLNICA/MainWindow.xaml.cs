@@ -30,7 +30,7 @@ namespace Bolnica
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            PrikazProstora prikaz = new PrikazProstora();
+            UpravnikGlavniProzor prikaz = new UpravnikGlavniProzor();
             prikaz.Show();
             this.Close();
         }

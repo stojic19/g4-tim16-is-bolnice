@@ -190,6 +190,9 @@
     <Compile Include="UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpravnikGlavniProzor.xaml.cs">
+      <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
@@ -365,6 +368,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UklanjanjeProstora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpravnikGlavniProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

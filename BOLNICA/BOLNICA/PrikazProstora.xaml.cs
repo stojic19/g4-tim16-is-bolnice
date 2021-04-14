@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class PrikazProstora : Window
+    public partial class PrikazProstora : UserControl
     {
 
         public static ObservableCollection<Prostor> Prostori { get; set; }
@@ -80,13 +80,6 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            RukovanjeProstorom.SerijalizacijaProstora();
-            MainWindow glavniProzor = new MainWindow();
-            glavniProzor.Show();
-            this.Close();
-        }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
