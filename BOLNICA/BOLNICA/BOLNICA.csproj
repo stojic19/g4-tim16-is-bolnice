@@ -71,10 +71,11 @@
       <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Oprema.cs" />
+    <Compile Include="Model\RukovanjeOpremom.cs" />
+    <Compile Include="Model\VrsteOpreme.cs" />
     <Compile Include="PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RukovanjeOpremom.cs" />
     <Compile Include="Sekretar\Alergeni\AlergeniSekretar.xaml.cs">
       <DependentUpon>AlergeniSekretar.xaml</DependentUpon>
     </Compile>
@@ -207,7 +208,6 @@
     <Compile Include="UpravnikGlavniProzor.xaml.cs">
       <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VrsteOpreme.cs" />
     <Compile Include="ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>

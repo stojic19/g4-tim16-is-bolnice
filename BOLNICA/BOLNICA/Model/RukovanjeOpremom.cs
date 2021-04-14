@@ -11,7 +11,7 @@ namespace Model
         private String imeFajla;
         public static List<Oprema> oprema = new List<Oprema>();
 
-        public static Oprema DodajOprema(Oprema o)
+        public static Oprema DodajOpremu(Oprema o)
         {
             oprema.Add(o);
             PrikazOpreme.Oprema.Add(o);
