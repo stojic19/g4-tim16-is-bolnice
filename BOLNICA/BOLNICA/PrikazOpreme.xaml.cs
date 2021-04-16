@@ -80,10 +80,32 @@ namespace Bolnica
             }
         }
 
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+
+            Oprema izabran = (Oprema)dataGridOprema.SelectedItem;
+
+            if (izabran!= null)
+            {
+
+                RasporedOpreme raspored = new RasporedOpreme(izabran.IdOpreme);
+                raspored.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite opremu ciji raspored zelite da vidite!");
+            }
+        }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeOpremom.SerijalizacijaOpreme();
+        }
+
+        private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -76,6 +76,9 @@
     <Compile Include="PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RasporedOpreme.xaml.cs">
+      <DependentUpon>RasporedOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\Alergeni\AlergeniSekretar.xaml.cs">
       <DependentUpon>AlergeniSekretar.xaml</DependentUpon>
     </Compile>
@@ -223,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RasporedOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -42,6 +42,7 @@
                 HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
             <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje prostora" Margin="21.6,32.8,22,32.8" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
+            
 
 
         </Grid>
