@@ -19,10 +19,10 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for RasporedOpreme.xaml
     /// </summary>
-    public partial class RasporedOpreme : UserControl
+    public partial class RasporedOpreme : Window
     {
         public static ObservableCollection<Prostor> Prostori { get; set; }
-        public RasporedOpreme()
+        public RasporedOpreme(string idOpreme)
         {
             InitializeComponent();
 
@@ -56,7 +56,7 @@ namespace Bolnica
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             PrikazOpreme po = new PrikazOpreme();
-            po.show();
+            po.Show();
             this.Close();
         }
     }

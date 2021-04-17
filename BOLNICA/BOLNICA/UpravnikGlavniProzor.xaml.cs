@@ -43,11 +43,8 @@ namespace Bolnica
 
         private void Oprema_Click(object sender, RoutedEventArgs e)
         {
-              UserControl usc = null;
-              MainPanel.Children.Clear();
-
-              usc = new PrikazOpreme();
-              MainPanel.Children.Add(usc);
+            PrikazOpreme po = new PrikazOpreme();
+            po.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

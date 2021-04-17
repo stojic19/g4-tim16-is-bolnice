@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Bolnica.RasporedOpreme"
+﻿<Window x:Class="Bolnica.RasporedOpreme"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,7 +23,7 @@
 
             <DataGrid x:Name="dataGridRasporedOpreme" ItemsSource="{Binding RasporedOpreme}" IsReadOnly="true"
                   SelectionMode="Single" Grid.RowSpan="4" Margin="66,49,198.6,68.4" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="dataGridOprema_SelectionChanged">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header=" ID prostora" Binding="{Binding IdOpreme}" Width="90"/>
                     <DataGridTextColumn Header=" Vrsta prostora" Binding="{Binding NazivOpreme}" Width="120"/>
@@ -45,4 +45,4 @@
         </Grid>
 
     </StackPanel>
-</UserControl>
+</Window>

@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class PrikazOpreme : UserControl
+    public partial class PrikazOpreme : Window
     {
 
         public static ObservableCollection<Oprema> Oprema { get; set; }
