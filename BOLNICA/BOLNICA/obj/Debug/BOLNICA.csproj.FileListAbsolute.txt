@@ -13,10 +13,6 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.exe
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\Bolnica\Bolnica\obj\Debug\Bolnica.pdb
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaLekara.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaLekara.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaLekar.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaLekar.baml
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.pdb
@@ -40,10 +36,6 @@ C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaPacijent.g.cs
 C:\Users\computer\Desktop\SIMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaPacijent.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaPacijent.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaPacijent.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazTerminaPacijent.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeTerminaPacijent.baml
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.pdb
@@ -69,12 +61,6 @@ C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\New folder (3)\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaTerminaPacijent.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaTerminaPacijent.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaLekar.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaLekar.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaTerminaLekar.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaTerminaLekar.baml
 C:\Users\computer\Desktop\SIMSPOPRavljeno\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\computer\Desktop\SIMSPOPRavljeno\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
 C:\Users\computer\Desktop\SIMSPOPRavljeno\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.pdb
@@ -276,23 +262,15 @@ C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnic
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.Properties.Resources.resources
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
 C:\Users\computer\Desktop\SIMS KONACNI PONOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeNalogaSekretar.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaNalogaSekretar.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaPacijent.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazNalogaSekretar.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeNalogaSekretar.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeNalogaSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaNalogaSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\OtkazivanjeTerminaPacijent.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazNalogaSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeNalogaSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.baml
 C:\Users\Korisnik\Desktop\jsgjajgjagag\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\Korisnik\Desktop\jsgjajgjagag\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
@@ -374,10 +352,6 @@ C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeRecepta.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\KartonLekar.g.cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeRecepta.baml
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\KartonLekar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeRecepta.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\KartonLekar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeRecepta.baml
@@ -820,3 +794,95 @@ C:\Users\computer\Desktop\za ispraviti markovo\g4-tim16-is-bolnice\BOLNICA\Bolni
 C:\Users\computer\Desktop\za ispraviti markovo\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
 C:\Users\computer\Desktop\za ispraviti markovo\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 C:\Users\computer\Desktop\za ispraviti markovo\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RasporedOpreme.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\AlergeniSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\DodavanjeAlergena.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\IzmenaAlergena.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\DodavanjeNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\DodavanjeObavestenja.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\GlavniProzorSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\IzmenaNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\IzmenaObavestenja.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\IzmenaTerminaLekar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\KartonLekar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\ObavestenjaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\OtkazivanjeTerminaLekar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentGlavniProzor.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PomeranjeTerminaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PotvrdiPomeranjePacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PotvrdiZakazivanjePacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazDatumaPacijentKodIzabranog.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikaziDatumeZaPomeranjePacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\PrikazNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazObavestenjaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazRasporedaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazSlobodnihDatumaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\PrikazTerminaLekara.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazVremenaTerminaPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazVremenaZaPomeranjePacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\UklanjanjeNalogaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\UklanjanjeObavestenja.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\UklanjanjeAlergena.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\OtkazivanjePregledaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\PomeranjePregledaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\PomeranjePregledaTerminiSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\TerminiPregledaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikGlavniProzor.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeSaPrioritetomPacijent.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\ZakazivanjeTerminaLekar.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\MaterialDesignColors.dll
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\MaterialDesignColors.pdb
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RasporedOpreme.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\AlergeniSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\DodavanjeAlergena.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\IzmenaAlergena.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\DodavanjeNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\DodavanjeObavestenja.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\GlavniProzorSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\IzmenaNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\IzmenaObavestenja.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\IzmenaTerminaLekar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\KartonLekar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\ObavestenjaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\OtkazivanjeTerminaLekar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentGlavniProzor.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PomeranjeTerminaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PotvrdiPomeranjePacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PotvrdiZakazivanjePacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazDatumaPacijentKodIzabranog.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikaziDatumeZaPomeranjePacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\PrikazNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazObavestenjaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazRasporedaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazSlobodnihDatumaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\PrikazTerminaLekara.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazVremenaTerminaPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazVremenaZaPomeranjePacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Nalozi\UklanjanjeNalogaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Obavestenja\UklanjanjeObavestenja.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Alergeni\UklanjanjeAlergena.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\OtkazivanjePregledaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\PomeranjePregledaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\PomeranjePregledaTerminiSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\TerminiPregledaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikGlavniProzor.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\ZakazivanjeSaPrioritetomPacijent.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\ZakazivanjeTerminaLekar.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\DodavanjeRecepta.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Lekar\DodavanjeRecepta.baml

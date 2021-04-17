@@ -40,7 +40,12 @@ namespace Bolnica
 
             idRecepta.Text = RukovanjeZdravstvenimKartonima.generisiIDRecepta(izabran);
 
+            
+            this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.inicijalniLekovi;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
+            view.Filter = UserFilter;
 
+            
             this.DataContext = this;
 
             Recepti = new ObservableCollection<Recept>();
@@ -71,60 +76,28 @@ namespace Bolnica
 
             String idLekara = "JelenaHrnjak";
 
+            String imeiprezime = RukovanjeTerminima.ImeiPrezime(idLekara);
+
             String idPacijenta = izabran;
 
             Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
-            //pacijent.ZdravstveniKarton = new ZdravstveniKarton(idPacijenta);
-            //pacijent.ZdravstveniKarton.Recepti = new List<Recept>();
 
-
-            DateTime? pocetak = this.pocTer.SelectedDate;
-            String formatiranoPoc = null;
-
-            if (pocetak.HasValue)
-            {
-                formatiranoPoc = pocetak.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-
-            DateTime? kraj = this.krajTer.SelectedDate;
-            String formatiranoKraj = null;
-
-            if (pocetak.HasValue)
-            {
-                formatiranoKraj = kraj.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-
-            int satnica = int.Parse(this.satnica.Text);
-
-            int kolicina = int.Parse(this.dnevnaKol.Text);
-
-            String nazivLeka = this.imeLeka.Text;
             String sifraLeka = this.sifraLeka.Text;
-            String jacinaLeka = this.jacinaLeka.Text;
 
-            Lek l = new Lek(sifraLeka, nazivLeka, jacinaLeka);
+            Lek l=RukovanjeZdravstvenimKartonima.pretraziLekPoID(sifraLeka);
+            
 
-
-            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.satnica.Text.Equals("") ||
-                this.jacinaLeka.Text.Equals("") || !pocetak.HasValue || !kraj.HasValue || this.dnevnaKol.Text.Equals(""))
+            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") )
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
 
-
-            if (pacijent == null)
-            {
-
-                System.Windows.Forms.MessageBox.Show("Nepostojeći pacijent!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            Recept r = new Recept(idRecepta, idLekara, idPacijenta,formatiranoKraj, formatiranoPoc, satnica, kolicina, l);
+            
+            Recept r = new Recept(idRecepta, idLekara, imeiprezime, idPacijenta, l);
             RukovanjeZdravstvenimKartonima.DodajRecept(r);
-
+            RukovanjeZdravstvenimKartonima.SerijalizacijaRecepata();
             KartonLekar kl = new KartonLekar(izabran);
             kl.Show();
             this.Close();
@@ -143,6 +116,30 @@ namespace Bolnica
             kl.Show();
             this.Close();
 
+        }
+
+        private bool UserFilter(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPreragu.Text))
+                return true;
+            else
+                return ((item as Lek).NazivLeka.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource).Refresh();
+        }
+
+        private void TabelaLekova_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TabelaLekova.SelectedItems.Count > 0)
+            {
+                Lek item = (Lek)TabelaLekova.SelectedItems[0];
+                imeLeka.Text = item.NazivLeka;
+                sifraLeka.Text = item.IDLeka;
+                jacinaLeka.Text = item.Jacina;
+            }
         }
     }
 }

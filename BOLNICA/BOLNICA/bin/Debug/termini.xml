@@ -86,4 +86,53 @@
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
+  <Termin>
+    <IdTermina>T0</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>09:30</PocetnoVreme>
+    <Trajanje>20</Trajanje>
+    <Datum>28/04/2021</Datum>
+    <Prostor>
+      <IdProstora>P3</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>6</Sprat>
+      <Kvadratura>6</Kvadratura>
+      <BrojKreveta>4</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>NEBRISIGA</Ime>
+      <Prezime>DOLOGOVANJA</Prezime>
+      <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
+      <Jmbg>8746871647</Jmbg>
+      <AdresaStanovanja>Nova 32</AdresaStanovanja>
+      <KontaktTelefon>65237547235</KontaktTelefon>
+      <Email>imanalog@gmail.com</Email>
+      <KorisnickoIme>imanalog</KorisnickoIme>
+      <Lozinka>kgjbdkf</Lozinka>
+      <Pol>muski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <anamneza />
+        <IDPacijenta>imanalog</IDPacijenta>
+        <Alergeni>
+          <Alergeni>
+            <IdAlergena>L1</IdAlergena>
+            <OpisReakcije>Opis 1</OpisReakcije>
+            <VremeZaPojavu>Vreme 1</VremeZaPojavu>
+          </Alergeni>
+        </Alergeni>
+        <Recepti />
+        <Anamneza />
+      </ZdravstveniKarton>
+    </Pacijent>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
 </ArrayOfTermin>

@@ -26,6 +26,20 @@ namespace Model
             sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak"));
 
         }
+
+        public static String ImeiPrezime(String id)
+        {
+            foreach (Lekar l in sviLekari)
+            {
+
+                if (l.KorisnickoIme.Equals(id))
+                {
+                    return l.Ime + l.Prezime;
+                }
+            }
+
+            return null;
+        }
         public static void InicijalizacijaSTermina()
         {
 

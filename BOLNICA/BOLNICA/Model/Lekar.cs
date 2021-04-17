@@ -14,6 +14,7 @@ namespace Model
             this.Prezime = prezime;
         }
 
+
         public Lekar(string korisnickoIme, SpecijalizacijeLekara specijalizacija, bool dostupnost)
         {
             this.KorisnickoIme = korisnickoIme;

@@ -31,18 +31,15 @@
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="4"
-                  MinWidth="815" MinHeight="308" Margin="17.5 , 13.5">
+                  MinWidth="815" MinHeight="308" Margin="17.5 , 13.5" Width="815">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Termina" Binding="{Binding IdTermina}" Width="70*"/>
+                <DataGridTextColumn Header="Termin" Binding="{Binding IdTermina}" Width="70*"/>
                 <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="90*"/>
-                <DataGridTextColumn Header="ID lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="100*"/>
-                <DataGridTextColumn Header="Ime lekara" Binding="{Binding Lekar.Ime}" Width="95*"/>
-                <DataGridTextColumn Header="Prezime lekara" Binding="{Binding Lekar.Prezime}" Width="95*"/>
-                <DataGridTextColumn Header="ID pacijenta" Binding="{Binding Pacijent.KorisnickoIme}" Width="95*"/>
+                <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
                 <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
                 <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="80*"/>
-                <DataGridTextColumn Header="Pocetak" Binding="{Binding PocetnoVreme}" Width="55*"/>
+                <DataGridTextColumn Header="Početak" Binding="{Binding PocetnoVreme}" Width="55*"/>
                 <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>
                 <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="65*"/>
 
@@ -64,7 +61,7 @@
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click_3" Background="WhiteSmoke" Width="32" Height="32">
 
-            <Image Source="Slike/Back.png"/>
+            <Image Source="LekarSlike/Back.png"/>
 
         </Button>
 
@@ -91,10 +88,10 @@
                 <ColumnDefinition Width="74*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Column="0" Source="Slike/menu.png" Height="24" Width="24"/>
+            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24"/>
             <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
                    VerticalAlignment="Center" Width="143" Height="30" />
-            <Image Grid.Column="2" Source="Slike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
+            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
 
         </Grid>
 

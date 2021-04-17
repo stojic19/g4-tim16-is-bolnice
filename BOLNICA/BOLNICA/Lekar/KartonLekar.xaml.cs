@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,6 +38,15 @@ namespace Bolnica
             adresa.Text = p.AdresaStanovanja;
             datum.Text = p.DatumRodjenja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
+            if(p.Pol == Pol.zenski)
+            {
+                pol.Text = "Ž";
+            }
+            else
+            {
+                pol.Text = "M";
+            }
+
             if (p.VrstaNaloga == VrsteNaloga.gost)
             {
                 status.Text = "Gost";
@@ -59,6 +69,7 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            RukovanjeZdravstvenimKartonima.SerijalizacijaRecepata();
             PrikazTerminaLekara termini = new PrikazTerminaLekara();
             
             termini.Show();
@@ -67,17 +78,18 @@ namespace Bolnica
         }
 
 
-        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //this.Close(); //Izmeni!!!!!!!!!!!!!!!!!!!!!!!!!
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             DodavanjeRecepta recept = new DodavanjeRecepta(izabran);
 
             recept.Show();
+
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeZdravstvenimKartonima.SerijalizacijaRecepata();
         }
     }
 }

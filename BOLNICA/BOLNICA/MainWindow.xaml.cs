@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,12 @@ namespace Bolnica
         {
             InitializeComponent();
             RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
+            RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             RukovanjeTerminima.DeserijalizacijaTermina();
-                RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
+            RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
+            RukovanjeZdravstvenimKartonima.DeserijalizacijaRecepata();
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)

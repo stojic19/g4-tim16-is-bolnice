@@ -97,7 +97,7 @@
     <Compile Include="DodavanjeProstora.xaml.cs">
       <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodavanjeRecepta.xaml.cs">
+    <Compile Include="Lekar\DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\GlavniProzorSekretar.xaml.cs">
@@ -112,10 +112,10 @@
     <Compile Include="IzmenaProstora.xaml.cs">
       <DependentUpon>IzmenaProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaTerminaLekar.xaml.cs">
+    <Compile Include="Lekar\IzmenaTerminaLekar.xaml.cs">
       <DependentUpon>IzmenaTerminaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KartonLekar.xaml.cs">
+    <Compile Include="Lekar\KartonLekar.xaml.cs">
       <DependentUpon>KartonLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Alergeni.cs" />
@@ -130,7 +130,7 @@
     <Compile Include="Sekretar\Obavestenja\ObavestenjaSekretar.xaml.cs">
       <DependentUpon>ObavestenjaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OtkazivanjeTerminaLekar.xaml.cs">
+    <Compile Include="Lekar\OtkazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="OtkazivanjeTerminaPacijent.xaml.cs">
@@ -214,7 +214,7 @@
     <Compile Include="ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZakazivanjeTerminaLekar.xaml.cs">
+    <Compile Include="Lekar\ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
     <Page Include="DodavanjeOpreme.xaml">
@@ -257,7 +257,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodavanjeRecepta.xaml">
+    <Page Include="Lekar\DodavanjeRecepta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -277,11 +277,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmenaTerminaLekar.xaml">
+    <Page Include="Lekar\IzmenaTerminaLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KartonLekar.xaml">
+    <Page Include="Lekar\KartonLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -301,7 +301,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OtkazivanjeTerminaLekar.xaml">
+    <Page Include="Lekar\OtkazivanjeTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -353,7 +353,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazTerminaLekara.xaml">
+    <Page Include="Lekar\PrikazTerminaLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -417,7 +417,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZakazivanjeTerminaLekar.xaml">
+    <Page Include="Lekar\ZakazivanjeTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -437,7 +437,7 @@
     <Compile Include="Model\VrsteNaloga.cs" />
     <Compile Include="Model\VrsteProstora.cs" />
     <Compile Include="Model\VrsteTermina.cs" />
-    <Compile Include="PrikazTerminaLekara.xaml.cs">
+    <Compile Include="Lekar\PrikazTerminaLekara.xaml.cs">
       <DependentUpon>PrikazTerminaLekara.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -467,10 +467,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Slike\Back.png" />
-    <Resource Include="Slike\menu.png" />
-    <Resource Include="Slike\srce-vece.png" />
-    <Resource Include="Slike\srce.png" />
+    <Resource Include="Lekar\LekarSlike\Back.png" />
+    <Resource Include="Lekar\LekarSlike\menu.png" />
+    <Resource Include="Lekar\LekarSlike\srce-vece.png" />
+    <Resource Include="Lekar\LekarSlike\srce.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\PacijentSlike\ankete.png" />
