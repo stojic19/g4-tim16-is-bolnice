@@ -191,7 +191,7 @@
                     <StackPanel Orientation="Horizontal" Grid.Row="4" Margin="25,5">
 
                         <Label Content="Datum:" Width="50" Height="27"/>
-                        <TextBox IsReadOnly="True" Width="226" Height="27" Name="DanasnjiDatum"/>
+                        <TextBox IsReadOnly="True" Width="226" Height="27" Name="DanasnjiDatum" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
                     </StackPanel>
                     

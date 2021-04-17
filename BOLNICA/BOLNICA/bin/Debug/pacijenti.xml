@@ -13,7 +13,6 @@
     <Pol>muski</Pol>
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>
-      <anamneza />
       <IDPacijenta>imanalog</IDPacijenta>
       <Alergeni>
         <Alergeni>
@@ -22,8 +21,21 @@
           <VremeZaPojavu>Vreme 1</VremeZaPojavu>
         </Alergeni>
       </Alergeni>
-      <Recepti />
-      <Anamneza />
+      <Recepti>
+        <Recept>
+          <IDRecepta>R0</IDRecepta>
+          <IDLekara>JelenaHrnjak</IDLekara>
+          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
+          <IDPacijenta>imanalog</IDPacijenta>
+          <Datum>17/04/2021</Datum>
+          <Lek>
+            <IDLeka>2</IDLeka>
+            <NazivLeka>L2</NazivLeka>
+            <Jacina>20mg</Jacina>
+          </Lek>
+        </Recept>
+      </Recepti>
+      <anamneza />
     </ZdravstveniKarton>
   </Pacijent>
   <Pacijent>
@@ -39,7 +51,6 @@
     <Pol>muski</Pol>
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>
-      <anamneza />
       <IDPacijenta>stojic19</IDPacijenta>
       <Alergeni>
         <Alergeni>
@@ -49,7 +60,7 @@
         </Alergeni>
       </Alergeni>
       <Recepti />
-      <Anamneza />
+      <anamneza />
     </ZdravstveniKarton>
   </Pacijent>
 </ArrayOfPacijent>

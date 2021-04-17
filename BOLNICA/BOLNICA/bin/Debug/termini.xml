@@ -26,11 +26,10 @@
       <Pol>muski</Pol>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <anamneza />
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
         <Recepti />
-        <Anamneza />
+        <anamneza />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
@@ -69,11 +68,10 @@
       <Pol>muski</Pol>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <anamneza />
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
         <Recepti />
-        <Anamneza />
+        <anamneza />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
@@ -112,7 +110,6 @@
       <Pol>muski</Pol>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <anamneza />
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni>
           <Alergeni>
@@ -122,7 +119,7 @@
           </Alergeni>
         </Alergeni>
         <Recepti />
-        <Anamneza />
+        <anamneza />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>

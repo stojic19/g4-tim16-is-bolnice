@@ -92,7 +92,7 @@ namespace Bolnica
 
             if (izabran != null)
             {
-                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme);
+                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme,0);
                 karton.Show();
                 this.Close();
             }

@@ -107,8 +107,7 @@ namespace Bolnica
                 polpol = Pol.muski;
             }
             Pacijent p = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polpol, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
-            p.ZdravstveniKarton = new ZdravstveniKarton(p.KorisnickoIme); //DODALA JELENA DA BI RADIO RECEPT
-            p.ZdravstveniKarton.Recepti = new List<Recept>();
+     
             RukovanjeNalozimaPacijenata.DodajNalog(p);
             this.Close();
         }

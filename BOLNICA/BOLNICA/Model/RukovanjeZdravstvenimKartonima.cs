@@ -99,33 +99,33 @@ namespace Bolnica.Model
         }
 
 
-        public static List<Recept> DeserijalizacijaRecepata()
-        {
-            if (File.ReadAllText("recepti.xml").Trim().Equals(""))
-            {
-                return recepti;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead("recepti.xml");
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
-                recepti = (List<Recept>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return recepti;
+        //public static List<Recept> DeserijalizacijaRecepata()
+        //{
+        //    if (File.ReadAllText("recepti.xml").Trim().Equals(""))
+        //    {
+        //        return recepti;
+        //    }
+        //    else
+        //    {
+        //        FileStream fileStream = File.OpenRead("recepti.xml");
+        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
+        //        recepti = (List<Recept>)xmlSerializer.Deserialize(fileStream);
+        //        fileStream.Close();
+        //        return recepti;
 
-            }
+        //    }
 
-        }
+        //}
 
 
-            public static void SerijalizacijaRecepata()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
-            TextWriter tw = new StreamWriter("recepti.xml");
-            xmlSerializer.Serialize(tw, recepti);
-            tw.Close();
+        //    public static void SerijalizacijaRecepata()
+        //{
+        //    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
+        //    TextWriter tw = new StreamWriter("recepti.xml");
+        //    xmlSerializer.Serialize(tw, recepti);
+        //    tw.Close();
 
-        }
+        //}
 
     }
 }

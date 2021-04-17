@@ -28,7 +28,7 @@ namespace Bolnica
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
-            RukovanjeZdravstvenimKartonima.DeserijalizacijaRecepata();
+            //RukovanjeZdravstvenimKartonima.DeserijalizacijaRecepata();
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Properties;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,10 @@ namespace Bolnica
 
             idRecepta.Text = RukovanjeZdravstvenimKartonima.generisiIDRecepta(izabran);
 
-            
+            DateTime datum = DateTime.Now;
+
+            DanasnjiDatum.Text = (datum.ToString("dd/MM/yyyy"));
+
             this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.inicijalniLekovi;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
@@ -58,7 +62,7 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-        KartonLekar kartonLekar = new KartonLekar(izabran);
+        KartonLekar kartonLekar = new KartonLekar(izabran,3);
         kartonLekar.Show();
         this.Close();
 
@@ -94,25 +98,50 @@ namespace Bolnica
 
             }
 
-            
-            Recept r = new Recept(idRecepta, idLekara, imeiprezime, idPacijenta, l);
+
+            Recept r = new Recept(idRecepta, idLekara, imeiprezime, idPacijenta, DanasnjiDatum.Text, l);
+            RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajRecept(r);
-            RukovanjeZdravstvenimKartonima.SerijalizacijaRecepata();
-            KartonLekar kl = new KartonLekar(izabran);
+            KartonLekar kl = new KartonLekar(izabran,3);
             kl.Show();
             this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //Izvestaj
         {
-            KartonLekar kl = new KartonLekar(izabran);
+            String idRecepta = this.idRecepta.Text;
+
+            String idLekara = "JelenaHrnjak";
+
+            String imeiprezime = RukovanjeTerminima.ImeiPrezime(idLekara);
+
+            String idPacijenta = izabran;
+
+            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
+
+            String sifraLeka = this.sifraLeka.Text;
+
+            Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(sifraLeka);
+
+
+            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+            Recept r = new Recept(idRecepta, idLekara, imeiprezime, idPacijenta, DanasnjiDatum.Text, l);
+            RukovanjeZdravstvenimKartonima.DodajRecept(r);
+            KartonLekar kl = new KartonLekar(izabran,3);
             kl.Show();
             this.Close();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e) //Odustani
         {
-            KartonLekar kl = new KartonLekar(izabran);
+            KartonLekar kl = new KartonLekar(izabran,3);
             kl.Show();
             this.Close();
 

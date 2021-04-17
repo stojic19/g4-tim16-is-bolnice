@@ -62,7 +62,7 @@
 
         <Grid Grid.Row="2">
 
-            <TabControl MinHeight="345" MinWidth="763" Margin="31,10,31,20" SelectedIndex="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TabControl x:Name="Tabovi" MinHeight="345" MinWidth="763" Margin="31,10,31,20" SelectedIndex="4" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                 <TabItem Header="Zdravstveni karton" FontStyle="Italic" IsSelected="True" FontSize="14">
 
