@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class PrikazOpreme : Window
+    public partial class PrikazOpreme : UserControl
     {
 
         public static ObservableCollection<Oprema> Oprema { get; set; }
@@ -28,12 +28,14 @@ namespace Bolnica
 
             this.DataContext = this;
 
-            Oprema = new ObservableCollection<Oprema>();
+            Oprema = new ObservableCollection<Oprema>(RukovanjeOpremom.DeserijalizacijaOpreme());
 
             foreach (Oprema o in RukovanjeOpremom.SvaOprema())
             {
                 Oprema.Add(o);
             }
+
+
 
         }
 
@@ -71,8 +73,8 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-               UklanjanjeOpreme uklanjanje = new UklanjanjeOpreme(izabranZaBrisanje.IdOpreme);
-               uklanjanje.Show();
+                UklanjanjeOpreme uklanjanje = new UklanjanjeOpreme(izabranZaBrisanje.IdOpreme);
+                uklanjanje.Show();
             }
             else
             {
@@ -80,23 +82,6 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-
-            Oprema izabran = (Oprema)dataGridOprema.SelectedItem;
-
-            if (izabran!= null)
-            {
-
-                RasporedOpreme raspored = new RasporedOpreme(izabran.IdOpreme);
-                raspored.Show();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite opremu ciji raspored zelite da vidite!");
-            }
-        }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -109,4 +94,3 @@ namespace Bolnica
         }
     }
 }
-

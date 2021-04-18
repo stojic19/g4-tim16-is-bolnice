@@ -8,8 +8,9 @@ namespace Model
 {
     public class RukovanjeProstorom
     {
-        private String imeFajla;
+        private static String imeFajla = "prostori.xml";
         public static List<Prostor> prostori = new List<Prostor>();
+        public static List<Oprema> oprema = new List<Oprema>();
 
         public static Prostor DodajProstor(Prostor p)
         {
@@ -25,6 +26,9 @@ namespace Model
                 return null;
             }
         }
+
+
+
         public static Boolean IzmeniProstor(String stari, String idProstora, int vrstaProstora, String Sprat, String Kvadratura, String BrojKreveta)
         {
             Prostor p = PretraziPoId(stari);
@@ -80,7 +84,7 @@ namespace Model
 
         public static Prostor PretraziPoId(String idProstora)
         {
-            foreach(Prostor p in prostori)
+            foreach (Prostor p in prostori)
             {
                 if (p.IdProstora.Equals(idProstora))
                 {
@@ -97,15 +101,21 @@ namespace Model
             return prostori;
         }
 
+        public static List<Oprema> SvaOpremaProstora()
+        {
+
+            return oprema;
+        }
+
         public static List<Prostor> DeserijalizacijaProstora()
         {
-            if (File.ReadAllText("termini.xml").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return prostori;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("prostori.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
                 prostori = (List<Prostor>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -118,7 +128,7 @@ namespace Model
         public static void SerijalizacijaProstora()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
-            TextWriter tw = new StreamWriter("prostori.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, prostori);
             tw.Close();
 

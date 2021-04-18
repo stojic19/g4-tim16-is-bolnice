@@ -40,9 +40,11 @@
                 HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke"/>
             <Button Grid.Column="1" Grid.Row="1" Content="Izmena prostora" Margin="21.6,33.4,20,32.2" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje prostora" Margin="21.6,32.8,22,32.8" VerticalContentAlignment="Center" 
+            <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje prostora" Margin="19.6,32.8,22,32.8" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
-            
+            <Button Grid.Row="3" Content="Raspored opreme" Margin="19.6,30.2,22,35.4" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke" Grid.Column="1"/>
+
 
 
         </Grid>

@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Model
@@ -11,7 +12,10 @@ namespace Model
         public int Sprat { get; set; }
         public float Kvadratura { get; set; }
         public int BrojKreveta { get; set; }
+
+        public static List<Oprema> Oprema { get; set; }
         public Prostor() { }
+
         public Prostor(string idProstora, VrsteProstora vrstaProstora)
         {
             IdProstora = idProstora;
@@ -25,6 +29,7 @@ namespace Model
             Sprat = sprat;
             Kvadratura = kvadratura;
             BrojKreveta = brojKreveta;
+            Oprema = new List<Oprema>();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

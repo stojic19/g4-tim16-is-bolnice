@@ -60,6 +60,7 @@ namespace Bolnica
 
             Oprema o = new Oprema(idOpreme, nazivOpreme, vrstaOpreme, kolicina);
             RukovanjeOpremom.DodajOpremu(o);
+            RukovanjeOpremom.SerijalizacijaOpreme();
 
             this.Close();
 

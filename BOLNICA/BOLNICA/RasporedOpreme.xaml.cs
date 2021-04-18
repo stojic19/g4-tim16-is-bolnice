@@ -19,45 +19,50 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for RasporedOpreme.xaml
     /// </summary>
-    public partial class RasporedOpreme : Window
+    public partial class RasporedOpreme : UserControl
     {
-        public static ObservableCollection<Prostor> Prostori { get; set; }
-        public RasporedOpreme(string idOpreme)
+        public static ObservableCollection<Oprema> Oprema { get; set; }
+        public static string IdProstorije { get; set; }
+        public RasporedOpreme(String idOpreme)
         {
             InitializeComponent();
 
             this.DataContext = this;
 
-            Prostori = new ObservableCollection<Prostor>();
+            Oprema = new ObservableCollection<Oprema>();
 
-            foreach (Prostor p in RukovanjeProstorom.SviProstori())
+            foreach (Oprema o in RukovanjeProstorom.SvaOpremaProstora())
             {
-                Prostori.Add(p);
+                Prostor.Oprema.Add(o);
             }
+
+            dataGridRasporedOpreme.ItemsSource = Oprema;
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+
         {
 
-           /* Prostor izabranZaMenjanje = (Prostor)dataGridProstori.SelectedItem;
-
-            if (izabranZaMenjanje != null)
-            {
-
-                IzmenaProstora izmena = new IzmenaProstora(izabranZaMenjanje.IdProstora);
-                izmena.Show();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite prostor koji želite da izmenite!");
-            }*/
+            DodajOpremuProstoru dodavanje = new DodajOpremuProstoru();
+            dodavanje.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            PrikazOpreme po = new PrikazOpreme();
-            po.Show();
-            this.Close();
+            PremjestanjeOpreme premjestanje = new PremjestanjeOpreme();
+            premjestanje.Show();
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+
+        {
+
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new PrikazProstora();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

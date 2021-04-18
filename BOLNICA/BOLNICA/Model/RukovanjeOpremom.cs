@@ -8,22 +8,38 @@ namespace Model
 {
     public class RukovanjeOpremom
     {
-        private String imeFajla;
+        private static String imeFajla = "oprema.xml";
         public static List<Oprema> oprema = new List<Oprema>();
 
-        public static Oprema DodajOpremu(Oprema o)
+        public static bool DodajOpremu(Oprema o)
         {
-            oprema.Add(o);
-            PrikazOpreme.Oprema.Add(o);
 
             if (oprema.Contains(o))
             {
-                return o;
+                return false;
+            }
+
+            oprema.Add(o);
+            PrikazOpreme.Oprema.Add(o);
+            return true;
+        }
+
+        public static void DodajOpremuProstoriji(Oprema o)
+        {
+            Oprema o1 = PretraziPoId(o.IdOpreme);
+
+            if (o1 == null)
+            {
+                RasporedOpreme.Oprema.Add(o);
+                //return o1;
             }
             else
             {
-                return null;
+
+                o1.Kolicina += o.Kolicina;
+                //return null;
             }
+
         }
         public static Boolean IzmeniOpremu(String stari, String idOpreme, String naziv, int vrstaOpreme, String kolicina)
         {
@@ -94,14 +110,14 @@ namespace Model
 
         public static List<Oprema> DeserijalizacijaOpreme()
         {
-            if (File.ReadAllText("oprema.xml").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return oprema;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("oprema.xml");
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
+                FileStream fileStream = File.OpenRead(imeFajla);
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Oprema>));
                 oprema = (List<Oprema>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
                 return oprema;
@@ -113,7 +129,7 @@ namespace Model
         public static void SerijalizacijaOpreme()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Oprema>));
-            TextWriter tw = new StreamWriter("oprema.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, oprema);
             tw.Close();
 

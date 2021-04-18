@@ -19,18 +19,23 @@ namespace Bolnica
     /// </summary>
     public partial class UpravnikGlavniProzor : Window
     {
-        public UpravnikGlavniProzor()
+        private static UpravnikGlavniProzor instance = null;
+
+        public static UpravnikGlavniProzor getInstance()
+        {
+            if (instance == null)
+                instance = new UpravnikGlavniProzor();
+            return instance;
+        }
+        private UpravnikGlavniProzor()
         {
             InitializeComponent();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            /*MainWindow mw = new MainWindow();
+            MainWindow mw = new MainWindow();
             mw.Show();
-            this.Close();*/
-            Login login = new Login();
-            login.Show();
             this.Close();
         }
 
@@ -46,8 +51,11 @@ namespace Bolnica
 
         private void Oprema_Click(object sender, RoutedEventArgs e)
         {
-            PrikazOpreme po = new PrikazOpreme();
-            po.Show();
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new PrikazOpreme();
+            MainPanel.Children.Add(usc);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

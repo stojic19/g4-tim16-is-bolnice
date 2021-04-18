@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfOprema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfOprema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Oprema>
+    <IdOpreme>s1</IdOpreme>
+    <NazivOpreme>krevet</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>12</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>d1</IdOpreme>
+    <NazivOpreme>igla</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>200</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>d2</IdOpreme>
+    <NazivOpreme>gaza</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>250</Kolicina>
+  </Oprema>
+</ArrayOfOprema>

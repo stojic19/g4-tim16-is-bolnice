@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodajOpremuProstoru.xaml.cs">
+      <DependentUpon>DodajOpremuProstoru.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeOpreme.xaml.cs">
       <DependentUpon>DodavanjeOpreme.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,9 @@
     <Compile Include="Model\VrsteOpreme.cs" />
     <Compile Include="PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PremjestanjeOpreme.xaml.cs">
+      <DependentUpon>PremjestanjeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazDatumaZaPomeranjeLekar.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjeLekar.xaml</DependentUpon>
@@ -233,6 +239,10 @@
     <Compile Include="LekarFolder\ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
+    <Page Include="DodajOpremuProstoru.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodavanjeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -258,6 +268,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PomeranjeSaPrioritetom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremjestanjeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

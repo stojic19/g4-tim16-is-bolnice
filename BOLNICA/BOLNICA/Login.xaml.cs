@@ -73,7 +73,7 @@ namespace Bolnica
                 {
                     if(u.Lozinka.Equals(password.Password))
                     {
-                        UpravnikGlavniProzor ugp = new UpravnikGlavniProzor();
+                        UpravnikGlavniProzor ugp = UpravnikGlavniProzor.getInstance();
                         ugp.Show();
                         this.Close();
                         founded = true;

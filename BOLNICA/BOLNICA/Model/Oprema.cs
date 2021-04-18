@@ -20,6 +20,13 @@ namespace Model
             Kolicina = kolicina;
         }
 
+        public Oprema(String idOpreme, String nazivOpreme, int kolicina)
+        {
+            IdOpreme = idOpreme;
+            NazivOpreme = nazivOpreme;
+            Kolicina = kolicina;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {

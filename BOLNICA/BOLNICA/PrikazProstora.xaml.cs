@@ -80,6 +80,25 @@ namespace Bolnica
             }
         }
 
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+
+            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
+
+            if (izabran != null)
+            {
+
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new RasporedOpreme(izabran.IdProstora);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite prostor u kojem zelite da vidite raspored opreme!");
+            }
+        }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
