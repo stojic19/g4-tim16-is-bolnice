@@ -29,8 +29,11 @@ namespace Bolnica
         {
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            MainWindow mw = new MainWindow();
+            /*MainWindow mw = new MainWindow();
             mw.Show();
+            this.Close();*/
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 

@@ -26,8 +26,11 @@ namespace Bolnica
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+            /*MainWindow mw = new MainWindow();
             mw.Show();
+            this.Close();*/
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 

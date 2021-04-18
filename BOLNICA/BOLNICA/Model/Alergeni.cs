@@ -13,8 +13,6 @@ namespace Model
         public String IdAlergena { get; set; }
         public String OpisReakcije { get; set; }
         public String VremeZaPojavu { get; set; }
-
-        public Lek lek;
         public Alergeni() { }
         public Alergeni(string idAlergena, string opisReakcije, string vremeZaPojavu)
         {

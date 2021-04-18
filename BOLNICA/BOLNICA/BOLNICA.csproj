@@ -76,6 +76,9 @@
     <Compile Include="LekarFolder\NovaAnamneza.xaml.cs">
       <DependentUpon>NovaAnamneza.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Oprema.cs" />
     <Compile Include="Model\RukovanjeOpremom.cs" />
     <Compile Include="Model\Terapija.cs" />
@@ -98,19 +101,19 @@
     <Compile Include="RasporedOpreme.xaml.cs">
       <DependentUpon>RasporedOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Alergeni\AlergeniSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Alergeni\AlergeniSekretar.xaml.cs">
       <DependentUpon>AlergeniSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Alergeni\DodavanjeAlergena.xaml.cs">
+    <Compile Include="SekretarFolder\Alergeni\DodavanjeAlergena.xaml.cs">
       <DependentUpon>DodavanjeAlergena.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Alergeni\IzmenaAlergena.xaml.cs">
+    <Compile Include="SekretarFolder\Alergeni\IzmenaAlergena.xaml.cs">
       <DependentUpon>IzmenaAlergena.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Nalozi\DodavanjeNalogaSekretar.xaml.cs">
       <DependentUpon>DodavanjeNalogaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Obavestenja\DodavanjeObavestenja.xaml.cs">
+    <Compile Include="SekretarFolder\Obavestenja\DodavanjeObavestenja.xaml.cs">
       <DependentUpon>DodavanjeObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodavanjeProstora.xaml.cs">
@@ -119,13 +122,13 @@
     <Compile Include="LekarFolder\DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\GlavniProzorSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\GlavniProzorSekretar.xaml.cs">
       <DependentUpon>GlavniProzorSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Nalozi\IzmenaNalogaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Nalozi\IzmenaNalogaSekretar.xaml.cs">
       <DependentUpon>IzmenaNalogaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Obavestenja\IzmenaObavestenja.xaml.cs">
+    <Compile Include="SekretarFolder\Obavestenja\IzmenaObavestenja.xaml.cs">
       <DependentUpon>IzmenaObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmenaProstora.xaml.cs">
@@ -143,7 +146,7 @@
     <Compile Include="Model\RukovanjeObavestenjimaSekratar.cs" />
     <Compile Include="Model\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
-    <Compile Include="Sekretar\Obavestenja\ObavestenjaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml.cs">
       <DependentUpon>ObavestenjaSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarFolder\OtkazivanjeTerminaLekar.xaml.cs">
@@ -164,7 +167,7 @@
     <Compile Include="PrikazDatumaPacijentKodIzabranog.xaml.cs">
       <DependentUpon>PrikazDatumaPacijentKodIzabranog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Nalozi\PrikazNalogaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Nalozi\PrikazNalogaSekretar.xaml.cs">
       <DependentUpon>PrikazNalogaSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazObavestenjaPacijent.xaml.cs">
@@ -185,31 +188,31 @@
     <Compile Include="PrikazVremenaZaPomeranjePacijent.xaml.cs">
       <DependentUpon>PrikazVremenaZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.xaml.cs">
       <DependentUpon>UklanjanjeNalogaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Obavestenja\UklanjanjeObavestenja.xaml.cs">
+    <Compile Include="SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml.cs">
       <DependentUpon>UklanjanjeObavestenja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Alergeni\UklanjanjeAlergena.xaml.cs">
+    <Compile Include="SekretarFolder\Alergeni\UklanjanjeAlergena.xaml.cs">
       <DependentUpon>UklanjanjeAlergena.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\OtkazivanjePregledaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\OtkazivanjePregledaSekretar.xaml.cs">
       <DependentUpon>OtkazivanjePregledaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\PomeranjePregledaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\PomeranjePregledaSekretar.xaml.cs">
       <DependentUpon>PomeranjePregledaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\PomeranjePregledaTerminiSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\PomeranjePregledaTerminiSekretar.xaml.cs">
       <DependentUpon>PomeranjePregledaTerminiSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\TerminiPregledaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\TerminiPregledaSekretar.xaml.cs">
       <DependentUpon>TerminiPregledaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\ZakazivanjePregledaSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\ZakazivanjePregledaSekretar.xaml.cs">
       <DependentUpon>ZakazivanjePregledaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs">
+    <Compile Include="SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs">
       <DependentUpon>ZakazivanjePregledaTerminiSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="UklanjanjeOpreme.xaml.cs">
@@ -243,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PomeranjeSaPrioritetom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,23 +274,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Alergeni\AlergeniSekretar.xaml">
+    <Page Include="SekretarFolder\Alergeni\AlergeniSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Alergeni\DodavanjeAlergena.xaml">
+    <Page Include="SekretarFolder\Alergeni\DodavanjeAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Alergeni\IzmenaAlergena.xaml">
+    <Page Include="SekretarFolder\Alergeni\IzmenaAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml">
+    <Page Include="SekretarFolder\Nalozi\DodavanjeNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Obavestenja\DodavanjeObavestenja.xaml">
+    <Page Include="SekretarFolder\Obavestenja\DodavanjeObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -295,15 +302,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\GlavniProzorSekretar.xaml">
+    <Page Include="SekretarFolder\GlavniProzorSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Nalozi\IzmenaNalogaSekretar.xaml">
+    <Page Include="SekretarFolder\Nalozi\IzmenaNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Obavestenja\IzmenaObavestenja.xaml">
+    <Page Include="SekretarFolder\Obavestenja\IzmenaObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -327,7 +334,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Sekretar\Obavestenja\ObavestenjaSekretar.xaml">
+    <Page Include="SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -355,7 +362,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Nalozi\PrikazNalogaSekretar.xaml">
+    <Page Include="SekretarFolder\Nalozi\PrikazNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -387,39 +394,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml">
+    <Page Include="SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Obavestenja\UklanjanjeObavestenja.xaml">
+    <Page Include="SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Alergeni\UklanjanjeAlergena.xaml">
+    <Page Include="SekretarFolder\Alergeni\UklanjanjeAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Pregled\OtkazivanjePregledaSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\OtkazivanjePregledaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Pregled\PomeranjePregledaSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\PomeranjePregledaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Pregled\PomeranjePregledaTerminiSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\PomeranjePregledaTerminiSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Pregled\TerminiPregledaSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\TerminiPregledaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Pregled\ZakazivanjePregledaSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\ZakazivanjePregledaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml">
+    <Page Include="SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

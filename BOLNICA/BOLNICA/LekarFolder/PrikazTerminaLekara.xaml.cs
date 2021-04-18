@@ -76,8 +76,11 @@ namespace Bolnica
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
-            MainWindow glavniProzor = new MainWindow();
-            glavniProzor.Show();
+            /*MainWindow glavniProzor = new MainWindow();
+           glavniProzor.Show();
+           this.Close();*/
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 

@@ -22,13 +22,16 @@ namespace Bolnica
         public MainWindow()
         {
             InitializeComponent();
-            RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
+            /*RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeNalozimaPacijenata.Ucitaj();
+            RukovanjeNalozimaPacijenata.Ucitaj();*/
             //RukovanjeZdravstvenimKartonima.DeserijalizacijaRecepata();
+            Login l = new Login();
+            l.Show();
+            this.Close();
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -64,10 +67,11 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            /*
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjeNalozimaPacijenata.Sacuvaj();*/
         }
     }
 }
