@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="PrikazDatumaPacijentKodIzabranog" Height="700" Width="350" WindowStartupLocation="CenterScreen">
     <StackPanel >
-        <Label>TERMINI KOD LEKARA:</Label>
+        <Label Margin="17,0,0,0" FontFamily="Times New Roman" FontSize="15">Lista termina kod izabranog lekara</Label>
         <Label Name="NaslovTabele"></Label>
-        <ListBox x:Name="slobodniDatumiLista" SelectionMode="Single" Height="600"    >
+        <ListBox x:Name="slobodniDatumiLista" SelectionMode="Single" Height="450" Width="300"   >
 
             <ListBox.ItemTemplate  >
                 <DataTemplate>
@@ -17,7 +17,7 @@
 
 
                     <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel  Margin="10"  Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <StackPanel  Margin="10"  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
 
 
@@ -43,7 +43,18 @@
 
 
         </ListBox>
-        <Button Click="Button_Click">Izaberi datum</Button>
+
+        <Button Click="Button_Click" Height="25" Margin="22,5" Background="#FF31577E">
+            <Run Foreground="AntiqueWhite">IZABERI DATUM</Run>
+        </Button>
+
+        <Grid Margin="00 50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="/Slike/PacijentSlike/POTVRDI.png" Margin="0,-51,0,-0.2" />
+        </Grid>
 
     </StackPanel>
 </Window>

@@ -67,7 +67,11 @@ namespace Bolnica
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
 
+            usc = new PrikazTerapijePacijent();
+            MainPanel.Children.Add(usc);
         }
 
         private void Karton_Click(object sender, RoutedEventArgs e)

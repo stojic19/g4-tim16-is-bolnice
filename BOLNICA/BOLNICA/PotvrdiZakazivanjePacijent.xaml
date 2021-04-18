@@ -6,22 +6,35 @@
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
         Title="PotvrdiZakazivanjePacijent" Height="700" Width="350" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
+    <Grid Background="White">
         <StackPanel Margin="20 100">
-            <Label>Lekar</Label>
+            <Label>LEKAR</Label>
 
-            <TextBox x:Name="TextLekar"  AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+            <TextBox Height="25" x:Name="TextLekar"  AcceptsReturn="True" TextWrapping="Wrap" Margin="5,0" IsReadOnly="True"></TextBox>
             <!--<Label>Pacijent</Label>
 
             <TextBox Name="TextPacijent" IsReadOnly="True"></TextBox>
             -->
-            <Label>Datum</Label>
-            <TextBox Name="TextDatum" ></TextBox>
-            <Label>Vreme</Label>
-            <TextBox Name="TextVreme" Margin="00 00 00 30"></TextBox>
+            <Label>DATUM</Label>
+            <TextBox Height="25" Name="TextDatum" Margin="5,0"  IsReadOnly="True"></TextBox>
+            <Label>VREME</Label>
+            <TextBox Height="26" Name="TextVreme" Margin="5,0,5,30" IsReadOnly="True"></TextBox>
 
-            <Button Click="Button_Click">Potvrdi</Button>
-            <Button Click="Button_Click_1">Odustani</Button>
+            <Button Click="Button_Click" Height="25" Margin="5" Background="#FF31577E">
+                <Run Foreground="AntiqueWhite">POTVRDI</Run>
+            </Button>
+            <Button Click="Button_Click_1" Height="25" Margin="5" Background="#FF31577E">
+                <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+            </Button>
+
+            <Grid Margin="00 50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="1" Source="/Slike/PacijentSlike/POTVRDI.png" />
+            </Grid>
+
 
         </StackPanel>
     </Grid>

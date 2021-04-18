@@ -80,8 +80,20 @@
     <Compile Include="Model\RukovanjeOpremom.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\VrsteOpreme.cs" />
+    <Compile Include="PomeranjeSaPrioritetom.xaml.cs">
+      <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazDatumaZaPomeranjeLekar.xaml.cs">
+      <DependentUpon>PrikazDatumaZaPomeranjeLekar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazDatumaZaPomeranjePrioritet.xaml.cs">
+      <DependentUpon>PrikazDatumaZaPomeranjePrioritet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazTerapijePacijent.xaml.cs">
+      <DependentUpon>PrikazTerapijePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="RasporedOpreme.xaml.cs">
       <DependentUpon>RasporedOpreme.xaml</DependentUpon>
@@ -143,9 +155,6 @@
     <Compile Include="PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PomeranjeTerminaPacijent.xaml.cs">
-      <DependentUpon>PomeranjeTerminaPacijent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PotvrdiPomeranjePacijent.xaml.cs">
       <DependentUpon>PotvrdiPomeranjePacijent.xaml</DependentUpon>
     </Compile>
@@ -154,9 +163,6 @@
     </Compile>
     <Compile Include="PrikazDatumaPacijentKodIzabranog.xaml.cs">
       <DependentUpon>PrikazDatumaPacijentKodIzabranog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PrikaziDatumeZaPomeranjePacijent.xaml.cs">
-      <DependentUpon>PrikaziDatumeZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\Nalozi\PrikazNalogaSekretar.xaml.cs">
       <DependentUpon>PrikazNalogaSekretar.xaml</DependentUpon>
@@ -237,7 +243,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PomeranjeSaPrioritetom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazDatumaZaPomeranjeLekar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazDatumaZaPomeranjePrioritet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrikazOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazTerapijePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,10 +343,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PomeranjeTerminaPacijent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PotvrdiPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -334,10 +352,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazDatumaPacijentKodIzabranog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PrikaziDatumeZaPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -496,6 +510,18 @@
     <Resource Include="Slike\PacijentSlike\Terapija.png" />
     <Resource Include="Slike\PacijentSlike\zakazivanje.png" />
     <Resource Include="Slike\PacijentSlike\zvono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\POTVRDI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\terapija2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\IMG_4557.jpeg" />
+    <Resource Include="Slike\PacijentSlike\IMG_4560.jpeg" />
+    <Resource Include="Slike\PacijentSlike\IMG_4561.jpeg" />
+    <Resource Include="Slike\PacijentSlike\IMG_4563.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

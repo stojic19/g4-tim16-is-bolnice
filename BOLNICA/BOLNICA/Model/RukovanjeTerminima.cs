@@ -48,23 +48,24 @@ namespace Model
             slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "09:30", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "11:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T14", VrsteTermina.pregled, "08:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "09:00", 30, "19/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T20", VrsteTermina.pregled, "19:00", 30, "19/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T21", VrsteTermina.pregled, "11:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T22", VrsteTermina.pregled, "08:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T23", VrsteTermina.pregled, "15:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T31", VrsteTermina.pregled, "09:00", 30, "04/06/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
 
-
-            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "16/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "16/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
             slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
             slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "13/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "15/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "15/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "11/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "14/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
             slobodniTermini.Add(new Termin("T27", VrsteTermina.pregled, "09:00", 30, "12/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
             slobodniTermini.Add(new Termin("T28", VrsteTermina.pregled, "11:00", 30, "01/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
             slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
         }
         public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
         {

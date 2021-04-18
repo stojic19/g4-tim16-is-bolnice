@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
         Title="PrikazVremenaTerminaPacijent" Height="700" Width="350" WindowStartupLocation="CenterScreen">
-    <StackPanel Background="LightBlue">
-        <Label>TERMINI ZA DATUM:</Label>
+    <StackPanel>
+        <Label FontFamily="Times New Roman" FontSize="15" Margin="17,0,0,0">Lista slobodnih termina:</Label>
 
-        <ListBox x:Name="slobodiTerminiVremenaLista" SelectionMode="Single" Height="600"   >
+        <ListBox x:Name="slobodiTerminiVremenaLista" SelectionMode="Single" Height="450" Width="300"    >
 
             <ListBox.ItemTemplate >
                 <DataTemplate>
 
                     <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel  Margin="10"  Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <StackPanel  Margin="10"  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
 
                             <TextBlock   Text="{Binding PocetnoVreme}"/>
@@ -27,6 +27,19 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Click="Button_Click">Izaberi termin</Button>
+
+
+        <Button Click="Button_Click" Height="25" Margin="22,5" Background="#FF31577E">
+            <Run Foreground="AntiqueWhite">IZABERI TERMIN</Run>
+        </Button>
+
+        <Grid Margin="00 50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="/Slike/PacijentSlike/POTVRDI.png" Margin="0,-48,0,-0.2" />
+        </Grid>
+
     </StackPanel>
 </Window>

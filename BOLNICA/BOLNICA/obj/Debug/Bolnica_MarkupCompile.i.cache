@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
+C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\
 Bolnica
 none
 false
 DEBUG;TRACE
-D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
-50783299833
+C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\App.xaml
+52-262615194
 
-821757477179
-16-847709665
-DodavanjeOpreme.xaml;IzmenaOpreme.xaml;LekarFolder\KartonLekar.xaml;LekarFolder\NovaAnamneza.xaml;PrikazOpreme.xaml;RasporedOpreme.xaml;Sekretar\Alergeni\AlergeniSekretar.xaml;Sekretar\Alergeni\DodavanjeAlergena.xaml;Sekretar\Alergeni\IzmenaAlergena.xaml;Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml;Sekretar\Obavestenja\DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;LekarFolder\DodavanjeRecepta.xaml;Sekretar\GlavniProzorSekretar.xaml;Sekretar\Nalozi\IzmenaNalogaSekretar.xaml;Sekretar\Obavestenja\IzmenaObavestenja.xaml;IzmenaProstora.xaml;LekarFolder\IzmenaTerminaLekar.xaml;MainWindow.xaml;Sekretar\Obavestenja\ObavestenjaSekretar.xaml;LekarFolder\OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PacijentGlavniProzor.xaml;PomeranjeTerminaPacijent.xaml;PotvrdiPomeranjePacijent.xaml;PotvrdiZakazivanjePacijent.xaml;PrikazDatumaPacijentKodIzabranog.xaml;PrikaziDatumeZaPomeranjePacijent.xaml;Sekretar\Nalozi\PrikazNalogaSekretar.xaml;PrikazObavestenjaPacijent.xaml;PrikazProstora.xaml;PrikazRasporedaPacijent.xaml;PrikazSlobodnihDatumaPacijent.xaml;LekarFolder\PrikazTerminaLekara.xaml;PrikazVremenaTerminaPacijent.xaml;PrikazVremenaZaPomeranjePacijent.xaml;Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml;Sekretar\Obavestenja\UklanjanjeObavestenja.xaml;Sekretar\Alergeni\UklanjanjeAlergena.xaml;Sekretar\Pregled\OtkazivanjePregledaSekretar.xaml;Sekretar\Pregled\PomeranjePregledaSekretar.xaml;Sekretar\Pregled\PomeranjePregledaTerminiSekretar.xaml;Sekretar\Pregled\TerminiPregledaSekretar.xaml;Sekretar\Pregled\ZakazivanjePregledaSekretar.xaml;Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml;UklanjanjeOpreme.xaml;UklanjanjeProstora.xaml;UpravnikGlavniProzor.xaml;ZakazivanjeSaPrioritetomPacijent.xaml;LekarFolder\ZakazivanjeTerminaLekar.xaml;
+84-1120120275
+16-642261029
+DodavanjeOpreme.xaml;IzmenaOpreme.xaml;LekarFolder\KartonLekar.xaml;LekarFolder\NovaAnamneza.xaml;PomeranjeSaPrioritetom.xaml;PrikazDatumaZaPomeranjeLekar.xaml;PrikazDatumaZaPomeranjePrioritet.xaml;PrikazOpreme.xaml;PrikazTerapijePacijent.xaml;RasporedOpreme.xaml;Sekretar\Alergeni\AlergeniSekretar.xaml;Sekretar\Alergeni\DodavanjeAlergena.xaml;Sekretar\Alergeni\IzmenaAlergena.xaml;Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml;Sekretar\Obavestenja\DodavanjeObavestenja.xaml;DodavanjeProstora.xaml;LekarFolder\DodavanjeRecepta.xaml;Sekretar\GlavniProzorSekretar.xaml;Sekretar\Nalozi\IzmenaNalogaSekretar.xaml;Sekretar\Obavestenja\IzmenaObavestenja.xaml;IzmenaProstora.xaml;LekarFolder\IzmenaTerminaLekar.xaml;MainWindow.xaml;Sekretar\Obavestenja\ObavestenjaSekretar.xaml;LekarFolder\OtkazivanjeTerminaLekar.xaml;OtkazivanjeTerminaPacijent.xaml;PacijentGlavniProzor.xaml;PotvrdiPomeranjePacijent.xaml;PotvrdiZakazivanjePacijent.xaml;PrikazDatumaPacijentKodIzabranog.xaml;Sekretar\Nalozi\PrikazNalogaSekretar.xaml;PrikazObavestenjaPacijent.xaml;PrikazProstora.xaml;PrikazRasporedaPacijent.xaml;PrikazSlobodnihDatumaPacijent.xaml;LekarFolder\PrikazTerminaLekara.xaml;PrikazVremenaTerminaPacijent.xaml;PrikazVremenaZaPomeranjePacijent.xaml;Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml;Sekretar\Obavestenja\UklanjanjeObavestenja.xaml;Sekretar\Alergeni\UklanjanjeAlergena.xaml;Sekretar\Pregled\OtkazivanjePregledaSekretar.xaml;Sekretar\Pregled\PomeranjePregledaSekretar.xaml;Sekretar\Pregled\PomeranjePregledaTerminiSekretar.xaml;Sekretar\Pregled\TerminiPregledaSekretar.xaml;Sekretar\Pregled\ZakazivanjePregledaSekretar.xaml;Sekretar\Pregled\ZakazivanjePregledaTerminiSekretar.xaml;UklanjanjeOpreme.xaml;UklanjanjeProstora.xaml;UpravnikGlavniProzor.xaml;ZakazivanjeSaPrioritetomPacijent.xaml;LekarFolder\ZakazivanjeTerminaLekar.xaml;
 
-False
+True
 

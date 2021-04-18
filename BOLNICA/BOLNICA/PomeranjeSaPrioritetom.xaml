@@ -1,0 +1,39 @@
+﻿<Window x:Class="Bolnica.PomeranjeSaPrioritetom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="PomeranjeSaPrioritetom" Height="700" Width="350" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="30 100">
+        <TextBlock Height="25" >LEKAR</TextBlock>
+        <TextBox Height="25" Name="lekar"></TextBox>
+        <TextBlock Height="25">DATUM</TextBlock>
+        <TextBox Height="25" x:Name="datum" IsReadOnly="True" ></TextBox>
+        <TextBlock  Height="25" >VREME</TextBlock>
+        <TextBox  x:Name="vreme" IsReadOnly="True"></TextBox>
+        <TextBlock Height="25">PRIORITET</TextBlock>
+        <ComboBox Height="25" x:Name="prioritet">
+            <ComboBoxItem>lekar</ComboBoxItem>
+            <ComboBoxItem>datum</ComboBoxItem>
+        </ComboBox>
+
+
+        <Button x:Name="nastavi" Click="nastavi_Click"  Background="#FF31577E" Height="25" Margin="0 20">
+            <Run Foreground="AntiqueWhite">NASTAVI</Run>
+        </Button>
+        <Button x:Name="odustani" Click="odustani_Click"  Background="#FF31577E" Height="25">
+            <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+        </Button>
+
+
+        <Grid Margin="00 50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Slike/PacijentSlike/POTVRDI.png" Margin="142,10,-0.6,-58.4" Grid.ColumnSpan="2" />
+        </Grid>
+    </StackPanel>
+</Window>

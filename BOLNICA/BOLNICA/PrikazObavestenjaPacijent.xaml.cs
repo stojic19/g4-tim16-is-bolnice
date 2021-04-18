@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,21 @@ namespace Bolnica
     /// </summary>
     public partial class PrikazObavestenjaPacijent : UserControl
     {
+        public static ObservableCollection<Obavestenje> obavestenjaPacijenta { get; set; }
         public PrikazObavestenjaPacijent()
         {
             InitializeComponent();
+            obavestenjaPacijenta = new ObservableCollection<Obavestenje>();
+
+            List<Obavestenje> datumi = RukovanjeObavestenjimaSekratar.SvaObavestenja().OrderByDescending(user => user.Datum).ToList();
+
+            foreach (Obavestenje obavestenje in datumi)
+            {
+                obavestenjaPacijenta.Add(obavestenje);
+            }
+
+            obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;
         }
+
     }
 }

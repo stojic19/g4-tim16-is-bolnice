@@ -5,8 +5,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="700" d:DesignWidth="350">
+    <StackPanel>
+
+        <ListBox x:Name="obavestenjaPacijentaLista" SelectionMode="Single" Height="700" Width="350"  >
+
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+
+
+
+                    <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid  Margin="10"  Width="260" Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"  Text="{Binding Datum}" />
+                            <TextBlock Grid.Row="1" Text="{Binding Naslov}" />
+                            <TextBlock Grid.Row="2" Text="{Binding Tekst }" />
+
+
+
+
+                        </Grid>
+
+                    </WrapPanel>
+
+
+
+
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+
+
+        </ListBox>
+
+
+    </StackPanel>
 </UserControl>

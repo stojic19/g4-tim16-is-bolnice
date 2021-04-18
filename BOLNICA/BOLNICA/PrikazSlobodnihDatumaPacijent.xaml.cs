@@ -38,8 +38,8 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
-           // pr.Show();
+            PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
+            pr.Show();
             this.Close();
         }
     }
