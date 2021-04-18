@@ -98,6 +98,32 @@ namespace Bolnica.Model
             }
         }
 
+        public static List<Terapija> dobaviSveTerapijePacijenta(String idPacijenta)
+        {
+            List<Terapija> pomocna = new List<Terapija>();
+
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
+
+            foreach(Anamneza a in p.ZdravstveniKarton.Anamneze)
+            {
+                if (a.IdPacijenta.Equals(p.KorisnickoIme))
+                {
+                    foreach(Terapija t in a.Terapije)
+                    {
+
+                        pomocna.Add(t);
+                    }
+
+
+                }
+
+
+            }
+
+
+            return pomocna;
+        }
+
         public static void DodajAnamnezu(Anamneza a)
         {
             foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)

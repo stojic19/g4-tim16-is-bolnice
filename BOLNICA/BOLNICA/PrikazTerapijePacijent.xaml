@@ -40,9 +40,9 @@
 
 
                                 <TextBlock  Grid.Column="0" Grid.Row="0" Text="Naziv " />
-                                <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding Lek.NazivLeka}"/>
+                                <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding PreporucenLek.NazivLeka}"/>
                                 <TextBlock  Grid.Column="0" Grid.Row="1" Text="Jačina " />
-                                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding Lek.Jacina}"/>
+                                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding PreporucenLek.Jacina}"/>
 
 
                                 <TextBlock Grid.Column="0" Grid.Row="2" Text="Količina: "/>

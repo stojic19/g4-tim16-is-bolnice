@@ -84,4 +84,46 @@
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
+  <Termin>
+    <IdTermina>T17</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>11:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>30/04/2021</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>wewesv</Ime>
+      <Prezime>vwve</Prezime>
+      <DatumRodjenja>2021-04-13T00:00:00</DatumRodjenja>
+      <Jmbg>vwevvwvew</Jmbg>
+      <AdresaStanovanja>ewvvw</AdresaStanovanja>
+      <KontaktTelefon>ewvwev</KontaktTelefon>
+      <Email>ewvwevev</Email>
+      <KorisnickoIme>probni</KorisnickoIme>
+      <Lozinka>probniprobni</Lozinka>
+      <Pol>zenski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>probni</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
+      </ZdravstveniKarton>
+    </Pacijent>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
 </ArrayOfTermin>

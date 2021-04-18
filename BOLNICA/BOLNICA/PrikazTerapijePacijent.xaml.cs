@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Bolnica.Model;
+using Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,18 @@ namespace Bolnica
     /// </summary>
     public partial class PrikazTerapijePacijent : UserControl
     {
+        public static ObservableCollection<Terapija> sveTerapijePacijenta { get; set; }
         public PrikazTerapijePacijent()
         {
             InitializeComponent();
+            sveTerapijePacijenta = new ObservableCollection<Terapija>();
+
+            foreach (Terapija t in RukovanjeZdravstvenimKartonima.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
+            {
+                sveTerapijePacijenta.Add(t);
+            }
+
+            LekoviLista.ItemsSource = sveTerapijePacijenta;
         }
 
         private void ukljuci_Click(object sender, RoutedEventArgs e)
