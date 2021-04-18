@@ -22,31 +22,32 @@ namespace Bolnica
     {
 
         public static ObservableCollection<Termin> Termini { get; set; }
+        public String korisnik = null;
 
-        public PrikazTerminaLekara()
+        public PrikazTerminaLekara(String korIme)
         {
             InitializeComponent();
-            RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
-
+            korisnik = korIme;
             this.DataContext = this;
 
             Termini = new ObservableCollection<Termin>();
 
-            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            foreach (Termin t in RukovanjeTerminima.PretraziPoLekaru(korIme))
             {
                 Termini.Add(t);
             }
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //zakazivanje
         {
             ZakazivanjeTerminaLekar zakazivanje = new ZakazivanjeTerminaLekar();
             zakazivanje.Show();
+            this.Close();
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e) //izmena
         {
             Termin izabranZaMenjanje = (Termin)dataGridTermini.SelectedItem;
 
@@ -55,10 +56,11 @@ namespace Bolnica
 
                 IzmenaTerminaLekar izmena = new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina);
                 izmena.Show();
+                this.Close();
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
         {
 
             Termin izabranZaBrisanje = (Termin)dataGridTermini.SelectedItem;
@@ -68,6 +70,7 @@ namespace Bolnica
 
                 OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar(izabranZaBrisanje.IdTermina);
                 otkazivanje.Show();
+                //this.Close();
             }
             else
             {
@@ -75,12 +78,9 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e) //back
         {
             RukovanjeTerminima.SerijalizacijaTermina();
-            /*MainWindow glavniProzor = new MainWindow();
-           glavniProzor.Show();
-           this.Close();*/
             Login login = new Login();
             login.Show();
             this.Close();
@@ -89,15 +89,16 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeNalozimaPacijenata.Sacuvaj();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Button_Click_4(object sender, RoutedEventArgs e) //karton
         {
             Termin izabran = (Termin)dataGridTermini.SelectedItem;
 
             if (izabran != null)
             {
-                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme,0);
+                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme,0, korisnik );
                 karton.Show();
                 this.Close();
             }

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Bolnica
         List<Upravnik> Upravnici = new List<Upravnik>();
         //List<Sekretar> Sekretari = new List<Sekretar>();
         List<Osoba> Sekretari = new List<Osoba>();
-        List<Lekar> Lekari = new List<Lekar>();
+        //List<Lekar> Lekari = new List<Lekar>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
 
         public Login()
@@ -33,7 +34,7 @@ namespace Bolnica
 
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić",DateTime.Now,Pol.muski,"1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
-            Lekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
+            RukovanjeTerminima.sviLekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
             
             RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
             RukovanjeTerminima.DeserijalizacijaTermina();
@@ -41,7 +42,8 @@ namespace Bolnica
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeObavestenjimaSekratar.Ucitaj();
-            
+
+            RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
 
             password.PasswordChar = '*';
@@ -101,13 +103,13 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Lekar l in Lekari)
+            foreach (Lekar l in RukovanjeTerminima.sviLekari)
             {
                 if (l.KorisnickoIme.Equals(username.Text))
                 {
                     if (l.Lozinka.Equals(password.Password))
                     {
-                        PrikazTerminaLekara prikaz = new PrikazTerminaLekara();
+                        PrikazTerminaLekara prikaz = new PrikazTerminaLekara(username.Text);
                         prikaz.Show();
                         this.Close();
                         founded = true;

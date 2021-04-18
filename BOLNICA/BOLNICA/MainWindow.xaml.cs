@@ -50,9 +50,9 @@ namespace Bolnica
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            PrikazTerminaLekara prikaz = new PrikazTerminaLekara();
-            prikaz.Show();
-            this.Close();
+           // PrikazTerminaLekara prikaz = new PrikazTerminaLekara();
+           // prikaz.Show();
+           // this.Close();
 
         }
 

@@ -23,10 +23,12 @@ namespace Bolnica
         String izabran = null;
         public static ObservableCollection<Recept> Recepti { get; set; }
         public static ObservableCollection<Anamneza> Anamneze { get; set; }
+        public String korisnik = null;
 
-        public KartonLekar(String korImePacijenta, int indeks)
+        public KartonLekar(String korImePacijenta, int indeks, String lekar)
         {
             InitializeComponent();
+            korisnik = lekar;
 
             Tabovi.SelectedIndex = indeks;
             izabran = korImePacijenta;
@@ -76,10 +78,10 @@ namespace Bolnica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //back
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            PrikazTerminaLekara termini = new PrikazTerminaLekara();
+            PrikazTerminaLekara termini = new PrikazTerminaLekara(korisnik);
             
             termini.Show();
             this.Close();
@@ -87,9 +89,9 @@ namespace Bolnica
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e) //dodaj recept
         {
-            DodavanjeRecepta recept = new DodavanjeRecepta(izabran);
+            DodavanjeRecepta recept = new DodavanjeRecepta(izabran, korisnik);
 
             recept.Show();
 
@@ -103,7 +105,7 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //Nova anamneza
         {
-            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran);
+            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran,korisnik);
 
             dodajAnamnezu.Show();
             this.Close();

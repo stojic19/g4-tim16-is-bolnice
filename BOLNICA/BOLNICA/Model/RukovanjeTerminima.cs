@@ -1,4 +1,4 @@
-using Bolnica;
+﻿using Bolnica;
 using Bolnica.Sekretar.Pregled;
 using System;
 using System.Collections.Generic;
@@ -20,10 +20,10 @@ namespace Model
         public static void PrivremenaInicijalizacijaLekara()
         {
 
-            sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic"));
-            sviLekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic"));
-            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin"));
-            sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak"));
+            sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic"));
+            sviLekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic", DateTime.Now, Pol.muski, "43413", "Adresa Adresić 343", "06342", "markic@lekar.com", "markoandjelic"));
+            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "magdalenareljin"));
+            sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak"));
 
         }
 
@@ -519,9 +519,21 @@ namespace Model
             return ("T" + i.ToString());
         }
 
-        public List<Termin> PretraziPoLekaru(String korImeLekara)
+        public static List<Termin> PretraziPoLekaru(String korImeLekara)
         {
-            throw new NotImplementedException();
+
+            List<Termin> lekaroviTermini = new List<Termin>();
+
+            foreach (Termin t in sviTermini)
+            {
+                if (t.Lekar.KorisnickoIme.Equals(korImeLekara))
+                {
+                    lekaroviTermini.Add(t);
+                }
+
+            }
+
+            return lekaroviTermini;
         }
 
         public List<Termin> PretraziPoProstoriji(String idProstorije)

@@ -23,10 +23,12 @@ namespace Bolnica
     {
 
         String izabran = null;
+        String korisnik = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
-        public NovaAnamneza(String idPacijenta)
+        public NovaAnamneza(String idPacijenta, String lekar)
         {
             InitializeComponent();
+            korisnik = lekar;
 
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
             izabran = idPacijenta;
@@ -38,8 +40,10 @@ namespace Bolnica
             prezime.Text = p.Prezime;
             jmbg.Text = p.Jmbg;
 
-            imeLekara.Text = RukovanjeTerminima.pretraziLekare("JelenaHrnjak").Ime;
-            prezimeLekara.Text = RukovanjeTerminima.pretraziLekare("JelenaHrnjak").Prezime;
+            Lekar l = RukovanjeTerminima.pretraziLekare(lekar);
+
+            imeLekara.Text = l.Ime;
+            prezimeLekara.Text = l.Prezime;
 
             idAnamneze.Text = RukovanjeZdravstvenimKartonima.generisiIDAnamneze(izabran);
 
@@ -67,39 +71,28 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            RukovanjeNalozimaPacijenata.Sacuvaj();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) //Sacuvaj
         {
-            String idAnamneze = this.idAnamneze.Text;
-
-            String idLekara = "JelenaHrnjak";
-
-            String imeiprezime = RukovanjeTerminima.ImeiPrezime(idLekara);
-
-            String idPacijenta = izabran;
-
-            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
+            String imeiprezime = RukovanjeTerminima.ImeiPrezime(korisnik);
 
             String sifraLeka = this.sifraLeka.Text;
 
-            Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(sifraLeka);
-
-
             if (this.tekst.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Niste popunili dijagnozu!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
 
 
-            Anamneza a = new Anamneza(idAnamneze,idLekara, imeiprezime, idPacijenta, datumPregleda.Text, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
+            Anamneza a = new Anamneza(this.idAnamneze.Text,korisnik, imeiprezime, izabran, datumPregleda.Text, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
-            KartonLekar kl = new KartonLekar(izabran, 1);
+            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
             kl.Show();
             this.Close();
         }
@@ -111,14 +104,14 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //Otkazi
         {
-            KartonLekar kl = new KartonLekar(izabran, 1);
+            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
             kl.Show();
             this.Close();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e) // Nazad
         {
-            KartonLekar kl = new KartonLekar(izabran, 1);
+            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
             kl.Show();
             this.Close();
         }
@@ -163,15 +156,6 @@ namespace Bolnica
             }
 
             Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
-
-
-            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") || this.satnica.Text.Equals("") ||
-                this.dnevnaKol.Text.Equals("") || !pocDatum.HasValue || !krajDatum.HasValue)
-            {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
 
             Terapija t = new Terapija(idTerapije, idAnamneze.Text ,pocFormatirano, krajFormatirano, this.dnevnaKol.Text, this.satnica.Text, l);
 

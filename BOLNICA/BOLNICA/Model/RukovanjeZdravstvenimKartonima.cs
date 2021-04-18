@@ -209,7 +209,7 @@ namespace Bolnica.Model
 
                 foreach (Terapija te in Privremeno)
                 {
-                    if (te.IDTerapije.Equals("Ter" + i.ToString()))
+                    if (te.IDTerapije.Equals(anamneza + "T" + i.ToString()))
                     {
                         pronadjen = true;
                         break;
@@ -220,14 +220,14 @@ namespace Bolnica.Model
 
                 if (!pronadjen)
                 {
-                    return ("Ter" + i.ToString());
+                    return (anamneza + "T" + i.ToString());
 
                 }
                 pronadjen = false;
             }
 
                
-            return ("Ter" + i.ToString());
+            return (anamneza + "T" + i.ToString());
             
 
 
