@@ -19,10 +19,11 @@ namespace Bolnica
 
     public partial class ZakazivanjeTerminaLekar : Window
     {
-
-        public ZakazivanjeTerminaLekar()
+        String korisnik = null;
+        public ZakazivanjeTerminaLekar(String lekar)
         {
             InitializeComponent();
+            korisnik = lekar;
         }
 
 
@@ -118,7 +119,7 @@ namespace Bolnica
             }
 
             Termin t = new Termin(idTermina, vrstaTermina, vremePocetka, trajanje, formatirano, prostor, pacijent, lekar);
-            RukovanjeTerminima.ZakaziTermin(t);
+            RukovanjeTerminima.ZakaziTermin(t, korisnik);
 
             this.Close();
 

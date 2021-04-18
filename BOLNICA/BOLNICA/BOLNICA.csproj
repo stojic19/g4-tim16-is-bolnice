@@ -70,6 +70,9 @@
     <Compile Include="IzmenaOpreme.xaml.cs">
       <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\InformacijeAnamaneza.xaml.cs">
+      <DependentUpon>InformacijeAnamaneza.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\KartonLekar.xaml.cs">
       <DependentUpon>KartonLekar.xaml</DependentUpon>
     </Compile>
@@ -237,6 +240,10 @@
     <Page Include="IzmenaOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekarFolder\InformacijeAnamaneza.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="LekarFolder\KartonLekar.xaml">
       <Generator>MSBuild:Compile</Generator>

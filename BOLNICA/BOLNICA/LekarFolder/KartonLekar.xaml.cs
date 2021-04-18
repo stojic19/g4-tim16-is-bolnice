@@ -112,7 +112,16 @@ namespace Bolnica
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e) //Vise informacija anamneza
-        {   
+        {
+
+            Anamneza izabranaAnamneza = (Anamneza)TabelaAnamneza.SelectedItem;
+
+            if (izabranaAnamneza != null)
+            {
+                InformacijeAnamaneza informacije = new InformacijeAnamaneza(izabranaAnamneza);
+                informacije.Show();
+                this.Close();
+            }
         }
     }
 }

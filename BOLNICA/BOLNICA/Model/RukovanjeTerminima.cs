@@ -22,7 +22,7 @@ namespace Model
 
             sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic"));
             sviLekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic", DateTime.Now, Pol.muski, "43413", "Adresa Adresić 343", "06342", "markic@lekar.com", "markoandjelic"));
-            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "magdalenareljin"));
+            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "ajdemolimte"));
             sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak"));
 
         }
@@ -103,10 +103,14 @@ namespace Model
             return null;
         }
 
-        public static Termin ZakaziTermin(Termin t)
+        public static Termin ZakaziTermin(Termin t, String lekar)
         {
             sviTermini.Add(t);
-            PrikazTerminaLekara.Termini.Add(t);
+
+            if (t.Lekar.KorisnickoIme.Equals(lekar))
+            {
+                PrikazTerminaLekara.Termini.Add(t);
+            }
 
             if (sviTermini.Contains(t))
             {
