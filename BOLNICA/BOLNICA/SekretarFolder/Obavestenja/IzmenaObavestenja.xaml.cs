@@ -52,7 +52,8 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Morate uneti tekst obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Obavestenje o = new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now);
+            
+            Obavestenje o = new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, "svi");
             RukovanjeObavestenjimaSekratar.IzmeniObavestenje(o);
             this.Close();
         }

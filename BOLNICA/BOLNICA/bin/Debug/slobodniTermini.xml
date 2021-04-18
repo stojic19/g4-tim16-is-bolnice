@@ -93,29 +93,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T19</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>T20</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>19:00</PocetnoVreme>
@@ -225,29 +202,6 @@
       <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
       <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T16</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
@@ -443,6 +397,29 @@
     <PocetnoVreme>09:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
     <Datum>03/06/2021</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+    </Prostor>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T15</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>19:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>21/04/2021</Datum>
     <Prostor>
       <IdProstora>P1</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>

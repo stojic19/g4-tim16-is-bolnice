@@ -58,11 +58,11 @@ namespace Bolnica
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            PacijentGlavniProzor prikaz = new PacijentGlavniProzor();
-            RukovanjeObavestenjimaSekratar.Ucitaj();
+            //PacijentGlavniProzor prikaz = new PacijentGlavniProzor();
+           // RukovanjeObavestenjimaSekratar.Ucitaj();
              // RukovanjeTerminima.InicijalizacijaSTermina();
-            prikaz.Show();
-            this.Close();
+          //  prikaz.Show();
+            //this.Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -20,15 +20,19 @@ namespace Bolnica
     /// </summary>
     public partial class PacijentGlavniProzor : Window
     {
-        public PacijentGlavniProzor()
+        public static Pacijent ulogovani = null;
+        public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
+            RukovanjeObavestenjimaSekratar.Ucitaj();
+            ulogovani = RukovanjeNalozimaPacijenata.PretraziPoId(id);
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            
             /*MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();*/

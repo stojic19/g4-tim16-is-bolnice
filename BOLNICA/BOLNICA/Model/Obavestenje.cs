@@ -18,7 +18,7 @@ namespace Model
 
         public String IdPrimaoca { get; set; }
 
-        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum,String idPrimaoca)
+        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum,string idPrimaoca)
         {
             IdObavestenja = idObavestenja;
             Naslov = naslov;
@@ -27,15 +27,7 @@ namespace Model
             JeProcitano = false;
             IdPrimaoca = idPrimaoca;
         }
-        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum)
-        {
-            IdObavestenja = idObavestenja;
-            Naslov = naslov;
-            Tekst = tekst;
-            Datum = datum.ToString();
-            JeProcitano = false;
-            IdPrimaoca = null;
-        }
+       
         public Obavestenje() { }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -135,4 +135,42 @@
       <Anamneze />
     </ZdravstveniKarton>
   </Pacijent>
+  <Pacijent>
+    <Ime>Magdalena</Ime>
+    <Prezime>Reljin</Prezime>
+    <DatumRodjenja>2021-04-18T15:41:51.6714204+02:00</DatumRodjenja>
+    <Jmbg>2104999098765</Jmbg>
+    <AdresaStanovanja>nvdffdv</AdresaStanovanja>
+    <KontaktTelefon>2423424</KontaktTelefon>
+    <Email>fdbdfb</Email>
+    <KorisnickoIme>magdalena</KorisnickoIme>
+    <Lozinka>magdalena</Lozinka>
+    <Pol>zenski</Pol>
+    <VrstaNaloga>regularan</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>magdalena</IDPacijenta>
+      <Alergeni />
+      <Recepti />
+      <Anamneze />
+    </ZdravstveniKarton>
+  </Pacijent>
+  <Pacijent>
+    <Ime>ascsac</Ime>
+    <Prezime>csacsa</Prezime>
+    <DatumRodjenja>2021-04-18T00:00:00</DatumRodjenja>
+    <Jmbg>ascac</Jmbg>
+    <AdresaStanovanja>avdsv</AdresaStanovanja>
+    <KontaktTelefon>dvsdv</KontaktTelefon>
+    <Email>svdvssd</Email>
+    <KorisnickoIme>probninalog</KorisnickoIme>
+    <Lozinka>probninalog</Lozinka>
+    <Pol>zenski</Pol>
+    <VrstaNaloga>regularan</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>probninalog</IDPacijenta>
+      <Alergeni />
+      <Recepti />
+      <Anamneze />
+    </ZdravstveniKarton>
+  </Pacijent>
 </ArrayOfPacijent>

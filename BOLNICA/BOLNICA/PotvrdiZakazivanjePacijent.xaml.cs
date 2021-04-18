@@ -36,7 +36,7 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Termin t = RukovanjeTerminima.PretraziSlobodnePoId(idTermina);
-            t.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId("imanalog");
+            t.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
             RukovanjeTerminima.ZakaziPregled(t);
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeTerminima.SerijalizacijaTermina();

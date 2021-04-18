@@ -28,11 +28,12 @@ namespace Bolnica
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenje>();
 
-            List<Obavestenje> datumi = RukovanjeObavestenjimaSekratar.SvaObavestenja().OrderByDescending(user => user.Datum).ToList();
-
-            foreach (Obavestenje obavestenje in datumi)
+            List<Obavestenje> datumi = RukovanjeObavestenjimaSekratar.svaObavestenja.OrderByDescending(user => user.Datum).ToList();
+           
+            foreach (Obavestenje o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {
-                obavestenjaPacijenta.Add(obavestenje);
+                if(o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) || o.IdPrimaoca.Equals("svi"))
+                obavestenjaPacijenta.Add(o);
             }
 
             obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;

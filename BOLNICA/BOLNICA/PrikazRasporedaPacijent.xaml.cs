@@ -31,6 +31,7 @@ namespace Bolnica
 
             foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
             {
+                if(t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme))
                 Termini.Add(t);
             }
 

@@ -40,6 +40,7 @@ namespace Bolnica
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
+            RukovanjeObavestenjimaSekratar.Ucitaj();
             
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
 
@@ -124,7 +125,7 @@ namespace Bolnica
                 {
                     if (p.Lozinka.Equals(password.Password))
                     {
-                        PacijentGlavniProzor pgp = new PacijentGlavniProzor();
+                        PacijentGlavniProzor pgp = new PacijentGlavniProzor(p.KorisnickoIme);
                         pgp.Show();
                         this.Close();
                         founded = true;

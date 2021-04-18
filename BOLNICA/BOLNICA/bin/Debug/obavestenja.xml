@@ -7,4 +7,12 @@
     <Datum>18-Apr-21 15:31:42</Datum>
     <JeProcitano>false</JeProcitano>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O1</IdObavestenja>
+    <Naslov>obavestenje proba</Naslov>
+    <Tekst>sdvsdvsv</Tekst>
+    <Datum>4/18/2021 4:52:55 PM</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>svi</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

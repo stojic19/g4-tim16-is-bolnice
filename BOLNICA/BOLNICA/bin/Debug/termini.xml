@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>T15</IdTermina>
+    <IdTermina>T16</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>19:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>21/04/2021</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+    </Prostor>
+    <Pacijent>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-04-18T15:41:51.6714204+02:00</DatumRodjenja>
+      <Jmbg>2104999098765</Jmbg>
+      <AdresaStanovanja>nvdffdv</AdresaStanovanja>
+      <KontaktTelefon>2423424</KontaktTelefon>
+      <Email>fdbdfb</Email>
+      <KorisnickoIme>magdalena</KorisnickoIme>
+      <Lozinka>magdalena</Lozinka>
+      <Pol>zenski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>magdalena</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
+      </ZdravstveniKarton>
+    </Pacijent>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T19</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>19:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
@@ -14,120 +56,29 @@
       <BrojKreveta>2</BrojKreveta>
     </Prostor>
     <Pacijent>
-      <Ime>NEBRISIGA</Ime>
-      <Prezime>DOLOGOVANJA</Prezime>
-      <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
-      <Jmbg>8746871647</Jmbg>
-      <AdresaStanovanja>Nova 32</AdresaStanovanja>
-      <KontaktTelefon>65237547235</KontaktTelefon>
-      <Email>imanalog@gmail.com</Email>
-      <KorisnickoIme>imanalog</KorisnickoIme>
-      <Lozinka>kgjbdkf</Lozinka>
-      <Pol>muski</Pol>
+      <Ime>ascsac</Ime>
+      <Prezime>csacsa</Prezime>
+      <DatumRodjenja>2021-04-18T00:00:00</DatumRodjenja>
+      <Jmbg>ascac</Jmbg>
+      <AdresaStanovanja>avdsv</AdresaStanovanja>
+      <KontaktTelefon>dvsdv</KontaktTelefon>
+      <Email>svdvssd</Email>
+      <KorisnickoIme>probninalog</KorisnickoIme>
+      <Lozinka>probninalog</Lozinka>
+      <Pol>zenski</Pol>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
-        <IDPacijenta>imanalog</IDPacijenta>
-        <Alergeni>
-          <Alergeni>
-            <IdAlergena>L1</IdAlergena>
-            <OpisReakcije>Opis 1</OpisReakcije>
-            <VremeZaPojavu>Vreme 1</VremeZaPojavu>
-          </Alergeni>
-        </Alergeni>
-        <Recepti>
-          <Recept>
-            <IDRecepta>R0</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>imanalog</IDPacijenta>
-            <Datum>17/04/2021</Datum>
-            <Lek>
-              <IDLeka>2</IDLeka>
-              <NazivLeka>L2</NazivLeka>
-              <Jacina>20mg</Jacina>
-            </Lek>
-          </Recept>
-          <Recept>
-            <IDRecepta>R1</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>imanalog</IDPacijenta>
-            <Datum>18/04/2021</Datum>
-            <Lek>
-              <IDLeka>2</IDLeka>
-              <NazivLeka>L2</NazivLeka>
-              <Jacina>20mg</Jacina>
-            </Lek>
-          </Recept>
-        </Recepti>
-        <Anamneze>
-          <Anamneza>
-            <IdAnamneze>A0</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>imanalog</IdPacijenta>
-            <Datum>18/04/2021</Datum>
-            <Dijagnoza>Tekst</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>Ter1</IDTerapije>
-                <IDAnamneze>A0</IDAnamneze>
-                <PocetakTerapije>16/04/2021</PocetakTerapije>
-                <KrajTerapije>05/04/2021</KrajTerapije>
-                <Kolicina>4</Kolicina>
-                <Satnica>5</Satnica>
-                <PreporucenLek>
-                  <IDLeka>3</IDLeka>
-                  <NazivLeka>L3</NazivLeka>
-                  <Jacina>200mg</Jacina>
-                </PreporucenLek>
-              </Terapija>
-              <Terapija>
-                <IDTerapije>Ter2</IDTerapije>
-                <IDAnamneze>A0</IDAnamneze>
-                <PocetakTerapije>29/04/2021</PocetakTerapije>
-                <KrajTerapije>13/04/2021</KrajTerapije>
-                <Kolicina>5</Kolicina>
-                <Satnica>6</Satnica>
-                <PreporucenLek>
-                  <IDLeka>5</IDLeka>
-                  <NazivLeka>L5</NazivLeka>
-                  <Jacina>10mg</Jacina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>A1</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>imanalog</IdPacijenta>
-            <Datum>18/04/2021</Datum>
-            <Dijagnoza>Pera</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>Ter0</IDTerapije>
-                <IDAnamneze>A1</IDAnamneze>
-                <PocetakTerapije>29/04/2021</PocetakTerapije>
-                <KrajTerapije>28/04/2021</KrajTerapije>
-                <Kolicina>4</Kolicina>
-                <Satnica>5</Satnica>
-                <PreporucenLek>
-                  <IDLeka>2</IDLeka>
-                  <NazivLeka>L2</NazivLeka>
-                  <Jacina>20mg</Jacina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-        </Anamneze>
+        <IDPacijenta>probninalog</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
       <DatumRodjenja>0001-01-01T00:00:00</DatumRodjenja>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
