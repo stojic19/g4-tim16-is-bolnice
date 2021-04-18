@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfObavestenje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Obavestenje>
+    <IdObavestenja>O0</IdObavestenja>
+    <Naslov>Novo obavestenje</Naslov>
+    <Tekst>novo</Tekst>
+    <Datum>4/18/2021 5:16:45 PM</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>svi</IdPrimaoca>
+  </Obavestenje>
+</ArrayOfObavestenje>

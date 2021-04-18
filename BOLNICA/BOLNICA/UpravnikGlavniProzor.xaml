@@ -1,0 +1,58 @@
+﻿<Window x:Class="Bolnica.UpravnikGlavniProzor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Bolnica" xmlns:model="clr-namespace:Model" d:DataContext="{d:DesignInstance Type=model:Upravnik}"
+        mc:Ignorable="d"
+        Title="UpravnikGlavniProzor" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <StackPanel  >
+        <Grid Height="35"  Background="#FF31577E">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" >
+                <Image Source="/Slike/PacijentSlike/strelica.png" />
+
+            </Button>
+
+            <Button Grid.Row="0" Content="Prostorije" Margin="99,0,2.4,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Prostorije_Click" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
+
+            <Button Grid.Row="0" Content="Oprema" Margin="98.8,0,2.6,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Oprema_Click" Background="WhiteSmoke" Grid.ColumnSpan="2" Grid.Column="1" Height="35" VerticalAlignment="Top"/>
+
+        </Grid>
+
+        <Grid x:Name="MainPanel" Margin="0,0,-0.4,27" Height="386"/>
+
+    </StackPanel>
+</Window>

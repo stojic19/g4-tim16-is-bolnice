@@ -1,0 +1,40 @@
+﻿<Window x:Class="Bolnica.PotvrdiPomeranjePacijent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="PotvrdiPomeranjePacijent" Height="700" Width="350"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="20 100">
+            <Label Height="25" >LEKAR</Label>
+
+            <TextBox Height="25" x:Name="TextLekar" IsReadOnly="True" ></TextBox>
+
+
+            <Label Height="25">DATUM</Label>
+            <TextBox Height="25" Name="TextDatum"  IsReadOnly="True"></TextBox>
+            <Label Height="25">VREME</Label>
+            <TextBox Height="25" Name="TextVreme" Margin="00 00 00 30"  IsReadOnly="True"></TextBox>
+
+          
+
+            <Button Click="Button_Click" Height="25" Margin="5" Background="#FF31577E">
+                <Run Foreground="AntiqueWhite">POTVRDI</Run>
+            </Button>
+            <Button Click="Button_Click_1" Height="25" Margin="5" Background="#FF31577E">
+                <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+            </Button>
+
+            <Grid Margin="00 50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="1" Source="/Slike/PacijentSlike/POTVRDI.png" />
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>

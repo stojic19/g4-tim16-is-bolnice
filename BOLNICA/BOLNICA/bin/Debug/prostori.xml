@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Prostor>
+    <IdProstora>P33</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>66</Sprat>
+    <Kvadratura>6</Kvadratura>
+    <BrojKreveta>3212</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>P1</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>1</Sprat>
+    <Kvadratura>1</Kvadratura>
+    <BrojKreveta>2</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>P3</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>6</Sprat>
+    <Kvadratura>6</Kvadratura>
+    <BrojKreveta>4</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>P4</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>9</Kvadratura>
+    <BrojKreveta>2</BrojKreveta>
+  </Prostor>
+</ArrayOfProstor>

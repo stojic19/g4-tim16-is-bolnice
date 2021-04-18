@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Bolnica.ZakazivanjeSaPrioritetomPacijent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="10 100 15 100">
+
+
+
+        <Label >LEKAR</Label>
+
+        <TextBox Name="lekar" Height="25" Margin="5"></TextBox>
+        <!-- <Label>Pacijent</Label>
+
+        <TextBox Name="pacijent"></TextBox>  
+        -->
+        <Label>DATUM OD</Label>
+        <DatePicker Name="datum" Height="25" Margin="5"></DatePicker>
+        <Label>DATUM DO</Label>
+        <DatePicker Name="datum1" Height="25" Margin="5"></DatePicker>
+        <Label>PRIORITET</Label>
+
+        <ComboBox Name="PrioritetCombo"  Margin="5,0,5.4,30" Height="25" >
+            <ComboBoxItem Margin="5">lekar</ComboBoxItem>
+            <ComboBoxItem Margin="5">datum</ComboBoxItem>
+        </ComboBox>
+        <Button Name="nastavi" Click="Button_Click" Height="25" Margin="5" Background="#FF31577E">
+            <Run Foreground="AntiqueWhite">NASTAVI</Run>
+        </Button>
+        <Image Source="/Slike/PacijentSlike/IMG_4560.jpeg" />
+
+
+
+    </StackPanel>
+</UserControl>

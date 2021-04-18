@@ -1,8 +1,9 @@
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-    public class Termin
+    public class Termin : INotifyPropertyChanged
     {
         public String IdTermina { get; set; }
         
@@ -14,7 +15,7 @@ namespace Model
         public Prostor Prostor { get; set; }
         public Pacijent Pacijent { get; set; }
         public Lekar Lekar { get; set; }
-
+        public Termin() { }
         public Termin(string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, string datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
         {
             IdTermina = idTermina;
@@ -25,6 +26,20 @@ namespace Model
             Prostor = prostor;
             Pacijent = pacijent;
             Lekar = lekar;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
