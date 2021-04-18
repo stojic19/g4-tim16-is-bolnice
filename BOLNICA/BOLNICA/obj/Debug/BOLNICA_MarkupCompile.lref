@@ -2,6 +2,8 @@
 
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\DodavanjeOpreme.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaOpreme.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\KartonLekar.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\NovaAnamneza.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazOpreme.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\RasporedOpreme.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Alergeni\AlergeniSekretar.xaml;;
@@ -10,16 +12,15 @@ FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Alergeni\I
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Nalozi\DodavanjeNalogaSekretar.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Obavestenja\DodavanjeObavestenja.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\DodavanjeProstora.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\DodavanjeRecepta.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\DodavanjeRecepta.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\GlavniProzorSekretar.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Nalozi\IzmenaNalogaSekretar.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Obavestenja\IzmenaObavestenja.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaProstora.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\IzmenaTerminaLekar.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\KartonLekar.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\IzmenaTerminaLekar.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\MainWindow.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Obavestenja\ObavestenjaSekretar.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\OtkazivanjeTerminaLekar.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\OtkazivanjeTerminaLekar.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\OtkazivanjeTerminaPacijent.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PacijentGlavniProzor.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PomeranjeTerminaPacijent.xaml;;
@@ -32,7 +33,7 @@ FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazObavestenjaPa
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazProstora.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazRasporedaPacijent.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazSlobodnihDatumaPacijent.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\PrikazTerminaLekara.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\PrikazTerminaLekara.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazVremenaTerminaPacijent.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazVremenaZaPomeranjePacijent.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Sekretar\Nalozi\UklanjanjeNalogaSekretar.xaml;;
@@ -48,5 +49,5 @@ FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UklanjanjeOpreme.xa
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UklanjanjeProstora.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikGlavniProzor.xaml;;
 FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\ZakazivanjeSaPrioritetomPacijent.xaml;;
-FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Lekar\ZakazivanjeTerminaLekar.xaml;;
+FD:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\ZakazivanjeTerminaLekar.xaml;;
 

@@ -22,6 +22,7 @@ namespace Bolnica
 
         String izabran = null;
         public static ObservableCollection<Recept> Recepti { get; set; }
+        public static ObservableCollection<Anamneza> Anamneze { get; set; }
 
         public KartonLekar(String korImePacijenta, int indeks)
         {
@@ -66,6 +67,13 @@ namespace Bolnica
                Recepti.Add(r);
             }
 
+            Anamneze = new ObservableCollection<Anamneza>();
+
+            foreach (Anamneza a in zk.Anamneze)
+            {
+                Anamneze.Add(a);
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -91,6 +99,18 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e) //Nova anamneza
+        {
+            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran);
+
+            dodajAnamnezu.Show();
+            this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e) //Vise informacija anamneza
+        {   
         }
     }
 }

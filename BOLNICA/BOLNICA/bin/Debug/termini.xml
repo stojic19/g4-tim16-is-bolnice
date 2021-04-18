@@ -29,7 +29,7 @@
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
         <Recepti />
-        <anamneza />
+        <Anamneze />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
@@ -71,7 +71,7 @@
         <IDPacijenta>imanalog</IDPacijenta>
         <Alergeni />
         <Recepti />
-        <anamneza />
+        <Anamneze />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>
@@ -119,7 +119,7 @@
           </Alergeni>
         </Alergeni>
         <Recepti />
-        <anamneza />
+        <Anamneze />
       </ZdravstveniKarton>
     </Pacijent>
     <Lekar>

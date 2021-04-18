@@ -1,3 +1,4 @@
+using Bolnica;
 using System;
 using System.Collections.Generic;
 
@@ -19,7 +20,7 @@ namespace Model
 
         public List<Recept> Recepti { get; set; } = new List<Recept>();
 
-        public List<Anamneza> anamneza { get; set; } = new List<Anamneza>();
+        public List<Anamneza> Anamneze { get; set; } = new List<Anamneza>();
 
     }
 }

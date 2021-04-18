@@ -12,7 +12,7 @@ namespace Bolnica.Model
     class RukovanjeZdravstvenimKartonima
     {
 
-        
+
 
         public static List<ZdravstveniKarton> kartoni = new List<ZdravstveniKarton>();
         public static List<Recept> recepti { get; set; } = new List<Recept>();
@@ -98,34 +98,113 @@ namespace Bolnica.Model
             }
         }
 
+        public static void DodajAnamnezu(Anamneza a)
+        {
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
 
-        //public static List<Recept> DeserijalizacijaRecepata()
-        //{
-        //    if (File.ReadAllText("recepti.xml").Trim().Equals(""))
-        //    {
-        //        return recepti;
-        //    }
-        //    else
-        //    {
-        //        FileStream fileStream = File.OpenRead("recepti.xml");
-        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
-        //        recepti = (List<Recept>)xmlSerializer.Deserialize(fileStream);
-        //        fileStream.Close();
-        //        return recepti;
+                if (p.KorisnickoIme.Equals(a.IdPacijenta))
+                {
+                    p.ZdravstveniKarton.Anamneze.Add(a);
+                    KartonLekar.Anamneze.Add(a);
 
-        //    }
+                }
+            }
+        }
 
-        //}
+        public static List<Terapija> Privremeno { get; set; }
+
+        public static void NovoPrivremeno()
+        {
+            Privremeno = new List<Terapija>();
+        }
+
+        public static void dodajPrivremeno(Terapija t)
+        {
+
+            Privremeno.Add(t);
 
 
-        //    public static void SerijalizacijaRecepata()
-        //{
-        //    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Recept>));
-        //    TextWriter tw = new StreamWriter("recepti.xml");
-        //    xmlSerializer.Serialize(tw, recepti);
-        //    tw.Close();
+        }
 
-        //}
+        public static void obrisiPrivremeno(Terapija t)
+        {
 
+            Privremeno.Remove(t);
+
+
+        }
+
+        public static String generisiIDAnamneze(String id)
+        {
+            bool pronadjen = false;
+
+            int i = 0;
+
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
+
+                if (p.KorisnickoIme.Equals(id))
+                {
+                    for (i = 0; i < p.ZdravstveniKarton.Anamneze.Count; i++)
+                    {
+                        foreach (Anamneza a in p.ZdravstveniKarton.Anamneze)
+                        {
+                            if (a.IdAnamneze.Equals("A" + i.ToString()))
+                            {
+                                pronadjen = true;
+                                break;
+                            }
+
+                        }
+
+                        if (!pronadjen)
+                        {
+                            return ("A" + i.ToString());
+
+                        }
+                        pronadjen = false;
+                    }
+                }
+            }
+
+            return ("A" + i.ToString());
+        }
+
+        public static String generisiIDTerapije(String id, String anamneza)
+        {
+            bool pronadjen = false;
+
+            int i = 0;
+
+            for (i = 0; i < Privremeno.Count; i++)
+            {
+
+
+                foreach (Terapija te in Privremeno)
+                {
+                    if (te.IDTerapije.Equals("Ter" + i.ToString()))
+                    {
+                        pronadjen = true;
+                        break;
+                    }
+
+
+                }
+
+                if (!pronadjen)
+                {
+                    return ("Ter" + i.ToString());
+
+                }
+                pronadjen = false;
+            }
+
+               
+            return ("Ter" + i.ToString());
+            
+
+
+        }
     }
 }

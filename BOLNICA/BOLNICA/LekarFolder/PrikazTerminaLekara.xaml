@@ -1,0 +1,100 @@
+﻿<Window x:Class="Bolnica.PrikazTerminaLekara"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+         Title="Raspored Lekara" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Background="LightBlue">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="335*"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" Fill="#999999" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
+        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" Fill="#999999" />
+        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
+
+        <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
+                  SelectionMode="Single"  Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="4"
+                  MinWidth="815" MinHeight="308" Margin="17.5 , 13.5" Width="815">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Termin" Binding="{Binding IdTermina}" Width="70*"/>
+                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="90*"/>
+                <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
+                <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
+                <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="80*"/>
+                <DataGridTextColumn Header="Početak" Binding="{Binding PocetnoVreme}" Width="55*"/>
+                <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>
+                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="65*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+        <Button Grid.Row="3" Grid.Column="0" Content="Zakazivanje termina" Margin="10,20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke" Height="27" Width="185"/>
+        <Button  Grid.Row="3" Grid.Column="1" Content="Izmena termina" Margin="10,20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke" Height="27" Width="185"/>
+        <Button  Grid.Row="3" Grid.Column="2" Content="Otkazivanje termina" Margin="10,20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke" Height="27" Width="185"/>
+        <Button  Grid.Row="3" Grid.Column="3" Content="Karton pacijenta" Margin="10,20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_4" Background="WhiteSmoke" Height="27" Width="185"/>
+
+
+        <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click_3" Background="WhiteSmoke" Width="32" Height="32">
+
+            <Image Source="LekarSlike/Back.png"/>
+
+        </Button>
+
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="4">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="104*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="42*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24"/>
+            <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   VerticalAlignment="Center" Width="143" Height="30" />
+            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

@@ -22,7 +22,6 @@ namespace Bolnica
     public partial class DodavanjeRecepta : Window
     {
         String izabran = null;
-        public static ObservableCollection<Recept> Recepti { get; set; }
         public DodavanjeRecepta(String idPacijenta)
         {
             InitializeComponent();
@@ -50,14 +49,6 @@ namespace Bolnica
             view.Filter = UserFilter;
 
             
-            this.DataContext = this;
-
-            Recepti = new ObservableCollection<Recept>();
-
-            foreach (Recept r in zk.Recepti)
-            {
-                Recepti.Add(r);
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
