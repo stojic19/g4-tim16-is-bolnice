@@ -20,6 +20,7 @@ namespace Bolnica
     public partial class InformacijeAnamaneza : Window
     {
         String korisnik = null;
+        String izabran = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
 
         public InformacijeAnamaneza(Anamneza izabrana)
@@ -28,6 +29,7 @@ namespace Bolnica
             InitializeComponent();
 
             korisnik = izabrana.IdLekara;
+            izabran = izabrana.IdPacijenta;
 
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabrana.IdPacijenta);
             ZdravstveniKarton zk = p.ZdravstveniKarton;
@@ -37,7 +39,7 @@ namespace Bolnica
             jmbg.Text = p.Jmbg;
 
             Lekar l = RukovanjeTerminima.pretraziLekare(izabrana.IdLekara);
-            
+
             imeLekara.Text = l.Ime;
             prezimeLekara.Text = l.Prezime;
 
@@ -67,7 +69,7 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)//back
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            PrikazTerminaLekara termini = new PrikazTerminaLekara(korisnik);
+            KartonLekar termini = new KartonLekar(izabran, 1, korisnik);
 
             termini.Show();
             this.Close();

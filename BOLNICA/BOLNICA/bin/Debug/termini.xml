@@ -12,6 +12,7 @@
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
       <BrojKreveta>1</BrojKreveta>
+      <Oprema />
     </Prostor>
     <Pacijent>
       <Ime>Magdalena</Ime>
@@ -94,6 +95,7 @@
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
       <BrojKreveta>2</BrojKreveta>
+      <Oprema />
     </Prostor>
     <Pacijent>
       <Ime>Magdalena</Ime>
