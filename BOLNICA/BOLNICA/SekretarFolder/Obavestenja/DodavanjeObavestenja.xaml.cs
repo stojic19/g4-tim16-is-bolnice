@@ -29,7 +29,7 @@ namespace Bolnica
             idObavestenja.Text = generisiIdObavestenja();
             datum.SelectedDate = DateTime.Now;
         }
-        private String generisiIdObavestenja()
+        public static String generisiIdObavestenja()
         {
             int brojac = RukovanjeObavestenjimaSekratar.SvaObavestenja().Count;
             bool postoji;

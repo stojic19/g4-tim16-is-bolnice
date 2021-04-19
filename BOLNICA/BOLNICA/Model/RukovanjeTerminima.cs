@@ -10,7 +10,7 @@ namespace Model
 {
     public class RukovanjeTerminima
     {
-        private String imeFajla;
+        private static String imeFajla= "termini.xml";
 
         public static List<Termin> sviTermini = new List<Termin>();
         public static List<Termin> slobodniTermini = new List<Termin>();
@@ -25,6 +25,15 @@ namespace Model
             sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "ajdemolimte"));
             sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak"));
 
+            foreach (Lekar l in sviLekari)
+            {
+                if (l.KorisnickoIme.Equals("AleksaStojic"))
+                {
+
+                    l.setSpecijalizacija(SpecijalizacijeLekara.neurohirurg);
+                }
+            }
+            
         }
 
         public static String ImeiPrezime(String id)
@@ -55,17 +64,23 @@ namespace Model
             slobodniTermini.Add(new Termin("T23", VrsteTermina.pregled, "15:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
             slobodniTermini.Add(new Termin("T31", VrsteTermina.pregled, "09:00", 30, "04/06/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
 
-            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "13/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "14/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T27", VrsteTermina.pregled, "09:00", 30, "12/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T28", VrsteTermina.pregled, "11:00", 30, "01/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "13/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "14/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T27", VrsteTermina.pregled, "09:00", 30, "12/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T28", VrsteTermina.pregled, "11:00", 30, "01/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+
+
+                                                                                                                                    
+            slobodniTermini.Add(new Termin("T100", VrsteTermina.operacija, "11:00", 30, "23/04/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
+            slobodniTermini.Add(new Termin("T200", VrsteTermina.operacija, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
+            slobodniTermini.Add(new Termin("T300", VrsteTermina.operacija, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
         }
         public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
         {
@@ -560,13 +575,13 @@ namespace Model
 
         public static List<Termin> DeserijalizacijaTermina()
         {
-            if (File.ReadAllText("termini.xml").Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return sviTermini;
             }
             else
             {
-                FileStream fileStream = File.OpenRead("termini.xml");
+                FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
                 sviTermini = (List<Termin>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
@@ -579,7 +594,7 @@ namespace Model
         public static void SerijalizacijaTermina()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
-            TextWriter tw = new StreamWriter("termini.xml");
+            TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, sviTermini);
             tw.Close();
 

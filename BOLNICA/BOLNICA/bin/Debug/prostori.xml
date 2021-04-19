@@ -28,4 +28,18 @@
     <Kvadratura>9</Kvadratura>
     <BrojKreveta>2</BrojKreveta>
   </Prostor>
+  <Prostor>
+    <IdProstora>P2</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>1</Sprat>
+    <Kvadratura>25</Kvadratura>
+    <BrojKreveta>1</BrojKreveta>
+  </Prostor>
+  <Prostor>
+    <IdProstora>OP1</IdProstora>
+    <VrstaProstora>sala</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>40</Kvadratura>
+    <BrojKreveta>1</BrojKreveta>
+  </Prostor>
 </ArrayOfProstor>

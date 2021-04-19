@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,9 +35,11 @@ namespace Bolnica
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            mw.Show();
+            RukovanjeProstorom.SerijalizacijaProstora();
+            Login l = new Login();
+            l.Show();
             this.Close();
+            
         }
 
         private void Prostorije_Click(object sender, RoutedEventArgs e)

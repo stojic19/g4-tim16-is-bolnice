@@ -162,6 +162,37 @@ namespace Bolnica
             RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
             Terapije.Add(t);
 
+            //magdalena
+            DateTime pocetni = DateTime.Now;
+            DateTime krajnji = DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
+            String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
+               "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
+
+            String idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+            Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabran);
+            RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+
+            DateTime datum;
+            for (int i = 1; i <= trajanje; i++)
+            {
+                datum = pocetni.AddDays(i);
+                String form = datum.ToString();
+
+                String[] splits = form.Split(' ');
+                String[] brojevi = splits[0].Split('/');
+
+                //assigns year, month, day, hour, min, seconds
+                DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
+
+                idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+                o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabran);
+                RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+
+            }
+
+            //
+
             this.poljeZaPreragu.Text = string.Empty;
             this.sifraLeka.Text = String.Empty;
             this.jacinaLeka.Text = String.Empty;

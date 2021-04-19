@@ -36,8 +36,24 @@ namespace Model
                 return null;
             }
         }
-      
-      public static Boolean IzmeniObavestenje(Obavestenje o)
+
+        public static Obavestenje DodajObavestenjePacijentu(Obavestenje o)
+        {
+            svaObavestenja.Add(o);
+
+            Sacuvaj();
+
+            if (svaObavestenja.Contains(o))
+            {
+                return o;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Boolean IzmeniObavestenje(Obavestenje o)
       {
            Obavestenje o1 = PretraziPoId(o.IdObavestenja);
 
