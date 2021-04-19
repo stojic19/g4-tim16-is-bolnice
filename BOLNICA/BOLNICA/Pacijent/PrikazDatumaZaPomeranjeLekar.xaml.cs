@@ -36,6 +36,12 @@ namespace Bolnica
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (slobodniDatumiPomLista.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite datum!");
+                return;
+            }
+
             PrikazVremenaZaPomeranjePacijent pr = new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiPomLista.SelectedItem);
             pr.Show();
             this.Close();

@@ -29,14 +29,28 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String idLekara = this.lekar.Text;
+            
+
+            String idLekara = this.lekar1.Text;
             Lekar lekar = RukovanjeTerminima.pretraziLekare(idLekara);
 
-           
-            DateTime? datum = this.datum.SelectedDate;
-            DateTime? datum1 = this.datum1.SelectedDate;
+
+            DateTime? datum = this.datumod.SelectedDate;
+            DateTime? datum1 = this.datumdo.SelectedDate;
+
+            if (lekar1.Text.Equals("") || !datum.HasValue || !datum1.HasValue || PrioritetCombo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Popunite sva polja!");
+                return;
+            }
+           // Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++"+datumod);
+            //Console.WriteLine("---------------------------"+datumdo);
+
             DateTime pom = (DateTime)datum;
             DateTime pom1 = (DateTime)datum1;
+
+
+            
 
             List<Termin> pomocna = new List<Termin>();
 
@@ -90,6 +104,12 @@ namespace Bolnica
                         }
 
                     }
+
+                    if (datumi.Count == 0)
+                    {
+                        MessageBox.Show("Nema slobodnih datuma!");
+                        return;
+                    }
                     PrikazDatumaPacijentKodIzabranog pd = new PrikazDatumaPacijentKodIzabranog();
                     pd.Show();
 
@@ -115,10 +135,16 @@ namespace Bolnica
 
                     }
 
+                    if (datumi.Count == 0)
+                    {
+                        MessageBox.Show("Nema slobodnih datuma!");
+                        return;
+                    }
+                    
                     PrikazSlobodnihDatumaPacijent pd = new PrikazSlobodnihDatumaPacijent();
                     pd.Show();
 
-
+                   
 
                 }
 
@@ -132,6 +158,7 @@ namespace Bolnica
 
             }
 
+            
             
         }
 

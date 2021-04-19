@@ -34,6 +34,12 @@ namespace Bolnica
 
         private void nastavi_Click(object sender, RoutedEventArgs e)
         {
+            if (prioritet.SelectedIndex == -1)
+            {
+                MessageBox.Show("Popunite sva polja!");
+                return;
+            }
+
             string datum1 = datum.Text;
             bool dostupanDatum = RukovanjeTerminima.ProveriMogucnostPomeranjaDatum(datum1);
 

@@ -45,6 +45,11 @@ namespace Bolnica
 
         private void izmeni_Click(object sender, RoutedEventArgs e)
         {
+            if (dataGridTerminiPacijenta.SelectedIndex == -1) {
+                MessageBox.Show("Izaberite termin!");
+                return;
+            }
+
             TerminZaPomeranje = (Termin)dataGridTerminiPacijenta.SelectedItem;
             PomeranjeSaPrioritetom p = new PomeranjeSaPrioritetom((Termin)dataGridTerminiPacijenta.SelectedItem);
             p.Show();
@@ -52,6 +57,8 @@ namespace Bolnica
 
         private void otkazi_Click(object sender, RoutedEventArgs e)
         {
+            
+
             Termin izabranZaBrisanje = (Termin)dataGridTerminiPacijenta.SelectedItem;
 
             if (izabranZaBrisanje != null)

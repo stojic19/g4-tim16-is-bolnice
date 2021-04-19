@@ -12,15 +12,15 @@
 
         <Label >LEKAR</Label>
 
-        <TextBox Name="lekar" Height="25" Margin="5"></TextBox>
+        <TextBox Name="lekar1" Height="25" Margin="5"></TextBox>
         <!-- <Label>Pacijent</Label>
 
         <TextBox Name="pacijent"></TextBox>  
         -->
         <Label>DATUM OD</Label>
-        <DatePicker Name="datum" Height="25" Margin="5"></DatePicker>
+        <DatePicker Name="datumod" Height="25" Margin="5"></DatePicker>
         <Label>DATUM DO</Label>
-        <DatePicker Name="datum1" Height="25" Margin="5"></DatePicker>
+        <DatePicker Name="datumdo" Height="25" Margin="5"></DatePicker>
         <Label>PRIORITET</Label>
 
         <ComboBox Name="PrioritetCombo"  Margin="5,0,5.4,30" Height="25" >

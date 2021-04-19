@@ -85,23 +85,44 @@ namespace Model
         public static List<Termin> nadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> pomocna = new List<Termin>();
-
+            List<Termin> pomocna2 = new List<Termin>();
             foreach (Termin t in slobodniTermini)
             {
 
                 if (t.Datum.Equals(izabraniTermin.Datum) && izabraniTermin.Lekar.KorisnickoIme.Equals(t.Lekar.KorisnickoIme))
                 {
                     pomocna.Add(t);
-                   
 
 
+                    Console.WriteLine("VREME VRACA" + t.PocetnoVreme);
                 }
 
 
             }
 
-            List<Termin> vreme = pomocna.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
+            // List<Termin> vreme = pomocna.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
+            bool nasao = false;
+            foreach (Termin ter1 in pomocna)
+            {
+                nasao = false;
+                foreach (Termin ter2 in pomocna2)
+                {
+                    if (ter2.PocetnoVreme.Equals(ter1.PocetnoVreme))
+                    {
+                        nasao = true;
+                        break;
+                    }
+                }
+                if (!nasao)
+                {
 
+                    pomocna2.Add(ter1);
+                    Console.WriteLine("POMOCNA2 VRATILA " + ter1.PocetnoVreme);
+                }
+
+            }
+
+            List<Termin> vreme = pomocna2.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
             return vreme;
         }
         public static Lekar pretraziLekare(String id)
@@ -181,7 +202,7 @@ namespace Model
 
             foreach (Termin termin in datumi)
             {
-                if (termin.Lekar.KorisnickoIme.Equals(kImeLekara))
+                if (termin.Lekar.KorisnickoIme.Equals(kImeLekara) && termin.Lekar.specijalizacija==SpecijalizacijeLekara.nema)
                     konacna.Add(termin);
             }
 
@@ -335,7 +356,7 @@ namespace Model
             // PrikazTerminaPacijent.TerminZaPomeranje.Pacijent=null;
             PretraziPoId(PrikazRasporedaPacijent.TerminZaPomeranje.IdTermina).Pacijent = null;
             Termin novi = PretraziSlobodnePoId(idTermina);
-            novi.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId("leksann");
+            novi.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
 
             sviTermini.Remove(PrikazRasporedaPacijent.TerminZaPomeranje);
             sviTermini.Add(novi);
@@ -388,8 +409,16 @@ namespace Model
 
             List<Termin> datumi = pomocna.OrderBy(user => DateTime.ParseExact(user.Datum, "dd/MM/yyyy", null)).ToList();
 
+            List<Termin> pomocna1 = new List<Termin>();
+            foreach (Termin ter in datumi) {
+                if (ter.Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                {
+                    pomocna1.Add(ter);
+                }
+            }
 
-            return datumi;
+
+            return pomocna1;
         }
 
         public static List<Termin> ProveriDatumILekara(DateTime d1, DateTime d2)

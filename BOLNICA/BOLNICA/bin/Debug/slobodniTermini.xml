@@ -16,7 +16,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -44,7 +44,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -72,7 +72,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -100,679 +100,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T19</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T21</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>24/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T22</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>18/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T23</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>15:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>18/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T31</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>04/06/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T15</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T16</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T17</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>30/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T18</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>13/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T24</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T25</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T26</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>14/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T27</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>12/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T28</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>01/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T29</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>03/05/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T30</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>03/06/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T100</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>23/04/2021</Datum>
-    <Prostor>
-      <IdProstora>OP1</IdProstora>
-      <VrstaProstora>sala</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Aleksa</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>421</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
-      <KontaktTelefon>06332</KontaktTelefon>
-      <Email>leksa@lekar.com</Email>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
-      <Lozinka>aleksastojic</Lozinka>
-      <Pol>muski</Pol>
-      <specijalizacija>neurohirurg</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T200</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>03/05/2021</Datum>
-    <Prostor>
-      <IdProstora>OP1</IdProstora>
-      <VrstaProstora>sala</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Aleksa</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>421</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
-      <KontaktTelefon>06332</KontaktTelefon>
-      <Email>leksa@lekar.com</Email>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
-      <Lozinka>aleksastojic</Lozinka>
-      <Pol>muski</Pol>
-      <specijalizacija>neurohirurg</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T300</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>03/06/2021</Datum>
-    <Prostor>
-      <IdProstora>OP1</IdProstora>
-      <VrstaProstora>sala</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Aleksa</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>421</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
-      <KontaktTelefon>06332</KontaktTelefon>
-      <Email>leksa@lekar.com</Email>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
-      <Lozinka>aleksastojic</Lozinka>
-      <Pol>muski</Pol>
-      <specijalizacija>neurohirurg</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T11</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>22/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T12</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>22/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T13</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>22/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T14</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>22/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T19</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -800,7 +128,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -828,7 +156,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -856,7 +184,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -884,7 +212,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -912,69 +240,13 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
       <Email>reljinn@lekar.com</Email>
       <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
       <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T15</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T16</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>21/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
@@ -996,7 +268,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1024,7 +296,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1052,7 +324,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1080,7 +352,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1108,7 +380,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1136,7 +408,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1164,7 +436,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1192,7 +464,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1220,7 +492,7 @@
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -1248,7 +520,7 @@
     <Lekar>
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7299872+02:00</DatumRodjenja>
       <Jmbg>421</Jmbg>
       <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
       <KontaktTelefon>06332</KontaktTelefon>
@@ -1276,7 +548,7 @@
     <Lekar>
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7299872+02:00</DatumRodjenja>
       <Jmbg>421</Jmbg>
       <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
       <KontaktTelefon>06332</KontaktTelefon>
@@ -1304,7 +576,7 @@
     <Lekar>
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-04-19T15:58:04.7299872+02:00</DatumRodjenja>
       <Jmbg>421</Jmbg>
       <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
       <KontaktTelefon>06332</KontaktTelefon>
@@ -1317,28 +589,28 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T20</IdTermina>
+    <IdTermina>T15</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>19:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>19/04/2021</Datum>
+    <Datum>21/04/2021</Datum>
     <Prostor>
-      <IdProstora>P1</IdProstora>
+      <IdProstora>P2</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
+      <Kvadratura>25</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
     </Prostor>
     <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>2021-04-19T15:58:04.7309846+02:00</DatumRodjenja>
+      <Jmbg>431</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
+      <KontaktTelefon>06343</KontaktTelefon>
+      <Email>jelenah@lekar.com</Email>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Lozinka>jelenahrnjak</Lozinka>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>

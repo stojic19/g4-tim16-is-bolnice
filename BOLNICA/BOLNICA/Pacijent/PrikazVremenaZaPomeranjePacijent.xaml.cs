@@ -40,6 +40,11 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (vremenaZaPomeranjeLista.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin!");
+                return;
+            }
             PotvrdiPomeranjePacijent pz = new PotvrdiPomeranjePacijent(((Termin)vremenaZaPomeranjeLista.SelectedItem));
             pz.Show();
             this.Close();
