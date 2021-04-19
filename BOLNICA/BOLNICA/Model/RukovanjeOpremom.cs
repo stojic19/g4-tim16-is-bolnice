@@ -24,23 +24,6 @@ namespace Model
             return true;
         }
 
-        public static void DodajOpremuProstoriji(Oprema o)
-        {
-            Oprema o1 = PretraziPoId(o.IdOpreme);
-
-            if (o1 == null)
-            {
-                RasporedOpreme.Oprema.Add(o);
-                //return o1;
-            }
-            else
-            {
-
-                o1.Kolicina += o.Kolicina;
-                //return null;
-            }
-
-        }
         public static Boolean IzmeniOpremu(String stari, String idOpreme, String naziv, int vrstaOpreme, String kolicina)
         {
             Oprema o = PretraziPoId(stari);
@@ -88,6 +71,7 @@ namespace Model
                 return true;
             }
         }
+
 
         public static Oprema PretraziPoId(String idOpreme)
         {

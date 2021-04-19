@@ -31,15 +31,15 @@ namespace Bolnica
         private UpravnikGlavniProzor()
         {
             InitializeComponent();
+            RukovanjeOpremom.DeserijalizacijaOpreme();
+            RukovanjeProstorom.DeserijalizacijaProstora();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeProstorom.SerijalizacijaProstora();
-            Login l = new Login();
-            l.Show();
+            Login mw = new Login();
+            mw.Show();
             this.Close();
-            
         }
 
         private void Prostorije_Click(object sender, RoutedEventArgs e)

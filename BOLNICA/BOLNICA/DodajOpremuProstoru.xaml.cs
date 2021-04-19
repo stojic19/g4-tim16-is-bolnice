@@ -19,12 +19,19 @@ namespace Bolnica
 
     public partial class DodajOpremuProstoru : Window
     {
-
-        public DodajOpremuProstoru()
+        private List<Oprema> oprema;
+        private RasporedOpreme raspored;
+        private string IdProstora;
+        public DodajOpremuProstoru( string idProstora)
         {
             InitializeComponent();
+            oprema = RukovanjeOpremom.SvaOprema();
+          //  this.raspored = raspored;
+            this.DataContext = this;
+            IdProstora = idProstora;
         }
 
+        public List<Oprema> Oprema { get => oprema; set => oprema = value; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -34,25 +41,46 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            String idOpreme = this.idOpreme.Text;
-            foreach (Oprema o1 in RukovanjeProstorom.SvaOpremaProstora())
-             {
-                 if (o1.IdOpreme.Equals(this.idOpreme.Text))
-                 {
-                     System.Windows.Forms.MessageBox.Show("Već postoji uneto Id opreme!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return;
-                 }
-             }
+            Oprema opr = (Oprema)dataGridOprema.SelectedItem;
+            int Kolicina = Int32.Parse(kolicina.Text);
+            if(opr.Kolicina < Kolicina)
+            {
+                System.Windows.Forms.MessageBox.Show("Neispravna kolicina !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } 
 
-            String nazivOpreme = this.nazivOpreme.Text;
-            int kolicina = int.Parse(this.kolicina.Text);
+            foreach(Oprema o in RukovanjeOpremom.SvaOprema())
+            {
+                if (o.IdOpreme.Equals(opr.IdOpreme))
+                {
+                    o.Kolicina -= Kolicina;
+                }
+            }
 
+            Prostor p = RukovanjeProstorom.PretraziPoId(IdProstora);
 
-            Oprema o = new Oprema(idOpreme, nazivOpreme, kolicina);
-            RukovanjeOpremom.DodajOpremuProstoriji(o);
-
+            bool postoji = false;
+            foreach (Oprema o in p.Oprema)
+            {
+                if (o.IdOpreme.Equals(opr.IdOpreme))
+                {
+                    o.Kolicina += Kolicina;
+                    postoji = true;
+                }
+            }
+            if (!postoji)
+            {
+                RukovanjeProstorom.PretraziPoId(IdProstora).Oprema.Add(new Oprema(opr.IdOpreme,opr.NazivOpreme,opr.VrstaOpreme, Kolicina));
+            }
+            // RasporedOpreme.oprema.Add(opr
+            RukovanjeOpremom.SerijalizacijaOpreme();
+            RukovanjeProstorom.SerijalizacijaProstora();
             this.Close();
         }
 
+        private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

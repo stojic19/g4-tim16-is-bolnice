@@ -21,37 +21,48 @@ namespace Bolnica
     /// </summary>
     public partial class RasporedOpreme : UserControl
     {
-        public static ObservableCollection<Oprema> Oprema { get; set; }
+
+
+        public ObservableCollection<Oprema> oprema;
         public static string IdProstorije { get; set; }
-        public RasporedOpreme(String idOpreme)
+        public ObservableCollection<Oprema> Oprema { get => oprema; set => oprema = value; }
+
+
+        public RasporedOpreme(String idProstorije)
         {
             InitializeComponent();
-
             this.DataContext = this;
-
-            Oprema = new ObservableCollection<Oprema>();
-
-            foreach (Oprema o in RukovanjeProstorom.SvaOpremaProstora())
-            {
-                Prostor.Oprema.Add(o);
+            oprema = new ObservableCollection<Oprema>();
+            foreach(Oprema o in RukovanjeProstorom.PretraziPoId(idProstorije).Oprema){
+                oprema.Add(o);
             }
-
-            dataGridRasporedOpreme.ItemsSource = Oprema;
-
+            
+            dataGridRasporedOpreme.ItemsSource = oprema;
+            IdProstorije = idProstorije;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
 
         {
 
-            DodajOpremuProstoru dodavanje = new DodajOpremuProstoru();
+            DodajOpremuProstoru dodavanje = new DodajOpremuProstoru(IdProstorije);
             dodavanje.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            PremjestanjeOpreme premjestanje = new PremjestanjeOpreme();
-            premjestanje.Show();
+            Oprema izabranZaPrebacivanje = (Oprema)dataGridRasporedOpreme.SelectedItem;
+
+            if (izabranZaPrebacivanje != null)
+            {
+                PremjestanjeOpreme premjestanje = new PremjestanjeOpreme(izabranZaPrebacivanje.IdOpreme, IdProstorije);
+                premjestanje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite opremu koji želite da prebacite!");
+            }
+
 
         }
 

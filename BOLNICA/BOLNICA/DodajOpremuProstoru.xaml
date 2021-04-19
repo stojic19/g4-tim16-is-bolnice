@@ -5,30 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Dodavanje opreme prostoru" Height="400" Width="400" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
+        Title="Dodavanje opreme prostoru" Height="337.697" Width="567.218" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue" Margin="0,0,-6.2,0" RenderTransformOrigin="0.495,0.499">
         <Grid.ColumnDefinitions >
-            <ColumnDefinition />
+            <ColumnDefinition Width="240"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <!--<RowDefinition Height="60*"/>-->
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
 
-            <RowDefinition Height="80*"/>
+            <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="ID opreme:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
-
-        <TextBox Name="idOpreme" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
-        <Label Content="Naziv opreme:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="1" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
-        <TextBox Name="nazivOpreme" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Label Content="Oprema koju zelimo da dodamo:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="0" Margin="0,27,20,28.6" Height="30" Width="206"/>
+        
+        
+      <DataGrid x:Name="dataGridOprema" ItemsSource="{Binding Oprema}" IsReadOnly="true"
+                  SelectionMode="Single" Grid.RowSpan="2" Margin="20,10,22.2,9.6" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" ID opreme" Binding="{Binding IdOpreme}" Width="67*"/>
+                <DataGridTextColumn Header=" Naziv opreme" Binding="{Binding NazivOpreme}" Width="80*"/>
+                <DataGridTextColumn Header=" Vrsta opreme" Binding="{Binding VrstaOpreme}" Width="95*"/>
+                <DataGridTextColumn Header=" Kolicina" Binding="{Binding Kolicina}" Width="67*"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
 
         <Label Content="Kolicina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
@@ -37,12 +42,11 @@
         <TextBox Name="kolicina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
 
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="3"  Margin="0,23.8,0,23"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="3"  Margin="75,23.8,0,23"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
 
 

@@ -13,7 +13,7 @@ namespace Model
         public float Kvadratura { get; set; }
         public int BrojKreveta { get; set; }
 
-        public static List<Oprema> Oprema { get; set; }
+        public List<Oprema> Oprema { get; set; }
         public Prostor() { }
 
         public Prostor(string idProstora, VrsteProstora vrstaProstora)

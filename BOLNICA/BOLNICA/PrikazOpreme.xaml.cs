@@ -28,7 +28,7 @@ namespace Bolnica
 
             this.DataContext = this;
 
-            Oprema = new ObservableCollection<Oprema>(RukovanjeOpremom.DeserijalizacijaOpreme());
+            Oprema = new ObservableCollection<Oprema>();
 
             foreach (Oprema o in RukovanjeOpremom.SvaOprema())
             {

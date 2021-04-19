@@ -6,6 +6,14 @@
     <Sprat>66</Sprat>
     <Kvadratura>6</Kvadratura>
     <BrojKreveta>3212</BrojKreveta>
+    <Oprema>
+      <Oprema>
+        <IdOpreme>s1</IdOpreme>
+        <NazivOpreme>krevet</NazivOpreme>
+        <VrstaOpreme>staticka</VrstaOpreme>
+        <Kolicina>2</Kolicina>
+      </Oprema>
+    </Oprema>
   </Prostor>
   <Prostor>
     <IdProstora>P1</IdProstora>
@@ -13,6 +21,14 @@
     <Sprat>1</Sprat>
     <Kvadratura>1</Kvadratura>
     <BrojKreveta>2</BrojKreveta>
+    <Oprema>
+      <Oprema>
+        <IdOpreme>s1</IdOpreme>
+        <NazivOpreme>krevet</NazivOpreme>
+        <VrstaOpreme>staticka</VrstaOpreme>
+        <Kolicina>1</Kolicina>
+      </Oprema>
+    </Oprema>
   </Prostor>
   <Prostor>
     <IdProstora>P3</IdProstora>
@@ -20,6 +36,7 @@
     <Sprat>6</Sprat>
     <Kvadratura>6</Kvadratura>
     <BrojKreveta>4</BrojKreveta>
+    <Oprema />
   </Prostor>
   <Prostor>
     <IdProstora>P4</IdProstora>
@@ -27,6 +44,7 @@
     <Sprat>2</Sprat>
     <Kvadratura>9</Kvadratura>
     <BrojKreveta>2</BrojKreveta>
+    <Oprema />
   </Prostor>
   <Prostor>
     <IdProstora>P2</IdProstora>
@@ -34,6 +52,7 @@
     <Sprat>1</Sprat>
     <Kvadratura>25</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
+    <Oprema />
   </Prostor>
   <Prostor>
     <IdProstora>OP1</IdProstora>
@@ -41,5 +60,6 @@
     <Sprat>2</Sprat>
     <Kvadratura>40</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
+    <Oprema />
   </Prostor>
 </ArrayOfProstor>
