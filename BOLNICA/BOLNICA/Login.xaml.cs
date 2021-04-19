@@ -34,7 +34,7 @@ namespace Bolnica
 
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić",DateTime.Now,Pol.muski,"1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
-            RukovanjeTerminima.sviLekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
+            //RukovanjeTerminima.sviLekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
             
             RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
             RukovanjeTerminima.DeserijalizacijaTermina();

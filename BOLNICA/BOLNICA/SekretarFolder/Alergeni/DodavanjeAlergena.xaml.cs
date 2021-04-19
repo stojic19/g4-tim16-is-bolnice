@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,12 +37,10 @@ namespace Bolnica
             SviLekovi.Add(new Lek("L1","Lek 1", "100mg"));
             SviLekovi.Add(new Lek("L2", "Lek 2", "200mg"));
             SviLekovi.Add(new Lek("L3", "Lek 3", "300mg"));
-            /*  kada se odradi baza lekova preko ovoga dodati lekove u tabelu
-            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.svaObavestenja)//Izmeniti kada je u pitanju personalizacija obavestenja
+            /*foreach (Lek l in RukovanjeZdravstvenimKartonima.inicijalniLekovi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {
-                SvaObavestenja.Add(o);
-            }
-            */
+                if()
+            }*/
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

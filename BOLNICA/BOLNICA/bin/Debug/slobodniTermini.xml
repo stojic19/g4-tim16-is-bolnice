@@ -141,34 +141,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T20</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>19/04/2021</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>T21</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>11:00</PocetnoVreme>
@@ -1341,6 +1313,34 @@
       <Lozinka>aleksastojic</Lozinka>
       <Pol>muski</Pol>
       <specijalizacija>neurohirurg</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T20</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>19:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>19/04/2021</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+    </Prostor>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-04-19T13:07:04.0742285+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
