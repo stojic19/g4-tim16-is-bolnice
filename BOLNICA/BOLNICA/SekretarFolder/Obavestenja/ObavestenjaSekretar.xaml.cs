@@ -32,7 +32,10 @@ namespace Bolnica
             RukovanjeNalozimaPacijenata.Ucitaj();
             foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.svaObavestenja)//Izmeniti kada je u pitanju personalizacija obavestenja
             {
-                SvaObavestenja.Add(o);
+                if (o.IdPrimaoca == "svi")
+                {
+                    SvaObavestenja.Add(o);
+                }
             }
         }
 
