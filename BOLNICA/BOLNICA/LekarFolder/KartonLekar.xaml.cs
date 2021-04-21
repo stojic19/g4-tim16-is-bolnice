@@ -42,7 +42,7 @@ namespace Bolnica
             adresa.Text = p.AdresaStanovanja;
             datum.Text = p.DatumRodjenja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
-            if(p.Pol == Pol.zenski)
+            if (p.Pol == Pol.zenski)
             {
                 pol.Text = "Ž";
             }
@@ -66,7 +66,7 @@ namespace Bolnica
 
             foreach (Recept r in zk.Recepti)
             {
-               Recepti.Add(r);
+                Recepti.Add(r);
             }
 
             Anamneze = new ObservableCollection<Anamneza>();
@@ -82,7 +82,7 @@ namespace Bolnica
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
             PrikazTerminaLekara termini = new PrikazTerminaLekara(korisnik);
-            
+
             termini.Show();
             this.Close();
 
@@ -105,7 +105,7 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //Nova anamneza
         {
-            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran,korisnik);
+            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran, korisnik);
 
             dodajAnamnezu.Show();
             this.Close();

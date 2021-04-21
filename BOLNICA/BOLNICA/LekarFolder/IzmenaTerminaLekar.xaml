@@ -5,114 +5,151 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Izmena termina" Height="590" Width="450" WindowStartupLocation="CenterScreen" >
+       Title="Izmena termina" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="LightBlue">
-        <Grid.ColumnDefinitions >
+
+        <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="80*"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="435*"/>
+            <RowDefinition Height="28"/>
         </Grid.RowDefinitions>
 
-  
-        <Label Content="Korisničko ime lekara:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" Fill="#999999" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
+        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" Fill="#999999" />
+        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
 
-        <TextBox AcceptsReturn="True"  Name="idLekara" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click_2" Background="WhiteSmoke" Width="32" Height="32">
 
-        <Label Content="Korisničko ime pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="1" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
+            <Image Source="LekarSlike/Back.png"/>
 
-        <TextBox IsReadOnly="True" Name="idPacijenta" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.6,0,19.2" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        </Button>
 
+        <Grid Grid.Row="1">
 
-        <Label Content="Vrsta termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-        <ComboBox IsEditable="True" Name="vrTermina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,18.4,0,18" SelectedIndex="0"
-                   Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="104*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="107*"/>
+                <ColumnDefinition Width="42*"/>
+                <ColumnDefinition Width="74*"/>
+                <ColumnDefinition Width="74*"/>
+            </Grid.ColumnDefinitions>
 
-            <ComboBoxItem HorizontalAlignment="Left">Pregled</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Left">Operacija</ComboBoxItem>
+            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24"/>
+            <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   VerticalAlignment="Center" Width="143" Height="30" />
+            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
 
-        </ComboBox>
-
-        <Label Content="Prostorija:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
-
-        <TextBox AcceptsReturn="True" Name="idProstorije" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
-
-        <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="4" Margin="0,19.2,19.6,19.6" Height="30" Width="150"/>
-
-        <DatePicker Name="datum" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
-
-        <Label Content="Vreme početka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="5" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
-
-        <ComboBox IsEditable="True" Name="pocVreme" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" 
-                  Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
-            <ComboBoxItem HorizontalAlignment="Center">07:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">07:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">08:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">08:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">09:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">09:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">10:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">10:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">11:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">11:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">12:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">12:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">13:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">13:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">14:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">14:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">15:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">15:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">16:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">16:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">17:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">17:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">18:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">18:30</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">19:00</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">19:30</ComboBoxItem>
-        </ComboBox>
-
-        <Label  Content="Trajanje termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="6" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
-
-        <TextBox AcceptsReturn="True" Name="trajanje" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,18.2,0,18.2" Height="30" Width="88" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        </Grid>
 
 
-        <ComboBox IsEditable="True" Name="hMin" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="126.4,18.2,0,18.2" 
-                   Height="30" Width="49" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SelectedIndex="0">
 
-            <ComboBoxItem HorizontalAlignment="Center">min</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">h</ComboBoxItem>
+        <Grid Background="WhiteSmoke" Width="728" Height="350" Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="31"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Zakazivanje termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="4" />
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
 
 
-        </ComboBox>
+
+            <Label Content="Vrsta termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="2" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+            <ComboBox SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="9.6,1,0,1">
+
+                <ComboBoxItem HorizontalAlignment="Left">Pregled</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left">Operacija</ComboBoxItem>
+
+            </ComboBox>
+
+            <Label Content="Ime pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+            <TextBox Margin="9.6,1,0,1" IsReadOnly="True" Name="imePacijenta" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Content="Prezime pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="2"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox Margin="9.6,1,0,1" IsReadOnly="True" Name="prezimePacijenta" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+
+
+            <Label Content="JMBG pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+            <TextBox Margin="9.6,1,0,1" IsReadOnly="True" Name="jmbgPacijenta" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+
+
+            <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="2" Grid.Row="2"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+            <DatePicker SelectedDateChanged="datum_SelectedDateChanged" Margin="9.6,1,0,1" Name="datum" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+
+            <Label Content="Vreme početka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="2" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+            <ComboBox ItemsSource="{Binding slobodniTermini}"  Name="pocVreme" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" 
+                  Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="9.6,1,0,1">
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding PocetnoVreme}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                <Button Content="Odustani"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
+
+                <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+
+
+            </StackPanel>
+
+        </Grid>
+
+
 
 
 
     </Grid>
+
 </Window>

@@ -27,6 +27,7 @@ namespace Bolnica
         public PrikazTerminaLekara(String korIme)
         {
             InitializeComponent();
+
             korisnik = korIme;
             this.DataContext = this;
 
@@ -54,10 +55,12 @@ namespace Bolnica
             if (izabranZaMenjanje != null)
             {
 
-                IzmenaTerminaLekar izmena = new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina);
+                IzmenaTerminaLekar izmena = new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik);
                 izmena.Show();
-                this.Close();
+
             }
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
@@ -98,7 +101,7 @@ namespace Bolnica
 
             if (izabran != null)
             {
-                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme,0, korisnik );
+                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme, 0, korisnik);
                 karton.Show();
                 this.Close();
             }

@@ -32,17 +32,23 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić",DateTime.Now,Pol.muski,"1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
+            Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić", DateTime.Now, Pol.muski, "1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
             //RukovanjeTerminima.sviLekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
-            
-            RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
+
+            if (RukovanjeTerminima.brojac == 0)
+            {
+                RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
+            }
+
+            RukovanjeTerminima.brojac++;
+
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeObavestenjimaSekratar.Ucitaj();
-            //RukovanjeTerminima.InicijalizacijaSTermina();
+            //  RukovanjeTerminima.InicijalizacijaSTermina();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
 
@@ -69,16 +75,16 @@ namespace Bolnica
             }
             foreach (Upravnik u in Upravnici)
             {
-                if(u.KorisnickoIme.Equals(username.Text))
+                if (u.KorisnickoIme.Equals(username.Text))
                 {
-                    if(u.Lozinka.Equals(password.Password))
+                    if (u.Lozinka.Equals(password.Password))
                     {
                         UpravnikGlavniProzor ugp = UpravnikGlavniProzor.getInstance();
                         ugp.Show();
                         this.Close();
                         founded = true;
                     }
-                    else 
+                    else
                     {
                         System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -139,8 +145,8 @@ namespace Bolnica
                     }
                 }
             }
-            if(!founded)
-            System.Windows.Forms.MessageBox.Show("Nepostojeći korisnik!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!founded)
+                System.Windows.Forms.MessageBox.Show("Nepostojeći korisnik!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

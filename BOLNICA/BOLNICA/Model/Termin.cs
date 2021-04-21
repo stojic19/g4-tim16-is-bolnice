@@ -41,5 +41,18 @@ namespace Model
         {
             return base.ToString();
         }
+
+        public String getVrstaTerminaString()
+        {
+
+            if (VrstaTermina == VrsteTermina.operacija)
+            {
+                return "Operacija";
+            }
+            else 
+            {
+                return "Pregled";
+            }
+        }
     }
 }

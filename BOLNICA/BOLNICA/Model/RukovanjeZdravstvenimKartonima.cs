@@ -15,7 +15,6 @@ namespace Bolnica.Model
 
 
         public static List<ZdravstveniKarton> kartoni = new List<ZdravstveniKarton>();
-        public static List<Recept> recepti { get; set; } = new List<Recept>();
 
         //SAMO PRIVREMENO DOK SE NE UBACE LEKOVI
         public static List<Lek> inicijalniLekovi { get; set; } = new List<Lek>();

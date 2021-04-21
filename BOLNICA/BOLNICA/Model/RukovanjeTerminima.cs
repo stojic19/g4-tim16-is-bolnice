@@ -10,12 +10,14 @@ namespace Model
 {
     public class RukovanjeTerminima
     {
-        private static String imeFajla= "termini.xml";
+        private static String imeFajla = "termini.xml";
 
         public static List<Termin> sviTermini = new List<Termin>();
         public static List<Termin> slobodniTermini = new List<Termin>();
 
         public static List<Lekar> sviLekari = new List<Lekar>();
+
+        public static int brojac { get; set; } = 0;
 
         public static void PrivremenaInicijalizacijaLekara()
         {
@@ -33,7 +35,7 @@ namespace Model
                     l.setSpecijalizacija(SpecijalizacijeLekara.neurohirurg);
                 }
             }
-            
+
         }
 
         public static String ImeiPrezime(String id)
@@ -53,32 +55,27 @@ namespace Model
         {
 
 
-            slobodniTermini.Add(new Termin("T11", VrsteTermina.pregled, "09:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "09:30", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "11:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T14", VrsteTermina.pregled, "08:00", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T20", VrsteTermina.pregled, "19:00", 30, "19/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T21", VrsteTermina.pregled, "11:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T22", VrsteTermina.pregled, "08:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T23", VrsteTermina.pregled, "15:00", 30, "18/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
-            slobodniTermini.Add(new Termin("T31", VrsteTermina.pregled, "09:00", 30, "04/06/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
 
-            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "19:00", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "13/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "21/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "14/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T27", VrsteTermina.pregled, "09:00", 30, "12/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T28", VrsteTermina.pregled, "11:00", 30, "01/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
-            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "14:30", 30, "22/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "11:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T14", VrsteTermina.pregled, "08:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "19:00", 30, "24/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T29", VrsteTermina.pregled, "13:00", 30, "26/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "16:00", 30, "26/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+            slobodniTermini.Add(new Termin("T35", VrsteTermina.pregled, "16:00", 30, "30/04/2021", RukovanjeProstorom.PretraziPoId("P1"), null, pretraziLekare("MagdalenaReljin")));
+
+            slobodniTermini.Add(new Termin("T15", VrsteTermina.pregled, "16:30", 30, "21/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T16", VrsteTermina.pregled, "19:30", 30, "27/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T17", VrsteTermina.pregled, "11:00", 30, "27/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T18", VrsteTermina.pregled, "09:00", 30, "27/05/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T24", VrsteTermina.pregled, "09:00", 30, "26/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T25", VrsteTermina.pregled, "09:30", 30, "28/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
+            slobodniTermini.Add(new Termin("T26", VrsteTermina.pregled, "11:00", 30, "28/04/2021", RukovanjeProstorom.PretraziPoId("P2"), null, pretraziLekare("JelenaHrnjak")));
 
 
-                                                                                                                                    
-            slobodniTermini.Add(new Termin("T100", VrsteTermina.operacija, "11:00", 30, "23/04/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
+
+
+            slobodniTermini.Add(new Termin("T100", VrsteTermina.operacija, "11:00", 30, "27/04/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
             slobodniTermini.Add(new Termin("T200", VrsteTermina.operacija, "09:00", 30, "03/05/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
             slobodniTermini.Add(new Termin("T300", VrsteTermina.operacija, "09:00", 30, "03/06/2021", RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
         }
@@ -127,7 +124,7 @@ namespace Model
         }
         public static Lekar pretraziLekare(String id)
         {
-            foreach(Lekar l in sviLekari)
+            foreach (Lekar l in sviLekari)
             {
 
                 if (l.KorisnickoIme.Equals(id))
@@ -143,6 +140,15 @@ namespace Model
         {
             sviTermini.Add(t);
 
+            foreach (Termin term in slobodniTermini.ToList())
+            {
+                if (term.IdTermina.Equals(t.IdTermina))
+                {
+                    slobodniTermini.Remove(term);
+                }
+            }
+
+
             if (t.Lekar.KorisnickoIme.Equals(lekar))
             {
                 PrikazTerminaLekara.Termini.Add(t);
@@ -157,9 +163,10 @@ namespace Model
                 return null;
             }
         }
+
         public static Termin ZakaziPregled(Termin t)
         {
-           
+
             sviTermini.Add(t);
             slobodniTermini.Remove(t);
             SerijalizacijaSlobodnihTermina();
@@ -202,7 +209,7 @@ namespace Model
 
             foreach (Termin termin in datumi)
             {
-                if (termin.Lekar.KorisnickoIme.Equals(kImeLekara) && termin.Lekar.specijalizacija==SpecijalizacijeLekara.nema)
+                if (termin.Lekar.KorisnickoIme.Equals(kImeLekara) && termin.Lekar.specijalizacija == SpecijalizacijeLekara.nema)
                     konacna.Add(termin);
             }
 
@@ -225,6 +232,7 @@ namespace Model
             sviTermini.Remove(t);
             t.Pacijent = null;
             slobodniTermini.Add(t);
+
             PrikazTerminaLekara.Termini.Remove(t);
 
             if (sviTermini.Contains(t) || PrikazTerminaLekara.Termini.Contains(t))
@@ -288,39 +296,34 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniTermin(String idTermina, String idLekara, int vrstaTermina, String idProstorije, String datum, String pocVr, String trajanje, int hMin)
+        public static Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik)
         {
-            Termin t = PretraziPoId(idTermina);
 
-
-            t.Lekar = pretraziLekare(idLekara);
-
-            if (vrstaTermina == 0)
+            foreach (Termin t in slobodniTermini.ToList())
             {
-                t.VrstaTermina = VrsteTermina.pregled;
-            }
-            else
-            {
-                t.VrstaTermina = VrsteTermina.operacija;
+                if (t.IdTermina.Equals(novi.IdTermina))
+                {
+                    slobodniTermini.Remove(t);
+                    sviTermini.Add(novi);
+                }
+
             }
 
-
-            t.Prostor = RukovanjeProstorom.PretraziPoId(idProstorije);
-            t.Datum = datum;
-            t.PocetnoVreme = pocVr;
-
-            if (hMin == 0)
+            foreach (Termin t in sviTermini.ToList())
             {
-                t.Trajanje = Double.Parse(trajanje);
-            }
-            else
-            {
-                t.Trajanje = Double.Parse(trajanje) * 60;
+                if (t.IdTermina.Equals(stari.IdTermina))
+                {
+                    sviTermini.Remove(t);
+                    slobodniTermini.Add(stari);
+                }
             }
 
-            int indeks = PrikazTerminaLekara.Termini.IndexOf(t);
-            PrikazTerminaLekara.Termini.RemoveAt(indeks);
-            PrikazTerminaLekara.Termini.Insert(indeks, t);
+            if (novi.Lekar.KorisnickoIme.Equals(korisnik))
+            {
+                int indeks = PrikazTerminaLekara.Termini.IndexOf(stari);
+                PrikazTerminaLekara.Termini.RemoveAt(indeks);
+                PrikazTerminaLekara.Termini.Insert(indeks, novi);
+            }
 
             return true;
         }
@@ -382,7 +385,7 @@ namespace Model
 
         public static Termin PretraziPoId(String idTermina)
         {
-            foreach(Termin termin in sviTermini)
+            foreach (Termin termin in sviTermini)
             {
                 if (termin.IdTermina.Equals(idTermina))
                     return termin;
@@ -410,7 +413,8 @@ namespace Model
             List<Termin> datumi = pomocna.OrderBy(user => DateTime.ParseExact(user.Datum, "dd/MM/yyyy", null)).ToList();
 
             List<Termin> pomocna1 = new List<Termin>();
-            foreach (Termin ter in datumi) {
+            foreach (Termin ter in datumi)
+            {
                 if (ter.Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
                 {
                     pomocna1.Add(ter);
@@ -473,7 +477,7 @@ namespace Model
 
             KONACNI += brojevi[2];
             //Console.WriteLine("konacniiiiiiiiiiiiiiiiiiiiiiiiiii   " + KONACNI);
-           // Console.WriteLine("pregledeeeeeeeeeeeeeeeeeeeeeeeeeeeeed   " + datumPregleda);
+            // Console.WriteLine("pregledeeeeeeeeeeeeeeeeeeeeeeeeeeeeed   " + datumPregleda);
             if (datumPregleda.Equals(KONACNI))
                 return true;
 
@@ -494,14 +498,14 @@ namespace Model
             int sat = Int32.Parse(splits2[0]);
             int minut = Int32.Parse(splits2[1]);
             //Console.WriteLine("**********************************SADA");
-           // Console.WriteLine(sat);
-           // Console.WriteLine(minut);
+            // Console.WriteLine(sat);
+            // Console.WriteLine(minut);
             int satPregleda = Int32.Parse(pregled[0]);
             int minutPregleda = Int32.Parse(pregled[1]);
 
-           // Console.WriteLine("**********************************PREGLED");
+            // Console.WriteLine("**********************************PREGLED");
             //Console.WriteLine(satPregleda);
-           // Console.WriteLine(minutPregleda);
+            // Console.WriteLine(minutPregleda);
 
             if (satPregleda < sat)
                 return false;
@@ -544,22 +548,22 @@ namespace Model
 
             int i = 0;
 
-            for (i = 0 ; i < sviTermini.Count ; i++)
+            for (i = 0; i < sviTermini.Count; i++)
             {
-                foreach(Termin t in sviTermini)
+                foreach (Termin t in sviTermini)
                 {
-                    if(t.IdTermina.Equals("T" + i.ToString()))
+                    if (t.IdTermina.Equals("T" + i.ToString()))
                     {
                         pronadjen = true;
                         break;
                     }
-                  
+
                 }
 
                 if (!pronadjen)
                 {
-                    return ("T" + i.ToString()) ;
-                    
+                    return ("T" + i.ToString());
+
                 }
                 pronadjen = false;
             }

@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,17 +20,23 @@ namespace Bolnica
     public partial class IzmenaTerminaLekar : Window
     {
         String izabran = null;
+        String korisnik = null;
+        String izabranDatum = null;
+        String izabranaVrstaTermina = null;
 
-        public IzmenaTerminaLekar(String id)
+        public static ObservableCollection<Termin> slobodniTermini { get; set; } = new ObservableCollection<Termin>();
+
+        public IzmenaTerminaLekar(String id, String lekar)
         {
             InitializeComponent();
-
+            korisnik = lekar;
             izabran = id;
             Termin t = RukovanjeTerminima.PretraziPoId(id);
 
+            imePacijenta.Text = t.Pacijent.Ime;
+            prezimePacijenta.Text = t.Pacijent.Prezime;
+            jmbgPacijenta.Text = t.Pacijent.Jmbg;
 
-            idLekara.Text = t.Lekar.KorisnickoIme;
-            idPacijenta.Text = t.Pacijent.KorisnickoIme;
             if (t.VrstaTermina == VrsteTermina.operacija)
             {
                 vrTermina.Text = "Operacija";
@@ -38,54 +45,131 @@ namespace Bolnica
             {
                 vrTermina.Text = "Pregled";
             }
-            idProstorije.Text = t.Prostor.IdProstora;
+
             datum.SelectedDate = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            pocVreme.Text = t.PocetnoVreme;
-            trajanje.Text = t.Trajanje.ToString();
+
+            izabranDatum = t.Datum;
+            izabranaVrstaTermina = t.getVrstaTerminaString();
+
+            this.DataContext = this;
+
+
+            refresujPocetnoVreme();
+
+
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //odustani
         {
+            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
+            ptl.Show();
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e) //potvrdi
         {
-            DateTime? datum = this.datum.SelectedDate;
-            String formatirano = null;
 
-
-            if (datum.HasValue)
-            {
-                formatirano = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-
-
-            if (this.idLekara.Text.Equals("") || this.idProstorije.Text.Equals("") || this.trajanje.Text.Equals("") 
-                || !datum.HasValue || pocVreme.SelectedIndex == -1)
+            if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1)
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
 
-            if (RukovanjeTerminima.pretraziLekare(idLekara.Text) == null)
-            {
-                    System.Windows.Forms.MessageBox.Show("Uneli ste nepostojećeg lekara!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-            }
+            DateTime danas = DateTime.Now;
 
-            if (RukovanjeProstorom.PretraziPoId(idProstorije.Text) == null)
+            if (danas.CompareTo(datum.SelectedDate) > 0)
             {
-                System.Windows.Forms.MessageBox.Show("Uneli ste nepostojeći prostor!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+
+                System.Windows.Forms.MessageBox.Show("Izabran datum je prošao!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
 
+            Termin stari = RukovanjeTerminima.PretraziPoId(izabran);
+            Termin novi = (Termin)pocVreme.SelectedItem;
 
-            RukovanjeTerminima.IzmeniTermin(izabran, idLekara.Text, vrTermina.SelectedIndex, idProstorije.Text, formatirano, pocVreme.Text, trajanje.Text, hMin.SelectedIndex);
+            Double trajanje = 0;
+
+            if (izabranaVrstaTermina.Equals("Operacija"))
+            {
+                trajanje = 120;
+            }
+            else
+            {
+                trajanje = 30;
+            }
+
+            novi.Trajanje = trajanje;
+            stari.Trajanje = 0;
+            novi.Pacijent = stari.Pacijent;
+            stari.Pacijent = null;
+
+
+            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik);
+            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
+            ptl.Show();
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+        }
+
+        private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (vrTermina.SelectedIndex == 0)
+            {
+
+                izabranaVrstaTermina = "Pregled";
+            }
+            else if (vrTermina.SelectedIndex == 1)
+            {
+                izabranaVrstaTermina = "Operacija";
+            }
+
+
+            refresujPocetnoVreme();
+        }
+
+        private void datum_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime? datum = this.datum.SelectedDate;
+
+
+
+            if (datum.HasValue)
+            {
+                izabranDatum = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                refresujPocetnoVreme();
+
+            }
+        }
+
+        private void refresujPocetnoVreme()
+        {
+            Termin izabranT = RukovanjeTerminima.PretraziPoId(izabran);
+            slobodniTermini.Clear();
+            foreach (Termin t in RukovanjeTerminima.slobodniTermini)
+            {
+                if (t.Datum.Equals(izabranDatum) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
+                {
+                    //Console.WriteLine(izabranaVrstaTermina + t.getVrstaTerminaString());
+                    slobodniTermini.Add(t);
+
+                }
+
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e) //back
+        {
+            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
+            ptl.Show();
+            this.Close();
+
         }
     }
 }

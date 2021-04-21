@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-   
+
     public partial class NovaAnamneza : Window
     {
 
@@ -60,7 +60,7 @@ namespace Bolnica
 
             Terapije = new ObservableCollection<Terapija>();
 
-           foreach(Terapija t in RukovanjeZdravstvenimKartonima.Privremeno)
+            foreach (Terapija t in RukovanjeZdravstvenimKartonima.Privremeno)
             {
                 Terapije.Add(t);
             }
@@ -88,11 +88,11 @@ namespace Bolnica
             }
 
 
-            Anamneza a = new Anamneza(this.idAnamneze.Text,korisnik, imeiprezime, izabran, datumPregleda.Text, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
+            Anamneza a = new Anamneza(this.idAnamneze.Text, korisnik, imeiprezime, izabran, datumPregleda.Text, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
-            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
+            KartonLekar kl = new KartonLekar(izabran, 1, korisnik);
             kl.Show();
             this.Close();
         }
@@ -104,14 +104,14 @@ namespace Bolnica
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //Otkazi
         {
-            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
+            KartonLekar kl = new KartonLekar(izabran, 1, korisnik);
             kl.Show();
             this.Close();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e) // Nazad
         {
-            KartonLekar kl = new KartonLekar(izabran, 1,korisnik);
+            KartonLekar kl = new KartonLekar(izabran, 1, korisnik);
             kl.Show();
             this.Close();
         }
@@ -120,7 +120,7 @@ namespace Bolnica
         {
 
             Terapija izabranZaBrisanje = (Terapija)TabelaTerapija.SelectedItem;
-            
+
             if (izabranZaBrisanje != null)
             {
                 RukovanjeZdravstvenimKartonima.obrisiPrivremeno(izabranZaBrisanje);
@@ -136,15 +136,19 @@ namespace Bolnica
 
         private void Button_Click_4(object sender, RoutedEventArgs e) //Dodaj
         {
-            
 
+            DateTime danas = DateTime.Now;
             String idTerapije = RukovanjeZdravstvenimKartonima.generisiIDTerapije(izabran, idAnamneze.Text);
             DateTime? pocDatum = this.pocTer.SelectedDate;
             String pocFormatirano = null;
-            
+
+            DateTime pocetak = DateTime.Now;
+
             if (pocDatum.HasValue)
             {
                 pocFormatirano = pocDatum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                pocetak = (DateTime)pocDatum;
+
             }
 
             DateTime? krajDatum = this.krajTer.SelectedDate;
@@ -155,52 +159,71 @@ namespace Bolnica
                 krajFormatirano = krajDatum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             }
 
+
             Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
 
-            Terapija t = new Terapija(idTerapije, idAnamneze.Text ,pocFormatirano, krajFormatirano, this.dnevnaKol.Text, this.satnica.Text, l);
-
-            RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
-            Terapije.Add(t);
-
-            //magdalena
-            DateTime pocetni = DateTime.Now;
-            DateTime krajnji = DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
-            String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
-               "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
-
-            String idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
-            Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabran);
-            RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
-
-            DateTime datum;
-            for (int i = 1; i <= trajanje; i++)
+            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
             {
-                datum = pocetni.AddDays(i);
-                String form = datum.ToString();
-
-                String[] splits = form.Split(' ');
-                String[] brojevi = splits[0].Split('/');
-
-                //assigns year, month, day, hour, min, seconds
-                DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
-
-                idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
-                o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabran);
-                RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             }
+            else if (!pocDatum.HasValue || !krajDatum.HasValue || satnica.Text.Equals("") || dnevnaKol.Text.Equals("") ||
+                    danas.CompareTo(pocTer.SelectedDate) > 0 || pocetak.CompareTo(krajTer.SelectedDate) > 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja ili datumi nisu validni!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
-            //
+                Terapija t = new Terapija(idTerapije, idAnamneze.Text, pocFormatirano, krajFormatirano, this.dnevnaKol.Text, this.satnica.Text, l);
+                RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
+                Terapije.Add(t);
 
-            this.poljeZaPreragu.Text = string.Empty;
-            this.sifraLeka.Text = String.Empty;
-            this.jacinaLeka.Text = String.Empty;
-            this.imeLeka.Text = String.Empty;
-            this.dnevnaKol.Text = String.Empty;
-            this.satnica.Text = String.Empty;
-            this.pocTer.SelectedDate = null;
-            this.krajTer.SelectedDate = null;
+                //magdalena
+                DateTime pocetni = DateTime.Now;
+                DateTime krajnji = DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
+                String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
+                   "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
+
+                String idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+                Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabran);
+                RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+
+                DateTime datum;
+                for (int i = 1; i <= trajanje; i++)
+                {
+                    datum = pocetni.AddDays(i);
+                    String form = datum.ToString();
+
+                    String[] splits = form.Split(' ');
+                    String[] brojevi = splits[0].Split('/');
+
+                    //assigns year, month, day, hour, min, seconds
+                    DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
+
+                    idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+                    o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabran);
+                    RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+
+                }
+                //
+
+                this.poljeZaPreragu.Text = string.Empty;
+                this.sifraLeka.Text = String.Empty;
+                this.jacinaLeka.Text = String.Empty;
+                this.imeLeka.Text = String.Empty;
+                this.dnevnaKol.Text = String.Empty;
+                this.satnica.Text = String.Empty;
+                this.pocTer.SelectedDate = null;
+                this.krajTer.SelectedDate = null;
+            }
+
+
+
+
+
 
         }
 

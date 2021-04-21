@@ -52,8 +52,6 @@
                                 <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme(h): "/>
                                 <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Satnica}"/>
 
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Obavesti me: " />
-                                <TextBlock Grid.Column="1" Grid.Row="4" Text="NE"/>
 
 
                             </Grid>
