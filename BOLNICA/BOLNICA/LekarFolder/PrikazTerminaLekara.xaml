@@ -38,7 +38,7 @@
                 <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
                 <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
                 <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
-                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="80*"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum, StringFormat={}{0:dd/MM/yyyy}}" Width="80*"/>
                 <DataGridTextColumn Header="Početak" Binding="{Binding PocetnoVreme}" Width="55*"/>
                 <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>
                 <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="65*"/>

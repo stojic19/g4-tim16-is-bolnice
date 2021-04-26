@@ -88,7 +88,7 @@ namespace Bolnica
             }
 
 
-            Anamneza a = new Anamneza(this.idAnamneze.Text, korisnik, imeiprezime, izabran, datumPregleda.Text, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
+            Anamneza a = new Anamneza(this.idAnamneze.Text, korisnik, imeiprezime, izabran, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
@@ -139,26 +139,15 @@ namespace Bolnica
 
             DateTime danas = DateTime.Now;
             String idTerapije = RukovanjeZdravstvenimKartonima.generisiIDTerapije(izabran, idAnamneze.Text);
-            DateTime? pocDatum = this.pocTer.SelectedDate;
-            String pocFormatirano = null;
+            
 
             DateTime pocetak = DateTime.Now;
 
-            if (pocDatum.HasValue)
+            if (pocTer.SelectedDate.HasValue)
             {
-                pocFormatirano = pocDatum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                pocetak = (DateTime)pocDatum;
+                pocetak = (DateTime)pocTer.SelectedDate;
 
             }
-
-            DateTime? krajDatum = this.krajTer.SelectedDate;
-            String krajFormatirano = null;
-
-            if (krajDatum.HasValue)
-            {
-                krajFormatirano = krajDatum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-
 
             Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
 
@@ -168,7 +157,7 @@ namespace Bolnica
                 return;
 
             }
-            else if (!pocDatum.HasValue || !krajDatum.HasValue || satnica.Text.Equals("") || dnevnaKol.Text.Equals("") ||
+            else if (!pocTer.SelectedDate.HasValue || !krajTer.SelectedDate.HasValue || satnica.Text.Equals("") || dnevnaKol.Text.Equals("") ||
                     danas.CompareTo(pocTer.SelectedDate) > 0 || pocetak.CompareTo(krajTer.SelectedDate) > 0)
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja ili datumi nisu validni!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -176,13 +165,13 @@ namespace Bolnica
             else
             {
 
-                Terapija t = new Terapija(idTerapije, idAnamneze.Text, pocFormatirano, krajFormatirano, this.dnevnaKol.Text, this.satnica.Text, l);
+                Terapija t = new Terapija(idTerapije, idAnamneze.Text, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, l);
                 RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
                 Terapije.Add(t);
 
                 //magdalena
                 DateTime pocetni = DateTime.Now;
-                DateTime krajnji = DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime krajnji = (DateTime)krajTer.SelectedDate; //DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
                 String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
                    "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";

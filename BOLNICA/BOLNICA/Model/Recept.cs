@@ -11,14 +11,14 @@ namespace Model
 
         public String IDPacijenta { get; set; }
 
-        public String Datum { get; set; }
+        public DateTime Datum { get; set; }
         public Lek Lek { get; set; }
 
 
 
         public Recept() { }
 
-        public Recept(string iDRecepta, string iDLekara, string imeiPrezimeLekara, string iDPacijenta, String datum, Lek lek)
+        public Recept(string iDRecepta, string iDLekara, string imeiPrezimeLekara, string iDPacijenta, DateTime datum, Lek lek)
         {
             IDRecepta = iDRecepta;
             IDLekara = iDLekara;

@@ -46,7 +46,7 @@
 
                                 <TextBlock Grid.Column="0" Grid.Row="2" Text="Datum:     "/>
 
-                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Datum}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
                                 <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme:    "/>
                                 <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding PocetnoVreme}"/>

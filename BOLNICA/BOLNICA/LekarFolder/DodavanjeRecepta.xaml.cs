@@ -88,7 +88,7 @@ namespace Bolnica
             }
 
 
-            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, this.DanasnjiDatum.Text, l);
+            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, DateTime.Now, l);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajRecept(r);
             KartonLekar kl = new KartonLekar(izabran,3,korisnik);
@@ -117,7 +117,7 @@ namespace Bolnica
             }
 
 
-            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, this.DanasnjiDatum.Text, l);
+            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, DateTime.Now, l);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajRecept(r);
             KartonLekar kl = new KartonLekar(izabran, 3, korisnik);

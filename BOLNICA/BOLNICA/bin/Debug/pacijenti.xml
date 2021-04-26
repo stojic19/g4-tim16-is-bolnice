@@ -1,75 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pacijent>
-    <Ime>NEBRISIGA</Ime>
-    <Prezime>DOLOGOVANJA</Prezime>
-    <DatumRodjenja>2021-04-14T00:00:00</DatumRodjenja>
-    <Jmbg>8746871647</Jmbg>
-    <AdresaStanovanja>Nova 32</AdresaStanovanja>
-    <KontaktTelefon>65237547235</KontaktTelefon>
-    <Email>imanalog@gmail.com</Email>
-    <KorisnickoIme>imanalog</KorisnickoIme>
-    <Lozinka>kgjbdkf</Lozinka>
-    <Pol>muski</Pol>
-    <VrstaNaloga>regularan</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>imanalog</IDPacijenta>
-      <Alergeni>
-        <Alergeni>
-          <IdAlergena>L1</IdAlergena>
-          <OpisReakcije>Opis 1</OpisReakcije>
-          <VremeZaPojavu>Vreme 1</VremeZaPojavu>
-        </Alergeni>
-      </Alergeni>
-      <Recepti>
-        <Recept>
-          <IDRecepta>R0</IDRecepta>
-          <IDLekara>JelenaHrnjak</IDLekara>
-          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-          <IDPacijenta>imanalog</IDPacijenta>
-          <Datum>17/04/2021</Datum>
-          <Lek>
-            <IDLeka>2</IDLeka>
-            <NazivLeka>L2</NazivLeka>
-            <Jacina>20mg</Jacina>
-          </Lek>
-        </Recept>
-        <Recept>
-          <IDRecepta>R1</IDRecepta>
-          <IDLekara>JelenaHrnjak</IDLekara>
-          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-          <IDPacijenta>imanalog</IDPacijenta>
-          <Datum>18/04/2021</Datum>
-          <Lek>
-            <IDLeka>2</IDLeka>
-            <NazivLeka>L2</NazivLeka>
-            <Jacina>20mg</Jacina>
-          </Lek>
-        </Recept>
-      </Recepti>
-      <Anamneze>
-        <Anamneza>
-          <IdAnamneze>A0</IdAnamneze>
-          <IdLekara>JelenaHrnjak</IdLekara>
-          <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-          <IdPacijenta>imanalog</IdPacijenta>
-          <Datum>18/04/2021</Datum>
-          <Dijagnoza>Tekst</Dijagnoza>
-          <Terapije />
-        </Anamneza>
-        <Anamneza>
-          <IdAnamneze>A1</IdAnamneze>
-          <IdLekara>JelenaHrnjak</IdLekara>
-          <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-          <IdPacijenta>imanalog</IdPacijenta>
-          <Datum>18/04/2021</Datum>
-          <Dijagnoza>Pera</Dijagnoza>
-          <Terapije />
-        </Anamneza>
-      </Anamneze>
-    </ZdravstveniKarton>
-  </Pacijent>
-  <Pacijent>
     <Ime>Aleksa</Ime>
     <Prezime>Stojić</Prezime>
     <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
@@ -95,25 +26,6 @@
     </ZdravstveniKarton>
   </Pacijent>
   <Pacijent>
-    <Ime>ascsac</Ime>
-    <Prezime>csacsa</Prezime>
-    <DatumRodjenja>2021-04-18T00:00:00</DatumRodjenja>
-    <Jmbg>ascac</Jmbg>
-    <AdresaStanovanja>avdsv</AdresaStanovanja>
-    <KontaktTelefon>dvsdv</KontaktTelefon>
-    <Email>svdvssd</Email>
-    <KorisnickoIme>probninalog</KorisnickoIme>
-    <Lozinka>probninalog</Lozinka>
-    <Pol>zenski</Pol>
-    <VrstaNaloga>regularan</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>probninalog</IDPacijenta>
-      <Alergeni />
-      <Recepti />
-      <Anamneze />
-    </ZdravstveniKarton>
-  </Pacijent>
-  <Pacijent>
     <Ime>Magdalena</Ime>
     <Prezime>Reljin</Prezime>
     <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
@@ -134,43 +46,7 @@
           <IDLekara>JelenaHrnjak</IDLekara>
           <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
           <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Lek>
-            <IDLeka>5</IDLeka>
-            <NazivLeka>L5</NazivLeka>
-            <Jacina>10mg</Jacina>
-          </Lek>
-        </Recept>
-        <Recept>
-          <IDRecepta>R1</IDRecepta>
-          <IDLekara>AleksaStojic</IDLekara>
-          <ImeiPrezimeLekara>AleksaStojic</ImeiPrezimeLekara>
-          <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Lek>
-            <IDLeka>2</IDLeka>
-            <NazivLeka>L2</NazivLeka>
-            <Jacina>20mg</Jacina>
-          </Lek>
-        </Recept>
-        <Recept>
-          <IDRecepta>R2</IDRecepta>
-          <IDLekara>JelenaHrnjak</IDLekara>
-          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-          <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Lek>
-            <IDLeka>2</IDLeka>
-            <NazivLeka>L2</NazivLeka>
-            <Jacina>20mg</Jacina>
-          </Lek>
-        </Recept>
-        <Recept>
-          <IDRecepta>R3</IDRecepta>
-          <IDLekara>AleksaStojic</IDLekara>
-          <ImeiPrezimeLekara>AleksaStojic</ImeiPrezimeLekara>
-          <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>21/04/2021</Datum>
+          <Datum>2021-04-26T20:04:37.7517308+02:00</Datum>
           <Lek>
             <IDLeka>3</IDLeka>
             <NazivLeka>L3</NazivLeka>
@@ -184,102 +60,20 @@
           <IdLekara>JelenaHrnjak</IdLekara>
           <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
           <IdPacijenta>magdalena</IdPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Dijagnoza>Neka dijagnoza.</Dijagnoza>
+          <Datum>2021-04-26T20:04:24.2789956+02:00</Datum>
+          <Dijagnoza>Pij više tečnosti!</Dijagnoza>
           <Terapije>
             <Terapija>
               <IDTerapije>A0T0</IDTerapije>
               <IDAnamneze>A0</IDAnamneze>
-              <PocetakTerapije>21/04/2021</PocetakTerapije>
-              <KrajTerapije>24/04/2021</KrajTerapije>
+              <PocetakTerapije>2021-04-27T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-04-29T00:00:00</KrajTerapije>
               <Kolicina>3</Kolicina>
               <Satnica>8</Satnica>
               <PreporucenLek>
-                <IDLeka>2</IDLeka>
-                <NazivLeka>L2</NazivLeka>
-                <Jacina>20mg</Jacina>
-              </PreporucenLek>
-            </Terapija>
-          </Terapije>
-        </Anamneza>
-        <Anamneza>
-          <IdAnamneze>A1</IdAnamneze>
-          <IdLekara>JelenaHrnjak</IdLekara>
-          <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-          <IdPacijenta>magdalena</IdPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Dijagnoza>Pij vode</Dijagnoza>
-          <Terapije>
-            <Terapija>
-              <IDTerapije>A1T1</IDTerapije>
-              <IDAnamneze>A1</IDAnamneze>
-              <PocetakTerapije>01/05/2021</PocetakTerapije>
-              <KrajTerapije>08/05/2021</KrajTerapije>
-              <Kolicina>4</Kolicina>
-              <Satnica>5</Satnica>
-              <PreporucenLek>
-                <IDLeka>5</IDLeka>
-                <NazivLeka>L5</NazivLeka>
-                <Jacina>10mg</Jacina>
-              </PreporucenLek>
-            </Terapija>
-            <Terapija>
-              <IDTerapije>A1T2</IDTerapije>
-              <IDAnamneze>A1</IDAnamneze>
-              <PocetakTerapije>21/05/2021</PocetakTerapije>
-              <KrajTerapije>04/06/2021</KrajTerapije>
-              <Kolicina>3</Kolicina>
-              <Satnica>5</Satnica>
-              <PreporucenLek>
-                <IDLeka>4</IDLeka>
-                <NazivLeka>L4</NazivLeka>
-                <Jacina>500mg</Jacina>
-              </PreporucenLek>
-            </Terapija>
-          </Terapije>
-        </Anamneza>
-        <Anamneza>
-          <IdAnamneze>A2</IdAnamneze>
-          <IdLekara>AleksaStojic</IdLekara>
-          <ImeIPrezimeLekara>AleksaStojic</ImeIPrezimeLekara>
-          <IdPacijenta>magdalena</IdPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Dijagnoza>Nemoj da se sunčaš</Dijagnoza>
-          <Terapije>
-            <Terapija>
-              <IDTerapije>A2T0</IDTerapije>
-              <IDAnamneze>A2</IDAnamneze>
-              <PocetakTerapije>27/04/2021</PocetakTerapije>
-              <KrajTerapije>30/04/2021</KrajTerapije>
-              <Kolicina>2</Kolicina>
-              <Satnica>12</Satnica>
-              <PreporucenLek>
-                <IDLeka>2</IDLeka>
-                <NazivLeka>L2</NazivLeka>
-                <Jacina>20mg</Jacina>
-              </PreporucenLek>
-            </Terapija>
-          </Terapije>
-        </Anamneza>
-        <Anamneza>
-          <IdAnamneze>A3</IdAnamneze>
-          <IdLekara>AleksaStojic</IdLekara>
-          <ImeIPrezimeLekara>AleksaStojic</ImeIPrezimeLekara>
-          <IdPacijenta>magdalena</IdPacijenta>
-          <Datum>21/04/2021</Datum>
-          <Dijagnoza>Pij vode</Dijagnoza>
-          <Terapije>
-            <Terapija>
-              <IDTerapije>A3T1</IDTerapije>
-              <IDAnamneze>A3</IDAnamneze>
-              <PocetakTerapije>01/05/2021</PocetakTerapije>
-              <KrajTerapije>07/05/2021</KrajTerapije>
-              <Kolicina>3</Kolicina>
-              <Satnica>5</Satnica>
-              <PreporucenLek>
-                <IDLeka>4</IDLeka>
-                <NazivLeka>L4</NazivLeka>
-                <Jacina>500mg</Jacina>
+                <IDLeka>3</IDLeka>
+                <NazivLeka>L3</NazivLeka>
+                <Jacina>200mg</Jacina>
               </PreporucenLek>
             </Terapija>
           </Terapije>
