@@ -22,7 +22,7 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : Window
     {
         String korisnik = null;
-        String izabranDatum = null;
+        DateTime izabranDatum ;
         String izabranLekar = null;
         String izabranPacijent = null;
         String izabranaVrstaTermina = null;
@@ -159,7 +159,7 @@ namespace Bolnica
 
             if (datum.HasValue)
             {
-                izabranDatum = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                izabranDatum = datum.Value; //ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 refresujPocetnoVreme();
 
             }
@@ -189,7 +189,7 @@ namespace Bolnica
             slobodniTermini.Clear();
             foreach (Termin t in RukovanjeTerminima.slobodniTermini)
             {
-                if (t.Datum.Equals(izabranDatum) && t.Lekar.KorisnickoIme.Equals(izabranLekar) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
+                if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(izabranLekar) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
                 {
                     Console.WriteLine(izabranaVrstaTermina + t.getVrstaTerminaString());
                     slobodniTermini.Add(t);

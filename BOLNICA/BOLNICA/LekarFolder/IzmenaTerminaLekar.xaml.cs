@@ -21,7 +21,7 @@ namespace Bolnica
     {
         String izabran = null;
         String korisnik = null;
-        String izabranDatum = null;
+        DateTime izabranDatum;
         String izabranaVrstaTermina = null;
 
         public static ObservableCollection<Termin> slobodniTermini { get; set; } = new ObservableCollection<Termin>();
@@ -46,7 +46,7 @@ namespace Bolnica
                 vrTermina.Text = "Pregled";
             }
 
-            datum.SelectedDate = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            datum.SelectedDate = t.Datum;// DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
             izabranDatum = t.Datum;
             izabranaVrstaTermina = t.getVrstaTerminaString();
@@ -142,7 +142,7 @@ namespace Bolnica
 
             if (datum.HasValue)
             {
-                izabranDatum = datum.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                izabranDatum = datum.Value;//.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 refresujPocetnoVreme();
 
             }
@@ -154,7 +154,7 @@ namespace Bolnica
             slobodniTermini.Clear();
             foreach (Termin t in RukovanjeTerminima.slobodniTermini)
             {
-                if (t.Datum.Equals(izabranDatum) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
+                if (t.Datum.CompareTo(izabranDatum)==0 && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
                 {
                     //Console.WriteLine(izabranaVrstaTermina + t.getVrstaTerminaString());
                     slobodniTermini.Add(t);

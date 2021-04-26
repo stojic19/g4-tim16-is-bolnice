@@ -10,13 +10,13 @@ namespace Model
         public VrsteTermina VrstaTermina { get; set; }
         public String PocetnoVreme { get; set; }
         public Double Trajanje { get; set; }
-        public String Datum { get; set;  }
+        public DateTime Datum { get; set;  }
 
         public Prostor Prostor { get; set; }
         public Pacijent Pacijent { get; set; }
         public Lekar Lekar { get; set; }
         public Termin() { }
-        public Termin(string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, string datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
+        public Termin(string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
         {
             IdTermina = idTermina;
             VrstaTermina = vrstaTermina;

@@ -46,7 +46,7 @@ namespace Bolnica
             DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[0]), Int32.Parse(delovi[1]), 0, 0, 0);
 
             Termin t = RukovanjeTerminima.PretraziPoId(izabran);
-            DateTime pregled = DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime pregled = t.Datum;//DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
 
 

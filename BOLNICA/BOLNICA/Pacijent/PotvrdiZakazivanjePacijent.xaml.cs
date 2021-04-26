@@ -28,7 +28,7 @@ namespace Bolnica
             Termin termin = RukovanjeTerminima.PretraziSlobodnePoId(izabrani.IdTermina);
 
             TextLekar.Text = termin.Lekar.KorisnickoIme;
-            TextDatum.Text = termin.Datum;
+            TextDatum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             TextVreme.Text = termin.PocetnoVreme;
             idTermina = termin.IdTermina;
         }
