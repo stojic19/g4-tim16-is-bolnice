@@ -13,7 +13,7 @@ namespace Model
       public String IdObavestenja { get; set; }
         public String Naslov { get; set; }
         public String Tekst { get; set; }
-        public String Datum { get; set; }
+        public DateTime Datum { get; set; }
         public bool JeProcitano { get; set; }
 
         public String IdPrimaoca { get; set; }
@@ -23,7 +23,7 @@ namespace Model
             IdObavestenja = idObavestenja;
             Naslov = naslov;
             Tekst = tekst;
-            Datum = datum.ToString();
+            Datum = datum;
             JeProcitano = false;
             IdPrimaoca = idPrimaoca;
         }

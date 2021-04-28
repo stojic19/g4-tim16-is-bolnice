@@ -37,7 +37,7 @@ namespace Bolnica
 
                     // String[] sadasnji = o.Datum.Split(' ');
 
-                    Console.WriteLine("PRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVI" + o.Datum);
+                  /*  Console.WriteLine("PRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVI" + o.Datum);
 
                     String KONACNI = "";
 
@@ -61,8 +61,8 @@ namespace Bolnica
                     Console.WriteLine(r[0]);
                     String[] delovi = r[0].Split('/');
 
-                    DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[1]), Int32.Parse(delovi[0]), 0, 0, 0);
-                    if (DateTime.Compare(konacni, DateTime.Now) <= 0)
+                    DateTime konacni = new DateTime(Int32.Parse(delovi[2]), Int32.Parse(delovi[1]), Int32.Parse(delovi[0]), 0, 0, 0);*/
+                    if (DateTime.Compare(o.Datum.Date, DateTime.Now) <= 0)
                     {
                         obavestenjaPacijenta.Add(o);
                     }

@@ -21,7 +21,7 @@
 
 
 
-                            <TextBlock   Text="{Binding Datum}"/>
+                            <TextBlock   Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
                             <TextBlock Text="   -   "></TextBlock>
 
                             <TextBlock   Text="{Binding Lekar.KorisnickoIme}"></TextBlock>

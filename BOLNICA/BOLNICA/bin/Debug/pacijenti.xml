@@ -78,6 +78,29 @@
             </Terapija>
           </Terapije>
         </Anamneza>
+        <Anamneza>
+          <IdAnamneze>A1</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-04-27T16:22:57.7022677+02:00</Datum>
+          <Dijagnoza>11111111</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>A1T0</IDTerapije>
+              <IDAnamneze>A1</IDAnamneze>
+              <PocetakTerapije>2021-04-28T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-04-29T00:00:00</KrajTerapije>
+              <Kolicina>2</Kolicina>
+              <Satnica>3</Satnica>
+              <PreporucenLek>
+                <IDLeka>2</IDLeka>
+                <NazivLeka>L2</NazivLeka>
+                <Jacina>20mg</Jacina>
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
       </Anamneze>
     </ZdravstveniKarton>
   </Pacijent>

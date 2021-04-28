@@ -29,28 +29,27 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+           
+            Lekar lekar = RukovanjeTerminima.pretraziLekare(this.lekar1.Text);
 
-            String idLekara = this.lekar1.Text;
-            Lekar lekar = RukovanjeTerminima.pretraziLekare(idLekara);
-
-
-            DateTime? datum = this.datumod.SelectedDate;
-            DateTime? datum1 = this.datumdo.SelectedDate;
-
-            if (lekar1.Text.Equals("") || !datum.HasValue || !datum1.HasValue || PrioritetCombo.SelectedIndex == -1)
+            if (lekar1.Text.Equals("") || !this.datumod.SelectedDate.HasValue || !this.datumdo.SelectedDate.HasValue || PrioritetCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Popunite sva polja!");
                 return;
             }
-           // Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++"+datumod);
-            //Console.WriteLine("---------------------------"+datumdo);
-
-            DateTime pom = (DateTime)datum;
-            DateTime pom1 = (DateTime)datum1;
-
-
             
+
+            if (DateTime.Compare(((DateTime)datumod.SelectedDate).Date, DateTime.Now.Date) <= 0){
+                MessageBox.Show("Ne možete izabrati datum u prošlosti!");
+                return;
+            }
+
+            if (DateTime.Compare(((DateTime)datumdo.SelectedDate).Date,((DateTime)datumod.SelectedDate).Date) <= 0)
+            {
+                MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
+                return;
+            }
+
 
             List<Termin> pomocna = new List<Termin>();
 
@@ -59,7 +58,7 @@ namespace Bolnica
             datumi.Clear();
 
 
-            pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(pom, pom1, idLekara);
+            pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu((DateTime)datumod.SelectedDate, (DateTime)datumdo.SelectedDate, lekar.KorisnickoIme);
             foreach (Termin t in pomocna)
             {
                 nasao = false;
@@ -82,10 +81,10 @@ namespace Bolnica
             {
                 if (PrioritetCombo.SelectedIndex == 0)
                 {
-                    DateTime tr1 = pom.AddDays(-7);
-                    DateTime tr2 = pom.AddDays(7);
+                    DateTime tr1 = ((DateTime)datumod.SelectedDate).AddDays(-7);
+                    DateTime tr2 = ((DateTime)datumdo.SelectedDate).AddDays(7);
 
-                    pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(tr1, tr2, idLekara);
+                    pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(tr1, tr2, lekar.KorisnickoIme);
 
                     foreach (Termin t in pomocna)
                     {
@@ -116,7 +115,7 @@ namespace Bolnica
                 }
                 else if (PrioritetCombo.SelectedIndex == 1)
                 {
-                    pomocna = RukovanjeTerminima.ProveriDatum(pom, pom1);
+                    pomocna = RukovanjeTerminima.ProveriDatum((DateTime)datumod.SelectedDate, (DateTime)datumdo.SelectedDate);
                     foreach (Termin t in pomocna)
                     {
                         nasao = false;
