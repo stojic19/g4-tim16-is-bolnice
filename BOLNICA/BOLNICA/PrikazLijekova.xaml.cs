@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,30 +17,23 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-
-    public partial class PrikazOpreme : UserControl
+    /// <summary>
+    /// Interaction logic for PrikazLijekova.xaml
+    /// </summary>
+    public partial class PrikazLijekova : UserControl
     {
+        public static ObservableCollection<Lek> Lijekovi { get; set; }
 
-        public static ObservableCollection<Oprema> Oprema { get; set; }
 
-        public PrikazOpreme()
+        public PrikazLijekova()
         {
             InitializeComponent();
-
-           // this.DataContext = this;
-
-            Oprema = new ObservableCollection<Oprema>();
-
-            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
-            {
-                Oprema.Add(o);
-            }
         }
 
         private void Dodavanje_Click(object sender, RoutedEventArgs e)
         {
 
-            DodavanjeOpreme dodavanje = new DodavanjeOpreme();
+            DodavanjeLijeka dodavanje = new DodavanjeLijeka();
             dodavanje.Show();
 
         }
@@ -47,17 +41,17 @@ namespace Bolnica
         private void Izmjena_Click(object sender, RoutedEventArgs e)
         {
 
-            Oprema izabranZaMenjanje = (Oprema)dataGridOprema.SelectedItem;
+            Lek izabranZaMenjanje = (Lek)dataGridLijekovi.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {
 
-                IzmenaOpreme izmena = new IzmenaOpreme(izabranZaMenjanje.IdOpreme);
-                izmena.Show();
+                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.IDLeka);
+                izmjena.Show();
             }
             else
             {
-                MessageBox.Show("Izaberite opremu koju želite da izmenite!");
+                MessageBox.Show("Izaberite lijek koji želite da izmenite!");
             }
         }
 
@@ -65,29 +59,30 @@ namespace Bolnica
         {
 
 
-            Oprema izabranZaBrisanje = (Oprema)dataGridOprema.SelectedItem;
+            Lek izabranZaBrisanje = (Lek)dataGridLijekovi.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
 
-                UklanjanjeOpreme uklanjanje = new UklanjanjeOpreme(izabranZaBrisanje.IdOpreme);
+                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.IDLeka);
                 uklanjanje.Show();
             }
             else
             {
-                MessageBox.Show("Izaberite opremu koju želite da uklonite!");
+                MessageBox.Show("Izaberite lijek koji želite da uklonite!");
             }
         }
 
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeOpremom.SerijalizacijaOpreme();
+            RukovanjeLijekovima.SerijalizacijaLijekova();
         }
 
-        private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
     }
 }

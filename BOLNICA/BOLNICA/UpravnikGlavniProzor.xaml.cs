@@ -61,6 +61,15 @@ namespace Bolnica
             MainPanel.Children.Add(usc);
         }
 
+        private void Lijekovi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new PrikazLijekova();
+            MainPanel.Children.Add(usc);
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             /* RukovanjeTerminima.SerijalizacijaTermina();

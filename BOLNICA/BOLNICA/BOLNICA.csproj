@@ -67,11 +67,17 @@
     <Compile Include="DodajOpremuProstoru.xaml.cs">
       <DependentUpon>DodajOpremuProstoru.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodavanjeLijeka.xaml.cs">
+      <DependentUpon>DodavanjeLijeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodavanjeOpreme.xaml.cs">
       <DependentUpon>DodavanjeOpreme.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmenaOpreme.xaml.cs">
       <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaLijeka.xaml.cs">
+      <DependentUpon>IzmjenaLijeka.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarFolder\InformacijeAnamaneza.xaml.cs">
       <DependentUpon>InformacijeAnamaneza.xaml</DependentUpon>
@@ -86,6 +92,7 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Oprema.cs" />
+    <Compile Include="Model\RukovanjeLijekovima.cs" />
     <Compile Include="Model\RukovanjeOpremom.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\VrsteOpreme.cs" />
@@ -100,6 +107,9 @@
     </Compile>
     <Compile Include="Pacijent\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjePrioritet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazLijekova.xaml.cs">
+      <DependentUpon>PrikazLijekova.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
@@ -224,6 +234,9 @@
     <Compile Include="SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs">
       <DependentUpon>ZakazivanjePregledaTerminiSekretar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UklanjanjeLijeka.xaml.cs">
+      <DependentUpon>UklanjanjeLijeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UklanjanjeOpreme.xaml.cs">
       <DependentUpon>UklanjanjeOpreme.xaml</DependentUpon>
     </Compile>
@@ -243,11 +256,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodavanjeLijeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodavanjeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmenaOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmjenaLijeka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -280,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pacijent\PrikazDatumaZaPomeranjePrioritet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazLijekova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -451,6 +476,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UklanjanjeLijeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UklanjanjeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -507,6 +536,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

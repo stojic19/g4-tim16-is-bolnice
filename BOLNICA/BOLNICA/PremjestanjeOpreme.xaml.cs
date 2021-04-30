@@ -24,6 +24,7 @@ namespace Bolnica
     {
         String idOpreme = null;
         String idProstoraIzKojegPrebacujem = null;
+       // String izabranProstor = null;
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
         public PremjestanjeOpreme(string idOpreme, String idProstoraIzKojegPrebacujem)//korisnik unosi informacije
@@ -65,8 +66,8 @@ namespace Bolnica
                     return;
                 }
                 List<Oprema> pomocna = new List<Oprema>();
-              
-                foreach(Oprema o in RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem).Oprema)
+
+                foreach (Oprema o in RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem).Oprema)
                 {
                     if (o.IdOpreme.Equals(idOpreme))
                     {
@@ -114,5 +115,7 @@ namespace Bolnica
 
 
         }
+
+       
     }
 }

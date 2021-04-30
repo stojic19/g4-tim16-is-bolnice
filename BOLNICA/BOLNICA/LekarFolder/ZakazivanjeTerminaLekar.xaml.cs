@@ -161,16 +161,13 @@ namespace Bolnica
             {
                 izabranDatum = datum.Value; //ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 refresujPocetnoVreme();
-
             }
-
         }
 
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (vrTermina.SelectedIndex == 0)
             {
-
                 izabranaVrstaTermina = "Pregled";
             }
             else if (vrTermina.SelectedIndex == 1)

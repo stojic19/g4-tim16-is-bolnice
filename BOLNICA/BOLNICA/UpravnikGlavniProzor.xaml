@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="UpravnikGlavniProzor" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <StackPanel  >
-        <Grid Height="35"  Background="#FF31577E">
+        <Grid Height="35"  Background="#FF31577E" RenderTransformOrigin="0.5,0.428" Margin="0,0,-0.4,0">
 
 
             <Grid.ColumnDefinitions>
@@ -44,15 +44,39 @@
 
             </Button>
 
-            <Button Grid.Row="0" Content="Prostorije" Margin="99,0,2.4,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Prostorije_Click" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
-
-            <Button Grid.Row="0" Content="Oprema" Margin="98.8,0,2.6,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Oprema_Click" Background="WhiteSmoke" Grid.ColumnSpan="2" Grid.Column="1" Height="35" VerticalAlignment="Top"/>
 
         </Grid>
 
-        <Grid x:Name="MainPanel" Margin="0,0,-0.4,27" Height="386"/>
+        <StackPanel  Height="385" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,-0.4,0" >
+            <Grid RenderTransformOrigin="0.5,0.428" Margin="0,0,653,-0.2" Width="793">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="329*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"  Content="Prostorije"  Margin="0,0,0.4,0.2" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Prostorije_Click"  Background="#FF31577E"/>
+
+                <Button Content="Oprema" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Oprema_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
+
+                <Button Content="Lijekovi" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Lijekovi_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"/>
+
+                <Grid x:Name="MainPanel" RenderTransformOrigin="-1.752,0.486" Margin="0,0,-0.2,-0.2" Grid.RowSpan="6" Grid.Column="1" />
+            </Grid>
+
+        </StackPanel>
 
     </StackPanel>
 </Window>

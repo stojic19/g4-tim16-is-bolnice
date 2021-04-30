@@ -20,7 +20,7 @@ namespace Bolnica
     public partial class DodajOpremuProstoru : Window
     {
         private List<Oprema> oprema;
-        private RasporedOpreme raspored;
+       // private RasporedOpreme raspored;
         private string IdProstora;
         public DodajOpremuProstoru( string idProstora)
         {
