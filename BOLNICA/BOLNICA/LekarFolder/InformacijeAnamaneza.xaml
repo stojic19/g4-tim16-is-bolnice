@@ -88,12 +88,6 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                            <Label Content="ID Recepta:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
-                                   Margin="15,5,10,0"  />
-                            <TextBox Name="idAnamneze"  Height="27" Width="92" Margin="15,0,10,5" HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
-                        </StackPanel>
                         <StackPanel Orientation="Vertical" >
                             <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Margin="15,5,10,0"  />
@@ -101,7 +95,7 @@
                                      VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="70,5,10,5">
+                        <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
                             <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </StackPanel>

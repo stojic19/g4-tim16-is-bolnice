@@ -45,7 +45,6 @@ namespace Bolnica
             imeLekara.Text = l.Ime;
             prezimeLekara.Text = l.Prezime;
 
-            idAnamneze.Text = RukovanjeZdravstvenimKartonima.generisiIDAnamneze(izabran);
 
             DateTime datum = DateTime.Now;
 
@@ -88,7 +87,7 @@ namespace Bolnica
             }
 
 
-            Anamneza a = new Anamneza(this.idAnamneze.Text, korisnik, imeiprezime, izabran, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
+            Anamneza a = new Anamneza(Guid.NewGuid().ToString(), korisnik, imeiprezime, izabran, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
@@ -138,8 +137,8 @@ namespace Bolnica
         {
 
             DateTime danas = DateTime.Now;
-            String idTerapije = RukovanjeZdravstvenimKartonima.generisiIDTerapije(izabran, idAnamneze.Text);
-            
+            String idTerapije = Guid.NewGuid().ToString();
+
 
             DateTime pocetak = DateTime.Now;
 
@@ -165,7 +164,7 @@ namespace Bolnica
             else
             {
 
-                Terapija t = new Terapija(idTerapije, idAnamneze.Text, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, l);
+                Terapija t = new Terapija(idTerapije, Guid.NewGuid().ToString(), (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, l);
                 RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
                 Terapije.Add(t);
 

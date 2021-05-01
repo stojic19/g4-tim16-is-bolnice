@@ -43,8 +43,6 @@ namespace Bolnica
             imeLekara.Text = l.Ime;
             prezimeLekara.Text = l.Prezime;
 
-            idAnamneze.Text = izabrana.IdAnamneze;
-
             datumPregleda.Text = izabrana.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
             tekst.Text = izabrana.Dijagnoza;

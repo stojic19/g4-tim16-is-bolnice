@@ -85,6 +85,9 @@
     <Compile Include="LekarFolder\KartonLekar.xaml.cs">
       <DependentUpon>KartonLekar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\LekarGlavniProzor.xaml.cs">
+      <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\NovaAnamneza.xaml.cs">
       <DependentUpon>NovaAnamneza.xaml</DependentUpon>
     </Compile>
@@ -92,10 +95,12 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Oprema.cs" />
-    <Compile Include="Model\RukovanjeLijekovima.cs" />
-    <Compile Include="Model\RukovanjeOpremom.cs" />
+    <Compile Include="Model\Pregled.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeLijekovima.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
     <Compile Include="Model\Terapija.cs" />
-    <Compile Include="Model\VrsteOpreme.cs" />
+    <Compile Include="Model\Enumi\VrsteOpreme.cs" />
     <Compile Include="Pacijent\PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
     </Compile>
@@ -162,8 +167,8 @@
     <Compile Include="Model\Obavestenje.cs" />
     <Compile Include="Model\Pol.cs" />
     <Compile Include="Model\Recept.cs" />
-    <Compile Include="Model\RukovanjeObavestenjimaSekratar.cs" />
-    <Compile Include="Model\RukovanjeZdravstvenimKartonima.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeObavestenjimaSekratar.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
     <Compile Include="SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml.cs">
       <DependentUpon>ObavestenjaSekretar.xaml</DependentUpon>
@@ -279,6 +284,10 @@
     <Page Include="LekarFolder\KartonLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LekarFolder\LekarGlavniProzor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LekarFolder\NovaAnamneza.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -506,16 +515,16 @@
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Pacijent.cs" />
     <Compile Include="Model\Prostor.cs" />
-    <Compile Include="Model\RukovanjeNalozimaPacijenata.cs" />
-    <Compile Include="Model\RukovanjeProstorom.cs" />
-    <Compile Include="Model\RukovanjeTerminima.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeNalozimaPacijenata.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeProstorom.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeTerminima.cs" />
     <Compile Include="Model\Sekretar.cs" />
-    <Compile Include="Model\SpecijalizacijeLekara.cs" />
+    <Compile Include="Model\Enumi\SpecijalizacijeLekara.cs" />
     <Compile Include="Model\Termin.cs" />
     <Compile Include="Model\Upravnik.cs" />
-    <Compile Include="Model\VrsteNaloga.cs" />
-    <Compile Include="Model\VrsteProstora.cs" />
-    <Compile Include="Model\VrsteTermina.cs" />
+    <Compile Include="Model\Enumi\VrsteNaloga.cs" />
+    <Compile Include="Model\Enumi\VrsteProstora.cs" />
+    <Compile Include="Model\Enumi\VrsteTermina.cs" />
     <Compile Include="LekarFolder\PrikazTerminaLekara.xaml.cs">
       <DependentUpon>PrikazTerminaLekara.xaml</DependentUpon>
     </Compile>

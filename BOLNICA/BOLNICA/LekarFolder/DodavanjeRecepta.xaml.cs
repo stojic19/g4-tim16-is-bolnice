@@ -40,7 +40,7 @@ namespace Bolnica
             imeLekara.Text = l.Ime;
             prezimeLekara.Text = l.Prezime;
 
-            idRecepta.Text = RukovanjeZdravstvenimKartonima.generisiIDRecepta(izabran);
+            idRecepta.Text = Guid.NewGuid().ToString();
 
             DateTime datum = DateTime.Now;
 

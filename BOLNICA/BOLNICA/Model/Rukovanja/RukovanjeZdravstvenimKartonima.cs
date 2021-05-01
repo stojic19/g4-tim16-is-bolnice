@@ -42,41 +42,6 @@ namespace Bolnica.Model
             return null;
         }
 
-        public static String generisiIDRecepta(String id)
-        {
-            bool pronadjen = false;
-
-            int i = 0;
-
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
-            {
-
-                if (p.KorisnickoIme.Equals(id))
-                {
-                    for (i = 0; i < p.ZdravstveniKarton.Recepti.Count; i++)
-                    {
-                        foreach (Recept r in p.ZdravstveniKarton.Recepti)
-                        {
-                            if (r.IDRecepta.Equals("R" + i.ToString()))
-                            {
-                                pronadjen = true;
-                                break;
-                            }
-
-                        }
-
-                        if (!pronadjen)
-                        {
-                            return ("R" + i.ToString());
-
-                        }
-                        pronadjen = false;
-                    }
-                }
-            }
-
-            return ("R" + i.ToString());
-        }
 
         public static void DodajRecept(Recept r)
         {
@@ -103,11 +68,11 @@ namespace Bolnica.Model
 
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
 
-            foreach(Anamneza a in p.ZdravstveniKarton.Anamneze)
+            foreach (Anamneza a in p.ZdravstveniKarton.Anamneze)
             {
                 if (a.IdPacijenta.Equals(p.KorisnickoIme))
                 {
-                    foreach(Terapija t in a.Terapije)
+                    foreach (Terapija t in a.Terapije)
                     {
 
                         pomocna.Add(t);
@@ -160,76 +125,5 @@ namespace Bolnica.Model
 
         }
 
-        public static String generisiIDAnamneze(String id)
-        {
-            bool pronadjen = false;
-
-            int i = 0;
-
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
-            {
-
-                if (p.KorisnickoIme.Equals(id))
-                {
-                    for (i = 0; i < p.ZdravstveniKarton.Anamneze.Count; i++)
-                    {
-                        foreach (Anamneza a in p.ZdravstveniKarton.Anamneze)
-                        {
-                            if (a.IdAnamneze.Equals("A" + i.ToString()))
-                            {
-                                pronadjen = true;
-                                break;
-                            }
-
-                        }
-
-                        if (!pronadjen)
-                        {
-                            return ("A" + i.ToString());
-
-                        }
-                        pronadjen = false;
-                    }
-                }
-            }
-
-            return ("A" + i.ToString());
-        }
-
-        public static String generisiIDTerapije(String id, String anamneza)
-        {
-            bool pronadjen = false;
-
-            int i = 0;
-
-            for (i = 0; i < Privremeno.Count; i++)
-            {
-
-
-                foreach (Terapija te in Privremeno)
-                {
-                    if (te.IDTerapije.Equals(anamneza + "T" + i.ToString()))
-                    {
-                        pronadjen = true;
-                        break;
-                    }
-
-
-                }
-
-                if (!pronadjen)
-                {
-                    return (anamneza + "T" + i.ToString());
-
-                }
-                pronadjen = false;
-            }
-
-               
-            return (anamneza + "T" + i.ToString());
-            
-
-
-        }
     }
 }

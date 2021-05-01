@@ -51,6 +51,7 @@
             <IDLeka>3</IDLeka>
             <NazivLeka>L3</NazivLeka>
             <Jacina>200mg</Jacina>
+            <Kolicina>0</Kolicina>
           </Lek>
         </Recept>
       </Recepti>
@@ -74,6 +75,7 @@
                 <IDLeka>3</IDLeka>
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
+                <Kolicina>0</Kolicina>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -97,6 +99,31 @@
                 <IDLeka>2</IDLeka>
                 <NazivLeka>L2</NazivLeka>
                 <Jacina>20mg</Jacina>
+                <Kolicina>0</Kolicina>
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
+        <Anamneza>
+          <IdAnamneze>d60a167d-98f8-4e60-8609-574d0abfe51f</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-05-01T03:25:50.668288+02:00</Datum>
+          <Dijagnoza>Nedasdsa</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>e8492466-8376-443d-96a2-c73c8c009b94</IDTerapije>
+              <IDAnamneze>f2504280-7c31-46a3-8cf2-39ffb1ce00c2</IDAnamneze>
+              <PocetakTerapije>2021-05-19T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-27T00:00:00</KrajTerapije>
+              <Kolicina>3</Kolicina>
+              <Satnica>8</Satnica>
+              <PreporucenLek>
+                <IDLeka>2</IDLeka>
+                <NazivLeka>L2</NazivLeka>
+                <Jacina>20mg</Jacina>
+                <Kolicina>0</Kolicina>
               </PreporucenLek>
             </Terapija>
           </Terapije>

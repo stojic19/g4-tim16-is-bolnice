@@ -520,34 +520,6 @@ namespace Model
             return povratna;
         }
 
-        public static String generisiIDTermina()
-        {
-            bool pronadjen = false;
-
-            int i = 0;
-
-            for (i = 0; i < sviTermini.Count; i++)
-            {
-                foreach (Termin t in sviTermini)
-                {
-                    if (t.IdTermina.Equals("T" + i.ToString()))
-                    {
-                        pronadjen = true;
-                        break;
-                    }
-
-                }
-
-                if (!pronadjen)
-                {
-                    return ("T" + i.ToString());
-
-                }
-                pronadjen = false;
-            }
-
-            return ("T" + i.ToString());
-        }
 
         public static List<Termin> PretraziPoLekaru(String korImeLekara)
         {
