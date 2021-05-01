@@ -24,11 +24,13 @@ namespace Bolnica
 
         String izabran = null;
         String korisnik = null;
+        String idAnamneze = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
         public NovaAnamneza(String idPacijenta, String lekar)
         {
             InitializeComponent();
             korisnik = lekar;
+            idAnamneze = Guid.NewGuid().ToString();
 
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
             izabran = idPacijenta;
@@ -65,7 +67,6 @@ namespace Bolnica
             }
 
 
-
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -87,7 +88,9 @@ namespace Bolnica
             }
 
 
-            Anamneza a = new Anamneza(Guid.NewGuid().ToString(), korisnik, imeiprezime, izabran, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
+
+
+            Anamneza a = new Anamneza(idAnamneze, korisnik, imeiprezime, izabran, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
@@ -164,13 +167,13 @@ namespace Bolnica
             else
             {
 
-                Terapija t = new Terapija(idTerapije, Guid.NewGuid().ToString(), (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, l);
+                Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, l);
                 RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
                 Terapije.Add(t);
 
                 //magdalena
                 DateTime pocetni = DateTime.Now;
-                DateTime krajnji = (DateTime)krajTer.SelectedDate; //DateTime.ParseExact(krajFormatirano, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime krajnji = (DateTime)krajTer.SelectedDate;
                 int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
                 String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
                    "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";

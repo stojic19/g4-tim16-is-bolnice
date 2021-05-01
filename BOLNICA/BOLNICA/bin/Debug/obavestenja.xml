@@ -308,4 +308,264 @@ vremenski interval između doza: 8h.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O31</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-01T04:00:04.565116+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O32</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-02T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O33</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-03T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O34</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-04T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O35</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-05T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O36</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-06T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O37</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-07T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O38</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-08T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O39</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-09T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O40</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-10T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O41</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-11T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O42</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-12T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O43</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-13T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O44</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-14T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O45</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-15T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O46</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-16T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O47</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-17T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O48</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-18T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O49</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-19T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O50</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-20T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O51</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-21T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O52</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-22T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O53</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-23T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O54</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-24T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O55</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-25T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O56</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: L3200mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-26T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

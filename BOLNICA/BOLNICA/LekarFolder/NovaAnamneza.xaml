@@ -73,7 +73,7 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Background="WhiteSmoke" MaxWidth="700" MaxHeight="1250" Width="700" Height="1250" VerticalAlignment="Center" HorizontalAlignment="Center"
+                <Grid Grid.Row="0" Background="WhiteSmoke" MaxWidth="700" MaxHeight="1400" Width="700" Height="1400" VerticalAlignment="Center" HorizontalAlignment="Center"
                           Margin="10,20,1,20">
 
                     <Grid.RowDefinitions>
@@ -81,7 +81,7 @@
                         <RowDefinition Height="230"/>
                         <RowDefinition Height="110"/>
                         <RowDefinition Height="220"/>
-                        <RowDefinition Height="590"/>
+                        <RowDefinition Height="740"/>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -133,45 +133,46 @@
 
                     </GroupBox>
 
-                    <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="550"  Background="LightGray" FontWeight="Bold" FontSize="14">
+                    <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="650"  Background="LightGray" FontWeight="Bold" FontSize="14">
 
                         <Grid>
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="15.2"/>
+                                <ColumnDefinition Width="334.8"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="200"/>
-                                <RowDefinition Height="130"/>
-                                <RowDefinition/>
+                                <RowDefinition Height="210"/>
+                                <RowDefinition Height="190"/>
                             </Grid.RowDefinitions>
 
-                            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="7,8,6,8">
 
 
-                                    <StackPanel Orientation="Horizontal" Margin="10,5" >
-                                        <Label Content="Pretraga lekova:" FontWeight="Normal" />
-                                        <TextBox TextChanged="TextBox_TextChanged" Width="150" Height="27" Name="poljeZaPreragu" FontWeight="Normal" />
+                                <StackPanel Orientation="Horizontal" Margin="10,5" >
+                                    <Label Content="Pretraga lekova:" FontWeight="Normal" />
+                                    <TextBox TextChanged="TextBox_TextChanged" Width="150" Height="27" Name="poljeZaPreragu" FontWeight="Normal" />
 
-                                    </StackPanel>
-
-                                    <ListView FontWeight="Normal" x:Name="TabelaLekova" Height="126" Width="317" Margin="10" VerticalAlignment="Center"
-                                      HorizontalAlignment="Center" SelectionChanged="TabelaLekova_SelectionChanged" SelectionMode="Single" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                                        <ListView.View>
-                                            <GridView>
-
-                                                <GridViewColumn Header="Šifra" DisplayMemberBinding="{Binding IDLeka}" Width="95" />
-                                                <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivLeka}" Width="100" />
-                                                <GridViewColumn Header="Jačina" DisplayMemberBinding="{Binding Jacina}" Width="95"/>
-
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>
                                 </StackPanel>
 
-                            <StackPanel Orientation="Vertical" Margin="0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                <ListView FontWeight="Normal" x:Name="TabelaLekova" Height="126" Width="317" Margin="10" VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" SelectionChanged="TabelaLekova_SelectionChanged" SelectionMode="Single" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                                    <ListView.View>
+                                        <GridView>
+
+                                            <GridViewColumn Header="Šifra" DisplayMemberBinding="{Binding IDLeka}" Width="95" />
+                                            <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivLeka}" Width="100" />
+                                            <GridViewColumn Header="Jačina" DisplayMemberBinding="{Binding Jacina}" Width="95"/>
+
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Margin="23,16,22.6,16" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
                                 <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                          Name="imeLeka" FontWeight="Normal"/>
@@ -186,66 +187,57 @@
 
                             </StackPanel>
 
-                            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="2">
-                            
+                            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,-0.4,0.4">
 
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
 
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,25,5">
-                                    <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocTer" FontWeight="Normal"/>
-                                    <Label Content="Početak terapije" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
-
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="25,5,5,5">
-                                    <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajTer" FontWeight="Normal"/>
-                                    <Label Content="Kraj terapije" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
-
-                            </StackPanel>
-
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
 
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,25,5">
-                                        <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="dnevnaKol" FontWeight="Normal"/>
-                                        <Label Content="Dnevna količina" HorizontalAlignment="Center" FontWeight="Normal" />
+                                        <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocTer" FontWeight="Normal"/>
+                                        <Label Content="Početak terapije" HorizontalAlignment="Center" FontWeight="Normal" />
                                     </StackPanel>
 
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="25,5,5,5">
-                                        <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="satnica" FontWeight="Normal"/>
-                                        <Label Content="Na koliko sati" HorizontalAlignment="Center" FontWeight="Normal" />
+                                        <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajTer" FontWeight="Normal"/>
+                                        <Label Content="Kraj terapije" HorizontalAlignment="Center" FontWeight="Normal" />
                                     </StackPanel>
 
                                 </StackPanel>
 
+                                <StackPanel Orientation="Horizontal" Margin="15">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" >
+
+                                        <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="dnevnaKol" FontWeight="Normal"/>
+                                        <Label Content="Dnevna količina" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,15"/>
+
+
+                                        <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="satnica" FontWeight="Normal" />
+                                        <Label Content="Na koliko sati" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,5" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Vertical" Margin="52,0,0,1">
+                                        <TextBox x:Name="opisKonzumacije" Height="100" Width="226"  VerticalAlignment="Top" FontWeight="Normal"/>
+                                        <Label Content="Uputstvo za konzumiranja leka" HorizontalAlignment="Center" FontWeight="Normal"  />
+                                    </StackPanel>
+                                </StackPanel>
+
                             </StackPanel>
 
-                            <StackPanel>
-                                
+                            <StackPanel Grid.ColumnSpan="2">
+
                             </StackPanel>
 
-                            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical">
-
-                                <!--<DataGrid  x:Name="TabelaTerapija" ItemsSource="{Binding Terapije}"  SelectionMode="Single"  Background="WhiteSmoke"
-                                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" 
-                                     MinWidth="500" MinHeight="127"  Width="500" Height="127" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <DataGrid.Columns>
-
-                                        <DataGridTextColumn Header="Naziv" Binding="{Binding PreporucenLek.NazivLeka}" Width="200*" />
-                                        <DataGridTextColumn Header="Dnevna količina" Binding="{Binding PocetakTerapije}" Width="200*"/>
-                                        <DataGridTextColumn Header="Satnica" Binding="{Binding Satnica}" Width="200*"/>
-                                    </DataGrid.Columns>
-
-                                </DataGrid>-->
+                            <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,10,-0.4,0.4" Grid.RowSpan="2">
 
                                 <ListView x:Name="TabelaTerapija" ItemsSource="{Binding Terapije}"  SelectionMode="Single"  Background="WhiteSmoke"
                                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
-                                     MinWidth="500" MinHeight="127"  Width="500" Height="127" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                     MinWidth="500" MinHeight="127"  Width="509" Height="127" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <ListView.View>
                                         <GridView>
 
-                                            <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  PreporucenLek.NazivLeka}" Width="200" />
-                                            <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="200" />
-                                            <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="100"/>
+                                            <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  PreporucenLek.NazivLeka}" Width="203" />
+                                            <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="203" />
+                                            <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="103"/>
 
                                         </GridView>
                                     </ListView.View>
@@ -256,14 +248,14 @@
 
                                     <Button Height="30" Width="128" Content="Obriši" Margin="10,0"  Background="WhiteSmoke" Click="Button_Click_3"/>
                                     <Button Height="30" Width="128" Content="Dodaj" Margin="10,0" Background="WhiteSmoke" Click="Button_Click_4"/>
-                                    
+
                                 </StackPanel>
-                                
+
                             </StackPanel>
 
                         </Grid>
-                        
-                        
+
+
                     </GroupBox>
 
                     <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
@@ -286,12 +278,6 @@
 
                     </GroupBox>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="4" Margin="25,5">
-
-                        <Label Content="Datum:" Width="50" Height="27"/>
-                        <TextBox IsReadOnly="True" Width="226" Height="27" Name="DanasnjiDatum" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-
-                    </StackPanel>-->
 
                 </Grid>
 
