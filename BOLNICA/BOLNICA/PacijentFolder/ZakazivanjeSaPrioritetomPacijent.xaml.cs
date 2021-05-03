@@ -16,23 +16,21 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjeSaPrioritetomPacijent.xaml
-    /// </summary>
     public partial class ZakazivanjeSaPrioritetomPacijent : UserControl
     {
          public static List<Termin> datumi = new List<Termin>();
         public ZakazivanjeSaPrioritetomPacijent()
         {
             InitializeComponent();
+            bindcombo();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void nastavi_Click(object sender, RoutedEventArgs e)
         {
            
-            Lekar lekar = RukovanjeTerminima.pretraziLekare(this.lekar1.Text);
+            Lekar lekar = RukovanjeTerminima.pretraziLekare(((Lekar)lekarCombo.SelectedItem).KorisnickoIme);
 
-            if (lekar1.Text.Equals("") || !this.datumod.SelectedDate.HasValue || !this.datumdo.SelectedDate.HasValue || PrioritetCombo.SelectedIndex == -1)
+            if (lekarCombo.SelectedIndex==-1 || !this.datumod.SelectedDate.HasValue || !this.datumdo.SelectedDate.HasValue || PrioritetCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Popunite sva polja!");
                 return;
@@ -165,6 +163,20 @@ namespace Bolnica
         {
             return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd,datumDo);
         }
-      
+
+        public List<Lekar> lekariOpstePrakse { get; set; }
+
+        public void bindcombo()
+        {
+            List<Lekar> pomocna = new List<Lekar>();
+            foreach (Lekar l in RukovanjeTerminima.sviLekari)
+            {
+                if (l.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                    pomocna.Add(l);
+            }
+            lekariOpstePrakse = pomocna;
+            lekarCombo.ItemsSource = lekariOpstePrakse;
+        }
+
     }
 }

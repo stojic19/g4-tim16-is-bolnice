@@ -27,12 +27,13 @@ namespace Bolnica
         public PomeranjeSaPrioritetom(Termin termin)
         {
             InitializeComponent();
+            bindcombo();
             PodesavanjePrikaza(termin);
         }
 
         private void PodesavanjePrikaza(Termin termin) 
         {
-            lekar.Text = termin.Lekar.KorisnickoIme;
+            lekarCombo.SelectedIndex = konstruisiCombo(termin.Lekar.KorisnickoIme);
             datum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             vreme.Text = termin.PocetnoVreme;
             idTermina = termin.IdTermina;
@@ -100,6 +101,31 @@ namespace Bolnica
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public List<Lekar> lekariOpstePrakse { get; set; }
+
+        public void bindcombo()
+        {
+            List<Lekar> pomocna = new List<Lekar>();
+            foreach (Lekar l in RukovanjeTerminima.sviLekari)
+            {
+                if (l.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                    pomocna.Add(l);
+            }
+            lekariOpstePrakse = pomocna;
+            lekarCombo.ItemsSource = lekariOpstePrakse;
+        }
+
+        public int konstruisiCombo(String id)
+        {
+            for (int i = 0; i < lekariOpstePrakse.Count; i++)
+            {
+                if (lekariOpstePrakse[i].KorisnickoIme.Equals(id))
+                    return i;
+            }
+            return 0;
+
         }
     }
 }

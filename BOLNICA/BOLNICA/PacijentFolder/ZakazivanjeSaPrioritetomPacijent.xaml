@@ -12,11 +12,8 @@
 
         <Label >LEKAR</Label>
 
-        <TextBox Name="lekar1" Height="25" Margin="5"></TextBox>
-        <!-- <Label>Pacijent</Label>
-
-        <TextBox Name="pacijent"></TextBox>  
-        -->
+        <ComboBox Name="lekarCombo" Height="25" Margin="5" ItemsSource="{Binding}" DisplayMemberPath="KorisnickoIme" SelectedValuePath="KorisnickoIme"></ComboBox>
+        
         <Label>DATUM OD</Label>
         <DatePicker Name="datumod" Height="25" Margin="5"></DatePicker>
         <Label>DATUM DO</Label>
@@ -27,7 +24,7 @@
             <ComboBoxItem Margin="5">lekar</ComboBoxItem>
             <ComboBoxItem Margin="5">datum</ComboBoxItem>
         </ComboBox>
-        <Button Name="nastavi" Click="Button_Click" Height="25" Margin="5" Background="#FF31577E">
+        <Button Name="nastavi" Click="nastavi_Click" Height="25" Margin="5" Background="#FF31577E">
             <Run Foreground="AntiqueWhite">NASTAVI</Run>
         </Button>
         <Image Source="/Slike/PacijentSlike/IMG_4560.jpeg" />
