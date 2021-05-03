@@ -43,6 +43,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="PowerfulExtensions_4.5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PowerfulExtensions.1.0.5\lib\net45\PowerfulExtensions_4.5.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -101,16 +104,17 @@
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\Enumi\VrsteOpreme.cs" />
-    <Compile Include="Pacijent\PomeranjeSaPrioritetom.xaml.cs">
+    <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="PacijentFolder\PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
     </Compile>
     <Compile Include="PremjestanjeOpreme.xaml.cs">
       <DependentUpon>PremjestanjeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazDatumaZaPomeranjeLekar.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazDatumaZaPomeranjeLekar.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjeLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjePrioritet.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazLijekova.xaml.cs">
@@ -119,7 +123,7 @@
     <Compile Include="PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazTerapijePacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazTerapijePacijent.xaml.cs">
       <DependentUpon>PrikazTerapijePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="RasporedOpreme.xaml.cs">
@@ -176,40 +180,40 @@
     <Compile Include="LekarFolder\OtkazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\OtkazivanjeTerminaPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\OtkazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PacijentGlavniProzor.xaml.cs">
+    <Compile Include="PacijentFolder\PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PotvrdiPomeranjePacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PotvrdiPomeranjePacijent.xaml.cs">
       <DependentUpon>PotvrdiPomeranjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PotvrdiZakazivanjePacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PotvrdiZakazivanjePacijent.xaml.cs">
       <DependentUpon>PotvrdiZakazivanjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazDatumaPacijentKodIzabranog.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazDatumaPacijentKodIzabranog.xaml.cs">
       <DependentUpon>PrikazDatumaPacijentKodIzabranog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SekretarFolder\Nalozi\PrikazNalogaSekretar.xaml.cs">
       <DependentUpon>PrikazNalogaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazObavestenjaPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazObavestenjaPacijent.xaml.cs">
       <DependentUpon>PrikazObavestenjaPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikazProstora.xaml.cs">
       <DependentUpon>PrikazProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazRasporedaPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazRasporedaPacijent.xaml.cs">
       <DependentUpon>PrikazRasporedaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazSlobodnihDatumaPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazSlobodnihDatumaPacijent.xaml.cs">
       <DependentUpon>PrikazSlobodnihDatumaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazVremenaTerminaPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazVremenaTerminaPacijent.xaml.cs">
       <DependentUpon>PrikazVremenaTerminaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\PrikazVremenaZaPomeranjePacijent.xaml.cs">
+    <Compile Include="PacijentFolder\PrikazVremenaZaPomeranjePacijent.xaml.cs">
       <DependentUpon>PrikazVremenaZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.xaml.cs">
@@ -251,7 +255,7 @@
     <Compile Include="UpravnikGlavniProzor.xaml.cs">
       <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijent\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
+    <Compile Include="PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarFolder\ZakazivanjeTerminaLekar.xaml.cs">
@@ -297,7 +301,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pacijent\PomeranjeSaPrioritetom.xaml">
+    <Page Include="PacijentFolder\PomeranjeSaPrioritetom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -305,11 +309,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazDatumaZaPomeranjeLekar.xaml">
+    <Page Include="PacijentFolder\PrikazDatumaZaPomeranjeLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazDatumaZaPomeranjePrioritet.xaml">
+    <Page Include="PacijentFolder\PrikazDatumaZaPomeranjePrioritet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,7 +325,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazTerapijePacijent.xaml">
+    <Page Include="PacijentFolder\PrikazTerapijePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -397,23 +401,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pacijent\OtkazivanjeTerminaPacijent.xaml">
+    <Page Include="PacijentFolder\OtkazivanjeTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PacijentGlavniProzor.xaml">
+    <Page Include="PacijentFolder\PacijentGlavniProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PotvrdiPomeranjePacijent.xaml">
+    <Page Include="PacijentFolder\PotvrdiPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PotvrdiZakazivanjePacijent.xaml">
+    <Page Include="PacijentFolder\PotvrdiZakazivanjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazDatumaPacijentKodIzabranog.xaml">
+    <Page Include="PacijentFolder\PrikazDatumaPacijentKodIzabranog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -421,7 +425,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazObavestenjaPacijent.xaml">
+    <Page Include="PacijentFolder\PrikazObavestenjaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -429,11 +433,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazRasporedaPacijent.xaml">
+    <Page Include="PacijentFolder\PrikazRasporedaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazSlobodnihDatumaPacijent.xaml">
+    <Page Include="PacijentFolder\PrikazSlobodnihDatumaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -441,11 +445,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazVremenaTerminaPacijent.xaml">
+    <Page Include="PacijentFolder\PrikazVremenaTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\PrikazVremenaZaPomeranjePacijent.xaml">
+    <Page Include="PacijentFolder\PrikazVremenaZaPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -501,7 +505,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijent\ZakazivanjeSaPrioritetomPacijent.xaml">
+    <Page Include="PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,102 @@
+﻿using Model;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Bolnica
+{
+    public partial class PrikazRasporedaPacijent : UserControl
+    {
+        public static ObservableCollection<Termin> TerminiPacijenta { get; set; }
+        public static Termin TerminZaPomeranje = null;
+        public PrikazRasporedaPacijent()
+        {
+            InitializeComponent();
+            TerminiPacijenta = new ObservableCollection<Termin>();
+            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            { 
+                if(t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme))
+                TerminiPacijenta.Add(t);
+            }
+            SviTerminiPacijenta.ItemsSource = TerminiPacijenta;
+        }
+
+        private void informacije_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pomeri_Click(object sender, RoutedEventArgs e)
+        {
+            bool dostupanZaPomeranje=izvrsiValidacijuPrePomeranja();
+            if (dostupanZaPomeranje)
+            {
+                TerminZaPomeranje = (Termin)SviTerminiPacijenta.SelectedItem;
+                PomeranjeSaPrioritetom p = new PomeranjeSaPrioritetom((Termin)SviTerminiPacijenta.SelectedItem);
+                p.Show();
+            }
+            return;
+        }
+
+        private void otkazi_Click(object sender, RoutedEventArgs e)
+        {
+            bool dostupanZaBrisanje=izvrsiValidacijuPreOtkazivanja();
+            OtkazivanjeTerminaPacijent otkazivanje = new OtkazivanjeTerminaPacijent(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina);
+            otkazivanje.Show();
+        }
+        private bool izvrsiValidacijuPrePomeranja()
+        {
+            if (SviTerminiPacijenta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin!");
+                return false;
+            }
+            if (DateTime.Compare(((Termin)SviTerminiPacijenta.SelectedItem).Datum.Date, DateTime.Now.Date) == 0)
+            {
+                MessageBox.Show("Termin je za manje od 24h ne mozete ga pomeriti!");
+                return false;
+            }
+
+            if (RukovanjeTerminima.ProveriMogucnostPomeranjaDatum(((Termin)SviTerminiPacijenta.SelectedItem).Datum))
+            {
+                if (!RukovanjeTerminima.ProveriMogucnostPomeranjaVreme(RukovanjeTerminima.PretraziPoId(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina).PocetnoVreme))
+                {
+                    MessageBox.Show("Datum pregleda je za manje od 24h! Ne mozete pomeriti!", "Datum pregleda!");
+                    return false;
+                }
+            }
+            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+            {
+                MessageBox.Show("Možete pomeriti termin samo kod lekara opšte prakse!");
+                return false;
+            }
+            return true;
+        }
+        private bool izvrsiValidacijuPreOtkazivanja()
+        {
+            if (SviTerminiPacijenta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin koji želite da otkažete!");
+                return false;
+            }
+            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+            {
+                MessageBox.Show("Možete otkazati termin samo kod lekara opšte prakse!");
+                return false;
+            }
+            return true;
+        }
+    }
+}

@@ -90,7 +90,7 @@ namespace Bolnica.Sekretar.Pregled
 
                 datumi.Clear();
 
-                pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(pom, pom1, idLekara);
+                pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(pom,pom1), idLekara);
                 foreach (Termin t in pomocna)
                 {
                     nasao = false;
@@ -115,7 +115,7 @@ namespace Bolnica.Sekretar.Pregled
                     DateTime tr1 = pom.AddDays(-7);
                     DateTime tr2 = pom.AddDays(7);
 
-                    pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(tr1, tr2, idLekara);
+                    pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(tr1,tr2), idLekara);
 
                     foreach (Termin t in pomocna)
                     {
@@ -148,7 +148,7 @@ namespace Bolnica.Sekretar.Pregled
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
                 {
-                    pomocna = RukovanjeTerminima.ProveriDatum(pom, pom1);
+                    pomocna = RukovanjeTerminima.NadjiTermineUIntervalu(pom, pom1);
                     foreach (Termin t in pomocna)
                     {
                         nasao = false;
@@ -189,6 +189,12 @@ namespace Bolnica.Sekretar.Pregled
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+        public static List<Termin> NadjiDatumeUIntervalu(DateTime d1,DateTime d2)
+        {
+            return RukovanjeTerminima.NadjiTermineUIntervalu(d1, d2);
         }
     }
 }

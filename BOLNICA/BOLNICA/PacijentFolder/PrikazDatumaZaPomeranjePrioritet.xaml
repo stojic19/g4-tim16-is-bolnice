@@ -1,0 +1,71 @@
+﻿<Window x:Class="Bolnica.PrikazDatumaZaPomeranjePrioritet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="PrikazDatumaZaPomeranjePrioritet" Height="700" Width="350" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Margin="18,0,0,0" FontFamily="Times New Roman" FontSize="15">Lista datuma za pomeranje kod svih lekara</Label>
+        <ListBox x:Name="slobodniDatumiPomeranjePrioritet" SelectionMode="Single" Height="450" Width="300"  >
+
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+
+
+
+                    <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel  Margin="10"  Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+
+
+
+
+                            <TextBlock   Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
+                            <TextBlock Text="   -   "></TextBlock>
+
+                            <TextBlock   Text="{Binding Lekar.KorisnickoIme}"></TextBlock>
+
+
+
+
+                        </StackPanel>
+
+                    </WrapPanel>
+
+
+
+
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+
+
+        </ListBox>
+
+
+        <Button Name="izaberiDatum" Click="izaberiDatum_Click" Height="25" Margin="22,5" Background="#FF31577E">
+            <Run Foreground="AntiqueWhite">IZABERI DATUM</Run>
+        </Button>
+
+        <Grid Margin="00 50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="/Slike/PacijentSlike/POTVRDI.png" RenderTransformOrigin="0.5,0.5" Margin="0,-48,0,-0.2" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.631"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+    </StackPanel>
+</Window>

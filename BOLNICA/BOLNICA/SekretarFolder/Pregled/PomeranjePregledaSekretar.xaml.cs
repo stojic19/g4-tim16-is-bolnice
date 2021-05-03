@@ -55,7 +55,7 @@ namespace Bolnica.Sekretar.Pregled
 
             datumi.Clear();
 
-            pomocna = RukovanjeTerminima.PretraziPoLekaruIIntervalu(pom, pom1, termin.Lekar.KorisnickoIme);
+            pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(pom,pom1), termin.Lekar.KorisnickoIme);
             foreach (Termin t in pomocna)
             {
                 nasao = false;
@@ -102,6 +102,10 @@ namespace Bolnica.Sekretar.Pregled
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        public static List<Termin> NadjiDatumeUIntervalu(DateTime d1, DateTime d2)
+        {
+            return RukovanjeTerminima.NadjiTermineUIntervalu(d1, d2);
         }
     }
 }
