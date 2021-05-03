@@ -11,6 +11,7 @@ namespace Model
 {
     public class RukovanjeTerminima
     {
+        public static int MAXBR_PROMENA = 5;
         private static String imeFajla = "termini.xml";
 
         public static List<Termin> sviTermini = new List<Termin>();
@@ -250,10 +251,10 @@ namespace Model
         }
 
 
-        public static void ZakaziPregledPacijent(Termin t)
+        public static void ZakaziPregledPacijent(Termin termin)
         {
-            sviTermini.Add(t);
-            slobodniTermini.Remove(t);
+            sviTermini.Add(termin);
+            slobodniTermini.Remove(termin);
             SerijalizacijaSlobodnihTermina();
             SerijalizacijaTermina();
         }
@@ -367,6 +368,18 @@ namespace Model
             return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
         }
 
+        public static bool ProveraNalogaPacijenta(Pacijent pacijent)
+        {
+            int broj = pacijent.Zloupotrebio + 1;
+            pacijent.Zloupotrebio = broj;
+            if (pacijent.Zloupotrebio > MAXBR_PROMENA)
+            {
+                pacijent.Blokiran = true;
+                return true;
+            }
+            return false;
+
+        }
         public static List<Termin> PretraziPoLekaru(String korImeLekara)
         {
 

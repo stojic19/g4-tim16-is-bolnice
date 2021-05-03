@@ -53,8 +53,13 @@ namespace Bolnica
         private void otkazi_Click(object sender, RoutedEventArgs e)
         {
             bool dostupanZaBrisanje=izvrsiValidacijuPreOtkazivanja();
-            OtkazivanjeTerminaPacijent otkazivanje = new OtkazivanjeTerminaPacijent(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina);
-            otkazivanje.Show();
+            if (dostupanZaBrisanje)
+            {
+                OtkazivanjeTerminaPacijent otkazivanje = new OtkazivanjeTerminaPacijent(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina);
+                otkazivanje.Show();
+            }
+            return;
+
         }
         private bool izvrsiValidacijuPrePomeranja()
         {
@@ -82,6 +87,12 @@ namespace Bolnica
                 MessageBox.Show("Možete pomeriti termin samo kod lekara opšte prakse!");
                 return false;
             }
+            if (PacijentGlavniProzor.ulogovani.Blokiran)
+            {
+                MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara.");
+                return false;
+            }
+
             return true;
         }
         private bool izvrsiValidacijuPreOtkazivanja()
@@ -94,6 +105,11 @@ namespace Bolnica
             if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
             {
                 MessageBox.Show("Možete otkazati termin samo kod lekara opšte prakse!");
+                return false;
+            }
+            if (PacijentGlavniProzor.ulogovani.Blokiran)
+            {
+                MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara.");
                 return false;
             }
             return true;

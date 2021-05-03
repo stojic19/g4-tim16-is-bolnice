@@ -32,7 +32,8 @@ namespace Bolnica
         {
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+
             /*MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();*/
@@ -100,6 +101,7 @@ namespace Bolnica
         {
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjeNalozimaPacijenata.Sacuvaj();
         }
       
 

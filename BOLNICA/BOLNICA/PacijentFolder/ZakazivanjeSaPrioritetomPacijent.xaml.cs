@@ -35,7 +35,12 @@ namespace Bolnica
                 MessageBox.Show("Popunite sva polja!");
                 return;
             }
-            
+
+            if (PacijentGlavniProzor.ulogovani.Blokiran)
+            {
+                MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara.");
+                return;
+            }
 
             if (DateTime.Compare(((DateTime)datumod.SelectedDate).Date, DateTime.Now.Date) <= 0){
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");

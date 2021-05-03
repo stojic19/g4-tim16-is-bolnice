@@ -1,236 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>T26</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-04T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <Oprema />
-    </Prostor>
-    <Pacijent>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
-      <Jmbg>2104999124234</Jmbg>
-      <AdresaStanovanja>fsgdfg</AdresaStanovanja>
-      <KontaktTelefon>234324</KontaktTelefon>
-      <Email>sdvkmd,v</Email>
-      <KorisnickoIme>magdalena</KorisnickoIme>
-      <Lozinka>magdalena</Lozinka>
-      <Pol>zenski</Pol>
-      <VrstaNaloga>regularan</VrstaNaloga>
-      <ZdravstveniKarton>
-        <IDPacijenta>magdalena</IDPacijenta>
-        <Alergeni />
-        <Recepti>
-          <Recept>
-            <IDRecepta>R0</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>magdalena</IDPacijenta>
-            <Datum>2021-04-26T20:04:37.7517308+02:00</Datum>
-            <Lek>
-              <IDLeka>3</IDLeka>
-              <NazivLeka>L3</NazivLeka>
-              <Jacina>200mg</Jacina>
-              <Kolicina>0</Kolicina>
-            </Lek>
-          </Recept>
-        </Recepti>
-        <Anamneze>
-          <Anamneza>
-            <IdAnamneze>A0</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-26T20:04:24.2789956+02:00</Datum>
-            <Dijagnoza>Pij više tečnosti!</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>A1</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-27T16:22:57.7022677+02:00</Datum>
-            <Dijagnoza>11111111</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>d60a167d-98f8-4e60-8609-574d0abfe51f</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T03:25:50.668288+02:00</Datum>
-            <Dijagnoza>Nedasdsa</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T04:00:07.3153311+02:00</Datum>
-            <Dijagnoza>Proba</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>7677e634-e8bc-47f3-8dc0-98a18560e8b3</IDTerapije>
-                <IDAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IDAnamneze>
-                <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
-                <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
-                <Kolicina>3</Kolicina>
-                <Satnica>8</Satnica>
-                <UputsvoKonzumiranja>sdadasds</UputsvoKonzumiranja>
-                <PreporucenLek>
-                  <IDLeka>3</IDLeka>
-                  <NazivLeka>L3</NazivLeka>
-                  <Jacina>200mg</Jacina>
-                  <Kolicina>0</Kolicina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-        </Anamneze>
-      </ZdravstveniKarton>
-    </Pacijent>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-03T15:45:14.7887788+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T25</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-04T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <Oprema />
-    </Prostor>
-    <Pacijent>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
-      <Jmbg>2104999124234</Jmbg>
-      <AdresaStanovanja>fsgdfg</AdresaStanovanja>
-      <KontaktTelefon>234324</KontaktTelefon>
-      <Email>sdvkmd,v</Email>
-      <KorisnickoIme>magdalena</KorisnickoIme>
-      <Lozinka>magdalena</Lozinka>
-      <Pol>zenski</Pol>
-      <VrstaNaloga>regularan</VrstaNaloga>
-      <ZdravstveniKarton>
-        <IDPacijenta>magdalena</IDPacijenta>
-        <Alergeni />
-        <Recepti>
-          <Recept>
-            <IDRecepta>R0</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>magdalena</IDPacijenta>
-            <Datum>2021-04-26T20:04:37.7517308+02:00</Datum>
-            <Lek>
-              <IDLeka>3</IDLeka>
-              <NazivLeka>L3</NazivLeka>
-              <Jacina>200mg</Jacina>
-              <Kolicina>0</Kolicina>
-            </Lek>
-          </Recept>
-        </Recepti>
-        <Anamneze>
-          <Anamneza>
-            <IdAnamneze>A0</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-26T20:04:24.2789956+02:00</Datum>
-            <Dijagnoza>Pij više tečnosti!</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>A1</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-27T16:22:57.7022677+02:00</Datum>
-            <Dijagnoza>11111111</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>d60a167d-98f8-4e60-8609-574d0abfe51f</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T03:25:50.668288+02:00</Datum>
-            <Dijagnoza>Nedasdsa</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T04:00:07.3153311+02:00</Datum>
-            <Dijagnoza>Proba</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>7677e634-e8bc-47f3-8dc0-98a18560e8b3</IDTerapije>
-                <IDAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IDAnamneze>
-                <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
-                <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
-                <Kolicina>3</Kolicina>
-                <Satnica>8</Satnica>
-                <UputsvoKonzumiranja>sdadasds</UputsvoKonzumiranja>
-                <PreporucenLek>
-                  <IDLeka>3</IDLeka>
-                  <NazivLeka>L3</NazivLeka>
-                  <Jacina>200mg</Jacina>
-                  <Kolicina>0</Kolicina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-        </Anamneze>
-      </ZdravstveniKarton>
-    </Pacijent>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-03T15:45:14.7887788+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>T12</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>14:30</PocetnoVreme>
@@ -254,11 +24,11 @@
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
-      <Jmbg>2104999124234</Jmbg>
-      <AdresaStanovanja>fsgdfg</AdresaStanovanja>
-      <KontaktTelefon>234324</KontaktTelefon>
-      <Email>sdvkmd,v</Email>
+      <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
+      <Jmbg>34235354364</Jmbg>
+      <AdresaStanovanja>ulica</AdresaStanovanja>
+      <KontaktTelefon>13214235</KontaktTelefon>
+      <Email>magdalena@gmail.com</Email>
       <KorisnickoIme>magdalena</KorisnickoIme>
       <Lozinka>magdalena</Lozinka>
       <Pol>zenski</Pol>
@@ -266,81 +36,16 @@
       <ZdravstveniKarton>
         <IDPacijenta>magdalena</IDPacijenta>
         <Alergeni />
-        <Recepti>
-          <Recept>
-            <IDRecepta>R0</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>magdalena</IDPacijenta>
-            <Datum>2021-04-26T20:04:37.7517308+02:00</Datum>
-            <Lek>
-              <IDLeka>3</IDLeka>
-              <NazivLeka>L3</NazivLeka>
-              <Jacina>200mg</Jacina>
-              <Kolicina>0</Kolicina>
-            </Lek>
-          </Recept>
-        </Recepti>
-        <Anamneze>
-          <Anamneza>
-            <IdAnamneze>A0</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-26T20:04:24.2789956+02:00</Datum>
-            <Dijagnoza>Pij više tečnosti!</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>A1</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-27T16:22:57.7022677+02:00</Datum>
-            <Dijagnoza>11111111</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>d60a167d-98f8-4e60-8609-574d0abfe51f</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T03:25:50.668288+02:00</Datum>
-            <Dijagnoza>Nedasdsa</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T04:00:07.3153311+02:00</Datum>
-            <Dijagnoza>Proba</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>7677e634-e8bc-47f3-8dc0-98a18560e8b3</IDTerapije>
-                <IDAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IDAnamneze>
-                <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
-                <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
-                <Kolicina>3</Kolicina>
-                <Satnica>8</Satnica>
-                <UputsvoKonzumiranja>sdadasds</UputsvoKonzumiranja>
-                <PreporucenLek>
-                  <IDLeka>3</IDLeka>
-                  <NazivLeka>L3</NazivLeka>
-                  <Jacina>200mg</Jacina>
-                  <Kolicina>0</Kolicina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-        </Anamneze>
+        <Recepti />
+        <Anamneze />
       </ZdravstveniKarton>
+      <Zloupotrebio>0</Zloupotrebio>
+      <Blokiran>false</Blokiran>
     </Pacijent>
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-03T15:45:14.7887788+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-03T18:16:47.1770712+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -353,27 +58,34 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T16</IdTermina>
+    <IdTermina>T30</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:30</PocetnoVreme>
+    <PocetnoVreme>16:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-05-27T00:00:00</Datum>
+    <Datum>2021-05-26T00:00:00</Datum>
     <Prostor>
-      <IdProstora>P2</IdProstora>
+      <IdProstora>P1</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <Oprema />
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+      <Oprema>
+        <Oprema>
+          <IdOpreme>s1</IdOpreme>
+          <NazivOpreme>krevet</NazivOpreme>
+          <VrstaOpreme>staticka</VrstaOpreme>
+          <Kolicina>1</Kolicina>
+        </Oprema>
+      </Oprema>
     </Prostor>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-04-21T00:00:00</DatumRodjenja>
-      <Jmbg>2104999124234</Jmbg>
-      <AdresaStanovanja>fsgdfg</AdresaStanovanja>
-      <KontaktTelefon>234324</KontaktTelefon>
-      <Email>sdvkmd,v</Email>
+      <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
+      <Jmbg>34235354364</Jmbg>
+      <AdresaStanovanja>ulica</AdresaStanovanja>
+      <KontaktTelefon>13214235</KontaktTelefon>
+      <Email>magdalena@gmail.com</Email>
       <KorisnickoIme>magdalena</KorisnickoIme>
       <Lozinka>magdalena</Lozinka>
       <Pol>zenski</Pol>
@@ -381,87 +93,22 @@
       <ZdravstveniKarton>
         <IDPacijenta>magdalena</IDPacijenta>
         <Alergeni />
-        <Recepti>
-          <Recept>
-            <IDRecepta>R0</IDRecepta>
-            <IDLekara>JelenaHrnjak</IDLekara>
-            <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-            <IDPacijenta>magdalena</IDPacijenta>
-            <Datum>2021-04-26T20:04:37.7517308+02:00</Datum>
-            <Lek>
-              <IDLeka>3</IDLeka>
-              <NazivLeka>L3</NazivLeka>
-              <Jacina>200mg</Jacina>
-              <Kolicina>0</Kolicina>
-            </Lek>
-          </Recept>
-        </Recepti>
-        <Anamneze>
-          <Anamneza>
-            <IdAnamneze>A0</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-26T20:04:24.2789956+02:00</Datum>
-            <Dijagnoza>Pij više tečnosti!</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>A1</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-04-27T16:22:57.7022677+02:00</Datum>
-            <Dijagnoza>11111111</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>d60a167d-98f8-4e60-8609-574d0abfe51f</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T03:25:50.668288+02:00</Datum>
-            <Dijagnoza>Nedasdsa</Dijagnoza>
-            <Terapije />
-          </Anamneza>
-          <Anamneza>
-            <IdAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IdAnamneze>
-            <IdLekara>JelenaHrnjak</IdLekara>
-            <ImeIPrezimeLekara>JelenaHrnjak</ImeIPrezimeLekara>
-            <IdPacijenta>magdalena</IdPacijenta>
-            <Datum>2021-05-01T04:00:07.3153311+02:00</Datum>
-            <Dijagnoza>Proba</Dijagnoza>
-            <Terapije>
-              <Terapija>
-                <IDTerapije>7677e634-e8bc-47f3-8dc0-98a18560e8b3</IDTerapije>
-                <IDAnamneze>ff1b0514-7756-4004-bc23-3a1902ac27ae</IDAnamneze>
-                <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
-                <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
-                <Kolicina>3</Kolicina>
-                <Satnica>8</Satnica>
-                <UputsvoKonzumiranja>sdadasds</UputsvoKonzumiranja>
-                <PreporucenLek>
-                  <IDLeka>3</IDLeka>
-                  <NazivLeka>L3</NazivLeka>
-                  <Jacina>200mg</Jacina>
-                  <Kolicina>0</Kolicina>
-                </PreporucenLek>
-              </Terapija>
-            </Terapije>
-          </Anamneza>
-        </Anamneze>
+        <Recepti />
+        <Anamneze />
       </ZdravstveniKarton>
+      <Zloupotrebio>6</Zloupotrebio>
+      <Blokiran>true</Blokiran>
     </Pacijent>
     <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-03T15:45:14.7887788+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-03T18:16:47.1770712+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>

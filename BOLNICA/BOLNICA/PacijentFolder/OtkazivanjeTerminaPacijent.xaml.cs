@@ -59,7 +59,16 @@ namespace Bolnica
             }
 
             RukovanjeTerminima.OtkaziPregledPacijent(izabran);
+            RukovanjeTerminima.ProveraNalogaPacijenta(PacijentGlavniProzor.ulogovani);
+            ObavestiPacijenta();
+            
             this.Close();
+        }
+
+        private void ObavestiPacijenta()
+        {
+            if (PacijentGlavniProzor.ulogovani.Blokiran)
+                MessageBox.Show("Ovo je poslednji pomeren termin! Vaš nalog je blokiran.");
         }
     }
 }

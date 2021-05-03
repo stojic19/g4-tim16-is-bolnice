@@ -93,5 +93,18 @@ namespace Bolnica
             this.Close();
             gps.Show();
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            if (((Pacijent)dataGridNaloziPacijenata.SelectedItem).Blokiran == false)
+            {
+                MessageBox.Show("Nalog nije blokiran!");
+                return;
+            }
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
+            p.Blokiran = false;
+            p.Zloupotrebio = 0;
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+        }
     }
 }

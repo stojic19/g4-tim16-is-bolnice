@@ -40,5 +40,6 @@
         <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje naloga"  Margin="34.6,22,36.2,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
         <Button Grid.Column="1" Grid.Row="4" Content="Nazad"  Margin="35,22,36,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_4"  Background="WhiteSmoke"/>
         <Button Grid.Column="1" Grid.Row="3" Content="Ažuriranje alergena"  Margin="35,24,36,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
+        <Button Grid.Column="0" Grid.Row="4" Content="Odblokiraj nalog"  Margin="35,24,636,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_5"  Background="WhiteSmoke"/>
     </Grid>
 </Window>

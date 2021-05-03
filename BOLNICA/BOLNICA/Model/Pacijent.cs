@@ -6,14 +6,15 @@ using System.ComponentModel;
 namespace Model
 {
     public class Pacijent : Osoba
-
-
     {
       
         public VrsteNaloga VrstaNaloga { get; set; }
 
         public ZdravstveniKarton ZdravstveniKarton { get; set; }
-        
+
+        public int Zloupotrebio { get; set; }
+        public bool Blokiran { get; set; }
+
 
         public Pacijent() { }
 
@@ -44,6 +45,8 @@ namespace Model
             this.VrstaNaloga = vrstaNaloga;
             this.Lozinka = lozinka;
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
+            Zloupotrebio = 0;
+            Blokiran = false;
         }
 
     }

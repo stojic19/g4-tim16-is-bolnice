@@ -37,7 +37,15 @@ namespace Bolnica
             RukovanjeTerminima.PomeriPregledPacijent(noviTermin.IdTermina);
             RukovanjeTerminima.ZameniTermine(noviTermin);
             RukovanjeTerminima.OsveziPrikazPoslePomeranja(noviTermin);
+            RukovanjeTerminima.ProveraNalogaPacijenta(PacijentGlavniProzor.ulogovani);
+            ObavestiPacijenta();
             this.Close();
+        }
+
+        private void ObavestiPacijenta()
+        {
+            if (PacijentGlavniProzor.ulogovani.Blokiran)
+                MessageBox.Show("Ovo je poslednji pomeren termin! Vaš nalog je blokiran.");
         }
 
         private void odustani_Click(object sender, RoutedEventArgs e)

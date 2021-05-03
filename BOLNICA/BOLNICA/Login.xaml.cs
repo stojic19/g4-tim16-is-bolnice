@@ -136,6 +136,12 @@ namespace Bolnica
                 {
                     if (p.Lozinka.Equals(password.Password))
                     {
+                        if (p.Blokiran)
+                        {
+                            System.Windows.MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara!");
+                            return;
+
+                        }
                         PacijentGlavniProzor pgp = new PacijentGlavniProzor(p.KorisnickoIme);
                         pgp.Show();
                         this.Close();
