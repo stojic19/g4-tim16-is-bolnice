@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.PacijentFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,7 +36,13 @@ namespace Bolnica
 
         private void informacije_Click(object sender, RoutedEventArgs e)
         {
-
+            if (SviTerminiPacijenta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin!");
+                return;
+            }
+            DetaljiTermina prikaz = new DetaljiTermina((Termin)SviTerminiPacijenta.SelectedItem);
+            prikaz.Show();
         }
 
         private void pomeri_Click(object sender, RoutedEventArgs e)
@@ -44,12 +51,9 @@ namespace Bolnica
             if (dostupanZaPomeranje)
             {
                 TerminZaPomeranje = (Termin)SviTerminiPacijenta.SelectedItem;
-               
-                UserControl usc = null;
+       
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-                usc = new PomeranjeSaPrioritetom((Termin)SviTerminiPacijenta.SelectedItem);
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PomeranjeSaPrioritetom((Termin)SviTerminiPacijenta.SelectedItem));
             }
             return;
         }

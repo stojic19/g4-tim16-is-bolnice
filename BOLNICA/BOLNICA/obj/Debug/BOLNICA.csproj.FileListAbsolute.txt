@@ -2408,3 +2408,11 @@ C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica
 C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
 C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazKartona.g.cs
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazKartona.baml
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazAlergenaPacijenta.g.cs
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazAlergenaPacijenta.baml
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IstorijaPregleda.g.cs
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IstorijaPregleda.baml
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTermina.g.cs
+C:\Users\computer\Desktop\uspeo user control\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTermina.baml

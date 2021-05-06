@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Bolnica.PacijentFolder.PrikazKartona"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.PacijentFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="350">
+    <StackPanel  Margin="20 20">
+        <Grid Background="White" Margin="5 10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" >JMBG</Label>
+            <Label Grid.Row="1"  FontWeight="DemiBold" Name="jmbg" Content="{ Binding  Path=Jmbg, UpdateSourceTrigger=PropertyChanged}" ></Label>
+            <Separator Grid.Row="2"></Separator>
+            <Label Grid.Row="3" >BROJ KARTONA</Label>
+            <Label Grid.Row="4"  FontWeight="DemiBold"  Name="brojKartona"></Label>
+            <Separator Grid.Row="5"  ></Separator>
+            <Label Grid.Row="6" >PREZIME (IME RODITELJA) IME</Label>
+            <Label Grid.Row="7" FontWeight="DemiBold" Name="celoIme"></Label>
+            <Separator Grid.Row="8"></Separator>
+            <Label Grid.Row="9" >DATUM ROĐENJA</Label>
+            <Label Grid.Row="10"  FontWeight="DemiBold" Name="datumRodjenja" Content="{ Binding  Path=DatumRodjenja, UpdateSourceTrigger=PropertyChanged}" ></Label>
+            <Separator Grid.Row="11"></Separator>
+            <Label Grid.Row="12" >ADRESA</Label>
+            <Label Grid.Row="13" FontWeight="DemiBold" Name="adresa" Content="{ Binding  Path=AdresaStanovanja, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Separator Grid.Row="14"></Separator>
+            <Label Grid.Row="15">TELEFON</Label>
+            <Label Grid.Row="16"  FontWeight="DemiBold" Name="telefon" Content="{ Binding  Path=KontaktTelefon, UpdateSourceTrigger=PropertyChanged}" ></Label>
+            <Separator Grid.Row="17"></Separator>
+            <Label Grid.Row="18" >POL</Label>
+            <Label Grid.Row="19"  FontWeight="DemiBold"  Name="pol" Content="{ Binding  Path=Pol, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Separator Grid.Row="20"></Separator>
+            <Label Grid.Row="21" >BRAČNI STATUS</Label>
+            <Label Grid.Row="22"  FontWeight="DemiBold" Name="bracniStatus" ></Label>
+            <Separator Grid.Row="23"></Separator>
+            <Label Grid.Row="24" >ZAPOSLENJE</Label>
+            <Label Grid.Row="25"  FontWeight="DemiBold" Name="zaposlenje" ></Label>
+            <Separator Grid.Row="26"></Separator>
+        </Grid>
+
+        <Button Name="PrikazAlergija" Click="PrikazAlergija_Click"  Height="30"  Margin="5" Background="#FF31577E">
+            <Run Foreground="AntiqueWhite">PRIKAZ ALERGIJA</Run>
+        </Button>
+        <Button Name="PrikazIstorijePregleda" Click="PrikazIstorijePregleda_Click"  Height="30"  Margin="5" Background="#FF31577E" >
+            <Run Foreground="AntiqueWhite">PRIKAZ ISTORIJE PREGLEDA</Run>
+        </Button>
+    </StackPanel>
+</UserControl>

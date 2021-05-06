@@ -1,0 +1,48 @@
+﻿<Window x:Class="Bolnica.PacijentFolder.DetaljiTermina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica.PacijentFolder"
+        mc:Ignorable="d"
+        Title="DetaljiTermina" Height="300" Width="350" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0">ID termina:</Label>
+            <Label Grid.Column="1" Grid.Row="0" Content="{Binding IdTermina}"></Label>
+
+            <Label Grid.Column="0" Grid.Row="1">Datum:</Label>
+            <Label Grid.Column="1" Grid.Row="1" Content="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"></Label>
+
+            <Label Grid.Column="0" Grid.Row="2">Vreme:</Label>
+            <Label Grid.Column="1" Grid.Row="2" Content="{Binding PocetnoVreme}"></Label>
+
+            <Label Grid.Column="0" Grid.Row="3">Lekar:</Label>
+            <Label Grid.Column="1" Grid.Row="3" Content="{Binding Lekar.KorisnickoIme}"></Label>
+
+            <Label Grid.Column="0" Grid.Row="4">Tip:</Label>
+            <Label Grid.Column="1" Grid.Row="4" Content="{Binding VrstaTermina}"></Label>
+
+            <Label Grid.Column="0" Grid.Row="5">Prostor:</Label>
+            <Label Grid.Column="1" Grid.Row="5" Content="{Binding Prostor.IdProstora}"></Label>
+
+        </Grid>
+        <Button Margin="25 10" x:Name="uRedu" Click="uRedu_Click"  Background="#FF31577E" Height="30">
+            <Run Foreground="AntiqueWhite">U REDU</Run>
+        </Button>
+    </StackPanel>
+</Window>

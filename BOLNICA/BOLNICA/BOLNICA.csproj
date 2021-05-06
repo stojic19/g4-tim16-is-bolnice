@@ -105,8 +105,20 @@
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\Enumi\VrsteOpreme.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
+    <Compile Include="PacijentFolder\DetaljiTermina.xaml.cs">
+      <DependentUpon>DetaljiTermina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentFolder\IstorijaPregleda.xaml.cs">
+      <DependentUpon>IstorijaPregleda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentFolder\PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentFolder\PrikazAlergenaPacijenta.xaml.cs">
+      <DependentUpon>PrikazAlergenaPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentFolder\PrikazKartona.xaml.cs">
+      <DependentUpon>PrikazKartona.xaml</DependentUpon>
     </Compile>
     <Compile Include="PremjestanjeOpreme.xaml.cs">
       <DependentUpon>PremjestanjeOpreme.xaml</DependentUpon>
@@ -301,7 +313,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PacijentFolder\DetaljiTermina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentFolder\IstorijaPregleda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentFolder\PomeranjeSaPrioritetom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentFolder\PrikazAlergenaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentFolder\PrikazKartona.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -595,6 +623,12 @@
     <Resource Include="Slike\PacijentSlike\IMG_4560.jpeg" />
     <Resource Include="Slike\PacijentSlike\IMG_4561.jpeg" />
     <Resource Include="Slike\PacijentSlike\IMG_4563.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\karton15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\alergije.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

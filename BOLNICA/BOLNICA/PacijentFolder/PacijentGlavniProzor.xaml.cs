@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.PacijentFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,22 +16,21 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PacijentGlavniProzor.xaml
-    /// </summary>
-    /// 
-    
+
     public partial class PacijentGlavniProzor : Window
     {
         private static Grid GlavniSadrzaj;
         public static Pacijent ulogovani = null;
+   
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
+            
             RukovanjeObavestenjimaSekratar.Ucitaj();
             ulogovani = RukovanjeNalozimaPacijenata.PretraziPoId(id);
             GlavniSadrzaj = this.MainPanel;
         }
+        
         public static Grid GetGlavniSadrzaj()
         {
             return GlavniSadrzaj;
@@ -55,36 +55,41 @@ namespace Bolnica
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazObavestenjaPacijent());
+            naslovStrane.Content = "Obaveštenja";
         }
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent());
+            naslovStrane.Content = "Zakaži pregled";
         }
 
         private void Raspored_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazRasporedaPacijent());
+            naslovStrane.Content = "Raspored";
         }
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazTerapijePacijent());
+            naslovStrane.Content = "Terapija";
         }
 
         private void Karton_Click(object sender, RoutedEventArgs e)
         {
-
+            PromeniPrikaz(new PrikazKartona());
+            naslovStrane.Content = "Zdravstveni karton";
         }
 
         private void Ankete_Click(object sender, RoutedEventArgs e)
         {
-
+           // naslovStrane.Content = "Ankete";
         }
 
         private void Pomoc_Click(object sender, RoutedEventArgs e)
         {
-
+           // naslovStrane.Content = "Pomoć";
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

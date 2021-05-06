@@ -38,6 +38,8 @@
 
             </Button>
 
+            <Label  Grid.Column="1" Grid.ColumnSpan="3"  Margin="15 10" Name="naslovStrane" Foreground="AntiqueWhite"></Label>
+
             <Button Grid.Column="4" Background="#FF31577E" Name="obavestenja" Click="obavestenja_Click" Width="45" Height="30">
                 <Image Source="/Slike/PacijentSlike/obavestenja3.png" />
             </Button>
