@@ -30,6 +30,7 @@
                     <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="80*"/>
                     <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>
                     <DataGridTextColumn Header="Broj Kreveta" Binding="{Binding BrojKreveta}" Width="105*"/>
+                    <DataGridTextColumn Header="Renovira se" Binding="{Binding JeRenoviranje}" Width="105*"/>
 
 
 
@@ -42,6 +43,8 @@
                 HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
             <Button Grid.Row="3" Content="Uklanjanje prostora" Margin="348,30.2,74.6,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
+            <Button Grid.Row="2" Content="Renoviraj" Margin="0.4,95.8,6.2,67.4" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Button_Click_4" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2"/>
             <Button Grid.Row="3" Content="Raspored opreme" Margin="0.4,30.2,8.4,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke" Grid.Column="1"/>
 

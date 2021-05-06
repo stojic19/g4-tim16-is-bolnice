@@ -32,6 +32,11 @@ namespace Bolnica
 
             foreach (Prostor p in RukovanjeProstorom.SviProstori())
             {
+                //if (DateTime.Today >= p.Renoviranje.StartDay && DateTime.Today <= p.Renoviranje.EndDay)
+                // {
+                //    p.JeRenoviranje = true;
+                //}
+
                 Prostori.Add(p);
             }
 
@@ -103,6 +108,21 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeProstorom.SerijalizacijaProstora();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
+            if (izabran != null)
+            {
+
+                RenoviranjeProstorije renoviranje = new RenoviranjeProstorije(izabran);
+                renoviranje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite prostor koji zelite da renovirate!");
+            }
         }
     }
 }

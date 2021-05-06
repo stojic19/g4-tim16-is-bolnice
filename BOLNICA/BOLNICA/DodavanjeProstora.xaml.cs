@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +65,7 @@ namespace Bolnica
             int brojKreveta = int.Parse(this.brojKreveta.Text);
 
 
-            Prostor p = new Prostor(idProstora, vrstaProstora, sprat, kvadratura, brojKreveta);
+            Prostor p = new Prostor(idProstora, vrstaProstora, sprat, kvadratura, brojKreveta, false, new Renoviranje());
             RukovanjeProstorom.DodajProstor(p);
 
             this.Close();

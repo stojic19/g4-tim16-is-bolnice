@@ -6,6 +6,12 @@
     <Sprat>66</Sprat>
     <Kvadratura>6</Kvadratura>
     <BrojKreveta>3212</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Renoviranje>
+      <RoomId>P33</RoomId>
+      <StartDay>2021-05-09T00:00:00</StartDay>
+      <EndDay>2021-05-12T00:00:00</EndDay>
+    </Renoviranje>
     <Oprema>
       <Oprema>
         <IdOpreme>s1</IdOpreme>
@@ -21,6 +27,12 @@
     <Sprat>1</Sprat>
     <Kvadratura>1</Kvadratura>
     <BrojKreveta>2</BrojKreveta>
+    <JeRenoviranje>true</JeRenoviranje>
+    <Renoviranje>
+      <RoomId>P1</RoomId>
+      <StartDay>2021-05-05T00:00:00</StartDay>
+      <EndDay>2021-05-09T00:00:00</EndDay>
+    </Renoviranje>
     <Oprema>
       <Oprema>
         <IdOpreme>s1</IdOpreme>
@@ -36,6 +48,7 @@
     <Sprat>6</Sprat>
     <Kvadratura>6</Kvadratura>
     <BrojKreveta>4</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -44,6 +57,7 @@
     <Sprat>2</Sprat>
     <Kvadratura>9</Kvadratura>
     <BrojKreveta>2</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -52,6 +66,7 @@
     <Sprat>1</Sprat>
     <Kvadratura>25</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -60,6 +75,7 @@
     <Sprat>2</Sprat>
     <Kvadratura>40</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
 </ArrayOfProstor>

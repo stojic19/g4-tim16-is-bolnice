@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="Model\Oprema.cs" />
     <Compile Include="Model\Pregled.cs" />
+    <Compile Include="Model\Renoviranje.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeLijekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
@@ -140,6 +141,9 @@
     </Compile>
     <Compile Include="RasporedOpreme.xaml.cs">
       <DependentUpon>RasporedOpreme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RenoviranjeProstorije.xaml.cs">
+      <DependentUpon>RenoviranjeProstorije.xaml</DependentUpon>
     </Compile>
     <Compile Include="SekretarFolder\Alergeni\AlergeniSekretar.xaml.cs">
       <DependentUpon>AlergeniSekretar.xaml</DependentUpon>
@@ -358,6 +362,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RasporedOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenoviranjeProstorije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
