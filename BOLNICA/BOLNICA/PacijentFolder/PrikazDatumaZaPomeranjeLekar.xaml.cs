@@ -15,11 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Bolnica
-{
-    /// <summary>
-    /// Interaction logic for PrikazDatumaZaPomeranjeLekar.xaml
-    /// </summary>
-    public partial class PrikazDatumaZaPomeranjeLekar : Window
+{ 
+    public partial class PrikazDatumaZaPomeranjeLekar : UserControl
     {
         public static ObservableCollection<Termin> SlobodniDatumiPomeranjeLekar { get; set; }
         public PrikazDatumaZaPomeranjeLekar()
@@ -41,10 +38,12 @@ namespace Bolnica
                 MessageBox.Show("Izaberite datum!");
                 return;
             }
-
-            PrikazVremenaZaPomeranjePacijent pr = new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiZaPomeranje.SelectedItem);
-            pr.Show();
-            this.Close();
+            PromeniPrikaz(new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiZaPomeranje.SelectedItem));
+        }
+        public void PromeniPrikaz(UserControl userControl)
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
     }
 }

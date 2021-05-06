@@ -44,8 +44,12 @@ namespace Bolnica
             if (dostupanZaPomeranje)
             {
                 TerminZaPomeranje = (Termin)SviTerminiPacijenta.SelectedItem;
-                PomeranjeSaPrioritetom p = new PomeranjeSaPrioritetom((Termin)SviTerminiPacijenta.SelectedItem);
-                p.Show();
+               
+                UserControl usc = null;
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+                usc = new PomeranjeSaPrioritetom((Termin)SviTerminiPacijenta.SelectedItem);
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
             }
             return;
         }

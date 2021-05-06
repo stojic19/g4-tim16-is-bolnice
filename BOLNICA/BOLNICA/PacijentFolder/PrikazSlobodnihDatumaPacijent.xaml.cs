@@ -19,7 +19,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for PrikazSlobodnihDatumaPacijent.xaml
     /// </summary>
-    public partial class PrikazSlobodnihDatumaPacijent : Window
+    public partial class PrikazSlobodnihDatumaPacijent : UserControl
     {
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
         public PrikazSlobodnihDatumaPacijent()
@@ -38,9 +38,12 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
-            pr.Show();
-            this.Close();
+           // PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
+            UserControl usc = null;
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+            usc = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
         }
     }
 }

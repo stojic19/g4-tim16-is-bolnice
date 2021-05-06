@@ -112,9 +112,11 @@ namespace Bolnica
                         MessageBox.Show("Nema slobodnih datuma!");
                         return;
                     }
-                    PrikazDatumaPacijentKodIzabranog pd = new PrikazDatumaPacijentKodIzabranog();
-                    pd.Show();
+                    UserControl usc = null;
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
 
+                    usc = new PrikazDatumaPacijentKodIzabranog();
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
                 }
                 else if (PrioritetCombo.SelectedIndex == 1)
                 {
@@ -143,10 +145,14 @@ namespace Bolnica
                         return;
                     }
                     
-                    PrikazSlobodnihDatumaPacijent pd = new PrikazSlobodnihDatumaPacijent();
-                    pd.Show();
-
                    
+                    UserControl usc = null;
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+                    usc = new PrikazSlobodnihDatumaPacijent();
+                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
+
+
 
                 }
 
@@ -155,8 +161,13 @@ namespace Bolnica
             {
 
 
-                PrikazDatumaPacijentKodIzabranog pd = new PrikazDatumaPacijentKodIzabranog();
-                pd.Show();
+                UserControl usc = null;
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+                usc = new PrikazDatumaPacijentKodIzabranog();
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
+
+                
 
             }
 

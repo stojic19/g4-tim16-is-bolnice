@@ -18,14 +18,22 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for PacijentGlavniProzor.xaml
     /// </summary>
+    /// 
+    
     public partial class PacijentGlavniProzor : Window
     {
+        private static Grid GlavniSadrzaj;
         public static Pacijent ulogovani = null;
         public PacijentGlavniProzor(String id)
         {
             InitializeComponent();
             RukovanjeObavestenjimaSekratar.Ucitaj();
             ulogovani = RukovanjeNalozimaPacijenata.PretraziPoId(id);
+            GlavniSadrzaj = this.MainPanel;
+        }
+        public static Grid GetGlavniSadrzaj()
+        {
+            return GlavniSadrzaj;
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -33,53 +41,35 @@ namespace Bolnica
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeNalozimaPacijenata.Sacuvaj();
-
-            /*MainWindow mw = new MainWindow();
-            mw.Show();
-            this.Close();*/
             Login login = new Login();
             login.Show();
             this.Close();
         }
 
+        public void PromeniPrikaz(UserControl userControl)
+        {
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(userControl);
+        }
+
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
-
-            UserControl usc = null;
-            MainPanel.Children.Clear();
-
-            usc = new PrikazObavestenjaPacijent();
-            MainPanel.Children.Add(usc);
-
+            PromeniPrikaz(new PrikazObavestenjaPacijent());
         }
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
-            MainPanel.Children.Clear();
-
-            usc = new ZakazivanjeSaPrioritetomPacijent();
-            MainPanel.Children.Add(usc);
-
+            PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent());
         }
 
         private void Raspored_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
-            MainPanel.Children.Clear();
-
-            usc = new PrikazRasporedaPacijent();
-            MainPanel.Children.Add(usc);
-
+            PromeniPrikaz(new PrikazRasporedaPacijent());
         }
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
-            MainPanel.Children.Clear();
-
-            usc = new PrikazTerapijePacijent();
-            MainPanel.Children.Add(usc);
+            PromeniPrikaz(new PrikazTerapijePacijent());
         }
 
         private void Karton_Click(object sender, RoutedEventArgs e)

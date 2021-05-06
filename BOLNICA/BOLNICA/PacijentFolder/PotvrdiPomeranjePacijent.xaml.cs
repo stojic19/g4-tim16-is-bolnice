@@ -14,11 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Bolnica
-{
-    /// <summary>
-    /// Interaction logic for PotvrdiPomeranjePacijent.xaml
-    /// </summary>
-    public partial class PotvrdiPomeranjePacijent : Window
+{ 
+    public partial class PotvrdiPomeranjePacijent : UserControl
     {
         private Termin noviTermin = null;
         public PotvrdiPomeranjePacijent(Termin izabrani)
@@ -39,7 +36,7 @@ namespace Bolnica
             RukovanjeTerminima.OsveziPrikazPoslePomeranja(noviTermin);
             RukovanjeTerminima.ProveraNalogaPacijenta(PacijentGlavniProzor.ulogovani);
             ObavestiPacijenta();
-            this.Close();
+            PromeniPrikaz(new PrikazRasporedaPacijent());
         }
 
         private void ObavestiPacijenta()
@@ -50,7 +47,13 @@ namespace Bolnica
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            PromeniPrikaz(new PrikazRasporedaPacijent());
+        }
+
+        public void PromeniPrikaz(UserControl userControl)
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
     }
 }

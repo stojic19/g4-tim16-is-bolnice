@@ -16,10 +16,7 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PrikazVremenaZaPomeranjePacijent.xaml
-    /// </summary>
-    public partial class PrikazVremenaZaPomeranjePacijent : Window
+    public partial class PrikazVremenaZaPomeranjePacijent : UserControl
     {
         public static ObservableCollection<Termin> VremenaTerminaPomeranje { get; set; }
 
@@ -39,9 +36,13 @@ namespace Bolnica
                 MessageBox.Show("Izaberite termin!");
                 return;
             }
-            PotvrdiPomeranjePacijent prikaz = new PotvrdiPomeranjePacijent(((Termin)vremenaZaPomeranje.SelectedItem));
-            prikaz.Show();
-            this.Close();
+            PromeniPrikaz(new PotvrdiPomeranjePacijent(((Termin)vremenaZaPomeranje.SelectedItem)));
+        }
+
+        public void PromeniPrikaz(UserControl userControl)
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
     }
 }

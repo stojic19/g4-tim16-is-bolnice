@@ -19,7 +19,7 @@ namespace Bolnica
     /// Interaction logic for PotvrdiZakazivanjePacijent.xaml
     /// </summary>
     /// 
-    public partial class PotvrdiZakazivanjePacijent : Window
+    public partial class PotvrdiZakazivanjePacijent : UserControl
     {
         public String idTermina = null;
         public PotvrdiZakazivanjePacijent(Termin izabrani)
@@ -38,13 +38,23 @@ namespace Bolnica
             Termin t = RukovanjeTerminima.PretraziSlobodnePoId(idTermina);
             t.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
             RukovanjeTerminima.ZakaziPregledPacijent(t);
-           
-            this.Close();
+
+        
+
+            UserControl usc = null;
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+            usc = new PrikazRasporedaPacijent();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+            usc = new ZakazivanjeSaPrioritetomPacijent();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
         }
     }
 }

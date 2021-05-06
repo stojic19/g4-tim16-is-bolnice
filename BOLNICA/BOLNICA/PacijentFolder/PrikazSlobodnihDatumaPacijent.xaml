@@ -1,12 +1,12 @@
-﻿<Window x:Class="Bolnica.PrikazSlobodnihDatumaPacijent"
+﻿<UserControl x:Class="Bolnica.PrikazSlobodnihDatumaPacijent"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="PrikazSlobodnihDatumaPacijent" Height="700" Width="350" WindowStartupLocation="CenterScreen">
-    <StackPanel>
+        d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White">
         <Label Margin="22,0,0,0" FontFamily="Times New Roman" FontSize="15">Lista slobodnih termina svih lekara</Label>
         <ListBox x:Name="slobodniDatumiLista" SelectionMode="Single" Height="450" Width="300"  >
 
@@ -70,4 +70,4 @@
         </Grid>
 
     </StackPanel>
-</Window>
+</UserControl>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>T12</IdTermina>
+    <IdTermina>T19</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>14:30</PocetnoVreme>
+    <PocetnoVreme>19:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-05-22T00:00:00</Datum>
+    <Datum>2021-05-24T00:00:00</Datum>
     <Prostor>
       <IdProstora>P1</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
@@ -58,9 +58,123 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T30</IdTermina>
+    <IdTermina>T13</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:00</PocetnoVreme>
+    <PocetnoVreme>11:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-05-24T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+      <Oprema>
+        <Oprema>
+          <IdOpreme>s1</IdOpreme>
+          <NazivOpreme>krevet</NazivOpreme>
+          <VrstaOpreme>staticka</VrstaOpreme>
+          <Kolicina>1</Kolicina>
+        </Oprema>
+      </Oprema>
+    </Prostor>
+    <Pacijent>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
+      <Jmbg>34235354364</Jmbg>
+      <AdresaStanovanja>ulica</AdresaStanovanja>
+      <KontaktTelefon>13214235</KontaktTelefon>
+      <Email>magdalena@gmail.com</Email>
+      <KorisnickoIme>magdalena</KorisnickoIme>
+      <Lozinka>magdalena</Lozinka>
+      <Pol>zenski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>magdalena</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
+      </ZdravstveniKarton>
+      <Zloupotrebio>0</Zloupotrebio>
+      <Blokiran>false</Blokiran>
+    </Pacijent>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-03T18:16:47.1770712+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T12</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>15:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-05-22T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+      <Oprema>
+        <Oprema>
+          <IdOpreme>s1</IdOpreme>
+          <NazivOpreme>krevet</NazivOpreme>
+          <VrstaOpreme>staticka</VrstaOpreme>
+          <Kolicina>1</Kolicina>
+        </Oprema>
+      </Oprema>
+    </Prostor>
+    <Pacijent>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
+      <Jmbg>34235354364</Jmbg>
+      <AdresaStanovanja>ulica</AdresaStanovanja>
+      <KontaktTelefon>13214235</KontaktTelefon>
+      <Email>magdalena@gmail.com</Email>
+      <KorisnickoIme>magdalena</KorisnickoIme>
+      <Lozinka>magdalena</Lozinka>
+      <Pol>zenski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>magdalena</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
+      </ZdravstveniKarton>
+      <Zloupotrebio>1</Zloupotrebio>
+      <Blokiran>false</Blokiran>
+    </Pacijent>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-03T18:16:47.1770712+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T29</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>13:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
     <Datum>2021-05-26T00:00:00</Datum>
     <Prostor>
@@ -96,8 +210,8 @@
         <Recepti />
         <Anamneze />
       </ZdravstveniKarton>
-      <Zloupotrebio>6</Zloupotrebio>
-      <Blokiran>true</Blokiran>
+      <Zloupotrebio>2</Zloupotrebio>
+      <Blokiran>false</Blokiran>
     </Pacijent>
     <Lekar>
       <Ime>Magdalena</Ime>

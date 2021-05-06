@@ -16,11 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Bolnica
-{
-    /// <summary>
-    /// Interaction logic for PomeranjeSaPrioritetom.xaml
-    /// </summary>
-    public partial class PomeranjeSaPrioritetom : Window
+{ 
+    public partial class PomeranjeSaPrioritetom : UserControl
     {
         public static List<Termin> datumiZaIzmenu = new List<Termin>();
         public String idTermina = null;
@@ -55,9 +52,14 @@ namespace Bolnica
             else
             { 
                 PrikazDatumaZaPomeranjeLekar pd = new PrikazDatumaZaPomeranjeLekar();
-                pd.Show();
-                this.Close();
+                PromeniPrikaz(pd);
             }
+        }
+
+        public void PromeniPrikaz(UserControl userControl)
+        { 
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
 
         private void NadjiDatumeSaPrioritetom(int prioritet)
@@ -77,17 +79,13 @@ namespace Bolnica
         private void NadjiDatumeKodIzabranogLekara()
         {
             UkloniDupleDatume(RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(), PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme));
-            PrikazDatumaZaPomeranjeLekar pd = new PrikazDatumaZaPomeranjeLekar();
-            pd.Show();
-            this.Close();
+            PromeniPrikaz(new PrikazDatumaZaPomeranjeLekar());
         }
 
         private void NadjiDatumeKodSvihLekara()
         {
             UkloniDupleDatume(NadjiDatumeUIntervalu());
-            PrikazDatumaZaPomeranjePrioritet pd = new PrikazDatumaZaPomeranjePrioritet();
-            pd.Show();
-            this.Close();
+            PromeniPrikaz(new PrikazDatumaZaPomeranjePrioritet());
         }
 
         private void UkloniDupleDatume(List<Termin> dupliTermini)
@@ -100,7 +98,7 @@ namespace Bolnica
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
 
         public List<Lekar> lekariOpstePrakse { get; set; }

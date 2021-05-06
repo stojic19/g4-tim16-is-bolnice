@@ -18,7 +18,7 @@
       <Recepti />
       <Anamneze />
     </ZdravstveniKarton>
-    <Zloupotrebio>0</Zloupotrebio>
+    <Zloupotrebio>2</Zloupotrebio>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

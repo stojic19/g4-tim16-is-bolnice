@@ -19,7 +19,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for PrikazVremenaTerminaPacijent.xaml
     /// </summary>
-    public partial class PrikazVremenaTerminaPacijent : Window
+    public partial class PrikazVremenaTerminaPacijent : UserControl
     {
         public static ObservableCollection<Termin> VremenaTermina { get; set; }
         public PrikazVremenaTerminaPacijent(Termin izabraniTermin)
@@ -38,9 +38,12 @@ namespace Bolnica
                 MessageBox.Show("Izaberite termin!");
                 return;
             }
-            PotvrdiZakazivanjePacijent pz = new PotvrdiZakazivanjePacijent(((Termin)slobodiTerminiVremena.SelectedItem));
-            pz.Show();
-            this.Close();
+           // PotvrdiZakazivanjePacijent pz = new PotvrdiZakazivanjePacijent(((Termin)slobodiTerminiVremena.SelectedItem));
+            UserControl usc = null;
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+            usc = new PotvrdiZakazivanjePacijent(((Termin)slobodiTerminiVremena.SelectedItem));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
         }
     }
 }

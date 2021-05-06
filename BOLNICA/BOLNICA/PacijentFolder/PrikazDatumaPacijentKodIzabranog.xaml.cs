@@ -19,7 +19,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for PrikazDatumaPacijentKodIzabranog.xaml
     /// </summary>
-    public partial class PrikazDatumaPacijentKodIzabranog : Window
+    public partial class PrikazDatumaPacijentKodIzabranog : UserControl
     {
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
         public PrikazDatumaPacijentKodIzabranog()
@@ -42,9 +42,13 @@ namespace Bolnica
                 MessageBox.Show("Izaberite datum!");
                 return;
             }
-            PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiKodIzabranog.SelectedItem));
-            pr.Show();
-            this.Close();
+           
+            UserControl usc = null;
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+
+            usc = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiKodIzabranog.SelectedItem)); 
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
+
         }
     }
 }

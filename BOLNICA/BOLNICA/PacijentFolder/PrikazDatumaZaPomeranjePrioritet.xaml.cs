@@ -19,7 +19,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for PrikazDatumaZaPomeranjePrioritet.xaml
     /// </summary>
-    public partial class PrikazDatumaZaPomeranjePrioritet : Window
+    public partial class PrikazDatumaZaPomeranjePrioritet : UserControl
     {
         public static ObservableCollection<Termin> SlobodniDatumiIzmena { get; set; }
         public PrikazDatumaZaPomeranjePrioritet()
@@ -38,9 +38,13 @@ namespace Bolnica
                 MessageBox.Show("Izaberite datum!");
                 return;
             }
-            PrikazVremenaZaPomeranjePacijent prikaz = new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiPomeranjePrioritet.SelectedItem);
-            prikaz.Show();
-            this.Close();
+            PromeniPrikaz(new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiPomeranjePrioritet.SelectedItem));
+        }
+        
+        public void PromeniPrikaz(UserControl userControl)
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
     }
 }
