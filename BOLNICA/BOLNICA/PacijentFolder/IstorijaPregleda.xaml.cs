@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,17 +21,17 @@ namespace Bolnica.PacijentFolder
 {
     public partial class IstorijaPregleda : UserControl
     {
-        public static ObservableCollection<Termin> ObavljeniTermini { get; set; }
+        public static ObservableCollection<Pregled> ObavljeniPregledi { get; set; }
         public IstorijaPregleda()
         {
             InitializeComponent();
-            ObavljeniTermini = new ObservableCollection<Termin>();
-            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            ObavljeniPregledi = new ObservableCollection<Pregled>();
+            foreach (Pregled pregled in RukovanjePregledima.sviPregledi)
             {
-                if (t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && DateTime.Compare(t.Datum.Date,DateTime.Now.Date)<0)
-                    ObavljeniTermini.Add(t);
+                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan)
+                    ObavljeniPregledi.Add(pregled);
             }
-            TerminiUProslosti.ItemsSource = ObavljeniTermini;
+            TerminiUProslosti.ItemsSource = ObavljeniPregledi;
         }
     }
 }

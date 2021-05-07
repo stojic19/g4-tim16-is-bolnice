@@ -57,7 +57,10 @@ namespace Bolnica
 
             }
             RukovanjeOperacijama.PrivremenaInicijalizacijaLekara();
-
+            RukovanjeAnketama.inicijalizujPitanjaOBolnici();
+            RukovanjeAnketama.inicijalizujPitanjaOTerminu();
+            RukovanjeAnketama.UcitajAnkete();
+            
             password.PasswordChar = '*';
             password.MaxLength = 14;
         }
@@ -168,7 +171,7 @@ namespace Bolnica
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Sacuvaj();
-
+            RukovanjeAnketama.UpisiAnkete();
             GlavniProzorSekretar.getInstance().Close();
         }
     }

@@ -8,7 +8,7 @@
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista obaveljenih termina</Label>
-        <ListBox x:Name="TerminiUProslosti" SelectionMode="Single" Height="515" Width="300" Margin="25,0,25.4,0">
+        <ListBox x:Name="TerminiUProslosti" SelectionMode="Single" Height="515" Margin="25,0,25.4,0">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -30,35 +30,22 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
+                                   
                                 </Grid.RowDefinitions>
 
 
-                                <TextBlock  Grid.Column="0" Grid.Row="0" Text="ID:   " />
-                                <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding IdTermina}"/>
-                                <TextBlock  Grid.Column="0" Grid.Row="1" Text="Vrsta termina: " />
-                                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding VrstaTermina}"/>
+                             
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Datum:     "/>
 
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Termin.Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Datum:     "/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Vreme:    "/>
+                                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Termin.PocetnoVreme}"/>
 
-                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
-
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme:    "/>
-                                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding PocetnoVreme}"/>
-
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Prostor:   " />
-                                <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Prostor.IdProstora}"/>
-
-
-                                <TextBlock Grid.Column="0" Grid.Row="5"  Text="Lekar:    "/>
-                                <TextBlock Grid.Column="1" Grid.Row="5"  Text="{Binding Lekar.KorisnickoIme}" />
-                                <TextBlock Grid.Column="0" Grid.Row="6"  Text="Pacijent:     "/>
-                                <TextBlock Grid.Column="1" Grid.Row="6"  Text="{Binding Pacijent.KorisnickoIme}"/>
+                               
+                                <TextBlock Grid.Column="0" Grid.Row="2"  Text="Lekar:    "/>
+                                <TextBlock Grid.Column="1" Grid.Row="2"  Text="{Binding Termin.Lekar.KorisnickoIme}" />
+                             
 
                             </Grid>
 

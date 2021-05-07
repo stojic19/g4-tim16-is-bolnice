@@ -5,22 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="OtkazivanjeTerminaPacijent" Height="150" Width="330"  WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
+        Title="OtkazivanjeTerminaPacijent" Height="150" Width="330"  ResizeMode="NoResize" WindowStyle="None"  WindowStartupLocation="CenterScreen">
+    <Border BorderThickness="2" BorderBrush="SlateGray">
+        <StackPanel >
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da otkažete termin?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
+            <Label>OTKAZIVANJE PREGLEDA</Label>
+            <Separator></Separator>
+            <Grid Height="48" Margin="0,0,-0.4,0">
 
-        <Button Click="Button_Click" Grid.Row="1" Grid.Column="0" Content="Odustani" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
-        <Button Click="Button_Click_1" Grid.Row="1" Grid.Column="1" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,10" Width="70" Height="30" Background="WhiteSmoke"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="38*"></ColumnDefinition>
+                    <ColumnDefinition Width="127*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Slike/PacijentSlike/otkazi.png" />
 
-    </Grid>
+
+                <TextBlock Margin="58,15,-0.4,0" FontWeight="DemiBold" Grid.ColumnSpan="2">Da li ste sigurni da želite da otkažete pregled?</TextBlock>
+            </Grid>
+
+
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Click="Button_Click_1" Grid.Column="1"  Margin="10 20 10 10" Background="#FF31577E" Height="30">
+
+                    <Run Foreground="AntiqueWhite">POTVRDI</Run>
+                </Button>
+
+                <Button Click="Button_Click" Grid.Column="0"  Margin="10 20 10 10" Background="#FF31577E" Height="30">
+
+                    <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+                </Button>
+
+            </Grid>
+
+        </StackPanel>
+    </Border>
 </Window>

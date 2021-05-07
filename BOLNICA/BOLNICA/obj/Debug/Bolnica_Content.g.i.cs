@@ -8,21 +8,60 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/h.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/ikonice.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/licna.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nalog.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nalozi.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/naplata.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nazad.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/obavestenja.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/odjava.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/operacije.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/pocetna.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/stacionarno.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/termini.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/transfer.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/tritacke.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/zdravo.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica.sln")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/bol" +
+    "nica.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/bol" +
+    "nica.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/mat" +
+    "erialdesigncolors.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/mat" +
+    "erialdesigncolors.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/mat" +
+    "erialdesignthemes.wpf.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/mat" +
+    "erialdesignthemes.wpf.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/bin/debug/pow" +
+    "erfulextensions_4.5.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/obj/debug/bol" +
+    "nica.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/obj/debug/bol" +
+    "nica.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/bolnica/obj/debug/tem" +
+    "ppe/properties.resources.designer.cs.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gncolors.2.0.0/lib/net452/materialdesigncolors.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gncolors.2.0.0/lib/net452/materialdesigncolors.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gncolors.2.0.0/lib/netcoreapp3.1/materialdesigncolors.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gncolors.2.0.0/lib/netcoreapp3.1/materialdesigncolors.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gnthemes.4.0.0/lib/net452/materialdesignthemes.wpf.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gnthemes.4.0.0/lib/net452/materialdesignthemes.wpf.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gnthemes.4.0.0/lib/netcoreapp3.1/materialdesignthemes.wpf.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/materialdesi" +
+    "gnthemes.4.0.0/lib/netcoreapp3.1/materialdesignthemes.wpf.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/powerfulexte" +
+    "nsions.1.0.5/lib/net35/powerfulextensions.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/powerfulexte" +
+    "nsions.1.0.5/lib/net40/powerfulextensions_4.0.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/powerfulexte" +
+    "nsions.1.0.5/lib/net45/powerfulextensions_4.5.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/lib/netcore50/system.xml.xmlserializer.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/lib/netstandard1.3/system.xml.xmlserializer.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/ref/netcore50/system.xml.xmlserializer.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/ref/netstandard1.0/system.xml.xmlserializer.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/ref/netstandard1.3/system.xml.xmlserializer.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/pacijentslike/aleksadodao/g4-tim16-is-bolnice/bolnica/packages/system.xml.x" +
+    "mlserializer.4.3.0/runtimes/aot/lib/netcore50/system.xml.xmlserializer.dll")]
 
 

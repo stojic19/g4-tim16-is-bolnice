@@ -19,6 +19,7 @@ namespace Bolnica.Model
         public List<Recept> Recepti { get; set; } = new List<Recept>();
         public List<Uput> Uputi { get; set; } = new List<Uput>();
         public List<Alergeni> Alergeni { get; set; } = new List<Alergeni>();
+        public bool OcenjenPregled { get; set; }
 
         public Pregled() { }
 
@@ -26,6 +27,7 @@ namespace Bolnica.Model
         {
             this.IdPregleda = idPregleda;
             this.Termin = termin;
+            OcenjenPregled = false;
             
         }
 

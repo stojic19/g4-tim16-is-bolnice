@@ -115,12 +115,16 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Anketa.cs" />
+    <Compile Include="Model\Enumi\OcenaPitanja.cs" />
     <Compile Include="Model\Enumi\TipoviUputa.cs" />
     <Compile Include="Model\Oprema.cs" />
     <Compile Include="Model\Pacijent.cs" />
+    <Compile Include="Model\Pitanje.cs" />
     <Compile Include="Model\Pregled.cs" />
     <Compile Include="Model\Recept.cs" />
     <Compile Include="Model\Renoviranje.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeAnketama.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeLijekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
@@ -137,11 +141,20 @@
     <Compile Include="PacijentFolder\IstorijaPregleda.xaml.cs">
       <DependentUpon>IstorijaPregleda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentFolder\OcenjivanjeBolnice.xaml.cs">
+      <DependentUpon>OcenjivanjeBolnice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentFolder\PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PacijentFolder\PopuniAnketu.xaml.cs">
+      <DependentUpon>PopuniAnketu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PacijentFolder\PrikazAlergenaPacijenta.xaml.cs">
       <DependentUpon>PrikazAlergenaPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacijentFolder\PrikazAnketa.xaml.cs">
+      <DependentUpon>PrikazAnketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="PacijentFolder\PrikazKartona.xaml.cs">
       <DependentUpon>PrikazKartona.xaml</DependentUpon>
@@ -333,11 +346,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentFolder\OcenjivanjeBolnice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentFolder\PomeranjeSaPrioritetom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PacijentFolder\PopuniAnketu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PacijentFolder\PrikazAlergenaPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacijentFolder\PrikazAnketa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -646,7 +671,11 @@
   <ItemGroup>
     <Resource Include="Slike\PacijentSlike\alergije.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\anc.png" />
+    <Resource Include="Slike\PacijentSlike\ocenjivanje.png" />
+    <Resource Include="Slike\PacijentSlike\otkazi.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\Sekretar\CIkonice\cHitnaOperacija.jpg" />
     <Resource Include="Slike\Sekretar\CIkonice\cLicna.jpg" />
@@ -675,6 +704,9 @@
     <Resource Include="Slike\Sekretar\Ikonice\transfer.jpg" />
     <Resource Include="Slike\Sekretar\Ikonice\tritacke.jpg" />
     <Resource Include="Slike\Sekretar\Ikonice\zdravo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\pregled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

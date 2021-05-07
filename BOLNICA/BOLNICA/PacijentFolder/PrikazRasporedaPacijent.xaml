@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="350" >
+               d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista zakazanih termina</Label>
         <ListBox x:Name="SviTerminiPacijenta" SelectionMode="Single" Height="450" Width="300">
@@ -15,58 +15,50 @@
 
 
 
-                    <WrapPanel Background="LightBlue">
-                        <StackPanel  Width="260"  >
+                    <WrapPanel >
+                        <Border BorderThickness="3" BorderBrush="#FF31577E">
+                            <StackPanel  Width="260"  >
 
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition/>
 
-                                </Grid.ColumnDefinitions>
+                                    </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
 
-
-                                <TextBlock  Grid.Column="0" Grid.Row="0" Text="ID:   " />
-                                <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding IdTermina}"/>
-                                <TextBlock  Grid.Column="0" Grid.Row="1" Text="Vrsta termina: " />
-                                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding VrstaTermina}"/>
+                                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Width="70" Height="70" Source="/Slike/PacijentSlike/pregled.png" />
 
 
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Datum:     "/>
 
-                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
-
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme:    "/>
-                                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding PocetnoVreme}"/>
-
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Prostor:   " />
-                                <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Prostor.IdProstora}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="0"   FontSize="15" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
 
-                                <TextBlock Grid.Column="0" Grid.Row="5"  Text="Lekar:    "/>
-                                <TextBlock Grid.Column="1" Grid.Row="5"  Text="{Binding Lekar.KorisnickoIme}" />
-                                <TextBlock Grid.Column="0" Grid.Row="6"  Text="Pacijent:     "/>
-                                <TextBlock Grid.Column="1" Grid.Row="6"  Text="{Binding Pacijent.KorisnickoIme}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Text="{Binding PocetnoVreme}"/>
 
-                            </Grid>
+
+
+                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="{Binding Lekar.KorisnickoIme}" />
+
+
+                                </Grid>
 
 
 
 
-                        </StackPanel>
-
+                            </StackPanel>
+                        </Border>
                     </WrapPanel>
 
 
