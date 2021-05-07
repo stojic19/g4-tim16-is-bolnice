@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for Login.xaml
-    /// </summary>
     public partial class Login : Window
     {
         List<Upravnik> Upravnici = new List<Upravnik>();
@@ -45,17 +43,19 @@ namespace Bolnica
 
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
+            RukovanjePregledima.DeserijalizacijaPregleda();
             RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeOpremom.DeserijalizacijaOpreme();
-            RukovanjeLijekovima.DeserijalizacijaLijekova();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeObavestenjimaSekratar.Ucitaj();
-            RukovanjeTerminima.InicijalizacijaSTermina();
+              //RukovanjeTerminima.InicijalizacijaSTermina();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
-            RukovanjeProstorom.ProveriRenoviranje();
 
-           
+           foreach(Pregled p in RukovanjePregledima.sviPregledi)
+            {
+                Console.WriteLine(p.Termin.IdTermina);
+
+            }
             
 
             password.PasswordChar = '*';
@@ -164,6 +164,7 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Sacuvaj();

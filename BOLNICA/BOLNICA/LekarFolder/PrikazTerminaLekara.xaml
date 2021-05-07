@@ -33,7 +33,6 @@
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="4"
                   MinWidth="815" MinHeight="308" Margin="17.5 , 13.5" Width="815">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Termin" Binding="{Binding IdTermina}" Width="70*"/>
                 <DataGridTextColumn Header="Vrsta termina" Binding="{Binding VrstaTermina}" Width="90*"/>
                 <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
                 <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
@@ -55,7 +54,7 @@
         <Button  Grid.Row="3" Grid.Column="2" Content="Otkazivanje termina" Margin="10,20" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke" Height="27" Width="185"/>
         <Button  Grid.Row="3" Grid.Column="3" Content="Karton pacijenta" Margin="10,20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_4" Background="WhiteSmoke" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta" Background="WhiteSmoke" Height="27" Width="185"/>
 
 
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 

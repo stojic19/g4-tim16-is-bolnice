@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            RukovanjePregledima.UklanjanjePregleda(izabran);
             RukovanjeTerminima.OtkaziTermin(izabran);
             this.Close();
         }

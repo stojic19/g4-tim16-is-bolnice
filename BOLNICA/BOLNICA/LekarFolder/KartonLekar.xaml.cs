@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -20,20 +23,48 @@ namespace Bolnica
     public partial class KartonLekar : Window
     {
 
-        String izabran = null;
+        Pregled izabranPregled = null;
         public static ObservableCollection<Recept> Recepti { get; set; }
         public static ObservableCollection<Anamneza> Anamneze { get; set; }
-        public String korisnik = null;
+        public static ObservableCollection<Uput> Uputi { get; set; }
 
-        public KartonLekar(String korImePacijenta, int indeks, String lekar)
+        public KartonLekar(String IDIzabranog, int indeksTaba)
         {
             InitializeComponent();
-            korisnik = lekar;
 
-            Tabovi.SelectedIndex = indeks;
-            izabran = korImePacijenta;
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
-            ZdravstveniKarton zk = p.ZdravstveniKarton;
+            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            Tabovi.SelectedIndex = indeksTaba;
+
+            inicijalizacijaPolja();
+
+            this.DataContext = this;
+
+            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+
+            Recepti = new ObservableCollection<Recept>();
+            foreach (Recept r in pacijent.ZdravstveniKarton.Recepti)
+            {
+                Recepti.Add(r);
+            }
+
+            Anamneze = new ObservableCollection<Anamneza>();
+            foreach (Anamneza a in pacijent.ZdravstveniKarton.Anamneze)
+            {
+                Anamneze.Add(a);
+            }
+
+            Uputi = new ObservableCollection<Uput>();
+            foreach(Uput u in pacijent.ZdravstveniKarton.Uputi)
+            {
+                Uputi.Add(u);
+            }
+
+        }
+
+        private void inicijalizacijaPolja()
+        {
+
+            Pacijent p = izabranPregled.Termin.Pacijent;
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
@@ -41,47 +72,15 @@ namespace Bolnica
             telefon.Text = p.KontaktTelefon;
             adresa.Text = p.AdresaStanovanja;
             datum.Text = p.DatumRodjenja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-            if (p.Pol == Pol.zenski)
-            {
-                pol.Text = "Ž";
-            }
-            else
-            {
-                pol.Text = "M";
-            }
-
-            if (p.VrstaNaloga == VrsteNaloga.gost)
-            {
-                status.Text = "Gost";
-            }
-            else
-            {
-                status.Text = "Regularan";
-            }
-
-            this.DataContext = this;
-
-            Recepti = new ObservableCollection<Recept>();
-
-            foreach (Recept r in zk.Recepti)
-            {
-                Recepti.Add(r);
-            }
-
-            Anamneze = new ObservableCollection<Anamneza>();
-
-            foreach (Anamneza a in zk.Anamneze)
-            {
-                Anamneze.Add(a);
-            }
-
+            pol.Text = p.DobaviPolTekst();
+            status.Text = p.DobaviVrstuNalogaTekst();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //back
+        private void Povratak(object sender, RoutedEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            PrikazTerminaLekara termini = new PrikazTerminaLekara(korisnik);
+            RukovanjePregledima.SerijalizacijaPregleda();
+            PrikazTerminaLekara termini = new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             termini.Show();
             this.Close();
@@ -89,9 +88,9 @@ namespace Bolnica
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) //dodaj recept
+        private void DodavanjeRecepta(object sender, RoutedEventArgs e)
         {
-            DodavanjeRecepta recept = new DodavanjeRecepta(izabran, korisnik);
+            DodavanjeRecepta recept = new DodavanjeRecepta(izabranPregled.IdPregleda);
 
             recept.Show();
 
@@ -101,27 +100,58 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjePregledima.SerijalizacijaPregleda();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e) //Nova anamneza
+        private void DodavanjeAnamneze(object sender, RoutedEventArgs e)  //MOZDA PROMENITI U IZMENU
         {
-            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabran, korisnik);
+            if (izabranPregled.Anamneza != null)
+            {
+                //DialogResult dialogResult = (DialogResult)System.Windows.MessageBox.Show("Već postoji anamneza za ovaj pregled. Zameniti je sa novom?", "Izmena anamneze", (MessageBoxButton)MessageBoxButtons.YesNo);
+                //if (dialogResult != DialogResult.No)
+                //{
+                //    RukovanjePregledima.UklanjanjeAnamneze(izabranPregled);
+                //    RukovanjeZdravstvenimKartonima.UklanjanjeAnamneze(izabranPregled.Termin.Pacijent.ZdravstveniKarton, izabranPregled.Anamneza);
+
+                //    NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabranPregled.IdPregleda);
+
+                //    dodajAnamnezu.Show();
+                //    this.Close();
+                //}
+
+                System.Windows.Forms.MessageBox.Show("Anamneza za ovaj pregledveć postoji!", "Anamneza postoji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabranPregled.IdPregleda);
 
             dodajAnamnezu.Show();
             this.Close();
+
+
+
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e) //Vise informacija anamneza
+        private void PrikazInformacijaAnamneza(object sender, RoutedEventArgs e)
         {
 
             Anamneza izabranaAnamneza = (Anamneza)TabelaAnamneza.SelectedItem;
 
             if (izabranaAnamneza != null)
             {
-                InformacijeAnamaneza informacije = new InformacijeAnamaneza(izabranaAnamneza);
+                InformacijeAnamaneza informacije = new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda);
                 informacije.Show();
                 this.Close();
             }
+        }
+
+        private void DodavanjeUputa(object sender, RoutedEventArgs e)
+        {
+            IzdavanjeUputa izdavanjeUputa = new IzdavanjeUputa(izabranPregled.IdPregleda);
+            izdavanjeUputa.Show();
+            this.Close();
         }
     }
 }

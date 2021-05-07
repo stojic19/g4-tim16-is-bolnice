@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,39 +21,24 @@ namespace Bolnica
 
     public partial class InformacijeAnamaneza : Window
     {
-        String korisnik = null;
-        String izabran = null;
+        Pregled izabranPregled = null;
+        Anamneza izabranaAnamneza = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
 
-        public InformacijeAnamaneza(Anamneza izabrana)
+        public InformacijeAnamaneza(Anamneza odabranaAnamneza, String IDIzabranog)
         {
 
             InitializeComponent();
+            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            this.izabranaAnamneza = odabranaAnamneza;
 
-            korisnik = izabrana.IdLekara;
-            izabran = izabrana.IdPacijenta;
-
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabrana.IdPacijenta);
-            ZdravstveniKarton zk = p.ZdravstveniKarton;
-
-            ime.Text = p.Ime;
-            prezime.Text = p.Prezime;
-            jmbg.Text = p.Jmbg;
-
-            Lekar l = RukovanjeTerminima.pretraziLekare(izabrana.IdLekara);
-
-            imeLekara.Text = l.Ime;
-            prezimeLekara.Text = l.Prezime;
-
-            datumPregleda.Text = izabrana.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
-            tekst.Text = izabrana.Dijagnoza;
+            inicijalizacijaPolja();
 
             this.DataContext = this;
 
             Terapije = new ObservableCollection<Terapija>();
 
-            foreach (Terapija t in izabrana.Terapije)
+            foreach (Terapija t in izabranaAnamneza.Terapije)
             {
                 Terapije.Add(t);
             }
@@ -59,15 +46,33 @@ namespace Bolnica
 
         }
 
+        private void inicijalizacijaPolja()
+        {
+
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabranaAnamneza.IdPacijenta);
+            Lekar l = RukovanjeTerminima.pretraziLekare(izabranaAnamneza.IdLekara);
+
+            ime.Text = p.Ime;
+            prezime.Text = p.Prezime;
+            jmbg.Text = p.Jmbg;
+            imeLekara.Text = l.Ime;
+            prezimeLekara.Text = l.Prezime;
+            datumPregleda.Text = izabranaAnamneza.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            tekst.Text = izabranaAnamneza.Dijagnoza;
+
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjePregledima.SerijalizacijaPregleda();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)//back
+        private void Povratak(object sender, RoutedEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            KartonLekar termini = new KartonLekar(izabran, 1, korisnik);
+            RukovanjePregledima.SerijalizacijaPregleda();
+            KartonLekar termini = new KartonLekar(izabranPregled.IdPregleda, 1);
 
             termini.Show();
             this.Close();

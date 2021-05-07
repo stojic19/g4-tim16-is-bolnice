@@ -1,3 +1,4 @@
+
 using Bolnica;
 using System;
 using System.ComponentModel;
@@ -48,5 +49,25 @@ namespace Model
             Blokiran = false;
         }
 
+        public String DobaviPolTekst()
+        {
+
+            if (Pol == Pol.zenski)
+            {
+                return "Ž";
+            }
+            return "M";
+
+        }
+
+        public String DobaviVrstuNalogaTekst()
+        {
+
+            if (VrstaNaloga == VrsteNaloga.gost)
+            {
+                return "Gost";
+            }
+            return "Regularan";
+        }
     }
 }

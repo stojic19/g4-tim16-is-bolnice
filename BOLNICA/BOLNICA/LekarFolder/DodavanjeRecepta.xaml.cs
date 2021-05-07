@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Bolnica.Properties;
 using Model;
 using System;
@@ -21,92 +22,54 @@ namespace Bolnica
 {
     public partial class DodavanjeRecepta : Window
     {
-        String izabran = null;
-        String korisnik = null;
-        public DodavanjeRecepta(String idPacijenta, String lekar)
+        Pregled izabranPregled = null;
+        public DodavanjeRecepta(String IDIzabranog)
         {
             InitializeComponent();
-            izabran = idPacijenta;
-            korisnik = lekar;
-
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
-            ZdravstveniKarton zk = p.ZdravstveniKarton;
-
-            ime.Text = p.Ime;
-            prezime.Text = p.Prezime;
-            jmbg.Text = p.Jmbg;
-
-            Lekar l = RukovanjeTerminima.pretraziLekare(lekar);
-            imeLekara.Text = l.Ime;
-            prezimeLekara.Text = l.Prezime;
-
-            idRecepta.Text = Guid.NewGuid().ToString();
-
-            DateTime datum = DateTime.Now;
-
-            DanasnjiDatum.Text = (datum.ToString("dd/MM/yyyy"));
+            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            inicijalizacijaPolja();
 
             this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.inicijalniLekovi;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
 
-            
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //back
+        private void inicijalizacijaPolja()
         {
-        KartonLekar kartonLekar = new KartonLekar(izabran,3,korisnik);
-        kartonLekar.Show();
-        this.Close();
+            Pacijent p = izabranPregled.Termin.Pacijent;
+            Lekar l = izabranPregled.Termin.Lekar;
+
+            ime.Text = p.Ime;
+            prezime.Text = p.Prezime;
+            jmbg.Text = p.Jmbg;
+            imeLekara.Text = l.Ime;
+            prezimeLekara.Text = l.Prezime;
+            DateTime datum = DateTime.Now;
+            DanasnjiDatum.Text = (datum.ToString("dd/MM/yyyy"));
+
+        }
+
+        private void Povratak(object sender, RoutedEventArgs e) 
+        {
+            KartonLekar kartonLekar = new KartonLekar(izabranPregled.IdPregleda, 3);
+            kartonLekar.Show();
+            this.Close();
 
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjePregledima.SerijalizacijaPregleda();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) //Sacuvaj
+        private void IzdajRecept(object sender, RoutedEventArgs e)
         {
 
-            String idRecepta = this.idRecepta.Text;
-
-            String imeiprezime = RukovanjeTerminima.ImeiPrezime(korisnik);
-
-            String idPacijenta = izabran;
-
-            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
-
-            Lek l=RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
-            
-
-            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") )
-            {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-
-
-            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, DateTime.Now, l);
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeZdravstvenimKartonima.DodajRecept(r);
-            KartonLekar kl = new KartonLekar(izabran,3,korisnik);
-            kl.Show();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e) //Izvestaj
-        {
-            String idRecepta = this.idRecepta.Text;
-
-            String imeiprezime = RukovanjeTerminima.ImeiPrezime(korisnik);
-
-            String idPacijenta = izabran;
-
-            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta);
-
-            Lek l = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
+            String imeiprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            Lek prepisanLek = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
 
 
             if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
@@ -117,17 +80,22 @@ namespace Bolnica
             }
 
 
-            Recept r = new Recept(idRecepta, korisnik, imeiprezime, izabran, DateTime.Now, l);
+            Recept novRecept = new Recept(Guid.NewGuid().ToString(), izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, prepisanLek);
+            
+            RukovanjeZdravstvenimKartonima.DodajRecept(novRecept);
+            RukovanjePregledima.DodavanjeRecepta(izabranPregled, novRecept);
+            RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeZdravstvenimKartonima.DodajRecept(r);
-            KartonLekar kl = new KartonLekar(izabran, 3, korisnik);
+            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 3);
             kl.Show();
             this.Close();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e) //Odustani
+        private void IzvestajNovogRecepta(object sender, RoutedEventArgs e) {}
+
+        private void Odustajanje(object sender, RoutedEventArgs e) 
         {
-            KartonLekar kl = new KartonLekar(izabran,3,korisnik);
+            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 3);
             kl.Show();
             this.Close();
 

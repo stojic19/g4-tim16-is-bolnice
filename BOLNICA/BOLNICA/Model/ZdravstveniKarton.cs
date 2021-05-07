@@ -1,4 +1,5 @@
 using Bolnica;
+using Bolnica.Model;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +7,6 @@ namespace Model
 {
     public class ZdravstveniKarton
     {
-
         public String IDPacijenta { get; set; }
 
         public ZdravstveniKarton() { }
@@ -21,6 +21,7 @@ namespace Model
         public List<Recept> Recepti { get; set; } = new List<Recept>();
 
         public List<Anamneza> Anamneze { get; set; } = new List<Anamneza>();
+        public List<Uput> Uputi { get; set; } = new List<Uput>();
 
     }
 }

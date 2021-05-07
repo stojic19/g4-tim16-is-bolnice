@@ -148,9 +148,6 @@ namespace Bolnica
                 refresujPocetnoVreme();
             }
 
-
-
-
         }
 
         private void datum_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

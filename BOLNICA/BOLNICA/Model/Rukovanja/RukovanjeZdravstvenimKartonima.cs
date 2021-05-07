@@ -14,7 +14,7 @@ namespace Bolnica.Model
 
 
 
-        public static List<ZdravstveniKarton> kartoni = new List<ZdravstveniKarton>();
+        public static List<ZdravstveniKarton> sviKartoni = new List<ZdravstveniKarton>();
 
         //SAMO PRIVREMENO DOK SE NE UBACE LEKOVI
         public static List<Lek> inicijalniLekovi { get; set; } = new List<Lek>();
@@ -43,20 +43,15 @@ namespace Bolnica.Model
         }
 
 
-        public static void DodajRecept(Recept r)
+        public static void DodajRecept(Recept novRecept)
         {
             foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
             {
 
-                if (p.KorisnickoIme.Equals(r.IDPacijenta))
+                if (p.KorisnickoIme.Equals(novRecept.IDPacijenta))
                 {
-                    p.ZdravstveniKarton.Recepti.Add(r);
-                    KartonLekar.Recepti.Add(r);
-
-                    foreach (Recept sr in p.ZdravstveniKarton.Recepti)
-                    {
-                        Console.WriteLine("+");
-                    }
+                    p.ZdravstveniKarton.Recepti.Add(novRecept);
+                    KartonLekar.Recepti.Add(novRecept);
 
                 }
             }
@@ -78,12 +73,9 @@ namespace Bolnica.Model
                         pomocna.Add(t);
                     }
 
-
                 }
 
-
             }
-
 
             return pomocna;
         }
@@ -97,6 +89,20 @@ namespace Bolnica.Model
                 {
                     p.ZdravstveniKarton.Anamneze.Add(a);
                     KartonLekar.Anamneze.Add(a);
+
+                }
+            }
+        }
+
+        public static void DodajUput(Uput noviUput)
+        {
+            foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            {
+
+                if (p.KorisnickoIme.Equals(noviUput.IDPacijenta))
+                {
+                    p.ZdravstveniKarton.Uputi.Add(noviUput);
+                    KartonLekar.Uputi.Add(noviUput);
 
                 }
             }

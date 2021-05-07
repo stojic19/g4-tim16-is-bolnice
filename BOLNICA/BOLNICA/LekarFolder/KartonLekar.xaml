@@ -25,7 +25,7 @@
         <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
 
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click" Background="WhiteSmoke" Width="32" Height="32">
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Background="WhiteSmoke" Width="32" Height="32">
 
             <Image Source="LekarSlike/Back.png"/>
 
@@ -150,13 +150,13 @@
                         </DataGrid>
 
                         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Margin="0,30,20,30">
-                            
-                            <Button Content="Nova anamneza" Margin="10" Height="30" Width="170" Click="Button_Click_2"/>
-                            <Button Content="Više informacija" Margin="10" Height="30" Width="170" Click="Button_Click_3"/>
+
+                            <Button Content="Nova anamneza" Margin="10" Height="30" Width="170" Click="DodavanjeAnamneze"/>
+                            <Button Content="Više informacija" Margin="10" Height="30" Width="170" Click="PrikazInformacijaAnamneza"/>
 
                         </StackPanel>
 
-                        
+
 
                     </Grid>
 
@@ -172,7 +172,8 @@
                     <Grid>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="11*"/>
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
@@ -184,7 +185,7 @@
                         <DataGrid x:Name="dataGridRecepti" ItemsSource="{Binding Recepti}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1"
-                  MinWidth="700" MinHeight="240"  Width="700" Height="240" Margin="30,5,30,20" HorizontalAlignment="Center" VerticalAlignment="Top">
+                  MinWidth="700" MinHeight="240"  Width="700" Height="240" Margin="30,5.4,30,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
                             <DataGrid.Columns>
 
                                 <DataGridTextColumn Header="Datum prepisivanja leka" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
@@ -195,15 +196,45 @@
                             </DataGrid.Columns>
                         </DataGrid>
 
-                        <Button Grid.Row="0" Content="Dodaj recept" Margin="20,10,30,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke" Height="30" Width="135" VerticalAlignment="Center"
-                                HorizontalAlignment="Right"/>
+                        <Button Grid.Row="0" Content="Dodaj recept" Margin="0,12,30,7.6" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="DodavanjeRecepta" Background="WhiteSmoke" Height="30" Width="135" VerticalAlignment="Center"
+                                HorizontalAlignment="Right" Grid.Column="1"/>
 
                     </Grid>
 
                 </TabItem>
 
                 <TabItem Header="Uputi" FontStyle="Italic" FontSize="14">
+
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="285*"/>
+
+                        </Grid.RowDefinitions>
+
+                        <DataGrid x:Name="dataGridUputi" ItemsSource="{Binding Uputi}" IsReadOnly="true"
+                  SelectionMode="Single"  Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1"
+                  MinWidth="700" MinHeight="240"  Width="700" Height="240" Margin="30,5,30,20" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Tip uputa" Binding="{Binding TipUputa}" Width="90*"/>
+                                <DataGridTextColumn Header="Datum izdavanja uputa" Binding="{Binding DatumIzdavanja , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
+                                <DataGridTextColumn Header="Lekar koji je izdao uput" Binding="{Binding ImePrezimeLekar}" Width="120*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Button Grid.Row="0" Content="Dodaj uput" Margin="20,10,30,5" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="DodavanjeUputa" Background="WhiteSmoke" Height="30" Width="135" VerticalAlignment="Center"
+                                HorizontalAlignment="Right"/>
+
+                    </Grid>
 
                 </TabItem>
 

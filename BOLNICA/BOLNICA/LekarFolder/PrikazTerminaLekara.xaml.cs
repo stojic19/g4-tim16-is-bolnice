@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,8 @@ namespace Bolnica
         private void Button_Click_3(object sender, RoutedEventArgs e) //back
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjePregledima.SerijalizacijaPregleda();
             Login login = new Login();
             login.Show();
             this.Close();
@@ -92,16 +95,20 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e) //karton
+        private void PrikazKartonaPacijenta(object sender, RoutedEventArgs e)
         {
-            Termin izabran = (Termin)dataGridTermini.SelectedItem;
+            Termin izabranTermin = (Termin)dataGridTermini.SelectedItem;
+            
 
-            if (izabran != null)
+            if (izabranTermin != null)
             {
-                KartonLekar karton = new KartonLekar(izabran.Pacijent.KorisnickoIme, 0, korisnik);
+                Pregled noviPregled = RukovanjePregledima.DodavanjePregleda(RukovanjeTerminima.PretraziPoId(izabranTermin.IdTermina));
+                KartonLekar karton = new KartonLekar(noviPregled.IdPregleda, 0);
                 karton.Show();
                 this.Close();
             }

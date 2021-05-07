@@ -25,7 +25,7 @@
         <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
 
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click" Background="WhiteSmoke" Width="32" Height="32">
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Background="WhiteSmoke" Width="32" Height="32">
 
             <Image Source="LekarSlike/Back.png"/>
 

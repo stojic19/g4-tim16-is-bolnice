@@ -25,7 +25,7 @@
         <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
 
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click" Background="WhiteSmoke" Width="32" Height="32">
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Background="WhiteSmoke" Width="32" Height="32">
 
             <Image Source="LekarSlike/Back.png"/>
 
@@ -74,7 +74,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <Grid Grid.Column="1" Background="WhiteSmoke" MaxWidth="500" MaxHeight="850" Width="500" Height="850" VerticalAlignment="Center" HorizontalAlignment="Right"
                           Margin="10,20,1,20">
 
@@ -90,18 +90,10 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                            <Label Content="ID Recepta:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
-                                   Margin="15,5,10,0"  />
-                            <TextBox Name="idRecepta"  Height="27" Width="92" Margin="15,0,10,5" HorizontalContentAlignment="Center"
-                                     VerticalContentAlignment="Center" FontWeight="Normal"/>
-                        </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="70,5,10,5">
-                            <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="45,5,10,5" Grid.Row="0" HorizontalAlignment="Right">
+                        <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
 
                     <GroupBox Grid.Row="1" Header="Pacijent" Width="350" Height="210" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
@@ -162,25 +154,25 @@
 
                             </StackPanel>
 
-                            
+
 
                         </StackPanel>
                     </GroupBox>
 
                     <GroupBox Grid.Row="2" Header="Lekar" Width="350" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
 
-                        
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
 
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
-                                    <TextBox IsReadOnly="True" Width="150" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
-                                    <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
 
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
-                                    <TextBox IsReadOnly="True" Width="150" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
-                                    <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                                <TextBox IsReadOnly="True" Width="150" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
+                                <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
+                                <TextBox IsReadOnly="True" Width="150" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
+                                <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                            </StackPanel>
 
 
 
@@ -194,23 +186,23 @@
                         <TextBox IsReadOnly="True" Width="226" Height="27" Name="DanasnjiDatum" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
                     </StackPanel>
-                    
+
                 </Grid>
 
                 <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
 
-                    <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Button_Click_1"/>
-                    <Button Content="Izveštaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Button_Click_2"/>
-                    <Button Content="Odustani" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Button_Click_3"/>
+                    <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="IzdajRecept"/>
+                    <Button Content="Izveštaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="IzvestajNovogRecepta"/>
+                    <Button Content="Odustani" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Odustajanje"/>
 
                 </StackPanel>
-                
+
             </Grid>
 
         </ScrollViewer>
 
 
     </Grid>
-    
-    
+
+
 </Window>

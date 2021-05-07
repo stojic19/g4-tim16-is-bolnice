@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -107,7 +108,7 @@ namespace Bolnica
             stari.Pacijent = null;
 
 
-            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik);
+            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik); //IzmenaTermina
             PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
             ptl.Show();
             this.Close();
@@ -116,6 +117,7 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjePregledima.SerijalizacijaPregleda();
         }
 
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)

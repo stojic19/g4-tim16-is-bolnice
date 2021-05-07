@@ -15,7 +15,6 @@ namespace Model
         public Lek Lek { get; set; }
 
 
-
         public Recept() { }
 
         public Recept(string iDRecepta, string iDLekara, string imeiPrezimeLekara, string iDPacijenta, DateTime datum, Lek lek)
