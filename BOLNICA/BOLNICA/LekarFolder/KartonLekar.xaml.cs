@@ -17,10 +17,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
-    public partial class KartonLekar : Window
+    public partial class KartonLekar : UserControl
     {
 
         Pregled izabranPregled = null;
@@ -39,6 +40,12 @@ namespace Bolnica
 
             this.DataContext = this;
 
+            inicijalizacijaTabela();
+
+        }
+
+        private void inicijalizacijaTabela()
+        {
             Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             Recepti = new ObservableCollection<Recept>();
@@ -54,7 +61,7 @@ namespace Bolnica
             }
 
             Uputi = new ObservableCollection<Uput>();
-            foreach(Uput u in pacijent.ZdravstveniKarton.Uputi)
+            foreach (Uput u in pacijent.ZdravstveniKarton.Uputi)
             {
                 Uputi.Add(u);
             }
@@ -80,21 +87,19 @@ namespace Bolnica
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjePregledima.SerijalizacijaPregleda();
-            PrikazTerminaLekara termini = new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme);
-
-            termini.Show();
-            this.Close();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjeTerminima.SerijalizacijaTermina();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme));
 
         }
 
 
         private void DodavanjeRecepta(object sender, RoutedEventArgs e)
         {
-            DodavanjeRecepta recept = new DodavanjeRecepta(izabranPregled.IdPregleda);
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodavanjeRecepta(izabranPregled.IdPregleda));
 
-            recept.Show();
-
-            this.Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -107,30 +112,13 @@ namespace Bolnica
         {
             if (izabranPregled.Anamneza != null)
             {
-                //DialogResult dialogResult = (DialogResult)System.Windows.MessageBox.Show("Već postoji anamneza za ovaj pregled. Zameniti je sa novom?", "Izmena anamneze", (MessageBoxButton)MessageBoxButtons.YesNo);
-                //if (dialogResult != DialogResult.No)
-                //{
-                //    RukovanjePregledima.UklanjanjeAnamneze(izabranPregled);
-                //    RukovanjeZdravstvenimKartonima.UklanjanjeAnamneze(izabranPregled.Termin.Pacijent.ZdravstveniKarton, izabranPregled.Anamneza);
-
-                //    NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabranPregled.IdPregleda);
-
-                //    dodajAnamnezu.Show();
-                //    this.Close();
-                //}
-
                 System.Windows.Forms.MessageBox.Show("Anamneza za ovaj pregledveć postoji!", "Anamneza postoji", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
 
-
-            NovaAnamneza dodajAnamnezu = new NovaAnamneza(izabranPregled.IdPregleda);
-
-            dodajAnamnezu.Show();
-            this.Close();
-
-
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NovaAnamneza(izabranPregled.IdPregleda));
 
         }
 
@@ -141,17 +129,16 @@ namespace Bolnica
 
             if (izabranaAnamneza != null)
             {
-                InformacijeAnamaneza informacije = new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda);
-                informacije.Show();
-                this.Close();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda));
             }
         }
 
         private void DodavanjeUputa(object sender, RoutedEventArgs e)
         {
-            IzdavanjeUputa izdavanjeUputa = new IzdavanjeUputa(izabranPregled.IdPregleda);
-            izdavanjeUputa.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzdavanjeUputa(izabranPregled.IdPregleda));
+
         }
     }
 }

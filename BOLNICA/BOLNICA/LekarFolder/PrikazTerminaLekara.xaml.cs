@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -19,7 +20,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class PrikazTerminaLekara : Window
+    public partial class PrikazTerminaLekara : System.Windows.Controls.UserControl
     {
 
         public static ObservableCollection<Termin> Termini { get; set; }
@@ -43,9 +44,8 @@ namespace Bolnica
 
         private void Button_Click(object sender, RoutedEventArgs e) //zakazivanje
         {
-            ZakazivanjeTerminaLekar zakazivanje = new ZakazivanjeTerminaLekar(korisnik);
-            zakazivanje.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
 
         }
 
@@ -55,13 +55,12 @@ namespace Bolnica
 
             if (izabranZaMenjanje != null)
             {
-
-                IzmenaTerminaLekar izmena = new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik);
-                izmena.Show();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
 
             }
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            this.Close();
+
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
@@ -72,9 +71,8 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-                OtkazivanjeTerminaLekar otkazivanje = new OtkazivanjeTerminaLekar(izabranZaBrisanje.IdTermina);
-                otkazivanje.Show();
-                //this.Close();
+                RukovanjePregledima.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
+                RukovanjeTerminima.OtkaziTermin(izabranZaBrisanje.IdTermina);
             }
             else
             {
@@ -82,35 +80,16 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e) //back
-        {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            Login login = new Login();
-            login.Show();
-            this.Close();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-        }
-
         private void PrikazKartonaPacijenta(object sender, RoutedEventArgs e)
         {
             Termin izabranTermin = (Termin)dataGridTermini.SelectedItem;
-            
 
             if (izabranTermin != null)
             {
                 Pregled noviPregled = RukovanjePregledima.DodavanjePregleda(RukovanjeTerminima.PretraziPoId(izabranTermin.IdTermina));
-                KartonLekar karton = new KartonLekar(noviPregled.IdPregleda, 0);
-                karton.Show();
-                this.Close();
+
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));
             }
         }
     }

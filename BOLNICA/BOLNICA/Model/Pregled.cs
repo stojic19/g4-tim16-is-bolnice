@@ -12,8 +12,6 @@ namespace Bolnica.Model
     {
         public String IdPregleda { get; set; }
         public Boolean Odrzan { get; set; } = false;
-        public int Zloupotrebio { get; set; }
-        public Boolean Blokiran { get; set; }
         public Termin Termin { get; set; }
         public Anamneza Anamneza { get; set; } = null;
         public List<Recept> Recepti { get; set; } = new List<Recept>();

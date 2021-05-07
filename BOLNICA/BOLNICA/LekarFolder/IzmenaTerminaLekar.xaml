@@ -1,74 +1,25 @@
-﻿<Window x:Class="Bolnica.IzmenaTerminaLekar"
+﻿<UserControl x:Class="Bolnica.IzmenaTerminaLekar"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-       Title="Izmena termina" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        d:DesignWidth="850" d:DesignHeight="380">
     <Grid Background="LightBlue">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="435*"/>
-            <RowDefinition Height="28"/>
+            <RowDefinition Height="380"/>
         </Grid.RowDefinitions>
-
-        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" Fill="#999999" />
-        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
-        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" Fill="#999999" />
-        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
-
-        <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click_2" Background="WhiteSmoke" Width="32" Height="32">
-
-            <Image Source="LekarSlike/Back.png"/>
-
-        </Button>
-
-        <Grid Grid.Row="1">
-
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="104*"/>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="43*"/>
-                <ColumnDefinition Width="48*"/>
-                <ColumnDefinition Width="33*"/>
-                <ColumnDefinition Width="74*"/>
-                <ColumnDefinition Width="107*"/>
-                <ColumnDefinition Width="42*"/>
-                <ColumnDefinition Width="74*"/>
-                <ColumnDefinition Width="74*"/>
-            </Grid.ColumnDefinitions>
-
-            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24"/>
-            <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
-                   VerticalAlignment="Center" Width="143" Height="30" />
-            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
-
-        </Grid>
-
 
 
         <Grid Background="WhiteSmoke" Width="728" Height="350" Grid.Row="2">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="214"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="214"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -76,7 +27,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition Height="35"/>
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
             <Label Content="Zakazivanje termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -136,10 +87,10 @@
             <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top">
 
                 <Button Content="Odustani"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
+                Click="Povratak" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
 
                 <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+                Click="PotvrdaIzmene" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
 
 
             </StackPanel>
@@ -147,9 +98,6 @@
         </Grid>
 
 
-
-
-
     </Grid>
 
-</Window>
+</UserControl>

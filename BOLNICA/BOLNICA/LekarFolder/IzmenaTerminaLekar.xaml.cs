@@ -1,4 +1,5 @@
-﻿using Bolnica.Model.Rukovanja;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
-    public partial class IzmenaTerminaLekar : Window
+    public partial class IzmenaTerminaLekar : UserControl
     {
         String izabran = null;
         String korisnik = null;
@@ -47,7 +49,7 @@ namespace Bolnica
                 vrTermina.Text = "Pregled";
             }
 
-            datum.SelectedDate = t.Datum;// DateTime.ParseExact(t.Datum, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            datum.SelectedDate = t.Datum;
 
             izabranDatum = t.Datum;
             izabranaVrstaTermina = t.getVrstaTerminaString();
@@ -58,17 +60,15 @@ namespace Bolnica
             refresujPocetnoVreme();
 
 
-
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //odustani
+        private void Povratak(object sender, RoutedEventArgs e) 
         {
-            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
-            ptl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) //potvrdi
+        private void PotvrdaIzmene(object sender, RoutedEventArgs e) 
         {
 
             if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1)
@@ -108,10 +108,9 @@ namespace Bolnica
             stari.Pacijent = null;
 
 
-            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik); //IzmenaTermina
-            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
-            ptl.Show();
-            this.Close();
+            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik); 
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -144,7 +143,7 @@ namespace Bolnica
 
             if (datum.HasValue)
             {
-                izabranDatum = datum.Value;//.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                izabranDatum = datum.Value;
                 refresujPocetnoVreme();
 
             }
@@ -158,7 +157,6 @@ namespace Bolnica
             {
                 if (t.Datum.CompareTo(izabranDatum)==0 && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
                 {
-                    //Console.WriteLine(izabranaVrstaTermina + t.getVrstaTerminaString());
                     slobodniTermini.Add(t);
 
                 }
@@ -166,12 +164,5 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e) //back
-        {
-            PrikazTerminaLekara ptl = new PrikazTerminaLekara(korisnik);
-            ptl.Show();
-            this.Close();
-
-        }
     }
 }

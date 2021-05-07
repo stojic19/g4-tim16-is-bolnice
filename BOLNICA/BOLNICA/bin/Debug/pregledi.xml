@@ -3,8 +3,6 @@
   <Pregled>
     <IdPregleda>f903742e-9140-4293-93af-1e94002b234f</IdPregleda>
     <Odrzan>true</Odrzan>
-    <Zloupotrebio>0</Zloupotrebio>
-    <Blokiran>false</Blokiran>
     <Termin>
       <IdTermina>T17</IdTermina>
       <VrstaTermina>pregled</VrstaTermina>
@@ -78,6 +76,7 @@
             <NazivLeka>L2</NazivLeka>
             <Jacina>20mg</Jacina>
             <Kolicina>0</Kolicina>
+            <JeVerifikovan>false</JeVerifikovan>
           </PreporucenLek>
         </Terapija>
       </Terapije>
@@ -94,6 +93,7 @@
           <NazivLeka>L3</NazivLeka>
           <Jacina>200mg</Jacina>
           <Kolicina>0</Kolicina>
+          <JeVerifikovan>false</JeVerifikovan>
         </Lek>
       </Recept>
     </Recepti>
@@ -115,8 +115,6 @@
   <Pregled>
     <IdPregleda>7c1a754d-36b4-4daa-a25d-d26a19f6a05d</IdPregleda>
     <Odrzan>true</Odrzan>
-    <Zloupotrebio>0</Zloupotrebio>
-    <Blokiran>false</Blokiran>
     <Termin>
       <IdTermina>T16</IdTermina>
       <VrstaTermina>pregled</VrstaTermina>
@@ -190,6 +188,7 @@
             <NazivLeka>L4</NazivLeka>
             <Jacina>500mg</Jacina>
             <Kolicina>0</Kolicina>
+            <JeVerifikovan>false</JeVerifikovan>
           </PreporucenLek>
         </Terapija>
       </Terapije>
@@ -206,6 +205,7 @@
           <NazivLeka>L3</NazivLeka>
           <Jacina>200mg</Jacina>
           <Kolicina>0</Kolicina>
+          <JeVerifikovan>false</JeVerifikovan>
         </Lek>
       </Recept>
     </Recepti>
@@ -227,8 +227,6 @@
   <Pregled>
     <IdPregleda>471de7c9-73e4-41fb-8ae6-c5f8d0058004</IdPregleda>
     <Odrzan>true</Odrzan>
-    <Zloupotrebio>0</Zloupotrebio>
-    <Blokiran>false</Blokiran>
     <Termin>
       <IdTermina>T300</IdTermina>
       <VrstaTermina>operacija</VrstaTermina>
@@ -271,6 +269,7 @@
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </Lek>
             </Recept>
             <Recept>
@@ -284,6 +283,7 @@
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </Lek>
             </Recept>
           </Recepti>
@@ -309,6 +309,7 @@
                     <NazivLeka>L2</NazivLeka>
                     <Jacina>20mg</Jacina>
                     <Kolicina>0</Kolicina>
+                    <JeVerifikovan>false</JeVerifikovan>
                   </PreporucenLek>
                 </Terapija>
               </Terapije>
@@ -334,6 +335,7 @@
                     <NazivLeka>L4</NazivLeka>
                     <Jacina>500mg</Jacina>
                     <Kolicina>0</Kolicina>
+                    <JeVerifikovan>false</JeVerifikovan>
                   </PreporucenLek>
                 </Terapija>
               </Terapije>
@@ -399,8 +401,6 @@
   <Pregled>
     <IdPregleda>99a50c86-9774-4bae-8b3b-6e3613568d9a</IdPregleda>
     <Odrzan>true</Odrzan>
-    <Zloupotrebio>0</Zloupotrebio>
-    <Blokiran>false</Blokiran>
     <Termin>
       <IdTermina>T15</IdTermina>
       <VrstaTermina>pregled</VrstaTermina>
@@ -443,6 +443,7 @@
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </Lek>
             </Recept>
             <Recept>
@@ -456,6 +457,7 @@
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </Lek>
             </Recept>
           </Recepti>
@@ -481,6 +483,7 @@
                     <NazivLeka>L2</NazivLeka>
                     <Jacina>20mg</Jacina>
                     <Kolicina>0</Kolicina>
+                    <JeVerifikovan>false</JeVerifikovan>
                   </PreporucenLek>
                 </Terapija>
               </Terapije>
@@ -506,6 +509,7 @@
                     <NazivLeka>L4</NazivLeka>
                     <Jacina>500mg</Jacina>
                     <Kolicina>0</Kolicina>
+                    <JeVerifikovan>false</JeVerifikovan>
                   </PreporucenLek>
                 </Terapija>
               </Terapije>
@@ -583,12 +587,24 @@
             <NazivLeka>L3</NazivLeka>
             <Jacina>200mg</Jacina>
             <Kolicina>0</Kolicina>
+            <JeVerifikovan>false</JeVerifikovan>
           </PreporucenLek>
         </Terapija>
       </Terapije>
     </Anamneza>
     <Recepti />
-    <Uputi />
+    <Uputi>
+      <Uput>
+        <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
+        <TipUputa>SPECIJALISTA</TipUputa>
+        <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
+        <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
+        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
+        <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
+        <IDPacijenta>magdalena</IDPacijenta>
+        <NalazMisljenje>efas</NalazMisljenje>
+      </Uput>
+    </Uputi>
     <Alergeni />
     <OcenjenPregled>false</OcenjenPregled>
   </Pregled>

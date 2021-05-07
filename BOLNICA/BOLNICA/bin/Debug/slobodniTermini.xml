@@ -223,43 +223,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T35</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-30T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>T18</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>09:00</PocetnoVreme>

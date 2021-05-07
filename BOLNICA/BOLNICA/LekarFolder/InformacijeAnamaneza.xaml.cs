@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -19,7 +20,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class InformacijeAnamaneza : Window
+    public partial class InformacijeAnamaneza : UserControl
     {
         Pregled izabranPregled = null;
         Anamneza izabranaAnamneza = null;
@@ -72,10 +73,8 @@ namespace Bolnica
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjePregledima.SerijalizacijaPregleda();
-            KartonLekar termini = new KartonLekar(izabranPregled.IdPregleda, 1);
-
-            termini.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
 
         }
     }

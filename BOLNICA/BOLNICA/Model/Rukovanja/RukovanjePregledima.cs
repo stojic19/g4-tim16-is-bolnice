@@ -32,8 +32,6 @@ namespace Bolnica.Model.Rukovanja
             if (noviPregled == null)
             {
                 noviPregled = new Pregled(Guid.NewGuid().ToString(), terminPregleda);
-                noviPregled.Blokiran = terminPregleda.Pacijent.Blokiran;
-                noviPregled.Zloupotrebio = terminPregleda.Pacijent.Zloupotrebio;
                 sviPregledi.Add(noviPregled);
 
             }

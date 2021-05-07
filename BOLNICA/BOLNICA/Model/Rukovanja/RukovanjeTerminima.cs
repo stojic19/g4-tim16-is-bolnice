@@ -47,7 +47,7 @@ namespace Model
 
                 if (l.KorisnickoIme.Equals(id))
                 {
-                    return l.Ime + l.Prezime;
+                    return l.Ime + " " + l.Prezime;
                 }
             }
 

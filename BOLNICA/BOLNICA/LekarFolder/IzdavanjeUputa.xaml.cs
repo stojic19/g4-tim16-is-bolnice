@@ -16,13 +16,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.LekarFolder
 {
-    public partial class IzdavanjeUputa : Window
+    public partial class IzdavanjeUputa : UserControl
     {
         Pregled izabranPregled = null;
         String idLekaraSpecijaliste = null;
+        Uput noviUput = null;
         public IzdavanjeUputa(string idPregleda)
         {
             InitializeComponent();
@@ -53,10 +55,13 @@ namespace Bolnica.LekarFolder
 
         private void CuvanjeSpecijalistickog(object sender, RoutedEventArgs e)
         {
+
             DodavanjeNovogSpecijalistickog();
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 4);
-            kl.Show();
-            this.Close();
+            if (noviUput != null)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+            }
 
         }
 
@@ -64,14 +69,14 @@ namespace Bolnica.LekarFolder
         {
             String imeiprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
-            if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekara.Text.Equals(""))
+            if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
 
-            Uput noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime,
+            noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime,
                 idLekaraSpecijaliste, izabranPregled.Termin.Pacijent.KorisnickoIme, nalazMisljenje.Text);
 
             RukovanjeZdravstvenimKartonima.DodajUput(noviUput);
@@ -83,20 +88,24 @@ namespace Bolnica.LekarFolder
         private void CuvanjeIZakazivanjeSpecijalistickog(object sender, RoutedEventArgs e)
         {
 
+            DodavanjeNovogSpecijalistickog();
+            if (noviUput != null)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput, izabranPregled.IdPregleda));
+            }
         }
 
         private void Otkazivanje(object sender, RoutedEventArgs e)
         {
-            KartonLekar kartonLekar = new KartonLekar(izabranPregled.IdPregleda, 4);
-            kartonLekar.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            KartonLekar kartonLekar = new KartonLekar(izabranPregled.IdPregleda, 4);
-            kartonLekar.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -131,6 +140,6 @@ namespace Bolnica.LekarFolder
             }
         }
 
-        
+
     }
 }

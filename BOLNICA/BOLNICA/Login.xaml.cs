@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -124,8 +125,8 @@ namespace Bolnica
                 {
                     if (l.Lozinka.Equals(password.Password))
                     {
-                        PrikazTerminaLekara prikaz = new PrikazTerminaLekara(username.Text);
-                        prikaz.Show();
+                        LekarGlavniProzor glavniProzorLekara = new LekarGlavniProzor(username.Text);
+                        glavniProzorLekara.Show();
                         this.Close();
                         founded = true;
                     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
-        Title="Dobrodošli!" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Zdravo korporacija" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="LightBlue">
 
         <Grid.ColumnDefinitions>
@@ -15,33 +15,34 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="435*"/>
+            <RowDefinition Height="380*"/>
             <RowDefinition Height="28"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" Fill="#999999" />
-        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
-        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" Fill="#999999" />
-        <Rectangle Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
+        <Rectangle Grid.Row="0" Fill="#999999" />
+        <Rectangle Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
+        <Rectangle Grid.Row="4" Fill="#999999" />
+        <Rectangle Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
 
         <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Button_Click" Background="WhiteSmoke" Width="32" Height="32">
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Background="WhiteSmoke" Width="32" Height="32">
 
             <Image Source="LekarSlike/Back.png"/>
 
         </Button>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        
+        <StackPanel Background="LightBlue" Orientation="Horizontal" Grid.Row="1">
 
-            <Image Source="LekarSlike/menu.png" Height="24" Width="24"/>
-            <Label  FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24" Margin="5,0,10,0"/>
+            <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
                    VerticalAlignment="Center" Width="143" Height="30" />
-            <Image  Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
+            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
+
 
         </StackPanel>
 
-        <Grid Grid.Row="2" x:Name="GlavniProzor"/>
-
+        <Grid Grid.Row="2" x:Name="GlavniProzor" MinHeight="380" Background="LightBlue" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
     </Grid>
 </Window>

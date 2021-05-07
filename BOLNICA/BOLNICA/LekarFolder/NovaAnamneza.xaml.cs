@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -16,11 +17,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
 
-    public partial class NovaAnamneza : Window
+    public partial class NovaAnamneza : UserControl
     {
 
         Pregled izabranPregled = null;
@@ -90,9 +92,8 @@ namespace Bolnica
             RukovanjePregledima.DodavanjeAnamneze(izabranPregled, a);
             RukovanjeZdravstvenimKartonima.NovoPrivremeno();
 
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 1);
-            kl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
         }
 
         private void IzvestajAnamneza(object sender, RoutedEventArgs e)
@@ -102,16 +103,14 @@ namespace Bolnica
 
         private void Otkazivanje(object sender, RoutedEventArgs e)
         {
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 1);
-            kl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 1);
-            kl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
         }
 
         private void BrisanjeTerapije(object sender, RoutedEventArgs e)

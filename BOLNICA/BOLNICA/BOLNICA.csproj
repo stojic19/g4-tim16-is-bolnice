@@ -106,11 +106,14 @@
     <Compile Include="LekarFolder\NovaAnamneza.xaml.cs">
       <DependentUpon>NovaAnamneza.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LekarFolder\OtkazivanjeTerminaLekar.xaml.cs">
-      <DependentUpon>OtkazivanjeTerminaLekar.xaml</DependentUpon>
+    <Compile Include="LekarFolder\PocetnaStranicaLekar.xaml.cs">
+      <DependentUpon>PocetnaStranicaLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarFolder\PrikazTerminaLekara.xaml.cs">
       <DependentUpon>PrikazTerminaLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LekarFolder\ZakazivanjeIzUputa.xaml.cs">
+      <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
     <Compile Include="LekarFolder\ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
@@ -334,11 +337,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="LekarFolder\OtkazivanjeTerminaLekar.xaml">
+    <Page Include="LekarFolder\PocetnaStranicaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="LekarFolder\PrikazTerminaLekara.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LekarFolder\ZakazivanjeIzUputa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

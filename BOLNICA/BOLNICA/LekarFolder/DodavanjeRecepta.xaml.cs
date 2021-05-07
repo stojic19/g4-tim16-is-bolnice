@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Properties;
 using Model;
@@ -17,10 +18,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
-    public partial class DodavanjeRecepta : Window
+    public partial class DodavanjeRecepta : UserControl
     {
         Pregled izabranPregled = null;
         public DodavanjeRecepta(String IDIzabranog)
@@ -53,17 +55,11 @@ namespace Bolnica
 
         private void Povratak(object sender, RoutedEventArgs e) 
         {
-            KartonLekar kartonLekar = new KartonLekar(izabranPregled.IdPregleda, 3);
-            kartonLekar.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
 
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
-        }
 
         private void IzdajRecept(object sender, RoutedEventArgs e)
         {
@@ -86,18 +82,16 @@ namespace Bolnica
             RukovanjePregledima.DodavanjeRecepta(izabranPregled, novRecept);
             RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 3);
-            kl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
         }
 
         private void IzvestajNovogRecepta(object sender, RoutedEventArgs e) {}
 
         private void Odustajanje(object sender, RoutedEventArgs e) 
         {
-            KartonLekar kl = new KartonLekar(izabranPregled.IdPregleda, 3);
-            kl.Show();
-            this.Close();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
 
         }
 

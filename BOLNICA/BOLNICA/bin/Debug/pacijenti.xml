@@ -33,6 +33,7 @@
             <NazivLeka>L3</NazivLeka>
             <Jacina>200mg</Jacina>
             <Kolicina>0</Kolicina>
+            <JeVerifikovan>false</JeVerifikovan>
           </Lek>
         </Recept>
         <Recept>
@@ -46,6 +47,7 @@
             <NazivLeka>L3</NazivLeka>
             <Jacina>200mg</Jacina>
             <Kolicina>0</Kolicina>
+            <JeVerifikovan>false</JeVerifikovan>
           </Lek>
         </Recept>
       </Recepti>
@@ -71,6 +73,7 @@
                 <NazivLeka>L2</NazivLeka>
                 <Jacina>20mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -96,6 +99,7 @@
                 <NazivLeka>L4</NazivLeka>
                 <Jacina>500mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -121,6 +125,7 @@
                 <NazivLeka>L3</NazivLeka>
                 <Jacina>200mg</Jacina>
                 <Kolicina>0</Kolicina>
+                <JeVerifikovan>false</JeVerifikovan>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -156,6 +161,16 @@
           <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
           <IDPacijenta>magdalena</IDPacijenta>
           <NalazMisljenje>Ajde</NalazMisljenje>
+        </Uput>
+        <Uput>
+          <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
+          <TipUputa>SPECIJALISTA</TipUputa>
+          <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
+          <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
+          <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
+          <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
+          <IDPacijenta>magdalena</IDPacijenta>
+          <NalazMisljenje>efas</NalazMisljenje>
         </Uput>
       </Uputi>
     </ZdravstveniKarton>

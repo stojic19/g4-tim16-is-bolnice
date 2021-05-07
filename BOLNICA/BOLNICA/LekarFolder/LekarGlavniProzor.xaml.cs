@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +18,23 @@ namespace Bolnica.LekarFolder
 {
     public partial class LekarGlavniProzor : Window
     {
-        public LekarGlavniProzor()
+        private static Grid PocetniPogled;
+        String KoriscnickoImeLekara = null;
+        public LekarGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
+            PocetniPogled = this.GlavniProzor;
+            this.KoriscnickoImeLekara = korisnickoIme;
+            PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //Nazad
+        private void Povratak(object sender, RoutedEventArgs e) 
         {
+            RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjePregledima.SerijalizacijaPregleda();
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+
             Login prozorLogovanje = new Login();
             prozorLogovanje.Show();
             this.Close();
@@ -33,8 +44,24 @@ namespace Bolnica.LekarFolder
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();
+            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
+            RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            
+
         }
+
+        public void PromenaPogleda(UserControl userControl)
+        {
+            GlavniProzor.Children.Clear();
+            GlavniProzor.Children.Add(userControl);
+        }
+
+        public static Grid DobaviProzorZaIzmenu()
+        {
+            return PocetniPogled;
+        }
+
+        
+        
     }
 }
