@@ -44,7 +44,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            foreach(Lek l in RukovanjeLijekovima.SviLijekovi())
+            foreach (Lek l in RukovanjeLijekovima.SviLijekovi())
             {
                 if (l.IDLeka.Equals(this.IdLijeka.Text))
                 {
@@ -53,7 +53,7 @@ namespace Bolnica
                 }
             }
 
-            Lek lijek = new Lek(IdLijeka.Text, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text));
+            Lek lijek = new Lek(IdLijeka.Text, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, Sastojci.Text, false);
             RukovanjeLijekovima.IzmjeniLijek(lijek);
 
             this.Close();

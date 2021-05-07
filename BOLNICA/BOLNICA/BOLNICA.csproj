@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DetaljiOLijeku.xaml.cs">
+      <DependentUpon>DetaljiOLijeku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajOpremuProstoru.xaml.cs">
       <DependentUpon>DodajOpremuProstoru.xaml</DependentUpon>
     </Compile>
@@ -128,11 +131,13 @@
     <Compile Include="Model\Rukovanja\RukovanjeLijekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeZahtjevima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOperacijama.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\Enumi\VrsteOpreme.cs" />
     <Compile Include="Model\Uput.cs" />
+    <Compile Include="Model\Zahtjev.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
     <Compile Include="PacijentFolder\DetaljiTermina.xaml.cs">
@@ -277,6 +282,10 @@
     <Compile Include="PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
+    <Page Include="DetaljiOLijeku.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajOpremuProstoru.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

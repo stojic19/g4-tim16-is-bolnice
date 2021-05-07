@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,7 @@ namespace Bolnica.Model
     {
         private static String imeFajla = "lijekovi.xml";
         public static List<Lek> lijekovi = new List<Lek>();
+        public static List<Lek> zahtjevi = new List<Lek>();
 
         public static Lek DodajLijek(Lek lijek)
         {
@@ -37,6 +39,9 @@ namespace Bolnica.Model
             l.NazivLeka = lijek.NazivLeka;
             l.Jacina = lijek.Jacina;
             l.Kolicina = int.Parse(lijek.Kolicina.ToString());
+            l.Proizvodjac = lijek.Proizvodjac;
+            l.Sastojci = lijek.Sastojci;
+            l.JeVerifikovan = lijek.JeVerifikovan;
 
             int indeks = PrikazLijekova.Lijekovi.IndexOf(l);
             PrikazLijekova.Lijekovi.RemoveAt(indeks);
@@ -44,7 +49,7 @@ namespace Bolnica.Model
             return true;
         }
 
-    
+
         public static bool UkloniLijek(String idLijeka)
         {
             Lek lijek = pretraziPoId(idLijeka);

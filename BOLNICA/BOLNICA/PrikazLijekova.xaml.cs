@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace Bolnica
     public partial class PrikazLijekova : UserControl
     {
         public static ObservableCollection<Lek> Lijekovi { get; set; }
+        //   public static ObservableCollection<Zahtjev> Zahtjevi { get; set; }
+
 
         public PrikazLijekova()
         {
@@ -31,12 +34,19 @@ namespace Bolnica
             this.DataContext = this;
 
             Lijekovi = new ObservableCollection<Lek>();
+            // Zahtjevi = new ObservableCollection<Zahtjev>();
 
-            foreach(Lek l in RukovanjeLijekovima.SviLijekovi())
+            foreach (Lek l in RukovanjeLijekovima.SviLijekovi())
             {
                 Lijekovi.Add(l);
+
             }
-            
+            foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtjevi())
+            {
+                Lijekovi.Add(z.Lijek);
+
+            }
+
         }
 
         private void Dodavanje_Click(object sender, RoutedEventArgs e)
@@ -93,5 +103,22 @@ namespace Bolnica
 
         }
 
+        private void Detalji_Click(object sender, RoutedEventArgs e)
+        {
+            Lek izabran = (Lek)dataGridLijekovi.SelectedItem;
+
+            if (izabran != null)
+            {
+
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new DetaljiOLijeku(izabran.IDLeka);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite lijek cije detalje zelite da vidite!");
+            }
+        }
     }
 }

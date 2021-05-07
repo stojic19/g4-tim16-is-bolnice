@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -48,10 +49,13 @@ namespace Bolnica
             String nazivLeka = this.nazivLijeka.Text;
             String jacina = this.jacina.Text;
             int kolicina = int.Parse(this.kolicinaLijeka.Text);
+            String proizvodjac = this.proizvodjac.Text;
+            String sastojci = this.sastojci.Text;
 
-            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina);
-            RukovanjeLijekovima.DodajLijek(lijek);
-            RukovanjeLijekovima.SerijalizacijaLijekova();
+            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, sastojci,false);
+            Zahtjev zahtjev = new Zahtjev("", lijek, "");
+            RukovanjeZahtjevima.DodajZahtjev(zahtjev);
+         //   RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
             this.Close();
 

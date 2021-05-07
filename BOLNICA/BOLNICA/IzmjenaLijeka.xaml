@@ -17,6 +17,9 @@
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
 
@@ -43,12 +46,21 @@
 
         <TextBox AcceptsReturn="True" Name="Kolicina" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
+        <Label Content="Proizvodjac:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="4" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Odustani_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <TextBox AcceptsReturn="True" Name="Proizvodjac" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Potvrdi_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Content="Sastojci:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="5" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+
+        <TextBox AcceptsReturn="True" Name="Sastojci" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.2,14,0,10.2" Height="87" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.RowSpan="2" />
+
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="0,22.8,38.8,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="40.2,22.8,0,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Potvrdi_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
     </Grid>
 </Window>
