@@ -25,6 +25,7 @@ namespace Bolnica
         public DodavanjeLijeka()
         {
             InitializeComponent();
+            
         }
 
         private void Odustani_Click(object sender, RoutedEventArgs e)
@@ -34,7 +35,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            String idLijeka = this.idLijeka.Text;
+            String idLijeka = Guid.NewGuid().ToString();
             foreach (Lek lek in RukovanjeLijekovima.SviLijekovi())
             {
                 if (lek.IDLeka.Equals(this.idLijeka.Text))

@@ -16,6 +16,7 @@ namespace Model
 
         public bool JeRenoviranje { get; set; }
         public Renoviranje Renoviranje { get; set; }
+
         public List<Oprema> Oprema { get; set; }
         public Prostor() { }
 

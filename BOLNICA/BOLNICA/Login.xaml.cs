@@ -46,11 +46,14 @@ namespace Bolnica
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjeProstorom.DeserijalizacijaProstora();
+            RukovanjeOpremom.DeserijalizacijaOpreme();
+            RukovanjeLijekovima.DeserijalizacijaLijekova();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeObavestenjimaSekratar.Ucitaj();
-             // RukovanjeTerminima.InicijalizacijaSTermina();
+            RukovanjeTerminima.InicijalizacijaSTermina();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
+            RukovanjeProstorom.ProveriRenoviranje();
 
            
             

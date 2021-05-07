@@ -1,4 +1,5 @@
 using Bolnica;
+using Bolnica.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,8 +10,10 @@ namespace Model
     public class RukovanjeProstorom
     {
         private static String imeFajla = "prostori.xml";
+        private static String imeFajla1 = "renoviranje.xml";
         public static List<Prostor> prostori = new List<Prostor>();
         public static List<Oprema> oprema = new List<Oprema>();
+        public static List<Renoviranje> prostorKojiSeRenovira = new List<Renoviranje>();
 
         public static Prostor DodajProstor(Prostor p)
         {
@@ -107,8 +110,50 @@ namespace Model
             return oprema;
         }
 
+        public static bool DodajZaRenoviranje(Renoviranje renoviranje)
+        {
+        
+                prostorKojiSeRenovira.Add(renoviranje);
+                return true;
+            
+        }
+
+        public static void ProveriRenoviranje()
+        {
+            List<Renoviranje> pomocna = new List<Renoviranje>();
+
+            foreach (Renoviranje r in prostorKojiSeRenovira)
+            {
+                if (DateTime.Compare(r.StartDay.Date, DateTime.Now.Date) <= 0 && DateTime.Compare(DateTime.Now.Date, r.EndDay.Date) <= 0)
+                {
+                    pomocna.Add(r);
+                    foreach (Prostor p in prostori)
+                    {
+                        if (p.IdProstora.Equals(r.RoomId))
+                        {
+                            p.JeRenoviranje = true;
+                            break;
+                        }
+                    }
+                } else if (DateTime.Compare(DateTime.Now.Date, r.EndDay.Date) > 0)
+                {
+                    foreach (Prostor p in prostori)
+                    {
+                        if (p.IdProstora.Equals(r.RoomId))
+                        {
+                            p.JeRenoviranje = false;
+                            break;
+                        }
+                    }
+                } else {
+                    pomocna.Add(r);
+                }
+            
+            }
+        }
         public static List<Prostor> DeserijalizacijaProstora()
         {
+            DeserijalizacijaProstoraZaRenoviranje();
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return prostori;
@@ -127,6 +172,7 @@ namespace Model
 
         public static void SerijalizacijaProstora()
         {
+            SerijalizacijaProstoraZaRenoviranje();
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
             TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, prostori);
@@ -134,6 +180,32 @@ namespace Model
 
         }
 
+        public static List<Renoviranje> DeserijalizacijaProstoraZaRenoviranje()
+        {
+            if (File.ReadAllText(imeFajla1).Trim().Equals(""))
+            {
+                return prostorKojiSeRenovira;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead(imeFajla1);
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
+                prostorKojiSeRenovira = (List<Renoviranje>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return prostorKojiSeRenovira;
+
+            }
+
+        }
+
+        public static void SerijalizacijaProstoraZaRenoviranje()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
+            TextWriter tw = new StreamWriter(imeFajla1);
+            xmlSerializer.Serialize(tw, prostorKojiSeRenovira);
+            tw.Close();
+
+        }
 
     }
 }

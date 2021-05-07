@@ -19,7 +19,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for RenoviranjeProstorije.xaml
     /// </summary>
-    public partial class RenoviranjeProstorije : Window
+    public partial class RenoviranjeProstorije : UserControl
     {
         private Prostor izabranProstor;
         public RenoviranjeProstorije(Prostor izabran)
@@ -33,20 +33,30 @@ namespace Bolnica
             Renoviranje renoviranje = new Renoviranje(izabranProstor.IdProstora, DateTime.Parse(PickStartDate.Text),
                 DateTime.Parse(PickEndtDate.Text));
 
-            if (DateTime.Today >= DateTime.Parse(PickStartDate.Text) && DateTime.Today <= DateTime.Parse(PickEndtDate.Text))
+           /* if (DateTime.Today >= DateTime.Parse(PickStartDate.Text) && DateTime.Today <= DateTime.Parse(PickEndtDate.Text))
             {
                 izabranProstor.JeRenoviranje = true;
             }
-            izabranProstor.Renoviranje = renoviranje;
+            izabranProstor.Renoviranje = renoviranje;*/
 
+            RukovanjeProstorom.DodajZaRenoviranje(renoviranje);
             RukovanjeProstorom.SerijalizacijaProstora();
 
-            Close();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new PrikazProstora();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+
+
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new PrikazProstora();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            
         }
     }
 }

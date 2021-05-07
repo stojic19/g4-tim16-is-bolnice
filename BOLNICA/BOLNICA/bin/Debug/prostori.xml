@@ -67,6 +67,11 @@
     <Kvadratura>25</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
+    <Renoviranje>
+      <RoomId>P2</RoomId>
+      <StartDay>2021-05-09T00:00:00</StartDay>
+      <EndDay>2021-05-12T00:00:00</EndDay>
+    </Renoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -76,6 +81,19 @@
     <Kvadratura>40</Kvadratura>
     <BrojKreveta>1</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <IdProstora>P8</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>3</Sprat>
+    <Kvadratura>39</Kvadratura>
+    <BrojKreveta>3</BrojKreveta>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Renoviranje>
+      <StartDay>0001-01-01T00:00:00</StartDay>
+      <EndDay>0001-01-01T00:00:00</EndDay>
+    </Renoviranje>
     <Oprema />
   </Prostor>
 </ArrayOfProstor>

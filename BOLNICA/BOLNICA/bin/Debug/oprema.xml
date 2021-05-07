@@ -18,4 +18,10 @@
     <VrstaOpreme>dinamicka</VrstaOpreme>
     <Kolicina>250</Kolicina>
   </Oprema>
+  <Oprema>
+    <IdOpreme>s8</IdOpreme>
+    <NazivOpreme>ormar</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>3</Kolicina>
+  </Oprema>
 </ArrayOfOprema>

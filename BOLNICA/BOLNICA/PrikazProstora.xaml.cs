@@ -31,12 +31,7 @@ namespace Bolnica
             Prostori = new ObservableCollection<Prostor>();
 
             foreach (Prostor p in RukovanjeProstorom.SviProstori())
-            {
-                //if (DateTime.Today >= p.Renoviranje.StartDay && DateTime.Today <= p.Renoviranje.EndDay)
-                // {
-                //    p.JeRenoviranje = true;
-                //}
-
+            { 
                 Prostori.Add(p);
             }
 
@@ -116,8 +111,10 @@ namespace Bolnica
             if (izabran != null)
             {
 
-                RenoviranjeProstorije renoviranje = new RenoviranjeProstorije(izabran);
-                renoviranje.Show();
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new RenoviranjeProstorije(izabran);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {

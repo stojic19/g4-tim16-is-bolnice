@@ -21,7 +21,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <DataGrid x:Name="dataGridLijekovi" ItemsSource="{Binding Lek}" IsReadOnly="true"
+            <DataGrid x:Name="dataGridLijekovi" ItemsSource="{Binding Lijekovi}" IsReadOnly="true"
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,95.6,97.4" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="dataGridLijekovi_SelectionChanged">
                 <DataGrid.Columns>

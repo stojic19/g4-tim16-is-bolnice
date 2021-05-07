@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-           // this.DataContext = this;
+            this.DataContext = this;
 
             Oprema = new ObservableCollection<Oprema>();
 
@@ -88,6 +89,11 @@ namespace Bolnica
         private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+           // DataView dw = new DataView(dataGridOprema);
         }
     }
 }

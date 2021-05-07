@@ -24,10 +24,19 @@ namespace Bolnica
     {
         public static ObservableCollection<Lek> Lijekovi { get; set; }
 
-
         public PrikazLijekova()
         {
             InitializeComponent();
+
+            this.DataContext = this;
+
+            Lijekovi = new ObservableCollection<Lek>();
+
+            foreach(Lek l in RukovanjeLijekovima.SviLijekovi())
+            {
+                Lijekovi.Add(l);
+            }
+            
         }
 
         private void Dodavanje_Click(object sender, RoutedEventArgs e)

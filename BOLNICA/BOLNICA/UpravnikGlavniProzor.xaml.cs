@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace Bolnica
             InitializeComponent();
             RukovanjeOpremom.DeserijalizacijaOpreme();
             RukovanjeProstorom.DeserijalizacijaProstora();
+            RukovanjeLijekovima.DeserijalizacijaLijekova();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -72,8 +74,9 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            /* RukovanjeTerminima.SerijalizacijaTermina();
-             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();*/
+            RukovanjeProstorom.SerijalizacijaProstora();
+            RukovanjeOpremom.SerijalizacijaOpreme();
+            RukovanjeLijekovima.SerijalizacijaLijekova();
         }
     }
 }
