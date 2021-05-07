@@ -15,43 +15,46 @@
 
 
 
-                    <WrapPanel Background="#49bf8e">
-                        <StackPanel  Width="260"  >
+                    <WrapPanel>
+                        <Border BorderThickness="3" BorderBrush="#FF31577E">
+                            <StackPanel  Width="260"  >
 
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="80"/>
+                                        <ColumnDefinition/>
 
-                                </Grid.ColumnDefinitions>
+                                    </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
 
-                                </Grid.RowDefinitions>
+                                    </Grid.RowDefinitions>
 
-
-
-
-                                <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Termin.Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
-
-
-                                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Termin.PocetnoVreme}"/>
-
-
-                                <TextBlock Grid.Column="1" Grid.Row="2"  Text="{Binding Termin.Lekar.KorisnickoIme}" />
-
-
-                            </Grid>
+                                    <Image Source="/Slike/PacijentSlike/anc3.png"  Grid.RowSpan="3" Grid.Column="0" Width="70" Height="70"  />
 
 
 
+                                    <TextBlock Grid.Column="1" Grid.Row="0" FontSize="15"  Text="{Binding Termin.Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
-                        </StackPanel>
 
+                                    <TextBlock Grid.Column="1" Grid.Row="1" FontSize="15"  Text="{Binding Termin.PocetnoVreme}"/>
+
+
+                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15"  Text="{Binding Termin.Lekar.KorisnickoIme}" />
+
+
+                                </Grid>
+
+
+
+
+                            </StackPanel>
+                        </Border>
+                        
                     </WrapPanel>
 
 

@@ -715,6 +715,18 @@
   <ItemGroup>
     <Resource Include="Slike\PacijentSlike\pregled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\anc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\anc3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\tableta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\obav.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

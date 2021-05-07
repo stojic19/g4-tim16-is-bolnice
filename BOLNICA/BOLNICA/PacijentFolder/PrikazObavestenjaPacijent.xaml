@@ -15,25 +15,31 @@
 
 
 
-                    <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Grid  Margin="10"  Width="260" Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center" >
-
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border BorderThickness="3" BorderBrush="#FF31577E" >
+                            <Grid  Margin="10"  Width="260"  HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
+                               
                             </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="3" Grid.Column="0" Source="/Slike/PacijentSlike/obav.png" Margin="0 0 20 0" />
 
 
-                            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy HH:mm}}" />
-                            <TextBlock Grid.Row="1" Text="{Binding Naslov}" />
-                            <TextBlock Grid.Row="2" Text="{Binding Tekst }" />
+                            <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy HH:mm}}" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Text="{Binding Naslov}" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Tekst }" />
 
 
 
 
                         </Grid>
-
+                       </Border>
                     </WrapPanel>
 
 

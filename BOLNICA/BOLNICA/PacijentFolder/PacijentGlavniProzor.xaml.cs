@@ -55,25 +55,25 @@ namespace Bolnica
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazObavestenjaPacijent());
-            naslovStrane.Content = "Obaveštenja";
+            naslovStrane.Content = "          Obaveštenja";
         }
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent());
-            naslovStrane.Content = "Zakaži pregled";
+            naslovStrane.Content = "    Zakaži pregled";
         }
 
         private void Raspored_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazRasporedaPacijent());
-            naslovStrane.Content = "Raspored";
+            naslovStrane.Content = "          Raspored";
         }
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazTerapijePacijent());
-            naslovStrane.Content = "Terapija";
+            naslovStrane.Content = "          Terapija";
         }
 
         private void Karton_Click(object sender, RoutedEventArgs e)
@@ -85,7 +85,7 @@ namespace Bolnica
         private void Ankete_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazAnketa());
-            naslovStrane.Content = "Ankete";
+            naslovStrane.Content = "          Ankete";
         }
 
         private void Pomoc_Click(object sender, RoutedEventArgs e)

@@ -15,52 +15,55 @@
 
 
 
-                    <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <WrapPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border BorderThickness="3" BorderBrush="#FF31577E">
+                            <StackPanel  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
 
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70" />
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition  />
 
-                                </Grid.ColumnDefinitions>
+                                    </Grid.ColumnDefinitions>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-
-
-
-                                <TextBlock  Grid.Column="0" Grid.Row="0" Text="Naziv " />
-                                <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding PreporucenLek.NazivLeka}"/>
-                                <TextBlock  Grid.Column="0" Grid.Row="1" Text="Jačina " />
-                                <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding PreporucenLek.Jacina}"/>
-
-
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Količina: "/>
-
-                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Kolicina}"/>
-
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme(h): "/>
-                                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Satnica}"/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
 
 
 
-                            </Grid>
+                                    <TextBlock  Grid.Column="1" Grid.Row="0" FontSize="15" Text="Naziv: " />
+                                    <TextBlock  Grid.Column="2" Grid.Row="0" FontSize="15" Padding="2" Text="{Binding PreporucenLek.NazivLeka}"/>
+                                    <TextBlock  Grid.Column="1" Grid.Row="1" FontSize="15" Text="Jačina: " />
+                                    <TextBlock  Grid.Column="2" Grid.Row="1" FontSize="15" Padding="2" Text="{Binding PreporucenLek.Jacina}"/>
+
+
+                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="Količina: "/>
+
+                                    <TextBlock Grid.Column="2" Grid.Row="2" FontSize="15" Padding="2"  Text="{Binding Kolicina}"/>
+
+                                    <TextBlock Grid.Column="1" Grid.Row="3"  FontSize="15" Text="Vreme(h): "/>
+                                    <TextBlock Grid.Column="2" Grid.Row="3" FontSize="15"  Text="{Binding Satnica}"/>
+
+                                    <Image Source="/Slike/PacijentSlike/tableta.png" Grid.Column="0" Grid.RowSpan="5" />
+
+
+                                </Grid>
 
 
 
 
-                        </StackPanel>
-
+                            </StackPanel>
+                        </Border>
                     </WrapPanel>
 
 

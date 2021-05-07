@@ -12,39 +12,48 @@
 
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition>
+                <ColumnDefinition Width="71*">
 
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="71*">
 
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="70*">
 
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="110*">
 
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="54*">
 
                 </ColumnDefinition>
-                <ColumnDefinition>
+                <ColumnDefinition Width="46*">
 
                 </ColumnDefinition>
 
             </Grid.ColumnDefinitions>
 
-            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" Width="55" Height="40">
+            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" Margin="13,5,13.2,5">
                 <Image Source="/Slike/PacijentSlike/strelica.png" />
 
             </Button>
 
-            <Label  Grid.Column="1" Grid.ColumnSpan="3"  Margin="15 10" Name="naslovStrane" Foreground="AntiqueWhite"></Label>
+            <Label  Grid.Column="1" Grid.ColumnSpan="3"  Margin="70.8,10,9.2,10"  Name="naslovStrane" FontWeight="Thin" FontSize="15" FontStyle="Italic" Foreground="AntiqueWhite"></Label>
 
-            <Button Grid.Column="4" Background="#FF31577E" Name="obavestenja" Click="obavestenja_Click" Width="45" Height="30">
-                <Image Source="/Slike/PacijentSlike/obavestenja3.png" />
+            <Button Grid.Column="4" Background="#FF31577E" Name="obavestenja" Click="obavestenja_Click" Margin="6.8,10,7.6,10">
+                <Image Source="/Slike/PacijentSlike/obavestenja3.png" Height="44" Width="42" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-1.504"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
             </Button>
 
-            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" Grid.Column="6" >
+            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="0.4,10,0,10" Grid.Column="5" Width="42" >
                 <StackPanel Width="150" Background="AliceBlue">
                     <Button Content="Moj nalog"/>
 

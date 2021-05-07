@@ -14,7 +14,13 @@
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>
       <IDPacijenta>magdalena</IDPacijenta>
-      <Alergeni />
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>L1</IdAlergena>
+          <OpisReakcije>reakcija</OpisReakcije>
+          <VremeZaPojavu>2</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
       <Recepti>
         <Recept>
           <IDRecepta>94bc0321-51b6-4fd0-944d-d6b55941551b</IDRecepta>
