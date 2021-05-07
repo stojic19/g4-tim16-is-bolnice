@@ -5,32 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="GlavniProzorSekretar" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    <Grid Background="LightBlue" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
-        <Button Background="FloralWhite" Grid.Column="0" Grid.Row="0" Width="200" Height="60" Margin="30" Click="Button_Click_1" FontFamily="Times New Roman" FontSize="15px">
-            <Bold>Nalozi pacijenata</Bold>
-        </Button>
-
-        <Button Background="FloralWhite" Grid.Column="1" Grid.Row="0" Width="200" Height="60" Margin="30" Click="Button_Click_2" FontFamily="Times New Roman" FontSize="15px">
-            <Bold>Obavestenja</Bold>
-        </Button>
-
-        <Button Background="FloralWhite" Grid.Column="0" Grid.Row="1" Width="200" Height="60" Margin="30" Click="Button_Click_3" FontFamily="Times New Roman" FontSize="15px">
-            <Bold>Termini pregleda</Bold>
-        </Button>
-
-        <Button Background="FloralWhite"  Grid.Column="1" Grid.Row="1" Width="200" Height="60" Margin="30" Click="Button_Click_4" FontFamily="Times New Roman" FontSize="15px">
-            <Bold>Nazad</Bold>
-        </Button>
-
-    </Grid>
+        Title="GlavniProzorSekretar" Height="768" Width="1024" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <StackPanel Background="#2b78e4">
+        <Grid Background="#2b78e4" x:Name="MainPanel"/>
+    </StackPanel>
 </Window>

@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.Sekretar.Pregled;
+using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +19,7 @@ using System.Windows.Shapes;
 namespace Bolnica
 {
 
-    public partial class PrikazNalogaSekretar : Window
+    public partial class PrikazNalogaSekretar : UserControl
     {
         public static ObservableCollection<Pacijent> NaloziPacijenata { get; set; }
 
@@ -36,10 +38,11 @@ namespace Bolnica
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            DodavanjeNalogaSekretar dodavanje = new DodavanjeNalogaSekretar();
-            dodavanje.Show();
-
+            usc = new DodavanjeNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -48,8 +51,12 @@ namespace Bolnica
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
-                IzmenaNalogaSekretar izmena = new IzmenaNalogaSekretar(pacijent.KorisnickoIme);
-                izmena.Show();
+
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new IzmenaNalogaSekretar(pacijent.KorisnickoIme);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {
@@ -63,8 +70,11 @@ namespace Bolnica
 
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
-                UklanjanjeNalogaSekretar uklanjanje = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                uklanjanje.Show();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
                 MessageBox.Show("Izaberite nalog za uklanjanje!");
@@ -77,34 +87,33 @@ namespace Bolnica
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
-                AlergeniSekretar alese = new AlergeniSekretar(id);
-                alese.Show();
-                this.Close();
+
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new AlergeniSekretar(id);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {
                 MessageBox.Show("Izaberite nalog za ažuriranje alergena!");
             }
         }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
-            GlavniProzorSekretar gps = new GlavniProzorSekretar();
-            this.Close();
-            gps.Show();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void Termini_Click(object sender, RoutedEventArgs e)
         {
-            if (((Pacijent)dataGridNaloziPacijenata.SelectedItem).Blokiran == false)
-            {
-                MessageBox.Show("Nalog nije blokiran!");
-                return;
-            }
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-            p.Blokiran = false;
-            p.Zloupotrebio = 0;
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

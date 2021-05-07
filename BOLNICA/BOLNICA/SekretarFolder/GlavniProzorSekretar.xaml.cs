@@ -1,4 +1,5 @@
 ﻿using Bolnica.Sekretar.Pregled;
+using Bolnica.SekretarFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -18,44 +19,30 @@ namespace Bolnica
 { 
     public partial class GlavniProzorSekretar : Window
     {
+        private static GlavniProzorSekretar instance = null;
+
+        public static GlavniProzorSekretar getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new GlavniProzorSekretar();
+            }
+            return instance;
+        }
+
         public GlavniProzorSekretar()
         {
             InitializeComponent();
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            RukovanjeNalozimaPacijenata.Ucitaj();
-            PrikazNalogaSekretar prikaz = new PrikazNalogaSekretar();
-            prikaz.Show();
-            this.Close();
-        }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            RukovanjeObavestenjimaSekratar.Ucitaj();
-            ObavestenjaSekretar prikaz = new ObavestenjaSekretar();
-            prikaz.Show();
-            this.Close();
-        }
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            TerminiPregledaSekretar tps = new TerminiPregledaSekretar();
-            tps.Show();
-            this.Close();
-        }
+            UserControl usc = null;
+            MainPanel.Children.Clear();
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            /*MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();*/
-            Login login = new Login();
-            login.Show();
-            this.Close();
+            usc = new GlavniProzorSadrzaj();
+            MainPanel.Children.Add(usc);
         }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            instance = null;
             RukovanjeNalozimaPacijenata.Sacuvaj();
         }
     }

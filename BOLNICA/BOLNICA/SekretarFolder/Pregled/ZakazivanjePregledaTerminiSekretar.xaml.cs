@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,13 +15,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
     /// <summary>
     /// Interaction logic for ZakazivanjePregledaTerminiSekretar.xaml
     /// </summary>
-    public partial class ZakazivanjePregledaTerminiSekretar : Window
+    public partial class ZakazivanjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
         private static String IdPacijenta;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
@@ -41,7 +43,11 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -64,7 +70,28 @@ namespace Bolnica.Sekretar.Pregled
             }
             termin.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(IdPacijenta);
             RukovanjeTerminima.ZakaziPregledSekretar(termin);
-            this.Close();
+
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

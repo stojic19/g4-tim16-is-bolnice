@@ -8,9 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/back.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/menu.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/srce-vece.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/srce.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/h.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/ikonice.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/licna.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nalog.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nalozi.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/naplata.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/nazad.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/obavestenja.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/odjava.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/operacije.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/pocetna.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/stacionarno.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/termini.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/transfer.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/tritacke.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slike/sekretar/ikonice/zdravo.jpg")]
 
 

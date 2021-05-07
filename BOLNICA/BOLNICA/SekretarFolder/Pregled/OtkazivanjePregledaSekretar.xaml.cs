@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Bolnica.Sekretar.Pregled
     /// <summary>
     /// Interaction logic for OtkazivanjePregledaSekretar.xaml
     /// </summary>
-    public partial class OtkazivanjePregledaSekretar : Window
+    public partial class OtkazivanjePregledaSekretar : UserControl
     {
         private static String termin;
 
@@ -29,12 +30,37 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             RukovanjeTerminima.OtkaziPregledSekretar(termin);
-            this.Close();
+
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
     /// <summary>
     /// Interaction logic for PomeranjePregledaSekretar.xaml
     /// </summary>
-    public partial class PomeranjePregledaSekretar : Window
+    public partial class PomeranjePregledaSekretar : UserControl
     {
         private static Termin termin;
         public PomeranjePregledaSekretar(Termin t)
         {
             InitializeComponent();
             termin = t;
-
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -55,7 +56,7 @@ namespace Bolnica.Sekretar.Pregled
 
             datumi.Clear();
 
-            pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(pom,pom1), termin.Lekar.KorisnickoIme);
+            pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), termin.Lekar.KorisnickoIme);
             foreach (Termin t in pomocna)
             {
                 nasao = false;
@@ -80,9 +81,11 @@ namespace Bolnica.Sekretar.Pregled
                     }
                     else
                     {
-                        PomeranjePregledaTerminiSekretar ppts = new PomeranjePregledaTerminiSekretar(termin, datumi);
-                        ppts.Show();
-                        this.Close();
+                        UserControl usc = null;
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                        usc = new PomeranjePregledaTerminiSekretar(termin, datumi);
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
                     }
             /*  Verzija sa ogranicenjem +- 3 dana
             List<Termin> termini = RukovanjeTerminima.NadjiDatumeZaPomeranje(termin);
@@ -99,13 +102,33 @@ namespace Bolnica.Sekretar.Pregled
             }
             */
         }
+        public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
+        {
+            return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd, datumDo);
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-        public static List<Termin> NadjiDatumeUIntervalu(DateTime d1, DateTime d2)
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
-            return RukovanjeTerminima.NadjiTermineUIntervalu(d1, d2);
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

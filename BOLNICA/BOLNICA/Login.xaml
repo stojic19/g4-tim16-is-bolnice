@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
-        <Label Content="Korisničko ime:" HorizontalAlignment="Left" Margin="236,204,0,0" VerticalAlignment="Top"/>
-        <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="274,235,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Name="username" Height="23" Margin="331,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"/>
-        <Button Content="Potvrdi"  Click="Button_Click" HorizontalAlignment="Left" Height="38" Margin="346,278,0,0" VerticalAlignment="Top" Width="106"/>
-        <PasswordBox HorizontalAlignment="Left" Name="password" Margin="331,238,0,0" VerticalAlignment="Top" Width="207" Height="23"/>
+        Title="Login" Height="768" Width="1024" WindowStartupLocation="CenterScreen">
+    <Grid Background="#2b78e4">
+        <Label Content="Korisničko ime:" HorizontalAlignment="Left" Margin="336,359,0,0" VerticalAlignment="Top" Height="35" Width="103"/>
+        <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="380,401,0,0" VerticalAlignment="Top" Height="35" Width="59"/>
+        <TextBox HorizontalAlignment="Left" Name="username" Height="31" Margin="445,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
+        <Button Content="Potvrdi"  Click="Button_Click" HorizontalAlignment="Left" Height="51" Margin="462,459,0,0" VerticalAlignment="Top" Width="122"/>
+        <PasswordBox HorizontalAlignment="Left" Name="password" Margin="445,405,0,0" VerticalAlignment="Top" Width="238" Height="31"/>
+        <Image Source="/Slike/Sekretar/Ikonice/zdravo.jpg" HorizontalAlignment="Left" Height="146" Margin="462,189,0,0" VerticalAlignment="Top" Width="130"/>
     </Grid>
 </Window>

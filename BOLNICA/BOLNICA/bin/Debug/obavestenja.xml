@@ -1910,4 +1910,12 @@ vremenski interval između doza: 8h.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O191</IdObavestenja>
+    <Naslov>O1</Naslov>
+    <Tekst>T1</Tekst>
+    <Datum>2021-05-07T15:40:33.5796912+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>svi</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

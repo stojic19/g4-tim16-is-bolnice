@@ -1,4 +1,6 @@
 ﻿using Bolnica.Model;
+using Bolnica.Sekretar.Pregled;
+using Bolnica.SekretarFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -15,13 +17,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
     /// <summary>
     /// Interaction logic for DodavanjeAlergena.xaml
     /// </summary>
-    public partial class DodavanjeAlergena : Window
+    public partial class DodavanjeAlergena : UserControl
     {
         public static ObservableCollection<Lek> SviLekovi { get; set; }
         private static String izabran = null;
@@ -78,12 +81,37 @@ namespace Bolnica
             //p.ZdravstveniKarton.AddAlergeni(a);
             AlergeniSekretar.AlergeniPacijenta.Add(a);
             RukovanjeNalozimaPacijenata.Sacuvaj();
-            this.Close();
+
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new AlergeniSekretar(izabran);
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new AlergeniSekretar(izabran);
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Termini_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

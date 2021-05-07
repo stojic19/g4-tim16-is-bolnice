@@ -1,50 +1,114 @@
-﻿<Window x:Class="Bolnica.DodavanjeObavestenja"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bolnica"
-        mc:Ignorable="d"
-        Title="DodavanjeObavestenja" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
-        <Grid.ColumnDefinitions >
-            <ColumnDefinition />
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+﻿<UserControl x:Class="Bolnica.DodavanjeObavestenja"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.SekretarFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <StackPanel  Height="738" Width="1024" VerticalAlignment="Bottom" Orientation="Horizontal" >
+        <Grid Background="Black" Width="80" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Background="Black" Click="Pocetna_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/pocetna.jpg" Height="57" />
+            </Button>
+            <Button Grid.Row="1" Background="Black" x:Name="Termini" Click="Termini_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/termini.jpg" />
+            </Button>
+            <Button Grid.Row="2"  Background="Black" x:Name="Operacije">
+                <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" />
+            </Button>
+            <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Click="Nalozi_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/nalozi.jpg" />
+            </Button>
+            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" >
+                <Image Source="/Slike/Sekretar/CIkonice/cObavestenja.jpg" />
+            </Button>
+            <Button Grid.Row="5" Background="Black" x:Name="Naplata">
+                <Image Source="/Slike/Sekretar/Ikonice/naplata.jpg" />
+            </Button>
+            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno">
+                <Image Source="/Slike/Sekretar/Ikonice/stacionarno.jpg" />
+            </Button>
+            <Button Grid.Row="7" Background="Black" x:Name="Transfer">
+                <Image Source="/Slike/Sekretar/Ikonice/transfer.jpg" />
+            </Button>
+            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Pocetna_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/nazad.jpg" />
+            </Button>
+            <Button Grid.Row="9" Background="Black" x:Name="Licna">
+                <Image Source="/Slike/Sekretar/Ikonice/licna.jpg" />
+            </Button>
+            <Button Grid.Row="10" Background="Black" x:Name="Nalog">
+                <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
+            </Button>
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+                <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
+            </Button>
+        </Grid>
+        <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="80*"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="120*"/>
+                <RowDefinition Height="80*"/>
+            </Grid.RowDefinitions>
 
-        <Label Content="ID obaveštenja:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="ID obaveštenja:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-        <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-        <DatePicker Name="datum" IsEnabled="False" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <DatePicker Name="datum" IsEnabled="False" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
-        <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="Kategorije primalaca:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="3" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-        <Label Content="Tekst:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,25,20,78" Height="30" Width="150"/>
+            <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-        <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,25,0,22" Height="86" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <Label Content="Tekst:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="4" Margin="0,25,20,78" Height="30" Width="150"/>
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,25,0,22" Height="86" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+            <Button Content="Odustani" Grid.Column="0" Grid.Row="5"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="5"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            
+            <CheckBox Name="cbSvi" Content="Svi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <CheckBox Name="cbPacijenti" Content="Pacijenti" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <CheckBox Name="cbLekari" Content="Lekari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,50,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <CheckBox Name="cbSekretari" Content="Sekretari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,70,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <CheckBox Name="cbUpravnici" Content="Upravnici" Grid.Column="1" HorizontalAlignment="Left" Margin="20,90,0,0" Grid.Row="2" VerticalAlignment="Top"/>
 
-    </Grid>
-</Window>
+        </Grid>
+    </StackPanel>
+</UserControl>

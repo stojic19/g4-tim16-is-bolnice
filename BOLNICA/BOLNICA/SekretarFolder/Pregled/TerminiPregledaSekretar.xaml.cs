@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,7 @@ namespace Bolnica.Sekretar.Pregled
     /// <summary>
     /// Interaction logic for TerminiPregledaSekretar.xaml
     /// </summary>
-    public partial class TerminiPregledaSekretar : Window
+    public partial class TerminiPregledaSekretar : UserControl
     {
         public static ObservableCollection<Termin> TerminiPregleda { get; set; }
         public TerminiPregledaSekretar()
@@ -40,8 +41,11 @@ namespace Bolnica.Sekretar.Pregled
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Zakazivanje
-            ZakazivanjePregledaSekretar dodavanje = new ZakazivanjePregledaSekretar();
-            dodavanje.Show();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new ZakazivanjePregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -50,8 +54,12 @@ namespace Bolnica.Sekretar.Pregled
             if (dataGridTerminiPregleda.SelectedIndex != -1)
             {
                 Termin t = (((Termin)dataGridTerminiPregleda.SelectedItem));
-                PomeranjePregledaSekretar pps = new PomeranjePregledaSekretar(t);
-                pps.Show();
+
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new PomeranjePregledaSekretar(t);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {
@@ -65,8 +73,12 @@ namespace Bolnica.Sekretar.Pregled
             if (dataGridTerminiPregleda.SelectedIndex != -1)
             {
                 String id = (((Termin)dataGridTerminiPregleda.SelectedItem).IdTermina);
-                OtkazivanjePregledaSekretar otkazivanje = new OtkazivanjePregledaSekretar(id);
-                otkazivanje.Show();
+
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new OtkazivanjePregledaSekretar(id);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
                 MessageBox.Show("Izaberite termin za otkazivanje!");
@@ -74,9 +86,23 @@ namespace Bolnica.Sekretar.Pregled
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            GlavniProzorSekretar gps = new GlavniProzorSekretar();
-            this.Close();
-            gps.Show();
+
+        }
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

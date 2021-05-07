@@ -56,7 +56,7 @@ namespace Bolnica
                 Console.WriteLine(p.Termin.IdTermina);
 
             }
-            
+            RukovanjeOperacijama.PrivremenaInicijalizacijaLekara();
 
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -103,7 +103,7 @@ namespace Bolnica
                 {
                     if (s.Lozinka.Equals(password.Password))
                     {
-                        GlavniProzorSekretar gps = new GlavniProzorSekretar();
+                        GlavniProzorSekretar gps = GlavniProzorSekretar.getInstance();
                         gps.Show();
                         this.Close();
                         founded = true;
@@ -168,6 +168,8 @@ namespace Bolnica
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Sacuvaj();
+
+            GlavniProzorSekretar.getInstance().Close();
         }
     }
 }

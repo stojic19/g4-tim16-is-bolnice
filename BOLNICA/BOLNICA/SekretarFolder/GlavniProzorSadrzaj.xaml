@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Bolnica.SekretarFolder.GlavniProzorSadrzaj"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.SekretarFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid Background="#2b78e4" >
+        <Image Source="/Slike/Sekretar/Ikonice/h.jpg" Margin="446,40,450,600" Width="128" Height="128"/>
+
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="167,324,532,367" Click="Nalozi_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>Nalozi pacijenata</Bold>
+        </Button>
+
+        <Button Background="FloralWhite"  Width="325" Height="77" Margin="532,324,167,367" Click="Obavestenja_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>Obaveštenja</Bold>
+        </Button>
+
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="167,214,532,477" Click="Termini_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>Termini pregleda</Bold>
+        </Button>
+
+        <Button Background="FloralWhite" Margin="356,643,343,48" Click="Nazad_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>Nazad</Bold>
+        </Button>
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="532,214,167,477" Click="Operacija_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>
+                <Run Text="Hitna operacija"/>
+            </Bold>
+        </Button>
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="167,432,532,259" Click="Naplata_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>
+                <Run Text="Naplaćivanje usluge"/>
+            </Bold>
+        </Button>
+        <Button Background="FloralWhite"  Width="325" Height="77" Margin="532,432,167,259" Click="Stacionarno_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>
+                <Run Text="Stacionarno lečenje"/>
+            </Bold>
+        </Button>
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="356,536,343,155" Click="Transfer_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>
+                <Run Text="Transfer pacijenata"/>
+            </Bold>
+        </Button>
+
+    </Grid>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,13 +15,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
     /// <summary>
     /// Interaction logic for ZakazivanjePregledaSekretar.xaml
     /// </summary>
-    public partial class ZakazivanjePregledaSekretar : Window
+    public partial class ZakazivanjePregledaSekretar : System.Windows.Controls.UserControl
     {
         public static ObservableCollection<Pacijent> SviPacijenti { get; set; }
         public static ObservableCollection<Lekar> SviLekari { get; set; }
@@ -90,8 +92,8 @@ namespace Bolnica.Sekretar.Pregled
 
                 datumi.Clear();
 
-                pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(pom,pom1), idLekara);
-                foreach (Termin t in pomocna)
+                pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
+            foreach (Termin t in pomocna)
                 {
                     nasao = false;
                     foreach (Termin t1 in datumi)
@@ -115,7 +117,7 @@ namespace Bolnica.Sekretar.Pregled
                     DateTime tr1 = pom.AddDays(-7);
                     DateTime tr2 = pom.AddDays(7);
 
-                    pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(tr1,tr2), idLekara);
+                    pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
 
                     foreach (Termin t in pomocna)
                     {
@@ -141,9 +143,11 @@ namespace Bolnica.Sekretar.Pregled
                     }
                     else 
                     {
-                        ZakazivanjePregledaTerminiSekretar zpts = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
-                        zpts.Show();
-                        this.Close();
+                        UserControl usc = null;
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                        usc = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
                     }
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
@@ -172,29 +176,50 @@ namespace Bolnica.Sekretar.Pregled
                     }
                     else
                     {
-                        ZakazivanjePregledaTerminiSekretar zpts = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
-                        zpts.Show();
-                        this.Close();
+                        UserControl usc = null;
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                        usc = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
+                        GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
                     }
                 }
             }
             else
             {
-                ZakazivanjePregledaTerminiSekretar zpts = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
-                zpts.Show();
-                this.Close();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new ZakazivanjePregledaTerminiSekretar(idPacijenta, datumi);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
         }
-
+        public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
+        {
+            return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd, datumDo);
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-
-
-        public static List<Termin> NadjiDatumeUIntervalu(DateTime d1,DateTime d2)
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
-            return RukovanjeTerminima.NadjiTermineUIntervalu(d1, d2);
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

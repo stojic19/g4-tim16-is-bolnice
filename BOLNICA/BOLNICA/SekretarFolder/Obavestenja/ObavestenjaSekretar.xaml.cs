@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.Sekretar.Pregled;
+using Bolnica.SekretarFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +21,7 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for ObavestenjaSekretar.xaml
     /// </summary>
-    public partial class ObavestenjaSekretar : Window
+    public partial class ObavestenjaSekretar : UserControl
     {
         public static ObservableCollection<Obavestenje> SvaObavestenja { get; set; }
         public ObavestenjaSekretar()
@@ -30,19 +32,27 @@ namespace Bolnica
 
             SvaObavestenja = new ObservableCollection<Obavestenje>();
             RukovanjeNalozimaPacijenata.Ucitaj();
-            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.svaObavestenja)//Izmeniti kada je u pitanju personalizacija obavestenja
+            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.svaObavestenja)
             {
-                if (o.IdPrimaoca == "svi")
+                string[] Kategorije = o.IdPrimaoca.Split(' ');
+                foreach (String Kategorija in Kategorije)
                 {
-                    SvaObavestenja.Add(o);
+                    if (Kategorija.Equals("svi")||Kategorija.Equals("pacijenti")||Kategorija.Equals("lekari")||Kategorija.Equals("sekretari")|| Kategorija.Equals("upravnici"))
+                    {
+                        SvaObavestenja.Add(o);
+                        break;
+                    }
                 }
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {    
-            DodavanjeObavestenja dodavanje = new DodavanjeObavestenja();
-            dodavanje.Show();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new DodavanjeObavestenja();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -51,8 +61,12 @@ namespace Bolnica
             {
                 String id = (((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
                 Obavestenje obavestenje = RukovanjeObavestenjimaSekratar.PretraziPoId(id);
-                IzmenaObavestenja izmena = new IzmenaObavestenja(obavestenje.IdObavestenja);
-                izmena.Show();
+
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new IzmenaObavestenja(obavestenje.IdObavestenja);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {
@@ -62,13 +76,14 @@ namespace Bolnica
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            //TO DO: brisanje obaveštenja
-            
+        {          
             if (dataGridObavestenjaSekretar.SelectedIndex != -1)
             {
-                UklanjanjeObavestenja uklanjanje = new UklanjanjeObavestenja(((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
-                uklanjanje.Show();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new UklanjanjeObavestenja(((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
                 MessageBox.Show("Izaberite obavestenje za uklanjanje!");
@@ -77,10 +92,36 @@ namespace Bolnica
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            //TO DO: Povratak na glavni prozor sekretara
-            GlavniProzorSekretar gps = new GlavniProzorSekretar();
-            this.Close();
-            gps.Show();
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Termini_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TerminiPregledaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }
