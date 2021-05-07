@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Bolnica.PacijentFolder.IzvestajSaPregleda"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.PacijentFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="350">
+    <ScrollViewer>
+    <StackPanel Background="White">
+            <Label Width="304">ANAMNEZA</Label>
+            <Border BorderThickness="1" BorderBrush="SlateGray"  Margin="20 0">
+                <TextBlock Height="200" Name="anamneza"  Text="{Binding Anamneza.Dijagnoza}"></TextBlock>
+            </Border>
+
+            <Label Width="304">TERAPIJA</Label>
+            <ListBox x:Name="Lekovi" SelectionMode="Single" Height="175" Width="293"  >
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+
+
+
+                        <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+
+
+                                    <TextBlock  Grid.Column="0" Grid.Row="0" Text="Naziv " />
+                                    <TextBlock  Grid.Column="1" Grid.Row="0" Text="{Binding PreporucenLek.NazivLeka}"/>
+                                    <TextBlock  Grid.Column="0" Grid.Row="1" Text="Jačina " />
+                                    <TextBlock  Grid.Column="1" Grid.Row="1" Text="{Binding PreporucenLek.Jacina}"/>
+
+
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Količina: "/>
+
+                                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Kolicina}"/>
+
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Vreme(h): "/>
+                                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Satnica}"/>
+
+
+
+                                </Grid>
+
+
+
+
+                            </StackPanel>
+
+                        </WrapPanel>
+
+
+
+
+
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+
+
+            </ListBox>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -33,5 +33,16 @@ namespace Bolnica.PacijentFolder
             }
             TerminiUProslosti.ItemsSource = ObavljeniPregledi;
         }
+
+        private void IzvestajSaTermina_Click(object sender, RoutedEventArgs e)
+        {
+            if (TerminiUProslosti.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite termin!");
+                    return;
+            }
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajSaPregleda((Pregled)TerminiUProslosti.SelectedItem));
+        }
     }
 }

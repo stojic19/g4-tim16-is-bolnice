@@ -2649,3 +2649,5 @@ C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\De
 C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
 C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
+C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IzvestajSaPregleda.g.cs
+C:\Users\computer\Desktop\aleksaDodao\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IzvestajSaPregleda.baml
