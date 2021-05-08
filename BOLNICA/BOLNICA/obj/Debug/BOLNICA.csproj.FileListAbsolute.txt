@@ -3007,3 +3007,5 @@ C:\Users\computer\Desktop\aleksa dodao preko mene\g4-tim16-is-bolnice\BOLNICA\Bo
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.baml
 >>>>>>> Stashed changes
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeSastojka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeSastojka.baml

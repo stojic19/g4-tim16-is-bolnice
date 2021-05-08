@@ -1,24 +1,5 @@
 ﻿
 
-<<<<<<< Updated upstream
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\DodavanjeNalogaSekretar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\DodavanjeProstora.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaNalogaSekretar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaProstora.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaTerminaLekar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\IzmenaTerminaPacijent.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\MainWindow.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\OtkazivanjeTerminaLekar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\OtkazivanjeTerminaPacijent.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazNalogaSekretar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazProstora.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazTerminaLekara.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PrikazTerminaPacijent.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UklanjanjeNalogaSekretar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UklanjanjeProstora.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\ZakazivanjeTerminaLekar.xaml;;
-FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\ZakazivanjeTerminaPacijent.xaml;;
-=======
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\LekarGlavniProzor.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\LekoviLekar\BazaLekova.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\LekarFolder\LekoviLekar\IzmenaLeka.xaml;;
@@ -39,6 +20,7 @@ FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFo
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\DodajOpremuProstoru.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\DodavanjeLijeka.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\DodavanjeOpreme.xaml;;
+FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\DodavanjeSastojka.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\IzmenaOpreme.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\IzmjenaLijeka.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\Login.xaml;;
@@ -103,5 +85,4 @@ FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFo
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\UklanjanjeProstora.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\UpravnikFolder\UpravnikGlavniProzor.xaml;;
 FC:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml;;
->>>>>>> Stashed changes
 
