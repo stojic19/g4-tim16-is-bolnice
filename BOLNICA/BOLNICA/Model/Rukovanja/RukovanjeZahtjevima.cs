@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,48 +11,98 @@ namespace Bolnica.Model.Rukovanja
 {
     class RukovanjeZahtjevima
     {
-        public static List<Zahtjev> zahtjevi = new List<Zahtjev>();
+        public static List<Zahtjev> SviZahtevi { get; set; } = new List<Zahtjev>();
         private static String imeFajla = "zahtjevi.xml";
+
         public static bool DodajZahtjev(Zahtjev zahtjev)
         {
 
-            if (zahtjevi.Contains(zahtjev))
+            if (SviZahtevi.Contains(zahtjev))
             {
                 return false;
             }
 
-            zahtjevi.Add(zahtjev);
-            SerijalizacijaZahtjeva();
+            SviZahtevi.Add(zahtjev);
             return true;
         }
 
-        public static List<Zahtjev> SviZahtjevi()
+        public static bool IzmeniLek(Lek noviPodaci)
         {
-            return zahtjevi;
+            foreach (Zahtjev z in SviZahtevi)
+            {
+                if (z.Lijek.IDLeka.Equals(noviPodaci.IDLeka))
+                {
+                    z.Lijek.NazivLeka = noviPodaci.NazivLeka;
+                    z.Lijek.Jacina = noviPodaci.Jacina;
+                    z.Lijek.Kolicina = int.Parse(noviPodaci.Kolicina.ToString());
+                    z.Lijek.Proizvodjac = noviPodaci.Proizvodjac;
+
+                    int indeks = PrikazLijekova.Lijekovi.IndexOf(z.Lijek);
+                    PrikazLijekova.Lijekovi.RemoveAt(indeks);
+                    PrikazLijekova.Lijekovi.Insert(indeks, z.Lijek);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        public static void Verifikuj(Zahtjev zahtjev)
+        public static void UklanjanjeLeka(String idLeka)
         {
-            RukovanjeLijekovima.SviLijekovi().Add(zahtjev.Lijek);
-            SviZahtjevi().Remove(zahtjev);
+            foreach (Zahtjev z in SviZahtevi.ToList())
+            {
+                if (z.Lijek.IDLeka.Equals(idLeka))
+                {
+                    SviZahtevi.Remove(z);
+                    PrikazLijekova.Lijekovi.Remove(z.Lijek);
+                }
+            }
         }
+
+        public static void DodajSastojak(Sastojak sastojak, String idLeka)
+        {
+            foreach (Zahtjev z in SviZahtevi)
+            {
+
+                if (z.Lijek.IDLeka.Equals(idLeka))
+                {
+                    z.Lijek.Sastojci.Add(sastojak);
+                    DetaljiOLijeku.Sastojci.Add(sastojak);
+                    break;
+                }
+            }
+
+        }
+
+        public static Lek pretraziLekPoId(String idLeka)
+        {
+            foreach (Zahtjev z in SviZahtevi)
+            {
+                if (z.Lijek.IDLeka.Equals(idLeka))
+                {
+                    return z.Lijek;
+                }
+            }
+
+            return null;
+        }
+
 
         public static List<Zahtjev> DeserijalizacijaZahtjeva()
         {
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
-                return zahtjevi;
+                return SviZahtevi;
             }
             else
             {
                 FileStream fileStream = File.OpenRead(imeFajla);
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Zahtjev>));
-                zahtjevi = (List<Zahtjev>)xmlSerializer.Deserialize(fileStream);
+                SviZahtevi = (List<Zahtjev>)xmlSerializer.Deserialize(fileStream);
                 fileStream.Close();
-                return zahtjevi;
+                return SviZahtevi;
 
             }
-
 
         }
 
@@ -59,7 +110,7 @@ namespace Bolnica.Model.Rukovanja
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Zahtjev>));
             TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, zahtjevi);
+            xmlSerializer.Serialize(tw, SviZahtevi);
             tw.Close();
 
         }

@@ -5,10 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica"
              mc:Ignorable="d" 
-             d:DesignHeight="385" d:DesignWidth="675">
+             d:DesignHeight="365" d:DesignWidth="675">
     <StackPanel Background="White" Margin="0,0,0,0.4">
-        <Grid Background="LightBlue" Height="390">
-            <Label x:Name="label" Content="ID lijeka:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,31,0,0" Width="82"/>
+        <Grid Background="LightBlue" Height="380">
             <Label x:Name="label1" Content="Naziv lijeka:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,73,0,0" Width="82" RenderTransformOrigin="0.45,4.287"/>
             <Label x:Name="label2" Content="Proizvodjac:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,115,0,0" Width="102" RenderTransformOrigin="0.45,4.287"/>
             <Label x:Name="label3" Content="Sastojci:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="92,164,0,0" Width="82" RenderTransformOrigin="0.45,4.287"/>
@@ -17,10 +16,9 @@
             <Button x:Name="button" Click="Ok_Click" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="185,329,0,0" Height="27"/>
             <Button x:Name="button1" Click="Dodaj_Click" Content="Dodaj sastojak" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="394,329,0,0" Height="27"/>
 
-            <TextBox x:Name="textBoxId" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="203" Margin="211,35,0,0"/>
-            <TextBox x:Name="textBoxNaziv" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="203" Margin="211,73,0,0"/>
-            <TextBox x:Name="textBoxProizvodjac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="203" Margin="211,115,0,0" RenderTransformOrigin="0.513,2.345"/>
-            <CheckBox x:Name="checkBox" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="211,275,0,0" Height="20" Width="14"/>
+             <TextBox x:Name="textBoxNaziv" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="203" Margin="211,73,0,0" IsReadOnly="True"/>
+            <TextBox x:Name="textBoxProizvodjac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="203" Margin="211,115,0,0" RenderTransformOrigin="0.513,2.345" IsReadOnly="True"/>
+            <CheckBox x:Name="checkBox" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="211,275,0,0" Height="20" Width="24" IsEnabled="False"/>
 
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
                   SelectionMode="Single" Margin="211,164,261.2,130" Background="WhiteSmoke"

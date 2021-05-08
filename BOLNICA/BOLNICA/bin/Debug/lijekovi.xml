@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lek>
+    <IDLeka>c483d693-4827-493e-9e7d-929eb5b1737f</IDLeka>
+    <NazivLeka>Paracetamol</NazivLeka>
+    <Jacina>500mg</Jacina>
+    <Kolicina>31231</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s341</Naziv>
+        <Kolicina>231</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s341</Naziv>
+        <Kolicina>231</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>false</Verifikacija>
+    <Zamene />
+  </Lek>
+  <Lek>
+    <IDLeka>fc628d11-06bf-4cf0-a511-424c32e27a8d</IDLeka>
+    <NazivLeka>Paracetamol</NazivLeka>
+    <Jacina>500mg</Jacina>
+    <Kolicina>3141</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s33</Naziv>
+        <Kolicina>231</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s33</Naziv>
+        <Kolicina>231</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s44</Naziv>
+        <Kolicina>32</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s43</Naziv>
+        <Kolicina>32</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>false</Verifikacija>
+    <Zamene />
+  </Lek>
+</ArrayOfLek>

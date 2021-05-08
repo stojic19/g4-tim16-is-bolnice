@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfZahtjev xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Zahtjev>
-    <IdZahtjeva>a1ffeed8-75d9-428c-9bbf-68d5cb850b25</IdZahtjeva>
+    <IdZahtjeva>31b77158-0a3a-41b0-961c-8ec6ea28434a</IdZahtjeva>
     <Lijek>
-      <IDLeka>3246ec0a-d75d-4d12-9802-b9dc285c4559</IDLeka>
-      <NazivLeka>paracetamol</NazivLeka>
+      <IDLeka>fc628d11-06bf-4cf0-a511-424c32e27a8d</IDLeka>
+      <NazivLeka>Paracetamol</NazivLeka>
+      <Jacina>500mg</Jacina>
+      <Kolicina>3141</Kolicina>
+      <Proizvodjac>Biofarm</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>s33</Naziv>
+          <Kolicina>231</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s44</Naziv>
+          <Kolicina>32</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s43</Naziv>
+          <Kolicina>32</Kolicina>
+        </Sastojak>
+      </Sastojci>
+      <Verifikacija>false</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Obradjen>false</Obradjen>
+    <datumSlanja>0001-01-01T00:00:00</datumSlanja>
+  </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>dedec071-fd3c-43fa-a3b2-c055ca403830</IdZahtjeva>
+    <Lijek>
+      <IDLeka>e3b7fb65-3be1-4986-87e7-e8b973662d55</IDLeka>
+      <NazivLeka>Aerius</NazivLeka>
       <Jacina>200mg</Jacina>
-      <Kolicina>22</Kolicina>
-      <Proizvodjac>Galenik</Proizvodjac>
-      <Sastojci />
+      <Kolicina>31</Kolicina>
+      <Proizvodjac>Sism</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>s21</Naziv>
+          <Kolicina>32</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s221</Naziv>
+          <Kolicina>332</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s45</Naziv>
+          <Kolicina>34</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s41</Naziv>
+          <Kolicina>34</Kolicina>
+        </Sastojak>
+      </Sastojci>
       <Verifikacija>false</Verifikacija>
       <Zamene />
     </Lijek>

@@ -7,121 +7,107 @@
         mc:Ignorable="d"
         d:DesignWidth="850" d:DesignHeight="380">
 
-    <ScrollViewer VerticalScrollBarVisibility="Hidden" Background="LightBlue">
-
-        <Grid>
-
-            <Grid.ColumnDefinitions>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0" Background="WhiteSmoke" MaxWidth="700" MaxHeight="850" Width="700" Height="820" VerticalAlignment="Center" HorizontalAlignment="Center"
+    <Grid Grid.Row="0" Background="WhiteSmoke" MaxWidth="700" MaxHeight="850" Width="700" Height="820" VerticalAlignment="Center" HorizontalAlignment="Center"
                           Margin="10,20,1,20">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="110"/>
-                    <RowDefinition Height="220"/>
-                    <RowDefinition Height="210"/>
-                </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="210"/>
+        </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <StackPanel Orientation="Vertical" >
-                        <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <StackPanel Orientation="Vertical" >
+                <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Margin="15,5,10,0"  />
-                        <TextBox Name="datumPregleda"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
+                <TextBox Name="datumPregleda"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
+                <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+
+        <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal">
+
+                    <StackPanel Orientation="Vertical" Margin="5,5,15,5">
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ime" FontWeight="Normal"/>
+                        <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="15,5,5,5">
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezime" FontWeight="Normal"/>
+                        <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
-                        <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    </StackPanel>
                 </StackPanel>
 
-                <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbg" FontWeight="Normal"/>
+                <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
+            </StackPanel>
 
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+        </GroupBox>
 
-                        <StackPanel Orientation="Horizontal">
+        <GroupBox Grid.Row="3" Header="Simptomi i dijagnoza" Width="564" Height="184" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
-                            <StackPanel Orientation="Vertical" Margin="5,5,15,5">
-                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ime" FontWeight="Normal"/>
-                                <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
-
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical" Margin="15,5,5,5">
-                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezime" FontWeight="Normal"/>
-                                <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
-                            </StackPanel>
-
-                        </StackPanel>
-
-                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbg" FontWeight="Normal"/>
-                        <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
-                    </StackPanel>
-
-                </GroupBox>
-
-                <GroupBox Grid.Row="3" Header="Simptomi i dijagnoza" Width="564" Height="184" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
-
-                    <TextBox Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
+            <TextBox Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
-                </GroupBox>
+        </GroupBox>
 
-                <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="184"  Background="LightGray" FontWeight="Bold" FontSize="14">
+        <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="184"  Background="LightGray" FontWeight="Bold" FontSize="14">
 
 
-                    <ListView x:Name="TabelaTerapija" ItemsSource="{Binding Terapije}"  SelectionMode="Single"  Background="WhiteSmoke"
+            <ListView x:Name="TabelaTerapija" ItemsSource="{Binding Terapije}"  SelectionMode="Single"  Background="WhiteSmoke"
                                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  
                                      MinWidth="500" MinHeight="127"  Width="500" Height="127" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <ListView.View>
-                            <GridView>
+                <ListView.View>
+                    <GridView>
 
-                                <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  PreporucenLek.NazivLeka}" Width="200" />
-                                <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="200" />
-                                <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="100"/>
+                        <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  PreporucenLek.NazivLeka}" Width="200" />
+                        <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="200" />
+                        <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="100"/>
 
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </GroupBox>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
 
-                <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
-
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
-
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
-                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
-                            <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                        </StackPanel>
-
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
-                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
-                            <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                        </StackPanel>
-
-                    </StackPanel>
+        <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
 
 
-                </GroupBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
 
-            </Grid>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
+                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
+                    <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
+                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
+                    <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                </StackPanel>
+
+            </StackPanel>
+
+
+        </GroupBox>
+
+    </Grid>
 
 
 
-        </Grid>
-
-    </ScrollViewer>
 </UserControl>
 

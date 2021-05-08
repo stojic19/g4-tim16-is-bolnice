@@ -51,6 +51,7 @@ namespace Bolnica
             RukovanjeObavestenjimaSekratar.Ucitaj();
               //RukovanjeTerminima.InicijalizacijaSTermina();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
+            RukovanjeZahtjevima.DeserijalizacijaZahtjeva();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
 
             RukovanjeOperacijama.PrivremenaInicijalizacijaLekara();

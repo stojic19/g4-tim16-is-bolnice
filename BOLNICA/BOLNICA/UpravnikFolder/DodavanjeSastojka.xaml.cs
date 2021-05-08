@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace Bolnica
     /// </summary>
     public partial class DodavanjeSastojka : Window
     {
-        public DodavanjeSastojka()
+        String IDLeka = null;
+        public DodavanjeSastojka(String idLeka)
         {
             InitializeComponent();
+            IDLeka = idLeka;
         }
 
         private void Odustani_Click(object sender, RoutedEventArgs e)
@@ -34,7 +37,8 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             String nazivSastojka = this.nazivSastojka.Text;
-            foreach (Sastojak sastojak in RukovanjeLijekovima.SviSastojci())
+
+            foreach (Sastojak sastojak in RukovanjeZahtjevima.pretraziLekPoId(IDLeka).Sastojci)
             {
                 if (sastojak.Naziv.Equals(this.nazivSastojka.Text))
                 {
@@ -48,7 +52,10 @@ namespace Bolnica
 
             Sastojak s = new Sastojak(nazivSastojka, kolicina);
 
-            RukovanjeLijekovima.DodajSastojak(s);
+            RukovanjeNeodobrenimLijekovima.DodajSastojak(s, IDLeka);
+
+            RukovanjeZahtjevima.DodajSastojak(s, IDLeka);
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
             this.Close();
 

@@ -28,14 +28,9 @@ namespace Bolnica.LekarFolder
             PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
         }
 
-        private void Povratak(object sender, RoutedEventArgs e) 
+        private void Povratak(object sender, RoutedEventArgs e)
         {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
-
+            Serijalizacije();
             Login prozorLogovanje = new Login();
             prozorLogovanje.Show();
             this.Close();
@@ -44,12 +39,17 @@ namespace Bolnica.LekarFolder
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Serijalizacije();
+
+        }
+
+        private void Serijalizacije()
+        {
             RukovanjeTerminima.SerijalizacijaTermina();
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
             RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
-
         }
 
         public void PromenaPogleda(UserControl userControl)
@@ -63,7 +63,62 @@ namespace Bolnica.LekarFolder
             return PocetniPogled;
         }
 
-        
-        
+        private void PocetnaStrana(object sender, RoutedEventArgs e)
+        {
+            Serijalizacije();
+            this.menu.Visibility = Visibility.Hidden;
+            PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
+        }
+
+        private void PrikazRasporeda(object sender, RoutedEventArgs e)
+        {
+            Serijalizacije();
+            this.menu.Visibility = Visibility.Hidden;
+            PromenaPogleda(new PrikazTerminaLekara(KoriscnickoImeLekara));
+        }
+
+        private void ZakazivanjeTermina(object sender, RoutedEventArgs e)
+        {
+            Serijalizacije();
+            this.menu.Visibility = Visibility.Hidden;
+            PromenaPogleda(new ZakazivanjeTerminaLekar(KoriscnickoImeLekara));
+        }
+
+        private void UtrosenMaterijal(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrikazBaze(object sender, RoutedEventArgs e)
+        {
+            Serijalizacije();
+            this.menu.Visibility = Visibility.Hidden;
+            PromenaPogleda(new BazaLekova(KoriscnickoImeLekara));
+        }
+
+        private void VerifikacijaLekova(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrikazZahtevaOdsustva(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OtvaranjeMenija(object sender, RoutedEventArgs e)
+        {
+            if (this.menu.Visibility == Visibility.Visible)
+            {
+                this.menu.Visibility = Visibility.Hidden;
+            }
+            else { this.menu.Visibility = Visibility.Visible; }
+
+        }
     }
 }

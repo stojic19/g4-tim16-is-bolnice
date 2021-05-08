@@ -17,43 +17,36 @@
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
 
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
 
 
-        <Label Content="ID lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+        <Label Content="Naziv lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True"  Name="IdLijeka" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
-
-        <Label Content="Naziv lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
-
-        <TextBox AcceptsReturn="True"  Name="NazivLijeka" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox AcceptsReturn="True"  Name="NazivLijeka" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
         <Label Content="Jacina lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="1" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True"  Name="Jacina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox AcceptsReturn="True"  Name="Jacina" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
 
         <Label Content="Kolicina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="2" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True" Name="Kolicina" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox AcceptsReturn="True" Name="Kolicina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
         <Label Content="Proizvodjac:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="4" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="3" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
 
-        <TextBox AcceptsReturn="True" Name="Proizvodjac" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox AcceptsReturn="True" Name="Proizvodjac" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="0,22.8,38.8,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,22.8,38.8,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="40.2,22.8,0,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="40.2,22.8,0,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Potvrdi_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
     </Grid>

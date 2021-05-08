@@ -5,11 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
-        Title="Zdravo korporacija" Height="550" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    <Grid Background="LightBlue">
+        Title="Zdravo korporacija" Height="570" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                        BorderThickness="1"
+                        Padding="4,2" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="19" 
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                        BorderThickness="1"
+                        Padding="2" 
+                        BorderBrush="Transparent" 
+                        CornerRadius="2" 
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="LightSkyBlue">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="557*" />
+            <ColumnDefinition Width="286*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -19,30 +70,50 @@
             <RowDefinition Height="28"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Grid.Row="0" Fill="#999999" />
-        <Rectangle Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
-        <Rectangle Grid.Row="4" Fill="#999999" />
-        <Rectangle Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1"/>
+        <Rectangle Grid.Row="0" Fill="#999999" Grid.ColumnSpan="2" Margin="0,0,0.2,0.2" />
+        <Rectangle Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Grid.ColumnSpan="2" Margin="0,0,0.2,0.2"/>
+        <Rectangle Grid.Row="3" Fill="#999999" Grid.ColumnSpan="2" Margin="0,0.2,0.2,-0.2" />
+        <Rectangle Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1" Grid.ColumnSpan="2" Margin="0,0.2,0.2,0"/>
 
-        <Button  Grid.Row="0" Grid.Column="0" Margin="20" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Background="WhiteSmoke" Width="32" Height="32">
+        <Button  Grid.Row="0" Grid.Column="0" Margin="20,22,0,21.2" VerticalContentAlignment="Center"  Background="WhiteSmoke" BorderBrush="Transparent"
+                HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Width="32" Height="32" Style="{StaticResource MyButtonStyle}">
 
-            <Image Source="LekarSlike/Back.png"/>
+            <Image Source="/Slike/LekarSlike/Back.png"/>
 
         </Button>
 
-        
-        <StackPanel Background="LightBlue" Orientation="Horizontal" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,75,0.2,0.2" Grid.RowSpan="2">
 
-            <Image Grid.Column="0" Source="LekarSlike/menu.png" Height="24" Width="24" Margin="5,0,10,0"/>
-            <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
-                   VerticalAlignment="Center" Width="143" Height="30" />
-            <Image Grid.Column="2" Source="LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left"/>
+            <Button Background="Transparent" Style="{StaticResource MenuButton}" Click="OtvaranjeMenija" Margin="5,0,-10,0">
+                <Image Grid.Column="0" Source="/Slike/LekarSlike/menu.png" Height="24" Width="24"/>
+            </Button>
 
+            <Button Background="Transparent" Click="PocetnaStrana" Style="{StaticResource MyButtonStyle}" Margin="20,3">
+
+                <StackPanel Orientation="Horizontal"   >
+                    <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   VerticalAlignment="Center" Width="143" Height="30" Margin="0,0,-10,0"/>
+                    <Image Source="/Slike/LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left" RenderTransformOrigin="-0.708,0.533"/>
+                </StackPanel>
+            </Button>
+            
 
         </StackPanel>
 
-        <Grid Grid.Row="2" x:Name="GlavniProzor" MinHeight="380" Background="LightBlue" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2" Grid.Row="2"  >
+        <Grid x:Name="GlavniProzor" MinHeight="380"/>
+        </ScrollViewer>
+        
+        <Menu Grid.Row="2" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" Background="LightSkyBlue" Visibility="Hidden" VerticalContentAlignment="Center" >
+            <MenuItem Header="Raspored" Height="50" Width="220" Click="PrikazRasporeda" FontSize="15"/>
+            <MenuItem Header="Zakazivanje termina" Height="50" Width="220" FontSize="15" Click="ZakazivanjeTermina"/>
+            <MenuItem Header="Evidencija utrošenog  materijala" Height="50" Width="220" FontSize="15" Click="UtrosenMaterijal"/>
+            <MenuItem Header="Baza lekova" Height="50" Width="220" FontSize="15" Click="PrikazBaze"/>
+            <MenuItem Header="Zahtevi za odobravanje lekova" Height="50" Width="220" FontSize="15" Click="VerifikacijaLekova"/>
+            <MenuItem Header="Zahtevi za odsustvo" Height="50" Width="220" FontSize="15" Click="PrikazZahtevaOdsustva"/>
+            <MenuItem Header="Kreiranjezahtevaza odsustvo" Height="50" Width="220" FontSize="15" Click="MenuItem_Click_6"/>
+        </Menu>
 
+       
     </Grid>
 </Window>

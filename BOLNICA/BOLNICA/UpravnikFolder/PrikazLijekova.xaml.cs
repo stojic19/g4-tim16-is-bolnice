@@ -18,15 +18,10 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PrikazLijekova.xaml
-    /// </summary>
     public partial class PrikazLijekova : UserControl
     {
         public static ObservableCollection<Lek> Lijekovi { get; set; }
         //   public static ObservableCollection<Zahtjev> Zahtjevi { get; set; }
-
-
         public PrikazLijekova()
         {
             InitializeComponent();
@@ -36,12 +31,7 @@ namespace Bolnica
             Lijekovi = new ObservableCollection<Lek>();
             // Zahtjevi = new ObservableCollection<Zahtjev>();
 
-            foreach (Lek l in RukovanjeLijekovima.SviLijekovi())
-            {
-                Lijekovi.Add(l);
-
-            }
-            foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtjevi())
+            foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtevi)
             {
                 Lijekovi.Add(z.Lijek);
 
@@ -76,8 +66,6 @@ namespace Bolnica
 
         private void Uklanjanje_Click(object sender, RoutedEventArgs e)
         {
-
-
             Lek izabranZaBrisanje = (Lek)dataGridLijekovi.SelectedItem;
 
             if (izabranZaBrisanje != null)
@@ -95,7 +83,8 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeLijekovima.SerijalizacijaLijekova();
+            RukovanjeNeodobrenimLijekovima.SerijalizacijaLijekova();
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
         }
 
         private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -111,9 +100,7 @@ namespace Bolnica
             {
 
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-                UserControl usc = null;
-                usc = new DetaljiOLijeku(izabran.IDLeka);
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.IDLeka));
             }
             else
             {

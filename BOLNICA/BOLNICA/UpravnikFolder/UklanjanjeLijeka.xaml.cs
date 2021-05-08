@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for UklanjanjeLijeka.xaml
-    /// </summary>
     public partial class UklanjanjeLijeka : Window
     {
         private string izabran = null;
@@ -35,7 +33,11 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeLijekovima.UkloniLijek(izabran);
+            RukovanjeNeodobrenimLijekovima.UkloniLijek(izabran);
+
+            RukovanjeZahtjevima.UklanjanjeLeka(izabran);
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+              
             this.Close();
         }
     }

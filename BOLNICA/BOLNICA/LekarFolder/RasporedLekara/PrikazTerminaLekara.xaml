@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
         d:DesignHeight="380" d:DesignWidth="850" >
-    <Grid Background="LightBlue">
+    <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

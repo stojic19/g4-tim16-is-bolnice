@@ -44,10 +44,15 @@ namespace Bolnica
 
 
             Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, new List<Sastojak>(), false);
-            RukovanjeLijekovima.DodajLijek(lijek);
+
+
+            RukovanjeNeodobrenimLijekovima.DodajLijek(lijek);
             String idZahtjeva = Guid.NewGuid().ToString();
+
+            
             Zahtjev zahtjev = new Zahtjev(idZahtjeva, lijek, null, DateTime.Today);
             RukovanjeZahtjevima.DodajZahtjev(zahtjev);
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
             this.Close();
 

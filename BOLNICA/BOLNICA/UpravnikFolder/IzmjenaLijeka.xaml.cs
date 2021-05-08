@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for IzmjenaLijeka.xaml
-    /// </summary>
     public partial class IzmjenaLijeka : Window
     {
         String stari = null;
@@ -28,9 +26,8 @@ namespace Bolnica
             InitializeComponent();
 
             stari = id;
-            Lek lijek = RukovanjeLijekovima.pretraziPoId(stari);
+            Lek lijek = RukovanjeZahtjevima.pretraziLekPoId(id);
 
-            IdLijeka.Text = id;
             NazivLijeka.Text = lijek.NazivLeka;
             Jacina.Text = lijek.Jacina;
             Kolicina.Text = lijek.Kolicina.ToString();
@@ -46,17 +43,12 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Lek l in RukovanjeLijekovima.SviLijekovi())
-            {
-                if (l.IDLeka.Equals(this.IdLijeka.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Već postoji evidentiran ID lijeka!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
 
-            Lek lijek = new Lek(IdLijeka.Text, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, new List<Sastojak>(), false);
-            RukovanjeLijekovima.IzmjeniLijek(lijek);
+            Lek lijek = new Lek(stari, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, new List<Sastojak>(), false);
+            RukovanjeNeodobrenimLijekovima.IzmjeniLijek(lijek);
+
+            RukovanjeZahtjevima.IzmeniLek(lijek);
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
             this.Close();
         }

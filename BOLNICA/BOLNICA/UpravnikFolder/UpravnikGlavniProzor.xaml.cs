@@ -34,7 +34,7 @@ namespace Bolnica
             InitializeComponent();
             RukovanjeOpremom.DeserijalizacijaOpreme();
             RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeLijekovima.DeserijalizacijaLijekova();
+            RukovanjeNeodobrenimLijekovima.DeserijalizacijaLijekova();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -76,7 +76,7 @@ namespace Bolnica
         {
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeOpremom.SerijalizacijaOpreme();
-            RukovanjeLijekovima.SerijalizacijaLijekova();
+            RukovanjeNeodobrenimLijekovima.SerijalizacijaLijekova();
         }
     }
 }
