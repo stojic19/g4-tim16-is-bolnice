@@ -69,6 +69,16 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Label Content="Nalozi pacijenata" FontSize="40" HorizontalAlignment="Left" Margin="301,8,0,0" VerticalAlignment="Top" Height="67" Width="332" FontWeight="Bold" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="286.279,-75.034,211.488,154.918" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
 
             <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da uklonite nalog?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
 

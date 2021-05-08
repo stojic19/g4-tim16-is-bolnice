@@ -60,24 +60,36 @@
             </Button>
         </Grid>
         <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
-        <Grid.ColumnDefinitions >
+            <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="60*"/>
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="120*"/>
                 <RowDefinition Height="120*"/>
                 <RowDefinition Height="80*" />
             </Grid.RowDefinitions>
+            <Label Content="Nalozi pacijenata" FontSize="40" HorizontalAlignment="Left" Margin="305,26,0,0" VerticalAlignment="Top" Height="67" Width="332" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="10,0,-50,-352" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="5" RadiusY="5" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Dodavanje alergena:" FontSize="20" HorizontalAlignment="Left" Margin="59,12,0,0" VerticalAlignment="Top" Height="37" Width="186" Grid.Row="1"/>
 
             <Label Content="Odaberite lek:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
             <DataGrid x:Name="dataGridLekSekretar" ItemsSource="{Binding SviLekovi}" IsReadOnly="true"
-                  SelectionMode="Single"  Grid.Column="1" Grid.RowSpan="2" Margin="20,20,20.4,20" Background="WhiteSmoke"
+                  SelectionMode="Single"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Margin="20,40,120,20" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Leka" Binding="{Binding IDLeka}" Width="2*"/>
@@ -86,19 +98,19 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Label Content="Opis reakcije:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="0,10,20,65" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="3" Margin="0,10,20,65" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True" Name="opis" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,10,0,0" Height="95" Width="488" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <TextBox AcceptsReturn="True" Name="opis" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,10,0,0" Height="95" Width="488" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
             <Label Content="Vreme potrebno za pojavu reakcije:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,11,20,64" Height="30" Width="208"/>
+               Grid.Column="0" Grid.Row="4" Margin="0,11,20,64" Height="30" Width="208"/>
 
-            <TextBox AcceptsReturn="True" Name="vreme" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,10,0,0" Height="95" Width="488" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox AcceptsReturn="True" Name="vreme" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,10,0,0" Height="95" Width="488" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
-            <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Odustani" Grid.Column="1" Grid.Row="5"  Margin="0,0,525,79"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="5"  Margin="193,0,0,79"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
         </Grid>

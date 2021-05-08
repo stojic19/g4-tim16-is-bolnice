@@ -68,7 +68,23 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Rectangle Grid.ColumnSpan="2" Fill="cyan" HorizontalAlignment="Left" Height="146" Margin="302,294,0,0" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="340"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="258.06,-61.155,194.059,162.375" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.122"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
 
             <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da otkažete hitnu operaciju?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
 

@@ -70,27 +70,40 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
+            <Label Content="Nalozi pacijenata" FontSize="40" HorizontalAlignment="Left" Margin="305,26,0,0" VerticalAlignment="Top" Height="67" Width="332" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-62,-80,-248" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Evidencija pacijenata:" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="199"/>
             <DataGrid x:Name="dataGridNaloziPacijenata" ItemsSource="{Binding NaloziPacijenata}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20.4,20" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
+                  SelectionMode="Single" Grid.RowSpan="4" Margin="50,0,36,99" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Vrsta naloga" Binding="{Binding VrstaNaloga}"/>
-                    <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}"/>
-                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
-                    <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}"/>
-                    <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja }"/>
-                    <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}"/>
-                    <DataGridTextColumn Header="Adresa stanovanja" Binding="{Binding AdresaStanovanja}"/>
-                    <DataGridTextColumn Header="Kontakt telefon" Binding="{Binding KontaktTelefon}"/>
-                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Vrsta naloga" Binding="{Binding VrstaNaloga}" Width="1.1*"/>
+                    <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}" Width="1.5*"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}"  Width="*"/>
+                    <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
+                    <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja }" Width="1.3*"/>
+                    <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" Width="*"/>
+                    <DataGridTextColumn Header="Adresa stanovanja" Binding="{Binding AdresaStanovanja}" Width="1.5*"/>
+                    <DataGridTextColumn Header="Kontakt telefon" Binding="{Binding KontaktTelefon}" Width="1.4*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                    <DataGridTextColumn Header="Blokiran nalog" Binding="{Binding Blokiran}" Width="1.3*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Column="1" Grid.Row="0" Content="Dodavanje naloga" Margin="34.6,22,36.2,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="Izmena naloga"  Margin="34.6,22,36.2,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje naloga"  Margin="34.6,22,36.2,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="3" Content="Ažuriranje alergena"  Margin="35,24,36,20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Dodavanje naloga" Margin="150,59,468,50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Izmena naloga"  Margin="290,59,327,50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Uklanjanje naloga"  Margin="577,59,40,50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Ažuriranje alergena"  Margin="434,59,183,50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Odblokiraj nalog"  Margin="717,59,98,50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_4"  Background="WhiteSmoke" Grid.ColumnSpan="2"/>
         </Grid>
     </StackPanel>
 </UserControl>

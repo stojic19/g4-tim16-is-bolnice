@@ -62,16 +62,26 @@
         <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
 
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="147*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="89*"/>
+                <RowDefinition Height="148*"/>
+                <RowDefinition Height="148*"/>
+                <RowDefinition Height="147*"/>
             </Grid.RowDefinitions>
-            <Label Content="Termini hitnih operacija" Margin="256,10,262,69" FontSize="40"/>
+            <Label Content="Termini hitnih operacija" Margin="256,10,262,69" FontSize="40" FontWeight="Bold"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="4">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-83,-84,-267" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
 
             <DataGrid x:Name="dataGridTerminiPregleda" ItemsSource="{Binding TerminiHitnihOperacija}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="5" Margin="22,84,18,93" Background="WhiteSmoke"
+                  SelectionMode="Single" Grid.RowSpan="6" Margin="46,100,36,89" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id Termina" Binding="{Binding IdTermina}" Width="2*"/>
@@ -83,8 +93,8 @@
                     <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor.IdProstora}" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button  Grid.Row="4" Content="Zakazivanje operacije" Margin="222,75,506,24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
-            <Button  Grid.Row="4" Content="Otkazivanje operacije"  Margin="466,75,262,24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="5" Content="Zakazivanje operacije" Margin="240,69,488,30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="5" Content="Otkazivanje operacije"  Margin="484,69,244,30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
         </Grid>
     </StackPanel>
 </UserControl>

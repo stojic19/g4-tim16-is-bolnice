@@ -69,22 +69,33 @@
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="160*"/>
             </Grid.RowDefinitions>
+            <Label Content="Termini pregleda" FontSize="40" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,15.349,-88.5,-119.07" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
             <Label Content="Početni datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,17,10,18" Height="30" Width="208"/>
-
-            <DatePicker Name="datumPocetak" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
-
-            <Label Content="Krajnji datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,17,10,18" Height="30" Width="208"/>
 
-            <DatePicker Name="datumKraj" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <DatePicker Name="datumPocetak" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
-            <Button Content="Odustani" Grid.Column="0" Grid.Row="2"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Label Content="Krajnji datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="2" Margin="0,17,10,18" Height="30" Width="208"/>
+
+            <DatePicker Name="datumKraj" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+
+            <Button Content="Odustani" Grid.Column="0" Grid.Row="3"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="2"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="3"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
         </Grid>

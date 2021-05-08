@@ -59,36 +59,48 @@
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>
-        <StackPanel>
-            <Label>TERMINI</Label>
-            <ListBox x:Name="slobodniTerminiLista" SelectionMode="Single" Height="653" Width="944"   >
-                <ListBox.ItemTemplate >
-                    <DataTemplate>
-                        <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <StackPanel  Margin="10"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                                <TextBlock   Text="{Binding Datum}"/>
-                                <TextBlock Text="   -   "></TextBlock>
-                                <TextBlock Text="{Binding PocetnoVreme}"></TextBlock>
-                            </StackPanel>
-                        </WrapPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Grid Background="LightBlue">
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70*"/>
-                    <RowDefinition Height="70*"/>
-                </Grid.RowDefinitions>
-                <Button Content="Odustani" Grid.Column="0" Grid.Row="0"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
+            <Label Content="Termini pregleda" FontSize="40" HorizontalAlignment="Left" Margin="316,10,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,66.349,-88.5,-124.07" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <StackPanel Margin="28,77,0,10">
+                <Label Margin="10,0,0,0">Termini za pomeranje:</Label>
+                <ListBox x:Name="slobodniTerminiLista" SelectionMode="Single" Height="543" Margin="28,0,30,0"   >
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel  Margin="10"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <TextBlock   Text="{Binding Datum}"/>
+                                    <TextBlock Text="   -   "></TextBlock>
+                                    <TextBlock Text="{Binding PocetnoVreme}"></TextBlock>
+                                </StackPanel>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Grid Background="Cyan" Margin="28,0,30,0">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="70*"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="Odustani" Grid.Column="0" Grid.Row="0"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-                <Button Content="Potrvdi" Grid.Column="1" Grid.Row="0"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    <Button Content="Potrvdi" Grid.Column="1" Grid.Row="0"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            </Grid>
-        </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </StackPanel>
 </UserControl>

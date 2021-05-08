@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Model;
@@ -37,13 +38,10 @@ namespace Bolnica
             this.DataContext = this;
 
             SviLekovi = new ObservableCollection<Lek>();
-            SviLekovi.Add(new Lek("L1","Lek 1", "100mg"));
-            SviLekovi.Add(new Lek("L2", "Lek 2", "200mg"));
-            SviLekovi.Add(new Lek("L3", "Lek 3", "300mg"));
-            /*foreach (Lek l in RukovanjeZdravstvenimKartonima.inicijalniLekovi)//Izmeniti kada je u pitanju personalizacija obavestenja
+            foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
             {
-                if()
-            }*/
+                SviLekovi.Add(l);
+            }
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

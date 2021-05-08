@@ -150,14 +150,6 @@ C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.Properties.Resources.resources
 C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.GenerateResource.cache
 C:\Users\Korisnik\Desktop\PROJEKAT sims\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeProstora.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaProstora.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazProstora.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeProstora.baml
 C:\Users\Korisnik\Desktop\projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\Korisnik\Desktop\projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
 C:\Users\Korisnik\Desktop\projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.pdb
@@ -781,27 +773,17 @@ C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\o
 C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PomeranjeSaPrioritetom.baml
 C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazDatumaZaPomeranjeLekar.baml
 C:\Users\computer\Desktop\JelenaPopravila2\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazDatumaZaPomeranjePrioritet.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\KartonLekar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\NovaAnamneza.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Login.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RasporedOpreme.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\AlergeniSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\DodavanjeAlergena.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\IzmenaAlergena.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\DodavanjeNalogaSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\DodavanjeObavestenja.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\DodavanjeRecepta.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\GlavniProzorSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\IzmenaNalogaSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\IzmenaObavestenja.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\IzmenaTerminaLekar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\ObavestenjaSekretar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\OtkazivanjeTerminaLekar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\PrikazNalogaSekretar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\PrikazTerminaLekara.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\UklanjanjeObavestenja.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\UklanjanjeAlergena.g.cs
@@ -811,30 +793,17 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\S
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\TerminiPregledaSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\ZakazivanjePregledaSekretar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikGlavniProzor.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZakazivanjeTerminaLekar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\KartonLekar.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\NovaAnamneza.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Login.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazOpreme.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RasporedOpreme.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\AlergeniSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\DodavanjeAlergena.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\IzmenaAlergena.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\DodavanjeNalogaSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\DodavanjeObavestenja.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\DodavanjeRecepta.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\GlavniProzorSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\IzmenaNalogaSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\IzmenaObavestenja.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\IzmenaTerminaLekar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\ObavestenjaSekretar.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\OtkazivanjeTerminaLekar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\PrikazNalogaSekretar.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\PrikazTerminaLekara.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Obavestenja\UklanjanjeObavestenja.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Alergeni\UklanjanjeAlergena.baml
@@ -844,9 +813,6 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\S
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\TerminiPregledaSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\ZakazivanjePregledaSekretar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeOpreme.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikGlavniProzor.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZakazivanjeTerminaLekar.baml
 C:\Users\computer\Desktop\SIMS NAJNOVIJE\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csprojAssemblyReference.cache
 C:\Users\computer\Desktop\SIMS NAJNOVIJE\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeOpreme.g.cs
 C:\Users\computer\Desktop\SIMS NAJNOVIJE\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmenaOpreme.g.cs
@@ -1204,12 +1170,6 @@ C:\Users\computer\Desktop\SIMS NAJNOVIJE4\g4-tim16-is-bolnice\BOLNICA\Bolnica\ob
 C:\Users\computer\Desktop\SIMS NAJNOVIJE4\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Pacijent\PrikazVremenaTerminaPacijent.baml
 C:\Users\computer\Desktop\SIMS NAJNOVIJE4\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Pacijent\PrikazVremenaZaPomeranjePacijent.baml
 C:\Users\computer\Desktop\SIMS NAJNOVIJE4\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Pacijent\ZakazivanjeSaPrioritetomPacijent.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodajOpremuProstoru.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\InformacijeAnamaneza.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PremjestanjeOpreme.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodajOpremuProstoru.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\InformacijeAnamaneza.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PremjestanjeOpreme.baml
 C:\Users\computer\Desktop\ALEKSA DODAO NOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe.config
 C:\Users\computer\Desktop\ALEKSA DODAO NOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.exe
 C:\Users\computer\Desktop\ALEKSA DODAO NOVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\Bolnica.pdb
@@ -2364,9 +2324,6 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFo
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazVremenaTerminaPacijent.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazVremenaZaPomeranjePacijent.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeLijeka.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmjenaLijeka.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\IzdavanjeUputa.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekarGlavniProzor.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTermina.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IstorijaPregleda.g.cs
@@ -2375,9 +2332,7 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\P
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazKartona.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazDatumaZaPomeranjeLekar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazLijekova.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazTerapijePacijent.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RenoviranjeProstorije.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\GlavniProzorSadrzaj.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\OtkazivanjeTerminaPacijent.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PacijentGlavniProzor.g.cs
@@ -2394,12 +2349,8 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\S
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Operacija\HitnaOperacijaZakazivanje.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Operacija\HitnaOperacijePregled.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\PrikazPregledaSekretar.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeLijeka.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\PowerfulExtensions_4.5.dll
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\DodavanjeLijeka.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\IzmjenaLijeka.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\IzdavanjeUputa.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekarGlavniProzor.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTermina.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IstorijaPregleda.baml
@@ -2408,9 +2359,7 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\P
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazKartona.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazDatumaZaPomeranjeLekar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PrikazLijekova.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazTerapijePacijent.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\RenoviranjeProstorije.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\OtkazivanjeTerminaPacijent.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PacijentGlavniProzor.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PotvrdiPomeranjePacijent.baml
@@ -2421,7 +2370,6 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\P
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazSlobodnihDatumaPacijent.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazVremenaTerminaPacijent.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazVremenaZaPomeranjePacijent.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UklanjanjeLijeka.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\GlavniProzorSadrzaj.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Operacija\HitnaOperacijaOtkazivanje.baml
@@ -2726,3 +2674,75 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolde
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\VerifikacijaLekova.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DetaljiOLijeku.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodajOpremuProstoru.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeLijeka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmenaOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmjenaLijeka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\BazaLekova.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaLeka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\IzmenaTerminaLekar.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\KartonLekar.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\PocetnaStranicaLekar.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\PrikazTerminaLekara.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\VerifikacijaLekova.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IzvestajSaPregleda.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\OcenjivanjeBolnice.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PopuniAnketu.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazAnketa.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PremjestanjeOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazLijekova.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\RasporedOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\RenoviranjeProstorije.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeProstora.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmenaProstora.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazProstora.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeLijeka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeOpreme.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeProstora.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UpravnikGlavniProzor.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DetaljiOLijeku.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodajOpremuProstoru.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeLijeka.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmenaOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmjenaLijeka.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\BazaLekova.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaLeka.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\IzmenaTerminaLekar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\KartonLekar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\PocetnaStranicaLekar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\PrikazTerminaLekara.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\VerifikacijaLekova.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\IzvestajSaPregleda.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\OcenjivanjeBolnice.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PopuniAnketu.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\PrikazAnketa.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PremjestanjeOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazLijekova.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\RasporedOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\RenoviranjeProstorije.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\DodavanjeProstora.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\IzmenaProstora.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\PrikazProstora.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeLijeka.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeOpreme.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeProstora.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UpravnikGlavniProzor.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.baml

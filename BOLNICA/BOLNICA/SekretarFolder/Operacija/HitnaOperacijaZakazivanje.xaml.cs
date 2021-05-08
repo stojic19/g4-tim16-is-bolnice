@@ -151,5 +151,14 @@ namespace Bolnica.SekretarFolder.Operacija
                 e.Handled = true;
             }
         }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new HitnaOperacijaGuestNalog();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
     }
 }

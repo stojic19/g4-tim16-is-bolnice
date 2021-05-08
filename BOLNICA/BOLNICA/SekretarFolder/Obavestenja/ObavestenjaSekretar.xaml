@@ -72,20 +72,29 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Label Content="Obaveštenja" FontSize="40" HorizontalAlignment="Left" Margin="345,10,0,0" VerticalAlignment="Top" Height="67" Width="247" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-83,-66,-267" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Arhiva obaveštenja:" FontSize="20" HorizontalAlignment="Left" Margin="48,80,0,0" VerticalAlignment="Top" Height="67" Width="247"/>
             <DataGrid x:Name="dataGridObavestenjaSekretar" ItemsSource="{Binding SvaObavestenja}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20.4,20" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
+                  SelectionMode="Single" Grid.RowSpan="5" Margin="48,116,50,83" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID obaveštenja" Binding="{Binding IdObavestenja}" Width="2*"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="2*"/>
                     <DataGridTextColumn Header="Naslov" Binding="{Binding Naslov}" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Column="1" Grid.Row="0" Content="Novo obaveštenje" Margin="24,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="Pregled obaveštenja"  Margin="24,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje obaveštenja"  Margin="24,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
-            <Button Grid.Column="1" Grid.Row="3" Content="Nazad"  Margin="24,22" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Novo obaveštenje" Margin="388,77,208,34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Pregledaj"  Margin="214,77,382,34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Obriši"  Margin="560,77,36,34" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
         </Grid>
     </StackPanel>
 </UserControl>

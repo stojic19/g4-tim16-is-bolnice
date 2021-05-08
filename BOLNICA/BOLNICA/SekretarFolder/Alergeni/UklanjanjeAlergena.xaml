@@ -68,6 +68,15 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Label Content="Nalozi pacijenata" FontSize="40" HorizontalAlignment="Left" Margin="305,26,0,0" VerticalAlignment="Top" Height="67" Width="332" FontWeight="Bold" Grid.ColumnSpan="2"/>
+            <Border>
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="288,304,-188,-74" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="5" RadiusY="5" />
+                    </Path.Data>
+                </Path>
+            </Border>
 
             <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da uklonite alergen?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"/>
 

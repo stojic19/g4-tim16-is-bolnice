@@ -29,7 +29,24 @@ namespace Model
         {
             return (this.Ime + " " + this.Prezime);
         }
-
+        public Pacijent(string ime,string prezime,string jmbg,Pol pol)
+        {
+            string korisnickoIme = generisiID();
+            this.KorisnickoIme = korisnickoIme;
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.DatumRodjenja = DateTime.Now;
+            this.Pol = pol;
+            this.AdresaStanovanja = "";
+            this.Jmbg = jmbg;
+            this.KontaktTelefon = "";
+            this.Email = "";
+            this.VrstaNaloga = VrsteNaloga.gost;
+            this.Lozinka = "";
+            this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
+            Zloupotrebio = 0;
+            Blokiran = false;
+        }
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
@@ -68,6 +85,10 @@ namespace Model
                 return "Gost";
             }
             return "Regularan";
+        }
+        public static string generisiID()
+        {
+            return Guid.NewGuid().ToString();
         }
     }
 }

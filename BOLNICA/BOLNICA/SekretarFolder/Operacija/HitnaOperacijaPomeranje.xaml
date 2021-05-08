@@ -60,26 +60,36 @@
             </Button>
         </Grid>
         <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
-            <StackPanel>
-                <Label Margin="58,0,0,0">Termini za pomeranje</Label>
-                <ListBox x:Name="terminiZaPomeranjeLista" SelectionMode="Single" Height="652" Margin="58,0,60,0"   >
+            <Label Content="Zakazivanje hitne operacije" FontSize="40" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,62.5,-72,-135.5" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <StackPanel Margin="0,77,0,10">
+                <Label Margin="58,0,0,0" Content="Termini za pomeranje"/>
+                <ListBox x:Name="terminiZaPomeranjeLista" SelectionMode="Single" Height="567" Margin="58,0,60,0"   >
                     <ListBox.ItemTemplate >
                         <DataTemplate>
                             <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel  Margin="10"  Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                                     <TextBlock   Text="{Binding Key.Datum.Date}"/>
-                                    <TextBlock Text="   -   "></TextBlock>
-                                    <TextBlock Text="{Binding Key.PocetnoVreme}"></TextBlock>
-                                    <TextBlock Text="   -   "></TextBlock>
-                                    <TextBlock   Text="{Binding Key.Lekar.KorisnickoIme}"></TextBlock>
-                                    <TextBlock Text="   -   "></TextBlock>
-                                    <TextBlock   Text="{Binding Value}"></TextBlock>
+                                    <TextBlock Text="   -   "/>
+                                    <TextBlock Text="{Binding Key.PocetnoVreme}"/>
+                                    <TextBlock Text="   -   "/>
+                                    <TextBlock   Text="{Binding Key.Lekar.KorisnickoIme}"/>
+                                    <TextBlock Text="   -   "/>
+                                    <TextBlock   Text="{Binding Value}"/>
                                 </StackPanel>
                             </WrapPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Grid Background="#2b78e4" Margin="58,0,60,0">
+                <Grid Background="Cyan" Margin="58,0,60,0">
                     <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -88,10 +98,10 @@
                         <RowDefinition Height="70*"/>
                         <RowDefinition Height="70*"/>
                     </Grid.RowDefinitions>
-                    <Button Content="Odustani" Grid.Column="0" Grid.Row="0"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    <Button Content="Odustani" Grid.Column="0" Grid.Row="0"  Margin="0,10,45,19"  Width="100" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-                    <Button Content="Potrvdi" Grid.Column="1" Grid.Row="0"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    <Button Content="Potrvdi" Grid.Column="1" Grid.Row="0"  Margin="45,10,0,19"  Width="100" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 </Grid>
             </StackPanel>

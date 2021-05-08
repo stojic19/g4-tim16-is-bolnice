@@ -68,21 +68,31 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Rectangle Fill="cyan" HorizontalAlignment="Left" Height="634" Margin="10,10,0,0" Grid.RowSpan="5" Stroke="Black" VerticalAlignment="Top" Width="922"/>
+            <Label Content="Nalozi pacijenata" FontSize="40" HorizontalAlignment="Left" Margin="305,26,0,0" VerticalAlignment="Top" Height="67" Width="332" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-62,-80,-248" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Alergeni:" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="92"/>
 
             <DataGrid x:Name="dataGridAlergeniPacijenta" ItemsSource="{Binding AlergeniPacijenta}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,20,10" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
+                  SelectionMode="Single" Grid.RowSpan="4" Margin="50,0,29,104" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID leka" Binding="{Binding IdAlergena}" Width="2*"/>
                     <DataGridTextColumn Header="Opis reakcije" Binding="{Binding OpisReakcije}" Width="2*"/>
                     <DataGridTextColumn Header="Vreme ze pojavu reakcije" Binding="{Binding VremeZaPojavu}" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button  Grid.Row="4" Content="Dodaj" Margin="50,0,636,103" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
-            <Button  Grid.Row="4" Content="Izmeni"  Margin="324,0,362,103" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
-            <Button  Grid.Row="4" Content="Ukloni"  Margin="600,0,86,103" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
-            <Button  Grid.Row="4" Content="Nazad"  Margin="281,76.5,405,26.5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="4" Content="Dodaj" Margin="86,55,661,48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="4" Content="Izmeni"  Margin="286,55,461,48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_1"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="4" Content="Ukloni"  Margin="486,55,261,48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_2"  Background="WhiteSmoke"/>
+            <Button  Grid.Row="4" Content="Nazad"  Margin="686,55,61,48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click_3"  Background="WhiteSmoke"/>
         </Grid>
     </StackPanel>
 </UserControl>

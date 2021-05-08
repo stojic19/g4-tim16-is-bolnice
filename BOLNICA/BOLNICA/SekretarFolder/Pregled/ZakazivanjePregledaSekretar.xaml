@@ -74,13 +74,55 @@
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
             </Grid.RowDefinitions>
+            <Label Content="Zakazivanje pregleda" FontSize="40" HorizontalAlignment="Left" Margin="231,5,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-15,-88.5,-69" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,175.5,-88.5,-227.5" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="1.5,333,-90,-419" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,527,-88.5,-473" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
             <Label Content="Odaberite pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,18,10,17" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="1" Margin="0,10,10,42" Height="30" Width="150"/>
 
             <DataGrid x:Name="dataGridPacijenti" ItemsSource="{Binding SviPacijenti}" IsReadOnly="true"
-                  SelectionMode="Single"  Grid.Column="1" Grid.RowSpan="2" Margin="20,20,20,10" Background="WhiteSmoke"
+                  SelectionMode="Single"  Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Margin="20,10,20,0" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}" Width="2*"/>
@@ -91,10 +133,10 @@
             </DataGrid>
 
             <Label Content="Odaberite lekara:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="0,20,10,15" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="5" Margin="0,20,10,15" Height="30" Width="150"/>
 
             <DataGrid x:Name="dataGridLekari" ItemsSource="{Binding SviLekari}" IsReadOnly="true"
-                  SelectionMode="Single"  Grid.Column="1" Grid.RowSpan="2" Grid.Row="2" Margin="20,20,20,10" Background="WhiteSmoke"
+                  SelectionMode="Single"  Grid.Column="1" Grid.RowSpan="3" Grid.Row="5" Margin="20,28,20,57" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}" Width="2*"/>
@@ -105,19 +147,19 @@
             </DataGrid>
 
             <Label Content="Početni datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="4" Margin="0,17,10,18" Height="30" Width="208"/>
+               Grid.Column="0" Grid.Row="3" Margin="0,62,10,72" Height="30" Width="208" Grid.RowSpan="2"/>
 
-            <DatePicker Name="datumPocetak" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <DatePicker Name="datumPocetak" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,62,0,72" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center" Grid.RowSpan="2"  />
 
             <Label Content="Krajnji datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="5" Margin="0,17,10,18" Height="30" Width="208"/>
+               Grid.Column="0" Grid.Row="4" Margin="0,17,10,18" Height="30" Width="208"/>
 
-            <DatePicker Name="datumKraj" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <DatePicker Name="datumKraj" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
             <Label Content="Prioritet pri zakazivanju:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="6" Margin="0,18,10,17" Height="30" Width="208"/>
+               Grid.Column="0" Grid.Row="7" Margin="0,52,10,0" Height="30" Width="208"/>
 
-            <ComboBox Name="prioritet" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,18.4,0,18" SelectedIndex="0"
+            <ComboBox Name="prioritet" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,52,0,0" SelectedIndex="0"
                    Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
 
                 <ComboBoxItem HorizontalAlignment="Left">Lekar</ComboBoxItem>
@@ -125,11 +167,13 @@
 
             </ComboBox>
 
-            <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="0,20,45,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Odustani" Grid.Column="1" Grid.Row="8"  Margin="0,28,519,24"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="45,20,0,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="8"  Margin="199,28,0,24"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <Label Content="Odaberite period u kom želite da zakažete pregled:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                Grid.Column="0" Grid.Row="3" Margin="0,27,615,25" Height="30" Width="280" Grid.ColumnSpan="2"/>
 
         </Grid>
     </StackPanel>

@@ -99,6 +99,25 @@ namespace Bolnica
                 MessageBox.Show("Izaberite nalog za ažuriranje alergena!");
             }
         }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (dataGridNaloziPacijenata.SelectedIndex != -1)
+            {
+                if (((Pacijent)dataGridNaloziPacijenata.SelectedItem).Blokiran == false)
+                {
+                    MessageBox.Show("Nalog nije blokiran!");
+                    return;
+                }
+                Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
+                p.Blokiran = false;
+                p.Zloupotrebio = 0;
+                RukovanjeNalozimaPacijenata.Sacuvaj();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite nalog koji želite da odblokirate!");
+            }
+        }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

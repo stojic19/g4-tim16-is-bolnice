@@ -12,6 +12,7 @@
         <TextBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Name="username" Height="31" Margin="445,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
         <Button Content="Potvrdi"  Click="Button_Click" HorizontalAlignment="Left" Height="51" Margin="462,459,0,0" VerticalAlignment="Top" Width="122"/>
         <PasswordBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Name="password" Margin="445,405,0,0" VerticalAlignment="Top" Width="238" Height="31"/>
-        <Image Source="/Slike/Sekretar/Ikonice/zdravo.jpg" HorizontalAlignment="Left" Height="146" Margin="462,189,0,0" VerticalAlignment="Top" Width="130"/>
+        <Image Source="/Slike/Sekretar/Ikonice/zdravo.jpg" HorizontalAlignment="Left" Height="146" Margin="462,131,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Zdravo klinika" FontSize="40" HorizontalAlignment="Left" Margin="380,277,0,0" VerticalAlignment="Top" Height="58" Width="285" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -61,53 +61,65 @@
         </Grid>
         <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
             <Grid.ColumnDefinitions >
-                <ColumnDefinition />
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="60*"/>
                 <RowDefinition Height="60*"/>
-                <RowDefinition Height="70*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="80*"/>
                 <RowDefinition Height="60*"/>
                 <RowDefinition Height="120*"/>
-                <RowDefinition Height="80*"/>
+                <RowDefinition Height="60*"/>
             </Grid.RowDefinitions>
 
+            <Label Content="Obaveštenja" FontSize="40" HorizontalAlignment="Left" Margin="345,10,0,0" VerticalAlignment="Top" Height="67" Width="247" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="10,-15,-50,-475" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+
             <Label Content="ID obaveštenja:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
-
-            <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
-            <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <DatePicker Name="datum" IsEnabled="False" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-            <Label Content="Kategorije primalaca:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <DatePicker Name="datum" IsEnabled="False" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+
+            <Label Content="Kategorije primalaca:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="3" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="4" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
+
+            <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
             <Label Content="Tekst:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="4" Margin="0,25,20,78" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="5" Margin="0,25,20,78" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,25,0,22" Height="86" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,44,0,10" Height="116" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
-            <Button Content="Odustani" Grid.Column="0" Grid.Row="5"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Button Content="Odustani" Grid.Column="0" Grid.Row="6"  Margin="0,26,541,32"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
 
-            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="5"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            
-            <CheckBox Name="cbSvi" Content="Svi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-            <CheckBox Name="cbPacijenti" Content="Pacijenti" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-            <CheckBox Name="cbLekari" Content="Lekari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,50,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-            <CheckBox Name="cbSekretari" Content="Sekretari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,70,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-            <CheckBox Name="cbUpravnici" Content="Upravnici" Grid.Column="1" HorizontalAlignment="Left" Margin="20,90,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Button Content="Potrvdi" Grid.Column="1" Grid.Row="6"  Margin="115,26,0,32"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            <CheckBox Name="cbSvi" Content="Svi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <CheckBox Name="cbPacijenti" Content="Pacijenti" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <CheckBox Name="cbLekari" Content="Lekari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,50,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <CheckBox Name="cbSekretari" Content="Sekretari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,70,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <CheckBox Name="cbUpravnici" Content="Upravnici" Grid.Column="1" HorizontalAlignment="Left" Margin="20,90,0,0" Grid.Row="3" VerticalAlignment="Top"/>
 
         </Grid>
     </StackPanel>
