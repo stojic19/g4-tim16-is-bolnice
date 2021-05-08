@@ -23,9 +23,9 @@ namespace Bolnica
     public partial class UklanjanjeObavestenja : UserControl
     {
         String izabran = null;
-        public UklanjanjeObavestenja(String idTermina)
+        public UklanjanjeObavestenja(String idObavestenja)
         {
-            izabran = idTermina;
+            izabran = idObavestenja;
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,7 +39,6 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             RukovanjeObavestenjimaSekratar.UkolniObavestenje(izabran);
 
             UserControl usc = null;

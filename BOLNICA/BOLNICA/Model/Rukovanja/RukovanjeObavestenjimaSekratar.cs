@@ -16,20 +16,16 @@ namespace Model
       private static String imeFajla = "obavestenja.xml";
       public static List<Obavestenje> svaObavestenja = new List<Obavestenje>();
       
-      public static Obavestenje DodajObavestenje(Obavestenje o)
+      public static Obavestenje DodajObavestenje(Obavestenje obavestenje)
       {
-            svaObavestenja.Add(o);
-            ObavestenjaSekretar.SvaObavestenja.Add(o);
+            svaObavestenja.Add(obavestenje);
+            ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
 
-            foreach (Obavestenje oba in svaObavestenja)
-            {
-                Console.WriteLine(oba.IdObavestenja);
-            }
             Sacuvaj();
 
-            if (svaObavestenja.Contains(o))
+            if (svaObavestenja.Contains(obavestenje))
             {
-                return o;
+                return obavestenje;
             }
             else
             {
@@ -37,15 +33,15 @@ namespace Model
             }
         }
 
-        public static Obavestenje DodajObavestenjePacijentu(Obavestenje o)
+        public static Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
         {
-            svaObavestenja.Add(o);
+            svaObavestenja.Add(obavestenje);
 
             Sacuvaj();
 
-            if (svaObavestenja.Contains(o))
+            if (svaObavestenja.Contains(obavestenje))
             {
-                return o;
+                return obavestenje;
             }
             else
             {
@@ -53,48 +49,51 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniObavestenje(Obavestenje o)
-      {
-           Obavestenje o1 = PretraziPoId(o.IdObavestenja);
+        public static Boolean IzmeniObavestenje(Obavestenje obavestenje)
+        {
+            Obavestenje obavestenjeAzurirano = PretraziPoId(obavestenje.IdObavestenja);
 
-            o1.Naslov = o.Naslov;
-            o1.Tekst = o.Tekst;
+            obavestenjeAzurirano.Naslov = obavestenje.Naslov;
+            obavestenjeAzurirano.Tekst = obavestenje.Tekst;
+            obavestenjeAzurirano.IdPrimaoca = obavestenje.IdPrimaoca;
 
-            int indeks = ObavestenjaSekretar.SvaObavestenja.IndexOf(o1);
-            ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
-            ObavestenjaSekretar.SvaObavestenja.Insert(indeks, o1);
+            AzurirajObavestenjeUPrikazu(obavestenjeAzurirano);
 
             Sacuvaj();
 
             return true;
         }
-      
-      public static Boolean UkolniObavestenje(String idObavestenja)
-      {
-            Obavestenje o = PretraziPoId(idObavestenja);
 
-            if (o == null)
+        private static void AzurirajObavestenjeUPrikazu(Obavestenje obavestenje)
+        {
+            int indeks = ObavestenjaSekretar.SvaObavestenja.IndexOf(obavestenje);
+            ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
+            ObavestenjaSekretar.SvaObavestenja.Insert(indeks, obavestenje);
+        }
+
+        public static Boolean UkolniObavestenje(String idObavestenja)
+        {
+            Obavestenje obavestenje = PretraziPoId(idObavestenja);
+
+            if (obavestenje == null)
             {
                 return false;
             }
 
-            svaObavestenja.Remove(o);
-            ObavestenjaSekretar.SvaObavestenja.Remove(o);
+            svaObavestenja.Remove(obavestenje);
+            ObavestenjaSekretar.SvaObavestenja.Remove(obavestenje);
 
             Sacuvaj();
 
-            if (svaObavestenja.Contains(o) || ObavestenjaSekretar.SvaObavestenja.Contains(o))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return !DaLiListeSadrzeObavestenje(obavestenje);
         }
-      
-      public static Obavestenje PretraziPoId(String idObavestenja)
-      {
+        private static bool DaLiListeSadrzeObavestenje(Obavestenje obavestenje)
+        {
+            return svaObavestenja.Contains(obavestenje) || ObavestenjaSekretar.SvaObavestenja.Contains(obavestenje);
+        }
+
+        public static Obavestenje PretraziPoId(String idObavestenja)
+        {
             foreach (Obavestenje o in svaObavestenja)
             {
                 if (o.IdObavestenja.Equals(idObavestenja))
@@ -109,7 +108,6 @@ namespace Model
       {
             return svaObavestenja;
       }
-
         public static List<Obavestenje> Ucitaj()
         {
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
@@ -125,7 +123,6 @@ namespace Model
                 return svaObavestenja;
             }
         }
-
         public static void Sacuvaj()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));

@@ -170,31 +170,28 @@ namespace Model
         public static Boolean OtkaziPregledSekretar(String idTermina)
         {
 
-            Termin t = PretraziPoId(idTermina);
+            Termin termin = PretraziPoId(idTermina);
 
-            if (t == null)
+            if (termin == null)
             {
                 return false;
             }
 
-            sviTermini.Remove(t);
-            t.Pacijent = null;
-            slobodniTermini.Add(t);
-            TerminiPregledaSekretar.TerminiPregleda.Remove(t);
+            sviTermini.Remove(termin);
+            termin.Pacijent = null;
+            slobodniTermini.Add(termin);
+            TerminiPregledaSekretar.TerminiPregleda.Remove(termin);
 
             SerijalizacijaSlobodnihTermina();
             SerijalizacijaTermina();
 
-            if (sviTermini.Contains(t) || TerminiPregledaSekretar.TerminiPregleda.Contains(t))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return !DaLiListeSadrzeTerminSekretar(termin);
         }
-        
+
+        private static bool DaLiListeSadrzeTerminSekretar(Termin termin)
+        {
+            return sviTermini.Contains(termin) || TerminiPregledaSekretar.TerminiPregleda.Contains(termin);
+        }
 
         public static Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik)
         {

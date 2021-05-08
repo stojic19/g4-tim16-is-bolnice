@@ -46,38 +46,13 @@ namespace Bolnica.Sekretar.Pregled
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //Verifikacije
-            String idPacijenta = null;
-            if (dataGridPacijenti.SelectedIndex != -1)
+        { 
+            if (!PodaciPravilnoUneti())
             {
-                idPacijenta = (((Pacijent)dataGridPacijenti.SelectedItem).KorisnickoIme);
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Izaberite pacijenta!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            String idLekara = null;
-            if (dataGridLekari.SelectedIndex != -1)
-            {
-                idLekara = (((Lekar)dataGridLekari.SelectedItem).KorisnickoIme);
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Izaberite lekara!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if(!datumPocetak.SelectedDate.HasValue)
-            {
-                System.Windows.Forms.MessageBox.Show("Izaberite početni datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!datumKraj.SelectedDate.HasValue)
-            {
-                System.Windows.Forms.MessageBox.Show("Izaberite krajnji datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            String idPacijenta = (((Pacijent)dataGridPacijenti.SelectedItem).KorisnickoIme);
+            String idLekara = (((Lekar)dataGridLekari.SelectedItem).KorisnickoIme);
 
             List<Termin> datumi = new List<Termin>();
 
@@ -193,6 +168,32 @@ namespace Bolnica.Sekretar.Pregled
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
         }
+
+        private bool PodaciPravilnoUneti()
+        {
+            if (dataGridPacijenti.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite pacijenta!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (dataGridLekari.SelectedIndex == -1)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite lekara!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!datumPocetak.SelectedDate.HasValue)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite početni datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!datumKraj.SelectedDate.HasValue)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite krajnji datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
             return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd, datumDo);

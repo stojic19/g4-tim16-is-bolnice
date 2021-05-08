@@ -54,48 +54,11 @@ namespace Bolnica
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (naslov.Text.Equals(""))
+            if (!PodaciPraviloUneti())
             {
-                System.Windows.Forms.MessageBox.Show("Morate uneti naslov obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (tekst.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti tekst obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (cbSvi.IsChecked==false && cbPacijenti.IsChecked == false && cbLekari.IsChecked == false && cbSekretari.IsChecked == false && cbUpravnici.IsChecked == false)
-            {
-                System.Windows.Forms.MessageBox.Show("Morate odabrati bar jednu kategoriju!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (cbSvi.IsChecked == true)
-            {
-                Obavestenje o = new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, "svi");
-                RukovanjeObavestenjimaSekratar.DodajObavestenje(o);
-            }
-            else
-            {
-                String kategorije = "";
-                if(cbPacijenti.IsChecked == true)
-                {
-                    kategorije += " pacijenti";
-                }
-                if (cbLekari.IsChecked == true)
-                {
-                    kategorije += " lekari";
-                }
-                if (cbSekretari.IsChecked == true)
-                {
-                    kategorije += " sekretari";
-                }
-                if (cbUpravnici.IsChecked == true)
-                {
-                    kategorije += " upravnici";
-                }
-                Obavestenje o = new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, kategorije);
-                RukovanjeObavestenjimaSekratar.DodajObavestenje(o);
-            }
+            RukovanjeObavestenjimaSekratar.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -104,6 +67,51 @@ namespace Bolnica
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
+        private string DobaviIzabraneKategorije()
+        {
+            String kategorije = "";
+            if (cbSvi.IsChecked == true)
+            {
+                return "svi";
+            }
+            if (cbPacijenti.IsChecked == true)
+            {
+                kategorije += " pacijenti";
+            }
+            if (cbLekari.IsChecked == true)
+            {
+                kategorije += " lekari";
+            }
+            if (cbSekretari.IsChecked == true)
+            {
+                kategorije += " sekretari";
+            }
+            if (cbUpravnici.IsChecked == true)
+            {
+                kategorije += " upravnici";
+            }
+            return kategorije;
+        }
+
+        private bool PodaciPraviloUneti()
+        {
+            if (naslov.Text.Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate uneti naslov obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (tekst.Text.Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate uneti tekst obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (cbPacijenti.IsChecked == false && cbLekari.IsChecked == false && cbSekretari.IsChecked == false && cbSvi.IsChecked == false && cbUpravnici.IsChecked == false)
+            {
+                System.Windows.Forms.MessageBox.Show("Morate odabrati bar jednu kategoriju!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

@@ -18,11 +18,6 @@ namespace Model
             sviNaloziPacijenata.Add(p);
             PrikazNalogaSekretar.NaloziPacijenata.Add(p);
 
-            foreach (Pacijent pac in sviNaloziPacijenata)
-            {
-                Console.WriteLine(pac.KorisnickoIme);
-            }
-
             Sacuvaj();
 
             if (sviNaloziPacijenata.Contains(p))
@@ -100,6 +95,47 @@ namespace Model
         public static List<Pacijent> SviNalozi()
         {
             return sviNaloziPacijenata;
+        }
+        public static List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
+        {
+            return PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni;
+        }
+        public static Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
+        {
+            PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Remove(alergen);
+            AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
+
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+            return true;
+        }
+        public static Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
+        {
+            foreach (Alergeni a1 in DobaviAlergenePoIdPacijenta(idPacijenta))
+            {
+                if (a1.IdAlergena.Equals(alergen.IdAlergena))
+                {
+                    a1.OpisReakcije = alergen.OpisReakcije;
+                    a1.VremeZaPojavu = alergen.VremeZaPojavu;
+                    AzurirajPrikazAlergena(a1);
+
+                    RukovanjeNalozimaPacijenata.Sacuvaj();
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
+        {
+            RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Add(alergen);
+            AlergeniSekretar.AlergeniPacijenta.Add(alergen);
+            RukovanjeNalozimaPacijenata.Sacuvaj();
+            return true;
+        }
+        private static void AzurirajPrikazAlergena(Alergeni a1)
+        {
+            int indeks = AlergeniSekretar.AlergeniPacijenta.IndexOf(a1);
+            AlergeniSekretar.AlergeniPacijenta.RemoveAt(indeks);
+            AlergeniSekretar.AlergeniPacijenta.Insert(indeks, a1);
         }
 
         public static List<Pacijent> Ucitaj()

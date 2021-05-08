@@ -51,23 +51,11 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            String IdTermina = ((Termin)slobodniTerminiLista.SelectedItem).IdTermina;
-            Termin termin = new Termin();
-            bool postoji = false;
-            foreach(Termin t in RukovanjeTerminima.slobodniTermini)
+            Termin termin = TerminIdaljeSlobodan();
+            if(termin == null)
             {
-                if(t.IdTermina.Equals(IdTermina))
-                {
-                    termin = t;
-                    postoji = true;
-                    break;
-                }
-            }
-            if(!postoji)
-            {
-                System.Windows.Forms.MessageBox.Show("Odabrani termin je u međuvremenu zauzet!", "Odaberite drugi datum", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }    
             termin.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(IdPacijenta);
             RukovanjeTerminima.ZakaziPregledSekretar(termin);
 
@@ -77,6 +65,28 @@ namespace Bolnica.Sekretar.Pregled
             usc = new GlavniProzorSadrzaj();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
+
+        private Termin TerminIdaljeSlobodan()
+        {
+            bool postoji = false;
+            Termin termin = new Termin();
+            foreach (Termin t in RukovanjeTerminima.slobodniTermini)
+            {
+                if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
+                {
+                    termin = t;
+                    postoji = true;
+                    break;
+                }
+            }
+            if (!postoji)
+            {
+                System.Windows.Forms.MessageBox.Show("Odabrani termin je u međuvremenu zauzet!", "Odaberite drugi datum", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            return termin;
+        }
+
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

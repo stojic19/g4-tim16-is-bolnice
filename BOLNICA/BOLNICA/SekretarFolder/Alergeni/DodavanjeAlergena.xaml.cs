@@ -45,6 +45,22 @@ namespace Bolnica
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if(!IspravniUnetiPodaci())
+            {
+                return;
+            }
+
+            RukovanjeNalozimaPacijenata.DodajAlergen(izabran, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
+
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new AlergeniSekretar(izabran);
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+
+        private bool IspravniUnetiPodaci()
+        {
             String idLeka = null;
             if (dataGridLekSekretar.SelectedIndex != -1)
             {
@@ -53,38 +69,27 @@ namespace Bolnica
             else
             {
                 System.Windows.Forms.MessageBox.Show("Izaberite lek!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
-            foreach(Alergeni ale in RukovanjeNalozimaPacijenata.PretraziPoId(izabran).ZdravstveniKarton.Alergeni)
+            foreach (Alergeni ale in RukovanjeNalozimaPacijenata.PretraziPoId(izabran).ZdravstveniKarton.Alergeni)
             {
-                if(ale.IdAlergena.Equals(idLeka))
+                if (ale.IdAlergena.Equals(idLeka))
                 {
                     System.Windows.Forms.MessageBox.Show("Izabrani lek već postoji u alergenima!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }    
+                    return false;
+                }
             }
             if (vreme.Text.Equals(""))
             {
                 System.Windows.Forms.MessageBox.Show("Morate uneti vreme potrebno za pojavu reakcije!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
             if (opis.Text.Equals(""))
             {
                 System.Windows.Forms.MessageBox.Show("Morate uneti opis reaksije!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
-            Alergeni a = new Alergeni(idLeka, opis.Text, vreme.Text);
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
-            p.ZdravstveniKarton.Alergeni.Add(a);
-            //p.ZdravstveniKarton.AddAlergeni(a);
-            AlergeniSekretar.AlergeniPacijenta.Add(a);
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new AlergeniSekretar(izabran);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            return true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

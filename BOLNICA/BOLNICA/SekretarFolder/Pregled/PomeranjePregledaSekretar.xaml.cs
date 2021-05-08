@@ -31,15 +31,8 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Verifikacije
-            if (!datumPocetak.SelectedDate.HasValue)
+            if(!PodaciPravilnoUneti())
             {
-                System.Windows.Forms.MessageBox.Show("Izaberite početni datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!datumKraj.SelectedDate.HasValue)
-            {
-                System.Windows.Forms.MessageBox.Show("Izaberite krajnji datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -102,6 +95,22 @@ namespace Bolnica.Sekretar.Pregled
             }
             */
         }
+
+        private bool PodaciPravilnoUneti()
+        {
+            if (!datumPocetak.SelectedDate.HasValue)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite početni datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (!datumKraj.SelectedDate.HasValue)
+            {
+                System.Windows.Forms.MessageBox.Show("Izaberite krajnji datum!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
             return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd, datumDo);

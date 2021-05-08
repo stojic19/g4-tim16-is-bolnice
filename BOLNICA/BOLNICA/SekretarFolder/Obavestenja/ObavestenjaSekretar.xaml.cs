@@ -32,18 +32,23 @@ namespace Bolnica
 
             SvaObavestenja = new ObservableCollection<Obavestenje>();
             RukovanjeNalozimaPacijenata.Ucitaj();
-            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.svaObavestenja)
+            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.SvaObavestenja())
             {
                 string[] Kategorije = o.IdPrimaoca.Split(' ');
                 foreach (String Kategorija in Kategorije)
                 {
-                    if (Kategorija.Equals("svi")||Kategorija.Equals("pacijenti")||Kategorija.Equals("lekari")||Kategorija.Equals("sekretari")|| Kategorija.Equals("upravnici"))
+                    if (DaLiPripadaNekojOdKategorija(Kategorija))
                     {
                         SvaObavestenja.Add(o);
                         break;
                     }
                 }
             }
+        }
+
+        private static bool DaLiPripadaNekojOdKategorija(string Kategorija)
+        {
+            return Kategorija.Equals("svi") || Kategorija.Equals("pacijenti") || Kategorija.Equals("lekari") || Kategorija.Equals("sekretari") || Kategorija.Equals("upravnici");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

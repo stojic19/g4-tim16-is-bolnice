@@ -41,14 +41,11 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            foreach(Alergeni a in RukovanjeNalozimaPacijenata.PretraziPoId(izabranPacijent).ZdravstveniKarton.Alergeni)
+            foreach(Alergeni a in RukovanjeNalozimaPacijenata.DobaviAlergenePoIdPacijenta(izabranPacijent))
             {
                 if(a.IdAlergena.Equals(izabranAlergen))
                 {
-                    RukovanjeNalozimaPacijenata.PretraziPoId(izabranPacijent).ZdravstveniKarton.Alergeni.Remove(a);
-                    AlergeniSekretar.AlergeniPacijenta.Remove(a);
-
-                    RukovanjeNalozimaPacijenata.Sacuvaj();
+                    RukovanjeNalozimaPacijenata.UkloniAlergen(izabranPacijent, a);
                     break;
                 }
             }

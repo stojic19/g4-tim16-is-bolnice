@@ -25,15 +25,15 @@ namespace Bolnica
     {
         String izabran = null;
         public static ObservableCollection<Alergeni> AlergeniPacijenta { get; set; }
-        public AlergeniSekretar(String id)
+        public AlergeniSekretar(String idPacijenta)
         {
             InitializeComponent();
 
             this.DataContext = this;
-            izabran = id;
+            izabran = idPacijenta;
             AlergeniPacijenta = new ObservableCollection<Alergeni>();
 
-            foreach (Alergeni a in RukovanjeNalozimaPacijenata.PretraziPoId(id).ZdravstveniKarton.Alergeni)
+            foreach (Alergeni a in RukovanjeNalozimaPacijenata.DobaviAlergenePoIdPacijenta(idPacijenta))
             {
                 AlergeniPacijenta.Add(a);
             }

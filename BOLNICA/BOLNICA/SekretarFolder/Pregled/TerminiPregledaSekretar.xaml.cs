@@ -84,10 +84,6 @@ namespace Bolnica.Sekretar.Pregled
                 MessageBox.Show("Izaberite termin za otkazivanje!");
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
