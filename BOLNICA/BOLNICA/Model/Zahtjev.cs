@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    class Zahtjev
+    public class Zahtjev
     {
         public String IdZahtjeva { get; set; }
         public Lek Lijek { get; set; }
-        public bool Odobren { get; set; }
-        public String RazlogOdobrenja { get; set; }
+        public String RazlogOdbijanja { get; set; }
+        public Boolean Obradjen { get; set; }
 
-        public Zahtjev(String idZahtjeva, Lek lijek, String razlogOdobrenja)
+        public Zahtjev(String idZahtjeva, Lek lijek, String razlogOdbijanja)
         {
             IdZahtjeva = idZahtjeva;
             Lijek = lijek;
-            Odobren = false;
-            RazlogOdobrenja = razlogOdobrenja;
+            Lijek.Verifikacija = false;
+            Obradjen = false;
+            RazlogOdbijanja = razlogOdbijanja;
         }
     }
 }

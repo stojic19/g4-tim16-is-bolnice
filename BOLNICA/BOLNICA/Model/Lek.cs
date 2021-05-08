@@ -18,7 +18,7 @@ namespace Model
         public bool Verifikacija { get; set; }
         public List<Lek> Zamene { get; set; } = new List<Lek>();
 
-        public Lek(){}
+        public Lek() { }
 
         public Lek(string iDLeka, string nazivLeka, string jacina)
         {
@@ -39,12 +39,12 @@ namespace Model
             Verifikacija = verifikacija;
         }
 
-        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina)
+        public Lek(string iDLeka, string nazivLeka, string jacina, List<Sastojak> sastojci)
         {
             IDLeka = iDLeka;
             NazivLeka = nazivLeka;
             Jacina = jacina;
-            Kolicina = kolicina;
+            Sastojci = sastojci;
         }
     }
 }

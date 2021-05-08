@@ -19,9 +19,41 @@
         <Naziv>s3</Naziv>
         <Kolicina>300</Kolicina>
       </Sastojak>
+      <Sastojak>
+        <Naziv>s7</Naziv>
+        <Kolicina>2</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s33</Naziv>
+        <Kolicina>4</Kolicina>
+      </Sastojak>
     </Sastojci>
     <Verifikacija>true</Verifikacija>
-    <Zamene />
+    <Zamene>
+      <Lek>
+        <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+        <NazivLeka>Roaccutane</NazivLeka>
+        <Jacina>20mg</Jacina>
+        <Kolicina>432</Kolicina>
+        <Proizvodjac>Biofarm</Proizvodjac>
+        <Sastojci>
+          <Sastojak>
+            <Naziv>s4</Naziv>
+            <Kolicina>4</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s5</Naziv>
+            <Kolicina>5</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s8</Naziv>
+            <Kolicina>2</Kolicina>
+          </Sastojak>
+        </Sastojci>
+        <Verifikacija>true</Verifikacija>
+        <Zamene />
+      </Lek>
+    </Zamene>
   </Lek>
   <Lek>
     <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -37,6 +69,10 @@
       <Sastojak>
         <Naziv>s5</Naziv>
         <Kolicina>5</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s8</Naziv>
+        <Kolicina>2</Kolicina>
       </Sastojak>
     </Sastojci>
     <Verifikacija>true</Verifikacija>
