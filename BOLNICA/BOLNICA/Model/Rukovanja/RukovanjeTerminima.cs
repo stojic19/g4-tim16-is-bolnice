@@ -273,6 +273,9 @@ namespace Model
             PretraziPoId(PrikazRasporedaPacijent.TerminZaPomeranje.IdTermina).Pacijent = null;
             Termin noviTermin = PretraziSlobodnePoId(idTermina);
             noviTermin.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
+            ZameniTermine(noviTermin);
+            OsveziPrikazPoslePomeranja(noviTermin);
+            DetektujZloupotrebuSistema(PacijentGlavniProzor.ulogovani);
         }
 
         public static void ZameniTermine(Termin noviTermin)
@@ -374,7 +377,7 @@ namespace Model
         }
 
 
-        public static bool ProveraNalogaPacijenta(Pacijent pacijent)
+        public static bool DetektujZloupotrebuSistema(Pacijent pacijent)
         {
             int broj = pacijent.Zloupotrebio + 1;
             pacijent.Zloupotrebio = broj;

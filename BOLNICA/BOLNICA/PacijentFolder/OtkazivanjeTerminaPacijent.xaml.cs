@@ -59,7 +59,7 @@ namespace Bolnica
             }
 
             RukovanjeTerminima.OtkaziPregledPacijent(izabran);
-            RukovanjeTerminima.ProveraNalogaPacijenta(PacijentGlavniProzor.ulogovani);
+            RukovanjeTerminima.DetektujZloupotrebuSistema(PacijentGlavniProzor.ulogovani);
             ObavestiPacijenta();
             
             this.Close();

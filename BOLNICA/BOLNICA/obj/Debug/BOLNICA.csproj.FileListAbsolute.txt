@@ -2936,3 +2936,5 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFo
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UklanjanjeProstora.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\UpravnikFolder\UpravnikGlavniProzor.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.baml
+C:\Users\computer\Desktop\aleksa dodao preko mene\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.g.cs
+C:\Users\computer\Desktop\aleksa dodao preko mene\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.baml

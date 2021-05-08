@@ -32,14 +32,11 @@ namespace Bolnica
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
             RukovanjeTerminima.PomeriPregledPacijent(noviTermin.IdTermina);
-            RukovanjeTerminima.ZameniTermine(noviTermin);
-            RukovanjeTerminima.OsveziPrikazPoslePomeranja(noviTermin);
-            RukovanjeTerminima.ProveraNalogaPacijenta(PacijentGlavniProzor.ulogovani);
-            ObavestiPacijenta();
+            ProveriNalogPacijenta();
             PromeniPrikaz(new PrikazRasporedaPacijent());
         }
 
-        private void ObavestiPacijenta()
+        private void ProveriNalogPacijenta()
         {
             if (PacijentGlavniProzor.ulogovani.Blokiran)
                 MessageBox.Show("Ovo je poslednji pomeren termin! Vaš nalog je blokiran.");
