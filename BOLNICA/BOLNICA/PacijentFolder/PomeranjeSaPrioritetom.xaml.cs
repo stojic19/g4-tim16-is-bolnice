@@ -28,7 +28,7 @@ namespace Bolnica
             PodesavanjePrikaza(termin);
         }
 
-        private void PodesavanjePrikaza(Termin termin) 
+        private void PodesavanjePrikaza(Termin termin)
         {
             lekarCombo.SelectedIndex = konstruisiCombo(termin.Lekar.KorisnickoIme);
             datum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -43,63 +43,64 @@ namespace Bolnica
                 MessageBox.Show("Popunite sva polja!");
                 return;
             }
-
             datumiZaIzmenu.Clear();
-            UkloniDupleDatume(RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(), PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme));
+            List<Termin> terminiUIntervalu = NadjiDatumeUIntervalu();
+            List<Termin> terminiKodIzabranog = RukovanjeTerminima.PretraziPoLekaruUIntervalu(terminiUIntervalu, PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme);
 
-            if (datumiZaIzmenu.Count == 0)
-                NadjiDatumeSaPrioritetom(prioritet.SelectedIndex);
-            else
-            { 
-                PrikazDatumaZaPomeranjeLekar pd = new PrikazDatumaZaPomeranjeLekar();
-                PromeniPrikaz(pd);
+            if (terminiKodIzabranog.Count == 0)
+            {
+                NadjiTerminePoPrioritetu(terminiUIntervalu, prioritet.SelectedIndex);
             }
+            else
+            {
+                UbaciDostupneDatume(terminiKodIzabranog);
+                PromeniPrikaz(new PrikazDatumaZaPomeranjeLekar());
+            }
+        }
+        public void NadjiTerminePoPrioritetu(List<Termin> terminiUIntervalu, int prioritet)
+        {
+            if (prioritet == 1 && terminiUIntervalu.Count != 0)
+            {
+                UbaciDostupneDatume(terminiUIntervalu);
+            }
+            else
+            {
+                MessageBox.Show("Nema slobodnih termina!");
+                return;
+            }
+            PromeniPrikaz(new PrikazDatumaZaPomeranjePrioritet());
         }
 
         public void PromeniPrikaz(UserControl userControl)
-        { 
+        {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
 
-        private void NadjiDatumeSaPrioritetom(int prioritet)
-        {
-            if (prioritet == 0)
-                NadjiDatumeKodIzabranogLekara();
-            else if (prioritet == 1)
-                NadjiDatumeKodSvihLekara();
-        }
-
         public static List<Termin> NadjiDatumeUIntervalu()
         {
-            DateTime pocetniDatum = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(-2);
-            DateTime krajnjiDatum = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(2);
-            return RukovanjeTerminima.NadjiTermineUIntervalu(pocetniDatum,krajnjiDatum);
-        }
-        private void NadjiDatumeKodIzabranogLekara()
-        {
-            UkloniDupleDatume(RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumeUIntervalu(), PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme));
-            PromeniPrikaz(new PrikazDatumaZaPomeranjeLekar());
+            DateTime pocetak = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(-2);
+            DateTime kraj = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(2);
+            return RukovanjeTerminima.NadjiTermineUIntervalu(pocetak, kraj);
         }
 
-        private void NadjiDatumeKodSvihLekara()
+        private void UbaciDostupneDatume(List<Termin> datumiZaPomeranje)
         {
-            UkloniDupleDatume(NadjiDatumeUIntervalu());
-            PromeniPrikaz(new PrikazDatumaZaPomeranjePrioritet());
-        }
-
-        private void UkloniDupleDatume(List<Termin> dupliTermini)
-        {
-            foreach (Termin t in dupliTermini.DistinctBy(t => t.Datum))
+            foreach (Termin t in datumiZaPomeranje)
                 datumiZaIzmenu.Add(t);
+
         }
 
-   
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
-           // this.Close();
+            PromeniPrikaz(new PrikazRasporedaPacijent());
         }
+
+
+
+
+
 
         public List<Lekar> lekariOpstePrakse { get; set; }
 
