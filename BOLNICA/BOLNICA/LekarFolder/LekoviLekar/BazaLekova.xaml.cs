@@ -40,6 +40,9 @@ namespace Bolnica.LekarFolder
                 Lekovi.Add(l);
             }
 
+            Sastojci.Clear();
+            Zamenski.Clear();
+
             this.dataGridLekovi.ItemsSource = RukovanjeOdobrenimLekovima.SviLekovi;
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
             view2.Filter = FiltriranjeLeka;
@@ -112,7 +115,14 @@ namespace Bolnica.LekarFolder
            
         private void IzmenaZamena(object sender, RoutedEventArgs e)
         {
+            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
 
+            if (izabranLek != null)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IDLeka, KorisnickoImeLekara));
+
+            }
         }
 
     }

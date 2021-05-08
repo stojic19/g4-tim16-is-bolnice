@@ -47,7 +47,7 @@
             <Label Content="Sastojci:" Margin="5,0"/>
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                  AutoGenerateColumns="False" MinWidth="250" MinHeight="100"   Width="250">
+                  AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv sastojka" Binding="{Binding Naziv}" Width="85*"/>
                     <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="85*"/>
@@ -58,10 +58,10 @@
             <Label Content="Zamenski lekovi:" Margin="5,0"/>
             <DataGrid x:Name="dataGridZamenski" ItemsSource="{Binding Zamenski}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                  AutoGenerateColumns="False" MinWidth="250" MinHeight="100"   Width="250">
+                  AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
-                    <DataGridTextColumn Header="Jacina leka" Binding="{Binding JacinaLeka}" Width="85*"/>
+                    <DataGridTextColumn Header="Jacina leka" Binding="{Binding Jacina}" Width="85*"/>
 
                 </DataGrid.Columns>
             </DataGrid>

@@ -29,15 +29,6 @@ namespace Bolnica.Model.Rukovanja
             return null;
         }
 
-        public static void SerijalizacijaLekova()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, SviLekovi);
-            tw.Close();
-
-        }
-
         public static Boolean IzmenaLeka(Lek noviLek)
         {
 
@@ -45,15 +36,52 @@ namespace Bolnica.Model.Rukovanja
             {
                 if (l.IDLeka.Equals(noviLek.IDLeka))
                 {
-                    l.NazivLeka = noviLek.NazivLeka;
-                    l.Jacina = noviLek.Jacina;
-                    l.Kolicina = l.Kolicina;
+                    KopiranjePodatakaLeka(l, noviLek);
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public static void KopiranjePodatakaLeka(Lek original, Lek noviPodaci)
+        {
+            original.NazivLeka = noviPodaci.NazivLeka;
+            original.Jacina = noviPodaci.Jacina;
+            original.Sastojci.Clear();
+            foreach (Sastojak s in noviPodaci.Sastojci)
+            {
+                original.Sastojci.Add(s);
+            }
+        }
+
+        public static Boolean IzmenaZamenskihLekova(String idLeka, List<Lek> noviZamenski)
+        {
+            foreach (Lek l in SviLekovi)
+            {
+                if (l.IDLeka.Equals(idLeka))
+                {
+                    l.Zamene.Clear();
+                    foreach (Lek zamena in noviZamenski)
+                    {
+                        l.Zamene.Add(zamena);
+                    }
+
                     return true;
                 }
 
             }
 
             return false;
+
+        }
+
+        public static void SerijalizacijaLekova()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
+            TextWriter tw = new StreamWriter(imeFajla);
+            xmlSerializer.Serialize(tw, SviLekovi);
+            tw.Close();
 
         }
 
