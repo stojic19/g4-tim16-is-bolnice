@@ -84,15 +84,15 @@ namespace Bolnica.Model.Rukovanja
             }
 
 
-            return SortirajTerminePoDatumu(anketePacijenta)[0].OcenioBolnicu;
+            return SortirajAnketePoDatumu(anketePacijenta)[0].OcenioBolnicu;
         }
 
-        public static List<Anketa> SortirajTerminePoDatumu(List<Anketa> nesortiraniDatumi)
+        public static List<Anketa> SortirajAnketePoDatumu(List<Anketa> nesortiraniDatumi)
         {
             return nesortiraniDatumi.OrderByDescending(user => user.OcenioBolnicu).ToList();
         }
 
-        public static List<Anketa> UcitajAnkete()
+        public static List<Anketa> DeserijalizacijaAnketa()
         {
             if (!File.Exists(sveAnketeFajl) || File.ReadAllText(sveAnketeFajl).Trim().Equals(""))
             {
@@ -108,7 +108,7 @@ namespace Bolnica.Model.Rukovanja
             }
 
         }
-        public static void UpisiAnkete()
+        public static void SerijalizacijaAnketa()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Anketa>));
             TextWriter tw = new StreamWriter(sveAnketeFajl);

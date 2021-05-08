@@ -39,7 +39,7 @@ namespace Bolnica.PacijentFolder
             }
             predmetAnkete.OcenjenPregled = true;
             RukovanjeAnketama.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now, predmetAnkete, RukovanjeAnketama.pitanjaOPregledu, DodatniKomentar.Text));
-            RukovanjeAnketama.UpisiAnkete();
+            RukovanjeAnketama.SerijalizacijaAnketa();
        
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());

@@ -38,7 +38,7 @@ namespace Bolnica.PacijentFolder
 
             }
             RukovanjeAnketama.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now,null,RukovanjeAnketama.pitanjaOBolnici,DodatniKomentar.Text));
-            RukovanjeAnketama.UpisiAnkete();
+            RukovanjeAnketama.SerijalizacijaAnketa();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());
 
