@@ -53,7 +53,7 @@ namespace Bolnica
                 }
             }
 
-            Lek lijek = new Lek(IdLijeka.Text, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, Sastojci.Text, false);
+            Lek lijek = new Lek(IdLijeka.Text, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, new List<Sastojak>(), false);
             RukovanjeLijekovima.IzmjeniLijek(lijek);
 
             this.Close();

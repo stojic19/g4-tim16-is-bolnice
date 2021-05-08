@@ -34,6 +34,7 @@ namespace Bolnica.LekarFolder
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
 
             Login prozorLogovanje = new Login();
             prozorLogovanje.Show();
@@ -47,6 +48,7 @@ namespace Bolnica.LekarFolder
             RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
             RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
+            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
 
         }
 

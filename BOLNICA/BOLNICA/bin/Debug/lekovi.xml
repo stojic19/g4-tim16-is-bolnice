@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lek>
+    <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+    <NazivLeka>Brufen</NazivLeka>
+    <Jacina>500mg</Jacina>
+    <Kolicina>3232</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s1</Naziv>
+        <Kolicina>100</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s2</Naziv>
+        <Kolicina>200</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s3</Naziv>
+        <Kolicina>300</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>true</Verifikacija>
+    <Zamene />
+  </Lek>
+  <Lek>
+    <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+    <NazivLeka>Roaccutane</NazivLeka>
+    <Jacina>10mg</Jacina>
+    <Kolicina>432</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s4</Naziv>
+        <Kolicina>4</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s5</Naziv>
+        <Kolicina>5</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>true</Verifikacija>
+    <Zamene />
+  </Lek>
+</ArrayOfLek>

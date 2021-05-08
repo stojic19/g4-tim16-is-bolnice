@@ -50,9 +50,9 @@ namespace Bolnica
             String jacina = this.jacina.Text;
             int kolicina = int.Parse(this.kolicinaLijeka.Text);
             String proizvodjac = this.proizvodjac.Text;
-            String sastojci = this.sastojci.Text;
+            //String sastojci = this.sastojci.Text;
 
-            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, sastojci,false);
+            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, new List<Sastojak>(),false);
             Zahtjev zahtjev = new Zahtjev("", lijek, "");
             RukovanjeZahtjevima.DodajZahtjev(zahtjev);
          //   RukovanjeZahtjevima.SerijalizacijaZahtjeva();

@@ -146,7 +146,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
           <Recept>
@@ -160,7 +162,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
         </Recepti>
@@ -186,7 +190,9 @@
                   <NazivLeka>L2</NazivLeka>
                   <Jacina>20mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -212,7 +218,9 @@
                   <NazivLeka>L4</NazivLeka>
                   <Jacina>500mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -301,7 +309,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
           <Recept>
@@ -315,7 +325,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
         </Recepti>
@@ -341,7 +353,9 @@
                   <NazivLeka>L2</NazivLeka>
                   <Jacina>20mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -367,7 +381,9 @@
                   <NazivLeka>L4</NazivLeka>
                   <Jacina>500mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -479,7 +495,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
           <Recept>
@@ -493,7 +511,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
         </Recepti>
@@ -519,7 +539,9 @@
                   <NazivLeka>L2</NazivLeka>
                   <Jacina>20mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -545,7 +567,9 @@
                   <NazivLeka>L4</NazivLeka>
                   <Jacina>500mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -571,7 +595,9 @@
                   <NazivLeka>L3</NazivLeka>
                   <Jacina>200mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -683,7 +709,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
           <Recept>
@@ -697,7 +725,9 @@
               <NazivLeka>L3</NazivLeka>
               <Jacina>200mg</Jacina>
               <Kolicina>0</Kolicina>
-              <JeVerifikovan>false</JeVerifikovan>
+              <Sastojci />
+              <Verifikacija>false</Verifikacija>
+              <Zamene />
             </Lek>
           </Recept>
         </Recepti>
@@ -723,7 +753,9 @@
                   <NazivLeka>L2</NazivLeka>
                   <Jacina>20mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -749,7 +781,9 @@
                   <NazivLeka>L4</NazivLeka>
                   <Jacina>500mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>
@@ -775,7 +809,9 @@
                   <NazivLeka>L3</NazivLeka>
                   <Jacina>200mg</Jacina>
                   <Kolicina>0</Kolicina>
-                  <JeVerifikovan>false</JeVerifikovan>
+                  <Sastojci />
+                  <Verifikacija>false</Verifikacija>
+                  <Zamene />
                 </PreporucenLek>
               </Terapija>
             </Terapije>

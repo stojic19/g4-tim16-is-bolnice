@@ -45,7 +45,8 @@ namespace Bolnica.LekarFolder
 
         private void PrikazLekova(object sender, RoutedEventArgs e)
         {
-
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
         }
     }
 }

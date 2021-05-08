@@ -1,4 +1,6 @@
+using Bolnica.Model;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Model
@@ -10,12 +12,11 @@ namespace Model
         public String Jacina { get; set; }
         public int Kolicina { get; set; }
         public String Proizvodjac { get; set; }
-        public String Sastojci { get; set; }
-        public bool JeVerifikovan { get; set; }
+        public List<Sastojak> Sastojci { get; set; } = new List<Sastojak>();
+        public bool Verifikacija { get; set; }
+        public List<Lek> Zamene { get; set; } = new List<Lek>();
 
-        public Lek()
-        {
-        }
+        public Lek(){}
 
         public Lek(string iDLeka, string nazivLeka, string jacina)
         {
@@ -24,7 +25,8 @@ namespace Model
             Jacina = jacina;
         }
 
-        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, String proizvodjac, String sastojci, bool verifikovan)
+
+        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, string proizvodjac, List<Sastojak> sastojci, bool verifikacija)
         {
             IDLeka = iDLeka;
             NazivLeka = nazivLeka;
@@ -32,9 +34,7 @@ namespace Model
             Kolicina = kolicina;
             Proizvodjac = proizvodjac;
             Sastojci = sastojci;
-            JeVerifikovan = verifikovan;
+            Verifikacija = verifikacija;
         }
-
-
     }
 }

@@ -5,13 +5,13 @@
     <NazivLeka>paracetamol</NazivLeka>
     <Jacina>300mg</Jacina>
     <Kolicina>222</Kolicina>
-    <JeVerifikovan>false</JeVerifikovan>
+    <Verifikacija>false</Verifikacija>
   </Lek>
   <Lek>
     <IDLeka>32eecd0d-eecf-4b16-9745-b7651368a878</IDLeka>
     <NazivLeka>brufen</NazivLeka>
     <Jacina>400mg</Jacina>
     <Kolicina>100</Kolicina>
-    <JeVerifikovan>false</JeVerifikovan>
+    <Verifikacija>false</Verifikacija>
   </Lek>
 </ArrayOfLek>

@@ -29,7 +29,7 @@
                     <DataGridTextColumn Header=" Naziv lijeka" Binding="{Binding NazivLeka}" Width="80*"/>
                     <DataGridTextColumn Header=" Jacina lijeka" Binding="{Binding Jacina}" Width="95*"/>
                     <DataGridTextColumn Header=" Kolicina" Binding="{Binding Kolicina}" Width="67*"/>
-                    <DataGridTextColumn Header=" Je verifikovan" Binding="{Binding JeVerifikovan}" Width="80*"/>
+                    <DataGridTextColumn Header=" Je verifikovan" Binding="{Binding Verifikacija}" Width="80*"/>
 
 
                 </DataGrid.Columns>

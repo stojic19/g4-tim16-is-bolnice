@@ -42,6 +42,7 @@ namespace Bolnica
 
             RukovanjeTerminima.brojac++;
 
+            RukovanjeOdobrenimLekovima.DeserijalizacijaLekova();
             RukovanjeTerminima.DeserijalizacijaTermina();
             RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
             RukovanjePregledima.DeserijalizacijaPregleda();
@@ -52,11 +53,6 @@ namespace Bolnica
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
 
-           foreach(Pregled p in RukovanjePregledima.sviPregledi)
-            {
-                Console.WriteLine(p.Termin.IdTermina);
-
-            }
             RukovanjeOperacijama.PrivremenaInicijalizacijaLekara();
             RukovanjeAnketama.inicijalizujPitanjaOBolnici();
             RukovanjeAnketama.inicijalizujPitanjaOTerminu();

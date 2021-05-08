@@ -85,6 +85,9 @@
     <Compile Include="IzmjenaLijeka.xaml.cs">
       <DependentUpon>IzmjenaLijeka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\BazaLekova.xaml.cs">
+      <DependentUpon>BazaLekova.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,9 @@
     <Compile Include="LekarFolder\PrikazTerminaLekara.xaml.cs">
       <DependentUpon>PrikazTerminaLekara.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\VerifikacijaLekova.xaml.cs">
+      <DependentUpon>VerifikacijaLekova.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\ZakazivanjeIzUputa.xaml.cs">
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
@@ -132,11 +138,13 @@
     <Compile Include="Model\Renoviranje.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeAnketama.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeLijekovima.cs" />
+    <Compile Include="Model\Rukovanja\RukovanjeOdobrenimLekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeZahtjevima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeZdravstvenimKartonima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOperacijama.cs" />
+    <Compile Include="Model\Sastojak.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\Enumi\VrsteOpreme.cs" />
     <Compile Include="Model\Uput.cs" />
@@ -214,7 +222,7 @@
     <Compile Include="Model\Anamneza.cs" />
     <Compile Include="Model\Lek.cs" />
     <Compile Include="Model\Obavestenje.cs" />
-    <Compile Include="Model\Pol.cs" />
+    <Compile Include="Model\Enumi\Pol.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeObavestenjimaSekratar.cs" />
     <Compile Include="PacijentFolder\OtkazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaPacijent.xaml</DependentUpon>
@@ -309,6 +317,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LekarFolder\BazaLekova.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LekarFolder\DodavanjeRecepta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -344,6 +356,10 @@
     <Page Include="LekarFolder\PrikazTerminaLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LekarFolder\VerifikacijaLekova.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LekarFolder\ZakazivanjeIzUputa.xaml">
       <Generator>MSBuild:Compile</Generator>

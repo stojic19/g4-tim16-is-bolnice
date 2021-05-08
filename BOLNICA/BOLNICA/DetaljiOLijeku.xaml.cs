@@ -29,8 +29,8 @@ namespace Bolnica
             textBoxId.Text = izabran.IDLeka;
             textBoxNaziv.Text = izabran.NazivLeka;
             textBoxProizvodjac.Text = izabran.Proizvodjac;
-            textBoxSastojci.Text = izabran.Sastojci;
-            checkBox.IsChecked = izabran.JeVerifikovan;
+            //textBoxSastojci.Text = izabran.Sastojci;
+            checkBox.IsChecked = izabran.Verifikacija;
 
         }
 

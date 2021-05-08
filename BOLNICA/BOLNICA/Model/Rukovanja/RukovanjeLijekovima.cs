@@ -41,7 +41,7 @@ namespace Bolnica.Model
             l.Kolicina = int.Parse(lijek.Kolicina.ToString());
             l.Proizvodjac = lijek.Proizvodjac;
             l.Sastojci = lijek.Sastojci;
-            l.JeVerifikovan = lijek.JeVerifikovan;
+            l.Verifikacija = lijek.Verifikacija;
 
             int indeks = PrikazLijekova.Lijekovi.IndexOf(l);
             PrikazLijekova.Lijekovi.RemoveAt(indeks);
