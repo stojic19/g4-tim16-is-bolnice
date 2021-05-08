@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Izmjena lijeka" Height="500" Width="400" WindowStartupLocation="CenterScreen" >
-    <Grid Background="LightBlue">
+        Title="Izmjena lijeka" Height="460.496" Width="400" WindowStartupLocation="CenterScreen" >
+    <Grid Background="LightBlue" Margin="0,0,-0.4,-0.4">
         <Grid.ColumnDefinitions >
             <ColumnDefinition />
             <ColumnDefinition/>
@@ -18,8 +18,7 @@
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
+
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
 
@@ -50,11 +49,6 @@
                Grid.Column="0" Grid.Row="4" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
 
         <TextBox AcceptsReturn="True" Name="Proizvodjac" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
-        <Label Content="Sastojci:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="5" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
-
-        <TextBox AcceptsReturn="True" Name="Sastojci" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.2,14,0,10.2" Height="87" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.RowSpan="2" />
 
         <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="0,22.8,38.8,22.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>

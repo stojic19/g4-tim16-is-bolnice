@@ -52,6 +52,7 @@ namespace Bolnica.Model.Rukovanja
 
             }
 
+
         }
 
         public static void SerijalizacijaZahtjeva()

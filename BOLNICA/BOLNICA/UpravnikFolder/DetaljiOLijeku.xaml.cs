@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Bolnica
     /// </summary>
     public partial class DetaljiOLijeku : UserControl
     {
+        public static ObservableCollection<Sastojak> Sastojci { get; set; }
         public DetaljiOLijeku(String id)
         {
             InitializeComponent();
@@ -47,5 +49,20 @@ namespace Bolnica
             usc = new PrikazLijekova();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
+
+        private void Dodaj_Click(object sender, RoutedEventArgs e)
+
+        {
+
+            DodavanjeSastojka dodavanje = new DodavanjeSastojka();
+            dodavanje.Show();
+
+        }
+
+        private void dataGridSastojci_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

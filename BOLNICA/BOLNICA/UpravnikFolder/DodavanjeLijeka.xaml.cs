@@ -26,7 +26,7 @@ namespace Bolnica
         public DodavanjeLijeka()
         {
             InitializeComponent();
-            
+
         }
 
         private void Odustani_Click(object sender, RoutedEventArgs e)
@@ -37,25 +37,17 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             String idLijeka = Guid.NewGuid().ToString();
-            foreach (Lek lek in RukovanjeLijekovima.SviLijekovi())
-            {
-                if (lek.IDLeka.Equals(this.idLijeka.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Već postoji uneti Id lijeka!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
             String nazivLeka = this.nazivLijeka.Text;
             String jacina = this.jacina.Text;
             int kolicina = int.Parse(this.kolicinaLijeka.Text);
             String proizvodjac = this.proizvodjac.Text;
-            //String sastojci = this.sastojci.Text;
 
-            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, new List<Sastojak>(),false);
-            Zahtjev zahtjev = new Zahtjev("", lijek, "");
+
+            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, new List<Sastojak>(), false);
+            RukovanjeLijekovima.DodajLijek(lijek);
+            String idZahtjeva = Guid.NewGuid().ToString();
+            Zahtjev zahtjev = new Zahtjev(idZahtjeva, lijek, null, DateTime.Today);
             RukovanjeZahtjevima.DodajZahtjev(zahtjev);
-         //   RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
             this.Close();
 

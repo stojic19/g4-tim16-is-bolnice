@@ -11,16 +11,20 @@ namespace Bolnica.Model
     {
         public String IdZahtjeva { get; set; }
         public Lek Lijek { get; set; }
-        public String RazlogOdbijanja { get; set; }
-        public Boolean Obradjen { get; set; }
+        public bool Obradjen { get; set; }
+        public String RazlogOdobrenja { get; set; }
+        public DateTime datumSlanja { get; set; }
 
-        public Zahtjev(String idZahtjeva, Lek lijek, String razlogOdbijanja)
+
+        public Zahtjev(String idZahtjeva, Lek lijek, String razlogOdobrenja, DateTime datumSlanja)
         {
             IdZahtjeva = idZahtjeva;
             Lijek = lijek;
-            Lijek.Verifikacija = false;
             Obradjen = false;
-            RazlogOdbijanja = razlogOdbijanja;
+            RazlogOdobrenja = razlogOdobrenja;
+            datumSlanja = datumSlanja;
         }
+
+        public Zahtjev() { }
     }
 }

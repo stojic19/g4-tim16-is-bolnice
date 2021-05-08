@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfZahtjev xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Zahtjev>
+    <IdZahtjeva>a1ffeed8-75d9-428c-9bbf-68d5cb850b25</IdZahtjeva>
+    <Lijek>
+      <IDLeka>3246ec0a-d75d-4d12-9802-b9dc285c4559</IDLeka>
+      <NazivLeka>paracetamol</NazivLeka>
+      <Jacina>200mg</Jacina>
+      <Kolicina>22</Kolicina>
+      <Proizvodjac>Galenik</Proizvodjac>
+      <Sastojci />
+      <Verifikacija>false</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Obradjen>false</Obradjen>
+    <datumSlanja>0001-01-01T00:00:00</datumSlanja>
+  </Zahtjev>
+</ArrayOfZahtjev>

@@ -13,8 +13,11 @@ namespace Bolnica.Model
     class RukovanjeLijekovima
     {
         private static String imeFajla = "lijekovi.xml";
+        private static String imeFajla1 = "sastojci.xml";
+
         public static List<Lek> lijekovi = new List<Lek>();
         public static List<Lek> zahtjevi = new List<Lek>();
+        public static List<Sastojak> sastojci = new List<Sastojak>();
 
         public static Lek DodajLijek(Lek lijek)
         {
@@ -31,6 +34,21 @@ namespace Bolnica.Model
             }
         }
 
+        public static Sastojak DodajSastojak(Sastojak sastojak)
+        {
+            sastojci.Add(sastojak);
+            DetaljiOLijeku.Sastojci.Add(sastojak);
+
+            if (sastojci.Contains(sastojak))
+            {
+                return sastojak;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static bool IzmjeniLijek(Lek lijek)
         {
             Lek l = pretraziPoId(lijek.IDLeka);
@@ -40,7 +58,7 @@ namespace Bolnica.Model
             l.Jacina = lijek.Jacina;
             l.Kolicina = int.Parse(lijek.Kolicina.ToString());
             l.Proizvodjac = lijek.Proizvodjac;
-            l.Sastojci = lijek.Sastojci;
+            // l.Sastojci = lijek.Sastojci;
             l.Verifikacija = lijek.Verifikacija;
 
             int indeks = PrikazLijekova.Lijekovi.IndexOf(l);
@@ -88,6 +106,11 @@ namespace Bolnica.Model
             return lijekovi;
         }
 
+        public static List<Sastojak> SviSastojci()
+        {
+            return sastojci;
+        }
+
         public static List<Lek> DeserijalizacijaLijekova()
         {
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
@@ -114,6 +137,33 @@ namespace Bolnica.Model
             tw.Close();
 
         }
+
+        /*public static List<Sastojak> DeserijalizacijaSastojaka()
+        {
+            if (File.ReadAllText(imeFajla1).Trim().Equals(""))
+            {
+                return sastojci;
+            }
+            else
+            {
+                FileStream fileStream = File.OpenRead(imeFajla1);
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sastojak>));
+                sastojci = (List<Sastojak>)xmlSerializer.Deserialize(fileStream);
+                fileStream.Close();
+                return sastojci;
+
+            }
+
+        }
+
+        public static void SerijalizacijaProstoraZaRenoviranje()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Sastojak>));
+            TextWriter tw = new StreamWriter(imeFajla1);
+            xmlSerializer.Serialize(tw, sastojci);
+            tw.Close();
+
+        }*/
 
     }
 }

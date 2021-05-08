@@ -34,6 +34,8 @@ namespace Bolnica
             NazivLijeka.Text = lijek.NazivLeka;
             Jacina.Text = lijek.Jacina;
             Kolicina.Text = lijek.Kolicina.ToString();
+            Proizvodjac.Text = lijek.Proizvodjac;
+
 
 
         }
