@@ -1,9 +1,11 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.LekarFolder.LekoviLekar;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,15 +39,25 @@ namespace Bolnica.LekarFolder
             {
                 Lekovi.Add(l);
             }
+
+            this.dataGridLekovi.ItemsSource = RukovanjeOdobrenimLekovima.SviLekovi;
+            CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
+            view2.Filter = FiltriranjeLeka;
+
         }
 
-        private void pretragaLeka_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
 
         private void IzmenaLeka(object sender, RoutedEventArgs e)
         {
+            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
+
+            if (izabranLek != null)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IDLeka, KorisnickoImeLekara));
+
+            }
+
 
         }
 
@@ -84,5 +96,24 @@ namespace Bolnica.LekarFolder
                 Zamenski.Add(l);
             }
         }
+
+        private bool FiltriranjeLeka(object item)
+        {
+            if (String.IsNullOrEmpty(pretragaLeka.Text))
+                return true;
+            else
+                return ((item as Lek).NazivLeka.IndexOf(pretragaLeka.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void pretragaLeka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource).Refresh();
+        }
+           
+        private void IzmenaZamena(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -38,6 +38,24 @@ namespace Bolnica.Model.Rukovanja
 
         }
 
+        public static Boolean IzmenaLeka(Lek noviLek)
+        {
+
+            foreach (Lek l in SviLekovi)
+            {
+                if (l.IDLeka.Equals(noviLek.IDLeka))
+                {
+                    l.NazivLeka = noviLek.NazivLeka;
+                    l.Jacina = noviLek.Jacina;
+                    l.Kolicina = l.Kolicina;
+                    return true;
+                }
+
+            }
+
+            return false;
+
+        }
 
         public static List<Lek> DeserijalizacijaLekova()
         {

@@ -7,6 +7,8 @@ namespace Model
 {
     public class Lek
     {
+        private double v;
+
         public String IDLeka { get; set; }
         public String NazivLeka { get; set; }
         public String Jacina { get; set; }
@@ -35,6 +37,14 @@ namespace Model
             Proizvodjac = proizvodjac;
             Sastojci = sastojci;
             Verifikacija = verifikacija;
+        }
+
+        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina)
+        {
+            IDLeka = iDLeka;
+            NazivLeka = nazivLeka;
+            Jacina = jacina;
+            Kolicina = kolicina;
         }
     }
 }
