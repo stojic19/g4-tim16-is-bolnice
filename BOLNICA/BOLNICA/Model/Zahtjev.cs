@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Enumi;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +12,17 @@ namespace Bolnica.Model
     {
         public String IdZahtjeva { get; set; }
         public Lek Lijek { get; set; }
-        public bool Obradjen { get; set; }
-        public String RazlogOdobrenja { get; set; }
-        public DateTime datumSlanja { get; set; }
+        public VrsteOdgovora Odgovor { get; set; }
+        public String RazlogOdbijanja { get; set; }
+        public DateTime DatumSlanja { get; set; }
 
 
         public Zahtjev(String idZahtjeva, Lek lijek, String razlogOdobrenja, DateTime datumSlanja)
         {
             IdZahtjeva = idZahtjeva;
             Lijek = lijek;
-            Obradjen = false;
-            RazlogOdobrenja = razlogOdobrenja;
+            Odgovor = VrsteOdgovora.Čekanje;
+            RazlogOdbijanja = razlogOdobrenja;
             datumSlanja = datumSlanja;
         }
 

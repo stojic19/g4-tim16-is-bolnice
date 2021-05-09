@@ -79,6 +79,9 @@
     <Compile Include="LekarFolder\LekoviLekar\IzmenaZamenskihLekova.xaml.cs">
       <DependentUpon>IzmenaZamenskihLekova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\LekoviLekar\OdbijanjeLeka.xaml.cs">
+      <DependentUpon>OdbijanjeLeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\LekoviLekar\VerifikacijaLekova.xaml.cs">
       <DependentUpon>VerifikacijaLekova.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
     <Compile Include="LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml.cs">
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
     <Compile Include="SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
     </Compile>
@@ -320,6 +324,10 @@
     <Page Include="LekarFolder\LekoviLekar\IzmenaZamenskihLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LekarFolder\LekoviLekar\OdbijanjeLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LekarFolder\LekoviLekar\VerifikacijaLekova.xaml">
       <Generator>MSBuild:Compile</Generator>

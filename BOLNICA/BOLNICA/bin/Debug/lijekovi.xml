@@ -20,29 +20,12 @@
     <Zamene />
   </Lek>
   <Lek>
-    <IDLeka>fc628d11-06bf-4cf0-a511-424c32e27a8d</IDLeka>
-    <NazivLeka>Paracetamol</NazivLeka>
-    <Jacina>500mg</Jacina>
-    <Kolicina>3141</Kolicina>
-    <Proizvodjac>Biofarm</Proizvodjac>
-    <Sastojci>
-      <Sastojak>
-        <Naziv>s33</Naziv>
-        <Kolicina>231</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s33</Naziv>
-        <Kolicina>231</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s44</Naziv>
-        <Kolicina>32</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s43</Naziv>
-        <Kolicina>32</Kolicina>
-      </Sastojak>
-    </Sastojci>
+    <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+    <NazivLeka>Aerius</NazivLeka>
+    <Jacina>20mg</Jacina>
+    <Kolicina>3212</Kolicina>
+    <Proizvodjac>Brufesa</Proizvodjac>
+    <Sastojci />
     <Verifikacija>false</Verifikacija>
     <Zamene />
   </Lek>

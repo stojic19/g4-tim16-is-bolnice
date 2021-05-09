@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Bolnica.LekarFolder.LekoviLekar.OdbijanjeLeka"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.LekarFolder.LekoviLekar"
+             mc:Ignorable="d" 
+             d:DesignHeight="388" d:DesignWidth="850">
+    <Grid Background="WhiteSmoke" Width="728" Height="345">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="110*"/>
+            <RowDefinition Height="170*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
+        <Label Content="Odbijanje zahteva za lek" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Background="LightGray" Header="Osnovni podaci o leku">
+            <Grid >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Naziv leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="0" Name="nazivLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0" IsReadOnly="True"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="Jačina leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="jacinaLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0" IsReadOnly="True"/>
+
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Background="LightGray" Header="Razlog odbijanja leka"  Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
+
+            <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
+                  SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  AutoGenerateColumns="False" MinWidth="245" MinHeight="100" MaxHeight="120"  Width="245" Height="127">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Naziv sastojka" Binding="{Binding Naziv}" Width="85*"/>
+                    <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="85*"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </GroupBox>
+
+        <GroupBox Background="LightGray" Header="Razlog odbijanja leka"  Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
+
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+                <TextBox Name="razlogOdbijanja" PreviewMouseDown="razlogOdbijanja_PreviewMouseDown" TextChanged="razlogOdbijanja_TextChanged" MinWidth="245" MinHeight="90" MaxHeight="90"  Width="245" TextWrapping="Wrap" Margin="22,5,21,0" Height="90"/>
+                <Label Content="Niste popunili razlog odbijanja leka!" HorizontalAlignment="Center" Foreground="Red" Margin="44,0" VerticalAlignment="Bottom" Name="validacijaOdbijanja" Visibility="Hidden"/>
+            </StackPanel>
+
+        </GroupBox>
+
+
+        <Button Content="Odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
+        <Button Content="Odbij zahtev" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="Potvrda"/>
+
+    </Grid>
+</UserControl>

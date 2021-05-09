@@ -1,63 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfZahtjev xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Zahtjev>
-    <IdZahtjeva>31b77158-0a3a-41b0-961c-8ec6ea28434a</IdZahtjeva>
+    <IdZahtjeva>d220073a-faaa-474f-8c59-d3694816d14a</IdZahtjeva>
     <Lijek>
-      <IDLeka>fc628d11-06bf-4cf0-a511-424c32e27a8d</IDLeka>
-      <NazivLeka>Paracetamol</NazivLeka>
-      <Jacina>500mg</Jacina>
-      <Kolicina>3141</Kolicina>
+      <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+      <NazivLeka>Buscopan</NazivLeka>
+      <Jacina>100mg</Jacina>
+      <Kolicina>200</Kolicina>
       <Proizvodjac>Biofarm</Proizvodjac>
       <Sastojci>
         <Sastojak>
-          <Naziv>s33</Naziv>
-          <Kolicina>231</Kolicina>
-        </Sastojak>
-        <Sastojak>
-          <Naziv>s44</Naziv>
-          <Kolicina>32</Kolicina>
-        </Sastojak>
-        <Sastojak>
-          <Naziv>s43</Naziv>
-          <Kolicina>32</Kolicina>
+          <Naziv>s341</Naziv>
+          <Kolicina>3221</Kolicina>
         </Sastojak>
       </Sastojci>
-      <Verifikacija>false</Verifikacija>
+      <Verifikacija>true</Verifikacija>
       <Zamene />
     </Lijek>
-    <Obradjen>false</Obradjen>
-    <datumSlanja>0001-01-01T00:00:00</datumSlanja>
+    <Odgovor>Odobren</Odgovor>
+    <DatumSlanja>2021-05-09T03:21:17.4734127+02:00</DatumSlanja>
   </Zahtjev>
   <Zahtjev>
-    <IdZahtjeva>dedec071-fd3c-43fa-a3b2-c055ca403830</IdZahtjeva>
+    <IdZahtjeva>fbcf8133-10c2-41f5-bbba-75ccfe992e8b</IdZahtjeva>
     <Lijek>
-      <IDLeka>e3b7fb65-3be1-4986-87e7-e8b973662d55</IDLeka>
-      <NazivLeka>Aerius</NazivLeka>
-      <Jacina>200mg</Jacina>
-      <Kolicina>31</Kolicina>
-      <Proizvodjac>Sism</Proizvodjac>
+      <IDLeka>bc2ace0c-3d50-4b6b-8374-e61aecdb6e9d</IDLeka>
+      <NazivLeka>Aspirin</NazivLeka>
+      <Jacina>500mg</Jacina>
+      <Kolicina>31231</Kolicina>
+      <Proizvodjac>rajfajzen</Proizvodjac>
       <Sastojci>
         <Sastojak>
-          <Naziv>s21</Naziv>
-          <Kolicina>32</Kolicina>
-        </Sastojak>
-        <Sastojak>
-          <Naziv>s221</Naziv>
-          <Kolicina>332</Kolicina>
-        </Sastojak>
-        <Sastojak>
-          <Naziv>s45</Naziv>
-          <Kolicina>34</Kolicina>
-        </Sastojak>
-        <Sastojak>
-          <Naziv>s41</Naziv>
-          <Kolicina>34</Kolicina>
+          <Naziv>s3</Naziv>
+          <Kolicina>231</Kolicina>
         </Sastojak>
       </Sastojci>
       <Verifikacija>false</Verifikacija>
       <Zamene />
     </Lijek>
-    <Obradjen>false</Obradjen>
-    <datumSlanja>0001-01-01T00:00:00</datumSlanja>
+    <Odgovor>Odbijen</Odgovor>
+    <RazlogOdbijanja>Ne svidja mi se sastav. Cao!</RazlogOdbijanja>
+    <DatumSlanja>2021-05-09T03:21:38.5490598+02:00</DatumSlanja>
+  </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>e1044f45-e9c4-4898-b9c1-2d9d1b2c62a6</IdZahtjeva>
+    <Lijek>
+      <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+      <NazivLeka>Aerius</NazivLeka>
+      <Jacina>20mg</Jacina>
+      <Kolicina>3212</Kolicina>
+      <Proizvodjac>Brufesa</Proizvodjac>
+      <Sastojci />
+      <Verifikacija>true</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Odgovor>Odobren</Odgovor>
+    <DatumSlanja>2021-05-09T04:38:37.2611789+02:00</DatumSlanja>
   </Zahtjev>
 </ArrayOfZahtjev>

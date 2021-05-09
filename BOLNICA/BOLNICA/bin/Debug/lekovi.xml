@@ -78,4 +78,58 @@
     <Verifikacija>true</Verifikacija>
     <Zamene />
   </Lek>
+  <Lek>
+    <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+    <NazivLeka>Buscopan</NazivLeka>
+    <Jacina>100mg</Jacina>
+    <Kolicina>200</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s341</Naziv>
+        <Kolicina>3221</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>true</Verifikacija>
+    <Zamene>
+      <Lek>
+        <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+        <NazivLeka>Roaccutane</NazivLeka>
+        <Jacina>20mg</Jacina>
+        <Kolicina>432</Kolicina>
+        <Proizvodjac>Biofarm</Proizvodjac>
+        <Sastojci>
+          <Sastojak>
+            <Naziv>s4</Naziv>
+            <Kolicina>4</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s5</Naziv>
+            <Kolicina>5</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s8</Naziv>
+            <Kolicina>2</Kolicina>
+          </Sastojak>
+        </Sastojci>
+        <Verifikacija>true</Verifikacija>
+        <Zamene />
+      </Lek>
+    </Zamene>
+  </Lek>
+  <Lek>
+    <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+    <NazivLeka>Aerius</NazivLeka>
+    <Jacina>10mg</Jacina>
+    <Kolicina>3212</Kolicina>
+    <Proizvodjac>Brufesa</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s42</Naziv>
+        <Kolicina>3</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Verifikacija>true</Verifikacija>
+    <Zamene />
+  </Lek>
 </ArrayOfLek>

@@ -14,6 +14,46 @@ namespace Bolnica.Model.Rukovanja
         public static List<Zahtjev> SviZahtevi { get; set; } = new List<Zahtjev>();
         private static String imeFajla = "zahtjevi.xml";
 
+        public static Zahtjev PretraziPoId(String idZahteva)
+        {
+            foreach(Zahtjev z in SviZahtevi)
+            {
+                if (z.IdZahtjeva.Equals(idZahteva))
+                {
+                    return z;
+                }
+            }
+
+            return null;
+        }
+
+        public static void OdobriZahtev(String idZahteva)
+        {
+            foreach(Zahtjev z in SviZahtevi)
+            {
+                if (z.IdZahtjeva.Equals(idZahteva))
+                {
+                    z.Odgovor = Enumi.VrsteOdgovora.Odobren;
+                    z.Lijek.Verifikacija = true;
+                    RukovanjeOdobrenimLekovima.SviLekovi.Add(z.Lijek);
+                }
+            }
+
+        }
+
+        public static void OdbijZahtev(String idZahteva, String razlogOdbijanja)
+        {
+            foreach (Zahtjev z in SviZahtevi)
+            {
+                if (z.IdZahtjeva.Equals(idZahteva))
+                {
+                    z.Odgovor = Enumi.VrsteOdgovora.Odbijen;
+                    z.RazlogOdbijanja = razlogOdbijanja;
+                }
+            }
+
+        }
+
         public static bool DodajZahtjev(Zahtjev zahtjev)
         {
 
@@ -22,6 +62,8 @@ namespace Bolnica.Model.Rukovanja
                 return false;
             }
 
+            zahtjev.DatumSlanja = DateTime.Now;
+            zahtjev.Odgovor = Enumi.VrsteOdgovora.Čekanje;
             SviZahtevi.Add(zahtjev);
             return true;
         }

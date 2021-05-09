@@ -50,7 +50,7 @@ namespace Bolnica
             String idZahtjeva = Guid.NewGuid().ToString();
 
             
-            Zahtjev zahtjev = new Zahtjev(idZahtjeva, lijek, null, DateTime.Today);
+            Zahtjev zahtjev = new Zahtjev(idZahtjeva, lijek, null, DateTime.Now);
             RukovanjeZahtjevima.DodajZahtjev(zahtjev);
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 

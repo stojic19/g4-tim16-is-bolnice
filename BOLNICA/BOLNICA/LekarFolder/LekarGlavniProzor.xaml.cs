@@ -98,7 +98,9 @@ namespace Bolnica.LekarFolder
 
         private void VerifikacijaLekova(object sender, RoutedEventArgs e)
         {
-
+            Serijalizacije();
+            this.menu.Visibility = Visibility.Hidden;
+            PromenaPogleda(new VerifikacijaLekova(KoriscnickoImeLekara));
         }
 
         private void PrikazZahtevaOdsustva(object sender, RoutedEventArgs e)
