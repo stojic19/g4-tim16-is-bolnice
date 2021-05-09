@@ -20,13 +20,11 @@ namespace Bolnica
     public partial class DodajOpremuProstoru : Window
     {
         private List<Oprema> oprema;
-       // private RasporedOpreme raspored;
         private string IdProstora;
-        public DodajOpremuProstoru( string idProstora)
+        public DodajOpremuProstoru(string idProstora)
         {
             InitializeComponent();
             oprema = RukovanjeOpremom.SvaOprema();
-          //  this.raspored = raspored;
             this.DataContext = this;
             IdProstora = idProstora;
         }
@@ -41,38 +39,15 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Oprema opr = (Oprema)dataGridOprema.SelectedItem;
+            Oprema oprema = (Oprema)dataGridOprema.SelectedItem;
             int Kolicina = Int32.Parse(kolicina.Text);
-            if(opr.Kolicina < Kolicina)
+            if (this.kolicina.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Neispravna kolicina !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.MessageBox.Show("Unesite kolicinu!");
                 return;
-            } 
-
-            foreach(Oprema o in RukovanjeOpremom.SvaOprema())
-            {
-                if (o.IdOpreme.Equals(opr.IdOpreme))
-                {
-                    o.Kolicina -= Kolicina;
-                }
             }
-
             Prostor p = RukovanjeProstorom.PretraziPoId(IdProstora);
-
-            bool postoji = false;
-            foreach (Oprema o in p.Oprema)
-            {
-                if (o.IdOpreme.Equals(opr.IdOpreme))
-                {
-                    o.Kolicina += Kolicina;
-                    postoji = true;
-                }
-            }
-            if (!postoji)
-            {
-                RukovanjeProstorom.PretraziPoId(IdProstora).Oprema.Add(new Oprema(opr.IdOpreme,opr.NazivOpreme,opr.VrstaOpreme, Kolicina));
-            }
-            // RasporedOpreme.oprema.Add(opr
+            RukovanjeOpremom.PremjestiKolicinuOpreme(p, oprema, Kolicina);
             RukovanjeOpremom.SerijalizacijaOpreme();
             RukovanjeProstorom.SerijalizacijaProstora();
             this.Close();

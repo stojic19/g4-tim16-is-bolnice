@@ -31,20 +31,10 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            Renoviranje renoviranje = new Renoviranje(izabranProstor.IdProstora, DateTime.Parse(PickStartDate.Text),
-                DateTime.Parse(PickEndtDate.Text));
+            Renoviranje renoviranje = new Renoviranje(izabranProstor.IdProstora, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
 
+            RukovanjeProstorom.ProvjeriZakazaneTermine(PickStartDate, PickEndtDate);
 
-
-            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
-            {
-                if (t.Datum >= DateTime.Parse(PickStartDate.Text) && t.Datum <= DateTime.Parse(PickEndtDate.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Postoje zakazani termini za taj period, trazite drugi datum !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-            }
             izabranProstor.Renoviranje = renoviranje;
             RukovanjeProstorom.DodajZaRenoviranje(renoviranje);
             RukovanjeProstorom.ProveriRenoviranje();
@@ -54,8 +44,6 @@ namespace Bolnica
             System.Windows.Controls.UserControl usc = null;
             usc = new PrikazProstora();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
-
-
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

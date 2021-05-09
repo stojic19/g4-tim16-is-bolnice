@@ -3,6 +3,8 @@ using Bolnica.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace Model
@@ -169,6 +171,38 @@ namespace Model
                     p.JeRenoviranje = false;
                     break;
                 }
+            }
+        }
+
+        public static bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
+        {
+            foreach (Oprema o in prostorUKojiPrebacujemo.Oprema)
+            {
+                if (o.IdOpreme.Equals(oprema.IdOpreme))
+                {
+                    o.Kolicina += kolicina;
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public static void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
+        {
+            prostorUKojiPrebacujemo.Oprema.Add(o);
+        }
+
+        public static void ProvjeriZakazaneTermine(DatePicker pocetniDatum, DatePicker zavrsniDatum)
+        {
+            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            {
+                if (t.Datum >= DateTime.Parse(pocetniDatum.Text) && t.Datum <= DateTime.Parse(zavrsniDatum.Text))
+                {
+                    System.Windows.Forms.MessageBox.Show("Postoje zakazani termini za taj period, trazite drugi datum !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
             }
         }
 

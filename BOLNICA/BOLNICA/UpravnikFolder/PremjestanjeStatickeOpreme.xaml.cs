@@ -52,37 +52,10 @@ namespace Bolnica.UpravnikFolder
             Prostor prostor = (Prostor)dataGridProstori.SelectedItem;
             Oprema oprema = (Oprema)dataGridOprema.SelectedItem;
             int kolicina = Int32.Parse(this.kolicina.Text);
+
             if (DateTime.Today >= DateTime.Parse(DatumPremjestanja.Text))
             {
-                if (oprema.Kolicina < kolicina)
-                {
-                    System.Windows.Forms.MessageBox.Show("Neispravna kolicina !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                foreach (Oprema o in RukovanjeOpremom.SvaOprema())
-                {
-                    if (o.IdOpreme.Equals(oprema.IdOpreme))
-                    {
-                        o.Kolicina -= kolicina;
-                    }
-                }
-
-                bool postoji = false;
-                foreach (Oprema o in RukovanjeProstorom.SvaOpremaProstora())
-                {
-                    if (o.IdOpreme.Equals(oprema.IdOpreme))
-                    {
-                        o.Kolicina += kolicina;
-                        postoji = true;
-                    }
-                }
-
-                if (!postoji)
-                {
-                    RukovanjeProstorom.PretraziPoId(prostor.IdProstora).Oprema.Add(new Oprema(oprema.IdOpreme, oprema.NazivOpreme, oprema.VrstaOpreme, kolicina));
-                }
-
+                RukovanjeOpremom.PremjestiKolicinuOpreme(prostor, oprema, kolicina);
                 RukovanjeOpremom.SerijalizacijaOpreme();
                 RukovanjeProstorom.SerijalizacijaProstora();
             }
@@ -101,16 +74,5 @@ namespace Bolnica.UpravnikFolder
             usc = new PrikazOpreme();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
-
-
-        /* private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
-         {
-
-         }
-
-         private void dataGridProstori_SelectionChanged(object sender, SelectionChangedEventArgs e)
-         {
-
-         }*/
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace Model
@@ -72,6 +73,35 @@ namespace Model
             }
         }
 
+
+        public static void PremjestiKolicinuOpreme(Prostor prostorUKojiPrebacujemo, Oprema opremaKojuPrebacujemo, int kolicina)
+        {
+            ProvjeriKolicineKojuPremjestamo(opremaKojuPrebacujemo, kolicina);
+
+            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
+            {
+                if (o.IdOpreme.Equals(opremaKojuPrebacujemo.IdOpreme))
+                {
+                    o.Kolicina -= kolicina;
+                }
+            }
+
+            if (!RukovanjeProstorom.DodajSamoKolicinu(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina))
+            {
+                Oprema o = new Oprema(opremaKojuPrebacujemo.IdOpreme, opremaKojuPrebacujemo.NazivOpreme, opremaKojuPrebacujemo.VrstaOpreme, kolicina);
+                RukovanjeProstorom.DodajOpremuProstoru(prostorUKojiPrebacujemo, o);
+            }
+        }
+
+        public static bool ProvjeriKolicineKojuPremjestamo(Oprema oprema, int kolicina)
+        {
+            if (oprema.Kolicina < kolicina)
+            {
+                System.Windows.Forms.MessageBox.Show("Neispravna kolicina !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
 
         public static Oprema PretraziPoId(String idOpreme)
         {
