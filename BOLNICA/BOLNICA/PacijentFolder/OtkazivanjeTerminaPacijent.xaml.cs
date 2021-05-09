@@ -20,11 +20,12 @@ namespace Bolnica
     /// </summary>
     public partial class OtkazivanjeTerminaPacijent : Window
     {
-        String izabran = null;
+        Termin izabranZaOtkazivanje = null;
         public OtkazivanjeTerminaPacijent(String idTermina)
         {
-            izabran = idTermina;
             InitializeComponent();
+            izabranZaOtkazivanje = RukovanjeTerminima.PretraziPoId(idTermina);
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,24 +35,14 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           
-            Termin t = RukovanjeTerminima.PretraziPoId(izabran);
-    
-
-
-
-
-
-            if (DateTime.Compare(DateTime.Now.Date, t.Datum.Date) == 0)
+            if (DateTime.Compare(DateTime.Now.Date, izabranZaOtkazivanje.Datum.Date) == 0)
             {
                 MessageBox.Show("Termin je za manje od 24h ne mozete ga otkazati!");
                 return;
             }
 
-            RukovanjeTerminima.OtkaziPregledPacijent(izabran);
-            RukovanjeTerminima.DetektujZloupotrebuSistema(PacijentGlavniProzor.ulogovani);
+            RukovanjeTerminima.OtkaziPregledPacijent(izabranZaOtkazivanje.IdTermina);
             ProveraNalogaPacijenta();
-            
             this.Close();
         }
 

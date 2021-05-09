@@ -12,7 +12,7 @@ namespace Model
 
         public ZdravstveniKarton ZdravstveniKarton { get; set; }
 
-        public int Zloupotrebio { get; set; }
+        public int ZloupotrebioSistem { get; set; }
         public bool Blokiran { get; set; }
 
 
@@ -44,7 +44,7 @@ namespace Model
             this.VrstaNaloga = VrsteNaloga.gost;
             this.Lozinka = "";
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
-            Zloupotrebio = 0;
+            ZloupotrebioSistem = 0;
             Blokiran = false;
         }
 
@@ -62,7 +62,7 @@ namespace Model
             this.VrstaNaloga = vrstaNaloga;
             this.Lozinka = lozinka;
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
-            Zloupotrebio = 0;
+            ZloupotrebioSistem = 0;
             Blokiran = false;
         }
 

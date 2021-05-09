@@ -49,7 +49,7 @@ namespace Bolnica
             RukovanjeProstorom.DeserijalizacijaProstora();
             RukovanjeNalozimaPacijenata.Ucitaj();
             RukovanjeObavestenjimaSekratar.Ucitaj();
-              //RukovanjeTerminima.InicijalizacijaSTermina();
+            //RukovanjeTerminima.InicijalizacijaSTermina();
             RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
             RukovanjeZahtjevima.DeserijalizacijaZahtjeva();
             Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
@@ -93,7 +93,7 @@ namespace Bolnica
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Neispravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -111,7 +111,7 @@ namespace Bolnica
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Neispravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -129,7 +129,7 @@ namespace Bolnica
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Neispravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -140,12 +140,8 @@ namespace Bolnica
                 {
                     if (p.Lozinka.Equals(password.Password))
                     {
-                        if (p.Blokiran)
-                        {
-                            System.Windows.MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara!");
+                        if (!ProveraNalogaPacijenta(p))
                             return;
-
-                        }
                         PacijentGlavniProzor pgp = new PacijentGlavniProzor(p.KorisnickoIme);
                         pgp.Show();
                         this.Close();
@@ -153,7 +149,7 @@ namespace Bolnica
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Neipravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        System.Windows.Forms.MessageBox.Show("Neispravno korisničko ime ili lozinka!", "Proverite unete podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -162,6 +158,17 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Nepostojeći korisnik!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
+
+        private bool ProveraNalogaPacijenta(Pacijent pacijent)
+        {
+            if (pacijent.Blokiran)
+            {
+                System.Windows.MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara!");
+                return false;
+            }
+            return true;
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RukovanjeTerminima.SerijalizacijaTermina();

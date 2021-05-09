@@ -110,7 +110,7 @@ namespace Bolnica
                 }
                 Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 p.Blokiran = false;
-                p.Zloupotrebio = 0;
+                p.ZloupotrebioSistem = 0;
                 RukovanjeNalozimaPacijenata.Sacuvaj();
             }
             else

@@ -263,6 +263,7 @@ namespace Model
             t.Pacijent = null;
             slobodniTermini.Add(t);
             PrikazRasporedaPacijent.TerminiPacijenta.Remove(t);
+            DetektujZloupotrebuSistema(PacijentGlavniProzor.ulogovani);
         }
 
         public static void PomeriPregledPacijent(String idTermina)
@@ -376,9 +377,9 @@ namespace Model
 
         public static bool DetektujZloupotrebuSistema(Pacijent pacijent)
         {
-            int broj = pacijent.Zloupotrebio + 1;
-            pacijent.Zloupotrebio = broj;
-            if (pacijent.Zloupotrebio > MAXBR_PROMENA)
+            int broj = pacijent.ZloupotrebioSistem + 1;
+            pacijent.ZloupotrebioSistem = broj;
+            if (pacijent.ZloupotrebioSistem > MAXBR_PROMENA)
             {
                 pacijent.Blokiran = true;
                 return true;
