@@ -9,7 +9,7 @@ namespace Bolnica.Model.Enumi
     public enum TipoviUputa
     {
         STACIONARNO,
-        SPECIJALISTA,
+        Specijalista,
         LABORATORIJA
     }
 }
