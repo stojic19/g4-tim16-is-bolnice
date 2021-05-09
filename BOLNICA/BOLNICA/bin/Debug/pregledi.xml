@@ -108,7 +108,28 @@
         </Lek>
       </Recept>
     </Recepti>
-    <Uputi />
+    <Uputi>
+      <Uput>
+        <IDUputa>0247128c-d2ca-43ee-9dde-409b3371d643</IDUputa>
+        <TipUputa>SPECIJALISTA</TipUputa>
+        <DatumIzdavanja>2021-05-09T19:07:50.9814857+02:00</DatumIzdavanja>
+        <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
+        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
+        <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
+        <IDPacijenta>stojic19</IDPacijenta>
+        <NalazMisljenje>Treba leciti</NalazMisljenje>
+      </Uput>
+      <Uput>
+        <IDUputa>cd8f6a07-46fd-4aa7-9fa7-7f8898e76454</IDUputa>
+        <TipUputa>SPECIJALISTA</TipUputa>
+        <DatumIzdavanja>2021-05-09T19:43:24.2690425+02:00</DatumIzdavanja>
+        <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
+        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
+        <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
+        <IDPacijenta>stojic19</IDPacijenta>
+        <NalazMisljenje>Ajde</NalazMisljenje>
+      </Uput>
+    </Uputi>
     <Alergeni />
     <OcenjenPregled>false</OcenjenPregled>
   </Pregled>

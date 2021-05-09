@@ -86,7 +86,7 @@ namespace Bolnica
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = RukovanjePregledima.DodavanjePregleda(RukovanjeTerminima.PretraziPoId(izabranTermin.IdTermina));
+                Pregled noviPregled = RukovanjePregledima.PristupPregledu(RukovanjeTerminima.PretraziPoId(izabranTermin.IdTermina));
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));

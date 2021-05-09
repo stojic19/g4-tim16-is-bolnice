@@ -25,7 +25,7 @@ namespace Bolnica.Model.Rukovanja
             return null;
         }
 
-        public static Pregled DodavanjePregleda(Termin terminPregleda)
+        public static Pregled PristupPregledu(Termin terminPregleda)
         {
             Pregled noviPregled = PretragaPoTerminu(terminPregleda.IdTermina);
 
@@ -51,11 +51,11 @@ namespace Bolnica.Model.Rukovanja
             }
         }
 
-        public static Pregled PretragaPoTerminu(String IDTerminaPregleda)
+        public static Pregled PretragaPoTerminu(String iDTermina)
         {
             foreach (Pregled p in sviPregledi)
             {
-                if (p.Termin.IdTermina.Equals(IDTerminaPregleda))
+                if (p.Termin.IdTermina.Equals(iDTermina))
                 {
                     return p;
                 }
