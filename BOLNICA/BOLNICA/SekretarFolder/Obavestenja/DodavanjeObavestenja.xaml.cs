@@ -1,5 +1,6 @@
 ﻿using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
+using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,38 @@ namespace Bolnica
     /// </summary>
     public partial class DodavanjeObavestenja : UserControl
     {
-
+        private List<String> primaoci;
         public DodavanjeObavestenja()
         {
             InitializeComponent();
 
             idObavestenja.Text = generisiIdObavestenja();
             datum.SelectedDate = DateTime.Now;
+
+            InicijalizujPrimaoca();       
         }
+
+        private void InicijalizujPrimaoca()
+        {
+            primaoci = new List<string>();
+
+            primaoci.Add("Svi korisnici");
+            primaoci.Add("Pacijenti");
+            primaoci.Add("Lekari");
+            primaoci.Add("Sekretari");
+            primaoci.Add("Upravnici");
+            foreach (Pacijent pacijent in RukovanjeNalozimaPacijenata.SviNalozi())
+            {
+                primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
+            }
+            foreach (Lekar lekar in RukovanjeTerminima.sviLekari)
+            {
+                primaoci.Add(lekar.KorisnickoIme + " " + lekar.Prezime + " " + lekar.Ime);
+            }
+            Primalac.ItemsSource = primaoci;
+            Primalac.SelectedIndex = 0;
+        }
+
         public static String generisiIdObavestenja()
         {
             int brojac = RukovanjeObavestenjimaSekratar.SvaObavestenja().Count;
@@ -70,25 +95,33 @@ namespace Bolnica
         private string DobaviIzabraneKategorije()
         {
             String kategorije = "";
-            if (cbSvi.IsChecked == true)
+            foreach(var primalac in Primalac.SelectedItems)
             {
-                return "svi";
-            }
-            if (cbPacijenti.IsChecked == true)
-            {
-                kategorije += " pacijenti";
-            }
-            if (cbLekari.IsChecked == true)
-            {
-                kategorije += " lekari";
-            }
-            if (cbSekretari.IsChecked == true)
-            {
-                kategorije += " sekretari";
-            }
-            if (cbUpravnici.IsChecked == true)
-            {
-                kategorije += " upravnici";
+                if (primalac.ToString().Equals("Svi korisnici"))
+                {
+                    return "svi";
+                }
+                else if(primalac.ToString().Equals("Pacijenti"))
+                {
+                    kategorije += " pacijenti";
+                }
+                else if (primalac.ToString().Equals("Lekari"))
+                {
+                    kategorije += " lekari";
+                }
+                else if (primalac.ToString().Equals("Sekretari"))
+                {
+                    kategorije += " sekretari";
+                }
+                else if (primalac.ToString().Equals("Upravnici"))
+                {
+                    kategorije += " upravnici";
+                }
+                else
+                {
+                    string[] podaci = primalac.ToString().Split(' ');
+                    kategorije += " " + podaci[0];
+                }
             }
             return kategorije;
         }
@@ -105,9 +138,9 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Morate uneti tekst obaveštenja!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (cbPacijenti.IsChecked == false && cbLekari.IsChecked == false && cbSekretari.IsChecked == false && cbSvi.IsChecked == false && cbUpravnici.IsChecked == false)
+            if (Primalac.SelectedItems.Count == 0)
             {
-                System.Windows.Forms.MessageBox.Show("Morate odabrati bar jednu kategoriju!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Morate odabrati bar jednog primaoca!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -143,6 +176,22 @@ namespace Bolnica
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
+        }
+        private void Operacija_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

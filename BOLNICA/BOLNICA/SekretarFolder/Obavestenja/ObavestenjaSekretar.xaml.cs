@@ -1,5 +1,6 @@
 ﻿using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
+using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -29,26 +30,20 @@ namespace Bolnica
             InitializeComponent();
 
             this.DataContext = this;
+            PopuniTabeluObavestenja();
+        }
 
+        private static void PopuniTabeluObavestenja()
+        {
             SvaObavestenja = new ObservableCollection<Obavestenje>();
             RukovanjeNalozimaPacijenata.Ucitaj();
             foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.SvaObavestenja())
             {
-                string[] Kategorije = o.IdPrimaoca.Split(' ');
-                foreach (String Kategorija in Kategorije)
+                if (!o.Naslov.Equals("Terapija"))
                 {
-                    if (DaLiPripadaNekojOdKategorija(Kategorija))
-                    {
-                        SvaObavestenja.Add(o);
-                        break;
-                    }
+                    SvaObavestenja.Add(o);
                 }
             }
-        }
-
-        private static bool DaLiPripadaNekojOdKategorija(string Kategorija)
-        {
-            return Kategorija.Equals("svi") || Kategorija.Equals("pacijenti") || Kategorija.Equals("lekari") || Kategorija.Equals("sekretari") || Kategorija.Equals("upravnici");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -126,6 +121,22 @@ namespace Bolnica
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
+        }
+        private void Operacija_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

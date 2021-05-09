@@ -7,8 +7,6 @@ namespace Model
 {
     public class Lek
     {
-        private double v;
-
         public String IDLeka { get; set; }
         public String NazivLeka { get; set; }
         public String Jacina { get; set; }

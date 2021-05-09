@@ -35,14 +35,21 @@ namespace Bolnica.SekretarFolder.Operacija
             p = pacijent;
             Trajanje = trajanje;
             this.DataContext = this;
+
+            PopuniListuTerminimaZaPomeranje(oblast);
+        }
+
+        private void PopuniListuTerminimaZaPomeranje(SpecijalizacijeLekara oblast)
+        {
             TerminiZaPomeranje = new ObservableCollection<KeyValuePair<Termin, int>>();
 
-            foreach (KeyValuePair<Termin, int> t in RukovanjeOperacijama.HitnaOperacijaTerminiZaPomeranje(oblast,trajanje).OrderBy(key => key.Value))
+            foreach (KeyValuePair<Termin, int> t in RukovanjeOperacijama.HitnaOperacijaTerminiZaPomeranje(oblast, Trajanje).OrderBy(key => key.Value))
             {
                 TerminiZaPomeranje.Add(t);
             }
             terminiZaPomeranjeLista.ItemsSource = TerminiZaPomeranje;
         }
+
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
@@ -90,7 +97,10 @@ namespace Bolnica.SekretarFolder.Operacija
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Potvrdi
-
+            if(!OdabranTermin())
+            {
+                return;
+            }
             KeyValuePair<Termin, int> termin = (KeyValuePair<Termin, int>)terminiZaPomeranjeLista.SelectedItem;
             if (!RukovanjeOperacijama.PomeriOperacijuIZakaziNovu(termin.Key,termin.Value,p,Trajanje))
             {
@@ -103,6 +113,18 @@ namespace Bolnica.SekretarFolder.Operacija
 
             usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private bool OdabranTermin()
+        {
+            return terminiZaPomeranjeLista.SelectedItem != null;
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
     }
 }

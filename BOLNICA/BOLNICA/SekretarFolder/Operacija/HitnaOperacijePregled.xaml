@@ -55,7 +55,7 @@
             <Button Grid.Row="10" Background="Black" x:Name="Nalog">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
-            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava" Click="Odjava_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>
@@ -69,7 +69,7 @@
                 <RowDefinition Height="148*"/>
                 <RowDefinition Height="147*"/>
             </Grid.RowDefinitions>
-            <Label Content="Termini hitnih operacija" Margin="256,10,262,69" FontSize="40" FontWeight="Bold"/>
+            <Label Content="Termini hitnih operacija" Margin="256,10,228,69" FontSize="40" FontWeight="Bold"/>
 
             <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="4">
                 <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-83,-84,-267" Stretch="Fill">

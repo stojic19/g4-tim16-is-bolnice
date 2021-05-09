@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="768" d:DesignWidth="1024">
     <Grid Background="#2b78e4" >
-        <Image Source="/Slike/Sekretar/Ikonice/h.jpg" Margin="446,40,450,600" Width="128" Height="128"/>
+        <Image Source="/Slike/Sekretar/Ikonice/h.jpg" Margin="446,40,442,600" Height="128"/>
 
 
         <Button Background="FloralWhite" Width="325" Height="77" Margin="167,356,532,335" Click="Nalozi_Click" FontFamily="Times New Roman" FontSize="15px">

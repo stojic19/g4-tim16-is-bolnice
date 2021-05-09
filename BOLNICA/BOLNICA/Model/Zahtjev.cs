@@ -23,7 +23,7 @@ namespace Bolnica.Model
             Lijek = lijek;
             Odgovor = VrsteOdgovora.Čekanje;
             RazlogOdbijanja = razlogOdobrenja;
-            datumSlanja = datumSlanja;
+            DatumSlanja = datumSlanja;
         }
 
         public Zahtjev() { }

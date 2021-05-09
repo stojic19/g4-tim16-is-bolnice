@@ -68,7 +68,6 @@ namespace Bolnica.SekretarFolder.Operacija
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Potvrdi
-            //To do: poziv metode za otkazivanje odabrane operacije
             if(!RukovanjeOperacijama.OtkazivanjeOperacije(terminZaOtkazivanje))
             {
                 System.Windows.Forms.MessageBox.Show("Odabrana operacija je već počela!", "Neuspešno otkazivanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,6 +88,14 @@ namespace Bolnica.SekretarFolder.Operacija
 
             usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
     }
 }

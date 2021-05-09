@@ -78,11 +78,9 @@ namespace Bolnica.SekretarFolder
         }
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
-            /*MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();*/
             Login login = new Login();
             login.Show();
+
             var myWindow = Window.GetWindow(this);
             myWindow.Close();
         }

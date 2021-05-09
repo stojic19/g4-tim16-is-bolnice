@@ -55,7 +55,7 @@
             <Button Grid.Row="10" Background="Black" x:Name="Nalog">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
-            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava" Click="Odjava_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>

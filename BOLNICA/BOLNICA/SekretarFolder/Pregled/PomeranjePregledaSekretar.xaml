@@ -28,13 +28,13 @@
             <Button Grid.Row="1" Background="Black" x:Name="Termini">
                 <Image Source="/Slike/Sekretar/CIkonice/craspored.jpg" />
             </Button>
-            <Button Grid.Row="2"  Background="Black" x:Name="Operacije">
+            <Button Grid.Row="2"  Background="Black" x:Name="Operacije" Click="Operacija_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" />
             </Button>
             <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Click="Nalozi_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/nalozi.jpg" />
             </Button>
-            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" >
+            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" Click="Obavestenja_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/obavestenja.jpg" />
             </Button>
             <Button Grid.Row="5" Background="Black" x:Name="Naplata">
@@ -55,7 +55,7 @@
             <Button Grid.Row="10" Background="Black" x:Name="Nalog">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
-            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava" Click="Odjava_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>

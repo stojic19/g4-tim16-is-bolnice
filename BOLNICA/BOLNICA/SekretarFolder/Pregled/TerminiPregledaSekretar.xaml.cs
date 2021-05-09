@@ -1,4 +1,5 @@
 ﻿using Bolnica.SekretarFolder;
+using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -98,6 +99,30 @@ namespace Bolnica.Sekretar.Pregled
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
+        }
+        private void Operacija_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new HitnaOperacijePregled();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Obavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new ObavestenjaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

@@ -28,7 +28,7 @@
             <Button Grid.Row="1" Background="Black" x:Name="Termini" Click="Termini_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/termini.jpg" />
             </Button>
-            <Button Grid.Row="2"  Background="Black" x:Name="Operacije">
+            <Button Grid.Row="2"  Background="Black" x:Name="Operacije" Click="Operacija_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" />
             </Button>
             <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Click="Nalozi_Click">
@@ -55,7 +55,7 @@
             <Button Grid.Row="10" Background="Black" x:Name="Nalog">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
-            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava" Click="Odjava_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>
@@ -89,25 +89,25 @@
             <Label Content="ID obaveštenja:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <TextBox AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,30,0,29" Height="30" Width="447" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
             <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <DatePicker Name="datum" IsEnabled="False" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
+            <DatePicker Name="datum" IsEnabled="False" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,29,0,30" Height="30" Width="447" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
-            <Label Content="Kategorije primalaca:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="Primaoci:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="3" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
             <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="4" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,18,0,18" Height="30" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <TextBox AcceptsReturn="True"  Name="naslov" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,29,0,29" Height="30" Width="447" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
             <Label Content="Tekst:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="5" Margin="0,25,20,78" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,44,0,10" Height="116" Width="352" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox AcceptsReturn="True" Name="tekst" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,47,0,14" Height="116" Width="447" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
             <Button Content="Odustani" Grid.Column="0" Grid.Row="6"  Margin="0,26,541,32"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
@@ -115,12 +115,7 @@
             <Button Content="Potrvdi" Grid.Column="1" Grid.Row="6"  Margin="115,26,0,32"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-            <CheckBox Name="cbSvi" Content="Svi" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-            <CheckBox Name="cbPacijenti" Content="Pacijenti" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-            <CheckBox Name="cbLekari" Content="Lekari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,50,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-            <CheckBox Name="cbSekretari" Content="Sekretari" Grid.Column="1" HorizontalAlignment="Left" Margin="20,70,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-            <CheckBox Name="cbUpravnici" Content="Upravnici" Grid.Column="1" HorizontalAlignment="Left" Margin="20,90,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-
+            <ListBox x:Name="Primalac" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="104" Margin="20,10,0,0" VerticalAlignment="Top" Width="447" FontFamily="Verdana" FontSize="14" SelectionMode="Extended"/>
         </Grid>
     </StackPanel>
 </UserControl>

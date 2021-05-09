@@ -20,7 +20,7 @@ namespace Model
       {
             svaObavestenja.Add(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
-
+            Console.WriteLine("Usao");
             Sacuvaj();
 
             if (svaObavestenja.Contains(obavestenje))

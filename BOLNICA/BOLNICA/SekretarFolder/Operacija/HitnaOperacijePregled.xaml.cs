@@ -30,13 +30,19 @@ namespace Bolnica.SekretarFolder.Operacija
             InitializeComponent();
             //Prikaz hitnih operacija u narednom periodu
             this.DataContext = this;
-            TerminiHitnihOperacija = new ObservableCollection<Termin>();
+            
+            PopuniTabeluTermina();
+        }
 
+        private static void PopuniTabeluTermina()
+        {
+            TerminiHitnihOperacija = new ObservableCollection<Termin>();
             foreach (Termin t in RukovanjeOperacijama.sviTermini)
             {
-                    TerminiHitnihOperacija.Add(t);
+                TerminiHitnihOperacija.Add(t);
             }
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Zakazivanje
@@ -94,6 +100,14 @@ namespace Bolnica.SekretarFolder.Operacija
 
             usc = new ObavestenjaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Odjava_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
     }
 }
