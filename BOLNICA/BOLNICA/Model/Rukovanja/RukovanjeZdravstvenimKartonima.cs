@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,36 @@ namespace Bolnica.Model
             }
 
             return null;
+        }
+
+        public static List<Lek> LekoviBezAlergena(String idIzabranogPacijenta)
+        {
+            List<Lek> lekoviBezAlergena = new List<Lek>();
+            
+
+            foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
+            {
+                if (!ProveraAlergicnosti(idIzabranogPacijenta, l.IDLeka))
+                {
+                    lekoviBezAlergena.Add(l);
+                }
+            }
+            return lekoviBezAlergena;
+        }
+
+        public static Boolean ProveraAlergicnosti(String idIzabranogPacijenta, String idLeka)
+        {
+            Pacijent izabranPacijent = RukovanjeNalozimaPacijenata.PretraziPoId(idIzabranogPacijenta);
+
+            foreach (Alergeni a in izabranPacijent.ZdravstveniKarton.Alergeni)
+            {
+                if (a.IdAlergena.Equals(idLeka))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
 

@@ -11,6 +11,7 @@ namespace Model
    public class Alergeni
    {
         public String IdAlergena { get; set; }
+        public Lek Lek { get; set; }
         public String OpisReakcije { get; set; }
         public String VremeZaPojavu { get; set; }
         public Alergeni() { }

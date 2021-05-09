@@ -20,20 +20,18 @@ namespace Bolnica
 {
     public partial class PrikazLijekova : UserControl
     {
-        public static ObservableCollection<Lek> Lijekovi { get; set; }
-        //   public static ObservableCollection<Zahtjev> Zahtjevi { get; set; }
+        public static ObservableCollection<Zahtjev> Zahtjevi { get; set; }
         public PrikazLijekova()
         {
             InitializeComponent();
 
             this.DataContext = this;
 
-            Lijekovi = new ObservableCollection<Lek>();
-            // Zahtjevi = new ObservableCollection<Zahtjev>();
+            Zahtjevi = new ObservableCollection<Zahtjev>();
 
             foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtevi)
             {
-                Lijekovi.Add(z.Lijek);
+                Zahtjevi.Add(z);
 
             }
 
@@ -50,12 +48,12 @@ namespace Bolnica
         private void Izmjena_Click(object sender, RoutedEventArgs e)
         {
 
-            Lek izabranZaMenjanje = (Lek)dataGridLijekovi.SelectedItem;
+            Zahtjev izabranZaMenjanje = (Zahtjev)dataGridLijekovi.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {
 
-                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.IDLeka);
+                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.Lijek.IDLeka);
                 izmjena.Show();
             }
             else
@@ -66,12 +64,12 @@ namespace Bolnica
 
         private void Uklanjanje_Click(object sender, RoutedEventArgs e)
         {
-            Lek izabranZaBrisanje = (Lek)dataGridLijekovi.SelectedItem;
+            Zahtjev izabranZaBrisanje = (Zahtjev)dataGridLijekovi.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
 
-                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.IDLeka);
+                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.Lijek.IDLeka);
                 uklanjanje.Show();
             }
             else
@@ -83,7 +81,6 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeNeodobrenimLijekovima.SerijalizacijaLijekova();
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
         }
 
@@ -94,13 +91,13 @@ namespace Bolnica
 
         private void Detalji_Click(object sender, RoutedEventArgs e)
         {
-            Lek izabran = (Lek)dataGridLijekovi.SelectedItem;
+            Zahtjev izabran = (Zahtjev)dataGridLijekovi.SelectedItem;
 
             if (izabran != null)
             {
 
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.IDLeka));
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.Lijek.IDLeka));
             }
             else
             {

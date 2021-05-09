@@ -56,4 +56,29 @@
     <Odgovor>Odobren</Odgovor>
     <DatumSlanja>2021-05-09T04:38:37.2611789+02:00</DatumSlanja>
   </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>40385710-9193-4594-9ad1-d7ad7ea20adb</IdZahtjeva>
+    <Lijek>
+      <IDLeka>c22c5885-d58a-4566-a3d0-fb22286759e4</IDLeka>
+      <NazivLeka>Cafetin</NazivLeka>
+      <Jacina>500mg</Jacina>
+      <Kolicina>32132</Kolicina>
+      <Proizvodjac>Biofarm</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>s6</Naziv>
+          <Kolicina>312</Kolicina>
+        </Sastojak>
+        <Sastojak>
+          <Naziv>s12</Naziv>
+          <Kolicina>424</Kolicina>
+        </Sastojak>
+      </Sastojci>
+      <Verifikacija>false</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Odgovor>Odbijen</Odgovor>
+    <RazlogOdbijanja>Zato sto je los lek</RazlogOdbijanja>
+    <DatumSlanja>2021-05-09T14:49:05.0468621+02:00</DatumSlanja>
+  </Zahtjev>
 </ArrayOfZahtjev>

@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace Bolnica
     {
         private static UpravnikGlavniProzor instance = null;
 
+        public object RukovajeZahtjevima { get; private set; }
+
         public static UpravnikGlavniProzor getInstance()
         {
             if (instance == null)
@@ -34,7 +37,6 @@ namespace Bolnica
             InitializeComponent();
             RukovanjeOpremom.DeserijalizacijaOpreme();
             RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeNeodobrenimLijekovima.DeserijalizacijaLijekova();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -76,7 +78,7 @@ namespace Bolnica
         {
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeOpremom.SerijalizacijaOpreme();
-            RukovanjeNeodobrenimLijekovima.SerijalizacijaLijekova();
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
         }
     }
 }

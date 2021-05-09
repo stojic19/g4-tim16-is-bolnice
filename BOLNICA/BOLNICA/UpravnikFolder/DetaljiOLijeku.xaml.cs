@@ -44,8 +44,7 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-
-            RukovanjeNeodobrenimLijekovima.SerijalizacijaLijekova();
+            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new PrikazLijekova());
         }
@@ -53,9 +52,10 @@ namespace Bolnica
         private void Dodaj_Click(object sender, RoutedEventArgs e)
 
         {
-
-            DodavanjeSastojka dodavanje = new DodavanjeSastojka(IDLeka);
-            dodavanje.Show();
+            if (RukovanjeZahtjevima.PretraziPoIdLeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
+                DodavanjeSastojka dodavanje = new DodavanjeSastojka(IDLeka);
+                dodavanje.Show();
+            }
 
         }
 

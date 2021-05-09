@@ -1,5 +1,6 @@
 
 using Bolnica;
+using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,7 @@ namespace Model
             }
         }
 
+        
         public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum,Pol pol, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
         {
             Pacijent p = PretraziPoId(stariId);
@@ -126,6 +128,7 @@ namespace Model
         }
         public static Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
+            alergen.Lek = RukovanjeOdobrenimLekovima.PretraziPoID(alergen.IdAlergena);
             RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Add(alergen);
             AlergeniSekretar.AlergeniPacijenta.Add(alergen);
             RukovanjeNalozimaPacijenata.Sacuvaj();

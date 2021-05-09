@@ -33,8 +33,6 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeNeodobrenimLijekovima.UkloniLijek(izabran);
-
             RukovanjeZahtjevima.UklanjanjeLeka(izabran);
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
               

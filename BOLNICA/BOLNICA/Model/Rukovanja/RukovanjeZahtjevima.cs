@@ -27,6 +27,19 @@ namespace Bolnica.Model.Rukovanja
             return null;
         }
 
+        public static Zahtjev PretraziPoIdLeka(String idLeka)
+        {
+            foreach (Zahtjev z in SviZahtevi)
+            {
+                if (z.Lijek.IDLeka.Equals(idLeka))
+                {
+                    return z;
+                }
+            }
+
+            return null;
+        }
+
         public static void OdobriZahtev(String idZahteva)
         {
             foreach(Zahtjev z in SviZahtevi)
@@ -65,6 +78,7 @@ namespace Bolnica.Model.Rukovanja
             zahtjev.DatumSlanja = DateTime.Now;
             zahtjev.Odgovor = Enumi.VrsteOdgovora.Čekanje;
             SviZahtevi.Add(zahtjev);
+            PrikazLijekova.Zahtjevi.Add(zahtjev);
             return true;
         }
 
@@ -79,9 +93,9 @@ namespace Bolnica.Model.Rukovanja
                     z.Lijek.Kolicina = int.Parse(noviPodaci.Kolicina.ToString());
                     z.Lijek.Proizvodjac = noviPodaci.Proizvodjac;
 
-                    int indeks = PrikazLijekova.Lijekovi.IndexOf(z.Lijek);
-                    PrikazLijekova.Lijekovi.RemoveAt(indeks);
-                    PrikazLijekova.Lijekovi.Insert(indeks, z.Lijek);
+                    int indeks = PrikazLijekova.Zahtjevi.IndexOf(z);
+                    PrikazLijekova.Zahtjevi.RemoveAt(indeks);
+                    PrikazLijekova.Zahtjevi.Insert(indeks, z);
                     return true;
                 }
             }
@@ -96,7 +110,7 @@ namespace Bolnica.Model.Rukovanja
                 if (z.Lijek.IDLeka.Equals(idLeka))
                 {
                     SviZahtevi.Remove(z);
-                    PrikazLijekova.Lijekovi.Remove(z.Lijek);
+                    PrikazLijekova.Zahtjevi.Remove(z);
                 }
             }
         }

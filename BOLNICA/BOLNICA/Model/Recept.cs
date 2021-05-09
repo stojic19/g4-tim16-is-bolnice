@@ -17,14 +17,14 @@ namespace Model
 
         public Recept() { }
 
-        public Recept(string iDRecepta, string iDLekara, string imeiPrezimeLekara, string iDPacijenta, DateTime datum, Lek lek)
+        public Recept(string iDRecepta, string iDLekara, string iDPacijenta, DateTime datum, Lek lek)
         {
             IDRecepta = iDRecepta;
             IDLekara = iDLekara;
-            ImeiPrezimeLekara = imeiPrezimeLekara;
             IDPacijenta = iDPacijenta;
             Datum = datum;
             Lek = lek;
+            ImeiPrezimeLekara = RukovanjeTerminima.ImeiPrezime(iDLekara);
         }
     }
 }

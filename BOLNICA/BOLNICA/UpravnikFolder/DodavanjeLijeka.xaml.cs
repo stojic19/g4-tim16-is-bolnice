@@ -36,24 +36,12 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            String idLijeka = Guid.NewGuid().ToString();
-            String nazivLeka = this.nazivLijeka.Text;
-            String jacina = this.jacina.Text;
-            int kolicina = int.Parse(this.kolicinaLijeka.Text);
-            String proizvodjac = this.proizvodjac.Text;
 
+            Lek lijek = new Lek(Guid.NewGuid().ToString(), this.nazivLijeka.Text, this.jacina.Text, int.Parse(this.kolicinaLijeka.Text), this.proizvodjac.Text, new List<Sastojak>(), false);
+            Zahtjev zahtjev = new Zahtjev(Guid.NewGuid().ToString(), lijek, null, DateTime.Now);
 
-            Lek lijek = new Lek(idLijeka, nazivLeka, jacina, kolicina, proizvodjac, new List<Sastojak>(), false);
-
-
-            RukovanjeNeodobrenimLijekovima.DodajLijek(lijek);
-            String idZahtjeva = Guid.NewGuid().ToString();
-
-            
-            Zahtjev zahtjev = new Zahtjev(idZahtjeva, lijek, null, DateTime.Now);
             RukovanjeZahtjevima.DodajZahtjev(zahtjev);
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
-
             this.Close();
 
         }

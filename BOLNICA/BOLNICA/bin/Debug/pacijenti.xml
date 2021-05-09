@@ -16,42 +16,95 @@
       <IDPacijenta>magdalena</IDPacijenta>
       <Alergeni>
         <Alergeni>
-          <IdAlergena>L1</IdAlergena>
-          <OpisReakcije>reakcija</OpisReakcije>
-          <VremeZaPojavu>2</VremeZaPojavu>
+          <IdAlergena>44eb6252-f8cd-41be-8dba-f6e03c79c571</IdAlergena>
+          <Lek>
+            <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+            <NazivLeka>Roaccutane</NazivLeka>
+            <Jacina>20mg</Jacina>
+            <Kolicina>432</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s4</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s5</Naziv>
+                <Kolicina>5</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s8</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene />
+          </Lek>
+          <OpisReakcije>Otekla</OpisReakcije>
+          <VremeZaPojavu>20min</VremeZaPojavu>
         </Alergeni>
       </Alergeni>
       <Recepti>
         <Recept>
-          <IDRecepta>94bc0321-51b6-4fd0-944d-d6b55941551b</IDRecepta>
+          <IDRecepta>37f6735e-402c-4997-9491-9d068fbddd5a</IDRecepta>
           <IDLekara>JelenaHrnjak</IDLekara>
-          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
+          <ImeiPrezimeLekara>Jelena Hrnjak</ImeiPrezimeLekara>
           <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>2021-05-07T03:32:19.19921+02:00</Datum>
+          <Datum>2021-05-09T16:20:21.0153145+02:00</Datum>
           <Lek>
-            <IDLeka>3</IDLeka>
-            <NazivLeka>L3</NazivLeka>
-            <Jacina>200mg</Jacina>
-            <Kolicina>0</Kolicina>
-            <Sastojci />
-            <Verifikacija>false</Verifikacija>
-            <Zamene />
-          </Lek>
-        </Recept>
-        <Recept>
-          <IDRecepta>9267df83-e051-4715-9716-f5f13e6f98e9</IDRecepta>
-          <IDLekara>JelenaHrnjak</IDLekara>
-          <ImeiPrezimeLekara>JelenaHrnjak</ImeiPrezimeLekara>
-          <IDPacijenta>magdalena</IDPacijenta>
-          <Datum>2021-05-07T14:25:32.3146337+02:00</Datum>
-          <Lek>
-            <IDLeka>3</IDLeka>
-            <NazivLeka>L3</NazivLeka>
-            <Jacina>200mg</Jacina>
-            <Kolicina>0</Kolicina>
-            <Sastojci />
-            <Verifikacija>false</Verifikacija>
-            <Zamene />
+            <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+            <NazivLeka>Brufen</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>3232</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s1</Naziv>
+                <Kolicina>100</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s2</Naziv>
+                <Kolicina>200</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s3</Naziv>
+                <Kolicina>300</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s7</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s33</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene>
+              <Lek>
+                <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                <NazivLeka>Roaccutane</NazivLeka>
+                <Jacina>20mg</Jacina>
+                <Kolicina>432</Kolicina>
+                <Proizvodjac>Biofarm</Proizvodjac>
+                <Sastojci>
+                  <Sastojak>
+                    <Naziv>s4</Naziv>
+                    <Kolicina>4</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s5</Naziv>
+                    <Kolicina>5</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s8</Naziv>
+                    <Kolicina>2</Kolicina>
+                  </Sastojak>
+                </Sastojci>
+                <Verifikacija>true</Verifikacija>
+                <Zamene />
+              </Lek>
+            </Zamene>
           </Lek>
         </Recept>
       </Recepti>
@@ -184,7 +237,7 @@
         </Uput>
       </Uputi>
     </ZdravstveniKarton>
-    <Zloupotrebio>0</Zloupotrebio>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
   <Pacijent>
@@ -201,12 +254,64 @@
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>
       <IDPacijenta>stojic19</IDPacijenta>
-      <Alergeni />
-      <Recepti />
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IdAlergena>
+          <Lek>
+            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+            <NazivLeka>Aerius</NazivLeka>
+            <Jacina>10mg</Jacina>
+            <Kolicina>3212</Kolicina>
+            <Proizvodjac>Brufesa</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s42</Naziv>
+                <Kolicina>3</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene />
+          </Lek>
+          <OpisReakcije>Natekne</OpisReakcije>
+          <VremeZaPojavu>20min</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
+      <Recepti>
+        <Recept>
+          <IDRecepta>3fb1e25d-c135-4fcb-ac8a-9733f3fde495</IDRecepta>
+          <IDLekara>JelenaHrnjak</IDLekara>
+          <ImeiPrezimeLekara>Jelena Hrnjak</ImeiPrezimeLekara>
+          <IDPacijenta>stojic19</IDPacijenta>
+          <Datum>2021-05-09T15:48:07.0712997+02:00</Datum>
+          <Lek>
+            <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+            <NazivLeka>Roaccutane</NazivLeka>
+            <Jacina>20mg</Jacina>
+            <Kolicina>432</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s4</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s5</Naziv>
+                <Kolicina>5</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s8</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene />
+          </Lek>
+        </Recept>
+      </Recepti>
       <Anamneze />
       <Uputi />
     </ZdravstveniKarton>
-    <Zloupotrebio>0</Zloupotrebio>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
   <Pacijent>
@@ -228,7 +333,7 @@
       <Anamneze />
       <Uputi />
     </ZdravstveniKarton>
-    <Zloupotrebio>0</Zloupotrebio>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

@@ -506,34 +506,4 @@
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
-  <Termin>
-    <IdTermina>T17</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-27T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema />
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:41.7512141+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
 </ArrayOfTermin>

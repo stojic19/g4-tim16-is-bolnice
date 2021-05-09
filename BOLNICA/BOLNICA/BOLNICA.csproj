@@ -132,7 +132,6 @@
     <Compile Include="Model\Recept.cs" />
     <Compile Include="Model\Renoviranje.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeAnketama.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeNeodobrenimLijekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOdobrenimLekovima.cs" />
     <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
     <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />

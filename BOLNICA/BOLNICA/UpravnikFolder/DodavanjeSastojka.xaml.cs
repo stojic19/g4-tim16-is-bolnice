@@ -52,8 +52,6 @@ namespace Bolnica
 
             Sastojak s = new Sastojak(nazivSastojka, kolicina);
 
-            RukovanjeNeodobrenimLijekovima.DodajSastojak(s, IDLeka);
-
             RukovanjeZahtjevima.DodajSastojak(s, IDLeka);
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
 
