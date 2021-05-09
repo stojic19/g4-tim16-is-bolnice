@@ -31,7 +31,7 @@ namespace Bolnica
             Prostori = new ObservableCollection<Prostor>();
 
             foreach (Prostor p in RukovanjeProstorom.SviProstori())
-            { 
+            {
                 Prostori.Add(p);
             }
 

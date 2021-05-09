@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.UpravnikFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -91,9 +92,30 @@ namespace Bolnica
 
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+
+        private void Premjestanje_Click(object sender, RoutedEventArgs e)
         {
-           // DataView dw = new DataView(dataGridOprema);
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            System.Windows.Controls.UserControl usc = null;
+            usc = new PremjestanjeStatickeOpreme();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+        }
+
+
+        private void SearchBox_KeyUp(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<Oprema> filtriranje = new ObservableCollection<Oprema>();
+
+            foreach (Oprema o in Oprema)
+            {
+                if (o.IdOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
+                    o.NazivOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    filtriranje.Add(o);
+                }
+            }
+
+            dataGridOprema.ItemsSource = filtriranje;
         }
     }
 }

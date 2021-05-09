@@ -281,6 +281,9 @@
     <Compile Include="UpravnikFolder\PremjestanjeOpreme.xaml.cs">
       <DependentUpon>PremjestanjeOpreme.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpravnikFolder\PremjestanjeStatickeOpreme.xaml.cs">
+      <DependentUpon>PremjestanjeStatickeOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpravnikFolder\PrikazLijekova.xaml.cs">
       <DependentUpon>PrikazLijekova.xaml</DependentUpon>
     </Compile>
@@ -623,6 +626,10 @@
     <Page Include="UpravnikFolder\PremjestanjeOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpravnikFolder\PremjestanjeStatickeOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpravnikFolder\PrikazLijekova.xaml">
       <Generator>MSBuild:Compile</Generator>

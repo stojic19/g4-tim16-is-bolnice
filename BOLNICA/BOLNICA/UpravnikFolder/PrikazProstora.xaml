@@ -29,7 +29,6 @@
                     <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="100*"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="80*"/>
                     <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>
-                    <DataGridTextColumn Header="Broj Kreveta" Binding="{Binding BrojKreveta}" Width="105*"/>
                     <DataGridTextColumn Header="Renovira se" Binding="{Binding JeRenoviranje}" Width="105*"/>
 
 

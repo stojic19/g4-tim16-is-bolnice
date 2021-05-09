@@ -112,45 +112,66 @@ namespace Model
 
         public static bool DodajZaRenoviranje(Renoviranje renoviranje)
         {
-        
-                prostorKojiSeRenovira.Add(renoviranje);
-                return true;
-            
+
+            prostorKojiSeRenovira.Add(renoviranje);
+            return true;
+
         }
 
         public static void ProveriRenoviranje()
         {
-            List<Renoviranje> pomocna = new List<Renoviranje>();
+
 
             foreach (Renoviranje r in prostorKojiSeRenovira)
             {
-                if (DateTime.Compare(r.StartDay.Date, DateTime.Now.Date) <= 0 && DateTime.Compare(DateTime.Now.Date, r.EndDay.Date) <= 0)
+                if (provjeraDatuma(r.StartDay.Date, r.EndDay.Date))
                 {
-                    pomocna.Add(r);
-                    foreach (Prostor p in prostori)
-                    {
-                        if (p.IdProstora.Equals(r.RoomId))
-                        {
-                            p.JeRenoviranje = true;
-                            break;
-                        }
-                    }
-                } else if (DateTime.Compare(DateTime.Now.Date, r.EndDay.Date) > 0)
-                {
-                    foreach (Prostor p in prostori)
-                    {
-                        if (p.IdProstora.Equals(r.RoomId))
-                        {
-                            p.JeRenoviranje = false;
-                            break;
-                        }
-                    }
-                } else {
-                    pomocna.Add(r);
+                    PostaviDaSeRenovira(r);
                 }
-            
+                else
+                {
+                    PostaviDaSeNeRenovira(r);
+                }
             }
         }
+
+        public static bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
+        {
+            if (DateTime.Compare(datumPocetka.Date, DateTime.Now.Date) <= 0 && DateTime.Compare(DateTime.Now.Date, datumKraja.Date) <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static void PostaviDaSeRenovira(Renoviranje r)
+        {
+            foreach (Prostor p in prostori)
+            {
+                if (p.IdProstora.Equals(r.RoomId))
+                {
+                    p.JeRenoviranje = true;
+                    break;
+                }
+            }
+        }
+
+        public static void PostaviDaSeNeRenovira(Renoviranje r)
+        {
+            foreach (Prostor p in prostori)
+            {
+                if (p.IdProstora.Equals(r.RoomId))
+                {
+                    p.JeRenoviranje = false;
+                    break;
+                }
+            }
+        }
+
         public static List<Prostor> DeserijalizacijaProstora()
         {
             DeserijalizacijaProstoraZaRenoviranje();
