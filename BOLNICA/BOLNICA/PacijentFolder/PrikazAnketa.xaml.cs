@@ -30,7 +30,7 @@ namespace Bolnica.PacijentFolder
             StariPregledi = new ObservableCollection<Pregled>();
             foreach (Pregled pregled in RukovanjePregledima.SortPoDatumuPregleda())
             {
-                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan && !pregled.OcenjenPregled)
+                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan && !pregled.OcenjenPregled && DateTime.Compare(DateTime.Now.Date,pregled.Termin.Datum)>=0)
                     StariPregledi.Add(pregled);
             }
 

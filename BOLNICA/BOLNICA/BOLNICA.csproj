@@ -116,6 +116,9 @@
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
+    <Compile Include="PacijentFolder\DetaljiTerapije.xaml.cs">
+      <DependentUpon>DetaljiTerapije.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
     </Compile>
@@ -374,6 +377,10 @@
     <Page Include="LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PacijentFolder\DetaljiTerapije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml">
       <SubType>Designer</SubType>

@@ -29,6 +29,8 @@ namespace Bolnica
             RukovanjeObavestenjimaSekratar.Ucitaj();
             ulogovani = RukovanjeNalozimaPacijenata.PretraziPoId(id);
             GlavniSadrzaj = this.MainPanel;
+            MainPanel.Children.Clear();
+            MainPanel.Children.Add(new PrikazObavestenjaPacijent());
         }
         
         public static Grid GetGlavniSadrzaj()

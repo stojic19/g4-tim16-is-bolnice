@@ -79,11 +79,8 @@
         </ListBox>
 
 
-        <Button Margin="25 10" x:Name="ukljuci" Click="ukljuci_Click" Background="#FF31577E" Height="30">
-            <Run Foreground="AntiqueWhite">UKLJUČI OBAVEŠTENJA</Run>
-        </Button>
-        <Button Margin="25 10" x:Name="iskljuci" Click="iskljuci_Click"  Background="#FF31577E" Height="30">
-            <Run Foreground="AntiqueWhite" >ISKLJUČI OBAVEŠTENJA</Run>
+        <Button Margin="25 10" x:Name="informacije" Click="informacije_Click"  Background="#FF31577E" Height="30">
+            <Run Foreground="AntiqueWhite" >DETALJI TERAPIJE</Run>
         </Button>
         <Button Margin="25 10" x:Name="izvestaj" Click="izvestaj_Click"  Background="#FF31577E" Height="30">
             <Run Foreground="AntiqueWhite">IZVEŠTAJ</Run>

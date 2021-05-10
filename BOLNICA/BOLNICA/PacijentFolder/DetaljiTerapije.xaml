@@ -1,0 +1,53 @@
+﻿<Window x:Class="Bolnica.PacijentFolder.DetaljiTerapije"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica.PacijentFolder"
+        mc:Ignorable="d"
+    Title="InformacijeOTerapiji" Height="300" Width="350" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Border BorderThickness="2" BorderBrush="SlateGray" >
+        <StackPanel>
+            <Label>DETALJI TERAPIJE</Label>
+            <Separator></Separator>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <Label Grid.Column="0" Grid.Row="1">Lek:</Label>
+                <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Content="{ Binding  Path=PreporucenLek.NazivLeka, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+                <Label Grid.Column="0" Grid.Row="2">Jačina:</Label>
+                <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" Content="{ Binding  Path=PreporucenLek.Jacina, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+                <Label Grid.Column="0" Grid.Row="3">Početak:</Label>
+                <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" Content="{Binding PocetakTerapije , StringFormat={}{0:dd/MM/yyyy}}"></Label>
+
+                <Label Grid.Column="0" Grid.Row="4">Kraj:</Label>
+                <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" Content="{Binding KrajTerapije , StringFormat={}{0:dd/MM/yyyy}}"></Label>
+
+                <Label Grid.Column="0" Grid.Row="5">Uputstvo konzumiranja:</Label>
+                <TextBlock Grid.ColumnSpan="2" Grid.Row="6" FontWeight="DemiBold" Text="{ Binding  UputsvoKonzumiranja}" Margin="5 0"></TextBlock>
+
+            </Grid>
+            <Separator></Separator>
+            <Button Margin="25 10" x:Name="uRedu" Click="uRedu_Click"  Background="#FF31577E" Height="30">
+
+                <Run Foreground="AntiqueWhite">U REDU</Run>
+            </Button>
+        </StackPanel>
+    </Border>
+</Window>

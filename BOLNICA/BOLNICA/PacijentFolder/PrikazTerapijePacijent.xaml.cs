@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.PacijentFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -31,25 +32,24 @@ namespace Bolnica
 
             foreach (Terapija t in RukovanjeZdravstvenimKartonima.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
             {
+                if(DateTime.Compare(DateTime.Now.Date,t.KrajTerapije)<=0)
                 sveTerapijePacijenta.Add(t);
             }
 
             LekoviLista.ItemsSource = sveTerapijePacijenta;
         }
 
-        private void ukljuci_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void iskljuci_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+    
 
         private void izvestaj_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void informacije_Click(object sender, RoutedEventArgs e)
+        {
+            DetaljiTerapije prikazDetalja = new DetaljiTerapije((Terapija)LekoviLista.SelectedItem);
+            prikazDetalja.Show();
         }
     }
 }
