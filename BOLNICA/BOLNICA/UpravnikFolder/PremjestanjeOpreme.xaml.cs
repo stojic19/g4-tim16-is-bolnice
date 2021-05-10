@@ -24,7 +24,7 @@ namespace Bolnica
     {
         String idOpreme = null;
         String idProstoraIzKojegPrebacujem = null;
-       // String izabranProstor = null;
+
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
         public PremjestanjeOpreme(string idOpreme, String idProstoraIzKojegPrebacujem)//korisnik unosi informacije
@@ -55,67 +55,32 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Prostor izabranZaMenjanje = (Prostor)dataGridProstori.SelectedItem;
+            Prostor prostorUKojiPremjestamo = (Prostor)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
+            Prostor prostorIzKojegPremjestamo = RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem);
+            Oprema opremaKojuPremjestamo = RukovanjeOpremom.PretraziPoId(idOpreme);
 
-            if (izabranZaMenjanje != null)
-            {
-                if (this.Kolicina.Text.Equals(""))
-                {
-                    System.Windows.MessageBox.Show("Unesite kolicinu!");
-                    return;
-                }
-                List<Oprema> pomocna = new List<Oprema>();
-
-                foreach (Oprema o in RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem).Oprema)
-                {
-                    if (o.IdOpreme.Equals(idOpreme))
-                    {
-                        if (o.Kolicina < kolicina)
-                        {
-                            System.Windows.Forms.MessageBox.Show("Neispravna kolicina !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        o.Kolicina -= kolicina;
-                    }
-
-                    pomocna.Add(o);
-                }
-                RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem).Oprema = pomocna;
-                Prostor p = RukovanjeProstorom.PretraziPoId(izabranZaMenjanje.IdProstora);
-
-                bool postoji = false;
-                pomocna = new List<Oprema>();
-                foreach (Oprema o in p.Oprema)
-                {
-                    if (o.IdOpreme.Equals(idOpreme))
-                    {
-                        o.Kolicina += kolicina;
-                        postoji = true;
-                    }
-                    pomocna.Add(o);
-                }
-                if (!postoji)
-                {
-                    Oprema o = RukovanjeOpremom.PretraziPoId(idOpreme);
-                    RukovanjeProstorom.PretraziPoId(izabranZaMenjanje.IdProstora).Oprema.Add(new Oprema(idOpreme, o.NazivOpreme, o.VrstaOpreme, kolicina));
-                }
-                else
-                {
-                    RukovanjeProstorom.PretraziPoId(izabranZaMenjanje.IdProstora).Oprema = pomocna;
-                }
-                RukovanjeProstorom.SerijalizacijaProstora();
-                this.Close();
-            }
-            else
+            if (prostorUKojiPremjestamo == null)
             {
                 System.Windows.MessageBox.Show("Izaberite prostriju u koju želite da prebacite!");
             }
 
+            if (this.Kolicina.Text.Equals(""))
+            {
+                System.Windows.MessageBox.Show("Unesite kolicinu!");
+                return;
+            }
+            else
+            {
+                RukovanjeOpremom.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
+            }
 
+            // Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
+            RukovanjeProstorom.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
+            RukovanjeProstorom.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
 
+            RukovanjeProstorom.SerijalizacijaProstora();
+            this.Close();
         }
-
-       
     }
 }

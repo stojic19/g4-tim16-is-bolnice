@@ -150,6 +150,39 @@ namespace Model
 
         }
 
+        public static void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
+        {
+            foreach (Oprema o in prostorIzKojegPremjestamo.Oprema)
+            {
+                if (o.Equals(oprema))
+                {
+                    o.Kolicina -= kolicina;
+                }
+            }
+        }
+
+        public static void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
+        {
+
+            if (!DodajSamoKolicinu(prostorUKojiPremjestamo, oprema, kolicina))
+            {
+                Oprema o = new Oprema(oprema.IdOpreme, oprema.NazivOpreme, oprema.VrstaOpreme, kolicina);
+                RukovanjeProstorom.DodajOpremuProstoru(prostorUKojiPremjestamo, o);
+            }
+        }
+
+        public static Oprema PretraziOpremuUProstoru(Prostor prostor, Oprema oprema)
+        {
+            foreach (Oprema o in prostor.Oprema)
+            {
+                if (o == oprema)
+                {
+                    return o;
+                }
+            }
+            return null;
+        }
+
         public static void PostaviDaSeRenovira(Renoviranje r)
         {
             foreach (Prostor p in prostori)
@@ -178,7 +211,7 @@ namespace Model
         {
             foreach (Oprema o in prostorUKojiPrebacujemo.Oprema)
             {
-                if (o.IdOpreme.Equals(oprema.IdOpreme))
+                if (o == oprema)
                 {
                     o.Kolicina += kolicina;
                     return true;

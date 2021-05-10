@@ -64,16 +64,20 @@
 
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="0"  Content="Prostorije"  Margin="0,0,0.4,0.2" VerticalContentAlignment="Center" 
+                <Button Grid.Row="0" Grid.Column="0"  Content="Prostorije" FontSize="15" Margin="0,0,0.4,0.2" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Prostorije_Click"  Background="#FF31577E"/>
 
                 <Button Content="Oprema" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Oprema_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
+                HorizontalContentAlignment="Center" FontSize="15" Click="Oprema_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
 
-                <Button Content="Lijekovi" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                <Button Content="Lijekovi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Lijekovi_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"/>
 
                 <Grid x:Name="MainPanel" RenderTransformOrigin="-1.752,0.486" Margin="0,0,-0.2,-0.2" Grid.RowSpan="6" Grid.Column="1" />
+                <Image Source="/Slike/Sekretar/Ikonice/zdravo.jpg" HorizontalAlignment="Left" Height="171" Margin="227,61.2,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"/>
+                <Label Content="Zdravo klinika" FontSize="40" HorizontalAlignment="Left" Margin="165,45.2,0,0" VerticalAlignment="Top" Height="58" Width="285" FontWeight="Bold" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
+                <Label Content="Dobro dosli upravnice !" FontSize="30" HorizontalAlignment="Left" Margin="129,61,0,0" VerticalAlignment="Top" Height="58" Width="466" FontWeight="Bold" Grid.Column="1" Grid.RowSpan="2"/>
+
             </Grid>
 
         </StackPanel>

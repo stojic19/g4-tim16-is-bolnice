@@ -76,7 +76,7 @@ namespace Model
 
         public static void PremjestiKolicinuOpreme(Prostor prostorUKojiPrebacujemo, Oprema opremaKojuPrebacujemo, int kolicina)
         {
-            ProvjeriKolicineKojuPremjestamo(opremaKojuPrebacujemo, kolicina);
+            ProvjeriKolicinuKojuPremjestamo(opremaKojuPrebacujemo, kolicina);
 
             foreach (Oprema o in RukovanjeOpremom.SvaOprema())
             {
@@ -93,7 +93,7 @@ namespace Model
             }
         }
 
-        public static bool ProvjeriKolicineKojuPremjestamo(Oprema oprema, int kolicina)
+        public static bool ProvjeriKolicinuKojuPremjestamo(Oprema oprema, int kolicina)
         {
             if (oprema.Kolicina < kolicina)
             {
