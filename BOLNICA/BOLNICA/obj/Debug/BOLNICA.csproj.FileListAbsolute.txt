@@ -1164,3 +1164,5 @@ C:\Users\computer\Desktop\sims jelena ubacila\g4-tim16-is-bolnice\BOLNICA\Bolnic
 C:\Users\computer\Desktop\sims jelena ubacila\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.g.cs
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.baml
+C:\Users\computer\Desktop\sims kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.g.cs
+C:\Users\computer\Desktop\sims kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.baml

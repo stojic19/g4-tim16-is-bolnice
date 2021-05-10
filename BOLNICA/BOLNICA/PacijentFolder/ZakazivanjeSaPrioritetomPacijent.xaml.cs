@@ -46,7 +46,7 @@ namespace Bolnica
                 MessageBox.Show("Ne možete izabrati datum u prošlosti!");
                 return;
             }
-
+           
             if (DateTime.Compare(((DateTime)datumdo.SelectedDate).Date,((DateTime)datumod.SelectedDate).Date) <= 0)
             {
                 MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
