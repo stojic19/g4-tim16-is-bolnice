@@ -141,10 +141,13 @@ namespace Bolnica
                 Lekar item = (Lekar)TabelaLekara.SelectedItems[0];
                 idLekara.Text = item.Ime + " " + item.Prezime;
                 izabranLekar = item.KorisnickoIme;
+
+                //if (item.specijalizacija == SpecijalizacijeLekara.nema) podesiVrsteTermina();
                 refresujPocetnoVreme();
             }
 
         }
+
 
         private void datum_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {

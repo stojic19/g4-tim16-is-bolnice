@@ -58,7 +58,6 @@ namespace Bolnica.LekarFolder
 
         private void DodavanjeNovogSpecijalistickog()
         {
-            String imeiprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
             {
@@ -67,11 +66,12 @@ namespace Bolnica.LekarFolder
 
             }
 
-            noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime,
-                idLekaraSpecijaliste, izabranPregled.Termin.Pacijent.KorisnickoIme, nalazMisljenje.Text);
+            String imeprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
 
-            RukovanjeZdravstvenimKartonima.DodajUput(noviUput);
-            RukovanjePregledima.DodajUput(izabranPregled, noviUput);
+            RukovanjeZdravstvenimKartonima.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
+            RukovanjePregledima.DodajUput(izabranPregled.IdPregleda, noviUput);
+
             RukovanjePregledima.SerijalizacijaPregleda();
             RukovanjeNalozimaPacijenata.Sacuvaj();
         }
@@ -84,7 +84,7 @@ namespace Bolnica.LekarFolder
             if (noviUput != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput, izabranPregled.IdPregleda));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput.IDLekaraSpecijaliste, izabranPregled.IdPregleda));
             }
         }
 

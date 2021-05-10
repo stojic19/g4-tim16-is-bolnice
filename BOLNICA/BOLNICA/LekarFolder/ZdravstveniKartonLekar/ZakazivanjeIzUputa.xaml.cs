@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,18 +22,20 @@ namespace Bolnica.LekarFolder
 {
     public partial class ZakazivanjeIzUputa : System.Windows.Controls.UserControl
     {
-        private Uput UputSaPodacima = null;
+        private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
         private String izabranaVrstaTermina = null;
-        String IDPregleda = null;
+        Pregled izabranPregled = null;
+        private String izabranaProstorija = null;
         public static ObservableCollection<Termin> slobodniTermini { get; set; } = new ObservableCollection<Termin>();
+        public static ObservableCollection<Prostor> Prostorije { get; set; } = new ObservableCollection<Prostor>();
 
 
-        public ZakazivanjeIzUputa(Uput uputSaPodacima, String idPregleda)
+        public ZakazivanjeIzUputa(String lekarSpecijalista, String idPregleda)
         {
             InitializeComponent();
-            UputSaPodacima = uputSaPodacima;
-            IDPregleda = idPregleda;
+            idLekarSpecijalista = lekarSpecijalista;
+            izabranPregled = RukovanjePregledima.PretraziPoId(idPregleda);
             inicijalizacijaPolja();
             refresujPocetnoVreme();
             this.DataContext = this;
@@ -41,15 +44,15 @@ namespace Bolnica.LekarFolder
         private void inicijalizacijaPolja()
         {
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(UputSaPodacima.IDPacijenta);
+            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
             pacijent.Text = p.imePrezime();
-            lekar.Text = RukovanjeTerminima.ImeiPrezime(UputSaPodacima.IDLekaraSpecijaliste);
+            lekar.Text = RukovanjeTerminima.ImeiPrezime(idLekarSpecijalista);
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(IDPregleda, 4));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
 
         }
 
@@ -60,8 +63,8 @@ namespace Bolnica.LekarFolder
 
             Termin t = (Termin)pocVreme.SelectedItem;
 
-            t.Lekar = RukovanjeTerminima.pretraziLekare(UputSaPodacima.IDLekaraSpecijaliste);
-            t.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(UputSaPodacima.IDPacijenta);
+            t.Lekar = RukovanjeTerminima.pretraziLekare(idLekarSpecijalista);
+            t.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             if (izabranaVrstaTermina.Equals("Operacija"))
             {
@@ -72,9 +75,9 @@ namespace Bolnica.LekarFolder
                 t.Trajanje = 30;
             }
 
-            RukovanjeTerminima.ZakaziTermin(t, UputSaPodacima.IDLekaraKojiUpucuje);
+            RukovanjeTerminima.ZakaziTermin(t, izabranPregled.Termin.Lekar.KorisnickoIme);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(IDPregleda, 4));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
 
         }
 
@@ -101,7 +104,26 @@ namespace Bolnica.LekarFolder
                 izabranaVrstaTermina = "Operacija";
             }
 
+
+            refresujProstorije();
             refresujPocetnoVreme();
+        }
+
+        private void refresujProstorije()
+        {
+            Prostorije.Clear();
+
+            foreach (Prostor p in RukovanjeProstorom.SviProstori())
+            {
+                if (izabranaVrstaTermina.Equals("Pregled") && p.VrstaProstora == VrsteProstora.ordinacija)
+                {
+                    Prostorije.Add(p);
+                }
+                else if (izabranaVrstaTermina.Equals("Operacija") && p.VrstaProstora == VrsteProstora.sala)
+                {
+                    Prostorije.Add(p);
+                }
+            }
         }
 
         private void datum_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -120,14 +142,23 @@ namespace Bolnica.LekarFolder
             slobodniTermini.Clear();
             foreach (Termin t in RukovanjeTerminima.slobodniTermini)
             {
-                if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(UputSaPodacima.IDLekaraSpecijaliste) &&
-                    t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
+                if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(idLekarSpecijalista) &&
+                    t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Prostor.IdProstora.Equals(izabranaProstorija))
                 {
+
                     slobodniTermini.Add(t);
 
                 }
 
             }
+        }
+
+        private void prostorije_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Prostor izabran = (Prostor)prostorije.SelectedItem;
+            izabranaProstorija = izabran.IdProstora;
+            Console.WriteLine(izabranaProstorija);
+            refresujPocetnoVreme();
         }
     }
 }

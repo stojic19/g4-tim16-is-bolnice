@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        d:DesignHeight="380" d:DesignWidth="850">
+        d:DesignHeight="1380" d:DesignWidth="850">
 
 
 
@@ -109,24 +109,19 @@
                             <ListView.View>
                                 <GridView>
 
-                                    <GridViewColumn Header="Šifra" DisplayMemberBinding="{Binding IDLeka}" Width="95" />
-                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivLeka}" Width="100" />
-                                    <GridViewColumn Header="Jačina" DisplayMemberBinding="{Binding Jacina}" Width="95"/>
+                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivLeka}" Width="140" />
+                                    <GridViewColumn Header="Jačina" DisplayMemberBinding="{Binding Jacina}" Width="140"/>
 
                                 </GridView>
                             </ListView.View>
                         </ListView>
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" Margin="23,16,22.6,16" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <StackPanel Orientation="Vertical" Margin="23,43,22.6,16" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
                         <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                          Name="imeLeka" FontWeight="Normal"/>
                         <Label Content="Naziv leka" HorizontalAlignment="Center" FontWeight="Normal" />
-
-                        <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
-                                             Name="sifraLeka" FontWeight="Normal"/>
-                        <Label Content="Šifra leka" HorizontalAlignment="Center" FontWeight="Normal" />
                         <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                              Name="jacinaLeka" FontWeight="Normal"/>
                         <Label Content="Jačina leka" HorizontalAlignment="Center" FontWeight="Normal" />

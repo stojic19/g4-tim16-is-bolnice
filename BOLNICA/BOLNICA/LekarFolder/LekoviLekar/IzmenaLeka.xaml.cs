@@ -42,7 +42,6 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             this.nazivLeka.Text = izabranLek.NazivLeka;
             this.jacinaLeka.Text = izabranLek.Jacina;
-            this.kolicinaLeka.Text = izabranLek.Kolicina.ToString();
             Sastojci.Clear();
             foreach (Sastojak s in izabranLek.Sastojci)
             {
@@ -114,7 +113,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
         private Boolean ValidacijaUnosa()
         {
-            if (nazivLeka.Text.Equals("") || jacinaLeka.Text.Equals("") || kolicinaLeka.Text.Equals(""))
+            if (nazivLeka.Text.Equals("") || jacinaLeka.Text.Equals("") )
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

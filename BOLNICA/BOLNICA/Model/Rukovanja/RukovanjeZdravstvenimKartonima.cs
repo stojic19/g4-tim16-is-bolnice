@@ -125,12 +125,12 @@ namespace Bolnica.Model
             }
         }
 
-        public static void DodajUput(Uput noviUput)
+        public static void DodajUput(String idPacijenta,Uput noviUput)
         {
             foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
             {
 
-                if (p.KorisnickoIme.Equals(noviUput.IDPacijenta))
+                if (p.KorisnickoIme.Equals(idPacijenta))
                 {
                     p.ZdravstveniKarton.Uputi.Add(noviUput);
                     KartonLekar.Uputi.Add(noviUput);

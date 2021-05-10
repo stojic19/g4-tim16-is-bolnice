@@ -244,40 +244,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -544,40 +536,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -844,40 +828,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -1151,40 +1127,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -1458,40 +1426,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -1765,40 +1725,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -2072,40 +2024,32 @@
             <IDUputa>d14f2d04-466a-44cb-bd5f-19810868648c</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T03:32:44.2303045+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim te pregledaj je</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>23936b54-d8c3-4b02-a2a3-d00006f789d8</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:25:15.0194885+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>JelenaHrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Proba pred predaju magdaleni</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>6d6b8c1a-5651-46cf-b327-e3e8c0886281</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T14:28:16.2353154+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>AleksaStojic</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>AleksaStojic</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Ajde</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>9d273fb9-1cd4-49e9-b10c-3baec7b8ff65</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-07T21:54:47.421352+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MagdalenaReljin</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>efas</NalazMisljenje>
           </Uput>
         </Uputi>
@@ -2412,20 +2356,16 @@
             <IDUputa>eac8c5c3-9ff1-47fe-8523-2707f57b630f</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-10T11:44:47.0595007+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>MarkoAndjelic</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Pregledajte pacijenta</NalazMisljenje>
           </Uput>
           <Uput>
             <IDUputa>df5957c2-af6d-48f1-ae05-543fb0b4effb</IDUputa>
             <TipUputa>SPECIJALISTA</TipUputa>
             <DatumIzdavanja>2021-05-10T11:45:12.9780317+02:00</DatumIzdavanja>
-            <IDLekaraKojiUpucuje>JelenaHrnjak</IDLekaraKojiUpucuje>
             <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
             <IDLekaraSpecijaliste>JelenaHrnjak</IDLekaraSpecijaliste>
-            <IDPacijenta>magdalena</IDPacijenta>
             <NalazMisljenje>Molim nalaz</NalazMisljenje>
           </Uput>
         </Uputi>

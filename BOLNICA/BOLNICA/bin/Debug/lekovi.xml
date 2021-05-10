@@ -87,7 +87,11 @@
     <Sastojci>
       <Sastojak>
         <Naziv>s341</Naziv>
-        <Kolicina>3221</Kolicina>
+        <Kolicina>3</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s312</Naziv>
+        <Kolicina>231</Kolicina>
       </Sastojak>
     </Sastojci>
     <Verifikacija>true</Verifikacija>
@@ -110,6 +114,21 @@
           <Sastojak>
             <Naziv>s8</Naziv>
             <Kolicina>2</Kolicina>
+          </Sastojak>
+        </Sastojci>
+        <Verifikacija>true</Verifikacija>
+        <Zamene />
+      </Lek>
+      <Lek>
+        <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+        <NazivLeka>Aerius</NazivLeka>
+        <Jacina>10mg</Jacina>
+        <Kolicina>3212</Kolicina>
+        <Proizvodjac>Brufesa</Proizvodjac>
+        <Sastojci>
+          <Sastojak>
+            <Naziv>s42</Naziv>
+            <Kolicina>3</Kolicina>
           </Sastojak>
         </Sastojci>
         <Verifikacija>true</Verifikacija>

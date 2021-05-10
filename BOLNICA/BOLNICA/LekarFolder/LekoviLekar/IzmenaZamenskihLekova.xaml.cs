@@ -42,7 +42,6 @@ namespace Bolnica
         {
             this.nazivLeka.Text = izabranLek.NazivLeka;
             this.jacinaLeka.Text = izabranLek.Jacina;
-            this.kolicinaLeka.Text = izabranLek.Kolicina.ToString();
 
         }
 

@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model.Enumi;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +13,18 @@ namespace Bolnica.Model
         public String IDUputa { get; set; }
         public TipoviUputa TipUputa { get; set; }
         public DateTime DatumIzdavanja { get; set; }
-        public String IDLekaraKojiUpucuje { get; set; }
         public String ImePrezimeLekar { get; set; }
         public String IDLekaraSpecijaliste { get; set; }
-        public String IDPacijenta { get; set; }
         public String NalazMisljenje { get; set; }
 
         public Uput() { }
-        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string iDLekaraKojiUpucuje, string imePrezimeLekar, string iDLekaraSpecijaliste, string iDPacijenta, string nalazMisljenje)
+        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string iDLekaraSpecijaliste,  string nalazMisljenje, string imeprezime)
         {
             IDUputa = iDUputa;
             TipUputa = tipUputa;
             DatumIzdavanja = datumIzdavanja;
-            IDLekaraKojiUpucuje = iDLekaraKojiUpucuje;
-            ImePrezimeLekar = imePrezimeLekar;
+            ImePrezimeLekar = imeprezime;
             IDLekaraSpecijaliste = iDLekaraSpecijaliste;
-            IDPacijenta = iDPacijenta;
             NalazMisljenje = nalazMisljenje;
         }
 

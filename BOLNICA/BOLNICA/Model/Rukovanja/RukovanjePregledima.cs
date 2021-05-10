@@ -85,11 +85,11 @@ namespace Bolnica.Model.Rukovanja
 
         }
 
-        internal static void DodajUput(Pregled izabranPregled, Uput noviUput)
+        internal static void DodajUput(String idIzabranogPregleda, Uput noviUput)
         {
             foreach (Pregled p in sviPregledi)
             {
-                if (p.IdPregleda.Equals(izabranPregled.IdPregleda))
+                if (p.IdPregleda.Equals(idIzabranogPregleda))
                 {
                     p.Odrzan = true;
                     p.Uputi.Add(noviUput);

@@ -27,6 +27,7 @@ namespace Bolnica
 
         Pregled izabranPregled = null;
         String idAnamneze = null;
+        String sifraLeka = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
         public NovaAnamneza(String IDIzabranog)
         {
@@ -57,6 +58,8 @@ namespace Bolnica
 
         private void inicijalizacijaPolja()
         {
+            pocTer.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
+            krajTer.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
             Pacijent p = izabranPregled.Termin.Pacijent;
             Lekar l = izabranPregled.Termin.Lekar;
 
@@ -138,7 +141,7 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = RukovanjeOdobrenimLekovima.PretraziPoID(this.sifraLeka.Text);
+            Lek preporucenLek = RukovanjeOdobrenimLekovima.PretraziPoID(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
             Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
             RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
@@ -181,7 +184,7 @@ namespace Bolnica
 
         private bool ValidacijaPolja()
         {
-            if (this.imeLeka.Text.Equals("") || this.sifraLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
+            if (this.imeLeka.Text.Equals("") ||  this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -213,7 +216,6 @@ namespace Bolnica
         private void PraznjenjePolja()
         {
             this.poljeZaPreragu.Text = string.Empty;
-            this.sifraLeka.Text = String.Empty;
             this.jacinaLeka.Text = String.Empty;
             this.imeLeka.Text = String.Empty;
             this.dnevnaKol.Text = String.Empty;
@@ -242,7 +244,7 @@ namespace Bolnica
             {
                 Lek item = (Lek)TabelaLekova.SelectedItems[0];
                 imeLeka.Text = item.NazivLeka;
-                sifraLeka.Text = item.IDLeka;
+                sifraLeka = item.IDLeka;
                 jacinaLeka.Text = item.Jacina;
             }
         }
