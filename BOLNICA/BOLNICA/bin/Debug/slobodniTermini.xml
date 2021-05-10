@@ -3,6 +3,48 @@
   <Termin>
     <IdTermina>T12</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>14:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-05-22T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P1</RoomId>
+        <StartDay>2021-05-05T00:00:00</StartDay>
+        <EndDay>2021-05-09T00:00:00</EndDay>
+      </Renoviranje>
+      <Oprema>
+        <Oprema>
+          <IdOpreme>s1</IdOpreme>
+          <NazivOpreme>krevet</NazivOpreme>
+          <VrstaOpreme>staticka</VrstaOpreme>
+          <Kolicina>1</Kolicina>
+        </Oprema>
+      </Oprema>
+    </Prostor>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T12</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>15:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
     <Datum>2021-05-22T00:00:00</Datum>
@@ -12,7 +54,12 @@
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
       <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P1</RoomId>
+        <StartDay>2021-05-05T00:00:00</StartDay>
+        <EndDay>2021-05-09T00:00:00</EndDay>
+      </Renoviranje>
       <Oprema>
         <Oprema>
           <IdOpreme>s1</IdOpreme>
@@ -25,7 +72,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>
@@ -38,111 +85,112 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T13</IdTermina>
+    <IdTermina>T35</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>16:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-05-30T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>P1</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>1</Kvadratura>
+      <BrojKreveta>2</BrojKreveta>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P1</RoomId>
+        <StartDay>2021-05-05T00:00:00</StartDay>
+        <EndDay>2021-05-09T00:00:00</EndDay>
+      </Renoviranje>
+      <Oprema>
+        <Oprema>
+          <IdOpreme>s1</IdOpreme>
+          <NazivOpreme>krevet</NazivOpreme>
+          <VrstaOpreme>staticka</VrstaOpreme>
+          <Kolicina>1</Kolicina>
+        </Oprema>
+      </Oprema>
+    </Prostor>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T16</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>19:30</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-05-27T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>P2</IdProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>1</Sprat>
+      <Kvadratura>25</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P2</RoomId>
+        <StartDay>2021-05-08T00:00:00</StartDay>
+        <EndDay>2021-05-10T00:00:00</EndDay>
+      </Renoviranje>
+      <Oprema />
+    </Prostor>
+    <Lekar>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
+      <Jmbg>431</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
+      <KontaktTelefon>06343</KontaktTelefon>
+      <Email>jelenah@lekar.com</Email>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Lozinka>jelenahrnjak</Lozinka>
+      <Pol>zenski</Pol>
+      <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T17</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>11:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-05-24T00:00:00</Datum>
+    <Datum>2021-05-27T00:00:00</Datum>
     <Prostor>
-      <IdProstora>P1</IdProstora>
+      <IdProstora>P2</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
+      <Kvadratura>25</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P2</RoomId>
+        <StartDay>2021-05-08T00:00:00</StartDay>
+        <EndDay>2021-05-10T00:00:00</EndDay>
+      </Renoviranje>
+      <Oprema />
     </Prostor>
     <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T14</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-24T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T19</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>19:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-24T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
+      <Jmbg>431</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
+      <KontaktTelefon>06343</KontaktTelefon>
+      <Email>jelenah@lekar.com</Email>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Lozinka>jelenahrnjak</Lozinka>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
       <dostupnost>false</dostupnost>
@@ -160,73 +208,18 @@
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
       <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P2</RoomId>
+        <StartDay>2021-05-08T00:00:00</StartDay>
+        <EndDay>2021-05-10T00:00:00</EndDay>
+      </Renoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T24</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-04-26T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema />
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T25</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-04T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema />
-    </Prostor>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -250,13 +243,18 @@
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
       <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P2</RoomId>
+        <StartDay>2021-05-08T00:00:00</StartDay>
+        <EndDay>2021-05-10T00:00:00</EndDay>
+      </Renoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>431</Jmbg>
       <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
       <KontaktTelefon>06343</KontaktTelefon>
@@ -270,10 +268,10 @@
   </Termin>
   <Termin>
     <IdTermina>T100</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
+    <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>11:00</PocetnoVreme>
     <Trajanje>120</Trajanje>
-    <Datum>2021-04-27T00:00:00</Datum>
+    <Datum>2021-05-27T00:00:00</Datum>
     <Prostor>
       <IdProstora>OP1</IdProstora>
       <VrstaProstora>sala</VrstaProstora>
@@ -286,7 +284,7 @@
     <Lekar>
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>421</Jmbg>
       <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
       <KontaktTelefon>06332</KontaktTelefon>
@@ -316,7 +314,7 @@
     <Lekar>
       <Ime>Aleksa</Ime>
       <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>421</Jmbg>
       <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
       <KontaktTelefon>06332</KontaktTelefon>
@@ -329,48 +327,53 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T15</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-21T00:00:00</Datum>
+    <IdTermina>T300</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>09:00</PocetnoVreme>
+    <Trajanje>120</Trajanje>
+    <Datum>2021-06-03T00:00:00</Datum>
     <Prostor>
-      <IdProstora>P2</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>25</Kvadratura>
+      <IdProstora>OP1</IdProstora>
+      <VrstaProstora>sala</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>40</Kvadratura>
       <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>false</JeRenoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <specijalizacija>neurohirurg</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>T29</IdTermina>
+    <IdTermina>T19</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>13:00</PocetnoVreme>
+    <PocetnoVreme>19:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-05-26T00:00:00</Datum>
+    <Datum>2021-05-24T00:00:00</Datum>
     <Prostor>
       <IdProstora>P1</IdProstora>
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
       <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
+      <JeRenoviranje>true</JeRenoviranje>
+      <Renoviranje>
+        <RoomId>P1</RoomId>
+        <StartDay>2021-05-05T00:00:00</StartDay>
+        <EndDay>2021-05-09T00:00:00</EndDay>
+      </Renoviranje>
       <Oprema>
         <Oprema>
           <IdOpreme>s1</IdOpreme>
@@ -383,118 +386,7 @@
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T30</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-26T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T35</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-30T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T21:53:48.7114593+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <specijalizacija>nema</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>T12</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>14:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-05-22T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>P1</IdProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>1</Sprat>
-      <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema>
-        <Oprema>
-          <IdOpreme>s1</IdOpreme>
-          <NazivOpreme>krevet</NazivOpreme>
-          <VrstaOpreme>staticka</VrstaOpreme>
-          <Kolicina>1</Kolicina>
-        </Oprema>
-      </Oprema>
-    </Prostor>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-07T03:27:15.5002835+02:00</DatumRodjenja>
+      <DatumRodjenja>2021-05-10T10:45:01.5396722+02:00</DatumRodjenja>
       <Jmbg>33313</Jmbg>
       <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
       <KontaktTelefon>0634</KontaktTelefon>

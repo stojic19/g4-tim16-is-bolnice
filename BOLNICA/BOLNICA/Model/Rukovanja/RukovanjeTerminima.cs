@@ -78,7 +78,7 @@ namespace Model
 
 
 
-            slobodniTermini.Add(new Termin("T100", VrsteTermina.operacija, "11:00", 120, new DateTime(2021, 4, 27), RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
+            slobodniTermini.Add(new Termin("T100", VrsteTermina.pregled, "11:00", 120, new DateTime(2021, 5, 27), RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
             slobodniTermini.Add(new Termin("T200", VrsteTermina.operacija, "09:00", 120, new DateTime(2021, 5, 3), RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
             slobodniTermini.Add(new Termin("T300", VrsteTermina.operacija, "09:00", 120, new DateTime(2021, 6, 3), RukovanjeProstorom.PretraziPoId("OP1"), null, pretraziLekare("AleksaStojic")));
         }

@@ -193,6 +193,90 @@
             </Terapija>
           </Terapije>
         </Anamneza>
+        <Anamneza>
+          <IdAnamneze>39c7c682-1128-4ed1-9217-182cc85f78c1</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-05-10T10:36:11.2362984+02:00</Datum>
+          <Dijagnoza>Bol u grlu.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>78ce95ee-fa42-4dfd-8d81-0df02b9b4bb3</IDTerapije>
+              <IDAnamneze>39c7c682-1128-4ed1-9217-182cc85f78c1</IDAnamneze>
+              <PocetakTerapije>2021-05-11T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-13T00:00:00</KrajTerapije>
+              <Kolicina>3</Kolicina>
+              <Satnica>8</Satnica>
+              <UputsvoKonzumiranja />
+              <PreporucenLek>
+                <IDLeka>2</IDLeka>
+                <NazivLeka>L2</NazivLeka>
+                <Jacina>20mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Verifikacija>false</Verifikacija>
+                <Zamene />
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
+        <Anamneza>
+          <IdAnamneze>3637c5a6-d0f0-43de-b290-37fcc905a6fd</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-05-10T10:54:08.4183516+02:00</Datum>
+          <Dijagnoza>Dijagnoza 1.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>27db9de5-6f6a-4796-be28-09f787fdcdc5</IDTerapije>
+              <IDAnamneze>3637c5a6-d0f0-43de-b290-37fcc905a6fd</IDAnamneze>
+              <PocetakTerapije>2021-05-11T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-12T00:00:00</KrajTerapije>
+              <Kolicina>2</Kolicina>
+              <Satnica>3</Satnica>
+              <UputsvoKonzumiranja>Neko uputstvo.</UputsvoKonzumiranja>
+              <PreporucenLek>
+                <IDLeka>3</IDLeka>
+                <NazivLeka>L3</NazivLeka>
+                <Jacina>200mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Verifikacija>false</Verifikacija>
+                <Zamene />
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
+        <Anamneza>
+          <IdAnamneze>0275ea0b-e948-4921-9fa7-8792a44234c8</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-05-10T10:55:07.7558907+02:00</Datum>
+          <Dijagnoza>Dijagnoza.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>1c54aa20-cbc3-465a-be22-3dd3a9404186</IDTerapije>
+              <IDAnamneze>0275ea0b-e948-4921-9fa7-8792a44234c8</IDAnamneze>
+              <PocetakTerapije>2021-05-13T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-05-18T00:00:00</KrajTerapije>
+              <Kolicina>3</Kolicina>
+              <Satnica>4</Satnica>
+              <UputsvoKonzumiranja />
+              <PreporucenLek>
+                <IDLeka>4</IDLeka>
+                <NazivLeka>L4</NazivLeka>
+                <Jacina>500mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Verifikacija>false</Verifikacija>
+                <Zamene />
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
       </Anamneze>
       <Uputi>
         <Uput>
@@ -237,7 +321,7 @@
         </Uput>
       </Uputi>
     </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
+    <ZloupotrebioSistem>1</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
   <Pacijent>

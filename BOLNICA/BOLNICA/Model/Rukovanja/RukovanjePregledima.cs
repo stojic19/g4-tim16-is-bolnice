@@ -24,7 +24,10 @@ namespace Bolnica.Model.Rukovanja
             }
             return null;
         }
-
+        public static List<Pregled> SortPoDatumuPregleda()
+        {
+            return sviPregledi.OrderBy(user => user.Termin.Datum).ToList();
+        }
         public static Pregled PristupPregledu(Termin terminPregleda)
         {
             Pregled noviPregled = PretragaPoTerminu(terminPregleda.IdTermina);

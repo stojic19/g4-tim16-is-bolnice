@@ -28,7 +28,7 @@ namespace Bolnica
             TerminiPacijenta = new ObservableCollection<Termin>();
             foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
             { 
-                if(t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme))
+                if(t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && DateTime.Compare(DateTime.Now.Date,t.Datum.Date)<=0)
                 TerminiPacijenta.Add(t);
             }
             SviTerminiPacijenta.ItemsSource = TerminiPacijenta;

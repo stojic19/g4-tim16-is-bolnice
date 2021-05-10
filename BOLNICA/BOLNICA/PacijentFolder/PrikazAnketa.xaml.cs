@@ -28,11 +28,12 @@ namespace Bolnica.PacijentFolder
         {
             InitializeComponent();
             StariPregledi = new ObservableCollection<Pregled>();
-            foreach (Pregled pregled in RukovanjePregledima.sviPregledi)
+            foreach (Pregled pregled in RukovanjePregledima.SortPoDatumuPregleda())
             {
                 if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan && !pregled.OcenjenPregled)
                     StariPregledi.Add(pregled);
             }
+
             AnketePacijenta.ItemsSource = StariPregledi;
         }
 
