@@ -38,7 +38,7 @@ namespace Bolnica
 
             inicijalizacijaPolja();
 
-            this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.inicijalniLekovi;
+            this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
 
@@ -138,7 +138,7 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = RukovanjeZdravstvenimKartonima.pretraziLekPoID(this.sifraLeka.Text);
+            Lek preporucenLek = RukovanjeOdobrenimLekovima.PretraziPoID(this.sifraLeka.Text);
             String idTerapije = Guid.NewGuid().ToString();
             Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
             RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);

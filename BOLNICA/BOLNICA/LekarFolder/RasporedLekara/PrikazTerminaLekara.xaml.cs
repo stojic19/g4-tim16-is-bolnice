@@ -37,7 +37,10 @@ namespace Bolnica
 
             foreach (Termin t in RukovanjeTerminima.PretraziPoLekaru(korIme))
             {
-                Termini.Add(t);
+                if (t.Datum.AddDays(7).Date.CompareTo(DateTime.Now) >= 0)
+                {
+                    Termini.Add(t);
+                }
             }
 
         }

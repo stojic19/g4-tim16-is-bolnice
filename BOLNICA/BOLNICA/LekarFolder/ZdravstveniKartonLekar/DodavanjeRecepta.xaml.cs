@@ -49,7 +49,7 @@ namespace Bolnica
         {
             Lekovi.Clear();
 
-            foreach(Lek l in RukovanjeZdravstvenimKartonima.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
+            foreach (Lek l in RukovanjeZdravstvenimKartonima.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
             {
                 Lekovi.Add(l);
             }
@@ -63,16 +63,15 @@ namespace Bolnica
             if (!Validacija()) return;
 
             Lek prepisanLek = RukovanjeOdobrenimLekovima.PretraziPoID(sifraLeka);
-            Recept novRecept = new Recept(Guid.NewGuid().ToString(), izabranPregled.Termin.Lekar.KorisnickoIme, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, prepisanLek);
+            Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
-            RukovanjeZdravstvenimKartonima.DodajRecept(novRecept);
-
-            RukovanjePregledima.DodavanjeRecepta(izabranPregled, novRecept);
+            RukovanjeZdravstvenimKartonima.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
+            RukovanjePregledima.DodavanjeRecepta(izabranPregled.IdPregleda, novRecept);
 
             PovratakNaKarton();
         }
 
-        
+
         private Boolean Validacija()
         {
             if (this.nazivLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
@@ -93,7 +92,7 @@ namespace Bolnica
             PovratakNaKarton();
 
         }
-        
+
         private void dataGridLekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;

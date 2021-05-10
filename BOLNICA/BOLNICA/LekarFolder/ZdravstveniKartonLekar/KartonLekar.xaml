@@ -136,7 +136,6 @@
                         <DataGridTextColumn Header="Datum prepisivanja leka" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
                         <DataGridTextColumn Header="Naziv leka" Binding="{Binding Lek.NazivLeka}" Width="100*"/>
                         <DataGridTextColumn Header="Jačina" Binding="{Binding Lek.Jacina}" Width="95*"/>
-                        <DataGridTextColumn Header="Lekar koji je prepisao lek" Binding="{Binding ImeiPrezimeLekara}" Width="120*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -153,7 +152,8 @@
             <Grid>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="140*"/>
+                    <ColumnDefinition Width="239*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -165,7 +165,7 @@
                 <DataGrid x:Name="dataGridUputi" ItemsSource="{Binding Uputi}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1"
-                  MinWidth="700" MinHeight="240"  Width="700" Height="240" Margin="30,5,30,20" HorizontalAlignment="Center" VerticalAlignment="Top">
+                  MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
                     <DataGrid.Columns>
 
                         <DataGridTextColumn Header="Tip uputa" Binding="{Binding TipUputa}" Width="90*"/>
@@ -174,9 +174,9 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button Grid.Row="0" Content="Dodaj uput" Margin="20,10,30,5" VerticalContentAlignment="Center" 
+                <Button Grid.Row="0" Content="Dodaj uput" Margin="0,12,29.6,7.6" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="DodavanjeUputa" Background="WhiteSmoke" Height="30" Width="135" VerticalAlignment="Center"
-                                HorizontalAlignment="Right"/>
+                                HorizontalAlignment="Right" Grid.Column="1"/>
 
             </Grid>
 

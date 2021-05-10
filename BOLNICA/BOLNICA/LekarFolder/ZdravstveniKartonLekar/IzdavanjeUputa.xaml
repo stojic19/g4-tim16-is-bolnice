@@ -46,7 +46,7 @@
 
                         <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
                             <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <Image Source="LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Image Source="/Slike/LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
 

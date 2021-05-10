@@ -34,6 +34,8 @@ namespace Bolnica
             InitializeComponent();
             korisnik = lekar;
 
+            datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
+
             this.TabelaPacijenata.ItemsSource = RukovanjeNalozimaPacijenata.sviNaloziPacijenata;
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;

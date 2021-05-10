@@ -40,6 +40,7 @@ namespace Bolnica.LekarFolder
 
         private void inicijalizacijaPolja()
         {
+            datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
             Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(UputSaPodacima.IDPacijenta);
             pacijent.Text = p.imePrezime();
             lekar.Text = RukovanjeTerminima.ImeiPrezime(UputSaPodacima.IDLekaraSpecijaliste);

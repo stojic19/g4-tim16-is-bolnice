@@ -46,7 +46,7 @@ namespace Bolnica.Model
         public static List<Lek> LekoviBezAlergena(String idIzabranogPacijenta)
         {
             List<Lek> lekoviBezAlergena = new List<Lek>();
-            
+
 
             foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
             {
@@ -74,12 +74,12 @@ namespace Bolnica.Model
         }
 
 
-        public static void DodajRecept(Recept novRecept)
+        public static void DodajRecept(String idPacijenta, Recept novRecept)
         {
             foreach (Pacijent p in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
             {
 
-                if (p.KorisnickoIme.Equals(novRecept.IDPacijenta))
+                if (p.KorisnickoIme.Equals(idPacijenta))
                 {
                     p.ZdravstveniKarton.Recepti.Add(novRecept);
                     KartonLekar.Recepti.Add(novRecept);

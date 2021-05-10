@@ -107,11 +107,11 @@ namespace Bolnica.Model.Rukovanja
 
         }
 
-        public static void DodavanjeRecepta(Pregled izabranPregled, Recept novRecept)
+        public static void DodavanjeRecepta(String idPregleda, Recept novRecept)
         {
             foreach (Pregled p in sviPregledi)
             {
-                if (p.IdPregleda.Equals(izabranPregled.IdPregleda))
+                if (p.IdPregleda.Equals(idPregleda))
                 {
                     p.Odrzan = true;
                     p.Recepti.Add(novRecept);

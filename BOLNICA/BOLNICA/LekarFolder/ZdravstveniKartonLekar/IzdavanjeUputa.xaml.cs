@@ -23,7 +23,7 @@ namespace Bolnica.LekarFolder
 
             inicijalizacijaPolja();
 
-            this.TabelaLekara.ItemsSource = RukovanjeTerminima.sviLekari;
+            this.TabelaLekara.ItemsSource = RukovanjeTerminima.DobaviSpecijaliste();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 
