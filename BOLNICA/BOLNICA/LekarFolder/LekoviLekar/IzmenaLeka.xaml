@@ -39,10 +39,10 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="1" Grid.Column="0" Content="Naziv leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="0" Name="nazivLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
+                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="0" Name="nazivLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
                 <Label Grid.Row="1" Grid.Column="1" Content="Jačina leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Name="jacinaLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
-                
+                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="1" Name="jacinaLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
+
 
             </Grid>
         </GroupBox>
@@ -63,33 +63,36 @@
             <Button Content="Obriši" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeSastojka"/>
         </StackPanel>
 
-        <GroupBox Background="LightGray" Header="Dodavanje novog sastojka"  Grid.Row="2" Grid.Column="1" Height="110" Width="300" Margin="32,23,32,36.6">
-            <Grid>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Margin="32,23,32,0">
+            <GroupBox Background="LightGray" Header="Dodavanje novog sastojka"   Height="110" Width="300" >
+                <Grid>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="35"/>
-                </Grid.RowDefinitions>
-
-
-
-                <Label Grid.Row="1" Grid.Column="0" Content="Naziv" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="0" Name="nazivSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
-                <Label Grid.Row="1" Grid.Column="1" Content="Kolicina" VerticalAlignment="Top" Margin="20,0,0,0" HorizontalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Name="kolicinaSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
 
 
-                <Button Grid.ColumnSpan="2" Grid.Row="2" Content="Dodaj" Width="100" Height="22" HorizontalAlignment="Center" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeSastojka"/>
 
-            </Grid>
-        </GroupBox>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Naziv" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="0" Name="nazivSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="Kolicina" VerticalAlignment="Top" Margin="20,0,0,0" HorizontalAlignment="Center"/>
+                    <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="1" Name="kolicinaSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
 
+
+                    <Button Grid.ColumnSpan="2" Grid.Row="2" Content="Dodaj" Width="100" Height="22" HorizontalAlignment="Center" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeSastojka"/>
+
+                </Grid>
+            </GroupBox>
+
+            <Label Name="validacijaPolja" Content="Niste popunili sva polja!" Foreground="Red" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="Hidden"/>
+        </StackPanel>
 
         <Button Content="Odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
         <Button Content="Sačuvaj izmene" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="CuvanjeIzmena"/>

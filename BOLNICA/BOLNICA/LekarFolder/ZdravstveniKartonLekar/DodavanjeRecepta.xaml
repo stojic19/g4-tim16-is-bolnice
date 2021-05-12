@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        d:DesignHeight="1380" d:DesignWidth="850">
+        d:DesignHeight="380" d:DesignWidth="850">
 
     <Grid>
 
@@ -83,7 +83,7 @@
 
                     <Label Content="Jačina leka" HorizontalAlignment="Center" FontWeight="Normal" />
 
-                    <Label Name="labelaValidacije" Content="Niste odabrali lek!" VerticalContentAlignment="Top" Foreground="Red" FontSize="13" Visibility="Hidden"/>
+                    <Label Name="labelaValidacije" Content="Niste odabrali lek!" VerticalContentAlignment="Top" Foreground="Red" FontSize="13" Visibility="Hidden" HorizontalAlignment="Center"/>
 
 
                 </StackPanel>

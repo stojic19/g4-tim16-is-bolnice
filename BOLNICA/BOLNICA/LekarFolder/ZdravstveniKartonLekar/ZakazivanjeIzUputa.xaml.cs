@@ -143,10 +143,17 @@ namespace Bolnica.LekarFolder
             foreach (Termin t in RukovanjeTerminima.slobodniTermini)
             {
                 if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(idLekarSpecijalista) &&
-                    t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Prostor.IdProstora.Equals(izabranaProstorija))
+                    t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
                 {
+                    if (izabranaProstorija == null)
+                    {
+                        slobodniTermini.Add(t);
+                    }
+                    else if (t.Prostor.IdProstora.Equals(izabranaProstorija))
+                    {
+                        slobodniTermini.Add(t);
+                    }
 
-                    slobodniTermini.Add(t);
 
                 }
 
@@ -156,9 +163,15 @@ namespace Bolnica.LekarFolder
         private void prostorije_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Prostor izabran = (Prostor)prostorije.SelectedItem;
-            izabranaProstorija = izabran.IdProstora;
-            Console.WriteLine(izabranaProstorija);
-            refresujPocetnoVreme();
+            izabranaProstorija = null;
+            if (izabran != null)
+            {
+                izabranaProstorija = izabran.IdProstora;
+                Console.WriteLine(izabranaProstorija);
+                refresujPocetnoVreme();
+
+            }
+
         }
     }
 }

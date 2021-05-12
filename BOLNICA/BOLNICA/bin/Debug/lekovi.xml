@@ -74,6 +74,10 @@
         <Naziv>s8</Naziv>
         <Kolicina>2</Kolicina>
       </Sastojak>
+      <Sastojak>
+        <Naziv>s3</Naziv>
+        <Kolicina>3</Kolicina>
+      </Sastojak>
     </Sastojci>
     <Verifikacija>true</Verifikacija>
     <Zamene />

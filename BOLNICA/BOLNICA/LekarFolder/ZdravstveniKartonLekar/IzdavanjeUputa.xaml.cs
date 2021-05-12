@@ -61,7 +61,7 @@ namespace Bolnica.LekarFolder
 
             if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacijaPolja.Visibility = Visibility.Visible;
                 return;
 
             }
@@ -108,6 +108,7 @@ namespace Bolnica.LekarFolder
 
         private void pretragaLekara_TextChanged(object sender, TextChangedEventArgs e)
         {
+            validacijaPolja.Visibility = Visibility.Hidden;
             CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource).Refresh();
         }
 
@@ -121,8 +122,10 @@ namespace Bolnica.LekarFolder
 
         private void TabelaLekara_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             if (TabelaLekara.SelectedItems.Count > 0)
             {
+                validacijaPolja.Visibility = Visibility.Hidden;
                 Lekar item = (Lekar)TabelaLekara.SelectedItems[0];
                 imeLekaraSpecijaliste.Text = item.Ime;
                 prezimeLekaraSpecijaliste.Text = item.Prezime;
@@ -132,6 +135,14 @@ namespace Bolnica.LekarFolder
             }
         }
 
+        private void nalazMisljenje_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            validacijaPolja.Visibility = Visibility.Hidden;
+        }
 
+        private void nalazMisljenje_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            validacijaPolja.Visibility = Visibility.Hidden;
+        }
     }
 }

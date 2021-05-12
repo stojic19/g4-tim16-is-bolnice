@@ -81,4 +81,19 @@
     <RazlogOdbijanja>Zato sto je los lek</RazlogOdbijanja>
     <DatumSlanja>2021-05-09T14:49:05.0468621+02:00</DatumSlanja>
   </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>d7767177-9dc7-4b7f-a18b-023ba67a016f</IdZahtjeva>
+    <Lijek>
+      <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+      <NazivLeka>Rapidol</NazivLeka>
+      <Jacina>500mg</Jacina>
+      <Kolicina>321</Kolicina>
+      <Proizvodjac>ars</Proizvodjac>
+      <Sastojci />
+      <Verifikacija>false</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Odgovor>Čekanje</Odgovor>
+    <DatumSlanja>2021-05-12T22:57:48.4499651+02:00</DatumSlanja>
+  </Zahtjev>
 </ArrayOfZahtjev>

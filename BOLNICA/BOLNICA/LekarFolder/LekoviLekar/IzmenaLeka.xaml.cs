@@ -73,6 +73,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             if (!ValidacijaNovogSastojka()) return;
 
             Sastojak noviSastojak = new Sastojak(nazivSastojka.Text, Double.Parse(kolicinaSastojka.Text));
+            
 
             izmenjeniSastojci.Add(noviSastojak);
             Sastojci.Add(noviSastojak);
@@ -85,9 +86,19 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             if (nazivSastojka.Text.Equals("") || kolicinaSastojka.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacijaPolja.Content = "Niste popunili sva polja!";
+                validacijaPolja.Visibility = Visibility.Visible;
                 return false;
 
+            }
+
+            if (!Double.TryParse(kolicinaSastojka.Text, out Double broj))
+            {
+                kolicinaSastojka.Text = String.Empty;
+                validacijaPolja.Content = "Količina mora biti broj!";
+                validacijaPolja.Visibility = Visibility.Visible;
+                
+                return false;
             }
 
             return true;
@@ -113,9 +124,10 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
         private Boolean ValidacijaUnosa()
         {
-            if (nazivLeka.Text.Equals("") || jacinaLeka.Text.Equals("") )
+            if (nazivLeka.Text.Equals("") || jacinaLeka.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacijaPolja.Content = "Niste popunili sva polja!";
+                validacijaPolja.Visibility = Visibility.Visible;
                 return false;
 
             }
@@ -123,6 +135,14 @@ namespace Bolnica.LekarFolder.LekoviLekar
             return true;
         }
 
+        private void PromenaTekstualnihPolja(object sender, TextChangedEventArgs e)
+        {
+            validacijaPolja.Visibility = Visibility.Hidden;
+        }
 
+        private void KlikNaPolje(object sender, MouseButtonEventArgs e)
+        {
+            validacijaPolja.Visibility = Visibility.Hidden;
+        }
     }
 }

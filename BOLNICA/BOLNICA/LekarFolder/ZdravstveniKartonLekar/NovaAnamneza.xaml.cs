@@ -84,7 +84,8 @@ namespace Bolnica
 
             if (this.tekst.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili dijagnozu!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacijaDijagnoze.Content = "Niste popunili sva polja!";
+                validacijaDijagnoze.Visibility = Visibility.Visible;
                 return;
 
             }
@@ -186,7 +187,8 @@ namespace Bolnica
         {
             if (this.imeLeka.Text.Equals("") ||  this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacija.Content = "Niste popunili sva polja!";
+                validacija.Visibility = Visibility.Visible;
                 return false;
 
             }
@@ -206,7 +208,8 @@ namespace Bolnica
 
             if (!pocTer.SelectedDate.HasValue || !krajTer.SelectedDate.HasValue || DateTime.Now.CompareTo(pocTer.SelectedDate) > 0 || pocetak.CompareTo(krajTer.SelectedDate) > 0)
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja ili datumi nisu validni!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacija.Content = "Datumi nisu validni!";
+                validacija.Visibility = Visibility.Visible;
                 return false;
             }
 
@@ -247,6 +250,24 @@ namespace Bolnica
                 sifraLeka = item.IDLeka;
                 jacinaLeka.Text = item.Jacina;
             }
+        }
+
+        private void PromenaPolja(object sender, TextChangedEventArgs e)
+        {
+            validacijaDijagnoze.Visibility = Visibility.Hidden;
+            validacija.Visibility = Visibility.Hidden;
+        }
+
+        private void KlikPolja(object sender, MouseButtonEventArgs e)
+        {
+            validacijaDijagnoze.Visibility = Visibility.Hidden;
+            validacija.Visibility = Visibility.Hidden;
+        }
+
+        private void PromenaDatuma(object sender, SelectionChangedEventArgs e)
+        {
+            validacijaDijagnoze.Visibility = Visibility.Hidden;
+            validacija.Visibility = Visibility.Hidden;
         }
     }
 }
