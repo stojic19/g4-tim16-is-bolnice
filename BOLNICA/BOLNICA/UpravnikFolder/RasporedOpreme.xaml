@@ -36,7 +36,9 @@
                 HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke" Grid.RowSpan="2"/>
             <Button Grid.Column="1" Grid.Row="3" Content="Nazad" Margin="35,0,20.2,31.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke" Height="33" VerticalAlignment="Bottom"/>
+            <Image x:Name="image" Source="/Slike/UpravnikSlike/slusalice.png" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="89" RenderTransformOrigin="6.066,1.468" Grid.Column="1" Margin="94,43,0,0" Grid.RowSpan="2"/>
 
         </Grid>
+
     </StackPanel>
 </UserControl>

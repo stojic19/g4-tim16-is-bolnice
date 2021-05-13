@@ -43,7 +43,7 @@ namespace Bolnica.UpravnikFolder {
         
         #line 10 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblOpreme;
+        internal System.Windows.Controls.Label lblOprema;
         
         #line default
         #line hidden
@@ -51,7 +51,7 @@ namespace Bolnica.UpravnikFolder {
         
         #line 11 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblProstor;
+        internal System.Windows.Controls.Label lblNaziv;
         
         #line default
         #line hidden
@@ -59,7 +59,7 @@ namespace Bolnica.UpravnikFolder {
         
         #line 12 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblOpreme_Copy;
+        internal System.Windows.Controls.Label lblProstor;
         
         #line default
         #line hidden
@@ -67,15 +67,15 @@ namespace Bolnica.UpravnikFolder {
         
         #line 13 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lblOpreme_Copy1;
+        internal System.Windows.Controls.Label lblOpreme_Copy;
         
         #line default
         #line hidden
         
         
-        #line 15 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+        #line 14 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnPotvrdi;
+        internal System.Windows.Controls.Label lblOpreme_Copy1;
         
         #line default
         #line hidden
@@ -83,15 +83,15 @@ namespace Bolnica.UpravnikFolder {
         
         #line 16 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnOdustani;
+        internal System.Windows.Controls.Button btnPotvrdi;
         
         #line default
         #line hidden
         
         
-        #line 18 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+        #line 17 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DatePicker DatumPremjestanja;
+        internal System.Windows.Controls.Button btnOdustani;
         
         #line default
         #line hidden
@@ -99,13 +99,21 @@ namespace Bolnica.UpravnikFolder {
         
         #line 19 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.DatePicker DatumPremjestanja;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 20 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox kolicina;
         
         #line default
         #line hidden
         
         
-        #line 21 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+        #line 22 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid dataGridProstori;
         
@@ -113,7 +121,7 @@ namespace Bolnica.UpravnikFolder {
         #line hidden
         
         
-        #line 31 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+        #line 32 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid dataGridOprema;
         
@@ -151,45 +159,48 @@ namespace Bolnica.UpravnikFolder {
             switch (connectionId)
             {
             case 1:
-            this.lblOpreme = ((System.Windows.Controls.Label)(target));
+            this.lblOprema = ((System.Windows.Controls.Label)(target));
             return;
             case 2:
-            this.lblProstor = ((System.Windows.Controls.Label)(target));
+            this.lblNaziv = ((System.Windows.Controls.Label)(target));
             return;
             case 3:
-            this.lblOpreme_Copy = ((System.Windows.Controls.Label)(target));
+            this.lblProstor = ((System.Windows.Controls.Label)(target));
             return;
             case 4:
-            this.lblOpreme_Copy1 = ((System.Windows.Controls.Label)(target));
+            this.lblOpreme_Copy = ((System.Windows.Controls.Label)(target));
             return;
             case 5:
+            this.lblOpreme_Copy1 = ((System.Windows.Controls.Label)(target));
+            return;
+            case 6:
             this.btnPotvrdi = ((System.Windows.Controls.Button)(target));
             
-            #line 15 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+            #line 16 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
             this.btnPotvrdi.Click += new System.Windows.RoutedEventHandler(this.Potvrdi_Click);
             
             #line default
             #line hidden
             return;
-            case 6:
+            case 7:
             this.btnOdustani = ((System.Windows.Controls.Button)(target));
             
-            #line 16 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
+            #line 17 "..\..\..\UpravnikFolder\PremjestanjeStatickeOpreme.xaml"
             this.btnOdustani.Click += new System.Windows.RoutedEventHandler(this.Odustani_Click);
             
             #line default
             #line hidden
             return;
-            case 7:
+            case 8:
             this.DatumPremjestanja = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 8:
+            case 9:
             this.kolicina = ((System.Windows.Controls.TextBox)(target));
             return;
-            case 9:
+            case 10:
             this.dataGridProstori = ((System.Windows.Controls.DataGrid)(target));
             return;
-            case 10:
+            case 11:
             this.dataGridOprema = ((System.Windows.Controls.DataGrid)(target));
             return;
             }

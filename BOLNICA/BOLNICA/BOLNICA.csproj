@@ -808,6 +808,16 @@
     <Resource Include="Slike\LekarSlike\srce-vece.png" />
     <Resource Include="Slike\LekarSlike\srce.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\UpravnikSlike\krevet.png" />
+    <Resource Include="Slike\UpravnikSlike\odjava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\UpravnikSlike\lijekovi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\UpravnikSlike\slusalice.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

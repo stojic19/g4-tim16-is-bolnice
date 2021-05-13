@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.UpravnikFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ namespace Bolnica
     {
         private static UpravnikGlavniProzor instance = null;
 
-        public object RukovajeZahtjevima { get; private set; }
 
         public static UpravnikGlavniProzor getInstance()
         {
@@ -79,6 +79,15 @@ namespace Bolnica
             RukovanjeProstorom.SerijalizacijaProstora();
             RukovanjeOpremom.SerijalizacijaOpreme();
             RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+        }
+
+        private void krevet_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new PremjestanjeStatickeOpreme();
+            MainPanel.Children.Add(usc);
         }
     }
 }

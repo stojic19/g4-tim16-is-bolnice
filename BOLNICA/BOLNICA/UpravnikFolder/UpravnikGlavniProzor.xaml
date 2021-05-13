@@ -36,14 +36,21 @@
                 <ColumnDefinition>
 
                 </ColumnDefinition>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
 
             </Grid.ColumnDefinitions>
 
             <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" >
-                <Image Source="/Slike/PacijentSlike/strelica.png" />
+                <Image Source="/Slike/UpravnikSlike/odjava.png" Height="25" Width="19" />
 
             </Button>
 
+            <Button Background="#FF31577E" Grid.Column="1" Name="krevet" Click="krevet_Click" >
+                <Image Source="/Slike/UpravnikSlike/krevet.png" />
+
+            </Button>
 
         </Grid>
 
@@ -73,10 +80,22 @@
                 <Button Content="Lijekovi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Lijekovi_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"/>
 
-                <Grid x:Name="MainPanel" RenderTransformOrigin="-1.752,0.486" Margin="0,0,-0.2,-0.2" Grid.RowSpan="6" Grid.Column="1" />
+                <Button Content="Zahtjevi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Grid.RowSpan="2"/>
+
+                <Button Content="Renoviranje" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Grid.RowSpan="2"/>
+
+                <Button Content="Radnici" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5" Grid.RowSpan="2"/>
+
+                <StackPanel Height="385" VerticalAlignment="Center"  Background="LightSkyBlue" Margin="0,0,-0.2,-0.2" Grid.RowSpan="6" Grid.Column="1" />
                 <Image Source="/Slike/Sekretar/Ikonice/zdravo.jpg" HorizontalAlignment="Left" Height="171" Margin="227,61.2,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"/>
                 <Label Content="Zdravo klinika" FontSize="40" HorizontalAlignment="Left" Margin="165,45.2,0,0" VerticalAlignment="Top" Height="58" Width="285" FontWeight="Bold" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
                 <Label Content="Dobro dosli upravnice !" FontSize="30" HorizontalAlignment="Left" Margin="129,61,0,0" VerticalAlignment="Top" Height="58" Width="466" FontWeight="Bold" Grid.Column="1" Grid.RowSpan="2"/>
+
+
+                <Grid x:Name="MainPanel" RenderTransformOrigin="-1.752,0.486" Margin="0,0,-0.2,-0.2" Grid.RowSpan="6" Grid.Column="1" />
 
             </Grid>
 
