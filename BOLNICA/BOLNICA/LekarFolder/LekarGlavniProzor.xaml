@@ -100,7 +100,7 @@
 
         </StackPanel>
 
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2" Grid.Row="2"  >
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.Row="2"  >
         <Grid x:Name="GlavniProzor" MinHeight="380"/>
         </ScrollViewer>
         

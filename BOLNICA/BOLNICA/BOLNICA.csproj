@@ -103,6 +103,12 @@
     <Compile Include="LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml.cs">
       <DependentUpon>InformacijeAnamaneza.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml.cs">
+      <DependentUpon>InformacijeSpecijalisticki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.xaml.cs">
+      <DependentUpon>InformacijeStacionarno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.xaml.cs">
       <DependentUpon>IzdavanjeUputa.xaml</DependentUpon>
     </Compile>
@@ -361,6 +367,14 @@
     <Page Include="LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -5,167 +5,292 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
-        d:DesignWidth="850" d:DesignHeight="380">
+        d:DesignWidth="850" d:DesignHeight="1380">
 
-
-
-    <Grid>
-
-        <Grid.ColumnDefinitions>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-
-        <TabControl Grid.Row="0" Background="WhiteSmoke" MaxWidth="720" MaxHeight="1000" Width="720" Height="1000">
-            <TabItem Header="Specijalistički pregled" FontStyle="Italic" FontSize="14">
-                <Grid   MaxWidth="700" MaxHeight="990" Width="950" Height="930" VerticalAlignment="Center" HorizontalAlignment="Center"
+    <TabControl Grid.Row="0" Background="WhiteSmoke" MaxWidth="720" Width="720" MaxHeight="1100" Height="1020">
+        <TabItem Header="Specijalistički pregled" FontStyle="Italic" FontSize="14" Height="35">
+            <Grid   MaxWidth="700" MaxHeight="1070" Width="700" Height="950" VerticalAlignment="Top" HorizontalAlignment="Center"
                           Margin="10,20,1,20">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="230"/>
-                        <RowDefinition Height="110"/>
-                        <RowDefinition Height="300"/>
-                        <RowDefinition Height="200"/>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <StackPanel Orientation="Vertical" >
-                            <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <StackPanel Orientation="Vertical" >
+                        <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Margin="15,5,10,0"  />
-                            <TextBox Name="datumIzdavanjaUputa"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
+                        <TextBox Name="datumIzdavanjaUputa"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
-                            <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <Image Source="/Slike/LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        </StackPanel>
                     </StackPanel>
 
-                    <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+                    <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
+                        <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Image Source="/Slike/LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
 
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
 
-                            <StackPanel Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 
-                                <StackPanel Orientation="Vertical" Margin="5,5,15,5">
-                                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imePacijenta" FontWeight="Normal"/>
-                                    <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
+                        <StackPanel Orientation="Horizontal">
 
-                                </StackPanel>
-                                <StackPanel Orientation="Vertical" Margin="15,5,5,5">
-                                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimePacijenta" FontWeight="Normal"/>
-                                    <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
-                                </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="5,5,15,5">
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imePacijenta" FontWeight="Normal"/>
+                                <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
 
                             </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="15,5,5,5">
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimePacijenta" FontWeight="Normal"/>
+                                <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
+                            </StackPanel>
 
-                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbgPacijenta" FontWeight="Normal"/>
-                            <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
                         </StackPanel>
 
-                    </GroupBox>
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbgPacijenta" FontWeight="Normal"/>
+                        <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
+                    </StackPanel>
+
+                </GroupBox>
 
 
 
-                    <GroupBox Grid.Row="2" Header="Lekar koji upućuje na pregled" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
+                <GroupBox Grid.Row="2" Header="Lekar koji upućuje na pregled" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
 
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
+                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
+                            <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
+                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
+                            <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                    </StackPanel>
+
+
+                </GroupBox>
+
+                <GroupBox Grid.Row="3" Header="Lekar kod kog se upućuje na pregled" Width="564" Height="250" Background="LightGray" FontWeight="Bold" FontSize="14">
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
-                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekaraSpecijaliste" FontWeight="Normal"/>
                                 <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
-                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekaraSpecijaliste" FontWeight="Normal"/>
                                 <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
                         </StackPanel>
 
 
-                    </GroupBox>
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="11,0" >
 
-                    <GroupBox Grid.Row="3" Header="Lekar kod kog se upućuje na pregled" Width="564" Height="250" Background="LightGray" FontWeight="Bold" FontSize="14">
-
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
-
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
-                                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekaraSpecijaliste" FontWeight="Normal"/>
-                                    <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
-
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
-                                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekaraSpecijaliste" FontWeight="Normal"/>
-                                    <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
-                                </StackPanel>
-
-                            </StackPanel>
-
-
-                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="11,0" >
-
-                                <Label Content="Pretraga lekara:" Height="30" Width="110" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontWeight="Normal"/>
-                                <TextBox Name="pretragaLekara" TextChanged="pretragaLekara_TextChanged" Height="25" Width="158" VerticalAlignment="Center" FontWeight="Normal"/>
-
-                            </StackPanel>
-
-                            <ListView FontWeight="Normal" x:Name="TabelaLekara" Height="90" Width="482" Margin="11,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3"
-                                    SelectionChanged="TabelaLekara_SelectionChanged" SelectionMode="Single" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                                <ListView.View>
-                                    <GridView>
-
-                                        <GridViewColumn Header="JMBG" DisplayMemberBinding="{Binding Jmbg}" Width="155" />
-                                        <GridViewColumn Header="Ime" DisplayMemberBinding="{Binding Ime }" Width="160" />
-                                        <GridViewColumn Header="Prezime" DisplayMemberBinding="{Binding Prezime }" Width="160"/>
-
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-
+                            <Label Content="Pretraga lekara:" Height="30" Width="110" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontWeight="Normal"/>
+                            <TextBox Name="pretragaLekara" TextChanged="pretragaLekara_TextChanged" Height="25" Width="158" VerticalAlignment="Center" FontWeight="Normal"/>
 
                         </StackPanel>
 
-                    </GroupBox>
+                        <ListView FontWeight="Normal" x:Name="TabelaLekara" Height="90" Width="482" Margin="11,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3"
+                                    SelectionChanged="TabelaLekara_SelectionChanged" SelectionMode="Single" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                            <ListView.View>
+                                <GridView>
 
-                    <GroupBox Grid.Row="4" Header="Nalaz i mišljenje" Width="564" Height="180" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
+                                    <GridViewColumn Header="JMBG" DisplayMemberBinding="{Binding Jmbg}" Width="155" />
+                                    <GridViewColumn Header="Ime" DisplayMemberBinding="{Binding Ime }" Width="160" />
+                                    <GridViewColumn Header="Prezime" DisplayMemberBinding="{Binding Prezime }" Width="160"/>
 
-                        <TextBox Name="nalazMisljenje" TextChanged="nalazMisljenje_TextChanged" PreviewMouseDown="nalazMisljenje_PreviewMouseDown" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
 
 
-                    </GroupBox>
+                    </StackPanel>
 
-                    <Label Grid.Row="5" Content="Niste popunili sva polja!" Foreground="Red" VerticalAlignment="Top" HorizontalAlignment="Center" Name="validacijaPolja" Visibility="Hidden"/>
+                </GroupBox>
+
+                <GroupBox Grid.Row="4" Header="Nalaz i mišljenje" Width="564" Height="180" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" >
+
+                    <TextBox Name="nalazMisljenje" TextChanged="PromenaTeksta" PreviewMouseDown="KlikNaPolja" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
-                </Grid>
-            </TabItem>
+                </GroupBox>
 
-            <TabItem Header="Laboratorija" FontStyle="Italic" FontSize="14"></TabItem>
-            <TabItem Header="Stacionarno lečenje" FontStyle="Italic" FontSize="14"></TabItem>
-        </TabControl>
+                <Label Grid.Row="5" Content="Niste popunili sva polja!" Foreground="Red" VerticalAlignment="Top" HorizontalAlignment="Center" Name="validacijaPolja" Visibility="Hidden"/>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-            <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="CuvanjeSpecijalistickog"/>
-            <Button Content="Sačuvaj i zakaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="CuvanjeIZakazivanjeSpecijalistickog"/>
-            <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="Otkazivanje"/>
+                    <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="Otkazivanje"/>
+                    <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="CuvanjeSpecijalistickog"/>
+                    <Button Content="Sačuvaj i zakaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="CuvanjeIZakazivanjeSpecijalistickog"/>
 
-        </StackPanel>
 
-    </Grid>
+                </StackPanel>
+
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Laboratorija" FontStyle="Italic" FontSize="14"></TabItem>
+        <TabItem Header="Stacionarno lečenje" FontStyle="Italic" FontSize="14">
+
+            <Grid  MaxWidth="700" MaxHeight="1000" Width="700" Height="900" VerticalAlignment="Top" HorizontalAlignment="Center"
+                          Margin="10,20,1,20">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="390"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <StackPanel Orientation="Vertical" >
+                        <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                   Margin="15,5,10,0"  />
+                        <TextBox Name="datumIzdavanjaStacionarnog"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
+                        <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <Image Source="/Slike/LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <StackPanel Orientation="Vertical" Margin="5,5,15,5">
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imePacijentaStac" FontWeight="Normal"/>
+                                <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
+
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="15,5,5,5">
+                                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimePacijentaStac" FontWeight="Normal"/>
+                                <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbgPacijentaStac" FontWeight="Normal"/>
+                        <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
+                    </StackPanel>
+
+                </GroupBox>
+
+
+
+                <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
+
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
+                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekaraStac" FontWeight="Normal"/>
+                            <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
+                            <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekaraStac" FontWeight="Normal"/>
+                            <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                    </StackPanel>
+
+
+                </GroupBox>
+
+
+                <GroupBox Grid.Row="3" Header="Detalji o stacionarnom lečenju i nalaz" Width="564" Height="350" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
+
+                    <Grid Margin="11">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="26,5,5,5" Grid.Row="0" Grid.Column="0">
+                            <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocetakStacionarnog" FontWeight="Normal" PreviewMouseDown="KlikNaPolja"/>
+                            <Label Content="Početak lečenja" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5,5,26,5" Grid.Row="0" Grid.Column="1" >
+                            <DatePicker Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajStacionarnog" FontWeight="Normal" PreviewMouseDown="KlikNaPolja"/>
+                            <Label Content="Kraj lečenja" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="26,5,5,5" Grid.Row="1" Grid.Column="0">
+                            <ComboBox ItemsSource="{Binding slobodneSobe}" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="soba" FontWeight="Normal" PreviewMouseDown="KlikNaPolja" SelectionChanged="soba_SelectionChanged">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding IdProstora}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Content="Soba" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5,5,26,5" Grid.Row="1" Grid.Column="1" >
+                            <ComboBox ItemsSource="{Binding Kreveti}" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krevet" FontWeight="Normal" PreviewMouseDown="KlikNaPolja" SelectionChanged="krevet_SelectionChanged"/>
+                            <Label Content="Krevet" HorizontalAlignment="Center" FontWeight="Normal" />
+                        </StackPanel>
+
+
+                        <TextBox Grid.Row="2" Grid.ColumnSpan="2" Name="nalazStac" TextChanged="PromenaTeksta" PreviewMouseDown="KlikNaPolja" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="147" Margin="25,10.2,26,10" TextWrapping="Wrap"/>
+
+
+                    </Grid>
+
+                </GroupBox>
+
+                <Label Grid.Row="4" Foreground="Red" VerticalAlignment="Top" HorizontalAlignment="Center" Name="validacijaStac" Visibility="Hidden"/>
+
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="Otkazivanje"/>
+                    <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="CuvanjeStacionarnog"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </TabItem>
+    </TabControl>
+
+
 
 </UserControl>

@@ -63,12 +63,7 @@ namespace Bolnica
 
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
-        }
-
+    
         private void Povratak(object sender, RoutedEventArgs e)
         {
             RukovanjeNalozimaPacijenata.Sacuvaj();

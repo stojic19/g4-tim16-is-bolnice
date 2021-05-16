@@ -15,7 +15,6 @@ namespace Model
         public int ZloupotrebioSistem { get; set; }
         public bool Blokiran { get; set; }
 
-
         public Pacijent() { }
 
 

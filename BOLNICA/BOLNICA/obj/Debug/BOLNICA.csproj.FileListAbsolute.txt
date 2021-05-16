@@ -1364,3 +1364,7 @@ C:\Users\computer\Desktop\simssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA\
 C:\Users\computer\Desktop\simssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.g.cs
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\PacijentFolder\DetaljiTerapije.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.baml

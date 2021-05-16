@@ -76,9 +76,15 @@ namespace Bolnica
         {
             if (this.nazivLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
             {
+                labelaValidacije.Content = "Niste odabrali lek!";
                 labelaValidacije.Visibility = Visibility.Visible;
                 return false;
 
+            }
+
+            if (RukovanjeZdravstvenimKartonima.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
+            {
+                labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
             }
 
             return true;

@@ -216,32 +216,7 @@
           </Recept>
         </Recepti>
         <Anamneze />
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -477,32 +452,7 @@
           </Recept>
         </Recepti>
         <Anamneze />
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -847,32 +797,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -1224,32 +1149,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -1601,32 +1501,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -1978,32 +1853,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -2355,32 +2205,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -2732,32 +2557,7 @@
             </Terapije>
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -3173,64 +2973,7 @@
             <Terapije />
           </Anamneza>
         </Anamneze>
-        <Uputi>
-          <Uput>
-            <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>Pogledati</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>02646a49-db94-432c-a9a0-04898db7b6b5</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-12T23:00:13.7553393+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>dsa</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>7be4258f-ca0d-4e2e-95e7-7df24e346d94</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-12T23:02:57.8849209+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>dsa</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>5183bf05-b180-4a91-9e1e-b3f510400c7f</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-12T23:05:25.6832357+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>dsa</NalazMisljenje>
-          </Uput>
-          <Uput>
-            <IDUputa>7789fa1c-c473-494a-8a7d-7d27362931e5</IDUputa>
-            <TipUputa>SPECIJALISTA</TipUputa>
-            <DatumIzdavanja>2021-05-12T23:35:11.23591+02:00</DatumIzdavanja>
-            <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-            <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-            <NalazMisljenje>S</NalazMisljenje>
-          </Uput>
-        </Uputi>
+        <Uputi />
       </ZdravstveniKarton>
       <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
@@ -3247,6 +2990,417 @@
       <Lozinka>jelenahrnjak</Lozinka>
       <Pol>zenski</Pol>
       <specijalizacija>nema</specijalizacija>
+      <dostupnost>false</dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>T300</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>09:00</PocetnoVreme>
+    <Trajanje>120</Trajanje>
+    <Datum>2021-06-03T00:00:00</Datum>
+    <Prostor>
+      <IdProstora>OP1</IdProstora>
+      <VrstaProstora>sala</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>40</Kvadratura>
+      <BrojKreveta>1</BrojKreveta>
+      <JeRenoviranje>false</JeRenoviranje>
+      <Oprema />
+    </Prostor>
+    <Pacijent>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
+      <Jmbg>34235354364</Jmbg>
+      <AdresaStanovanja>ulica</AdresaStanovanja>
+      <KontaktTelefon>13214235</KontaktTelefon>
+      <Email>magdalena@gmail.com</Email>
+      <KorisnickoIme>magdalena</KorisnickoIme>
+      <Lozinka>magdalena</Lozinka>
+      <Pol>zenski</Pol>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>magdalena</IDPacijenta>
+        <Alergeni>
+          <Alergeni>
+            <IdAlergena>44eb6252-f8cd-41be-8dba-f6e03c79c571</IdAlergena>
+            <Lek>
+              <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+              <NazivLeka>Roaccutane</NazivLeka>
+              <Jacina>20mg</Jacina>
+              <Kolicina>432</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s4</Naziv>
+                  <Kolicina>4</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s5</Naziv>
+                  <Kolicina>5</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s8</Naziv>
+                  <Kolicina>2</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Verifikacija>true</Verifikacija>
+              <Zamene />
+            </Lek>
+            <OpisReakcije>Otekla</OpisReakcije>
+            <VremeZaPojavu>20min</VremeZaPojavu>
+          </Alergeni>
+        </Alergeni>
+        <Recepti>
+          <Recept>
+            <IDRecepta>7fe54416-8b36-4fbd-b737-948999fc46d3</IDRecepta>
+            <Datum>2021-05-10T11:44:34.6259475+02:00</Datum>
+            <Lek>
+              <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+              <NazivLeka>Buscopan</NazivLeka>
+              <Jacina>100mg</Jacina>
+              <Kolicina>200</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s341</Naziv>
+                  <Kolicina>3221</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Verifikacija>true</Verifikacija>
+              <Zamene>
+                <Lek>
+                  <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                  <NazivLeka>Roaccutane</NazivLeka>
+                  <Jacina>20mg</Jacina>
+                  <Kolicina>432</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s4</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s5</Naziv>
+                      <Kolicina>5</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s8</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </Lek>
+              </Zamene>
+            </Lek>
+          </Recept>
+          <Recept>
+            <IDRecepta>08472731-57c2-4538-a598-44632e376e32</IDRecepta>
+            <Datum>2021-05-10T13:22:58.1161022+02:00</Datum>
+            <Lek>
+              <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+              <NazivLeka>Buscopan</NazivLeka>
+              <Jacina>100mg</Jacina>
+              <Kolicina>200</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s341</Naziv>
+                  <Kolicina>3</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s312</Naziv>
+                  <Kolicina>231</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Verifikacija>true</Verifikacija>
+              <Zamene>
+                <Lek>
+                  <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                  <NazivLeka>Roaccutane</NazivLeka>
+                  <Jacina>20mg</Jacina>
+                  <Kolicina>432</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s4</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s5</Naziv>
+                      <Kolicina>5</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s8</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </Lek>
+              </Zamene>
+            </Lek>
+          </Recept>
+          <Recept>
+            <IDRecepta>ca52b3b1-b324-4bb1-8840-1865d3a7f90a</IDRecepta>
+            <Datum>2021-05-10T13:29:24.0528483+02:00</Datum>
+            <Lek>
+              <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+              <NazivLeka>Brufen</NazivLeka>
+              <Jacina>500mg</Jacina>
+              <Kolicina>3232</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s1</Naziv>
+                  <Kolicina>100</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s2</Naziv>
+                  <Kolicina>200</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s3</Naziv>
+                  <Kolicina>300</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s7</Naziv>
+                  <Kolicina>2</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s33</Naziv>
+                  <Kolicina>4</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Verifikacija>true</Verifikacija>
+              <Zamene>
+                <Lek>
+                  <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                  <NazivLeka>Roaccutane</NazivLeka>
+                  <Jacina>20mg</Jacina>
+                  <Kolicina>432</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s4</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s5</Naziv>
+                      <Kolicina>5</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s8</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </Lek>
+              </Zamene>
+            </Lek>
+          </Recept>
+          <Recept>
+            <IDRecepta>d4ab83b6-0169-428a-84e2-c63de2c016cc</IDRecepta>
+            <Datum>2021-05-12T23:34:57.7715989+02:00</Datum>
+            <Lek>
+              <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+              <NazivLeka>Buscopan</NazivLeka>
+              <Jacina>100mg</Jacina>
+              <Kolicina>200</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s341</Naziv>
+                  <Kolicina>3</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s312</Naziv>
+                  <Kolicina>231</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Verifikacija>true</Verifikacija>
+              <Zamene>
+                <Lek>
+                  <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                  <NazivLeka>Roaccutane</NazivLeka>
+                  <Jacina>20mg</Jacina>
+                  <Kolicina>432</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s4</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s5</Naziv>
+                      <Kolicina>5</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s8</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </Lek>
+                <Lek>
+                  <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                  <NazivLeka>Aerius</NazivLeka>
+                  <Jacina>10mg</Jacina>
+                  <Kolicina>3212</Kolicina>
+                  <Proizvodjac>Brufesa</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s42</Naziv>
+                      <Kolicina>3</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </Lek>
+              </Zamene>
+            </Lek>
+          </Recept>
+        </Recepti>
+        <Anamneze>
+          <Anamneza>
+            <IdAnamneze>4e99eaf5-734a-40e1-b7fb-98523063346b</IdAnamneze>
+            <IdLekara>JelenaHrnjak</IdLekara>
+            <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+            <IdPacijenta>magdalena</IdPacijenta>
+            <Datum>2021-05-10T14:58:26.1060422+02:00</Datum>
+            <Dijagnoza>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Dijagnoza>
+            <Terapije>
+              <Terapija>
+                <IDTerapije>031a41df-e001-41c6-9dd4-c26bfded70d1</IDTerapije>
+                <IDAnamneze>4e99eaf5-734a-40e1-b7fb-98523063346b</IDAnamneze>
+                <PocetakTerapije>2021-05-13T00:00:00</PocetakTerapije>
+                <KrajTerapije>2021-05-16T00:00:00</KrajTerapije>
+                <Kolicina>3</Kolicina>
+                <Satnica>8</Satnica>
+                <UputsvoKonzumiranja>Neko uputstvo</UputsvoKonzumiranja>
+                <PreporucenLek>
+                  <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+                  <NazivLeka>Brufen</NazivLeka>
+                  <Jacina>500mg</Jacina>
+                  <Kolicina>3232</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s1</Naziv>
+                      <Kolicina>100</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s2</Naziv>
+                      <Kolicina>200</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s3</Naziv>
+                      <Kolicina>300</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s7</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s33</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene>
+                    <Lek>
+                      <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                      <NazivLeka>Roaccutane</NazivLeka>
+                      <Jacina>20mg</Jacina>
+                      <Kolicina>432</Kolicina>
+                      <Proizvodjac>Biofarm</Proizvodjac>
+                      <Sastojci>
+                        <Sastojak>
+                          <Naziv>s4</Naziv>
+                          <Kolicina>4</Kolicina>
+                        </Sastojak>
+                        <Sastojak>
+                          <Naziv>s5</Naziv>
+                          <Kolicina>5</Kolicina>
+                        </Sastojak>
+                        <Sastojak>
+                          <Naziv>s8</Naziv>
+                          <Kolicina>2</Kolicina>
+                        </Sastojak>
+                      </Sastojci>
+                      <Verifikacija>true</Verifikacija>
+                      <Zamene />
+                    </Lek>
+                  </Zamene>
+                </PreporucenLek>
+              </Terapija>
+            </Terapije>
+          </Anamneza>
+          <Anamneza>
+            <IdAnamneze>d4056f9c-d9b7-4e27-80d6-e81811b04cc6</IdAnamneze>
+            <IdLekara>JelenaHrnjak</IdLekara>
+            <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+            <IdPacijenta>magdalena</IdPacijenta>
+            <Datum>2021-05-10T14:59:42.3527085+02:00</Datum>
+            <Dijagnoza>aaaaaaaaaaaaaaaaaaaaaaa</Dijagnoza>
+            <Terapije>
+              <Terapija>
+                <IDTerapije>be259b7a-897e-4ec6-9a1e-915d9a34baf0</IDTerapije>
+                <IDAnamneze>d4056f9c-d9b7-4e27-80d6-e81811b04cc6</IDAnamneze>
+                <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
+                <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
+                <Kolicina>2</Kolicina>
+                <Satnica>12</Satnica>
+                <UputsvoKonzumiranja>svsdvsdv</UputsvoKonzumiranja>
+                <PreporucenLek>
+                  <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                  <NazivLeka>Aerius</NazivLeka>
+                  <Jacina>10mg</Jacina>
+                  <Kolicina>3212</Kolicina>
+                  <Proizvodjac>Brufesa</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s42</Naziv>
+                      <Kolicina>3</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Verifikacija>true</Verifikacija>
+                  <Zamene />
+                </PreporucenLek>
+              </Terapija>
+            </Terapije>
+          </Anamneza>
+          <Anamneza>
+            <IdAnamneze>712f49c2-05b8-4950-a549-448a2e194b0f</IdAnamneze>
+            <IdLekara>JelenaHrnjak</IdLekara>
+            <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+            <IdPacijenta>magdalena</IdPacijenta>
+            <Datum>2021-05-12T23:34:26.0511996+02:00</Datum>
+            <Dijagnoza>s</Dijagnoza>
+            <Terapije />
+          </Anamneza>
+        </Anamneze>
+        <Uputi />
+      </ZdravstveniKarton>
+      <ZloupotrebioSistem>2</ZloupotrebioSistem>
+      <Blokiran>false</Blokiran>
+    </Pacijent>
+    <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-16T18:10:54.753077+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <specijalizacija>neurohirurg</specijalizacija>
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>

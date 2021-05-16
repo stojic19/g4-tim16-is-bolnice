@@ -1,5 +1,7 @@
 ﻿using Bolnica.LekarFolder;
+using Bolnica.LekarFolder.ZdravstveniKartonLekar;
 using Bolnica.Model;
+using Bolnica.Model.Enumi;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -131,6 +133,27 @@ namespace Bolnica
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda));
+            }
+        }
+
+        private void PrikazInformacijaUput(object sender, RoutedEventArgs e)
+        {
+            Uput izabranUput = (Uput)dataGridUputi.SelectedItem;
+            if (izabranUput == null) return;
+
+            if (izabranUput.TipUputa == TipoviUputa.SPECIJALISTA)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeSpecijalisticki(izabranUput, izabranPregled.IdPregleda));
+            }
+            else if (izabranUput.TipUputa == TipoviUputa.STACIONARNO)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeStacionarno(izabranUput, izabranPregled.IdPregleda));
+            }
+            else
+            {
+
             }
         }
 

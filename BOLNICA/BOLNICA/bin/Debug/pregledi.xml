@@ -219,32 +219,7 @@
             </Recept>
           </Recepti>
           <Anamneze />
-          <Uputi>
-            <Uput>
-              <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-          </Uputi>
+          <Uputi />
         </ZdravstveniKarton>
         <ZloupotrebioSistem>2</ZloupotrebioSistem>
         <Blokiran>false</Blokiran>
@@ -562,32 +537,7 @@
             </Recept>
           </Recepti>
           <Anamneze />
-          <Uputi>
-            <Uput>
-              <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-          </Uputi>
+          <Uputi />
         </ZdravstveniKarton>
         <ZloupotrebioSistem>2</ZloupotrebioSistem>
         <Blokiran>false</Blokiran>
@@ -974,32 +924,7 @@
               </Terapije>
             </Anamneza>
           </Anamneze>
-          <Uputi>
-            <Uput>
-              <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-          </Uputi>
+          <Uputi />
         </ZdravstveniKarton>
         <ZloupotrebioSistem>2</ZloupotrebioSistem>
         <Blokiran>false</Blokiran>
@@ -1092,46 +1017,13 @@
         </Lek>
       </Recept>
     </Recepti>
-    <Uputi>
-      <Uput>
-        <IDUputa>02646a49-db94-432c-a9a0-04898db7b6b5</IDUputa>
-        <TipUputa>SPECIJALISTA</TipUputa>
-        <DatumIzdavanja>2021-05-12T23:00:13.7553393+02:00</DatumIzdavanja>
-        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-        <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-        <NalazMisljenje>dsa</NalazMisljenje>
-      </Uput>
-      <Uput>
-        <IDUputa>7be4258f-ca0d-4e2e-95e7-7df24e346d94</IDUputa>
-        <TipUputa>SPECIJALISTA</TipUputa>
-        <DatumIzdavanja>2021-05-12T23:02:57.8849209+02:00</DatumIzdavanja>
-        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-        <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-        <NalazMisljenje>dsa</NalazMisljenje>
-      </Uput>
-      <Uput>
-        <IDUputa>5183bf05-b180-4a91-9e1e-b3f510400c7f</IDUputa>
-        <TipUputa>SPECIJALISTA</TipUputa>
-        <DatumIzdavanja>2021-05-12T23:05:25.6832357+02:00</DatumIzdavanja>
-        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-        <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-        <NalazMisljenje>dsa</NalazMisljenje>
-      </Uput>
-      <Uput>
-        <IDUputa>7789fa1c-c473-494a-8a7d-7d27362931e5</IDUputa>
-        <TipUputa>SPECIJALISTA</TipUputa>
-        <DatumIzdavanja>2021-05-12T23:35:11.23591+02:00</DatumIzdavanja>
-        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-        <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-        <NalazMisljenje>S</NalazMisljenje>
-      </Uput>
-    </Uputi>
+    <Uputi />
     <Alergeni />
     <OcenjenPregled>false</OcenjenPregled>
   </Pregled>
   <Pregled>
     <IdPregleda>d42fe1de-b8f0-4123-a2b1-cabba9fce296</IdPregleda>
-    <Odrzan>false</Odrzan>
+    <Odrzan>true</Odrzan>
     <Termin>
       <IdTermina>T17</IdTermina>
       <VrstaTermina>pregled</VrstaTermina>
@@ -1528,64 +1420,7 @@
               <Terapije />
             </Anamneza>
           </Anamneze>
-          <Uputi>
-            <Uput>
-              <IDUputa>8138cc59-07cf-470d-881b-36737a56bdeb</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:23:18.421861+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati pacijenta</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>b59d4650-6431-4101-96c8-10f89e86ce44</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:34.7081096+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>f3b6185c-8de3-4f87-bf43-6c4c80c963c2</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-10T13:29:45.7486691+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>Pogledati</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>02646a49-db94-432c-a9a0-04898db7b6b5</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-12T23:00:13.7553393+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>dsa</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>7be4258f-ca0d-4e2e-95e7-7df24e346d94</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-12T23:02:57.8849209+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>dsa</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>5183bf05-b180-4a91-9e1e-b3f510400c7f</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-12T23:05:25.6832357+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>dsa</NalazMisljenje>
-            </Uput>
-            <Uput>
-              <IDUputa>7789fa1c-c473-494a-8a7d-7d27362931e5</IDUputa>
-              <TipUputa>SPECIJALISTA</TipUputa>
-              <DatumIzdavanja>2021-05-12T23:35:11.23591+02:00</DatumIzdavanja>
-              <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-              <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
-              <NalazMisljenje>S</NalazMisljenje>
-            </Uput>
-          </Uputi>
+          <Uputi />
         </ZdravstveniKarton>
         <ZloupotrebioSistem>2</ZloupotrebioSistem>
         <Blokiran>false</Blokiran>
@@ -1606,7 +1441,17 @@
       </Lekar>
     </Termin>
     <Recepti />
-    <Uputi />
+    <Uputi>
+      <Uput>
+        <IDUputa>72f986fc-9ae4-4343-9b58-967d9216322b</IDUputa>
+        <TipUputa>STACIONARNO</TipUputa>
+        <DatumIzdavanja>2021-05-16T20:06:29.1947242+02:00</DatumIzdavanja>
+        <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
+        <NalazMisljenje>Potrebno lecenje</NalazMisljenje>
+        <pocetakStacionarnog>2021-05-19T00:00:00</pocetakStacionarnog>
+        <krajStacionarnog>2021-05-27T00:00:00</krajStacionarnog>
+      </Uput>
+    </Uputi>
     <Alergeni />
     <OcenjenPregled>false</OcenjenPregled>
   </Pregled>

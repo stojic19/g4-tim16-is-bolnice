@@ -291,34 +291,4 @@
       <dostupnost>false</dostupnost>
     </Lekar>
   </Termin>
-  <Termin>
-    <IdTermina>T300</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>120</Trajanje>
-    <Datum>2021-06-03T00:00:00</Datum>
-    <Prostor>
-      <IdProstora>OP1</IdProstora>
-      <VrstaProstora>sala</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema />
-    </Prostor>
-    <Lekar>
-      <Ime>Aleksa</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-05-10T14:55:11.4991007+02:00</DatumRodjenja>
-      <Jmbg>421</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
-      <KontaktTelefon>06332</KontaktTelefon>
-      <Email>leksa@lekar.com</Email>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
-      <Lozinka>aleksastojic</Lozinka>
-      <Pol>muski</Pol>
-      <specijalizacija>neurohirurg</specijalizacija>
-      <dostupnost>false</dostupnost>
-    </Lekar>
-  </Termin>
 </ArrayOfTermin>
