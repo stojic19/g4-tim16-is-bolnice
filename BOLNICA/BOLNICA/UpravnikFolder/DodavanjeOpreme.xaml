@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="Dodavanje opreme" Height="500" Width="400" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
+        Title="Dodavanje opreme" Height="376.975" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue" Margin="0,0,-0.4,-0.8">
         <Grid.ColumnDefinitions >
             <ColumnDefinition />
             <ColumnDefinition/>
@@ -17,24 +17,18 @@
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
 
             <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="ID opreme:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="0" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
-
-        <TextBox  Name="idOpreme" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.4,0,19.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-
         <Label Content="Naziv opreme:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="1" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="0" Margin="0,19,19.6,19.8" Height="30" Width="150"/>
 
-        <TextBox Name="nazivOpreme" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox Name="nazivOpreme" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
         <Label Content="Vrsta opreme:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
-        <ComboBox Name="vrstaOpreme" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,29.4,0,29.4" SelectedIndex="0"
+               Grid.Column="0" Grid.Row="1" Margin="0,19.6,19.6,19.2" Height="30" Width="150"/>
+        <ComboBox Name="vrstaOpreme" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,29.4,0,29.4" SelectedIndex="0"
                    Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" >
             <ComboBoxItem HorizontalAlignment="Left">staticka</ComboBoxItem>
             <ComboBoxItem HorizontalAlignment="Left">dinamicka</ComboBoxItem>
@@ -42,17 +36,17 @@
         </ComboBox>
 
         <Label Content="Kolicina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="2" Margin="0,19.8,19.6,19" Height="30" Width="150"/>
 
-        <TextBox Name="kolicina" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox Name="kolicina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
 
 
         <Button Content="Odustani" Grid.Column="0" Grid.Row="7"  Margin="46,19.8,45.6,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                Click="Odustani_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
         <Button Content="Potrvdi" Grid.Column="1" Grid.Row="7"  Margin="45.4,19.8,46.2,19"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                Click="Potvrdi_Click" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
 
 

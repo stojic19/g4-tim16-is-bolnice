@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,17 +27,14 @@ namespace Bolnica
         {
             InitializeComponent();
 
+            Prostor prostor = RukovanjeProstorom.PretraziPoId(id);
             stari = id;
-            Prostor p = RukovanjeProstorom.PretraziPoId(id);
-
-            IdProstora.Text = id;
-
-
-            if (p.VrstaProstora == VrsteProstora.ordinacija)
+  
+            if (prostor.VrstaProstora == VrsteProstora.ordinacija)
             {
                 VrstaProstora.Text = "Ordinacija";
             }
-            else if (p.VrstaProstora == VrsteProstora.sala)
+            else if (prostor.VrstaProstora == VrsteProstora.sala)
             {
                 VrstaProstora.Text = "Sala";
             }
@@ -45,33 +43,42 @@ namespace Bolnica
                 VrstaProstora.Text = "Soba";
             }
 
-            Sprat.Text = p.Sprat.ToString();
-            Kvadratura.Text = p.Kvadratura.ToString();
-            BrojKreveta.Text = p.BrojKreveta.ToString();
+            Sprat.Text = prostor.Sprat.ToString();
+            Kvadratura.Text = prostor.Kvadratura.ToString();
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if (!stari.Equals(IdProstora.Text))
+            Prostor p = new Prostor(stari ,ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
+            RukovanjeProstorom.IzmeniProstor(p);
+
+            this.Close();
+        }
+
+        private VrsteProstora ProvjeriVrstuProstora()
+        {
+            VrsteProstora vrstaProstora;
+
+            if (this.VrstaProstora.Text.Equals("Ordinacija"))
             {
-                foreach (Prostor p1 in RukovanjeProstorom.SviProstori())
-                {
-                    if (p1.IdProstora.Equals(IdProstora.Text))
-                    {
-                        System.Windows.Forms.MessageBox.Show("Već postoji unet Id prostora!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
+                vrstaProstora = VrsteProstora.ordinacija;
             }
-            RukovanjeProstorom.IzmeniProstor(stari, IdProstora.Text, VrstaProstora.SelectedIndex, Sprat.Text, Kvadratura.Text, BrojKreveta.Text);
+            else if (this.VrstaProstora.Text.Equals("Sala"))
+            {
+                vrstaProstora = VrsteProstora.sala;
+            }
+            else
+            {
+                vrstaProstora = VrsteProstora.soba;
+            }
 
-            this.Close();
+            return vrstaProstora;
         }
     }
 }

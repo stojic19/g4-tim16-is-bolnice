@@ -5,7 +5,6 @@
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>66</Sprat>
     <Kvadratura>6</Kvadratura>
-    <BrojKreveta>3212</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
     <Renoviranje>
       <RoomId>P33</RoomId>
@@ -26,7 +25,6 @@
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>1</Sprat>
     <Kvadratura>1</Kvadratura>
-    <BrojKreveta>2</BrojKreveta>
     <JeRenoviranje>true</JeRenoviranje>
     <Renoviranje>
       <RoomId>P1</RoomId>
@@ -47,7 +45,6 @@
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>6</Sprat>
     <Kvadratura>6</Kvadratura>
-    <BrojKreveta>4</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
@@ -56,22 +53,7 @@
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>9</Kvadratura>
-    <BrojKreveta>2</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
-    <Oprema />
-  </Prostor>
-  <Prostor>
-    <IdProstora>P2</IdProstora>
-    <VrstaProstora>ordinacija</VrstaProstora>
-    <Sprat>1</Sprat>
-    <Kvadratura>25</Kvadratura>
-    <BrojKreveta>1</BrojKreveta>
-    <JeRenoviranje>true</JeRenoviranje>
-    <Renoviranje>
-      <RoomId>P2</RoomId>
-      <StartDay>2021-05-08T00:00:00</StartDay>
-      <EndDay>2021-05-10T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -79,28 +61,43 @@
     <VrstaProstora>sala</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>40</Kvadratura>
-    <BrojKreveta>1</BrojKreveta>
     <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
-    <IdProstora>P8</IdProstora>
-    <VrstaProstora>soba</VrstaProstora>
+    <IdProstora>f0482fe3-2189-4188-a730-e87e71ad6057</IdProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>3</Sprat>
-    <Kvadratura>39</Kvadratura>
-    <BrojKreveta>3</BrojKreveta>
+    <Kvadratura>555</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
     <Renoviranje>
       <StartDay>0001-01-01T00:00:00</StartDay>
       <EndDay>0001-01-01T00:00:00</EndDay>
     </Renoviranje>
-    <Oprema>
-      <Oprema>
-        <IdOpreme>s1</IdOpreme>
-        <NazivOpreme>krevet</NazivOpreme>
-        <VrstaOpreme>staticka</VrstaOpreme>
-        <Kolicina>3</Kolicina>
-      </Oprema>
-    </Oprema>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <IdProstora>5405b020-28e7-41d9-8e3a-dddb2f6449c0</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>36</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Renoviranje>
+      <StartDay>0001-01-01T00:00:00</StartDay>
+      <EndDay>0001-01-01T00:00:00</EndDay>
+    </Renoviranje>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <IdProstora>1b02489a-3b29-44fd-ba9d-3889fa1dc571</IdProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>1</Sprat>
+    <Kvadratura>37</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Renoviranje>
+      <StartDay>0001-01-01T00:00:00</StartDay>
+      <EndDay>0001-01-01T00:00:00</EndDay>
+    </Renoviranje>
+    <Oprema />
   </Prostor>
 </ArrayOfProstor>

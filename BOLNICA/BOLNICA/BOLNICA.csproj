@@ -302,6 +302,9 @@
     <Compile Include="UpravnikFolder\PrikazProstora.xaml.cs">
       <DependentUpon>PrikazProstora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpravnikFolder\PrikazRenoviranja.xaml.cs">
+      <DependentUpon>PrikazRenoviranja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpravnikFolder\RasporedOpreme.xaml.cs">
       <DependentUpon>RasporedOpreme.xaml</DependentUpon>
     </Compile>
@@ -663,6 +666,10 @@
     <Page Include="UpravnikFolder\PrikazProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpravnikFolder\PrikazRenoviranja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpravnikFolder\RasporedOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>

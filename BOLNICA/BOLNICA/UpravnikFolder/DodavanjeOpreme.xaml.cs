@@ -26,24 +26,23 @@ namespace Bolnica
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            String idOpreme = this.idOpreme.Text;
-            foreach (Oprema o1 in RukovanjeOpremom.SvaOprema())
-            {
-                if (o1.IdOpreme.Equals(this.idOpreme.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Već postoji uneto Id opreme!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+            Oprema o = new Oprema(Guid.NewGuid().ToString(), this.nazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(this.kolicina.Text));
+            RukovanjeOpremom.DodajOpremu(o);
+            RukovanjeOpremom.SerijalizacijaOpreme();
 
+            this.Close();
+        }
+
+        private VrsteOpreme ProvjeriVrstuOpreme()
+        {
             VrsteOpreme vrstaOpreme;
 
             if (this.vrstaOpreme.Text.Equals("staticka"))
@@ -54,16 +53,7 @@ namespace Bolnica
             {
                 vrstaOpreme = VrsteOpreme.dinamicka;
             }
-
-            String nazivOpreme = this.nazivOpreme.Text;
-            int kolicina = int.Parse(this.kolicina.Text);
-
-            Oprema o = new Oprema(idOpreme, nazivOpreme, vrstaOpreme, kolicina);
-            RukovanjeOpremom.DodajOpremu(o);
-            RukovanjeOpremom.SerijalizacijaOpreme();
-
-            this.Close();
-
+            return vrstaOpreme;
         }
 
     }

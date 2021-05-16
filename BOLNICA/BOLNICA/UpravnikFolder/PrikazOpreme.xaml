@@ -23,15 +23,12 @@
 
             <DataGrid x:Name="dataGridOprema" ItemsSource="{Binding Oprema}" IsReadOnly="true"
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,95.6,97.4" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="dataGridOprema_SelectionChanged">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header=" ID opreme" Binding="{Binding IdOpreme}" Width="67*"/>
                     <DataGridTextColumn Header=" Naziv opreme" Binding="{Binding NazivOpreme}" Width="80*"/>
                     <DataGridTextColumn Header=" Vrsta opreme" Binding="{Binding VrstaOpreme}" Width="95*"/>
                     <DataGridTextColumn Header=" Kolicina" Binding="{Binding Kolicina}" Width="67*"/>
-
-
-
 
                 </DataGrid.Columns>
             </DataGrid>

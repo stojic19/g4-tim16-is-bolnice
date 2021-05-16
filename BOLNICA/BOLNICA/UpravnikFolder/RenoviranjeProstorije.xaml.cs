@@ -31,11 +31,11 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            Renoviranje renoviranje = new Renoviranje(izabranProstor.IdProstora, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
+            Renoviranje renoviranje = new Renoviranje(/*izabranProstor.IdProstora*/ new Prostor(), DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
 
             RukovanjeProstorom.ProvjeriZakazaneTermine(PickStartDate, PickEndtDate);
 
-            izabranProstor.Renoviranje = renoviranje;
+           // izabranProstor.Renoviranje = renoviranje;
             RukovanjeProstorom.DodajZaRenoviranje(renoviranje);
             RukovanjeProstorom.ProveriRenoviranje();
             RukovanjeProstorom.SerijalizacijaProstora();

@@ -82,17 +82,6 @@ namespace Bolnica
         }
 
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            RukovanjeOpremom.SerijalizacijaOpreme();
-        }
-
-        private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
         private void Premjestanje_Click(object sender, RoutedEventArgs e)
         {
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
@@ -109,7 +98,8 @@ namespace Bolnica
             foreach (Oprema o in Oprema)
             {
                 if (o.IdOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
-                    o.NazivOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase))
+                    o.NazivOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
+                    o.VrstaOpreme.ToString().StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase))
                 {
                     filtriranje.Add(o);
                 }

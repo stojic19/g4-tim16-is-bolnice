@@ -7,21 +7,15 @@
     <Kolicina>6</Kolicina>
   </Oprema>
   <Oprema>
-    <IdOpreme>d1</IdOpreme>
-    <NazivOpreme>igla</NazivOpreme>
-    <VrstaOpreme>staticka</VrstaOpreme>
-    <Kolicina>200</Kolicina>
-  </Oprema>
-  <Oprema>
-    <IdOpreme>d2</IdOpreme>
-    <NazivOpreme>gaza</NazivOpreme>
-    <VrstaOpreme>dinamicka</VrstaOpreme>
-    <Kolicina>250</Kolicina>
-  </Oprema>
-  <Oprema>
     <IdOpreme>s8</IdOpreme>
     <NazivOpreme>ormar</NazivOpreme>
     <VrstaOpreme>staticka</VrstaOpreme>
     <Kolicina>3</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>283d71a7-b2ff-470f-aad7-80204e414abd</IdOpreme>
+    <NazivOpreme>vata</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>200</Kolicina>
   </Oprema>
 </ArrayOfOprema>

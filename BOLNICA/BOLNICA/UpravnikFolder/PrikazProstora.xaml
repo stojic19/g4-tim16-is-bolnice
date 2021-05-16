@@ -37,15 +37,15 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button Grid.Row="3" Content="Dodaj prostor" Margin="20,30.2,402.6,35.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click" Background="WhiteSmoke"/>
+                HorizontalContentAlignment="Center" Click="Dodaj_Click" Background="WhiteSmoke"/>
             <Button Grid.Row="3" Content="Izmena prostora" Margin="187,30.2,232.6,35.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke"/>
+                HorizontalContentAlignment="Center" Click="Izmjeni_Click" Background="WhiteSmoke"/>
             <Button Grid.Row="3" Content="Uklanjanje prostora" Margin="348,30.2,74.6,35.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke"/>
+                HorizontalContentAlignment="Center" Click="Ukloni_Click" Background="WhiteSmoke"/>
             <Button Grid.Row="2" Content="Renoviraj" Margin="0.4,95.8,6.2,67.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_4" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2"/>
+                HorizontalContentAlignment="Center" Click="Renoviraj_Click" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2"/>
             <Button Grid.Row="3" Content="Raspored opreme" Margin="0.4,30.2,8.4,35.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke" Grid.Column="1"/>
+                HorizontalContentAlignment="Center" Click="RasporedOpreme_Click" Background="WhiteSmoke" Grid.Column="1"/>
 
 
 

@@ -33,8 +33,6 @@ namespace Bolnica
             Kolicina.Text = lijek.Kolicina.ToString();
             Proizvodjac.Text = lijek.Proizvodjac;
 
-
-
         }
         private void Odustani_Click(object sender, RoutedEventArgs e)
         {

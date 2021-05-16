@@ -12,25 +12,22 @@ namespace Model
         public VrsteProstora VrstaProstora { get; set; }
         public int Sprat { get; set; }
         public float Kvadratura { get; set; }
-        public int BrojKreveta { get; set; }
 
         public bool JeRenoviranje { get; set; }
-        public Renoviranje Renoviranje { get; set; }
+    
 
         public List<Oprema> Oprema { get; set; }
         public Prostor() { }
 
-        public Prostor(string idProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura, int brojKreveta, bool jeRenoviranje,
-                        Renoviranje renoviranje)
+        public Prostor(string idProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura, bool jeRenoviranje)
         {
             IdProstora = idProstora;
             VrstaProstora = vrstaProstora;
             Sprat = sprat;
             Kvadratura = kvadratura;
-            BrojKreveta = brojKreveta;
             Oprema = new List<Oprema>();
             JeRenoviranje = jeRenoviranje;
-            Renoviranje = renoviranje;
+           
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

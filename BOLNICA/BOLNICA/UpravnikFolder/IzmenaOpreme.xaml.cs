@@ -29,9 +29,7 @@ namespace Bolnica
             stari = id;
             Oprema o = RukovanjeOpremom.PretraziPoId(id);
 
-            IdOpreme.Text = id;
             NazivOpreme.Text = o.NazivOpreme;
-
 
             if (o.VrstaOpreme == VrsteOpreme.staticka)
             {
@@ -46,27 +44,33 @@ namespace Bolnica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if (!stari.Equals(IdOpreme.Text))
+            Oprema o = new Oprema(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
+            RukovanjeOpremom.IzmeniOpremu(o);
+            RukovanjeOpremom.SerijalizacijaOpreme();
+            this.Close();
+        }
+
+        private VrsteOpreme ProvjeriVrstuOpreme()
+        {
+            VrsteOpreme vrstaOpreme;
+
+            if (this.VrstaOpreme.Text.Equals("staticka"))
             {
-                foreach (Oprema o1 in RukovanjeOpremom.SvaOprema())
-                {
-                    if (o1.IdOpreme.Equals(IdOpreme.Text))
-                    {
-                        System.Windows.Forms.MessageBox.Show("Već postoji unet Id opreme!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
+                vrstaOpreme = VrsteOpreme.staticka;
             }
-            RukovanjeOpremom.IzmeniOpremu(stari, IdOpreme.Text, NazivOpreme.Text, VrstaOpreme.SelectedIndex, Kolicina.Text);
-
-            this.Close();
+            else
+            {
+                vrstaOpreme = VrsteOpreme.dinamicka;
+            }
+            return vrstaOpreme;
         }
+
     }
 }

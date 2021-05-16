@@ -37,7 +37,7 @@ namespace Bolnica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Dodaj_Click(object sender, RoutedEventArgs e)
         {
 
             DodavanjeProstora dodavanje = new DodavanjeProstora();
@@ -45,7 +45,7 @@ namespace Bolnica
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Izmjeni_Click(object sender, RoutedEventArgs e)
         {
 
             Prostor izabranZaMenjanje = (Prostor)dataGridProstori.SelectedItem;
@@ -62,7 +62,7 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Ukloni_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -80,7 +80,7 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void RasporedOpreme_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -100,12 +100,7 @@ namespace Bolnica
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            RukovanjeProstorom.SerijalizacijaProstora();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Renoviraj_Click(object sender, RoutedEventArgs e)
         {
             Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
             if (izabran != null)

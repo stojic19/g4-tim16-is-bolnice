@@ -17,74 +17,43 @@ namespace Model
         public static List<Oprema> oprema = new List<Oprema>();
         public static List<Renoviranje> prostorKojiSeRenovira = new List<Renoviranje>();
 
-        public static Prostor DodajProstor(Prostor p)
-        {
-            prostori.Add(p);
-            PrikazProstora.Prostori.Add(p);
-
-            if (prostori.Contains(p))
+        public static void DodajProstor(Prostor p)
+        { 
+            if (!prostori.Contains(p))
             {
-                return p;
-            }
-            else
-            {
-                return null;
+                prostori.Add(p);
+                PrikazProstora.Prostori.Add(p);
             }
         }
 
 
 
-        public static Boolean IzmeniProstor(String stari, String idProstora, int vrstaProstora, String Sprat, String Kvadratura, String BrojKreveta)
+        public static Boolean IzmeniProstor(Prostor noviPodaci)
         {
-            Prostor p = PretraziPoId(stari);
-
-            p.IdProstora = idProstora;
-
-            if (vrstaProstora == 0)
+            foreach (Prostor p in RukovanjeProstorom.SviProstori())
             {
-                p.VrstaProstora = VrsteProstora.ordinacija;
-            }
-            else if (vrstaProstora == 1)
-            {
-                p.VrstaProstora = VrsteProstora.sala;
-            }
-            else
-            {
-                p.VrstaProstora = VrsteProstora.soba;
-            }
-            p.Sprat = int.Parse(Sprat);
-            p.Kvadratura = float.Parse(Kvadratura);
-            p.BrojKreveta = int.Parse(BrojKreveta);
+                if (p.IdProstora.Equals(noviPodaci.IdProstora))
+                {
+                    p.VrstaProstora = noviPodaci.VrstaProstora;
+                    p.Sprat = noviPodaci.Sprat;
+                    p.Kvadratura = noviPodaci.Kvadratura;
 
-            int indeks = PrikazProstora.Prostori.IndexOf(p);
-            PrikazProstora.Prostori.RemoveAt(indeks);
-            PrikazProstora.Prostori.Insert(indeks, p);
+                    int indeks = PrikazProstora.Prostori.IndexOf(p);
+                    PrikazProstora.Prostori.RemoveAt(indeks);
+                    PrikazProstora.Prostori.Insert(indeks, p);
+                    return true;
+                } 
+            }
 
-            return true;
+            return false;
         }
 
-        public static Boolean UkloniProstor(String idProstora)
+        public static void UkloniProstor(String idProstora)
         {
-            Prostor p = PretraziPoId(idProstora);
-
-            if (p == null)
-            {
-                return false;
-            }
-
-            prostori.Remove(p);
-            PrikazProstora.Prostori.Remove(p);
-
-            SerijalizacijaProstora();
-
-            if (prostori.Contains(p) || PrikazProstora.Prostori.Contains(p))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            Prostor prostor = PretraziPoId(idProstora);
+            prostori.Remove(prostor);
+            PrikazProstora.Prostori.Remove(prostor);
+                
         }
 
         public static Prostor PretraziPoId(String idProstora)
@@ -126,7 +95,7 @@ namespace Model
 
             foreach (Renoviranje r in prostorKojiSeRenovira)
             {
-                if (provjeraDatuma(r.StartDay.Date, r.EndDay.Date))
+                if (provjeraDatuma(r.PocetniDatum.Date, r.DatumKraja.Date))
                 {
                     PostaviDaSeRenovira(r);
                 }
@@ -185,26 +154,26 @@ namespace Model
 
         public static void PostaviDaSeRenovira(Renoviranje r)
         {
-            foreach (Prostor p in prostori)
+           /* foreach (Prostor p in prostori)
             {
                 if (p.IdProstora.Equals(r.RoomId))
                 {
                     p.JeRenoviranje = true;
                     break;
                 }
-            }
+            }*/
         }
 
         public static void PostaviDaSeNeRenovira(Renoviranje r)
         {
-            foreach (Prostor p in prostori)
+          /*  foreach (Prostor p in prostori)
             {
                 if (p.IdProstora.Equals(r.RoomId))
                 {
                     p.JeRenoviranje = false;
                     break;
                 }
-            }
+            }*/
         }
 
         public static bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)

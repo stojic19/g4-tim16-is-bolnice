@@ -27,24 +27,24 @@ namespace Bolnica
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            String idProstora = this.idProstora.Text;
-            foreach (Prostor p1 in RukovanjeProstorom.SviProstori())
-            {
-                if (p1.IdProstora.Equals(this.idProstora.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Već postoji uneto Id prostora!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
 
+            Prostor p = new Prostor(Guid.NewGuid().ToString(), ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
+            RukovanjeProstorom.DodajProstor(p);
+
+            this.Close();
+
+        }
+
+        private VrsteProstora ProvjeriVrstuProstora()
+        {
             VrsteProstora vrstaProstora;
 
             if (this.vrstaProstora.Text.Equals("Ordinacija"))
@@ -60,16 +60,7 @@ namespace Bolnica
                 vrstaProstora = VrsteProstora.soba;
             }
 
-            int sprat = int.Parse(this.sprat.Text);
-            float kvadratura = float.Parse(this.kvadratura.Text);
-            int brojKreveta = int.Parse(this.brojKreveta.Text);
-
-
-            Prostor p = new Prostor(idProstora, vrstaProstora, sprat, kvadratura, brojKreveta, false, new Renoviranje());
-            RukovanjeProstorom.DodajProstor(p);
-
-            this.Close();
-
+            return vrstaProstora;
         }
 
     }

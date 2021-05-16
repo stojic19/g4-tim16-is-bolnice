@@ -69,7 +69,7 @@ namespace Bolnica.LekarFolder
         {
             foreach(Prostor p in RukovanjeProstorom.SviProstori())
             {
-                if(p.VrstaProstora == VrsteProstora.soba && p.BrojKreveta > 0 && !p.JeRenoviranje)
+                if(p.VrstaProstora == VrsteProstora.soba && !p.JeRenoviranje)
                 {
                     slobodneSobe.Add(p);
                 }

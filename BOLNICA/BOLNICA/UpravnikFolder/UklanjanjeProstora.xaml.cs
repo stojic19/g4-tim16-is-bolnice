@@ -24,8 +24,8 @@ namespace Bolnica
         String izabran = null;
         public UklanjanjeProstora(String idProstora)
         {
-            izabran = idProstora;
             InitializeComponent();
+            izabran = idProstora;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -36,6 +36,7 @@ namespace Bolnica
         {
 
             RukovanjeProstorom.UkloniProstor(izabran);
+            RukovanjeProstorom.SerijalizacijaProstora();
             this.Close();
         }
     }

@@ -22,20 +22,23 @@ namespace Bolnica
     public partial class UklanjanjeOpreme : Window
     {
         String izabran = null;
+
         public UklanjanjeOpreme(String idOpreme)
         {
-            izabran = idOpreme;
             InitializeComponent();
+            izabran = idOpreme;
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Otkazi_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
             RukovanjeOpremom.UkloniOpremu(izabran);
+            RukovanjeOpremom.SerijalizacijaOpreme();
             this.Close();
         }
     }

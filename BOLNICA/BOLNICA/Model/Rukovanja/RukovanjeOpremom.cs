@@ -25,52 +25,31 @@ namespace Model
             return true;
         }
 
-        public static Boolean IzmeniOpremu(String stari, String idOpreme, String naziv, int vrstaOpreme, String kolicina)
+        public static Boolean IzmeniOpremu(Oprema novaOprema)
         {
-            Oprema o = PretraziPoId(stari);
-
-            o.IdOpreme = idOpreme;
-            o.NazivOpreme = naziv;
-
-            if (vrstaOpreme == 0)
+            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
             {
-                o.VrstaOpreme = VrsteOpreme.staticka;
-            }
-            else
-            {
-                o.VrstaOpreme = VrsteOpreme.dinamicka;
-            }
-            o.Kolicina = int.Parse(kolicina);
+                if (o.IdOpreme.Equals(novaOprema.IdOpreme))
+                {
+                    o.NazivOpreme = novaOprema.NazivOpreme;
+                    o.VrstaOpreme = novaOprema.VrstaOpreme;
+                    o.Kolicina = novaOprema.Kolicina;
 
-            int indeks = PrikazOpreme.Oprema.IndexOf(o);
-            PrikazOpreme.Oprema.RemoveAt(indeks);
-            PrikazOpreme.Oprema.Insert(indeks, o);
+                    int indeks = PrikazOpreme.Oprema.IndexOf(o);
+                    PrikazOpreme.Oprema.RemoveAt(indeks);
+                    PrikazOpreme.Oprema.Insert(indeks, o);
+                    return true;
+                }
+            }
 
-            return true;
+            return false;
         }
 
-        public static Boolean UkloniOpremu(String idOpreme)
+        public static void UkloniOpremu(String idOpreme)
         {
             Oprema o = PretraziPoId(idOpreme);
-
-            if (o == null)
-            {
-                return false;
-            }
-
             oprema.Remove(o);
             PrikazOpreme.Oprema.Remove(o);
-
-            SerijalizacijaOpreme();
-
-            if (oprema.Contains(o) || PrikazOpreme.Oprema.Contains(o))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
 
