@@ -39,7 +39,7 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RukovanjeTerminima.OtkaziPregledSekretar(termin);
+            TerminiServis.OtkaziPregledSekretar(termin);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

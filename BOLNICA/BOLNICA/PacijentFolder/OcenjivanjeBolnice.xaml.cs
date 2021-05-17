@@ -30,15 +30,15 @@ namespace Bolnica.PacijentFolder
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < RukovanjeAnketama.pitanjaOBolnici.Count; i++)
+            for (int i = 0; i < AnketeServis.pitanjaOBolnici.Count; i++)
             {
 
                 int indexCombo = i + 1;
                 postaviOcenuZaPitanje(((ComboBox)this.FindName("pitanje" + indexCombo)).SelectedIndex, i);
 
             }
-            RukovanjeAnketama.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now,null,RukovanjeAnketama.pitanjaOBolnici,DodatniKomentar.Text));
-            RukovanjeAnketama.SerijalizacijaAnketa();
+            AnketeServis.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now,null,AnketeServis.pitanjaOBolnici,DodatniKomentar.Text));
+            AnketeServis.SerijalizacijaAnketa();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());
 
@@ -50,19 +50,19 @@ namespace Bolnica.PacijentFolder
             {
 
                 case 0:
-                    RukovanjeAnketama.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.jedan;
+                    AnketeServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.jedan;
                     break;
                 case 1:
-                    RukovanjeAnketama.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.dva;
+                    AnketeServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.dva;
                     break;                                                  
                 case 2:                                                    
-                    RukovanjeAnketama.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.tri;
+                    AnketeServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.tri;
                     break;                                                
                 case 3:                                                    
-                    RukovanjeAnketama.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.cetiri;
+                    AnketeServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.cetiri;
                     break;                                                  
                 case 4:                                                    
-                    RukovanjeAnketama.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.pet;
+                    AnketeServis.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.pet;
                     break;
             }
         }

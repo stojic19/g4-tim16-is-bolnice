@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         public IzmenaLeka(String idIzabranogLeka, String korisnickoImeLekara)
         {
             InitializeComponent();
-            izabranLek = RukovanjeOdobrenimLekovima.PretraziPoID(idIzabranogLeka);
+            izabranLek = LekoviServis.PretraziPoID(idIzabranogLeka);
             KorisnickoIme = korisnickoImeLekara;
 
             this.DataContext = this;
@@ -114,8 +115,8 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             if (!ValidacijaUnosa()) return;
 
-            RukovanjeOdobrenimLekovima.IzmenaLeka(new Lek(izabranLek.IDLeka, nazivLeka.Text, jacinaLeka.Text, izmenjeniSastojci));
-            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
+            LekoviServis.IzmenaLeka(new Lek(izabranLek.IDLeka, nazivLeka.Text, jacinaLeka.Text, izmenjeniSastojci));
+            LekoviRepozitorijum.SerijalizacijaLekova();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
 

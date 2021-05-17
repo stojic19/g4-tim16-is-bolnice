@@ -378,13 +378,13 @@
       </Anamneze>
       <Uputi>
         <Uput>
-          <IDUputa>72f986fc-9ae4-4343-9b58-967d9216322b</IDUputa>
+          <IDUputa>ec3cc1cf-bc6b-43ac-a2f5-03d532efacca</IDUputa>
           <TipUputa>STACIONARNO</TipUputa>
-          <DatumIzdavanja>2021-05-16T20:06:29.1947242+02:00</DatumIzdavanja>
+          <DatumIzdavanja>2021-05-17T20:40:01.686163+02:00</DatumIzdavanja>
           <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-          <NalazMisljenje>Potrebno lecenje</NalazMisljenje>
-          <pocetakStacionarnog>2021-05-19T00:00:00</pocetakStacionarnog>
-          <krajStacionarnog>2021-05-27T00:00:00</krajStacionarnog>
+          <NalazMisljenje>sda</NalazMisljenje>
+          <PocetakStacionarnog>2021-05-26T00:00:00</PocetakStacionarnog>
+          <KrajStacionarnog>2021-06-02T00:00:00</KrajStacionarnog>
         </Uput>
       </Uputi>
     </ZdravstveniKarton>

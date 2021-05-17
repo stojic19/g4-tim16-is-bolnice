@@ -36,11 +36,11 @@ namespace Bolnica
 
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
 
-            this.TabelaPacijenata.ItemsSource = RukovanjeNalozimaPacijenata.sviNaloziPacijenata;
+            this.TabelaPacijenata.ItemsSource = NaloziPacijenataServis.sviNaloziPacijenata;
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;
 
-            this.TabelaLekara.ItemsSource = RukovanjeTerminima.sviLekari;
+            this.TabelaLekara.ItemsSource = TerminiServis.sviLekari;
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 
@@ -59,8 +59,8 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e) //potvrdi
         {
 
-            Lekar lekar = RukovanjeTerminima.pretraziLekare(izabranLekar);
-            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPacijent);
+            Lekar lekar = TerminiServis.pretraziLekare(izabranLekar);
+            Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(izabranPacijent);
 
 
             if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1 || idPacijenta.Text.Equals(""))
@@ -87,7 +87,7 @@ namespace Bolnica
 
             t.Trajanje = trajanje;
 
-            RukovanjeTerminima.ZakaziTermin(t, korisnik);
+            TerminiServis.ZakaziTermin(t, korisnik);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
@@ -142,7 +142,6 @@ namespace Bolnica
                 idLekara.Text = item.Ime + " " + item.Prezime;
                 izabranLekar = item.KorisnickoIme;
 
-                //if (item.specijalizacija == SpecijalizacijeLekara.nema) podesiVrsteTermina();
                 refresujPocetnoVreme();
             }
 
@@ -178,7 +177,7 @@ namespace Bolnica
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            foreach (Termin t in RukovanjeTerminima.slobodniTermini)
+            foreach (Termin t in TerminiServis.slobodniTermini)
             {
                 if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(izabranLekar) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
                 {

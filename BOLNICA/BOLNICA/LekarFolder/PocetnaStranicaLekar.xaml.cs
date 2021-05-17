@@ -22,7 +22,7 @@ namespace Bolnica.LekarFolder
         {
             InitializeComponent();
             KorisnickoImeLekara = koriscnickoImeLekara;
-            imePrezime.Content = RukovanjeTerminima.ImeiPrezime(koriscnickoImeLekara) + "!";
+            imePrezime.Content = TerminiServis.ImeiPrezime(koriscnickoImeLekara) + "!";
         }
 
         

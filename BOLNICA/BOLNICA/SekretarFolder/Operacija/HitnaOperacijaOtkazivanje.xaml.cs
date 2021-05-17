@@ -68,7 +68,7 @@ namespace Bolnica.SekretarFolder.Operacija
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Potvrdi
-            if(!RukovanjeOperacijama.OtkazivanjeOperacije(terminZaOtkazivanje))
+            if(!OperacijeServis.OtkazivanjeOperacije(terminZaOtkazivanje))
             {
                 System.Windows.Forms.MessageBox.Show("Odabrana operacija je već počela!", "Neuspešno otkazivanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

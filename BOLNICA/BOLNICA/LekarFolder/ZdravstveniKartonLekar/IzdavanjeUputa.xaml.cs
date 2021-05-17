@@ -22,13 +22,13 @@ namespace Bolnica.LekarFolder
         public IzdavanjeUputa(string idPregleda)
         {
             InitializeComponent();
-            izabranPregled = RukovanjePregledima.PretraziPoId(idPregleda);
+            izabranPregled = PreglediServis.PretraziPoId(idPregleda);
 
             InicijalizacijaPoljaSpecijalisticki();
             InicijalizacijaPoljaStacionarno();
             InicijalizacijaSobaStacionarno();
 
-            this.TabelaLekara.ItemsSource = RukovanjeTerminima.DobaviSpecijaliste();
+            this.TabelaLekara.ItemsSource = TerminiServis.DobaviSpecijaliste();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 
@@ -67,7 +67,7 @@ namespace Bolnica.LekarFolder
 
         private void InicijalizacijaSobaStacionarno()
         {
-            foreach(Prostor p in RukovanjeProstorom.SviProstori())
+            foreach(Prostor p in ProstoriServis.SviProstori())
             {
                 if(p.VrstaProstora == VrsteProstora.soba && !p.JeRenoviranje)
                 {
@@ -98,11 +98,11 @@ namespace Bolnica.LekarFolder
 
             }
 
-            String imeprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
 
-            RukovanjeZdravstvenimKartonima.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
-            RukovanjePregledima.DodajUput(izabranPregled.IdPregleda, noviUput);
+            ZdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
+            PreglediServis.DodajUput(izabranPregled.IdPregleda, noviUput);
 
             Serijalizacija();
         }
@@ -123,13 +123,13 @@ namespace Bolnica.LekarFolder
         {
             if (!ValidacijaStacionarnog()) return;
 
-            String imeprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             Console.WriteLine(imeprezime);
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.STACIONARNO, DateTime.Now, nalazStac.Text, imeprezime,
-                    (DateTime)pocetakStacionarnog.SelectedDate, (DateTime)krajStacionarnog.SelectedDate);
+                    (DateTime)pocetakStacionarnog.SelectedDate, (DateTime)krajStacionarnog.SelectedDate, null); //ispravi
 
-            RukovanjeZdravstvenimKartonima.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
-            RukovanjePregledima.DodajUput(izabranPregled.IdPregleda, noviUput);
+            ZdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
+            PreglediServis.DodajUput(izabranPregled.IdPregleda, noviUput);
 
             Serijalizacija();
 
@@ -166,8 +166,8 @@ namespace Bolnica.LekarFolder
 
         private void Serijalizacija()
         {
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
 
         }
 

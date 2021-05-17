@@ -27,7 +27,7 @@ namespace Bolnica
             InitializeComponent();
 
             IDLeka = id;
-            Lek izabran = RukovanjeZahtjevima.pretraziLekPoId(id);
+            Lek izabran = ZahteviServis.pretraziLekPoId(id);
             textBoxNaziv.Text = izabran.NazivLeka;
             textBoxProizvodjac.Text = izabran.Proizvodjac;
             checkBox.IsChecked = izabran.Verifikacija;
@@ -44,7 +44,7 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ZahteviServis.SerijalizacijaZahtjeva();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new PrikazLijekova());
         }
@@ -52,7 +52,7 @@ namespace Bolnica
         private void Dodaj_Click(object sender, RoutedEventArgs e)
 
         {
-            if (RukovanjeZahtjevima.PretraziPoIdLeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
+            if (ZahteviServis.PretraziPoIdLeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
                 DodavanjeSastojka dodavanje = new DodavanjeSastojka(IDLeka);
                 dodavanje.Show();
             }

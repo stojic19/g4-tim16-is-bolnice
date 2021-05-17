@@ -39,7 +39,7 @@ namespace Bolnica.SekretarFolder.Operacija
         {
             SviPacijenti = new ObservableCollection<Pacijent>();
 
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.SviNalozi())
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
                 SviPacijenti.Add(p);
             }
@@ -97,7 +97,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             int trajanje = Convert.ToInt32(tbTrajanje.Text);
-            List<Termin> slobodniTermini = RukovanjeOperacijama.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
+            List<Termin> slobodniTermini = OperacijeServis.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
             if (slobodniTermini.Count == 0)
             {
                 //termini za pomeranje;
@@ -112,7 +112,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 //zakazivanje prvog slobodnog
                 Termin t = slobodniTermini[0];
                 t.Pacijent = (Pacijent)dataGridPacijenti.SelectedItem;
-                RukovanjeOperacijama.ZakazivanjeHitneOperacije(t, trajanje);
+                OperacijeServis.ZakazivanjeHitneOperacije(t, trajanje);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -35,8 +35,8 @@ namespace Bolnica
         private UpravnikGlavniProzor()
         {
             InitializeComponent();
-            RukovanjeOpremom.DeserijalizacijaOpreme();
-            RukovanjeProstorom.DeserijalizacijaProstora();
+            OpremaServis.DeserijalizacijaOpreme();
+            ProstoriServis.DeserijalizacijaProstora();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -76,9 +76,9 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeProstorom.SerijalizacijaProstora();
-            RukovanjeOpremom.SerijalizacijaOpreme();
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ProstoriServis.SerijalizacijaProstora();
+            OpremaServis.SerijalizacijaOpreme();
+            ZahteviServis.SerijalizacijaZahtjeva();
         }
 
         private void krevet_Click(object sender, RoutedEventArgs e)

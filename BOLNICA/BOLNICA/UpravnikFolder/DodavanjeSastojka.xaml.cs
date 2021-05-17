@@ -38,7 +38,7 @@ namespace Bolnica
         {
             String nazivSastojka = this.nazivSastojka.Text;
 
-            foreach (Sastojak sastojak in RukovanjeZahtjevima.pretraziLekPoId(IDLeka).Sastojci)
+            foreach (Sastojak sastojak in ZahteviServis.pretraziLekPoId(IDLeka).Sastojci)
             {
                 if (sastojak.Naziv.Equals(this.nazivSastojka.Text))
                 {
@@ -52,8 +52,8 @@ namespace Bolnica
 
             Sastojak s = new Sastojak(nazivSastojka, kolicina);
 
-            RukovanjeZahtjevima.DodajSastojak(s, IDLeka);
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ZahteviServis.DodajSastojak(s, IDLeka);
+            ZahteviServis.SerijalizacijaZahtjeva();
 
             this.Close();
 

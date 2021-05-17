@@ -15,17 +15,13 @@ namespace Model
         public List<Sastojak> Sastojci { get; set; } = new List<Sastojak>();
         public bool Verifikacija { get; set; }
         public List<Lek> Zamene { get; set; } = new List<Lek>();
-
         public Lek() { }
-
         public Lek(string iDLeka, string nazivLeka, string jacina)
         {
             IDLeka = iDLeka;
             NazivLeka = nazivLeka;
             Jacina = jacina;
         }
-
-
         public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, string proizvodjac, List<Sastojak> sastojci, bool verifikacija)
         {
             IDLeka = iDLeka;
@@ -36,7 +32,6 @@ namespace Model
             Sastojci = sastojci;
             Verifikacija = verifikacija;
         }
-
         public Lek(string iDLeka, string nazivLeka, string jacina, List<Sastojak> sastojci)
         {
             IDLeka = iDLeka;

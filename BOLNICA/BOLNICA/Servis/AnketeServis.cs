@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Model.Rukovanja
 {
-    public class RukovanjeAnketama
+    public class AnketeServis
     {
 
         public static String sveAnketeFajl = "sveAnkete.xml";
@@ -116,6 +116,5 @@ namespace Bolnica.Model.Rukovanja
             tw.Close();
 
         }
-
     }
 }

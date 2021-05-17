@@ -16,8 +16,9 @@ namespace Bolnica.Model
         public String ImePrezimeLekar { get; set; }
         public String IDLekaraSpecijaliste { get; set; }
         public String NalazMisljenje { get; set; }
-        public DateTime pocetakStacionarnog { get; set; }
-        public DateTime krajStacionarnog { get; set; }
+        public DateTime PocetakStacionarnog { get; set; }
+        public DateTime KrajStacionarnog { get; set; }
+        public Prostor Prostor { get; set; } = null;
 
         public Uput() { }
         public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string iDLekaraSpecijaliste, string nalazMisljenje, string imeprezime)
@@ -30,15 +31,15 @@ namespace Bolnica.Model
             NalazMisljenje = nalazMisljenje;
         }
 
-        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string nalazMisljenje, string imePrezimeLekar, DateTime pocetakStacionarnog, DateTime krajStacionarnog)
+        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string nalazMisljenje, string imePrezimeLekar, DateTime pocetakStacionarnog, DateTime krajStacionarnog, Prostor prostor)
         {
             IDUputa = iDUputa;
             TipUputa = tipUputa;
             DatumIzdavanja = datumIzdavanja;
             ImePrezimeLekar = imePrezimeLekar;
             NalazMisljenje = nalazMisljenje;
-            this.pocetakStacionarnog = pocetakStacionarnog;
-            this.krajStacionarnog = krajStacionarnog;
+            this.PocetakStacionarnog = pocetakStacionarnog;
+            this.KrajStacionarnog = krajStacionarnog;
         }
 
         public String TipUputaTekst()

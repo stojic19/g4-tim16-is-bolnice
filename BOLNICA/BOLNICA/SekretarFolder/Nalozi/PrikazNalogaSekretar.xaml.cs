@@ -32,7 +32,7 @@ namespace Bolnica
 
             NaloziPacijenata = new ObservableCollection<Pacijent>();
 
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.SviNalozi())
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
                 NaloziPacijenata.Add(p);
             }
@@ -51,7 +51,7 @@ namespace Bolnica
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
+                Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -87,7 +87,7 @@ namespace Bolnica
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(id);
+                Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -109,10 +109,10 @@ namespace Bolnica
                     MessageBox.Show("Nalog nije blokiran!");
                     return;
                 }
-                Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
+                Pacijent p = NaloziPacijenataServis.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 p.Blokiran = false;
                 p.ZloupotrebioSistem = 0;
-                RukovanjeNalozimaPacijenata.Sacuvaj();
+                NaloziPacijenataServis.Sacuvaj();
             }
             else
             {

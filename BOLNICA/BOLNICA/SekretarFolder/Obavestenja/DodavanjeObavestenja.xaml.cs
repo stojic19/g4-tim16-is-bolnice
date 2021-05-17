@@ -45,11 +45,11 @@ namespace Bolnica
             primaoci.Add("Lekari");
             primaoci.Add("Sekretari");
             primaoci.Add("Upravnici");
-            foreach (Pacijent pacijent in RukovanjeNalozimaPacijenata.SviNalozi())
+            foreach (Pacijent pacijent in NaloziPacijenataServis.SviNalozi())
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }
-            foreach (Lekar lekar in RukovanjeTerminima.sviLekari)
+            foreach (Lekar lekar in TerminiServis.sviLekari)
             {
                 primaoci.Add(lekar.KorisnickoIme + " " + lekar.Prezime + " " + lekar.Ime);
             }
@@ -59,12 +59,12 @@ namespace Bolnica
 
         public static String generisiIdObavestenja()
         {
-            int brojac = RukovanjeObavestenjimaSekratar.SvaObavestenja().Count;
+            int brojac = ObavestenjaServis.SvaObavestenja().Count;
             bool postoji;
             do
             {
                 postoji = false;
-                foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.SvaObavestenja())
+                foreach (Obavestenje o in ObavestenjaServis.SvaObavestenja())
                 {
                     if (o.IdObavestenja.Equals("O" + brojac.ToString()))
                     {
@@ -83,7 +83,7 @@ namespace Bolnica
             {
                 return;
             }
-            RukovanjeObavestenjimaSekratar.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            ObavestenjaServis.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -45,7 +45,7 @@ namespace Bolnica
             }
             datumiZaIzmenu.Clear();
             List<Termin> terminiUIntervalu = NadjiDatumeUIntervalu();
-            List<Termin> terminiKodIzabranog = RukovanjeTerminima.PretraziPoLekaruUIntervalu(terminiUIntervalu, PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme);
+            List<Termin> terminiKodIzabranog = TerminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme);
 
             if (terminiKodIzabranog.Count == 0)
             {
@@ -81,7 +81,7 @@ namespace Bolnica
         {
             DateTime pocetak = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(-2);
             DateTime kraj = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(2);
-            return RukovanjeTerminima.NadjiTermineUIntervalu(pocetak, kraj);
+            return TerminiServis.NadjiTermineUIntervalu(pocetak, kraj);
         }
 
         private void UbaciDostupneDatume(List<Termin> datumiZaPomeranje)
@@ -107,7 +107,7 @@ namespace Bolnica
         public void bindcombo()
         {
             List<Lekar> pomocna = new List<Lekar>();
-            foreach (Lekar l in RukovanjeTerminima.sviLekari)
+            foreach (Lekar l in TerminiServis.sviLekari)
             {
                 if (l.specijalizacija.Equals(SpecijalizacijeLekara.nema))
                     pomocna.Add(l);

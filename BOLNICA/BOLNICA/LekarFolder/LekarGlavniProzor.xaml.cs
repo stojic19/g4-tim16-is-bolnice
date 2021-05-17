@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -45,11 +46,11 @@ namespace Bolnica.LekarFolder
 
         private void Serijalizacije()
         {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
+            TerminiServis.SerijalizacijaTermina();
+            TerminiServis.SerijalizacijaSlobodnihTermina();
+            PreglediServis.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
+            LekoviRepozitorijum.SerijalizacijaLekova();
         }
 
         public void PromenaPogleda(UserControl userControl)

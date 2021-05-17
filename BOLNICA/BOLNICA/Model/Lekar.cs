@@ -4,8 +4,8 @@ namespace Model
 {
     public class Lekar : Osoba
     {
-        public SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
-        public Boolean dostupnost = false;
+        public SpecijalizacijeLekara specijalizacija { get; set; } = SpecijalizacijeLekara.nema;
+        public Boolean dostupnost { get; set; } = false;
         public Lekar() { }
 
         public Lekar(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka, SpecijalizacijeLekara specijalizacija)
@@ -52,25 +52,6 @@ namespace Model
             this.dostupnost = dostupnost;
         }
 
-        public SpecijalizacijeLekara getSpecijalizacija()
-        {
-            return this.specijalizacija;
-        }
-
-        public void setSpecijalizacija(SpecijalizacijeLekara sLekara)
-        {
-            this.specijalizacija = sLekara;
-        }
-
-        public Boolean getDostupnost()
-        {
-            return this.dostupnost;
-        }
-
-        public void setDostupnost(Boolean dostupnost)
-        {
-            this.dostupnost = dostupnost;
-        }
 
     }
 }

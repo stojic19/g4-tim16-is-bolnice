@@ -29,7 +29,7 @@ namespace Bolnica.SekretarFolder
         }
         private void Nalozi_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Ucitaj();
+            NaloziPacijenataServis.Ucitaj();
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -40,7 +40,7 @@ namespace Bolnica.SekretarFolder
 
         private void Obavestenja_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeObavestenjimaSekratar.Ucitaj();
+            ObavestenjaServis.Ucitaj();
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

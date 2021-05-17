@@ -43,7 +43,7 @@ namespace Bolnica.SekretarFolder.Operacija
         {
             TerminiZaPomeranje = new ObservableCollection<KeyValuePair<Termin, int>>();
 
-            foreach (KeyValuePair<Termin, int> t in RukovanjeOperacijama.HitnaOperacijaTerminiZaPomeranje(oblast, Trajanje).OrderBy(key => key.Value))
+            foreach (KeyValuePair<Termin, int> t in OperacijeServis.HitnaOperacijaTerminiZaPomeranje(oblast, Trajanje).OrderBy(key => key.Value))
             {
                 TerminiZaPomeranje.Add(t);
             }
@@ -102,7 +102,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             KeyValuePair<Termin, int> termin = (KeyValuePair<Termin, int>)terminiZaPomeranjeLista.SelectedItem;
-            if (!RukovanjeOperacijama.PomeriOperacijuIZakaziNovu(termin.Key,termin.Value,p,Trajanje))
+            if (!OperacijeServis.PomeriOperacijuIZakaziNovu(termin.Key,termin.Value,p,Trajanje))
             {
                 System.Windows.Forms.MessageBox.Show("Neuspešno pomeranje!", "Odaberite drugi termin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -35,7 +35,7 @@ namespace Bolnica
 
             Termini = new ObservableCollection<Termin>();
 
-            foreach (Termin t in RukovanjeTerminima.PretraziPoLekaru(korIme))
+            foreach (Termin t in TerminiServis.PretraziPoLekaru(korIme))
             {
                 if (t.Datum.AddDays(7).Date.CompareTo(DateTime.Now) >= 0)
                 {
@@ -62,7 +62,7 @@ namespace Bolnica
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
 
             }
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            NaloziPacijenataServis.Sacuvaj();
 
         }
 
@@ -74,8 +74,8 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-                RukovanjePregledima.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
-                RukovanjeTerminima.OtkaziTermin(izabranZaBrisanje.IdTermina);
+                PreglediServis.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
+                TerminiServis.OtkaziTermin(izabranZaBrisanje.IdTermina);
             }
             else
             {
@@ -89,7 +89,7 @@ namespace Bolnica
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = RukovanjePregledima.PristupPregledu(RukovanjeTerminima.PretraziPoId(izabranTermin.IdTermina));
+                Pregled noviPregled = PreglediServis.PristupPregledu(TerminiServis.PretraziPoId(izabranTermin.IdTermina));
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));

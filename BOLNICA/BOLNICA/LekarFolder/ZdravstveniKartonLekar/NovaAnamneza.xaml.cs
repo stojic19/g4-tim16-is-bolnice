@@ -32,14 +32,14 @@ namespace Bolnica
         public NovaAnamneza(String IDIzabranog)
         {
             InitializeComponent();
-            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
             idAnamneze = Guid.NewGuid().ToString();
 
-            RukovanjeZdravstvenimKartonima.NovoPrivremeno();
+            ZdravstveniKartoniServis.NovoPrivremeno();
 
             inicijalizacijaPolja();
 
-            this.TabelaLekova.ItemsSource = RukovanjeZdravstvenimKartonima.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            this.TabelaLekova.ItemsSource = ZdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
 
@@ -48,7 +48,7 @@ namespace Bolnica
 
             Terapije = new ObservableCollection<Terapija>();
 
-            foreach (Terapija t in RukovanjeZdravstvenimKartonima.Privremeno)
+            foreach (Terapija t in ZdravstveniKartoniServis.Privremeno)
             {
                 Terapije.Add(t);
             }
@@ -74,12 +74,12 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            NaloziPacijenataServis.Sacuvaj();
         }
 
         private void CuvanjeAnamneze(object sender, RoutedEventArgs e)
         {
-            String imeiprezime = RukovanjeTerminima.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeiprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
 
             if (this.tekst.Text.Equals(""))
@@ -90,11 +90,11 @@ namespace Bolnica
 
             }
 
-            Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, RukovanjeZdravstvenimKartonima.Privremeno);
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeZdravstvenimKartonima.DodajAnamnezu(a);
-            RukovanjePregledima.DodavanjeAnamneze(izabranPregled, a);
-            RukovanjeZdravstvenimKartonima.NovoPrivremeno();
+            Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno);
+            NaloziPacijenataServis.Sacuvaj();
+            ZdravstveniKartoniServis.DodajAnamnezu(a);
+            PreglediServis.DodavanjeAnamneze(izabranPregled, a);
+            ZdravstveniKartoniServis.NovoPrivremeno();
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
@@ -124,7 +124,7 @@ namespace Bolnica
 
             if (izabranZaBrisanje != null)
             {
-                RukovanjeZdravstvenimKartonima.obrisiPrivremeno(izabranZaBrisanje); //TODO: ISPRAVI!!!!!
+                ZdravstveniKartoniServis.obrisiPrivremeno(izabranZaBrisanje); //TODO: ISPRAVI!!!!!
                 Terapije.Remove(izabranZaBrisanje);
 
 
@@ -142,10 +142,10 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = RukovanjeOdobrenimLekovima.PretraziPoID(sifraLeka);
+            Lek preporucenLek = LekoviServis.PretraziPoID(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
             Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
-            RukovanjeZdravstvenimKartonima.dodajPrivremeno(t);
+            ZdravstveniKartoniServis.dodajPrivremeno(t);
             Terapije.Add(t);
 
             //magdalena
@@ -157,7 +157,7 @@ namespace Bolnica
 
             String idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
             Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-            RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+            ObavestenjaServis.DodajObavestenjePacijentu(o);
 
             DateTime datum;
             for (int i = 1; i <= trajanje; i++)
@@ -173,7 +173,7 @@ namespace Bolnica
 
                 idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
                 o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-                RukovanjeObavestenjimaSekratar.DodajObavestenjePacijentu(o);
+                ObavestenjaServis.DodajObavestenjePacijentu(o);
 
                 //
 

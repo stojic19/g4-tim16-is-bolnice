@@ -34,7 +34,7 @@ namespace Bolnica
             izabran = idPacijenta;
             AlergeniPacijenta = new ObservableCollection<Alergeni>();
 
-            foreach (Alergeni a in RukovanjeNalozimaPacijenata.DobaviAlergenePoIdPacijenta(idPacijenta))
+            foreach (Alergeni a in NaloziPacijenataServis.DobaviAlergenePoIdPacijenta(idPacijenta))
             {
                 AlergeniPacijenta.Add(a);
             }

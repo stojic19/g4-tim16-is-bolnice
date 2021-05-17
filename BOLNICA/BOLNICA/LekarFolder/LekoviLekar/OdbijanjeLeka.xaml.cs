@@ -28,7 +28,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             InitializeComponent();
             this.KorisnickoImeLekara = korisnickoImeLekara;
-            izabranZahtev = RukovanjeZahtjevima.PretraziPoId(idZahtjeva);
+            izabranZahtev = ZahteviServis.PretraziPoId(idZahtjeva);
             this.DataContext = this;
             inicijalizacijaPodataka();
             
@@ -60,8 +60,8 @@ namespace Bolnica.LekarFolder.LekoviLekar
             if (!ValidacijaUnosa()) return;
 
 
-            RukovanjeZahtjevima.OdbijZahtev(izabranZahtev.IdZahtjeva, razlogOdbijanja.Text);
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ZahteviServis.OdbijZahtev(izabranZahtev.IdZahtjeva, razlogOdbijanja.Text);
+            ZahteviServis.SerijalizacijaZahtjeva();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
 

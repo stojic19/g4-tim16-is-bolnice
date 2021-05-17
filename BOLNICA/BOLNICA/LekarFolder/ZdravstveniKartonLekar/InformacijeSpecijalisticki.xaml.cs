@@ -27,7 +27,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
 
             InitializeComponent();
             izabranUput = informacijeUput;
-            izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranogPregleda);
+            izabranPregled = PreglediServis.PretraziPoId(IDIzabranogPregleda);
 
             inicijalizacijaPolja();
         }
@@ -35,8 +35,8 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
-            Lekar specijalista = RukovanjeTerminima.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
+            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Lekar specijalista = TerminiServis.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;

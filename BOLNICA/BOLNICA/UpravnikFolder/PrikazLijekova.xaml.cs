@@ -29,7 +29,7 @@ namespace Bolnica
 
             Zahtjevi = new ObservableCollection<Zahtjev>();
 
-            foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtevi)
+            foreach (Zahtjev z in ZahteviServis.SviZahtevi)
             {
                 Zahtjevi.Add(z);
 
@@ -81,7 +81,7 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ZahteviServis.SerijalizacijaZahtjeva();
         }
 
         private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)

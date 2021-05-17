@@ -33,7 +33,7 @@ namespace Bolnica.UpravnikFolder
             Oprema = new ObservableCollection<Oprema>();
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
+            foreach (Oprema o in OpremaServis.SvaOprema())
             {
                 if (o.VrstaOpreme == VrsteOpreme.staticka)
                 {
@@ -41,7 +41,7 @@ namespace Bolnica.UpravnikFolder
                 }
             }
 
-            foreach (Prostor p in RukovanjeProstorom.SviProstori())
+            foreach (Prostor p in ProstoriServis.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -55,9 +55,9 @@ namespace Bolnica.UpravnikFolder
 
             if (DateTime.Today >= DateTime.Parse(DatumPremjestanja.Text))
             {
-                RukovanjeOpremom.PremjestiKolicinuOpreme(prostor, oprema, kolicina);
-                RukovanjeOpremom.SerijalizacijaOpreme();
-                RukovanjeProstorom.SerijalizacijaProstora();
+                OpremaServis.PremjestiKolicinuOpreme(prostor, oprema, kolicina);
+                OpremaServis.SerijalizacijaOpreme();
+                ProstoriServis.SerijalizacijaProstora();
             }
 
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();

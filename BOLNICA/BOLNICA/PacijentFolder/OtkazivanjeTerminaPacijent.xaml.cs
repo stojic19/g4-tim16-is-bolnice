@@ -24,7 +24,7 @@ namespace Bolnica
         public OtkazivanjeTerminaPacijent(String idTermina)
         {
             InitializeComponent();
-            izabranZaOtkazivanje = RukovanjeTerminima.PretraziPoId(idTermina);
+            izabranZaOtkazivanje = TerminiServis.PretraziPoId(idTermina);
             
         }
 
@@ -41,7 +41,7 @@ namespace Bolnica
                 return;
             }
 
-            RukovanjeTerminima.OtkaziPregledPacijent(izabranZaOtkazivanje.IdTermina);
+            TerminiServis.OtkaziPregledPacijent(izabranZaOtkazivanje.IdTermina);
             ProveraNalogaPacijenta();
             this.Close();
         }

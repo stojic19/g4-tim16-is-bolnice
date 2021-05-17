@@ -36,8 +36,8 @@ namespace Bolnica
         private static void PopuniTabeluObavestenja()
         {
             SvaObavestenja = new ObservableCollection<Obavestenje>();
-            RukovanjeNalozimaPacijenata.Ucitaj();
-            foreach (Obavestenje o in RukovanjeObavestenjimaSekratar.SvaObavestenja())
+            NaloziPacijenataServis.Ucitaj();
+            foreach (Obavestenje o in ObavestenjaServis.SvaObavestenja())
             {
                 if (!o.Naslov.Equals("Terapija"))
                 {
@@ -60,7 +60,7 @@ namespace Bolnica
             if (dataGridObavestenjaSekretar.SelectedIndex != -1)
             {
                 String id = (((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
-                Obavestenje obavestenje = RukovanjeObavestenjimaSekratar.PretraziPoId(id);
+                Obavestenje obavestenje = ObavestenjaServis.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

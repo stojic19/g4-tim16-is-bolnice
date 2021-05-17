@@ -1,6 +1,7 @@
 ﻿using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,6 @@ namespace Bolnica
         List<Upravnik> Upravnici = new List<Upravnik>();
         //List<Sekretar> Sekretari = new List<Sekretar>();
         List<Osoba> Sekretari = new List<Osoba>();
-        //List<Lekar> Lekari = new List<Lekar>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
 
         public Login()
@@ -33,31 +33,29 @@ namespace Bolnica
 
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić", DateTime.Now, Pol.muski, "1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
-            //RukovanjeTerminima.sviLekari.Add(new Lekar("jelena333", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "3333", "Adresa Adresić 33", "063", "jelena@lekar.com", "jelena3333"));
 
-            if (RukovanjeTerminima.brojac == 0)
+            if (TerminiServis.brojac == 0)
             {
-                RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
+                TerminiServis.PrivremenaInicijalizacijaLekara();
             }
 
-            RukovanjeTerminima.brojac++;
+            TerminiServis.brojac++;
 
-            RukovanjeOdobrenimLekovima.DeserijalizacijaLekova();
-            RukovanjeTerminima.DeserijalizacijaTermina();
-            RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
-            RukovanjePregledima.DeserijalizacijaPregleda();
-            RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeNalozimaPacijenata.Ucitaj();
-            RukovanjeObavestenjimaSekratar.Ucitaj();
+            Repozitorijum.LekoviRepozitorijum.DeserijalizacijaLekova();
+            TerminiServis.DeserijalizacijaTermina();
+            TerminiServis.DeserijalizacijaSlobodnihTermina();
+            PreglediServis.DeserijalizacijaPregleda();
+            ProstoriServis.DeserijalizacijaProstora();
+            NaloziPacijenataServis.Ucitaj();
+            ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();
-            RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
-            RukovanjeZahtjevima.DeserijalizacijaZahtjeva();
-            Pacijenti = RukovanjeNalozimaPacijenata.SviNalozi();
+            ZahteviServis.DeserijalizacijaZahtjeva();
+            Pacijenti = NaloziPacijenataServis.SviNalozi();
 
-            RukovanjeOperacijama.PrivremenaInicijalizacijaLekara();
-            RukovanjeAnketama.inicijalizujPitanjaOBolnici();
-            RukovanjeAnketama.inicijalizujPitanjaOTerminu();
-            RukovanjeAnketama.DeserijalizacijaAnketa();
+            OperacijeServis.PrivremenaInicijalizacijaLekara();
+            AnketeServis.inicijalizujPitanjaOBolnici();
+            AnketeServis.inicijalizujPitanjaOTerminu();
+            AnketeServis.DeserijalizacijaAnketa();
             
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -116,7 +114,7 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Lekar l in RukovanjeTerminima.sviLekari)
+            foreach (Lekar l in TerminiServis.sviLekari)
             {
                 if (l.KorisnickoIme.Equals(username.Text))
                 {
@@ -171,12 +169,12 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjeProstorom.SerijalizacijaProstora();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjeAnketama.SerijalizacijaAnketa();
+            TerminiServis.SerijalizacijaTermina();
+            PreglediServis.SerijalizacijaPregleda();
+            TerminiServis.SerijalizacijaSlobodnihTermina();
+            ProstoriServis.SerijalizacijaProstora();
+            NaloziPacijenataServis.Sacuvaj();
+            AnketeServis.SerijalizacijaAnketa();
             GlavniProzorSekretar.getInstance().Close();
         }
     }

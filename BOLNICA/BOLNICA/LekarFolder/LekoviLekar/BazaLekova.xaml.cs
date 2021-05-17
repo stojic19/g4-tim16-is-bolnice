@@ -1,6 +1,7 @@
 ﻿using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace Bolnica.LekarFolder
 
             this.DataContext = this;
 
-            foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
+            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
             {
                 Lekovi.Add(l);
             }
@@ -43,7 +44,7 @@ namespace Bolnica.LekarFolder
             Sastojci.Clear();
             Zamenski.Clear();
 
-            this.dataGridLekovi.ItemsSource = RukovanjeOdobrenimLekovima.SviLekovi;
+            this.dataGridLekovi.ItemsSource = LekoviRepozitorijum.SviLekovi;
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
             view2.Filter = FiltriranjeLeka;
 
@@ -89,12 +90,12 @@ namespace Bolnica.LekarFolder
             Sastojci.Clear();
             Zamenski.Clear();
 
-            foreach (Sastojak s in RukovanjeOdobrenimLekovima.PretraziPoID(idIzabranogLeka).Sastojci)
+            foreach (Sastojak s in LekoviServis.PretraziPoID(idIzabranogLeka).Sastojci)
             {
                 Sastojci.Add(s);
             }
 
-            foreach (Lek l in RukovanjeOdobrenimLekovima.PretraziPoID(idIzabranogLeka).Zamene)
+            foreach (Lek l in LekoviServis.PretraziPoID(idIzabranogLeka).Zamene)
             {
                 Zamenski.Add(l);
             }

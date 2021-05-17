@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-    public class RukovanjeNalozimaPacijenata
+    public class NaloziPacijenataServis
     {
         private static String imeFajla = "pacijenti.xml";
 
@@ -107,7 +107,7 @@ namespace Model
             PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Remove(alergen);
             AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
 
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            NaloziPacijenataServis.Sacuvaj();
             return true;
         }
         public static Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
@@ -120,7 +120,7 @@ namespace Model
                     a1.VremeZaPojavu = alergen.VremeZaPojavu;
                     AzurirajPrikazAlergena(a1);
 
-                    RukovanjeNalozimaPacijenata.Sacuvaj();
+                    NaloziPacijenataServis.Sacuvaj();
                     return true;
                 }
             }
@@ -128,10 +128,10 @@ namespace Model
         }
         public static Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
-            alergen.Lek = RukovanjeOdobrenimLekovima.PretraziPoID(alergen.IdAlergena);
-            RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Add(alergen);
+            alergen.Lek = LekoviServis.PretraziPoID(alergen.IdAlergena);
+            NaloziPacijenataServis.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Add(alergen);
             AlergeniSekretar.AlergeniPacijenta.Add(alergen);
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            NaloziPacijenataServis.Sacuvaj();
             return true;
         }
         private static void AzurirajPrikazAlergena(Alergeni a1)

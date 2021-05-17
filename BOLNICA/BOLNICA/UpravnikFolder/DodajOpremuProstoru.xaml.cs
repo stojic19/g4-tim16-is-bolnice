@@ -24,7 +24,7 @@ namespace Bolnica
         public DodajOpremuProstoru(string idProstora)
         {
             InitializeComponent();
-            oprema = RukovanjeOpremom.SvaOprema();
+            oprema = OpremaServis.SvaOprema();
             this.DataContext = this;
             IdProstora = idProstora;
         }
@@ -46,10 +46,10 @@ namespace Bolnica
                 System.Windows.MessageBox.Show("Unesite kolicinu!");
                 return;
             }
-            Prostor p = RukovanjeProstorom.PretraziPoId(IdProstora);
-            RukovanjeOpremom.PremjestiKolicinuOpreme(p, oprema, Kolicina);
-            RukovanjeOpremom.SerijalizacijaOpreme();
-            RukovanjeProstorom.SerijalizacijaProstora();
+            Prostor p = ProstoriServis.PretraziPoId(IdProstora);
+            OpremaServis.PremjestiKolicinuOpreme(p, oprema, Kolicina);
+            OpremaServis.SerijalizacijaOpreme();
+            ProstoriServis.SerijalizacijaProstora();
             this.Close();
         }
 

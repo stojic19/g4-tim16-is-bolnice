@@ -79,7 +79,7 @@ namespace Bolnica
                     System.Windows.Forms.MessageBox.Show("Lozinka se mora sastojati od minimum 8 znakova!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }    
-                foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+                foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
                 {
                     if (p1.KorisnickoIme.Equals(idPacijenta.Text))
                     {
@@ -93,7 +93,7 @@ namespace Bolnica
                 vrsteNaloga = VrsteNaloga.gost;
             }
 
-            foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
             {
                 if (p1.Jmbg.Equals(jmbg.Text))
                 {
@@ -112,7 +112,7 @@ namespace Bolnica
             }
             Pacijent p = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polpol, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
      
-            RukovanjeNalozimaPacijenata.DodajNalog(p);
+            NaloziPacijenataServis.DodajNalog(p);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -32,7 +32,7 @@ namespace Bolnica
 
             Oprema = new ObservableCollection<Oprema>();
 
-            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
+            foreach (Oprema o in OpremaServis.SvaOprema())
             {
                 Oprema.Add(o);
             }

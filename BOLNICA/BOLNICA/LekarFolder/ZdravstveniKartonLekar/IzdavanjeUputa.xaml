@@ -253,7 +253,7 @@
                             <Label Content="Kraj lečenja" HorizontalAlignment="Center" FontWeight="Normal" />
                         </StackPanel>
 
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="26,5,5,5" Grid.Row="1" Grid.Column="0">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="26,5,5,5" Grid.Row="1" Grid.ColumnSpan="2">
                             <ComboBox ItemsSource="{Binding slobodneSobe}" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="soba" FontWeight="Normal" PreviewMouseDown="KlikNaPolja" SelectionChanged="soba_SelectionChanged">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
@@ -264,10 +264,6 @@
                             <Label Content="Soba" HorizontalAlignment="Center" FontWeight="Normal" />
                         </StackPanel>
 
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5,5,26,5" Grid.Row="1" Grid.Column="1" >
-                            <ComboBox ItemsSource="{Binding Kreveti}" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krevet" FontWeight="Normal" PreviewMouseDown="KlikNaPolja" SelectionChanged="krevet_SelectionChanged"/>
-                            <Label Content="Krevet" HorizontalAlignment="Center" FontWeight="Normal" />
-                        </StackPanel>
 
 
                         <TextBox Grid.Row="2" Grid.ColumnSpan="2" Name="nalazStac" TextChanged="PromenaTeksta" PreviewMouseDown="KlikNaPolja" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="147" Margin="25,10.2,26,10" TextWrapping="Wrap"/>

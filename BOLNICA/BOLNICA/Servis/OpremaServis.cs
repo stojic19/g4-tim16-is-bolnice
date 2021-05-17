@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-    public class RukovanjeOpremom
+    public class OpremaServis
     {
         private static String imeFajla = "oprema.xml";
         public static List<Oprema> oprema = new List<Oprema>();
@@ -27,7 +27,7 @@ namespace Model
 
         public static Boolean IzmeniOpremu(Oprema novaOprema)
         {
-            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
+            foreach (Oprema o in OpremaServis.SvaOprema())
             {
                 if (o.IdOpreme.Equals(novaOprema.IdOpreme))
                 {
@@ -57,7 +57,7 @@ namespace Model
         {
             ProvjeriKolicinuKojuPremjestamo(opremaKojuPrebacujemo, kolicina);
 
-            foreach (Oprema o in RukovanjeOpremom.SvaOprema())
+            foreach (Oprema o in OpremaServis.SvaOprema())
             {
                 if (o.IdOpreme.Equals(opremaKojuPrebacujemo.IdOpreme))
                 {
@@ -65,10 +65,10 @@ namespace Model
                 }
             }
 
-            if (!RukovanjeProstorom.DodajSamoKolicinu(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina))
+            if (!ProstoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina))
             {
                 Oprema o = new Oprema(opremaKojuPrebacujemo.IdOpreme, opremaKojuPrebacujemo.NazivOpreme, opremaKojuPrebacujemo.VrstaOpreme, kolicina);
-                RukovanjeProstorom.DodajOpremuProstoru(prostorUKojiPrebacujemo, o);
+                ProstoriServis.DodajOpremuProstoru(prostorUKojiPrebacujemo, o);
             }
         }
 

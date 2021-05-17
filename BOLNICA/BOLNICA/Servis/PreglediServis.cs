@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Model.Rukovanja
 {
-    class RukovanjePregledima
+    class PreglediServis
     {
 
         public static List<Pregled> sviPregledi { get; set; } = new List<Pregled>();

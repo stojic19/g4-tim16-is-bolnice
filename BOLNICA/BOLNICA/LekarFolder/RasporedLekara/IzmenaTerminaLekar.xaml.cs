@@ -34,7 +34,7 @@ namespace Bolnica
             InitializeComponent();
             korisnik = lekar;
             izabran = id;
-            Termin t = RukovanjeTerminima.PretraziPoId(id);
+            Termin t = TerminiServis.PretraziPoId(id);
 
             imePacijenta.Text = t.Pacijent.Ime;
             prezimePacijenta.Text = t.Pacijent.Prezime;
@@ -88,7 +88,7 @@ namespace Bolnica
             }
 
 
-            Termin stari = RukovanjeTerminima.PretraziPoId(izabran);
+            Termin stari = TerminiServis.PretraziPoId(izabran);
             Termin novi = (Termin)pocVreme.SelectedItem;
 
             Double trajanje = 0;
@@ -108,15 +108,15 @@ namespace Bolnica
             stari.Pacijent = null;
 
 
-            RukovanjeTerminima.IzmeniTermin(stari, novi, korisnik); 
+            TerminiServis.IzmeniTermin(stari, novi, korisnik); 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
         }
 
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -151,9 +151,9 @@ namespace Bolnica
 
         private void refresujPocetnoVreme()
         {
-            Termin izabranT = RukovanjeTerminima.PretraziPoId(izabran);
+            Termin izabranT = TerminiServis.PretraziPoId(izabran);
             slobodniTermini.Clear();
-            foreach (Termin t in RukovanjeTerminima.slobodniTermini)
+            foreach (Termin t in TerminiServis.slobodniTermini)
             {
                 if (t.Datum.CompareTo(izabranDatum)==0 && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
                 {

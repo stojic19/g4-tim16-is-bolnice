@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Repozitorijum;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,10 +10,11 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Model.Rukovanja
 {
-    class RukovanjeZahtjevima
+    class ZahteviServis
     {
         public static List<Zahtjev> SviZahtevi { get; set; } = new List<Zahtjev>();
         private static String imeFajla = "zahtjevi.xml";
+        
 
         public static Zahtjev PretraziPoId(String idZahteva)
         {
@@ -48,7 +50,7 @@ namespace Bolnica.Model.Rukovanja
                 {
                     z.Odgovor = Enumi.VrsteOdgovora.Odobren;
                     z.Lijek.Verifikacija = true;
-                    RukovanjeOdobrenimLekovima.SviLekovi.Add(z.Lijek);
+                    LekoviRepozitorijum.SviLekovi.Add(z.Lijek);
                 }
             }
 

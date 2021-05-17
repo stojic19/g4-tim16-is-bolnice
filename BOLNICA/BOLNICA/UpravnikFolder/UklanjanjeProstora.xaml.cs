@@ -35,8 +35,8 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeProstorom.UkloniProstor(izabran);
-            RukovanjeProstorom.SerijalizacijaProstora();
+            ProstoriServis.UkloniProstor(izabran);
+            ProstoriServis.SerijalizacijaProstora();
             this.Close();
         }
     }

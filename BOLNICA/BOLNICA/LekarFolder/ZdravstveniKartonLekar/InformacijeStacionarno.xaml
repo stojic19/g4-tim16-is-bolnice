@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica.LekarFolder.ZdravstveniKartonLekar"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="850">
+             d:DesignHeight="1380" d:DesignWidth="850">
     <Grid Background="WhiteSmoke" MaxWidth="720" MaxHeight="700" Width="720" Height="700" VerticalAlignment="Center" HorizontalAlignment="Center">
 
         <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
             <RowDefinition Height="200"/>
             <RowDefinition Height="380"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
 
@@ -79,15 +80,11 @@
                         <Label Content="Kraj lečenja" HorizontalAlignment="Center" FontWeight="Normal" />
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="26,5,5,5" Grid.Row="1" Grid.Column="0">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="26,5,5,5" Grid.Row="1" Grid.ColumnSpan="2">
                     <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="soba" FontWeight="Normal"/>
                     <Label Content="Soba" HorizontalAlignment="Center" FontWeight="Normal" />
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="5,5,26,5" Grid.Row="1" Grid.Column="1" >
-                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krevet" FontWeight="Normal"/>
-                        <Label Content="Krevet" HorizontalAlignment="Center" FontWeight="Normal" />
-                    </StackPanel>
 
                     <TextBox Grid.Row="2" Grid.ColumnSpan="2" Name="nalaz" IsReadOnly="True" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="147" Margin="25,10.2,26,10" TextWrapping="Wrap"/>
 
@@ -95,5 +92,7 @@
 
             </GroupBox>
 
-        </Grid>
+        <Button Grid.Row="4" Content="Produžavanje lečenja" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="25,5" Click="ProduzavanjeLecenja"/>
+
+    </Grid>
 </UserControl>

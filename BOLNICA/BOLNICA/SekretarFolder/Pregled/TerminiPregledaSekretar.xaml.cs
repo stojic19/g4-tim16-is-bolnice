@@ -31,7 +31,7 @@ namespace Bolnica.Sekretar.Pregled
             this.DataContext = this;
             TerminiPregleda = new ObservableCollection<Termin>();
 
-            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            foreach (Termin t in TerminiServis.DobaviSveTermine())
             {
                 if(t.VrstaTermina == VrsteTermina.pregled)
                 {

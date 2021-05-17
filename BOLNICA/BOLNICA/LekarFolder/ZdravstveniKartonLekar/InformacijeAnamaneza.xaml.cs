@@ -30,7 +30,7 @@ namespace Bolnica
         {
 
             InitializeComponent();
-            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
             this.izabranaAnamneza = odabranaAnamneza;
 
             inicijalizacijaPolja();
@@ -50,8 +50,8 @@ namespace Bolnica
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabranaAnamneza.IdPacijenta);
-            Lekar l = RukovanjeTerminima.pretraziLekare(izabranaAnamneza.IdLekara);
+            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranaAnamneza.IdPacijenta);
+            Lekar l = TerminiServis.pretraziLekare(izabranaAnamneza.IdLekara);
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
@@ -66,8 +66,8 @@ namespace Bolnica
     
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
 

@@ -30,7 +30,7 @@ namespace Bolnica
             InitializeComponent();
 
             izabran = id;
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(id);
+            Pacijent p = NaloziPacijenataServis.PretraziPoId(id);
 
 
             if (p.VrstaNaloga == VrsteNaloga.regularan)
@@ -87,7 +87,7 @@ namespace Bolnica
                 return;
             }
 
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabran);
+            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabran);
             if(p.VrstaNaloga == VrsteNaloga.regularan && tipNaloga.Text.Equals("Gost"))
             {
                 System.Windows.Forms.MessageBox.Show("Regularan nalog se ne može promeniti u gostujući!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,7 +119,7 @@ namespace Bolnica
                 }
                 if (!p.KorisnickoIme.Equals(idPacijenta.Text))
                 {
-                    foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+                    foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
                     {
                         if (p1.KorisnickoIme.Equals(idPacijenta.Text))
                         {
@@ -131,7 +131,7 @@ namespace Bolnica
             }
             if (!p.Jmbg.Equals(jmbg.Text))
             {
-                foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+                foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
                 {
                     if (p1.Jmbg.Equals(jmbg.Text))
                     {
@@ -140,7 +140,7 @@ namespace Bolnica
                     }
                 }
             }
-            RukovanjeNalozimaPacijenata.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
+            NaloziPacijenataServis.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

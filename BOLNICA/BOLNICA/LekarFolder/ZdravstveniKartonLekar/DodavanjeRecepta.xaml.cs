@@ -22,7 +22,7 @@ namespace Bolnica
         public DodavanjeRecepta(String idIzabranogPregleda)
         {
             InitializeComponent();
-            this.izabranPregled = RukovanjePregledima.PretraziPoId(idIzabranogPregleda);
+            this.izabranPregled = PreglediServis.PretraziPoId(idIzabranogPregleda);
             inicijalizacijaPolja();
             inicijalizacijaTabeleLekova();
             podesavanjePretrageLekova();
@@ -49,7 +49,7 @@ namespace Bolnica
         {
             Lekovi.Clear();
 
-            foreach (Lek l in RukovanjeZdravstvenimKartonima.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
+            foreach (Lek l in ZdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
             {
                 Lekovi.Add(l);
             }
@@ -62,11 +62,11 @@ namespace Bolnica
 
             if (!Validacija()) return;
 
-            Lek prepisanLek = RukovanjeOdobrenimLekovima.PretraziPoID(sifraLeka);
+            Lek prepisanLek = LekoviServis.PretraziPoID(sifraLeka);
             Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
-            RukovanjeZdravstvenimKartonima.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
-            RukovanjePregledima.DodavanjeRecepta(izabranPregled.IdPregleda, novRecept);
+            ZdravstveniKartoniServis.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
+            PreglediServis.DodavanjeRecepta(izabranPregled.IdPregleda, novRecept);
 
             PovratakNaKarton();
         }
@@ -82,7 +82,7 @@ namespace Bolnica
 
             }
 
-            if (RukovanjeZdravstvenimKartonima.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
+            if (ZdravstveniKartoniServis.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
             {
                 labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
             }
@@ -135,8 +135,8 @@ namespace Bolnica
 
         private void PovratakNaKarton()
         {
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
 

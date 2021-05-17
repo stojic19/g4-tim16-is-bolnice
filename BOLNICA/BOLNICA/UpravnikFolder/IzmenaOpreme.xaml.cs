@@ -27,7 +27,7 @@ namespace Bolnica
             InitializeComponent();
 
             stari = id;
-            Oprema o = RukovanjeOpremom.PretraziPoId(id);
+            Oprema o = OpremaServis.PretraziPoId(id);
 
             NazivOpreme.Text = o.NazivOpreme;
 
@@ -52,8 +52,8 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             Oprema o = new Oprema(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
-            RukovanjeOpremom.IzmeniOpremu(o);
-            RukovanjeOpremom.SerijalizacijaOpreme();
+            OpremaServis.IzmeniOpremu(o);
+            OpremaServis.SerijalizacijaOpreme();
             this.Close();
         }
 

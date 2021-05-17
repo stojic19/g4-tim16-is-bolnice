@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-   public class RukovanjeObavestenjimaSekratar
+   public class ObavestenjaServis
    {
       private static String imeFajla = "obavestenja.xml";
       public static List<Obavestenje> svaObavestenja = new List<Obavestenje>();

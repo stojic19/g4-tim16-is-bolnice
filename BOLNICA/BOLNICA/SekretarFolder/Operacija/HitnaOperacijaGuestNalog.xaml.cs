@@ -88,10 +88,10 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             Pacijent pacijent = new Pacijent(tbIme.Text, tbPrezime.Text, tbJmbg.Text, DobaviIzabranPol());
-            RukovanjeNalozimaPacijenata.DodajNalog(pacijent);
+            NaloziPacijenataServis.DodajNalog(pacijent);
             int trajanje = Convert.ToInt32(tbTrajanje.Text);
 
-            List<Termin> slobodniTermini = RukovanjeOperacijama.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
+            List<Termin> slobodniTermini = OperacijeServis.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
             if (slobodniTermini.Count == 0)
             {
                 //termini za pomeranje;
@@ -106,7 +106,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 //zakazivanje prvog slobodnog
                 Termin t = slobodniTermini[0];
                 t.Pacijent = pacijent;
-                RukovanjeOperacijama.ZakazivanjeHitneOperacije(t, trajanje);
+                OperacijeServis.ZakazivanjeHitneOperacije(t, trajanje);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -170,7 +170,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Pacijent p1 in RukovanjeNalozimaPacijenata.sviNaloziPacijenata)
+            foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
             {
                 if (p1.Jmbg.Equals(tbJmbg.Text))
                 {

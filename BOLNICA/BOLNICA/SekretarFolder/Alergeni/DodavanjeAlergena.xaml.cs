@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -23,9 +24,6 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for DodavanjeAlergena.xaml
-    /// </summary>
     public partial class DodavanjeAlergena : UserControl
     {
         public static ObservableCollection<Lek> SviLekovi { get; set; }
@@ -39,7 +37,7 @@ namespace Bolnica
             this.DataContext = this;
 
             SviLekovi = new ObservableCollection<Lek>();
-            foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
+            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
             {
                 SviLekovi.Add(l);
             }
@@ -51,7 +49,7 @@ namespace Bolnica
                 return;
             }
 
-            RukovanjeNalozimaPacijenata.DodajAlergen(izabran, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
+            NaloziPacijenataServis.DodajAlergen(izabran, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -72,7 +70,7 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Izaberite lek!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Alergeni ale in RukovanjeNalozimaPacijenata.PretraziPoId(izabran).ZdravstveniKarton.Alergeni)
+            foreach (Alergeni ale in NaloziPacijenataServis.PretraziPoId(izabran).ZdravstveniKarton.Alergeni)
             {
                 if (ale.IdAlergena.Equals(idLeka))
                 {

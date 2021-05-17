@@ -38,7 +38,7 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeNalozimaPacijenata.UkolniNalog(izabran);
+            NaloziPacijenataServis.UkolniNalog(izabran);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

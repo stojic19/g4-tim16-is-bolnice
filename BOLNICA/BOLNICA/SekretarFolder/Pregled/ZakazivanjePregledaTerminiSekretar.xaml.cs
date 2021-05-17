@@ -57,8 +57,8 @@ namespace Bolnica.Sekretar.Pregled
             {
                 return;
             }    
-            termin.Pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(IdPacijenta);
-            RukovanjeTerminima.ZakaziPregledSekretar(termin);
+            termin.Pacijent = NaloziPacijenataServis.PretraziPoId(IdPacijenta);
+            TerminiServis.ZakaziPregledSekretar(termin);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -71,7 +71,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             bool postoji = false;
             Termin termin = new Termin();
-            foreach (Termin t in RukovanjeTerminima.slobodniTermini)
+            foreach (Termin t in TerminiServis.slobodniTermini)
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

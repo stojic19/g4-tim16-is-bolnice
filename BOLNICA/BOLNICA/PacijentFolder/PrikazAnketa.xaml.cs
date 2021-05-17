@@ -28,7 +28,7 @@ namespace Bolnica.PacijentFolder
         {
             InitializeComponent();
             StariPregledi = new ObservableCollection<Pregled>();
-            foreach (Pregled pregled in RukovanjePregledima.SortPoDatumuPregleda())
+            foreach (Pregled pregled in PreglediServis.SortPoDatumuPregleda())
             {
                 if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan && !pregled.OcenjenPregled && DateTime.Compare(DateTime.Now.Date,pregled.Termin.Datum)>=0)
                     StariPregledi.Add(pregled);
@@ -50,7 +50,7 @@ namespace Bolnica.PacijentFolder
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!RukovanjeAnketama.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovani))
+            if (!AnketeServis.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovani))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;

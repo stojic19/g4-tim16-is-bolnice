@@ -24,7 +24,7 @@ namespace Bolnica
         {
             InitializeComponent();
             VremenaTerminaPomeranje = new ObservableCollection<Termin>();
-            foreach (Termin t in RukovanjeTerminima.NadjiVremeTermina(izabraniTermin))
+            foreach (Termin t in TerminiServis.NadjiVremeTermina(izabraniTermin))
                 VremenaTerminaPomeranje.Add(t);
             vremenaZaPomeranje.ItemsSource = VremenaTerminaPomeranje;
         }

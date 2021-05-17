@@ -37,7 +37,7 @@ namespace Bolnica.SekretarFolder.Operacija
         private static void PopuniTabeluTermina()
         {
             TerminiHitnihOperacija = new ObservableCollection<Termin>();
-            foreach (Termin t in RukovanjeOperacijama.sviTermini)
+            foreach (Termin t in OperacijeServis.sviTermini)
             {
                 TerminiHitnihOperacija.Add(t);
             }

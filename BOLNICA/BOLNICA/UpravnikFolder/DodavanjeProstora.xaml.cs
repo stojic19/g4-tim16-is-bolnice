@@ -37,7 +37,7 @@ namespace Bolnica
         {
 
             Prostor p = new Prostor(Guid.NewGuid().ToString(), ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
-            RukovanjeProstorom.DodajProstor(p);
+            ProstoriServis.DodajProstor(p);
 
             this.Close();
 

@@ -35,7 +35,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            this.izabranPregled = RukovanjePregledima.PretraziPoId(IDIzabranog);
+            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
             Tabovi.SelectedIndex = indeksTaba;
 
             inicijalizacijaPolja();
@@ -48,7 +48,7 @@ namespace Bolnica
 
         private void inicijalizacijaTabela()
         {
-            Pacijent pacijent = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             Recepti = new ObservableCollection<Recept>();
             foreach (Recept r in pacijent.ZdravstveniKarton.Recepti)
@@ -87,10 +87,10 @@ namespace Bolnica
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjeTerminima.SerijalizacijaTermina();
+            NaloziPacijenataServis.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
+            TerminiServis.SerijalizacijaSlobodnihTermina();
+            TerminiServis.SerijalizacijaTermina();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme));
 
@@ -106,8 +106,8 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeNalozimaPacijenata.Sacuvaj();
-            RukovanjePregledima.SerijalizacijaPregleda();
+            NaloziPacijenataServis.Sacuvaj();
+            PreglediServis.SerijalizacijaPregleda();
         }
 
         private void DodavanjeAnamneze(object sender, RoutedEventArgs e)  //MOZDA PROMENITI U IZMENU

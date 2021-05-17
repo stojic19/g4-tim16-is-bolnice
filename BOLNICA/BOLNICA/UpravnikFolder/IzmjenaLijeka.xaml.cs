@@ -26,7 +26,7 @@ namespace Bolnica
             InitializeComponent();
 
             stari = id;
-            Lek lijek = RukovanjeZahtjevima.pretraziLekPoId(id);
+            Lek lijek = ZahteviServis.pretraziLekPoId(id);
 
             NazivLijeka.Text = lijek.NazivLeka;
             Jacina.Text = lijek.Jacina;
@@ -44,8 +44,8 @@ namespace Bolnica
 
             Lek lijek = new Lek(stari, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, new List<Sastojak>(), false);
 
-            RukovanjeZahtjevima.IzmeniLek(lijek);
-            RukovanjeZahtjevima.SerijalizacijaZahtjeva();
+            ZahteviServis.IzmeniLek(lijek);
+            ZahteviServis.SerijalizacijaZahtjeva();
 
             this.Close();
         }

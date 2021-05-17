@@ -125,6 +125,13 @@
     <Compile Include="PacijentFolder\DetaljiTerapije.xaml.cs">
       <DependentUpon>DetaljiTerapije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\LekoviRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\NaloziPacijenataRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\TerminRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZahteviRepozitorijum.cs" />
     <Compile Include="SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
     </Compile>
@@ -140,13 +147,13 @@
     <Compile Include="Model\Pregled.cs" />
     <Compile Include="Model\Recept.cs" />
     <Compile Include="Model\Renoviranje.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeAnketama.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeOdobrenimLekovima.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeOpremom.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjePregledima.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeZahtjevima.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeZdravstvenimKartonima.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeOperacijama.cs" />
+    <Compile Include="Servis\AnketeServis.cs" />
+    <Compile Include="Servis\LekoviServis.cs" />
+    <Compile Include="Servis\OpremaServis.cs" />
+    <Compile Include="Servis\PreglediServis.cs" />
+    <Compile Include="Servis\ZahteviServis.cs" />
+    <Compile Include="Servis\ZdravstveniKartoniServis.cs" />
+    <Compile Include="Servis\OperacijeServis.cs" />
     <Compile Include="Model\Sastojak.cs" />
     <Compile Include="Model\Terapija.cs" />
     <Compile Include="Model\Enumi\VrsteOpreme.cs" />
@@ -205,7 +212,7 @@
     <Compile Include="Model\Lek.cs" />
     <Compile Include="Model\Obavestenje.cs" />
     <Compile Include="Model\Enumi\Pol.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeObavestenjimaSekratar.cs" />
+    <Compile Include="Servis\ObavestenjaServis.cs" />
     <Compile Include="PacijentFolder\OtkazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
@@ -700,9 +707,9 @@
     <Compile Include="Model\Lekar.cs" />
     <Compile Include="Model\Osoba.cs" />
     <Compile Include="Model\Prostor.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeNalozimaPacijenata.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeProstorom.cs" />
-    <Compile Include="Model\Rukovanja\RukovanjeTerminima.cs" />
+    <Compile Include="Servis\NaloziPacijenataServis.cs" />
+    <Compile Include="Servis\ProstoriServis.cs" />
+    <Compile Include="Servis\TerminiServis.cs" />
     <Compile Include="Model\Sekretar.cs" />
     <Compile Include="Model\Enumi\SpecijalizacijeLekara.cs" />
     <Compile Include="Model\Termin.cs" />
@@ -838,6 +845,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\UpravnikSlike\slusalice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Kontroler\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

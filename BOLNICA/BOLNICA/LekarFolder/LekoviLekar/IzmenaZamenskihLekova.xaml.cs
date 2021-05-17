@@ -1,5 +1,6 @@
 ﻿using Bolnica.LekarFolder;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Bolnica
         public IzmenaZamenskihLekova(String idLeka, String idLekara)
         {
             InitializeComponent();
-            izabranLek = RukovanjeOdobrenimLekovima.PretraziPoID(idLeka);
+            izabranLek = LekoviServis.PretraziPoID(idLeka);
             KorisnickoImeLekara = idLekara;
             this.DataContext = this;
             inicijalizacijaPolja();
@@ -60,7 +61,7 @@ namespace Bolnica
         {
             SviLekovi.Clear();
 
-            foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
+            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
             {
                 if (!l.IDLeka.Equals(izabranLek.IDLeka) && !ProveraPostojanjaZamenskog(l.IDLeka) )
                 {
@@ -130,7 +131,7 @@ namespace Bolnica
 
             if (izabranZamenski != null)
             {
-                foreach (Lek l in RukovanjeOdobrenimLekovima.SviLekovi)
+                foreach (Lek l in LekoviRepozitorijum.SviLekovi)
                 {
                     if (l.IDLeka.Equals(izabranZamenski.IDLeka))
                     {
@@ -151,8 +152,8 @@ namespace Bolnica
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
         {
-            RukovanjeOdobrenimLekovima.IzmenaZamenskihLekova(izabranLek.IDLeka, noviZamenski);
-            RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
+            LekoviServis.IzmenaZamenskihLekova(izabranLek.IDLeka, noviZamenski);
+            LekoviRepozitorijum.SerijalizacijaLekova();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
         }

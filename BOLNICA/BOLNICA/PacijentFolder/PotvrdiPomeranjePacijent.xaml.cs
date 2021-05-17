@@ -21,7 +21,7 @@ namespace Bolnica
         public PotvrdiPomeranjePacijent(Termin izabrani)
         {
             InitializeComponent();
-            noviTermin = RukovanjeTerminima.PretraziSlobodnePoId(izabrani.IdTermina);
+            noviTermin = TerminiServis.PretraziSlobodnePoId(izabrani.IdTermina);
 
             TextLekar.Text = noviTermin.Lekar.KorisnickoIme;
             TextDatum.Text = noviTermin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -31,7 +31,7 @@ namespace Bolnica
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeTerminima.PomeriPregledPacijent(noviTermin.IdTermina);
+            TerminiServis.PomeriPregledPacijent(noviTermin.IdTermina);
             ProveriNalogPacijenta();
             PromeniPrikaz(new PrikazRasporedaPacijent());
         }

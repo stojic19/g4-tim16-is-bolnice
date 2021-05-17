@@ -26,7 +26,7 @@ namespace Bolnica.PacijentFolder
         {
             InitializeComponent();
             ObavljeniPregledi = new ObservableCollection<Pregled>();
-            foreach (Pregled pregled in RukovanjePregledima.sviPregledi)
+            foreach (Pregled pregled in PreglediServis.sviPregledi)
             {
                 if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan)
                     ObavljeniPregledi.Add(pregled);

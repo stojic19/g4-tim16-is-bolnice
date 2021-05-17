@@ -27,7 +27,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
             InitializeComponent();
             InitializeComponent();
             izabranUput = informacijeUput;
-            izabranPregled = RukovanjePregledima.PretraziPoId(idIzabranogPregleda);
+            izabranPregled = PreglediServis.PretraziPoId(idIzabranogPregleda);
 
             inicijalizacijaPolja();
         }
@@ -35,16 +35,21 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = RukovanjeNalozimaPacijenata.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
-            Lekar specijalista = RukovanjeTerminima.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
+            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Lekar specijalista = TerminiServis.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;
             jmbgPacijenta.Text = p.Jmbg;
             datumIzdavanjaStacionarnog.Text = izabranUput.DatumIzdavanja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             nalaz.Text = izabranUput.NalazMisljenje;
-            pocetakStacionarnog.Text = izabranUput.pocetakStacionarnog.ToString("dd/MM/yyy", System.Globalization.CultureInfo.InvariantCulture);
-            krajStacionarnog.Text = izabranUput.krajStacionarnog.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            pocetakStacionarnog.Text = izabranUput.PocetakStacionarnog.ToString("dd/MM/yyy", System.Globalization.CultureInfo.InvariantCulture);
+            krajStacionarnog.Text = izabranUput.KrajStacionarnog.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+        }
+
+        private void ProduzavanjeLecenja(object sender, RoutedEventArgs e)
+        {
 
         }
     }

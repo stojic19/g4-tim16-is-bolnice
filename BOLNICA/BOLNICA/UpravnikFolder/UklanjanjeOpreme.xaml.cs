@@ -37,8 +37,8 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            RukovanjeOpremom.UkloniOpremu(izabran);
-            RukovanjeOpremom.SerijalizacijaOpreme();
+            OpremaServis.UkloniOpremu(izabran);
+            OpremaServis.SerijalizacijaOpreme();
             this.Close();
         }
     }

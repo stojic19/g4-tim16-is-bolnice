@@ -33,7 +33,7 @@ namespace Bolnica
             InitializeComponent();
             this.DataContext = this;
             oprema = new ObservableCollection<Oprema>();
-            foreach(Oprema o in RukovanjeProstorom.PretraziPoId(idProstorije).Oprema){
+            foreach(Oprema o in ProstoriServis.PretraziPoId(idProstorije).Oprema){
                 oprema.Add(o);
             }
             

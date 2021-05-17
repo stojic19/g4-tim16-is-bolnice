@@ -38,7 +38,7 @@ namespace Bolnica
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in RukovanjeProstorom.SviProstori())
+            foreach (Prostor p in ProstoriServis.SviProstori())
             {
                 if (!p.IdProstora.Equals(idProstoraIzKojegPrebacujem))
                 {
@@ -57,8 +57,8 @@ namespace Bolnica
         {
             Prostor prostorUKojiPremjestamo = (Prostor)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
-            Prostor prostorIzKojegPremjestamo = RukovanjeProstorom.PretraziPoId(idProstoraIzKojegPrebacujem);
-            Oprema opremaKojuPremjestamo = RukovanjeOpremom.PretraziPoId(idOpreme);
+            Prostor prostorIzKojegPremjestamo = ProstoriServis.PretraziPoId(idProstoraIzKojegPrebacujem);
+            Oprema opremaKojuPremjestamo = OpremaServis.PretraziPoId(idOpreme);
 
             if (prostorUKojiPremjestamo == null)
             {
@@ -72,14 +72,14 @@ namespace Bolnica
             }
             else
             {
-                RukovanjeOpremom.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
+                OpremaServis.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
             }
 
             // Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
-            RukovanjeProstorom.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
-            RukovanjeProstorom.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
+            ProstoriServis.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
+            ProstoriServis.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
 
-            RukovanjeProstorom.SerijalizacijaProstora();
+            ProstoriServis.SerijalizacijaProstora();
             this.Close();
         }
     }

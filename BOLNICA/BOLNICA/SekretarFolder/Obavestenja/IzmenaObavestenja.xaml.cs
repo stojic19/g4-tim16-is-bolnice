@@ -40,7 +40,7 @@ namespace Bolnica
         {
             InicijalizujPrimaoca();
 
-            Obavestenje o = RukovanjeObavestenjimaSekratar.PretraziPoId(izabran);
+            Obavestenje o = ObavestenjaServis.PretraziPoId(izabran);
             idObavestenja.Text = o.IdObavestenja;
             datum.SelectedDate = Convert.ToDateTime(o.Datum);
             naslov.Text = o.Naslov;
@@ -56,17 +56,17 @@ namespace Bolnica
             primaoci.Add("Lekari");
             primaoci.Add("Sekretari");
             primaoci.Add("Upravnici");
-            foreach (Pacijent pacijent in RukovanjeNalozimaPacijenata.SviNalozi())
+            foreach (Pacijent pacijent in NaloziPacijenataServis.SviNalozi())
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }
-            foreach (Lekar lekar in RukovanjeTerminima.sviLekari)
+            foreach (Lekar lekar in TerminiServis.sviLekari)
             {
                 primaoci.Add(lekar.KorisnickoIme + " " + lekar.Prezime + " " + lekar.Ime);
             }
             Primalac.ItemsSource = primaoci;
 
-            string[] Primaoci = RukovanjeObavestenjimaSekratar.PretraziPoId(izabran).IdPrimaoca.Split(' ');
+            string[] Primaoci = ObavestenjaServis.PretraziPoId(izabran).IdPrimaoca.Split(' ');
             foreach(var primalac in Primalac.Items)
             {
                 string[] podaci = primalac.ToString().Split(' ');
@@ -122,7 +122,7 @@ namespace Bolnica
                 return;
             }
 
-            RukovanjeObavestenjimaSekratar.IzmeniObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            ObavestenjaServis.IzmeniObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

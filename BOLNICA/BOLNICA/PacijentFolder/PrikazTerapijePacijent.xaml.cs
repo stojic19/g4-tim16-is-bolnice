@@ -30,7 +30,7 @@ namespace Bolnica
             InitializeComponent();
             sveTerapijePacijenta = new ObservableCollection<Terapija>();
 
-            foreach (Terapija t in RukovanjeZdravstvenimKartonima.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
+            foreach (Terapija t in ZdravstveniKartoniServis.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
             {
                 if(DateTime.Compare(DateTime.Now.Date,t.KrajTerapije)<=0)
                 sveTerapijePacijenta.Add(t);

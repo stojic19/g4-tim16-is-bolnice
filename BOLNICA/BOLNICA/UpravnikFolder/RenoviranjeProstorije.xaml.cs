@@ -33,12 +33,12 @@ namespace Bolnica
         {
             Renoviranje renoviranje = new Renoviranje(/*izabranProstor.IdProstora*/ new Prostor(), DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
 
-            RukovanjeProstorom.ProvjeriZakazaneTermine(PickStartDate, PickEndtDate);
+            ProstoriServis.ProvjeriZakazaneTermine(PickStartDate, PickEndtDate);
 
            // izabranProstor.Renoviranje = renoviranje;
-            RukovanjeProstorom.DodajZaRenoviranje(renoviranje);
-            RukovanjeProstorom.ProveriRenoviranje();
-            RukovanjeProstorom.SerijalizacijaProstora();
+            ProstoriServis.DodajZaRenoviranje(renoviranje);
+            ProstoriServis.ProveriRenoviranje();
+            ProstoriServis.SerijalizacijaProstora();
 
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             System.Windows.Controls.UserControl usc = null;

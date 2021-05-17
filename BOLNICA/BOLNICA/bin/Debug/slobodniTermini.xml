@@ -11,13 +11,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P1</RoomId>
-        <StartDay>2021-05-05T00:00:00</StartDay>
-        <EndDay>2021-05-09T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema>
         <Oprema>
           <IdOpreme>s1</IdOpreme>
@@ -53,13 +47,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P1</RoomId>
-        <StartDay>2021-05-05T00:00:00</StartDay>
-        <EndDay>2021-05-09T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema>
         <Oprema>
           <IdOpreme>s1</IdOpreme>
@@ -95,13 +83,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>1</Kvadratura>
-      <BrojKreveta>2</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P1</RoomId>
-        <StartDay>2021-05-05T00:00:00</StartDay>
-        <EndDay>2021-05-09T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema>
         <Oprema>
           <IdOpreme>s1</IdOpreme>
@@ -137,13 +119,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P2</RoomId>
-        <StartDay>2021-05-08T00:00:00</StartDay>
-        <EndDay>2021-05-10T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
@@ -172,13 +148,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P2</RoomId>
-        <StartDay>2021-05-08T00:00:00</StartDay>
-        <EndDay>2021-05-10T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
@@ -207,13 +177,7 @@
       <VrstaProstora>ordinacija</VrstaProstora>
       <Sprat>1</Sprat>
       <Kvadratura>25</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>true</JeRenoviranje>
-      <Renoviranje>
-        <RoomId>P2</RoomId>
-        <StartDay>2021-05-08T00:00:00</StartDay>
-        <EndDay>2021-05-10T00:00:00</EndDay>
-      </Renoviranje>
       <Oprema />
     </Prostor>
     <Lekar>
@@ -242,7 +206,6 @@
       <VrstaProstora>sala</VrstaProstora>
       <Sprat>2</Sprat>
       <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>false</JeRenoviranje>
       <Oprema />
     </Prostor>
@@ -272,7 +235,6 @@
       <VrstaProstora>sala</VrstaProstora>
       <Sprat>2</Sprat>
       <Kvadratura>40</Kvadratura>
-      <BrojKreveta>1</BrojKreveta>
       <JeRenoviranje>false</JeRenoviranje>
       <Oprema />
     </Prostor>

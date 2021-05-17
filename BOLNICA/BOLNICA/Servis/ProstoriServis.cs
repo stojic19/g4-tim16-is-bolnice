@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-    public class RukovanjeProstorom
+    public class ProstoriServis
     {
         private static String imeFajla = "prostori.xml";
         private static String imeFajla1 = "renoviranje.xml";
@@ -27,10 +27,9 @@ namespace Model
         }
 
 
-
         public static Boolean IzmeniProstor(Prostor noviPodaci)
         {
-            foreach (Prostor p in RukovanjeProstorom.SviProstori())
+            foreach (Prostor p in ProstoriServis.SviProstori())
             {
                 if (p.IdProstora.Equals(noviPodaci.IdProstora))
                 {
@@ -136,7 +135,7 @@ namespace Model
             if (!DodajSamoKolicinu(prostorUKojiPremjestamo, oprema, kolicina))
             {
                 Oprema o = new Oprema(oprema.IdOpreme, oprema.NazivOpreme, oprema.VrstaOpreme, kolicina);
-                RukovanjeProstorom.DodajOpremuProstoru(prostorUKojiPremjestamo, o);
+                ProstoriServis.DodajOpremuProstoru(prostorUKojiPremjestamo, o);
             }
         }
 
@@ -197,7 +196,7 @@ namespace Model
 
         public static void ProvjeriZakazaneTermine(DatePicker pocetniDatum, DatePicker zavrsniDatum)
         {
-            foreach (Termin t in RukovanjeTerminima.DobaviSveTermine())
+            foreach (Termin t in TerminiServis.DobaviSveTermine())
             {
                 if (t.Datum >= DateTime.Parse(pocetniDatum.Text) && t.Datum <= DateTime.Parse(zavrsniDatum.Text))
                 {

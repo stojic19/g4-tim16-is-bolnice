@@ -1,6 +1,7 @@
 ﻿using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace Bolnica.LekarFolder
         {
             Zahtevi.Clear();
 
-            foreach (Zahtjev z in RukovanjeZahtjevima.SviZahtevi)
+            foreach (Zahtjev z in ZahteviServis.SviZahtevi)
             {
                 Zahtevi.Add(z);
             }
@@ -67,7 +68,7 @@ namespace Bolnica.LekarFolder
         {
             Sastojci.Clear();
 
-            foreach (Sastojak s in RukovanjeZahtjevima.pretraziLekPoId(idIzabranogLeka).Sastojci)
+            foreach (Sastojak s in ZahteviServis.pretraziLekPoId(idIzabranogLeka).Sastojci)
             {
                 Sastojci.Add(s);
             }
@@ -108,10 +109,10 @@ namespace Bolnica.LekarFolder
 
             if (Validacija(izabranZahtev))
             {
-                RukovanjeZahtjevima.OdobriZahtev(izabranZahtev.IdZahtjeva);
+                ZahteviServis.OdobriZahtev(izabranZahtev.IdZahtjeva);
                 inicijalizacijaTabeleZahteva();
-                RukovanjeZahtjevima.SerijalizacijaZahtjeva();
-                RukovanjeOdobrenimLekovima.SerijalizacijaLekova();
+                ZahteviServis.SerijalizacijaZahtjeva();
+                LekoviRepozitorijum.SerijalizacijaLekova();
 
             }
         }

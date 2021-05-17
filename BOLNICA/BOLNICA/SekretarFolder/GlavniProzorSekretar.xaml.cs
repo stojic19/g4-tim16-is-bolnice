@@ -43,7 +43,7 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            NaloziPacijenataServis.Sacuvaj();
         }
     }
 }

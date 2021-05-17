@@ -33,7 +33,7 @@ namespace Bolnica
             InitializeComponent();
             izabranPacijent = idPacijenta;
             izabranAlergen = idAlergena;
-            List<Alergeni> alergeni = RukovanjeNalozimaPacijenata.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni;
+            List<Alergeni> alergeni = NaloziPacijenataServis.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni;
             foreach(Alergeni a in alergeni)
             {
                 if(a.IdAlergena.Equals(idAlergena))
@@ -53,7 +53,7 @@ namespace Bolnica
                 return;
             }    
 
-            RukovanjeNalozimaPacijenata.IzmeniAlergen(izabranPacijent, new Alergeni(izabranAlergen, opis.Text, vreme.Text));
+            NaloziPacijenataServis.IzmeniAlergen(izabranPacijent, new Alergeni(izabranAlergen, opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

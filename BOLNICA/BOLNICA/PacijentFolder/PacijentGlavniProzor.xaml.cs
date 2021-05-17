@@ -26,8 +26,8 @@ namespace Bolnica
         {
             InitializeComponent();
             
-            RukovanjeObavestenjimaSekratar.Ucitaj();
-            ulogovani = RukovanjeNalozimaPacijenata.PretraziPoId(id);
+            ObavestenjaServis.Ucitaj();
+            ulogovani = NaloziPacijenataServis.PretraziPoId(id);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PrikazObavestenjaPacijent());
@@ -40,9 +40,9 @@ namespace Bolnica
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            TerminiServis.SerijalizacijaTermina();
+            TerminiServis.SerijalizacijaSlobodnihTermina();
+            NaloziPacijenataServis.Sacuvaj();
             Login login = new Login();
             login.Show();
             this.Close();
@@ -97,9 +97,9 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            RukovanjeTerminima.SerijalizacijaTermina();
-            RukovanjeTerminima.SerijalizacijaSlobodnihTermina();
-            RukovanjeNalozimaPacijenata.Sacuvaj();
+            TerminiServis.SerijalizacijaTermina();
+            TerminiServis.SerijalizacijaSlobodnihTermina();
+            NaloziPacijenataServis.Sacuvaj();
         }
       
 

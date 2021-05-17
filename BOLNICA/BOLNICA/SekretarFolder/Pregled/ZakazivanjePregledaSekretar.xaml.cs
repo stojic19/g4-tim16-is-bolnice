@@ -36,11 +36,11 @@ namespace Bolnica.Sekretar.Pregled
             SviPacijenti = new ObservableCollection<Pacijent>();
             SviLekari = new ObservableCollection<Lekar>();
 
-            foreach (Pacijent p in RukovanjeNalozimaPacijenata.SviNalozi())
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
                 SviPacijenti.Add(p);
             }
-            foreach (Lekar l in RukovanjeTerminima.sviLekari)
+            foreach (Lekar l in TerminiServis.sviLekari)
             {
                 SviLekari.Add(l);
             }
@@ -68,7 +68,7 @@ namespace Bolnica.Sekretar.Pregled
 
                 datumi.Clear();
 
-                pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
+                pomocna = TerminiServis.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
             foreach (Termin t in pomocna)
                 {
                     nasao = false;
@@ -93,7 +93,7 @@ namespace Bolnica.Sekretar.Pregled
                     DateTime tr1 = pom.AddDays(-7);
                     DateTime tr2 = pom.AddDays(7);
 
-                    pomocna = RukovanjeTerminima.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
+                    pomocna = TerminiServis.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
 
                     foreach (Termin t in pomocna)
                     {
@@ -128,7 +128,7 @@ namespace Bolnica.Sekretar.Pregled
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
                 {
-                    pomocna = RukovanjeTerminima.NadjiTermineUIntervalu(pom, pom1);
+                    pomocna = TerminiServis.NadjiTermineUIntervalu(pom, pom1);
                     foreach (Termin t in pomocna)
                     {
                         nasao = false;
@@ -197,7 +197,7 @@ namespace Bolnica.Sekretar.Pregled
 
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
-            return RukovanjeTerminima.NadjiTermineUIntervalu(datumOd, datumDo);
+            return TerminiServis.NadjiTermineUIntervalu(datumOd, datumDo);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
