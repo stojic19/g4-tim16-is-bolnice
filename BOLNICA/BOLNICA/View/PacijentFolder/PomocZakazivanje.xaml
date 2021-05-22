@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Bolnica.View.PacijentFolder.PomocZakazivanje"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
+      mc:Ignorable="d" 
+         d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="30 20 30 0">
+
+
+
+        <TextBlock FontSize="25" FontWeight="Bold">Zakazivanje pregleda</TextBlock>
+     
+
+        <StackPanel Margin="0 20 0 0">
+            <TextBlock FontSize="15">-Pacijenti mogu samostalno da zakažu</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">pregled SAMO kod lekara opšte prakse.</TextBlock>
+            <TextBlock FontSize="15" >-Izaberite lekara,period i prioritet prilikom</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">zakazivanja.</TextBlock>
+            <TextBlock FontSize="15" >-Sistem će Vam ponuditi termine izabranog </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">lekara u željenom periodu ukoliko</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">su slobodni.</TextBlock>
+            <TextBlock FontSize="15">- Ako je prioritet lekar, sistem će ponuditi </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">termine izabranog lekara u periodu +-7</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">dana od naznačenog perioda.</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">Ako je prioritet vreme, sistem će ponuditi</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">termine ostalih lekara u izabranom </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">periodu.</TextBlock>
+            <TextBlock FontSize="15" >-U sledećem prozoru otvara se lista </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">lista slobodnih datuma, zatim lista</TextBlock>
+            <TextBlock FontSize="15" >-Na kraju se otvara prozor za potvrdu</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">zakazivanja.</TextBlock>
+            <TextBlock FontSize="15" >-Nakon potvrde, termin pregleda se nalazi</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">u rasporedu.</TextBlock>
+
+        </StackPanel>
+
+
+
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+                <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
+
+
+            </Button>
+
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+
+            </Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
+    </UserControl>

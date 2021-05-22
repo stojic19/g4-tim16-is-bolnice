@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Bolnica.View.PacijentFolder.PomocAnkete"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
+             mc:Ignorable="d" 
+               d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="30 20 29 0">
+
+
+
+        <TextBlock FontSize="25" FontWeight="Bold">Ankete</TextBlock>
+  
+
+
+
+        <StackPanel Margin="0 20 0 0">
+            <TextBlock FontSize="15">-Klikom na stavku menija Ankete</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">dobijate uvid u ankete koje se odnose</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">na obavljene preglede i operacije u</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">klinici Zdravo.</TextBlock>
+            <TextBlock FontSize="15" >-Jednom u tri meseca imate mogućnost</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">da ocenite Kliniku Zdravo putem aplikacije.</TextBlock>
+            <TextBlock FontSize="15" >-Izaberite anketu iz liste, popunite je i</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">pomozite nam da unapredimo usluge!</TextBlock>
+
+        </StackPanel>
+
+
+
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+                <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
+
+
+            </Button>
+
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+
+            </Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
+</UserControl>

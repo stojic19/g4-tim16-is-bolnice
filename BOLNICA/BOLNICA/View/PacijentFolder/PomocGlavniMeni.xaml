@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Bolnica.View.PacijentFolder.PomocGlavniMeni"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
+             mc:Ignorable="d" 
+           d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="30 20 30 0">
+
+
+
+        <TextBlock FontSize="25" FontWeight="Bold">Glavni meni i navigacija</TextBlock>
+        <TextBlock FontSize="25" FontWeight="Bold">kroz aplikaciju</TextBlock>
+       
+        <StackPanel Margin="0 20 0 0">
+            <TextBlock FontSize="15">- Sa leve strane ekrana nalazi se </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">glavni meni za navigaciju kroz </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">aplikaciju.</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">U gornjem desnom uglu nalaze se</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">ikonica za prisup obaveštenjima</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">i meni za dodatne opcije.</TextBlock>
+            <TextBlock FontSize="15">- Klikom na poslednju ikonicu u</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">gornjem desnom uglu otvara se </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">padajući meni sa opcijama </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">pregled profila i odjave.</TextBlock>
+            <TextBlock FontSize="15">- Klikom na opciju Moj nalog dobijate</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">prikaz ličnih informacija Vašeg</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">naloga.</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">Možete izmeniti informacije o </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">adresi, telefonu i email. Takođe, </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">možete izmeniti lozinku.</TextBlock>
+         
+        </StackPanel>
+
+
+
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+                <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
+
+
+            </Button>
+
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+
+            </Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
+</UserControl>

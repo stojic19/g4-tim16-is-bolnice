@@ -1,5 +1,6 @@
 ﻿using Bolnica.PacijentFolder;
 using Bolnica.Repozitorijum;
+using Bolnica.View.PacijentFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -95,7 +96,8 @@ namespace Bolnica
 
         private void Pomoc_Click(object sender, RoutedEventArgs e)
         {
-           // naslovStrane.Content = "Pomoć";
+           naslovStrane.Content = "     Pomoć";
+            PromeniPrikaz(new PomocZakazivanje());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

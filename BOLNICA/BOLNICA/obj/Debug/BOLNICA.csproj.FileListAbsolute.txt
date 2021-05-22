@@ -1578,3 +1578,9 @@ C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOL
 C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeOpreme.baml
 C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeProstora.baml
 C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UpravnikGlavniProzor.baml
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc.g.cs
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc.baml
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PomocGlavniMeni.g.cs
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PomocGlavniMeni.baml
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PomocZakazivanje.g.cs
+C:\Users\computer\Desktop\ekhfnkewajbvkejabvkbvkjvb SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PomocZakazivanje.baml

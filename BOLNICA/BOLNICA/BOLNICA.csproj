@@ -134,6 +134,15 @@
     <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
     <Compile Include="Repozitorijum\TerminRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZahteviRepozitorijum.cs" />
+    <Compile Include="View\PacijentFolder\Pomoc.xaml.cs">
+      <DependentUpon>Pomoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PacijentFolder\PomocGlavniMeni.xaml.cs">
+      <DependentUpon>PomocGlavniMeni.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PacijentFolder\PomocZakazivanje.xaml.cs">
+      <DependentUpon>PomocZakazivanje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
     </Compile>
@@ -405,6 +414,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PacijentFolder\DetaljiTerapije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\Pomoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\PomocGlavniMeni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\PomocZakazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -850,6 +871,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\sledeci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\sl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\prethodna.png" />
+    <Resource Include="Slike\PacijentSlike\sledeca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\PacijentSlike\pomocpocetna.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
