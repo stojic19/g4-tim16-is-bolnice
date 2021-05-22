@@ -42,8 +42,7 @@ namespace Bolnica
             TerminiServis.brojac++;
 
             Repozitorijum.LekoviRepozitorijum.DeserijalizacijaLekova();
-            TerminiServis.DeserijalizacijaTermina();
-            TerminiServis.DeserijalizacijaSlobodnihTermina();
+          
             PreglediServis.DeserijalizacijaPregleda();
             ProstoriServis.DeserijalizacijaProstora();
             NaloziPacijenataServis.Ucitaj();
@@ -53,9 +52,9 @@ namespace Bolnica
             Pacijenti = NaloziPacijenataServis.SviNalozi();
 
             OperacijeServis.PrivremenaInicijalizacijaLekara();
-            AnketeServis.inicijalizujPitanjaOBolnici();
-            AnketeServis.inicijalizujPitanjaOTerminu();
-            AnketeServis.DeserijalizacijaAnketa();
+            AnketeRepozitorijum.inicijalizujPitanjaOBolnici();
+            AnketeRepozitorijum.inicijalizujPitanjaOTerminu();
+            AnketeRepozitorijum.DeserijalizacijaAnketa();
             
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -169,12 +168,12 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TerminiServis.SerijalizacijaTermina();
+            TerminRepozitorijum.SerijalizacijaTermina();
             PreglediServis.SerijalizacijaPregleda();
-            TerminiServis.SerijalizacijaSlobodnihTermina();
+            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             ProstoriServis.SerijalizacijaProstora();
             NaloziPacijenataServis.Sacuvaj();
-            AnketeServis.SerijalizacijaAnketa();
+            AnketeRepozitorijum.SerijalizacijaAnketa();
             GlavniProzorSekretar.getInstance().Close();
         }
     }

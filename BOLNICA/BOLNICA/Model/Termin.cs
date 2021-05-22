@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Xml;
 
 namespace Model
 {
@@ -54,5 +55,6 @@ namespace Model
                 return "Pregled";
             }
         }
+
     }
 }

@@ -1,5 +1,6 @@
 using Bolnica;
 using Bolnica.Model;
+using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -196,7 +197,7 @@ namespace Model
 
         public static void ProvjeriZakazaneTermine(DatePicker pocetniDatum, DatePicker zavrsniDatum)
         {
-            foreach (Termin t in TerminiServis.DobaviSveTermine())
+            foreach (Termin t in TerminRepozitorijum.DobaviSveTermine())
             {
                 if (t.Datum >= DateTime.Parse(pocetniDatum.Text) && t.Datum <= DateTime.Parse(zavrsniDatum.Text))
                 {
