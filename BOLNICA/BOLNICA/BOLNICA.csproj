@@ -137,11 +137,23 @@
     <Compile Include="View\PacijentFolder\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PacijentFolder\PomocAnkete.xaml.cs">
+      <DependentUpon>PomocAnkete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PacijentFolder\PomocGlavniMeni.xaml.cs">
       <DependentUpon>PomocGlavniMeni.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PacijentFolder\PomocIzmenaIOtkazivanje.xaml.cs">
+      <DependentUpon>PomocIzmenaIOtkazivanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PacijentFolder\PomocTerapija.xaml.cs">
+      <DependentUpon>PomocTerapija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PacijentFolder\PomocZakazivanje.xaml.cs">
       <DependentUpon>PomocZakazivanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PacijentFolder\PomocZdravsteniKarton.xaml.cs">
+      <DependentUpon>PomocZdravsteniKarton.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
@@ -421,11 +433,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PacijentFolder\PomocAnkete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PacijentFolder\PomocGlavniMeni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PacijentFolder\PomocIzmenaIOtkazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\PomocTerapija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PacijentFolder\PomocZakazivanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\PomocZdravsteniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

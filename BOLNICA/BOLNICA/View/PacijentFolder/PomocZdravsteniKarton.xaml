@@ -5,8 +5,57 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+                 d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="30 20 29 0">
+
+
+
+        <TextBlock FontSize="25" FontWeight="Bold">Zdravstveni karton</TextBlock>
+        <TextBlock FontSize="25" FontWeight="Bold">i istorija pregleda</TextBlock>
+
+
+
+        <StackPanel Margin="0 20 0 0">
+            <TextBlock FontSize="15">-Klikom na stavku menija Zdravstveni</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">karton dobijate pristup informacijama</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">koje se nalaze u Vašem zdravstvenom</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">kartonu.</TextBlock>
+            <TextBlock FontSize="15" >-Iz ove sekcije takodje je moguće</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">pristupiti stranici sa alergenima i istorji</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">pregleda.</TextBlock>
+            <TextBlock FontSize="15">-U sekciji istorija pregleda dostupna je </TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">lista obavljenih pregleda u klinici Zdravo</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">i detaljan izveštaj sa svakog od njih.</TextBlock>
+            <TextBlock FontSize="15">-Napravite belešku i podsetnik</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">u okviru obavljenog pregleda.</TextBlock>
+
+
+
+        </StackPanel>
+
+
+
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+                <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
+
+
+            </Button>
+
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+
+            </Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
 </UserControl>

@@ -14,25 +14,25 @@
      
 
         <StackPanel Margin="0 20 0 0">
-            <TextBlock FontSize="15">-Pacijenti mogu samostalno da zakažu</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">pregled SAMO kod lekara opšte prakse.</TextBlock>
-            <TextBlock FontSize="15" >-Izaberite lekara,period i prioritet prilikom</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">zakazivanja.</TextBlock>
-            <TextBlock FontSize="15" >-Sistem će Vam ponuditi termine izabranog </TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">lekara u željenom periodu ukoliko</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">su slobodni.</TextBlock>
-            <TextBlock FontSize="15">- Ako je prioritet lekar, sistem će ponuditi </TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">termine izabranog lekara u periodu +-7</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">dana od naznačenog perioda.</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">Ako je prioritet vreme, sistem će ponuditi</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">termine ostalih lekara u izabranom </TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">periodu.</TextBlock>
-            <TextBlock FontSize="15" >-U sledećem prozoru otvara se lista </TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">lista slobodnih datuma, zatim lista</TextBlock>
-            <TextBlock FontSize="15" >-Na kraju se otvara prozor za potvrdu</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">zakazivanja.</TextBlock>
-            <TextBlock FontSize="15" >-Nakon potvrde, termin pregleda se nalazi</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">u rasporedu.</TextBlock>
+            <TextBlock FontSize="14">-Pacijenti mogu samostalno da zakažu</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">pregled SAMO kod lekara opšte prakse.</TextBlock>
+            <TextBlock FontSize="14" >-Izaberite lekara,period i prioritet prilikom</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">zakazivanja.</TextBlock>
+            <TextBlock FontSize="14" >-Sistem će Vam ponuditi termine izabranog </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">lekara u željenom periodu ukoliko</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">su slobodni.</TextBlock>
+            <TextBlock FontSize="14">- Ako je prioritet lekar, sistem će ponuditi </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">termine izabranog lekara u periodu +-7</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">dana od naznačenog perioda.</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">Ako je prioritet vreme, sistem će ponuditi</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">termine ostalih lekara u izabranom </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">periodu.</TextBlock>
+            <TextBlock FontSize="14" >-U sledećem prozoru otvara se lista </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">lista slobodnih datuma, zatim lista</TextBlock>
+            <TextBlock FontSize="14" >-Na kraju se otvara prozor za potvrdu</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">zakazivanja.</TextBlock>
+            <TextBlock FontSize="14" >-Nakon potvrde, termin pregleda se nalazi</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">u rasporedu.</TextBlock>
 
         </StackPanel>
 

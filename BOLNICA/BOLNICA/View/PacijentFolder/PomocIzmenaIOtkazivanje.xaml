@@ -5,8 +5,59 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+            d:DesignHeight="600" d:DesignWidth="350">
+    <StackPanel Background="White" Margin="30 20 30 0">
+
+
+
+        <TextBlock FontSize="25" FontWeight="Bold">Izmena i otkazivanje</TextBlock>
+        <TextBlock FontSize="25" FontWeight="Bold">termina pregleda</TextBlock>
+
+
+        <StackPanel Margin="0 20 0 0">
+            <TextBlock FontSize="14">-Klikom na stavku menija raspored možete </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">pogledati sve zakazane termine i više</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">informacija o njima.</TextBlock>
+            <TextBlock FontSize="14" >-Klikom na pregled iz liste zakazanih termina</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">možete otkazati ili izmeniti termin.</TextBlock>
+            <TextBlock FontSize="14" >-Prilikom izmene pregleda moguće je na sličan</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">sličan način kao i kod zakazivanja izmeniti </TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">lekara ili prioritet. Potrebno je odabrati</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">termin iz liste dostupnih termina za</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">pomeranje.</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">(+- 48h od zakazanog)</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">Termin se može izmeniti naksanije 24h</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">unapred.</TextBlock>
+            <TextBlock FontSize="14" >-Pacijenti preko aplikacije imaju mogućnost</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">SAMO otkazivanja i izmene pregleda kod</TextBlock>
+            <TextBlock FontSize="14" Margin="10 0">lekara opšte prakse.</TextBlock>
+           
+
+        </StackPanel>
+
+
+
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+                <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
+
+
+            </Button>
+
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+
+            </Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
 </UserControl>
