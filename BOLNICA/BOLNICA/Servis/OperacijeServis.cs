@@ -10,8 +10,6 @@ namespace Bolnica.Model
 {
     class OperacijeServis
     {
-        //private static String imeFajla = "terminiOperacija.xml";
-
         public static List<Termin> sviTermini = new List<Termin>();
         public static List<Termin> slobodniTermini = new List<Termin>();
 

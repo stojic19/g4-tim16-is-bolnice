@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Kontroler\TerminKontroler.cs" />
+    <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>
