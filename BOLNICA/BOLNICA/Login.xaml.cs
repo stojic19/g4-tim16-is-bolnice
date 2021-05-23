@@ -45,7 +45,6 @@ namespace Bolnica
           
             PreglediServis.DeserijalizacijaPregleda();
             ProstoriServis.DeserijalizacijaProstora();
-            NaloziPacijenataServis.Ucitaj();
             ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
@@ -172,7 +171,6 @@ namespace Bolnica
             PreglediServis.SerijalizacijaPregleda();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             ProstoriServis.SerijalizacijaProstora();
-            NaloziPacijenataServis.Sacuvaj();
             AnketeRepozitorijum.SerijalizacijaAnketa();
             GlavniProzorSekretar.getInstance().Close();
         }

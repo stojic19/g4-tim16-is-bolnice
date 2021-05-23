@@ -36,7 +36,6 @@ namespace Bolnica
         private static void PopuniTabeluObavestenja()
         {
             SvaObavestenja = new ObservableCollection<Obavestenje>();
-            NaloziPacijenataServis.Ucitaj();
             foreach (Obavestenje o in ObavestenjaServis.SvaObavestenja())
             {
                 if (!o.Naslov.Equals("Terapija"))

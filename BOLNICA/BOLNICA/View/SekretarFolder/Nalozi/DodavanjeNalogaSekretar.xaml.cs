@@ -79,7 +79,7 @@ namespace Bolnica
                     System.Windows.Forms.MessageBox.Show("Lozinka se mora sastojati od minimum 8 znakova!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }    
-                foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
+                foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
                 {
                     if (p1.KorisnickoIme.Equals(idPacijenta.Text))
                     {
@@ -93,7 +93,7 @@ namespace Bolnica
                 vrsteNaloga = VrsteNaloga.gost;
             }
 
-            foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
+            foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
             {
                 if (p1.Jmbg.Equals(jmbg.Text))
                 {

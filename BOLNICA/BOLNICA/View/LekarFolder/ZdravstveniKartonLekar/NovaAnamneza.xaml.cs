@@ -74,7 +74,7 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            NaloziPacijenataServis.Sacuvaj();
+           // NaloziPacijenataServis.Sacuvaj();
         }
 
         private void CuvanjeAnamneze(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace Bolnica
             }
 
             Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno);
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             ZdravstveniKartoniServis.DodajAnamnezu(a);
             PreglediServis.DodavanjeAnamneze(izabranPregled, a);
             ZdravstveniKartoniServis.NovoPrivremeno();

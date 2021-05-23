@@ -136,7 +136,7 @@ namespace Bolnica
         private void PovratakNaKarton()
         {
             PreglediServis.SerijalizacijaPregleda();
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
 

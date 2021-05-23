@@ -1,6 +1,7 @@
 
 using Bolnica;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Model
@@ -47,7 +48,10 @@ namespace Model
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
-            this.KorisnickoIme = korisnickoIme;
+            if(korisnickoIme.Length == 0)
+                this.KorisnickoIme = generisiID();
+            else
+                this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;
             this.DatumRodjenja = datum;
@@ -87,5 +91,26 @@ namespace Model
         {
             return Guid.NewGuid().ToString();
         }
+
+        public List<Alergeni> DobaviAlergene()
+        {
+            return ZdravstveniKarton.DobaviAlergene();
+        }
+
+        public void DodajAlergen(Alergeni alergenZaDodavanje)
+        {
+            ZdravstveniKarton.DodajAlergen(alergenZaDodavanje);
+        }
+
+        public void IzmeniAlergen(Alergeni alergenZaIzmenu)
+        {
+            ZdravstveniKarton.IzmeniAlergen(alergenZaIzmenu);
+        }
+
+        public void UkloniAlergen(Alergeni alergenZaUklanjanje)
+        {
+            ZdravstveniKarton.UkloniAlergen(alergenZaUklanjanje);
+        }
+
     }
 }

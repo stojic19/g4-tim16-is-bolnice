@@ -66,7 +66,7 @@ namespace Bolnica
     
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             PreglediServis.SerijalizacijaPregleda();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));

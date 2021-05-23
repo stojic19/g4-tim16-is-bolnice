@@ -170,7 +170,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
+            foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
             {
                 if (p1.Jmbg.Equals(tbJmbg.Text))
                 {

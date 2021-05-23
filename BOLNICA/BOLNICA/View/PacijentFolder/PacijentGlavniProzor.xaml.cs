@@ -46,7 +46,7 @@ namespace Bolnica
         {
             TerminRepozitorijum.SerijalizacijaTermina();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             Login login = new Login();
             login.Show();
             this.Close();
@@ -104,7 +104,7 @@ namespace Bolnica
         {
             TerminRepozitorijum.SerijalizacijaTermina();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
         }
       
 

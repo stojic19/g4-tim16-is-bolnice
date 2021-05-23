@@ -37,7 +37,7 @@ namespace Bolnica
 
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
 
-            this.TabelaPacijenata.ItemsSource = NaloziPacijenataServis.sviNaloziPacijenata;
+            this.TabelaPacijenata.ItemsSource = NaloziPacijenataServis.SviNalozi();
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;
 

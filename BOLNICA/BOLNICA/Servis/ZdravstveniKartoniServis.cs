@@ -49,7 +49,7 @@ namespace Bolnica.Model
 
         public static void DodajRecept(String idPacijenta, Recept novRecept)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.sviNaloziPacijenata)
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(idPacijenta))
@@ -86,7 +86,7 @@ namespace Bolnica.Model
 
         public static void DodajAnamnezu(Anamneza a)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.sviNaloziPacijenata)
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(a.IdPacijenta))
@@ -100,7 +100,7 @@ namespace Bolnica.Model
 
         public static void DodajUput(String idPacijenta,Uput noviUput)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.sviNaloziPacijenata)
+            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(idPacijenta))

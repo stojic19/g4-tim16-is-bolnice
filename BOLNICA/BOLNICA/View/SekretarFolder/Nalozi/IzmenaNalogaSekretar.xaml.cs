@@ -119,7 +119,7 @@ namespace Bolnica
                 }
                 if (!p.KorisnickoIme.Equals(idPacijenta.Text))
                 {
-                    foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
+                    foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
                     {
                         if (p1.KorisnickoIme.Equals(idPacijenta.Text))
                         {
@@ -131,7 +131,7 @@ namespace Bolnica
             }
             if (!p.Jmbg.Equals(jmbg.Text))
             {
-                foreach (Pacijent p1 in NaloziPacijenataServis.sviNaloziPacijenata)
+                foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
                 {
                     if (p1.Jmbg.Equals(jmbg.Text))
                     {

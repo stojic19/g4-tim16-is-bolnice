@@ -112,7 +112,7 @@ namespace Bolnica
                 Pacijent p = NaloziPacijenataServis.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 p.Blokiran = false;
                 p.ZloupotrebioSistem = 0;
-                NaloziPacijenataServis.Sacuvaj();
+                // NaloziPacijenataServis.Sacuvaj();
             }
             else
             {

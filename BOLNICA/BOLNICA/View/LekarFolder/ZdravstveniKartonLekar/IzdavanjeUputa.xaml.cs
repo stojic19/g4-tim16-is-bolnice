@@ -167,7 +167,7 @@ namespace Bolnica.LekarFolder
         private void Serijalizacija()
         {
             PreglediServis.SerijalizacijaPregleda();
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
 
         }
 

@@ -1,6 +1,7 @@
 
 using Bolnica;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,20 +11,15 @@ namespace Model
 {
     public class NaloziPacijenataServis
     {
-        private static String imeFajla = "pacijenti.xml";
 
-        public static List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
-
-        public static Pacijent DodajNalog(Pacijent p)
+        public static Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
         {
-            sviNaloziPacijenata.Add(p);
-            PrikazNalogaSekretar.NaloziPacijenata.Add(p);
+            NaloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);
+            PrikazNalogaSekretar.NaloziPacijenata.Add(pacijentZaDodavanje);
 
-            Sacuvaj();
-
-            if (sviNaloziPacijenata.Contains(p))
+            if (SviNalozi().Contains(pacijentZaDodavanje))
             {
-                return p;
+                return pacijentZaDodavanje;
             }
             else
             {
@@ -34,44 +30,42 @@ namespace Model
         
         public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum,Pol pol, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
         {
-            Pacijent p = PretraziPoId(stariId);
+            Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
 
-            p.KorisnickoIme = idNaloga;
-            p.Ime = ime;
-            p.Prezime = prezime;
-            p.DatumRodjenja = datum;
-            p.Pol = pol;
-            p.Jmbg = jmbg;
-            p.AdresaStanovanja = adresa;
-            p.KontaktTelefon = telefon;
-            p.Email = email;
-            p.VrstaNaloga = vrstaNaloga;
-            p.ZdravstveniKarton.IDPacijenta = idNaloga;
+            pacijentKojiSeMenja.KorisnickoIme = idNaloga;
+            pacijentKojiSeMenja.Ime = ime;
+            pacijentKojiSeMenja.Prezime = prezime;
+            pacijentKojiSeMenja.DatumRodjenja = datum;
+            pacijentKojiSeMenja.Pol = pol;
+            pacijentKojiSeMenja.Jmbg = jmbg;
+            pacijentKojiSeMenja.AdresaStanovanja = adresa;
+            pacijentKojiSeMenja.KontaktTelefon = telefon;
+            pacijentKojiSeMenja.Email = email;
+            pacijentKojiSeMenja.VrstaNaloga = vrstaNaloga;
+            pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = idNaloga;
 
-            int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(p);
-            PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);
-            PrikazNalogaSekretar.NaloziPacijenata.Insert(indeks, p);
+            //int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(pacijentKojiSeMenja);
+            //PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);
+            //PrikazNalogaSekretar.NaloziPacijenata.Insert(indeks, pacijentKojiSeMenja);
 
-            Sacuvaj();
+            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentKojiSeMenja);
 
             return true;
         }
 
-        public static Boolean UkolniNalog(String idNaloga)
+        public static Boolean UkolniNalog(String idNalogaZaUklanjanje)
         {
-            Pacijent p = PretraziPoId(idNaloga);
+            Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
 
-            if (p == null)
+            if (pacijentZaUklanjanje == null)
             {
                 return false;
             }
 
-            sviNaloziPacijenata.Remove(p);
-            PrikazNalogaSekretar.NaloziPacijenata.Remove(p);
+            NaloziPacijenataRepozitorijum.ObrisiPacijenta(pacijentZaUklanjanje);
+            PrikazNalogaSekretar.NaloziPacijenata.Remove(pacijentZaUklanjanje);
 
-            Sacuvaj();
-
-            if (sviNaloziPacijenata.Contains(p) || PrikazNalogaSekretar.NaloziPacijenata.Contains(p))
+            if (SviNalozi().Contains(pacijentZaUklanjanje) || PrikazNalogaSekretar.NaloziPacijenata.Contains(pacijentZaUklanjanje))
             {
                 return false;
             }
@@ -83,12 +77,12 @@ namespace Model
 
         public static Pacijent PretraziPoId(String idNaloga)
         {
-            foreach (Pacijent p in sviNaloziPacijenata)
+            foreach (Pacijent pacijent in SviNalozi())
             {
-                if (p.KorisnickoIme.Equals(idNaloga))
+                if (pacijent.KorisnickoIme.Equals(idNaloga))
                 {
 
-                    return p;
+                    return pacijent;
                 }
             }
             return null;
@@ -96,42 +90,35 @@ namespace Model
 
         public static List<Pacijent> SviNalozi()
         {
-            return sviNaloziPacijenata;
+            return NaloziPacijenataRepozitorijum.DobaviSveNalogePacijenata();
         }
         public static List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
         {
-            return PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni;
+            return PretraziPoId(idPacijenta).DobaviAlergene();
         }
         public static Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
         {
-            PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Remove(alergen);
-            AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
-
-            NaloziPacijenataServis.Sacuvaj();
+            Pacijent pacijent = PretraziPoId(idPacijenta);
+            // AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
+            pacijent.UkloniAlergen(alergen);
+            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             return true;
         }
         public static Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
         {
-            foreach (Alergeni a1 in DobaviAlergenePoIdPacijenta(idPacijenta))
-            {
-                if (a1.IdAlergena.Equals(alergen.IdAlergena))
-                {
-                    a1.OpisReakcije = alergen.OpisReakcije;
-                    a1.VremeZaPojavu = alergen.VremeZaPojavu;
-                    AzurirajPrikazAlergena(a1);
-
-                    NaloziPacijenataServis.Sacuvaj();
-                    return true;
-                }
-            }
-            return false;
+            Pacijent pacijent = PretraziPoId(idPacijenta);
+            pacijent.IzmeniAlergen(alergen);
+            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+            // AzurirajPrikazAlergena(alergen);
+            return true;
         }
         public static Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
             alergen.Lek = LekoviServis.PretraziPoID(alergen.IdAlergena);
-            NaloziPacijenataServis.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni.Add(alergen);
+            Pacijent pacijent = PretraziPoId(idPacijenta);
+            pacijent.DodajAlergen(alergen);
+            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             AlergeniSekretar.AlergeniPacijenta.Add(alergen);
-            NaloziPacijenataServis.Sacuvaj();
             return true;
         }
         private static void AzurirajPrikazAlergena(Alergeni a1)
@@ -141,28 +128,5 @@ namespace Model
             AlergeniSekretar.AlergeniPacijenta.Insert(indeks, a1);
         }
 
-        public static List<Pacijent> Ucitaj()
-        {
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return new List<Pacijent>();
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
-                sviNaloziPacijenata = (List<Pacijent>)serializer.Deserialize(fileStream);
-                fileStream.Close();
-                return sviNaloziPacijenata;
-            }
-        }
-
-        public static void Sacuvaj()
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Pacijent>));
-            TextWriter fileStream = new StreamWriter(imeFajla);
-            serializer.Serialize(fileStream, sviNaloziPacijenata);
-            fileStream.Close();
-        }
     }
 }

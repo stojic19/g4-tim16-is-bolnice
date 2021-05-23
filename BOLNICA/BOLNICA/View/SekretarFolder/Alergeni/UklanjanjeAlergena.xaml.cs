@@ -42,11 +42,11 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            foreach(Alergeni a in NaloziPacijenataServis.DobaviAlergenePoIdPacijenta(izabranPacijent))
+            foreach(Alergeni alergen in NaloziPacijenataServis.DobaviAlergenePoIdPacijenta(izabranPacijent))
             {
-                if(a.IdAlergena.Equals(izabranAlergen))
+                if(alergen.IdAlergena.Equals(izabranAlergen))
                 {
-                    NaloziPacijenataServis.UkloniAlergen(izabranPacijent, a);
+                    NaloziPacijenataServis.UkloniAlergen(izabranPacijent, alergen);
                     break;
                 }
             }

@@ -88,7 +88,7 @@ namespace Bolnica
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             PreglediServis.SerijalizacijaPregleda();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             TerminRepozitorijum.SerijalizacijaTermina();
@@ -107,7 +107,7 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            NaloziPacijenataServis.Sacuvaj();
+            // NaloziPacijenataServis.Sacuvaj();
             PreglediServis.SerijalizacijaPregleda();
         }
 

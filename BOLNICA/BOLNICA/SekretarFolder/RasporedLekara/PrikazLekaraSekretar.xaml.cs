@@ -3,6 +3,7 @@ using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,31 +20,29 @@ using System.Windows.Shapes;
 namespace Bolnica.SekretarFolder
 {
     /// <summary>
-    /// Interaction logic for GlavniProzorSadrzaj.xaml
-    /// </summary>
-    public partial class GlavniProzorSadrzaj : UserControl
+    /// Interaction logic for PrikazPregledaSekretar.xaml
+    /// </summary> 
+    public partial class PrikazLekaraSekretar : UserControl
     {
-        public GlavniProzorSadrzaj()
+        public static ObservableCollection<Lekar> Lekari { get; set; }
+        public PrikazLekaraSekretar()
         {
             InitializeComponent();
+
+            Lekari = new ObservableCollection<Lekar>();
+
+            foreach (Lekar lekar in RukovanjeTerminima.sviLekari)
+            {
+                Lekari.Add(lekar);
+            }
         }
-        private void Nalozi_Click(object sender, RoutedEventArgs e)
+
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private void Obavestenja_Click(object sender, RoutedEventArgs e)
-        {
-            ObavestenjaServis.Ucitaj();
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new ObavestenjaSekretar();
+            usc = new GlavniProzorSadrzaj();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Termini_Click(object sender, RoutedEventArgs e)
@@ -54,6 +53,23 @@ namespace Bolnica.SekretarFolder
             usc = new TerminiPregledaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
+
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Obavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new ObavestenjaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
         private void Operacija_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
@@ -62,25 +78,18 @@ namespace Bolnica.SekretarFolder
             usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-        private void Stacionarno_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void Transfer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Naplata_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Nazad_Click(object sender, RoutedEventArgs e)
+        private void Odjava_Click(object sender, RoutedEventArgs e)
         {
             Login login = new Login();
             login.Show();
 
             var myWindow = Window.GetWindow(this);
             myWindow.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Otvaranje pregleda smena, godisnjeg i slobodnih dana
         }
     }
 }

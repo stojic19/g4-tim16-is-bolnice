@@ -63,8 +63,7 @@ namespace Bolnica
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
 
             }
-            NaloziPacijenataServis.Sacuvaj();
-
+            // NaloziPacijenataServis.Sacuvaj();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
