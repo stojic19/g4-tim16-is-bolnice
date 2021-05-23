@@ -45,7 +45,7 @@ namespace Bolnica
           
             PreglediServis.DeserijalizacijaPregleda();
             ProstoriServis.DeserijalizacijaProstora();
-            ObavestenjaServis.Ucitaj();
+            //ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
             Pacijenti = NaloziPacijenataServis.SviNalozi();

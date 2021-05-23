@@ -4,6 +4,7 @@
 // Purpose: Definition of Class RukovanjeObavestenjimaSekratar
 
 using Bolnica;
+using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,17 +14,13 @@ namespace Model
 {
    public class ObavestenjaServis
    {
-      private static String imeFajla = "obavestenja.xml";
-      public static List<Obavestenje> svaObavestenja = new List<Obavestenje>();
-      
+
       public static Obavestenje DodajObavestenje(Obavestenje obavestenje)
       {
-            svaObavestenja.Add(obavestenje);
+            ObavestenjaRepozitorijum.DodajObavestenje(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
-            Console.WriteLine("Usao");
-            Sacuvaj();
 
-            if (svaObavestenja.Contains(obavestenje))
+            if (SvaObavestenja().Contains(obavestenje))
             {
                 return obavestenje;
             }
@@ -35,11 +32,9 @@ namespace Model
 
         public static Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
         {
-            svaObavestenja.Add(obavestenje);
+            ObavestenjaRepozitorijum.DodajObavestenje(obavestenje);
 
-            Sacuvaj();
-
-            if (svaObavestenja.Contains(obavestenje))
+            if (SvaObavestenja().Contains(obavestenje))
             {
                 return obavestenje;
             }
@@ -57,9 +52,9 @@ namespace Model
             obavestenjeAzurirano.Tekst = obavestenje.Tekst;
             obavestenjeAzurirano.IdPrimaoca = obavestenje.IdPrimaoca;
 
-            AzurirajObavestenjeUPrikazu(obavestenjeAzurirano);
+            // AzurirajObavestenjeUPrikazu(obavestenjeAzurirano);
 
-            Sacuvaj();
+            ObavestenjaRepozitorijum.IzmeniObavestenje(obavestenjeAzurirano);
 
             return true;
         }
@@ -80,21 +75,19 @@ namespace Model
                 return false;
             }
 
-            svaObavestenja.Remove(obavestenje);
+            ObavestenjaRepozitorijum.ObrisiObavestenje(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Remove(obavestenje);
-
-            Sacuvaj();
 
             return !DaLiListeSadrzeObavestenje(obavestenje);
         }
         private static bool DaLiListeSadrzeObavestenje(Obavestenje obavestenje)
         {
-            return svaObavestenja.Contains(obavestenje) || ObavestenjaSekretar.SvaObavestenja.Contains(obavestenje);
+            return SvaObavestenja().Contains(obavestenje) || ObavestenjaSekretar.SvaObavestenja.Contains(obavestenje);
         }
 
         public static Obavestenje PretraziPoId(String idObavestenja)
         {
-            foreach (Obavestenje o in svaObavestenja)
+            foreach (Obavestenje o in ObavestenjaRepozitorijum.DobaviSvaObavestenja())
             {
                 if (o.IdObavestenja.Equals(idObavestenja))
                 {
@@ -106,29 +99,8 @@ namespace Model
       
       public static List<Obavestenje> SvaObavestenja()
       {
-            return svaObavestenja;
+            return ObavestenjaRepozitorijum.DobaviSvaObavestenja();
       }
-        public static List<Obavestenje> Ucitaj()
-        {
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return new List<Obavestenje>();
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
-                svaObavestenja = (List<Obavestenje>)serializer.Deserialize(fileStream);
-                fileStream.Close();
-                return svaObavestenja;
-            }
-        }
-        public static void Sacuvaj()
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Obavestenje>));
-            TextWriter fileStream = new StreamWriter(imeFajla);
-            serializer.Serialize(fileStream, svaObavestenja);
-            fileStream.Close();
-        }
+
     }
 }

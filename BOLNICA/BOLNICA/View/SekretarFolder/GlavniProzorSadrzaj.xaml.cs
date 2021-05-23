@@ -38,8 +38,6 @@ namespace Bolnica.SekretarFolder
 
         private void Obavestenja_Click(object sender, RoutedEventArgs e)
         {
-            ObavestenjaServis.Ucitaj();
-
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 

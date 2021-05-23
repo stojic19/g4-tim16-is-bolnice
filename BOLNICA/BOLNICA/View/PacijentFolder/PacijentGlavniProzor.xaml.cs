@@ -28,7 +28,6 @@ namespace Bolnica
         {
             InitializeComponent();
             
-            ObavestenjaServis.Ucitaj();
             ulogovani = NaloziPacijenataServis.PretraziPoId(id);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();

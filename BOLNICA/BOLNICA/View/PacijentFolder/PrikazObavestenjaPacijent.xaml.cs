@@ -28,7 +28,7 @@ namespace Bolnica
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenje>();
 
-            List<Obavestenje> datumi = ObavestenjaServis.svaObavestenja.OrderByDescending(user => user.Datum).ToList();
+            List<Obavestenje> datumi = ObavestenjaServis.SvaObavestenja().OrderByDescending(user => user.Datum).ToList();
 
             foreach (Obavestenje o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {
