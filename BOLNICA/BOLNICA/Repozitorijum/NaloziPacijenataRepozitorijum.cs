@@ -14,7 +14,7 @@ namespace Bolnica.Repozitorijum
     {
         private static String imeFajla = "pacijenti.xml";
 
-        public static List<Pacijent> DobaviSveNalogePacijenata()
+        public List<Pacijent> DobaviSveNalogePacijenata()
         {
             List<Pacijent> sviNaloziPacijenata = new List<Pacijent>();
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
@@ -32,13 +32,13 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public static List<Alergeni> DobaviAlergenePacijenta(String pacijentKorisnickoIme)
+        public List<Alergeni> DobaviAlergenePacijenta(String pacijentKorisnickoIme)
         {
             return DobaviPacijentaPoId(pacijentKorisnickoIme).DobaviAlergene();
         }
 
 
-        public static Pacijent DobaviPacijentaPoId(String idPacijenta)
+        public Pacijent DobaviPacijentaPoId(String idPacijenta)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -49,7 +49,7 @@ namespace Bolnica.Repozitorijum
             return pacijent;
         }
 
-        private static Pacijent KonvertujCvorUObjekat(XmlNode cvorPacijenta)
+        private Pacijent KonvertujCvorUObjekat(XmlNode cvorPacijenta)
         {
             MemoryStream stm = new MemoryStream();
             StreamWriter stw = new StreamWriter(stm);
@@ -60,7 +60,7 @@ namespace Bolnica.Repozitorijum
             return (ser.Deserialize(stm) as Pacijent);
         }
 
-        private static List<Pacijent> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviPacijenata)
+        private List<Pacijent> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviPacijenata)
         {
             List<Pacijent> objektiPacijenata = new List<Pacijent>();
             foreach (XmlNode node in cvoroviPacijenata)
@@ -70,7 +70,7 @@ namespace Bolnica.Repozitorijum
             return objektiPacijenata;
         }
 
-        public static void ObrisiPacijenta(Pacijent pacijentZaBrisanje)
+        public void ObrisiPacijenta(Pacijent pacijentZaBrisanje)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -82,7 +82,7 @@ namespace Bolnica.Repozitorijum
             doc.Save(imeFajla);
         }
 
-        public static void DodajPacijenta(Pacijent pacijentZaUpis)
+        public void DodajPacijenta(Pacijent pacijentZaUpis)
         {
             List<Pacijent> pacijenti = DobaviSveNalogePacijenata();
             pacijenti.Add(pacijentZaUpis);
@@ -93,7 +93,7 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public static void IzmeniPacijenta(Pacijent pacijent)
+        public void IzmeniPacijenta(Pacijent pacijent)
         {
             ObrisiPacijenta(pacijent);
             DodajPacijenta(pacijent);

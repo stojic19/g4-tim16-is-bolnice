@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Model;
@@ -23,6 +24,8 @@ namespace Bolnica.LekarFolder
 {
     public partial class ZakazivanjeIzUputa : System.Windows.Controls.UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
         private String izabranaVrstaTermina = null;
@@ -45,7 +48,7 @@ namespace Bolnica.LekarFolder
         private void inicijalizacijaPolja()
         {
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
             pacijent.Text = p.imePrezime();
             lekar.Text = TerminiServis.ImeiPrezime(idLekarSpecijalista);
         }
@@ -65,7 +68,7 @@ namespace Bolnica.LekarFolder
             Termin t = (Termin)pocVreme.SelectedItem;
 
             t.Lekar = TerminiServis.pretraziLekare(idLekarSpecijalista);
-            t.Pacijent = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            t.Pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             if (izabranaVrstaTermina.Equals("Operacija"))
             {

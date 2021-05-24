@@ -11,10 +11,10 @@ namespace Model
 {
     public class NaloziPacijenataServis
     {
-
-        public static Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
+        private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
+        public Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
         {
-            NaloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);
+            naloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);
             PrikazNalogaSekretar.NaloziPacijenata.Add(pacijentZaDodavanje);
 
             if (SviNalozi().Contains(pacijentZaDodavanje))
@@ -28,32 +28,32 @@ namespace Model
         }
 
         
-        public static Boolean IzmeniNalog(String stariId, String idNaloga, String ime, String prezime, DateTime datum,Pol pol, String jmbg, String adresa, String telefon, String email, VrsteNaloga vrstaNaloga)
+        public Boolean IzmeniNalog(String stariId, Pacijent pacijentZaIZmenu)
         {
             Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
 
-            pacijentKojiSeMenja.KorisnickoIme = idNaloga;
-            pacijentKojiSeMenja.Ime = ime;
-            pacijentKojiSeMenja.Prezime = prezime;
-            pacijentKojiSeMenja.DatumRodjenja = datum;
-            pacijentKojiSeMenja.Pol = pol;
-            pacijentKojiSeMenja.Jmbg = jmbg;
-            pacijentKojiSeMenja.AdresaStanovanja = adresa;
-            pacijentKojiSeMenja.KontaktTelefon = telefon;
-            pacijentKojiSeMenja.Email = email;
-            pacijentKojiSeMenja.VrstaNaloga = vrstaNaloga;
-            pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = idNaloga;
+            pacijentKojiSeMenja.KorisnickoIme = pacijentZaIZmenu.KorisnickoIme;
+            pacijentKojiSeMenja.Ime = pacijentZaIZmenu.Ime;
+            pacijentKojiSeMenja.Prezime = pacijentZaIZmenu.Prezime;
+            pacijentKojiSeMenja.DatumRodjenja = pacijentZaIZmenu.DatumRodjenja;
+            pacijentKojiSeMenja.Pol = pacijentZaIZmenu.Pol;
+            pacijentKojiSeMenja.Jmbg = pacijentZaIZmenu.Jmbg;
+            pacijentKojiSeMenja.AdresaStanovanja = pacijentZaIZmenu.AdresaStanovanja;
+            pacijentKojiSeMenja.KontaktTelefon = pacijentZaIZmenu.KontaktTelefon;
+            pacijentKojiSeMenja.Email = pacijentZaIZmenu.Email;
+            pacijentKojiSeMenja.VrstaNaloga = pacijentZaIZmenu.VrstaNaloga;
+            pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = pacijentZaIZmenu.KorisnickoIme;
 
             //int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(pacijentKojiSeMenja);
             //PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);
             //PrikazNalogaSekretar.NaloziPacijenata.Insert(indeks, pacijentKojiSeMenja);
 
-            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentKojiSeMenja);
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentKojiSeMenja);
 
             return true;
         }
 
-        public static Boolean UkolniNalog(String idNalogaZaUklanjanje)
+        public Boolean UkolniNalog(String idNalogaZaUklanjanje)
         {
             Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
 
@@ -62,7 +62,7 @@ namespace Model
                 return false;
             }
 
-            NaloziPacijenataRepozitorijum.ObrisiPacijenta(pacijentZaUklanjanje);
+            naloziPacijenataRepozitorijum.ObrisiPacijenta(pacijentZaUklanjanje);
             PrikazNalogaSekretar.NaloziPacijenata.Remove(pacijentZaUklanjanje);
 
             if (SviNalozi().Contains(pacijentZaUklanjanje) || PrikazNalogaSekretar.NaloziPacijenata.Contains(pacijentZaUklanjanje))
@@ -75,7 +75,7 @@ namespace Model
             }
         }
 
-        public static Pacijent PretraziPoId(String idNaloga)
+        public Pacijent PretraziPoId(String idNaloga)
         {
             foreach (Pacijent pacijent in SviNalozi())
             {
@@ -88,40 +88,40 @@ namespace Model
             return null;
         }
 
-        public static List<Pacijent> SviNalozi()
+        public List<Pacijent> SviNalozi()
         {
-            return NaloziPacijenataRepozitorijum.DobaviSveNalogePacijenata();
+            return naloziPacijenataRepozitorijum.DobaviSveNalogePacijenata();
         }
-        public static List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
+        public List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
         {
             return PretraziPoId(idPacijenta).DobaviAlergene();
         }
-        public static Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
         {
             Pacijent pacijent = PretraziPoId(idPacijenta);
             // AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
             pacijent.UkloniAlergen(alergen);
-            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             return true;
         }
-        public static Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
         {
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.IzmeniAlergen(alergen);
-            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             // AzurirajPrikazAlergena(alergen);
             return true;
         }
-        public static Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
             alergen.Lek = LekoviServis.PretraziPoID(alergen.IdAlergena);
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.DodajAlergen(alergen);
-            NaloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             AlergeniSekretar.AlergeniPacijenta.Add(alergen);
             return true;
         }
-        private static void AzurirajPrikazAlergena(Alergeni a1)
+        private void AzurirajPrikazAlergena(Alergeni a1)
         {
             int indeks = AlergeniSekretar.AlergeniPacijenta.IndexOf(a1);
             AlergeniSekretar.AlergeniPacijenta.RemoveAt(indeks);

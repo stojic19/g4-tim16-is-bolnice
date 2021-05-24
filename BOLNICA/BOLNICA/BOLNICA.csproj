@@ -68,6 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Kontroler\AlergeniKontroler.cs" />
+    <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
+    <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">

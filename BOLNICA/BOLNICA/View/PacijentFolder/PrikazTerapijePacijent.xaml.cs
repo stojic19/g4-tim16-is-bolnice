@@ -24,13 +24,16 @@ namespace Bolnica
     /// </summary>
     public partial class PrikazTerapijePacijent : UserControl
     {
+        //Dodato dok ne dodas kontroler za to
+        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
+
         public static ObservableCollection<Terapija> sveTerapijePacijenta { get; set; }
         public PrikazTerapijePacijent()
         {
             InitializeComponent();
             sveTerapijePacijenta = new ObservableCollection<Terapija>();
 
-            foreach (Terapija t in ZdravstveniKartoniServis.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
+            foreach (Terapija t in zdravstveniKartoniServis.dobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
             {
                 if(DateTime.Compare(DateTime.Now.Date,t.KrajTerapije)<=0)
                 sveTerapijePacijenta.Add(t);

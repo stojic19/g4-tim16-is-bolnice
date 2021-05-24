@@ -24,6 +24,8 @@ namespace Bolnica
 
     public partial class NovaAnamneza : UserControl
     {
+        //Dodato dok ne dodas kontroler za to
+        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
 
         Pregled izabranPregled = null;
         String idAnamneze = null;
@@ -39,7 +41,7 @@ namespace Bolnica
 
             inicijalizacijaPolja();
 
-            this.TabelaLekova.ItemsSource = ZdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            this.TabelaLekova.ItemsSource = zdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
 
@@ -92,7 +94,7 @@ namespace Bolnica
 
             Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno);
             // NaloziPacijenataServis.Sacuvaj();
-            ZdravstveniKartoniServis.DodajAnamnezu(a);
+            zdravstveniKartoniServis.DodajAnamnezu(a);
             PreglediServis.DodavanjeAnamneze(izabranPregled, a);
             ZdravstveniKartoniServis.NovoPrivremeno();
 

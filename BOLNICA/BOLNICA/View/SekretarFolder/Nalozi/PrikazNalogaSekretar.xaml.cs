@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -22,6 +23,8 @@ namespace Bolnica
 
     public partial class PrikazNalogaSekretar : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         public static ObservableCollection<Pacijent> NaloziPacijenata { get; set; }
 
         public PrikazNalogaSekretar()
@@ -32,7 +35,7 @@ namespace Bolnica
 
             NaloziPacijenata = new ObservableCollection<Pacijent>();
 
-            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 NaloziPacijenata.Add(p);
             }
@@ -51,7 +54,7 @@ namespace Bolnica
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(id);
+                Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -87,7 +90,7 @@ namespace Bolnica
             if (dataGridNaloziPacijenata.SelectedIndex != -1)
             {
                 String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(id);
+                Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -109,7 +112,7 @@ namespace Bolnica
                     MessageBox.Show("Nalog nije blokiran!");
                     return;
                 }
-                Pacijent p = NaloziPacijenataServis.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
+                Pacijent p = naloziPacijenataKontroler.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
                 p.Blokiran = false;
                 p.ZloupotrebioSistem = 0;
                 // NaloziPacijenataServis.Sacuvaj();

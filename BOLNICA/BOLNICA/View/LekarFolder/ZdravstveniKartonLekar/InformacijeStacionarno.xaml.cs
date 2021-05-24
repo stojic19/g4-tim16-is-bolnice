@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -20,6 +21,8 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
 {
     public partial class InformacijeStacionarno : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         Pregled izabranPregled = null;
         Uput izabranUput = null;
         public InformacijeStacionarno(Uput informacijeUput, string idIzabranogPregleda)
@@ -35,7 +38,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
             Lekar specijalista = TerminiServis.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;

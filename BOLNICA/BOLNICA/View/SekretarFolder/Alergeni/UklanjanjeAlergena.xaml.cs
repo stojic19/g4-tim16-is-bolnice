@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -23,6 +24,7 @@ namespace Bolnica
     /// </summary>
     public partial class UklanjanjeAlergena : UserControl
     {
+        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
         private static String izabranPacijent = null;
         private static String izabranAlergen = null;
         public UklanjanjeAlergena(String idPacijenta,String idAlergena)
@@ -42,11 +44,11 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            foreach(Alergeni alergen in NaloziPacijenataServis.DobaviAlergenePoIdPacijenta(izabranPacijent))
+            foreach(Alergeni alergen in alergeniKontroler.DobaviAlergenePoIdPacijenta(izabranPacijent))
             {
                 if(alergen.IdAlergena.Equals(izabranAlergen))
                 {
-                    NaloziPacijenataServis.UkloniAlergen(izabranPacijent, alergen);
+                    alergeniKontroler.UkloniAlergen(izabranPacijent, alergen);
                     break;
                 }
             }

@@ -23,6 +23,8 @@ namespace Bolnica
     /// 
     public partial class PotvrdiZakazivanjePacijent : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         public String idTermina = null;
         TerminKontroler terminKontroler = new TerminKontroler();
         public PotvrdiZakazivanjePacijent(Termin izabrani)
@@ -39,7 +41,7 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Termin t = terminKontroler.DobaviSlobodanTerminPoId(idTermina);
-            t.Pacijent = NaloziPacijenataServis.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
+            t.Pacijent = naloziPacijenataKontroler.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
             terminKontroler.ZakaziPregledPacijent(t);
 
         

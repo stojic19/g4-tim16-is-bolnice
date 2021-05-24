@@ -66,7 +66,26 @@ namespace Model
             ZloupotrebioSistem = 0;
             Blokiran = false;
         }
-
+        public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
+        {
+            if (korisnickoIme.Length == 0)
+                this.KorisnickoIme = generisiID();
+            else
+                this.KorisnickoIme = korisnickoIme;
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.DatumRodjenja = datum;
+            this.Pol = pol;
+            this.AdresaStanovanja = adresa;
+            this.Jmbg = jmbg;
+            this.KontaktTelefon = telefon;
+            this.Email = email;
+            this.VrstaNaloga = vrstaNaloga;
+            this.Lozinka = "";
+            this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
+            ZloupotrebioSistem = 0;
+            Blokiran = false;
+        }
         public String DobaviPolTekst()
         {
 

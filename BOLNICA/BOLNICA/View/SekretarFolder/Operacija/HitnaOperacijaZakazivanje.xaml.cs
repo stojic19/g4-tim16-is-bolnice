@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
 using System;
@@ -26,6 +27,7 @@ namespace Bolnica.SekretarFolder.Operacija
     /// </summary>
     public partial class HitnaOperacijaZakazivanje : UserControl
     {
+        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         public static ObservableCollection<Pacijent> SviPacijenti { get; set; }
         public HitnaOperacijaZakazivanje()
         {
@@ -35,11 +37,11 @@ namespace Bolnica.SekretarFolder.Operacija
             PopuniTabeluPacijenata();
         }
 
-        private static void PopuniTabeluPacijenata()
+        private void PopuniTabeluPacijenata()
         {
             SviPacijenti = new ObservableCollection<Pacijent>();
 
-            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p in hitnaOperacijaKontroler.DobaviSveNaloge())
             {
                 SviPacijenti.Add(p);
             }

@@ -1,4 +1,5 @@
-﻿using Bolnica.PacijentFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.PacijentFolder;
 using Bolnica.Repozitorijum;
 using Bolnica.View.PacijentFolder;
 using Model;
@@ -21,6 +22,8 @@ namespace Bolnica
 
     public partial class PacijentGlavniProzor : Window
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         private static Grid GlavniSadrzaj;
         public static Pacijent ulogovani = null;
    
@@ -28,7 +31,7 @@ namespace Bolnica
         {
             InitializeComponent();
             
-            ulogovani = NaloziPacijenataServis.PretraziPoId(id);
+            ulogovani = naloziPacijenataKontroler.PretraziPoId(id);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PrikazObavestenjaPacijent());

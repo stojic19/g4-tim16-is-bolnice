@@ -15,7 +15,8 @@ namespace Bolnica.Repozitorijum
     {
         private static String zakazaniTerminiFajl = "termini.xml";
         private static String slobodniTerminiFajl = "slobodniTermini.xml";
-        
+
+        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
        //-------------------OVE LISTE TREBA OBRISATI KADA SVI URADE SERIJALIZACIJU KAKO TREBA
         public static List<Termin> sviTermini = new List<Termin>();
         public static List<Termin> slobodniTermini = new List<Termin>();
@@ -421,7 +422,7 @@ namespace Bolnica.Repozitorijum
             Termin stari = PretraziPoId(PrikazRasporedaPacijent.TerminZaPomeranje.IdTermina);
             PretraziPoId(PrikazRasporedaPacijent.TerminZaPomeranje.IdTermina).Pacijent = null;
             Termin noviTermin = PretraziSlobodnePoId(idTermina);
-            noviTermin.Pacijent = NaloziPacijenataServis.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
+            noviTermin.Pacijent = naloziPacijenataServis.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
             ZameniTermine(stari,noviTermin);
             DetektujZloupotrebuSistema(PacijentGlavniProzor.ulogovani);
         }

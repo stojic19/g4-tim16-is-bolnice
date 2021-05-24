@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -22,6 +23,7 @@ namespace Bolnica
 {
     public partial class DodavanjeNalogaSekretar : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         public DodavanjeNalogaSekretar()
         {
             InitializeComponent();
@@ -79,9 +81,9 @@ namespace Bolnica
                     System.Windows.Forms.MessageBox.Show("Lozinka se mora sastojati od minimum 8 znakova!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }    
-                foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
+                foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                 {
-                    if (p1.KorisnickoIme.Equals(idPacijenta.Text))
+                    if (pacijentZaProveru.KorisnickoIme.Equals(idPacijenta.Text))
                     {
                         System.Windows.Forms.MessageBox.Show("Već postoji uneto korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -93,26 +95,26 @@ namespace Bolnica
                 vrsteNaloga = VrsteNaloga.gost;
             }
 
-            foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
             {
-                if (p1.Jmbg.Equals(jmbg.Text))
+                if (pacijentZaProveru.Jmbg.Equals(jmbg.Text))
                 {
                     System.Windows.Forms.MessageBox.Show("Već postoji uneti jmbg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
-            Pol polpol;
+            Pol polUnetogPacijenta;
             if (pol.Text.Equals("Ženski"))
             {
-                polpol = Pol.zenski;
+                polUnetogPacijenta = Pol.zenski;
             }
             else
             {
-                polpol = Pol.muski;
+                polUnetogPacijenta = Pol.muski;
             }
-            Pacijent p = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polpol, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
+            Pacijent pacijentZaDodavanje = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polUnetogPacijenta, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
      
-            NaloziPacijenataServis.DodajNalog(p);
+            naloziPacijenataKontroler.DodajNalog(pacijentZaDodavanje);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
 using Bolnica.Model;
 using Bolnica.Model.Enumi;
@@ -26,6 +27,7 @@ namespace Bolnica
 {
     public partial class KartonLekar : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
 
         Pregled izabranPregled = null;
         public static ObservableCollection<Recept> Recepti { get; set; }
@@ -49,7 +51,7 @@ namespace Bolnica
 
         private void inicijalizacijaTabela()
         {
-            Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             Recepti = new ObservableCollection<Recept>();
             foreach (Recept r in pacijent.ZdravstveniKarton.Recepti)

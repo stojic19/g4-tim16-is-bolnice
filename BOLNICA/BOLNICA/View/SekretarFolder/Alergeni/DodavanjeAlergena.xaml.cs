@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Bolnica.Sekretar.Pregled;
@@ -26,14 +27,15 @@ namespace Bolnica
 {
     public partial class DodavanjeAlergena : UserControl
     {
+        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
         public static ObservableCollection<Lek> SviLekovi { get; set; }
-        private static String izabran = null;
+        private static String izabranPacijent = null;
 
         public DodavanjeAlergena(String idPacijenta)
         {
             InitializeComponent();
 
-            izabran = idPacijenta;
+            izabranPacijent = idPacijenta;
             this.DataContext = this;
 
             SviLekovi = new ObservableCollection<Lek>();
@@ -49,12 +51,12 @@ namespace Bolnica
                 return;
             }
 
-            NaloziPacijenataServis.DodajAlergen(izabran, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
+            alergeniKontroler.DodajAlergen(izabranPacijent, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new AlergeniSekretar(izabran);
+            usc = new AlergeniSekretar(izabranPacijent);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
@@ -70,7 +72,7 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Izaberite lek!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Alergeni ale in NaloziPacijenataServis.PretraziPoId(izabran).ZdravstveniKarton.Alergeni)
+            foreach (Alergeni ale in alergeniKontroler.DobaviAlergenePoIdPacijenta(izabranPacijent))
             {
                 if (ale.IdAlergena.Equals(idLeka))
                 {
@@ -96,7 +98,7 @@ namespace Bolnica
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new AlergeniSekretar(izabran);
+            usc = new AlergeniSekretar(izabranPacijent);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Pocetna_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -23,17 +24,18 @@ namespace Bolnica
 
     public partial class IzmenaNalogaSekretar : UserControl
     {
-        String izabran = null;
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        String izabranPacijent = null;
 
-        public IzmenaNalogaSekretar(String id)
+        public IzmenaNalogaSekretar(String idPacijentaZaIzmenu)
         {
             InitializeComponent();
 
-            izabran = id;
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(id);
+            izabranPacijent = idPacijentaZaIzmenu;
+            Pacijent pacijentZaIzmenu = naloziPacijenataKontroler.PretraziPoId(idPacijentaZaIzmenu);
 
 
-            if (p.VrstaNaloga == VrsteNaloga.regularan)
+            if (pacijentZaIzmenu.VrstaNaloga == VrsteNaloga.regularan)
             {
                 tipNaloga.SelectedIndex = 0;
              }
@@ -41,7 +43,7 @@ namespace Bolnica
             {
                 tipNaloga.SelectedIndex = 1;
             }
-            if (p.Pol == Pol.zenski)
+            if (pacijentZaIzmenu.Pol == Pol.zenski)
             {
                 pol.SelectedIndex = 0;
             }
@@ -50,14 +52,14 @@ namespace Bolnica
                 pol.SelectedIndex = 1;
             }
 
-            idPacijenta.Text = p.KorisnickoIme;
-            ime.Text = p.Ime;
-            prezime.Text = p.Prezime;
-            datum.SelectedDate = p.DatumRodjenja;
-            jmbg.Text = p.Jmbg;
-            adresa.Text = p.AdresaStanovanja;
-            telefon.Text = p.KontaktTelefon;
-            email.Text = p.Email;
+            idPacijenta.Text = pacijentZaIzmenu.KorisnickoIme;
+            ime.Text = pacijentZaIzmenu.Ime;
+            prezime.Text = pacijentZaIzmenu.Prezime;
+            datum.SelectedDate = pacijentZaIzmenu.DatumRodjenja;
+            jmbg.Text = pacijentZaIzmenu.Jmbg;
+            adresa.Text = pacijentZaIzmenu.AdresaStanovanja;
+            telefon.Text = pacijentZaIzmenu.KontaktTelefon;
+            email.Text = pacijentZaIzmenu.Email;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -87,8 +89,8 @@ namespace Bolnica
                 return;
             }
 
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabran);
-            if(p.VrstaNaloga == VrsteNaloga.regularan && tipNaloga.Text.Equals("Gost"))
+            Pacijent pacijentZaIzmenu = naloziPacijenataKontroler.PretraziPoId(izabranPacijent);
+            if(pacijentZaIzmenu.VrstaNaloga == VrsteNaloga.regularan && tipNaloga.Text.Equals("Gost"))
             {
                 System.Windows.Forms.MessageBox.Show("Regularan nalog se ne može promeniti u gostujući!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tipNaloga.SelectedIndex = 0;
@@ -117,11 +119,11 @@ namespace Bolnica
                     System.Windows.Forms.MessageBox.Show("Morate uneti email pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (!p.KorisnickoIme.Equals(idPacijenta.Text))
+                if (!pacijentZaIzmenu.KorisnickoIme.Equals(idPacijenta.Text))
                 {
-                    foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
+                    foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                     {
-                        if (p1.KorisnickoIme.Equals(idPacijenta.Text))
+                        if (pacijentZaProveru.KorisnickoIme.Equals(idPacijenta.Text))
                         {
                             System.Windows.Forms.MessageBox.Show("Već postoji uneto korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
@@ -129,18 +131,18 @@ namespace Bolnica
                     }
                 }
             }
-            if (!p.Jmbg.Equals(jmbg.Text))
+            if (!pacijentZaIzmenu.Jmbg.Equals(jmbg.Text))
             {
-                foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
+                foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                 {
-                    if (p1.Jmbg.Equals(jmbg.Text))
+                    if (pacijentZaProveru.Jmbg.Equals(jmbg.Text))
                     {
                         System.Windows.Forms.MessageBox.Show("Već postoji uneti jmbg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
             }
-            NaloziPacijenataServis.IzmeniNalog(izabran,idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text,tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost);
+            naloziPacijenataKontroler.IzmeniNalog(izabranPacijent, new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text, tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

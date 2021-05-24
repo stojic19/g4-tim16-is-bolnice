@@ -15,6 +15,9 @@ namespace Bolnica
 {
     public partial class DodavanjeRecepta : UserControl
     {
+        //Dodato dok ne dodas kontroler za to
+        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
+
         Pregled izabranPregled = null;
         String sifraLeka = null;
         public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
@@ -49,7 +52,7 @@ namespace Bolnica
         {
             Lekovi.Clear();
 
-            foreach (Lek l in ZdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
+            foreach (Lek l in zdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
             {
                 Lekovi.Add(l);
             }
@@ -65,7 +68,7 @@ namespace Bolnica
             Lek prepisanLek = LekoviServis.PretraziPoID(sifraLeka);
             Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
-            ZdravstveniKartoniServis.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
+            zdravstveniKartoniServis.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
             PreglediServis.DodavanjeRecepta(izabranPregled.IdPregleda, novRecept);
 
             PovratakNaKarton();
@@ -82,7 +85,7 @@ namespace Bolnica
 
             }
 
-            if (ZdravstveniKartoniServis.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
+            if (zdravstveniKartoniServis.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
             {
                 labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
             }

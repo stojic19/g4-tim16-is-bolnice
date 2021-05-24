@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
@@ -27,6 +28,9 @@ namespace Bolnica
         List<Osoba> Sekretari = new List<Osoba>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
 
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
+        
         public Login()
         {
             InitializeComponent();
@@ -48,9 +52,9 @@ namespace Bolnica
             //ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
-            Pacijenti = NaloziPacijenataServis.SviNalozi();
+            Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
 
-            OperacijeServis.PrivremenaInicijalizacijaLekara();
+            hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
             AnketeRepozitorijum.inicijalizujPitanjaOBolnici();
             AnketeRepozitorijum.inicijalizujPitanjaOTerminu();
             AnketeRepozitorijum.DeserijalizacijaAnketa();

@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
 using System;
@@ -25,6 +26,7 @@ namespace Bolnica.SekretarFolder.Operacija
     /// </summary>
     public partial class HitnaOperacijaGuestNalog : UserControl
     {
+        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         public HitnaOperacijaGuestNalog()
         {
             InitializeComponent();
@@ -88,7 +90,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             Pacijent pacijent = new Pacijent(tbIme.Text, tbPrezime.Text, tbJmbg.Text, DobaviIzabranPol());
-            NaloziPacijenataServis.DodajNalog(pacijent);
+            hitnaOperacijaKontroler.DodajGuestNalog(pacijent);
             int trajanje = Convert.ToInt32(tbTrajanje.Text);
 
             List<Termin> slobodniTermini = OperacijeServis.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
@@ -170,7 +172,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Pacijent p1 in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p1 in hitnaOperacijaKontroler.DobaviSveNaloge())
             {
                 if (p1.Jmbg.Equals(tbJmbg.Text))
                 {

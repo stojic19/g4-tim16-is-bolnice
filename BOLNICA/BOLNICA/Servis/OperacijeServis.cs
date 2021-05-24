@@ -10,12 +10,14 @@ namespace Bolnica.Model
 {
     class OperacijeServis
     {
+        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
+
         public static List<Termin> sviTermini = new List<Termin>();
         public static List<Termin> slobodniTermini = new List<Termin>();
 
         public static List<Lekar> sviLekari = new List<Lekar>();
 
-        public static void PrivremenaInicijalizacijaLekara()
+        public void PrivremenaInicijalizacijaLekara()
         {
 
             sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic", SpecijalizacijeLekara.neurohirurg));
@@ -24,9 +26,9 @@ namespace Bolnica.Model
 
             slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "14:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P1"), null, pretraziLekare("AleksaStojic")));
             slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(1), ProstoriServis.PretraziPoId("P1"), null, pretraziLekare("AleksaStojic")));
-            sviTermini.Add(new Termin("T14", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P2"), NaloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("NinaStojic")));
+            sviTermini.Add(new Termin("T14", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P2"), naloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("NinaStojic")));
             slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(2), ProstoriServis.PretraziPoId("P2"), null, pretraziLekare("NinaStojic")));
-            sviTermini.Add(new Termin("T29", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P3"), NaloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("MicaUbica")));
+            sviTermini.Add(new Termin("T29", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P3"), naloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("MicaUbica")));
             slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(3), ProstoriServis.PretraziPoId("P3"), null, pretraziLekare("MicaUbica")));
         }
         public static Lekar pretraziLekare(String id)

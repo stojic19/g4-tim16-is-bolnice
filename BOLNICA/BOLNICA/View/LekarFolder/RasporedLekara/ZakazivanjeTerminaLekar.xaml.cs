@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
 using Model;
@@ -23,6 +24,8 @@ namespace Bolnica
 
     public partial class ZakazivanjeTerminaLekar : System.Windows.Controls.UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         String korisnik = null;
         DateTime izabranDatum;
         String izabranLekar = null;
@@ -37,7 +40,7 @@ namespace Bolnica
 
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
 
-            this.TabelaPacijenata.ItemsSource = NaloziPacijenataServis.SviNalozi();
+            this.TabelaPacijenata.ItemsSource = naloziPacijenataKontroler.DobaviSveNaloge();
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;
 
@@ -61,7 +64,7 @@ namespace Bolnica
         {
 
             Lekar lekar = TerminiServis.pretraziLekare(izabranLekar);
-            Pacijent pacijent = NaloziPacijenataServis.PretraziPoId(izabranPacijent);
+            Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPacijent);
 
 
             if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1 || idPacijenta.Text.Equals(""))

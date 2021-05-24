@@ -13,10 +13,11 @@ namespace Bolnica.Model
 {
     class ZdravstveniKartoniServis
     {
+        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
 
         public static List<ZdravstveniKarton> sviKartoni = new List<ZdravstveniKarton>();
 
-        public static List<Lek> LekoviBezAlergena(String idIzabranogPacijenta)
+        public List<Lek> LekoviBezAlergena(String idIzabranogPacijenta)
         {
             List<Lek> lekoviBezAlergena = new List<Lek>();
 
@@ -31,9 +32,9 @@ namespace Bolnica.Model
             return lekoviBezAlergena;
         }
 
-        public static Boolean ProveraAlergicnosti(String idIzabranogPacijenta, String idLeka)
+        public Boolean ProveraAlergicnosti(String idIzabranogPacijenta, String idLeka)
         {
-            Pacijent izabranPacijent = NaloziPacijenataServis.PretraziPoId(idIzabranogPacijenta);
+            Pacijent izabranPacijent = naloziPacijenataServis.PretraziPoId(idIzabranogPacijenta);
 
             foreach (Alergeni a in izabranPacijent.ZdravstveniKarton.Alergeni)
             {
@@ -47,9 +48,9 @@ namespace Bolnica.Model
         }
 
 
-        public static void DodajRecept(String idPacijenta, Recept novRecept)
+        public void DodajRecept(String idPacijenta, Recept novRecept)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(idPacijenta))
@@ -61,11 +62,11 @@ namespace Bolnica.Model
             }
         }
 
-        public static List<Terapija> dobaviSveTerapijePacijenta(String idPacijenta)
+        public List<Terapija> dobaviSveTerapijePacijenta(String idPacijenta)
         {
             List<Terapija> pomocna = new List<Terapija>();
 
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(idPacijenta);
+            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
 
             foreach (Anamneza a in p.ZdravstveniKarton.Anamneze)
             {
@@ -84,9 +85,9 @@ namespace Bolnica.Model
             return pomocna;
         }
 
-        public static void DodajAnamnezu(Anamneza a)
+        public void DodajAnamnezu(Anamneza a)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(a.IdPacijenta))
@@ -98,9 +99,9 @@ namespace Bolnica.Model
             }
         }
 
-        public static void DodajUput(String idPacijenta,Uput noviUput)
+        public void DodajUput(String idPacijenta,Uput noviUput)
         {
-            foreach (Pacijent p in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
             {
 
                 if (p.KorisnickoIme.Equals(idPacijenta))

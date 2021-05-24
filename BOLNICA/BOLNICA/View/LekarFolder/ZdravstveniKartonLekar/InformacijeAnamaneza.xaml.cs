@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
@@ -22,6 +23,8 @@ namespace Bolnica
 
     public partial class InformacijeAnamaneza : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         Pregled izabranPregled = null;
         Anamneza izabranaAnamneza = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
@@ -50,7 +53,7 @@ namespace Bolnica
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = NaloziPacijenataServis.PretraziPoId(izabranaAnamneza.IdPacijenta);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranaAnamneza.IdPacijenta);
             Lekar l = TerminiServis.pretraziLekare(izabranaAnamneza.IdLekara);
 
             ime.Text = p.Ime;

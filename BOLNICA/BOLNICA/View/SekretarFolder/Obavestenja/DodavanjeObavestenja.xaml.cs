@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -25,6 +26,8 @@ namespace Bolnica
     /// </summary>
     public partial class DodavanjeObavestenja : UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         private List<String> primaoci;
         public DodavanjeObavestenja()
         {
@@ -45,7 +48,7 @@ namespace Bolnica
             primaoci.Add("Lekari");
             primaoci.Add("Sekretari");
             primaoci.Add("Upravnici");
-            foreach (Pacijent pacijent in NaloziPacijenataServis.SviNalozi())
+            foreach (Pacijent pacijent in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }

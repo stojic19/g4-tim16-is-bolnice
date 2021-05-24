@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -25,6 +26,7 @@ namespace Bolnica
     /// </summary>
     public partial class IzmenaAlergena : UserControl
     {
+        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
         private static String izabranPacijent = null;
         private static String izabranAlergen = null;
 
@@ -33,8 +35,8 @@ namespace Bolnica
             InitializeComponent();
             izabranPacijent = idPacijenta;
             izabranAlergen = idAlergena;
-            List<Alergeni> alergeni = NaloziPacijenataServis.PretraziPoId(idPacijenta).ZdravstveniKarton.Alergeni;
-            foreach(Alergeni a in alergeni)
+
+            foreach(Alergeni a in alergeniKontroler.DobaviAlergenePoIdPacijenta(idPacijenta))
             {
                 if(a.IdAlergena.Equals(idAlergena))
                 {
@@ -53,7 +55,7 @@ namespace Bolnica
                 return;
             }    
 
-            NaloziPacijenataServis.IzmeniAlergen(izabranPacijent, new Alergeni(izabranAlergen, opis.Text, vreme.Text));
+            alergeniKontroler.IzmeniAlergen(izabranPacijent, new Alergeni(izabranAlergen, opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

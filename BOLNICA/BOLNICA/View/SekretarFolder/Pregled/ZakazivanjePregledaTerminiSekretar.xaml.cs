@@ -1,4 +1,5 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.Kontroler;
+using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -26,6 +27,8 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class ZakazivanjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
         private static String IdPacijenta;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
 
@@ -58,7 +61,7 @@ namespace Bolnica.Sekretar.Pregled
             {
                 return;
             }    
-            termin.Pacijent = NaloziPacijenataServis.PretraziPoId(IdPacijenta);
+            termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
             TerminRepozitorijum.ZakaziPregledSekretar(termin);
 
             UserControl usc = null;
