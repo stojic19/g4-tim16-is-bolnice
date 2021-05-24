@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Properties;
@@ -17,7 +18,7 @@ namespace Bolnica
     {
         //Dodato dok ne dodas kontroler za to
         ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         String sifraLeka = null;
         public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
@@ -25,7 +26,7 @@ namespace Bolnica
         public DodavanjeRecepta(String idIzabranogPregleda)
         {
             InitializeComponent();
-            this.izabranPregled = PreglediServis.PretraziPoId(idIzabranogPregleda);
+            this.izabranPregled = preglediKontroler.PretraziPoId(idIzabranogPregleda);
             inicijalizacijaPolja();
             inicijalizacijaTabeleLekova();
             podesavanjePretrageLekova();
@@ -69,7 +70,7 @@ namespace Bolnica
             Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
             zdravstveniKartoniServis.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
-            PreglediServis.DodavanjeRecepta(izabranPregled.IdPregleda, novRecept);
+            preglediKontroler.DodajRecept(izabranPregled.IdPregleda, novRecept);
 
             PovratakNaKarton();
         }
@@ -138,8 +139,6 @@ namespace Bolnica
 
         private void PovratakNaKarton()
         {
-            PreglediServis.SerijalizacijaPregleda();
-            // NaloziPacijenataServis.Sacuvaj();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
 

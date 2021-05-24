@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Repozitorijum;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,159 +12,79 @@ namespace Bolnica.Model.Rukovanja
 {
     class PreglediServis
     {
-
-        public static List<Pregled> sviPregledi { get; set; } = new List<Pregled>();
-        private static String imeFajla = "pregledi.xml";
-
-        public static Pregled PretraziPoId(String idPregleda)
+        private PreglediRepozitorijum preglediRepozitorijum = new PreglediRepozitorijum();
+        public List<Pregled> DobaviSvePreglede()
         {
-            foreach (Pregled pregled in sviPregledi)
-            {
-                if (pregled.IdPregleda.Equals(idPregleda))
-                    return pregled;
-            }
-            return null;
+            return preglediRepozitorijum.DobaviSvePreglede();
         }
-        public static List<Pregled> SortPoDatumuPregleda()
+
+        public List<Pregled> SortPoDatumuPregleda()
         {
-            return sviPregledi.OrderBy(user => user.Termin.Datum).ToList();
+            return preglediRepozitorijum.SortPoDatumuPregleda();
         }
-        public static Pregled PristupPregledu(Termin terminPregleda)
+
+        public Pregled PretraziPoId(String idPregleda)
         {
-            Pregled noviPregled = PretragaPoTerminu(terminPregleda.IdTermina);
+            return preglediRepozitorijum.PretraziPoId(idPregleda);
+        }
+
+        public Pregled PristupPregledu(Termin terminPregleda)
+        {
+            Pregled noviPregled = preglediRepozitorijum.PretragaPoTerminu(terminPregleda.IdTermina);
 
             if (noviPregled == null)
             {
                 noviPregled = new Pregled(Guid.NewGuid().ToString(), terminPregleda);
-                sviPregledi.Add(noviPregled);
+                preglediRepozitorijum.DodajPregled(noviPregled);
 
             }
 
             return noviPregled;
 
         }
-
-        public static void UklanjanjePregleda(String terminOtkazanogPregleda)
+        public void UklanjanjePregleda(String terminOtkazanogPregleda)
         {
-            Pregled otkazanPregled = PretragaPoTerminu(terminOtkazanogPregleda);
-
-            if (otkazanPregled != null)
-            {
-                sviPregledi.Remove(otkazanPregled);
-                Console.WriteLine("brisem");
-            }
+            preglediRepozitorijum.UklanjanjePregleda(terminOtkazanogPregleda);
         }
-
-        public static Pregled PretragaPoTerminu(String iDTermina)
+        public Pregled PretragaPoTerminu(String idTermina)
         {
-            foreach (Pregled p in sviPregledi)
-            {
-                if (p.Termin.IdTermina.Equals(iDTermina))
-                {
-                    return p;
-                }
-            }
-
-            return null;
+            return preglediRepozitorijum.PretragaPoTerminu(idTermina);
         }
-
-        public static List<Pregled> DeserijalizacijaPregleda()
+        public void DodajUput(String idIzabranogPregleda, Uput noviUput)
         {
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return sviPregledi;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pregled>));
-                sviPregledi = (List<Pregled>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return sviPregledi;
+            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            pregledZaIzmenu.Odrzan = true;
+            pregledZaIzmenu.Uputi.Add(noviUput);
 
-            }
-
+            preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
-
-        internal static void DodajUput(String idIzabranogPregleda, Uput noviUput)
+        public void DodajRecept(String idPregleda, Recept novRecept)
         {
-            foreach (Pregled p in sviPregledi)
-            {
-                if (p.IdPregleda.Equals(idIzabranogPregleda))
-                {
-                    p.Odrzan = true;
-                    p.Uputi.Add(noviUput);
-                }
+            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idPregleda);
+            pregledZaIzmenu.Odrzan = true;
+            pregledZaIzmenu.Recepti.Add(novRecept);
 
-            }
+            preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
-
-        public static void SerijalizacijaPregleda()
+        public void DodajAnamnezu(String idIzabranogPregleda, Anamneza novaAnamneza)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pregled>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, sviPregledi);
-            tw.Close();
+            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            pregledZaIzmenu.Odrzan = true;
+            pregledZaIzmenu.Anamneza = novaAnamneza;
 
+            preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
-
-        public static void DodavanjeRecepta(String idPregleda, Recept novRecept)
+        public void UklanjanjeAnamneze(String idIzabranogPregleda)
         {
-            foreach (Pregled p in sviPregledi)
-            {
-                if (p.IdPregleda.Equals(idPregleda))
-                {
-                    p.Odrzan = true;
-                    p.Recepti.Add(novRecept);
-                }
+            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            pregledZaIzmenu.Odrzan = true;
+            pregledZaIzmenu.Anamneza = null;
 
-            }
+            preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
-
-        public static void DodavanjeAnamneze(Pregled izabranPregled, Anamneza novaAnamneza)
+        public Pregled PretragaPoAnamnezi(String idAnamneze)
         {
-            foreach (Pregled p in sviPregledi)
-            {
-                if (p.IdPregleda.Equals(izabranPregled.IdPregleda) && p.Anamneza == null)
-                {
-                    p.Odrzan = true;
-                    p.Anamneza = novaAnamneza;
-                }
-
-            }
+            return preglediRepozitorijum.PretragaPoAnamnezi(idAnamneze);
         }
-
-        public static void UklanjanjeAnamneze(Pregled izabranPregled)
-        {
-            foreach (Pregled p in sviPregledi)
-            {
-                if (p.IdPregleda.Equals(izabranPregled.IdPregleda))
-                {
-                    p.Anamneza = null;
-                }
-
-            }
-        }
-
-        public static Pregled PretragaPoAnamnezi(Anamneza izabranaAnamneza)
-        {
-
-            foreach (Pregled p in sviPregledi)
-            {
-                try
-                {
-                    if (p.Anamneza.IdAnamneze.Equals(izabranaAnamneza.IdAnamneze))
-                    {
-                        return p;
-                    }
-                }
-                catch (ArgumentNullException ane) { }
-
-            }
-
-            return null;
-
-        }
-
     }
 }

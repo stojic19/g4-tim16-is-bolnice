@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Enumi;
 using Bolnica.Model.Rukovanja;
 using Model;
@@ -17,7 +18,7 @@ namespace Bolnica.LekarFolder
     {
         //Dodato dok ne dodas kontroler za to
         ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         String idLekaraSpecijaliste = null;
         Uput noviUput = null;
@@ -25,7 +26,7 @@ namespace Bolnica.LekarFolder
         public IzdavanjeUputa(string idPregleda)
         {
             InitializeComponent();
-            izabranPregled = PreglediServis.PretraziPoId(idPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(idPregleda);
 
             InicijalizacijaPoljaSpecijalisticki();
             InicijalizacijaPoljaStacionarno();
@@ -105,9 +106,7 @@ namespace Bolnica.LekarFolder
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
 
             zdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
-            PreglediServis.DodajUput(izabranPregled.IdPregleda, noviUput);
-
-            Serijalizacija();
+            preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);
         }
 
 
@@ -132,9 +131,7 @@ namespace Bolnica.LekarFolder
                     (DateTime)pocetakStacionarnog.SelectedDate, (DateTime)krajStacionarnog.SelectedDate, null); //ispravi
 
             zdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
-            PreglediServis.DodajUput(izabranPregled.IdPregleda, noviUput);
-
-            Serijalizacija();
+            preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);
 
             if (noviUput != null)
             {
@@ -165,13 +162,6 @@ namespace Bolnica.LekarFolder
             }
 
             return true;
-        }
-
-        private void Serijalizacija()
-        {
-            PreglediServis.SerijalizacijaPregleda();
-            // NaloziPacijenataServis.Sacuvaj();
-
         }
 
         private void Otkazivanje(object sender, RoutedEventArgs e)

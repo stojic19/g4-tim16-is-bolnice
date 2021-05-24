@@ -116,13 +116,6 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
         }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // NaloziPacijenataServis.Sacuvaj();
-            PreglediServis.SerijalizacijaPregleda();
-        }
-
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (vrTermina.SelectedIndex == 0)

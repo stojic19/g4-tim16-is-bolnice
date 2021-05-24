@@ -22,7 +22,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
     public partial class InformacijeStacionarno : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         Uput izabranUput = null;
         public InformacijeStacionarno(Uput informacijeUput, string idIzabranogPregleda)
@@ -30,7 +30,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
             InitializeComponent();
             InitializeComponent();
             izabranUput = informacijeUput;
-            izabranPregled = PreglediServis.PretraziPoId(idIzabranogPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(idIzabranogPregleda);
 
             inicijalizacijaPolja();
         }

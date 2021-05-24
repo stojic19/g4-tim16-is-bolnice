@@ -47,7 +47,6 @@ namespace Bolnica
 
             Repozitorijum.LekoviRepozitorijum.DeserijalizacijaLekova();
           
-            PreglediServis.DeserijalizacijaPregleda();
             ProstoriServis.DeserijalizacijaProstora();
             //ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();
@@ -172,7 +171,6 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             TerminRepozitorijum.SerijalizacijaTermina();
-            PreglediServis.SerijalizacijaPregleda();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             ProstoriServis.SerijalizacijaProstora();
             AnketeRepozitorijum.SerijalizacijaAnketa();

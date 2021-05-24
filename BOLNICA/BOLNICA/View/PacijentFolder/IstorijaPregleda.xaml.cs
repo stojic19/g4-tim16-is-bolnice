@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -22,11 +23,12 @@ namespace Bolnica.PacijentFolder
     public partial class IstorijaPregleda : UserControl
     {
         public static ObservableCollection<Pregled> ObavljeniPregledi { get; set; }
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         public IstorijaPregleda()
         {
             InitializeComponent();
             ObavljeniPregledi = new ObservableCollection<Pregled>();
-            foreach (Pregled pregled in PreglediServis.sviPregledi)
+            foreach (Pregled pregled in preglediKontroler.DobaviSvePreglede())
             {
                 if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan)
                     ObavljeniPregledi.Add(pregled);

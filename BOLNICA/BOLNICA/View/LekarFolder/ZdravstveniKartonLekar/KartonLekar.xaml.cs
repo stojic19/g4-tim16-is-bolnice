@@ -28,7 +28,7 @@ namespace Bolnica
     public partial class KartonLekar : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         public static ObservableCollection<Recept> Recepti { get; set; }
         public static ObservableCollection<Anamneza> Anamneze { get; set; }
@@ -38,7 +38,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
+            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             Tabovi.SelectedIndex = indeksTaba;
 
             inicijalizacijaPolja();
@@ -90,8 +90,6 @@ namespace Bolnica
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            // NaloziPacijenataServis.Sacuvaj();
-            PreglediServis.SerijalizacijaPregleda();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             TerminRepozitorijum.SerijalizacijaTermina();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
@@ -105,14 +103,7 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodavanjeRecepta(izabranPregled.IdPregleda));
 
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // NaloziPacijenataServis.Sacuvaj();
-            PreglediServis.SerijalizacijaPregleda();
-        }
-
+        } 
         private void DodavanjeAnamneze(object sender, RoutedEventArgs e)  //MOZDA PROMENITI U IZMENU
         {
             if (izabranPregled.Anamneza != null)

@@ -28,7 +28,7 @@ namespace Bolnica
         ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
         //Dodato dok ne dodas kontroler za to
         ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         String idAnamneze = null;
         String sifraLeka = null;
@@ -36,7 +36,7 @@ namespace Bolnica
         public NovaAnamneza(String IDIzabranog)
         {
             InitializeComponent();
-            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
+            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             idAnamneze = Guid.NewGuid().ToString();
 
             ZdravstveniKartoniServis.NovoPrivremeno();
@@ -97,7 +97,7 @@ namespace Bolnica
             Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno);
             // NaloziPacijenataServis.Sacuvaj();
             zdravstveniKartoniServis.DodajAnamnezu(a);
-            PreglediServis.DodavanjeAnamneze(izabranPregled, a);
+            preglediKontroler.DodajAnamnezu(izabranPregled.IdPregleda, a);
             ZdravstveniKartoniServis.NovoPrivremeno();
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();

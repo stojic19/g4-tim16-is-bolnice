@@ -5,19 +5,8 @@ using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Model;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Bolnica
 {
@@ -25,7 +14,7 @@ namespace Bolnica
     public partial class PrikazTerminaLekara : System.Windows.Controls.UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         public static ObservableCollection<Termin> Termini { get; set; }
         public String korisnik = null;
 
@@ -65,7 +54,6 @@ namespace Bolnica
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
 
             }
-            // NaloziPacijenataServis.Sacuvaj();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
@@ -76,7 +64,7 @@ namespace Bolnica
             if (izabranZaBrisanje != null)
             {
 
-                PreglediServis.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
+                preglediKontroler.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
                 terminKontroler.OtkaziTermin(izabranZaBrisanje.IdTermina);
             }
             else
@@ -91,7 +79,7 @@ namespace Bolnica
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = PreglediServis.PristupPregledu(terminKontroler.PretraziPoId(izabranTermin.IdTermina));
+                Pregled noviPregled = preglediKontroler.PristupPregledu(terminKontroler.PretraziPoId(izabranTermin.IdTermina));
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));

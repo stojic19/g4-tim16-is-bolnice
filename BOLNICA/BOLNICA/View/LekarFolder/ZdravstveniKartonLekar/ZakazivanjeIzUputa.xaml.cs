@@ -26,7 +26,7 @@ namespace Bolnica.LekarFolder
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
         private String izabranaVrstaTermina = null;
@@ -40,7 +40,7 @@ namespace Bolnica.LekarFolder
         {
             InitializeComponent();
             idLekarSpecijalista = lekarSpecijalista;
-            izabranPregled = PreglediServis.PretraziPoId(idPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(idPregleda);
             inicijalizacijaPolja();
             refresujPocetnoVreme();
             this.DataContext = this;

@@ -24,7 +24,7 @@ namespace Bolnica
     public partial class InformacijeAnamaneza : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         Anamneza izabranaAnamneza = null;
         public static ObservableCollection<Terapija> Terapije { get; set; }
@@ -33,7 +33,7 @@ namespace Bolnica
         {
 
             InitializeComponent();
-            this.izabranPregled = PreglediServis.PretraziPoId(IDIzabranog);
+            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             this.izabranaAnamneza = odabranaAnamneza;
 
             inicijalizacijaPolja();
@@ -69,8 +69,6 @@ namespace Bolnica
     
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            // NaloziPacijenataServis.Sacuvaj();
-            PreglediServis.SerijalizacijaPregleda();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
 
