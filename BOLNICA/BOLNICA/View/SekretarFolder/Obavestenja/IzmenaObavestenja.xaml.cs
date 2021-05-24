@@ -27,14 +27,15 @@ namespace Bolnica
     public partial class IzmenaObavestenja : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
 
-        String izabran = null;
+        String izabranoObavestenje = null;
         private List<String> primaoci;
         public IzmenaObavestenja(String IdObavestenja)
         {
             InitializeComponent();
 
-            izabran = IdObavestenja;
+            izabranoObavestenje = IdObavestenja;
             
             InicijalizujPodatke();
         }
@@ -43,7 +44,7 @@ namespace Bolnica
         {
             InicijalizujPrimaoca();
 
-            Obavestenje o = ObavestenjaServis.PretraziPoId(izabran);
+            Obavestenje o = obavestenjaKontroler.PretraziPoId(izabranoObavestenje);
             idObavestenja.Text = o.IdObavestenja;
             datum.SelectedDate = Convert.ToDateTime(o.Datum);
             naslov.Text = o.Naslov;
@@ -69,7 +70,7 @@ namespace Bolnica
             }
             Primalac.ItemsSource = primaoci;
 
-            string[] Primaoci = ObavestenjaServis.PretraziPoId(izabran).IdPrimaoca.Split(' ');
+            string[] Primaoci = obavestenjaKontroler.DobaviPrimaoceZaObavestenje(izabranoObavestenje); 
             foreach(var primalac in Primalac.Items)
             {
                 string[] podaci = primalac.ToString().Split(' ');
@@ -125,7 +126,7 @@ namespace Bolnica
                 return;
             }
 
-            ObavestenjaServis.IzmeniObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            obavestenjaKontroler.IzmeniObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

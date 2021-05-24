@@ -14,7 +14,7 @@ namespace Bolnica.Repozitorijum
     {
         private static String imeFajla = "obavestenja.xml";
 
-        public static List<Obavestenje> DobaviSvaObavestenja()
+        public List<Obavestenje> DobaviSvaObavestenja()
         {
             List<Obavestenje> svaObavestenja = new List<Obavestenje>();
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
@@ -32,7 +32,7 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public static Obavestenje DobaviObavestenjePoId(String idObavestenja)
+        public Obavestenje DobaviObavestenjePoId(String idObavestenja)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -43,7 +43,7 @@ namespace Bolnica.Repozitorijum
             return obavestenje;
         }
 
-        private static Obavestenje KonvertujCvorUObjekat(XmlNode cvorObavestenja)
+        private Obavestenje KonvertujCvorUObjekat(XmlNode cvorObavestenja)
         {
             MemoryStream stm = new MemoryStream();
             StreamWriter stw = new StreamWriter(stm);
@@ -54,7 +54,7 @@ namespace Bolnica.Repozitorijum
             return (ser.Deserialize(stm) as Obavestenje);
         }
 
-        private static List<Obavestenje> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviObavestenja)
+        private List<Obavestenje> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviObavestenja)
         {
             List<Obavestenje> objektiObavestenja = new List<Obavestenje>();
             foreach (XmlNode node in cvoroviObavestenja)
@@ -64,7 +64,7 @@ namespace Bolnica.Repozitorijum
             return objektiObavestenja;
         }
 
-        public static void ObrisiObavestenje(Obavestenje obavestenjeZaBrisanje)
+        public void ObrisiObavestenje(Obavestenje obavestenjeZaBrisanje)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -76,7 +76,7 @@ namespace Bolnica.Repozitorijum
             doc.Save(imeFajla);
         }
 
-        public static void DodajObavestenje(Obavestenje obavestenjeZaUpis)
+        public void DodajObavestenje(Obavestenje obavestenjeZaUpis)
         {
             List<Obavestenje> obavestenja = DobaviSvaObavestenja();
             obavestenja.Add(obavestenjeZaUpis);
@@ -87,7 +87,7 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public static void IzmeniObavestenje(Obavestenje obavestenjeZaIzmenu)
+        public void IzmeniObavestenje(Obavestenje obavestenjeZaIzmenu)
         {
             ObrisiObavestenje(obavestenjeZaIzmenu);
             DodajObavestenje(obavestenjeZaIzmenu);

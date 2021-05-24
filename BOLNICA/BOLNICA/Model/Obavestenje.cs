@@ -38,5 +38,9 @@ namespace Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+        public string[] DobaviPrimaoce()
+        {
+            return IdPrimaoca.Split(' ');
+        }
     }
 }

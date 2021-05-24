@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
@@ -24,6 +25,7 @@ namespace Bolnica
 
     public partial class NovaAnamneza : UserControl
     {
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
         //Dodato dok ne dodas kontroler za to
         ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
 
@@ -157,9 +159,9 @@ namespace Bolnica
             String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
                "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
 
-            String idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+            String idObavestenja = obavestenjaKontroler.GenerisiIdObavestenja();
             Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-            ObavestenjaServis.DodajObavestenjePacijentu(o);
+            obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
             DateTime datum;
             for (int i = 1; i <= trajanje; i++)
@@ -173,9 +175,9 @@ namespace Bolnica
                 //assigns year, month, day, hour, min, seconds
                 DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
 
-                idObavestenja = DodavanjeObavestenja.generisiIdObavestenja();
+                idObavestenja = obavestenjaKontroler.GenerisiIdObavestenja();
                 o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-                ObavestenjaServis.DodajObavestenjePacijentu(o);
+                obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
                 //
 

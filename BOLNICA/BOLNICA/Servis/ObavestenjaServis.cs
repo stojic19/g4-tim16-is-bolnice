@@ -14,10 +14,11 @@ namespace Model
 {
    public class ObavestenjaServis
    {
+        ObavestenjaRepozitorijum obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
 
-      public static Obavestenje DodajObavestenje(Obavestenje obavestenje)
+      public Obavestenje DodajObavestenje(Obavestenje obavestenje)
       {
-            ObavestenjaRepozitorijum.DodajObavestenje(obavestenje);
+            obavestenjaRepozitorijum.DodajObavestenje(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
 
             if (SvaObavestenja().Contains(obavestenje))
@@ -30,9 +31,9 @@ namespace Model
             }
         }
 
-        public static Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
+        public Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
         {
-            ObavestenjaRepozitorijum.DodajObavestenje(obavestenje);
+            obavestenjaRepozitorijum.DodajObavestenje(obavestenje);
 
             if (SvaObavestenja().Contains(obavestenje))
             {
@@ -44,7 +45,7 @@ namespace Model
             }
         }
 
-        public static Boolean IzmeniObavestenje(Obavestenje obavestenje)
+        public Boolean IzmeniObavestenje(Obavestenje obavestenje)
         {
             Obavestenje obavestenjeAzurirano = PretraziPoId(obavestenje.IdObavestenja);
 
@@ -54,19 +55,19 @@ namespace Model
 
             // AzurirajObavestenjeUPrikazu(obavestenjeAzurirano);
 
-            ObavestenjaRepozitorijum.IzmeniObavestenje(obavestenjeAzurirano);
+            obavestenjaRepozitorijum.IzmeniObavestenje(obavestenjeAzurirano);
 
             return true;
         }
 
-        private static void AzurirajObavestenjeUPrikazu(Obavestenje obavestenje)
+        private void AzurirajObavestenjeUPrikazu(Obavestenje obavestenje)
         {
             int indeks = ObavestenjaSekretar.SvaObavestenja.IndexOf(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
             ObavestenjaSekretar.SvaObavestenja.Insert(indeks, obavestenje);
         }
 
-        public static Boolean UkolniObavestenje(String idObavestenja)
+        public Boolean UkolniObavestenje(String idObavestenja)
         {
             Obavestenje obavestenje = PretraziPoId(idObavestenja);
 
@@ -75,19 +76,19 @@ namespace Model
                 return false;
             }
 
-            ObavestenjaRepozitorijum.ObrisiObavestenje(obavestenje);
+            obavestenjaRepozitorijum.ObrisiObavestenje(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Remove(obavestenje);
 
             return !DaLiListeSadrzeObavestenje(obavestenje);
         }
-        private static bool DaLiListeSadrzeObavestenje(Obavestenje obavestenje)
+        private bool DaLiListeSadrzeObavestenje(Obavestenje obavestenje)
         {
             return SvaObavestenja().Contains(obavestenje) || ObavestenjaSekretar.SvaObavestenja.Contains(obavestenje);
         }
 
-        public static Obavestenje PretraziPoId(String idObavestenja)
+        public Obavestenje PretraziPoId(String idObavestenja)
         {
-            foreach (Obavestenje o in ObavestenjaRepozitorijum.DobaviSvaObavestenja())
+            foreach (Obavestenje o in obavestenjaRepozitorijum.DobaviSvaObavestenja())
             {
                 if (o.IdObavestenja.Equals(idObavestenja))
                 {
@@ -97,9 +98,9 @@ namespace Model
             return null;
         }
       
-      public static List<Obavestenje> SvaObavestenja()
+      public List<Obavestenje> SvaObavestenja()
       {
-            return ObavestenjaRepozitorijum.DobaviSvaObavestenja();
+            return obavestenjaRepozitorijum.DobaviSvaObavestenja();
       }
 
     }

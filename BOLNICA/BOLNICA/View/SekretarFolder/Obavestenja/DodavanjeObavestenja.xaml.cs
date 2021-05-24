@@ -27,13 +27,14 @@ namespace Bolnica
     public partial class DodavanjeObavestenja : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
 
         private List<String> primaoci;
         public DodavanjeObavestenja()
         {
             InitializeComponent();
 
-            idObavestenja.Text = generisiIdObavestenja();
+            idObavestenja.Text = obavestenjaKontroler.GenerisiIdObavestenja();
             datum.SelectedDate = DateTime.Now;
 
             InicijalizujPrimaoca();       
@@ -60,33 +61,13 @@ namespace Bolnica
             Primalac.SelectedIndex = 0;
         }
 
-        public static String generisiIdObavestenja()
-        {
-            int brojac = ObavestenjaServis.SvaObavestenja().Count;
-            bool postoji;
-            do
-            {
-                postoji = false;
-                foreach (Obavestenje o in ObavestenjaServis.SvaObavestenja())
-                {
-                    if (o.IdObavestenja.Equals("O" + brojac.ToString()))
-                    {
-                        postoji = true;
-                        brojac++;
-                        break;
-                    }
-                }
-            } while (postoji);
-
-            return "O" + brojac.ToString();
-        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (!PodaciPraviloUneti())
             {
                 return;
             }
-            ObavestenjaServis.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            obavestenjaKontroler.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

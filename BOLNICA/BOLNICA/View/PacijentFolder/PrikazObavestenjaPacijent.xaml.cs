@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,13 +23,15 @@ namespace Bolnica
     /// </summary>
     public partial class PrikazObavestenjaPacijent : UserControl
     {
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
+
         public static ObservableCollection<Obavestenje> obavestenjaPacijenta { get; set; }
         public PrikazObavestenjaPacijent()
         {
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<Obavestenje>();
 
-            List<Obavestenje> datumi = ObavestenjaServis.SvaObavestenja().OrderByDescending(user => user.Datum).ToList();
+            List<Obavestenje> datumi = obavestenjaKontroler.DobaviSvaObavestenja().OrderByDescending(user => user.Datum).ToList();
 
             foreach (Obavestenje o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {

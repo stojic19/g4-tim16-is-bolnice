@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -23,10 +24,12 @@ namespace Bolnica
     /// </summary>
     public partial class UklanjanjeObavestenja : UserControl
     {
-        String izabran = null;
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
+
+        String izabranoObavestenjeZaUklanjanje = null;
         public UklanjanjeObavestenja(String idObavestenja)
         {
-            izabran = idObavestenja;
+            izabranoObavestenjeZaUklanjanje = idObavestenja;
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +43,7 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ObavestenjaServis.UkolniObavestenje(izabran);
+            obavestenjaKontroler.UkolniObavestenje(izabranoObavestenjeZaUklanjanje);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

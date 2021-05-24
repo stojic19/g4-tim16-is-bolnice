@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -24,6 +25,8 @@ namespace Bolnica
     /// </summary>
     public partial class ObavestenjaSekretar : UserControl
     {
+        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
+
         public static ObservableCollection<Obavestenje> SvaObavestenja { get; set; }
         public ObavestenjaSekretar()
         {
@@ -33,10 +36,10 @@ namespace Bolnica
             PopuniTabeluObavestenja();
         }
 
-        private static void PopuniTabeluObavestenja()
+        private void PopuniTabeluObavestenja()
         {
             SvaObavestenja = new ObservableCollection<Obavestenje>();
-            foreach (Obavestenje o in ObavestenjaServis.SvaObavestenja())
+            foreach (Obavestenje o in obavestenjaKontroler.DobaviSvaObavestenja())
             {
                 if (!o.Naslov.Equals("Terapija"))
                 {
@@ -59,7 +62,7 @@ namespace Bolnica
             if (dataGridObavestenjaSekretar.SelectedIndex != -1)
             {
                 String id = (((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
-                Obavestenje obavestenje = ObavestenjaServis.PretraziPoId(id);
+                Obavestenje obavestenje = obavestenjaKontroler.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
