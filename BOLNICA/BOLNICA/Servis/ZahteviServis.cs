@@ -15,7 +15,6 @@ namespace Bolnica.Model.Rukovanja
     {
         public static List<Zahtjev> SviZahtevi { get; set; } = new List<Zahtjev>();
         private static String imeFajla = "zahtjevi.xml";
-        private LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
 
         public static Zahtjev PretraziPoId(String idZahteva)
         {

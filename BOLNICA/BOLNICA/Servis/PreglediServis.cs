@@ -1,4 +1,5 @@
 ﻿using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Bolnica.Model.Rukovanja
 {
     class PreglediServis
     {
-        private PreglediRepozitorijum preglediRepozitorijum = new PreglediRepozitorijum();
+        private PreglediRepozitorijumInterfejs preglediRepozitorijum = new PreglediRepozitorijum();
         public List<Pregled> DobaviSvePreglede()
         {
             return preglediRepozitorijum.DobaviSveObjekte();

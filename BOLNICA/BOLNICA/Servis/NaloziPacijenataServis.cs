@@ -2,6 +2,7 @@
 using Bolnica;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ namespace Model
     public class NaloziPacijenataServis
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
-        private LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
+        private LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
         public Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);

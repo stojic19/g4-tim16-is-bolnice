@@ -1,4 +1,5 @@
 ﻿using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace Bolnica.Model.Rukovanja
 {
     class LekoviServis
     {
-        private LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
+        private LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
 
         public List<Lek> DobaviSveLekove()
         {

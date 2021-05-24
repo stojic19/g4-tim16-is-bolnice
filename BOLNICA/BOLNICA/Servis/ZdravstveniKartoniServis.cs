@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Bolnica.Model
     class ZdravstveniKartoniServis
     {
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
+        LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
 
         public List<Lek> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
         {
