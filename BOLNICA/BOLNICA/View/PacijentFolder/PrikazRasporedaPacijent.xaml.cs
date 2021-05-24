@@ -29,7 +29,7 @@ namespace Bolnica
         {
             InitializeComponent();
             TerminiPacijenta = new ObservableCollection<Termin>();
-            foreach (Termin t in TerminRepozitorijum.DobaviSveTermine())
+            foreach (Termin t in terminKontroler.DobaviSveZakazaneTermine())
             { 
                 if(t.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && DateTime.Compare(DateTime.Now.Date,t.Datum.Date)<=0)
                 TerminiPacijenta.Add(t);
@@ -87,7 +87,7 @@ namespace Bolnica
 
             if (terminKontroler.ProveriMogucnostPomeranjaDatum(((Termin)SviTerminiPacijenta.SelectedItem).Datum))
             {
-                if (!terminKontroler.ProveriMogucnostPomeranjaVreme(TerminRepozitorijum.PretraziPoId(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina).PocetnoVreme))
+                if (!terminKontroler.ProveriMogucnostPomeranjaVreme(terminKontroler.PretraziPoId(((Termin)SviTerminiPacijenta.SelectedItem).IdTermina).PocetnoVreme))
                 {
                     MessageBox.Show("Datum pregleda je za manje od 24h! Ne mozete pomeriti!", "Datum pregleda!");
                     return false;

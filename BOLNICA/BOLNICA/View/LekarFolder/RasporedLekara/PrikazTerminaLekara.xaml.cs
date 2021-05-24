@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
@@ -23,6 +24,7 @@ namespace Bolnica
 
     public partial class PrikazTerminaLekara : System.Windows.Controls.UserControl
     {
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         public static ObservableCollection<Termin> Termini { get; set; }
         public String korisnik = null;
@@ -36,7 +38,7 @@ namespace Bolnica
 
             Termini = new ObservableCollection<Termin>();
 
-            foreach (Termin t in TerminRepozitorijum.PretraziPoLekaru(korIme))
+            foreach (Termin t in terminKontroler.PretraziPoLekaru(korIme))
             {
                 if (t.Datum.AddDays(7).Date.CompareTo(DateTime.Now) >= 0)
                 {
@@ -75,7 +77,7 @@ namespace Bolnica
             {
 
                 PreglediServis.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
-                TerminRepozitorijum.OtkaziTermin(izabranZaBrisanje.IdTermina);
+                terminKontroler.OtkaziTermin(izabranZaBrisanje.IdTermina);
             }
             else
             {
@@ -89,7 +91,7 @@ namespace Bolnica
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = PreglediServis.PristupPregledu(TerminRepozitorijum.PretraziPoId(izabranTermin.IdTermina));
+                Pregled noviPregled = PreglediServis.PristupPregledu(terminKontroler.PretraziPoId(izabranTermin.IdTermina));
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));

@@ -1,4 +1,5 @@
 using Bolnica;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
 using System;
@@ -12,12 +13,14 @@ namespace Model
 {
     public class ProstoriServis
     {
+        TerminiServis terminiServis = new TerminiServis();
+
         private static String imeFajla = "prostori.xml";
         private static String imeFajla1 = "renoviranje.xml";
         public static List<Prostor> prostori = new List<Prostor>();
         public static List<Oprema> oprema = new List<Oprema>();
         public static List<Renoviranje> prostorKojiSeRenovira = new List<Renoviranje>();
-
+       
         public static void DodajProstor(Prostor p)
         { 
             if (!prostori.Contains(p))
@@ -195,11 +198,11 @@ namespace Model
             prostorUKojiPrebacujemo.Oprema.Add(o);
         }
 
-        public static void ProvjeriZakazaneTermine(DatePicker pocetniDatum, DatePicker zavrsniDatum)
+        public void ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
-            foreach (Termin t in TerminRepozitorijum.DobaviSveTermine())
+            foreach (Termin t in terminiServis.DobaviSveZakazaneTermine())
             {
-                if (t.Datum >= DateTime.Parse(pocetniDatum.Text) && t.Datum <= DateTime.Parse(zavrsniDatum.Text))
+                if (t.Datum >= pocetniDatum && t.Datum <= zavrsniDatum)
                 {
                     System.Windows.Forms.MessageBox.Show("Postoje zakazani termini za taj period, trazite drugi datum !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

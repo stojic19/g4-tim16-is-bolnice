@@ -60,7 +60,7 @@ namespace Bolnica.Repozitorijum
             tw.Close();
 
         }
-        public static Termin ZakaziTermin(Termin t, String lekar)
+        public Termin ZakaziTermin(Termin t, String lekar)
         {
             sviTermini.Add(t);
 
@@ -87,13 +87,13 @@ namespace Bolnica.Repozitorijum
                 return null;
             }
         }
-        public static Termin nadjiSlobodanTerminPoId(String id)
+        public Termin nadjiSlobodanTerminPoId(String id)
         {
             Termin t = new Termin();
 
             return t;
         }
-        public static Termin ZakaziPregledSekretar(Termin t)
+        public Termin ZakaziPregledSekretar(Termin t)
         {
             sviTermini.Add(t);
             slobodniTermini.Remove(t);
@@ -110,7 +110,7 @@ namespace Bolnica.Repozitorijum
                 return null;
             }
         }
-        public static Boolean OtkaziTermin(String idTermina)
+        public Boolean OtkaziTermin(String idTermina)
         {
 
             Termin t = PretraziPoId(idTermina);
@@ -136,7 +136,7 @@ namespace Bolnica.Repozitorijum
             }
         }
 
-        public static Termin PretraziSlobodnePoId(String idTermina)
+        public Termin PretraziSlobodnePoId(String idTermina)
         {
             foreach (Termin termin in slobodniTermini)
             {
@@ -146,7 +146,7 @@ namespace Bolnica.Repozitorijum
             return null;
         }
 
-        public static Termin PretraziPoId(String idTermina)
+        public Termin PretraziPoId(String idTermina)
         {
             foreach (Termin termin in sviTermini)
             {
@@ -155,7 +155,7 @@ namespace Bolnica.Repozitorijum
             }
             return null;
         }
-        public static Boolean OtkaziPregledSekretar(String idTermina)
+        public Boolean OtkaziPregledSekretar(String idTermina)
         {
 
             Termin termin = PretraziPoId(idTermina);
@@ -175,12 +175,12 @@ namespace Bolnica.Repozitorijum
 
             return !DaLiListeSadrzeTerminSekretar(termin);
         }
-        private static bool DaLiListeSadrzeTerminSekretar(Termin termin)
+        private bool DaLiListeSadrzeTerminSekretar(Termin termin)
         {
             return sviTermini.Contains(termin) || TerminiPregledaSekretar.TerminiPregleda.Contains(termin);
         }
 
-        public static Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik)
+        public Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik)
         {
 
             foreach (Termin t in slobodniTermini.ToList())
@@ -212,12 +212,12 @@ namespace Bolnica.Repozitorijum
             return true;
         }
 
-        public static List<Termin> DobaviSveTermine()
+        public List<Termin> DobaviSveTermine()
         {
             return sviTermini;
         }
 
-        public static List<Termin> PretraziPoLekaru(String korImeLekara)
+        public List<Termin> PretraziPoLekaru(String korImeLekara)
         {
 
             List<Termin> lekaroviTermini = new List<Termin>();
@@ -234,7 +234,7 @@ namespace Bolnica.Repozitorijum
             return lekaroviTermini;
 
         }
-        public static List<Termin> DeserijalizacijaTermina()
+        public List<Termin> DeserijalizacijaTermina()
         {
             if (File.ReadAllText(zakazaniTerminiFajl).Trim().Equals(""))
             {

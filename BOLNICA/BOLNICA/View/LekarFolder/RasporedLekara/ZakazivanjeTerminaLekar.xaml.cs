@@ -25,6 +25,7 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         String korisnik = null;
         DateTime izabranDatum;
@@ -91,7 +92,7 @@ namespace Bolnica
 
             t.Trajanje = trajanje;
 
-            TerminRepozitorijum.ZakaziTermin(t, korisnik);
+            terminKontroler.ZakaziTermin(t, korisnik);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));

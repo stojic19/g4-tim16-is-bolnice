@@ -28,6 +28,21 @@ namespace Model
 
         }
 
+        public List<Termin> PretraziPoLekaru(string korisnickoIme)
+        {
+            return terminRepozitorijum.PretraziPoLekaru(korisnickoIme);
+        }
+
+        public Termin PretraziSlobodnePoId(string idTermina)
+        {
+            return terminRepozitorijum.PretraziSlobodnePoId(idTermina);
+        }
+
+        public void OtkaziPregledSekretar(string terminZaOtkazivanje)
+        {
+            terminRepozitorijum.OtkaziPregledSekretar(terminZaOtkazivanje);
+        }
+
         public static List<Lekar> DobaviSpecijaliste()
         {
             List<Lekar> specijaliste = new List<Lekar>();
@@ -53,7 +68,16 @@ namespace Model
 
             return null;
         }
-       
+
+        public void OtkaziTermin(string idTermina)
+        {
+            terminRepozitorijum.OtkaziTermin(idTermina);
+        }
+
+        public void ZakaziPregledSekretar(Termin termin)
+        {
+            terminRepozitorijum.ZakaziPregledSekretar(termin);
+        }
 
         public static Lekar pretraziLekare(String id)
         {
@@ -68,6 +92,22 @@ namespace Model
 
             return null;
         }
+
+        public void ZakaziTermin(Termin termin, string korisnickoIme)
+        {
+            terminRepozitorijum.ZakaziTermin(termin, korisnickoIme);
+        }
+
+        public Termin PretraziPoId(string idTermina)
+        {
+            return terminRepozitorijum.PretraziPoId(idTermina);
+        }
+
+        public void IzmeniTermin(Termin stariTermin, Termin noviTermin, string korisnik)
+        {
+            terminRepozitorijum.IzmeniTermin(stariTermin, noviTermin, korisnik);
+        }
+
         //ovo su metode servisa,sve iznad treva prebaciti u LekarServis
         public List<Termin> DobaviSveSlobodneTermine()
         {

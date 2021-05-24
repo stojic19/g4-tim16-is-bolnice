@@ -1,4 +1,5 @@
-﻿using Bolnica.SekretarFolder.Operacija;
+﻿using Bolnica.Repozitorijum;
+using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Bolnica.Model
 {
     class OperacijeServis
     {
+        OperacijeRepozitorijum operacijeRepozitorijum = new OperacijeRepozitorijum();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
 
         public static List<Termin> sviTermini = new List<Termin>();
@@ -31,7 +33,7 @@ namespace Bolnica.Model
             sviTermini.Add(new Termin("T29", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P3"), naloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("MicaUbica")));
             slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(3), ProstoriServis.PretraziPoId("P3"), null, pretraziLekare("MicaUbica")));
         }
-        public static Lekar pretraziLekare(String id)
+        public Lekar pretraziLekare(String id)
         {
             foreach (Lekar l in sviLekari)
             {
@@ -44,7 +46,7 @@ namespace Bolnica.Model
 
             return null;
         }
-        public static void OsveziSlobodneTermine(int trenutniSat, int trenutniMinut)
+        public void OsveziSlobodneTermine(int trenutniSat, int trenutniMinut)
         {
             string[] vreme;
             int pocetniSatTermina, pocetniMinutTermina, trajanje;
@@ -79,7 +81,7 @@ namespace Bolnica.Model
             slobodniTermini = pomocni;
         }
 
-        private static bool TerminSeZavrsio(int trenutniSat,int trenutniMinut,int pocetniSatTermina,int pocetniMinutTermina)
+        private bool TerminSeZavrsio(int trenutniSat,int trenutniMinut,int pocetniSatTermina,int pocetniMinutTermina)
         {
             if (pocetniSatTermina < trenutniSat)
             {
@@ -92,7 +94,7 @@ namespace Bolnica.Model
             return false;
         }
 
-        private static void PreostaloVremeTermina(int trenutniSat, int trenutniMinut, string[] vreme, int trajanje,ref Termin termin)
+        private void PreostaloVremeTermina(int trenutniSat, int trenutniMinut, string[] vreme, int trajanje,ref Termin termin)
         {
             if (Convert.ToInt32(vreme[0]) > trenutniSat)
             {
@@ -106,7 +108,7 @@ namespace Bolnica.Model
             termin.Trajanje -= trajanje;
         }
 
-        private static void NovoPocetnoVremeTermina(int trenutniSat, int trenutniMinut,ref Termin termin)
+        private void NovoPocetnoVremeTermina(int trenutniSat, int trenutniMinut,ref Termin termin)
         {
             if (trenutniMinut >= 0 && trenutniMinut <= 9)
             {
@@ -118,7 +120,7 @@ namespace Bolnica.Model
             }
         }
 
-        private static void IzracunajKrajnjiDatumTermina(ref int pocetniSatTermina, ref int pocetniMinutTermina,ref Termin termin)
+        private void IzracunajKrajnjiDatumTermina(ref int pocetniSatTermina, ref int pocetniMinutTermina,ref Termin termin)
         {
             pocetniSatTermina += (int)termin.Trajanje / 60;
             pocetniMinutTermina += (int)termin.Trajanje % 60;
@@ -134,17 +136,17 @@ namespace Bolnica.Model
             }
         }
 
-        private static bool DaLiJeTerminPoceoRanijeDanas(int Sat, int Minut, int sat, int minut, Termin t)
+        private bool DaLiJeTerminPoceoRanijeDanas(int Sat, int Minut, int sat, int minut, Termin t)
         {
             return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && (sat < Sat || (sat == Sat && minut < Minut));
         }
 
-        private static bool DaLiJeTerminPreDanasnjegDana(Termin t)
+        private bool DaLiJeTerminPreDanasnjegDana(Termin t)
         {
             return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0;
         }
 
-        public static void ProveriTermineZaSpajanje()
+        public void ProveriTermineZaSpajanje()
         {
             String[] vreme;
             OsveziSlobodneTermine(Convert.ToInt32(DateTime.Now.ToString("HH")), Convert.ToInt32(DateTime.Now.ToString("mm")));
@@ -189,22 +191,22 @@ namespace Bolnica.Model
             slobodniTermini = pomocni;
         }
 
-        private static bool TerminiSeNastavljajuIstiDan(Termin termin, string krajTermina, Termin termin1)
+        private bool TerminiSeNastavljajuIstiDan(Termin termin, string krajTermina, Termin termin1)
         {
             return !termin1.IdTermina.Equals(termin.IdTermina) && termin1.PocetnoVreme.Equals(krajTermina) && DateTime.Compare(termin1.Datum.Date, termin.Datum.Date) == 0;
         }
 
-        private static bool TerminiSeNastavljaju(Termin termin, string krajTermina, Termin termin1)
+        private bool TerminiSeNastavljaju(Termin termin, string krajTermina, Termin termin1)
         {
             return !termin1.IdTermina.Equals(termin.IdTermina) && termin1.PocetnoVreme.Equals(krajTermina) && DateTime.Compare(termin1.Datum.Date, termin.Datum.AddDays(1).Date) == 0;
         }
 
-        private static bool KrajTerminaSutra(int Sat, int sat)
+        private bool KrajTerminaSutra(int Sat, int sat)
         {
             return Sat > sat;
         }
 
-        private static void IzracunajKrajTermina(ref int sat,ref int minut, int trajanje,ref string krajTermina)
+        private void IzracunajKrajTermina(ref int sat,ref int minut, int trajanje,ref string krajTermina)
         {
             sat += trajanje/60;
             minut += trajanje % 60;
@@ -226,7 +228,7 @@ namespace Bolnica.Model
                 krajTermina = sat + ":" + minut;
             }
         }
-        public static List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara oblastLekara, int trajanje)
+        public List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara oblastLekara, int trajanje)
         {
             List<Termin> pomocna = new List<Termin>();
             List<String> vreme = new List<string>();
@@ -252,12 +254,12 @@ namespace Bolnica.Model
             return pomocna;
         }
 
-        private static bool TerminOdgovaraHitnojOperaciji(SpecijalizacijeLekara oblastLekara, int trajanje, Termin t)
+        private bool TerminOdgovaraHitnojOperaciji(SpecijalizacijeLekara oblastLekara, int trajanje, Termin t)
         {
             return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje;
         }
 
-        private static List<String> DobaviPocetkeTermina(ref int sat, ref int minut)
+        private List<String> DobaviPocetkeTermina(ref int sat, ref int minut)
         {
             List<String> vreme = new List<string>();
             minut--;
@@ -294,7 +296,7 @@ namespace Bolnica.Model
             return vreme;
         }
 
-        public static Dictionary<Termin, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanje)
+        public Dictionary<Termin, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanje)
         {
             List<Termin> pomocna = new List<Termin>();
             List<String> vreme = new List<string>();
@@ -334,7 +336,7 @@ namespace Bolnica.Model
             }
             return map;
         }
-        public static int PomeranjeOperacije(Termin termin)
+        public int PomeranjeOperacije(Termin termin)
         {
             List<Termin> pomocna = new List<Termin>();
             TimeSpan vreme;
@@ -357,12 +359,12 @@ namespace Bolnica.Model
             return danaPomereno;
         }
 
-        private static bool TerminPogodanZaPomeranje(Termin termin, Termin t)
+        private bool TerminPogodanZaPomeranje(Termin termin, Termin t)
         {
             return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) >= 0 && t.Lekar.Equals(termin.Lekar) && t.Trajanje >= termin.Trajanje;
         }
 
-        public static void PomeriTerminUSledeciSlobodan(Termin termin,int brojDana)
+        public void PomeriTerminUSledeciSlobodan(Termin termin,int brojDana)
         {
             List<Termin> pomocna = new List<Termin>();
             TimeSpan vreme;
@@ -383,7 +385,7 @@ namespace Bolnica.Model
                 }
             }
         }
-        public static bool PomeriOperacijuIZakaziNovu(Termin termin,int brojDana,Pacijent pacijent,int trajanje)
+        public bool PomeriOperacijuIZakaziNovu(Termin termin,int brojDana,Pacijent pacijent,int trajanje)
         {
             PomeriTerminUSledeciSlobodan(termin, brojDana);
             termin.Pacijent = pacijent;
@@ -391,7 +393,7 @@ namespace Bolnica.Model
             ProveriTermineZaSpajanje();
             return povratnaVrednost;
         }
-        public static bool OtkazivanjeOperacije(Termin termin)
+        public bool OtkazivanjeOperacije(Termin termin)
         {
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
@@ -414,7 +416,7 @@ namespace Bolnica.Model
             ProveriTermineZaSpajanje();
             return true;
         }
-        public static bool ZakazivanjeHitneOperacije(Termin termin,int trajanje)
+        public bool ZakazivanjeHitneOperacije(Termin termin,int trajanje)
         {
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
@@ -497,7 +499,7 @@ namespace Bolnica.Model
             }
             return true;
         }
-        public static string generisiID()
+        public string generisiID()
         {
             return Guid.NewGuid().ToString();
         }

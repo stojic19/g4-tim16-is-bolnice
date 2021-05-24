@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Model;
@@ -23,6 +24,8 @@ namespace Bolnica
 {
     public partial class IzmenaTerminaLekar : UserControl
     {
+        TerminKontroler terminKontroler = new TerminKontroler();
+
         String izabran = null;
         String korisnik = null;
         DateTime izabranDatum;
@@ -35,7 +38,7 @@ namespace Bolnica
             InitializeComponent();
             korisnik = lekar;
             izabran = id;
-            Termin t = TerminRepozitorijum.PretraziPoId(id);
+            Termin t = terminKontroler.PretraziPoId(id);
 
             imePacijenta.Text = t.Pacijent.Ime;
             prezimePacijenta.Text = t.Pacijent.Prezime;
@@ -89,7 +92,7 @@ namespace Bolnica
             }
 
 
-            Termin stari = TerminRepozitorijum.PretraziPoId(izabran);
+            Termin stari = terminKontroler.PretraziPoId(izabran);
             Termin novi = (Termin)pocVreme.SelectedItem;
 
             Double trajanje = 0;
@@ -109,7 +112,7 @@ namespace Bolnica
             stari.Pacijent = null;
 
 
-            TerminRepozitorijum.IzmeniTermin(stari, novi, korisnik); 
+            terminKontroler.IzmeniTermin(stari, novi, korisnik); 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
         }
@@ -152,7 +155,7 @@ namespace Bolnica
 
         private void refresujPocetnoVreme()
         {
-            Termin izabranT = TerminRepozitorijum.PretraziPoId(izabran);
+            Termin izabranT = terminKontroler.PretraziPoId(izabran);
             slobodniTermini.Clear();
             foreach (Termin t in TerminRepozitorijum.slobodniTermini)
             {

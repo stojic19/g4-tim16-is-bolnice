@@ -24,13 +24,14 @@ namespace Bolnica
     public partial class PotvrdiZakazivanjePacijent : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         public String idTermina = null;
-        TerminKontroler terminKontroler = new TerminKontroler();
+
         public PotvrdiZakazivanjePacijent(Termin izabrani)
         {
             InitializeComponent();
-            Termin termin = TerminRepozitorijum.PretraziSlobodnePoId(izabrani.IdTermina);
+            Termin termin = terminKontroler.PretraziSlobodnePoId(izabrani.IdTermina);
 
             TextLekar.Text = termin.Lekar.KorisnickoIme;
             TextDatum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);

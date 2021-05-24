@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
 using System;
@@ -26,14 +27,15 @@ namespace Bolnica.SekretarFolder.Operacija
     /// </summary>
     public partial class HitnaOperacijaPomeranje : UserControl
     {
+        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         public static ObservableCollection<KeyValuePair<Termin, int>> TerminiZaPomeranje { get; set; }
-        private static Pacijent p;
-        private static int Trajanje;
-        public HitnaOperacijaPomeranje(Pacijent pacijent,SpecijalizacijeLekara oblast,int trajanje)
+        private static Pacijent pacijent;
+        private static int TrajanjeOperacije;
+        public HitnaOperacijaPomeranje(Pacijent pacijentIzabrani,SpecijalizacijeLekara oblast,int trajanjeOperacije)
         {
             InitializeComponent();
-            p = pacijent;
-            Trajanje = trajanje;
+            pacijent = pacijentIzabrani;
+            TrajanjeOperacije = trajanjeOperacije;
             this.DataContext = this;
 
             PopuniListuTerminimaZaPomeranje(oblast);
@@ -43,7 +45,7 @@ namespace Bolnica.SekretarFolder.Operacija
         {
             TerminiZaPomeranje = new ObservableCollection<KeyValuePair<Termin, int>>();
 
-            foreach (KeyValuePair<Termin, int> t in OperacijeServis.HitnaOperacijaTerminiZaPomeranje(oblast, Trajanje).OrderBy(key => key.Value))
+            foreach (KeyValuePair<Termin, int> t in hitnaOperacijaKontroler.HitnaOperacijaTerminiZaPomeranje(oblast, TrajanjeOperacije).OrderBy(key => key.Value))
             {
                 TerminiZaPomeranje.Add(t);
             }
@@ -102,7 +104,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             KeyValuePair<Termin, int> termin = (KeyValuePair<Termin, int>)terminiZaPomeranjeLista.SelectedItem;
-            if (!OperacijeServis.PomeriOperacijuIZakaziNovu(termin.Key,termin.Value,p,Trajanje))
+            if (!hitnaOperacijaKontroler.PomeriOperacijuIZakaziNovu(termin.Key, termin.Value, pacijent, TrajanjeOperacije))
             {
                 System.Windows.Forms.MessageBox.Show("Neuspešno pomeranje!", "Odaberite drugi termin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -27,5 +27,30 @@ namespace Bolnica.Kontroler
         {
             operacijeServis.PrivremenaInicijalizacijaLekara();
         }
+
+        public List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara specijalizacijeLekara, int trajanjeOperacije)
+        {
+            return operacijeServis.HitnaOperacijaSlobodniTermini(specijalizacijeLekara, trajanjeOperacije);
+        }
+
+        public void ZakazivanjeHitneOperacije(Termin terminZaZakazivanje, int trajanjeOperacije)
+        {
+            operacijeServis.ZakazivanjeHitneOperacije(terminZaZakazivanje, trajanjeOperacije);
+        }
+
+        public Dictionary<Termin, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanjeOperacije)
+        {
+            return operacijeServis.HitnaOperacijaTerminiZaPomeranje(oblastLekara, trajanjeOperacije);
+        }
+
+        public bool PomeriOperacijuIZakaziNovu(Termin terminZaOperaciju, int brojDanaZaPomeranje, Pacijent odabraniPacijent, int trajanjeOperacije)
+        {
+            return operacijeServis.PomeriOperacijuIZakaziNovu(terminZaOperaciju, brojDanaZaPomeranje, odabraniPacijent, trajanjeOperacije);
+        }
+
+        public bool OtkazivanjeOperacije(Termin terminZaOtkazivanje)
+        {
+            return operacijeServis.OtkazivanjeOperacije(terminZaOtkazivanje);
+        }
     }
 }

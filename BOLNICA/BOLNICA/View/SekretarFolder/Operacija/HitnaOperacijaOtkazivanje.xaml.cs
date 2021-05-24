@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
 using System;
@@ -25,6 +26,7 @@ namespace Bolnica.SekretarFolder.Operacija
     /// </summary>
     public partial class HitnaOperacijaOtkazivanje : UserControl
     {
+        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         private static Termin terminZaOtkazivanje;
         public HitnaOperacijaOtkazivanje(Termin termin)
         {
@@ -68,7 +70,7 @@ namespace Bolnica.SekretarFolder.Operacija
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Potvrdi
-            if(!OperacijeServis.OtkazivanjeOperacije(terminZaOtkazivanje))
+            if(!hitnaOperacijaKontroler.OtkazivanjeOperacije(terminZaOtkazivanje))
             {
                 System.Windows.Forms.MessageBox.Show("Odabrana operacija je već počela!", "Neuspešno otkazivanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

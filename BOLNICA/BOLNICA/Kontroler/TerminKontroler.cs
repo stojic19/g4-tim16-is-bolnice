@@ -35,6 +35,16 @@ namespace Bolnica.Kontroler
             return terminiServis.DobaviZakazanTerminPoId(idTermina);
         }
 
+        public Termin PretraziSlobodnePoId(string idTermina)
+        {
+            return terminiServis.PretraziSlobodnePoId(idTermina);
+        }
+
+        public List<Termin> PretraziPoLekaru(string korisnickoIme)
+        {
+            return terminiServis.PretraziPoLekaru(korisnickoIme);
+        }
+
         public void ZakaziPregledPacijent(Termin termin)
         {
             terminiServis.ZakaziPregledPacijent(termin);
@@ -50,6 +60,10 @@ namespace Bolnica.Kontroler
             terminiServis.PomeriPregledPacijent(idTermina);
         }
 
+        public void OtkaziPregledSekretar(string terminZaOtkazivanje)
+        {
+            terminiServis.OtkaziPregledSekretar(terminZaOtkazivanje);
+        }
 
         public List<Termin> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
         {
@@ -66,6 +80,16 @@ namespace Bolnica.Kontroler
             return terminiServis.ProveriMogucnostPomeranjaDatum(datumPregleda);
         }
 
+        public void OtkaziTermin(string idTermina)
+        {
+            terminiServis.OtkaziTermin(idTermina);
+        }
+
+        public void ZakaziPregledSekretar(Termin termin)
+        {
+            terminiServis.ZakaziPregledSekretar(termin);
+        }
+
         public bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
             return terminiServis.ProveriMogucnostPomeranjaVreme(vreme);
@@ -76,6 +100,19 @@ namespace Bolnica.Kontroler
             return terminiServis.NadjiVremeTermina(izabraniTermin);
         }
 
-      
+        public void ZakaziTermin(Termin termin, string korisnickoIme)
+        {
+            terminiServis.ZakaziTermin(termin, korisnickoIme);
+        }
+
+        public Termin PretraziPoId(string idTermina)
+        {
+            return terminiServis.PretraziPoId(idTermina);
+        }
+
+        public void IzmeniTermin(Termin stariTermin, Termin noviTermin, string korisnik)
+        {
+            terminiServis.IzmeniTermin(stariTermin, noviTermin, korisnik);
+        }
     }
 }

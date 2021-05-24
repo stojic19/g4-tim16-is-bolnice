@@ -22,6 +22,8 @@ namespace Bolnica
     /// </summary>
     public partial class RenoviranjeProstorije : System.Windows.Controls.UserControl
     {
+        ProstoriServis prostoriServis = new ProstoriServis();
+
         private Prostor izabranProstor;
         public RenoviranjeProstorije(Prostor izabran)
         {
@@ -33,7 +35,7 @@ namespace Bolnica
         {
             Renoviranje renoviranje = new Renoviranje(/*izabranProstor.IdProstora*/ new Prostor(), DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
 
-            ProstoriServis.ProvjeriZakazaneTermine(PickStartDate, PickEndtDate);
+            prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate);
 
            // izabranProstor.Renoviranje = renoviranje;
             ProstoriServis.DodajZaRenoviranje(renoviranje);

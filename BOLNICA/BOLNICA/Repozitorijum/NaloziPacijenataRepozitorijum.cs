@@ -12,7 +12,7 @@ namespace Bolnica.Repozitorijum
 {
     class NaloziPacijenataRepozitorijum
     {
-        private static String imeFajla = "pacijenti.xml";
+        private String imeFajla = "pacijenti.xml";
 
         public List<Pacijent> DobaviSveNalogePacijenata()
         {

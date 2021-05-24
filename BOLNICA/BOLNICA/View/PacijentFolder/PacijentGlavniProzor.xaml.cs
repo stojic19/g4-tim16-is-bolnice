@@ -35,8 +35,6 @@ namespace Bolnica
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PrikazObavestenjaPacijent());
-
-            MessageBox.Show("ksavndksjvnksjvnskjnv" + TerminRepozitorijum.nadjiSlobodanTerminPoId("T12").IdTermina);
         }
         
         public static Grid GetGlavniSadrzaj()

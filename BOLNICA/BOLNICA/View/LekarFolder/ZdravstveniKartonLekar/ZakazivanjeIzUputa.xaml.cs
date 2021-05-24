@@ -25,6 +25,7 @@ namespace Bolnica.LekarFolder
     public partial class ZakazivanjeIzUputa : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
@@ -79,7 +80,7 @@ namespace Bolnica.LekarFolder
                 t.Trajanje = 30;
             }
 
-            TerminRepozitorijum.ZakaziTermin(t, izabranPregled.Termin.Lekar.KorisnickoIme);
+            terminKontroler.ZakaziTermin(t, izabranPregled.Termin.Lekar.KorisnickoIme);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
 

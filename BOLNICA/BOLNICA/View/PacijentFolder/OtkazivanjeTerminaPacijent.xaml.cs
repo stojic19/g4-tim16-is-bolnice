@@ -27,7 +27,7 @@ namespace Bolnica
         public OtkazivanjeTerminaPacijent(String idTermina)
         {
             InitializeComponent();
-            izabranZaOtkazivanje = TerminRepozitorijum.PretraziPoId(idTermina);
+            izabranZaOtkazivanje = terminKontroler.PretraziPoId(idTermina);
             
         }
 

@@ -28,6 +28,7 @@ namespace Bolnica.Sekretar.Pregled
     public partial class ZakazivanjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        TerminKontroler terminKontroler = new TerminKontroler();
 
         private static String IdPacijenta;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
@@ -62,7 +63,7 @@ namespace Bolnica.Sekretar.Pregled
                 return;
             }    
             termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
-            TerminRepozitorijum.ZakaziPregledSekretar(termin);
+            terminKontroler.ZakaziPregledSekretar(termin);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

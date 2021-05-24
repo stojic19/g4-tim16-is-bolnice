@@ -1,4 +1,5 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.Kontroler;
+using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -24,6 +25,7 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class TerminiPregledaSekretar : UserControl
     {
+        TerminKontroler terminKontroler = new TerminKontroler();
         public static ObservableCollection<Termin> TerminiPregleda { get; set; }
         public TerminiPregledaSekretar()
         {
@@ -32,7 +34,7 @@ namespace Bolnica.Sekretar.Pregled
             this.DataContext = this;
             TerminiPregleda = new ObservableCollection<Termin>();
 
-            foreach (Termin t in TerminRepozitorijum.DobaviSveTermine())
+            foreach (Termin t in terminKontroler.DobaviSveZakazaneTermine())
             {
                 if(t.VrstaTermina == VrsteTermina.pregled)
                 {

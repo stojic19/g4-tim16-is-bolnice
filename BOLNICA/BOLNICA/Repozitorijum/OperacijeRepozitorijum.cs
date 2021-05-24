@@ -15,7 +15,7 @@ namespace Bolnica.Repozitorijum
 
         private static String imeFajla = "terminiOperacija.xml";
 
-        public static List<Termin> DobaviSveTermineOperacija()
+        public List<Termin> DobaviSveTermineOperacija()
         {
             List<Termin> sveOperacije = new List<Termin>();
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
@@ -40,7 +40,7 @@ namespace Bolnica.Repozitorijum
         }
         */
 
-        public static Termin DobaviTerminPoId(String idTermina)
+        public Termin DobaviTerminPoId(String idTermina)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -51,7 +51,7 @@ namespace Bolnica.Repozitorijum
             return termin;
         }
 
-        private static Termin KonvertujCvorUObjekat(XmlNode cvorTermina)
+        private Termin KonvertujCvorUObjekat(XmlNode cvorTermina)
         {
             MemoryStream stm = new MemoryStream();
             StreamWriter stw = new StreamWriter(stm);
@@ -62,7 +62,7 @@ namespace Bolnica.Repozitorijum
             return (ser.Deserialize(stm) as Termin);
         }
 
-        private static List<Termin> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviTermina)
+        private List<Termin> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviTermina)
         {
             List<Termin> objektiTermina = new List<Termin>();
             foreach (XmlNode node in cvoroviTermina)
@@ -72,7 +72,7 @@ namespace Bolnica.Repozitorijum
             return objektiTermina;
         }
 
-        public static void ObrisiTermin(Termin terminZaBrisanje)
+        public void ObrisiTermin(Termin terminZaBrisanje)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(imeFajla);
@@ -84,7 +84,7 @@ namespace Bolnica.Repozitorijum
             doc.Save(imeFajla);
         }
 
-        public static void DodajTermin(Termin terminZaUpis)
+        public void DodajTermin(Termin terminZaUpis)
         {
             List<Termin> termini = DobaviSveTermineOperacija();
             termini.Add(terminZaUpis);
@@ -95,7 +95,7 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public static void IzmeniTermin(Termin termin)
+        public void IzmeniTermin(Termin termin)
         {
             ObrisiTermin(termin);
             DodajTermin(termin);

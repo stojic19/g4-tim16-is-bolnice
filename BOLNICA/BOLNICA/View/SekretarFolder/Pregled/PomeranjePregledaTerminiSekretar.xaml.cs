@@ -1,4 +1,5 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.Kontroler;
+using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -26,6 +27,7 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class PomeranjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
+        TerminKontroler terminKontroler = new TerminKontroler();
         private static Termin terminStari;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
         public PomeranjePregledaTerminiSekretar(Termin stariTermin,List<Termin> termini)
@@ -58,8 +60,8 @@ namespace Bolnica.Sekretar.Pregled
             }
 
             termin.Pacijent = terminStari.Pacijent;
-            TerminRepozitorijum.ZakaziPregledSekretar(termin);
-            TerminRepozitorijum.OtkaziPregledSekretar(terminStari.IdTermina);
+            terminKontroler.ZakaziPregledSekretar(termin);
+            terminKontroler.OtkaziPregledSekretar(terminStari.IdTermina);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -1,4 +1,5 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.Kontroler;
+using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -23,6 +24,7 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class OtkazivanjePregledaSekretar : UserControl
     {
+        TerminKontroler terminKontroler = new TerminKontroler();
         private static String termin;
 
         public OtkazivanjePregledaSekretar(String idTermina)
@@ -40,7 +42,7 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            TerminRepozitorijum.OtkaziPregledSekretar(termin);
+            terminKontroler.OtkaziPregledSekretar(termin);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
