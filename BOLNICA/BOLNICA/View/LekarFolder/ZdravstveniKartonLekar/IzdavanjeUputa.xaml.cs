@@ -17,7 +17,7 @@ namespace Bolnica.LekarFolder
     public partial class IzdavanjeUputa : UserControl
     {
         //Dodato dok ne dodas kontroler za to
-        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
+        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         String idLekaraSpecijaliste = null;
@@ -105,8 +105,9 @@ namespace Bolnica.LekarFolder
             String imeprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
 
-            zdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
+            zdravstvenKartoniKontroler.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
             preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);
+            KartonLekar.Uputi.Add(noviUput);
         }
 
 
@@ -130,8 +131,9 @@ namespace Bolnica.LekarFolder
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.STACIONARNO, DateTime.Now, nalazStac.Text, imeprezime,
                     (DateTime)pocetakStacionarnog.SelectedDate, (DateTime)krajStacionarnog.SelectedDate, null); //ispravi
 
-            zdravstveniKartoniServis.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
+            zdravstvenKartoniKontroler.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
             preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);
+            KartonLekar.Uputi.Add(noviUput);
 
             if (noviUput != null)
             {

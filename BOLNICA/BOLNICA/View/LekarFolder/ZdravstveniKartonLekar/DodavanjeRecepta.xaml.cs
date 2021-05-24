@@ -17,8 +17,9 @@ namespace Bolnica
     public partial class DodavanjeRecepta : UserControl
     {
         //Dodato dok ne dodas kontroler za to
-        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
+        ZdravstvenKartoniKontroler zdravstveniKartoniKontroler = new ZdravstvenKartoniKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
+        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         Pregled izabranPregled = null;
         String sifraLeka = null;
         public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
@@ -53,7 +54,7 @@ namespace Bolnica
         {
             Lekovi.Clear();
 
-            foreach (Lek l in zdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
+            foreach (Lek l in zdravstveniKartoniKontroler.DobaviLekoveBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
             {
                 Lekovi.Add(l);
             }
@@ -66,11 +67,12 @@ namespace Bolnica
 
             if (!Validacija()) return;
 
-            Lek prepisanLek = LekoviServis.PretraziPoID(sifraLeka);
+            Lek prepisanLek = lekoviKontroler.PretraziPoID(sifraLeka);
             Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
-            zdravstveniKartoniServis.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
+            zdravstveniKartoniKontroler.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
             preglediKontroler.DodajRecept(izabranPregled.IdPregleda, novRecept);
+            KartonLekar.Recepti.Add(novRecept);
 
             PovratakNaKarton();
         }
@@ -86,7 +88,7 @@ namespace Bolnica
 
             }
 
-            if (zdravstveniKartoniServis.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
+            if (zdravstveniKartoniKontroler.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
             {
                 labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
             }

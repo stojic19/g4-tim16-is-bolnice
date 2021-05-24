@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Model;
@@ -25,12 +26,13 @@ namespace Bolnica
         Lek izabranLek = null;
         String KorisnickoImeLekara = null;
         List<Lek> noviZamenski = new List<Lek>();
+        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         public static ObservableCollection<Lek> Zamenski { get; set; } = new ObservableCollection<Lek>();
         public static ObservableCollection<Lek> SviLekovi { get; set; } = new ObservableCollection<Lek>();
         public IzmenaZamenskihLekova(String idLeka, String idLekara)
         {
             InitializeComponent();
-            izabranLek = LekoviServis.PretraziPoID(idLeka);
+            izabranLek = lekoviKontroler.PretraziPoID(idLeka);
             KorisnickoImeLekara = idLekara;
             this.DataContext = this;
             inicijalizacijaPolja();
@@ -61,7 +63,7 @@ namespace Bolnica
         {
             SviLekovi.Clear();
 
-            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
+            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
             {
                 if (!l.IDLeka.Equals(izabranLek.IDLeka) && !ProveraPostojanjaZamenskog(l.IDLeka) )
                 {
@@ -131,13 +133,13 @@ namespace Bolnica
 
             if (izabranZamenski != null)
             {
-                foreach (Lek l in LekoviRepozitorijum.SviLekovi)
+                foreach (Lek l in lekoviKontroler.DobaviSveLekove())
                 {
                     if (l.IDLeka.Equals(izabranZamenski.IDLeka))
                     {
+                        SviLekovi.Remove(izabranZamenski);
                         noviZamenski.Add(l);
                         Zamenski.Add(l);
-                        SviLekovi.Remove(l);
                         break;
                     }
                 }
@@ -152,8 +154,7 @@ namespace Bolnica
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
         {
-            LekoviServis.IzmenaZamenskihLekova(izabranLek.IDLeka, noviZamenski);
-            LekoviRepozitorijum.SerijalizacijaLekova();
+            lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IDLeka, noviZamenski);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
         }

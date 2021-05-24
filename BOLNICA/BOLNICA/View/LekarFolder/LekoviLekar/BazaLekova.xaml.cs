@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder.LekoviLekar;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
@@ -28,6 +29,7 @@ namespace Bolnica.LekarFolder
         public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
         public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
         public static ObservableCollection<Lek> Zamenski { get; set; } = new ObservableCollection<Lek>();
+        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
 
         public BazaLekova(String korisnickoImeLekara)
         {
@@ -36,7 +38,7 @@ namespace Bolnica.LekarFolder
 
             this.DataContext = this;
 
-            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
+            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
             {
                 Lekovi.Add(l);
             }
@@ -44,7 +46,7 @@ namespace Bolnica.LekarFolder
             Sastojci.Clear();
             Zamenski.Clear();
 
-            this.dataGridLekovi.ItemsSource = LekoviRepozitorijum.SviLekovi;
+            this.dataGridLekovi.ItemsSource = lekoviKontroler.DobaviSveLekove();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
             view2.Filter = FiltriranjeLeka;
 
@@ -90,12 +92,12 @@ namespace Bolnica.LekarFolder
             Sastojci.Clear();
             Zamenski.Clear();
 
-            foreach (Sastojak s in LekoviServis.PretraziPoID(idIzabranogLeka).Sastojci)
+            foreach (Sastojak s in lekoviKontroler.PretraziPoID(idIzabranogLeka).Sastojci)
             {
                 Sastojci.Add(s);
             }
 
-            foreach (Lek l in LekoviServis.PretraziPoID(idIzabranogLeka).Zamene)
+            foreach (Lek l in lekoviKontroler.PretraziPoID(idIzabranogLeka).Zamene)
             {
                 Zamenski.Add(l);
             }

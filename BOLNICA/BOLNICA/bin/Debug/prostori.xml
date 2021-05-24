@@ -6,11 +6,6 @@
     <Sprat>66</Sprat>
     <Kvadratura>6</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
-    <Renoviranje>
-      <RoomId>P33</RoomId>
-      <StartDay>2021-05-27T00:00:00</StartDay>
-      <EndDay>2021-05-31T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema>
       <Oprema>
         <IdOpreme>s1</IdOpreme>
@@ -26,11 +21,6 @@
     <Sprat>1</Sprat>
     <Kvadratura>1</Kvadratura>
     <JeRenoviranje>true</JeRenoviranje>
-    <Renoviranje>
-      <RoomId>P1</RoomId>
-      <StartDay>2021-05-05T00:00:00</StartDay>
-      <EndDay>2021-05-09T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema>
       <Oprema>
         <IdOpreme>s1</IdOpreme>
@@ -70,10 +60,6 @@
     <Sprat>3</Sprat>
     <Kvadratura>555</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
-    <Renoviranje>
-      <StartDay>0001-01-01T00:00:00</StartDay>
-      <EndDay>0001-01-01T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -82,10 +68,6 @@
     <Sprat>2</Sprat>
     <Kvadratura>36</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
-    <Renoviranje>
-      <StartDay>0001-01-01T00:00:00</StartDay>
-      <EndDay>0001-01-01T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema />
   </Prostor>
   <Prostor>
@@ -94,10 +76,6 @@
     <Sprat>1</Sprat>
     <Kvadratura>37</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
-    <Renoviranje>
-      <StartDay>0001-01-01T00:00:00</StartDay>
-      <EndDay>0001-01-01T00:00:00</EndDay>
-    </Renoviranje>
     <Oprema />
   </Prostor>
 </ArrayOfProstor>

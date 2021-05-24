@@ -1,4 +1,5 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.Kontroler;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Bolnica.Model.Rukovanja
     {
         public static List<Zahtjev> SviZahtevi { get; set; } = new List<Zahtjev>();
         private static String imeFajla = "zahtjevi.xml";
-        
+        private LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
 
         public static Zahtjev PretraziPoId(String idZahteva)
         {
@@ -42,7 +43,7 @@ namespace Bolnica.Model.Rukovanja
             return null;
         }
 
-        public static void OdobriZahtev(String idZahteva)
+        public static Boolean OdobriZahtev(String idZahteva)
         {
             foreach(Zahtjev z in SviZahtevi)
             {
@@ -50,9 +51,11 @@ namespace Bolnica.Model.Rukovanja
                 {
                     z.Odgovor = Enumi.VrsteOdgovora.Odobren;
                     z.Lijek.Verifikacija = true;
-                    LekoviRepozitorijum.SviLekovi.Add(z.Lijek);
+                    return true;
                 }
             }
+
+            return false;
 
         }
 

@@ -45,8 +45,6 @@ namespace Bolnica
 
             TerminiServis.brojac++;
 
-            Repozitorijum.LekoviRepozitorijum.DeserijalizacijaLekova();
-          
             ProstoriServis.DeserijalizacijaProstora();
             //ObavestenjaServis.Ucitaj();
            // RukovanjeTerminima.InicijalizacijaSTermina();

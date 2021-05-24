@@ -14,15 +14,13 @@ namespace Bolnica.Model
     class ZdravstveniKartoniServis
     {
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
+        LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
 
-        public static List<ZdravstveniKarton> sviKartoni = new List<ZdravstveniKarton>();
-
-        public List<Lek> LekoviBezAlergena(String idIzabranogPacijenta)
+        public List<Lek> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
         {
             List<Lek> lekoviBezAlergena = new List<Lek>();
 
-
-            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
+            foreach (Lek l in lekoviRepozitorijum.DobaviSveObjekte())
             {
                 if (!ProveraAlergicnosti(idIzabranogPacijenta, l.IDLeka))
                 {
@@ -50,19 +48,13 @@ namespace Bolnica.Model
 
         public void DodajRecept(String idPacijenta, Recept novRecept)
         {
-            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
-            {
+            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
+            p.ZdravstveniKarton.Recepti.Add(novRecept);
 
-                if (p.KorisnickoIme.Equals(idPacijenta))
-                {
-                    p.ZdravstveniKarton.Recepti.Add(novRecept);
-                    KartonLekar.Recepti.Add(novRecept);
-
-                }
-            }
+            naloziPacijenataServis.IzmeniNalog(p.KorisnickoIme, p);
         }
 
-        public List<Terapija> dobaviSveTerapijePacijenta(String idPacijenta)
+        public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
         {
             List<Terapija> pomocna = new List<Terapija>();
 
@@ -85,33 +77,24 @@ namespace Bolnica.Model
             return pomocna;
         }
 
-        public void DodajAnamnezu(Anamneza a)
+        public void DodajAnamnezu(Anamneza novaAnamneza)
         {
-            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
-            {
+            Pacijent p = naloziPacijenataServis.PretraziPoId(novaAnamneza.IdPacijenta);
+            p.ZdravstveniKarton.Anamneze.Add(novaAnamneza);
 
-                if (p.KorisnickoIme.Equals(a.IdPacijenta))
-                {
-                    p.ZdravstveniKarton.Anamneze.Add(a);
-                    KartonLekar.Anamneze.Add(a);
+            naloziPacijenataServis.IzmeniNalog(p.KorisnickoIme, p);
 
-                }
-            }
         }
 
         public void DodajUput(String idPacijenta,Uput noviUput)
         {
-            foreach (Pacijent p in naloziPacijenataServis.SviNalozi())
-            {
+            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
+            p.ZdravstveniKarton.Uputi.Add(noviUput);
 
-                if (p.KorisnickoIme.Equals(idPacijenta))
-                {
-                    p.ZdravstveniKarton.Uputi.Add(noviUput);
-                    KartonLekar.Uputi.Add(noviUput);
-
-                }
-            }
+            naloziPacijenataServis.IzmeniNalog(p.KorisnickoIme, p);
         }
+
+        //OVO SE SVE BRISE KAD IZMENIS ANAMNEZE
 
         public static List<Terapija> Privremeno { get; set; }
 

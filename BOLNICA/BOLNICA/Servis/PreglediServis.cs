@@ -15,7 +15,7 @@ namespace Bolnica.Model.Rukovanja
         private PreglediRepozitorijum preglediRepozitorijum = new PreglediRepozitorijum();
         public List<Pregled> DobaviSvePreglede()
         {
-            return preglediRepozitorijum.DobaviSvePreglede();
+            return preglediRepozitorijum.DobaviSveObjekte();
         }
 
         public List<Pregled> SortPoDatumuPregleda()
@@ -25,31 +25,34 @@ namespace Bolnica.Model.Rukovanja
 
         public Pregled PretraziPoId(String idPregleda)
         {
-            return preglediRepozitorijum.PretraziPoId(idPregleda);
+            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled[IdPregleda='" + idPregleda + "']");
         }
 
         public Pregled PristupPregledu(Termin terminPregleda)
         {
-            Pregled noviPregled = preglediRepozitorijum.PretragaPoTerminu(terminPregleda.IdTermina);
+            Pregled noviPregled = preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Termin[IdTermina='" + terminPregleda.IdTermina + "']");
 
             if (noviPregled == null)
             {
                 noviPregled = new Pregled(Guid.NewGuid().ToString(), terminPregleda);
-                preglediRepozitorijum.DodajPregled(noviPregled);
+                preglediRepozitorijum.DodajObjekat(noviPregled);
 
             }
 
             return noviPregled;
 
         }
+
         public void UklanjanjePregleda(String terminOtkazanogPregleda)
         {
-            preglediRepozitorijum.UklanjanjePregleda(terminOtkazanogPregleda);
+            preglediRepozitorijum.ObrisiObjekat("//ArrayOfPregled/Pregled/Termin[IdTermina='" + terminOtkazanogPregleda + "']");
         }
+
         public Pregled PretragaPoTerminu(String idTermina)
         {
-            return preglediRepozitorijum.PretragaPoTerminu(idTermina);
+            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Termin[IdTermina='" + idTermina + "']");
         }
+
         public void DodajUput(String idIzabranogPregleda, Uput noviUput)
         {
             Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
@@ -58,6 +61,7 @@ namespace Bolnica.Model.Rukovanja
 
             preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
+
         public void DodajRecept(String idPregleda, Recept novRecept)
         {
             Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idPregleda);
@@ -66,6 +70,7 @@ namespace Bolnica.Model.Rukovanja
 
             preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
+
         public void DodajAnamnezu(String idIzabranogPregleda, Anamneza novaAnamneza)
         {
             Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
@@ -74,6 +79,7 @@ namespace Bolnica.Model.Rukovanja
 
             preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
+
         public void UklanjanjeAnamneze(String idIzabranogPregleda)
         {
             Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
@@ -82,9 +88,10 @@ namespace Bolnica.Model.Rukovanja
 
             preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
         }
+
         public Pregled PretragaPoAnamnezi(String idAnamneze)
         {
-            return preglediRepozitorijum.PretragaPoAnamnezi(idAnamneze);
+            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Anamneza[IdAnamneze='" + idAnamneze + "']");
         }
     }
 }

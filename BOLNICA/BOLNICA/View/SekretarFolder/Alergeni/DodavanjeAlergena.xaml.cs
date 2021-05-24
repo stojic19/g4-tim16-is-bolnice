@@ -28,6 +28,7 @@ namespace Bolnica
     public partial class DodavanjeAlergena : UserControl
     {
         private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
+        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         public static ObservableCollection<Lek> SviLekovi { get; set; }
         private static String izabranPacijent = null;
 
@@ -39,7 +40,7 @@ namespace Bolnica
             this.DataContext = this;
 
             SviLekovi = new ObservableCollection<Lek>();
-            foreach (Lek l in LekoviRepozitorijum.SviLekovi)
+            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
             {
                 SviLekovi.Add(l);
             }

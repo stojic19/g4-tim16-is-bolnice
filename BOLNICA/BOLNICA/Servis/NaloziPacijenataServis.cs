@@ -12,6 +12,7 @@ namespace Model
     public class NaloziPacijenataServis
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
+        private LekoviRepozitorijum lekoviRepozitorijum = new LekoviRepozitorijum();
         public Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);
@@ -114,7 +115,7 @@ namespace Model
         }
         public Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
-            alergen.Lek = LekoviServis.PretraziPoID(alergen.IdAlergena);
+            alergen.Lek = lekoviRepozitorijum.PretraziLekPoId(alergen.IdAlergena);
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.DodajAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);

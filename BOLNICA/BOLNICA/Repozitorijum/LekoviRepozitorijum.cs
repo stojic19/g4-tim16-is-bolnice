@@ -1,48 +1,26 @@
-﻿using Model;
+﻿using Bolnica.Repozitorijum.Interfejsi;
+using Model;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
-    public class LekoviRepozitorijum
+    public class LekoviRepozitorijum : GlavniRepozitorijum<Lek>, LekoviRepozitorijumInterfejs
     {
-        public static List<Lek> SviLekovi { get; set; } = new List<Lek>();
-
-        public void DodajLek(Lek novLek)
+        public LekoviRepozitorijum()
         {
-            SviLekovi.Add(novLek);
+            imeFajla = "lekovi.xml";
         }
 
-        public static void SerijalizacijaLekova()
+        public Lek PretraziLekPoId(String idLeka)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
-            TextWriter tw = new StreamWriter("lekovi.xml");
-            xmlSerializer.Serialize(tw, SviLekovi);
-            tw.Close();
-
+            return PretraziPoId("//ArrayOfLek/Lek[IDLeka='" + idLeka + "']");
         }
 
-        public static List<Lek> DeserijalizacijaLekova()
+
+        public void IzmenaLeka(Lek noviPodaci)
         {
-            if (File.ReadAllText("lekovi.xml").Trim().Equals(""))
-            {
-                return SviLekovi;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead("lekovi.xml");
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lek>));
-                SviLekovi = (List<Lek>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return SviLekovi;
-
-            }
-
+            ObrisiObjekat("//ArrayOfLek/Lek[IDLeka='" + noviPodaci.IDLeka + "']");
+            DodajObjekat(noviPodaci);
         }
     }
 }

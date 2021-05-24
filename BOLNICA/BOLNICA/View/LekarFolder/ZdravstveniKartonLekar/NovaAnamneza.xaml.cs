@@ -1,23 +1,13 @@
 ﻿using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.Model;
-using Bolnica.Model.Rukovanja;
 using Model;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
@@ -26,9 +16,9 @@ namespace Bolnica
     public partial class NovaAnamneza : UserControl
     {
         ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
-        //Dodato dok ne dodas kontroler za to
-        ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
-        private PreglediKontroler preglediKontroler = new PreglediKontroler();
+        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
+        PreglediKontroler preglediKontroler = new PreglediKontroler();
+        LekoviKontroler lekoviKontroler = new LekoviKontroler();
         Pregled izabranPregled = null;
         String idAnamneze = null;
         String sifraLeka = null;
@@ -39,11 +29,11 @@ namespace Bolnica
             this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             idAnamneze = Guid.NewGuid().ToString();
 
-            ZdravstveniKartoniServis.NovoPrivremeno();
+            ZdravstveniKartoniServis.NovoPrivremeno(); //brisi
 
             inicijalizacijaPolja();
 
-            this.TabelaLekova.ItemsSource = zdravstveniKartoniServis.LekoviBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            this.TabelaLekova.ItemsSource = zdravstvenKartoniKontroler.DobaviLekoveBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
 
@@ -52,7 +42,7 @@ namespace Bolnica
 
             Terapije = new ObservableCollection<Terapija>();
 
-            foreach (Terapija t in ZdravstveniKartoniServis.Privremeno)
+            foreach (Terapija t in ZdravstveniKartoniServis.Privremeno) //brisi
             {
                 Terapije.Add(t);
             }
@@ -76,11 +66,6 @@ namespace Bolnica
             datumPregleda.Text = (datum.ToString("dd/MM/yyyy"));
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-           // NaloziPacijenataServis.Sacuvaj();
-        }
-
         private void CuvanjeAnamneze(object sender, RoutedEventArgs e)
         {
             String imeiprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
@@ -94,11 +79,12 @@ namespace Bolnica
 
             }
 
-            Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno);
-            // NaloziPacijenataServis.Sacuvaj();
-            zdravstveniKartoniServis.DodajAnamnezu(a);
+            Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno); //brisi
+
+            zdravstvenKartoniKontroler.DodajAnamnezu(a);
             preglediKontroler.DodajAnamnezu(izabranPregled.IdPregleda, a);
-            ZdravstveniKartoniServis.NovoPrivremeno();
+            KartonLekar.Anamneze.Add(a);
+            ZdravstveniKartoniServis.NovoPrivremeno(); //brisi
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
@@ -146,10 +132,10 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = LekoviServis.PretraziPoID(sifraLeka);
+            Lek preporucenLek = lekoviKontroler.PretraziPoID(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
             Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
-            ZdravstveniKartoniServis.dodajPrivremeno(t);
+            ZdravstveniKartoniServis.dodajPrivremeno(t); //brisi
             Terapije.Add(t);
 
             //magdalena
@@ -189,7 +175,7 @@ namespace Bolnica
 
         private bool ValidacijaPolja()
         {
-            if (this.imeLeka.Text.Equals("") ||  this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
+            if (this.imeLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
             {
                 validacija.Content = "Niste popunili sva polja!";
                 validacija.Visibility = Visibility.Visible;

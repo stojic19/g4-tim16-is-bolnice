@@ -70,10 +70,17 @@
     </ApplicationDefinition>
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
+    <Compile Include="Kontroler\LekoviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\PreglediKontorler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
+    <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
+    <Compile Include="Model\Entitet.cs" />
+    <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\PreglediRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>

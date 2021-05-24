@@ -90,10 +90,26 @@
       <Kolicina>321</Kolicina>
       <Proizvodjac>ars</Proizvodjac>
       <Sastojci />
+      <Verifikacija>true</Verifikacija>
+      <Zamene />
+    </Lijek>
+    <Odgovor>Odobren</Odgovor>
+    <DatumSlanja>2021-05-12T22:57:48.4499651+02:00</DatumSlanja>
+  </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>e24364cc-30dd-45f3-9449-2dc8b1a1407e</IdZahtjeva>
+    <Lijek>
+      <IDLeka>0a8699fd-fde8-43fd-b639-a8327ec8ba3c</IDLeka>
+      <NazivLeka>Xalol</NazivLeka>
+      <Jacina>10mg</Jacina>
+      <Kolicina>2132</Kolicina>
+      <Proizvodjac>Parisol</Proizvodjac>
+      <Sastojci />
       <Verifikacija>false</Verifikacija>
       <Zamene />
     </Lijek>
-    <Odgovor>Čekanje</Odgovor>
-    <DatumSlanja>2021-05-12T22:57:48.4499651+02:00</DatumSlanja>
+    <Odgovor>Odbijen</Odgovor>
+    <RazlogOdbijanja>Ne svidja mi se</RazlogOdbijanja>
+    <DatumSlanja>2021-05-24T21:58:09.3851625+02:00</DatumSlanja>
   </Zahtjev>
 </ArrayOfZahtjev>

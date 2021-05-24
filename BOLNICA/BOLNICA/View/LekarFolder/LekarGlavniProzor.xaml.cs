@@ -48,7 +48,6 @@ namespace Bolnica.LekarFolder
         {
             TerminRepozitorijum.SerijalizacijaTermina();
             TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            LekoviRepozitorijum.SerijalizacijaLekova();
         }
 
         public void PromenaPogleda(UserControl userControl)

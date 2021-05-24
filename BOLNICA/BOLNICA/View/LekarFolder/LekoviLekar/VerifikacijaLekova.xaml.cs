@@ -1,4 +1,5 @@
-﻿using Bolnica.LekarFolder.LekoviLekar;
+﻿using Bolnica.Kontroler;
+using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
@@ -25,6 +26,7 @@ namespace Bolnica.LekarFolder
     {
         public static ObservableCollection<Zahtjev> Zahtevi { get; set; } = new ObservableCollection<Zahtjev>();
         public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
+        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         String KorisnickoImeLekara = null;
 
         public VerifikacijaLekova(string korisnickoImeLekara)
@@ -109,10 +111,13 @@ namespace Bolnica.LekarFolder
 
             if (Validacija(izabranZahtev))
             {
-                ZahteviServis.OdobriZahtev(izabranZahtev.IdZahtjeva);
+                if (ZahteviServis.OdobriZahtev(izabranZahtev.IdZahtjeva))
+                {
+                    lekoviKontroler.DodajLek(izabranZahtev.Lijek);
+                }
+
                 inicijalizacijaTabeleZahteva();
                 ZahteviServis.SerijalizacijaZahtjeva();
-                LekoviRepozitorijum.SerijalizacijaLekova();
 
             }
         }
