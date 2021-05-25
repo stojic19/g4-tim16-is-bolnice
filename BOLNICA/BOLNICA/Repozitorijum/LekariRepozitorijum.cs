@@ -12,7 +12,12 @@ namespace Bolnica.Repozitorijum
     {
         public LekariRepozitorijum()
         {
-            imeFajla = "lekari.txt";
+            imeFajla = "lekari.xml";
+        }
+        public void IzmeniLekara(Lekar lekar)
+        {
+            ObrisiObjekat("//ArrayOfLekar/Lekar[KorisnickoIme='" + lekar.KorisnickoIme + "']");
+            DodajObjekat(lekar);
         }
     }
 }

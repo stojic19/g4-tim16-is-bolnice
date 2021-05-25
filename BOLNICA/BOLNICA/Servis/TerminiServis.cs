@@ -25,7 +25,14 @@ namespace Model
             sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak",SpecijalizacijeLekara.nema));
             sviLekari.Add(new Lekar("KristinaStojic", "Kristina", "Stojic", DateTime.Now, Pol.zenski, "43121", "Adresa Adresić 54", "0634313", "kristojic@lekar.com", "kristinastojic", SpecijalizacijeLekara.internista));
 
-
+            Serijalizuj();
+        }
+        public static void Serijalizuj()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
+            TextWriter tw = new StreamWriter("lekari.xml");
+            xmlSerializer.Serialize(tw, sviLekari);
+            tw.Close();
         }
 
         public List<Termin> PretraziPoLekaru(string korisnickoIme)
@@ -49,7 +56,7 @@ namespace Model
 
             foreach(Lekar l in sviLekari)
             {
-                if (l.specijalizacija != SpecijalizacijeLekara.nema) specijaliste.Add(l);
+                if (l.Specijalizacija != SpecijalizacijeLekara.nema) specijaliste.Add(l);
             }
 
             return specijaliste;
@@ -166,7 +173,7 @@ namespace Model
             List<Termin> terminiKodIzabranog = new List<Termin>();
             foreach (Termin termin in terminiUIntervalu)
             {
-                if (termin.Lekar.KorisnickoIme.Equals(korisnickoImeLekara) && termin.Lekar.specijalizacija == SpecijalizacijeLekara.nema)
+                if (termin.Lekar.KorisnickoIme.Equals(korisnickoImeLekara) && termin.Lekar.Specijalizacija == SpecijalizacijeLekara.nema)
                     terminiKodIzabranog.Add(termin);
             }
             return terminiKodIzabranog;
@@ -188,7 +195,7 @@ namespace Model
             List<Termin> terminiOpstePrakse = new List<Termin>();
             foreach (Termin termin in terminiSvihLekara)
             {
-                if (termin.Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                if (termin.Lekar.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
                     terminiOpstePrakse.Add(termin);
             }
             return UkloniDupleDatume(SortTerminaPoDatumu(terminiOpstePrakse));

@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using System;
@@ -23,6 +24,8 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PromenaSmeneSekretar : UserControl
     {
+        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+
         private String IdIzabranogLekara;
         private RadniDan radniDanZaPromenuSmene;
         public PromenaSmeneSekretar(String idIzabranogLekara, RadniDan radniDan)
@@ -30,6 +33,9 @@ namespace Bolnica.SekretarFolder
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
             radniDanZaPromenuSmene = radniDan;
+
+            dpPocetniDatum.SelectedDate = radniDan.PocetakSmene;
+            dpKrajnjiDatum.SelectedDate = radniDan.KrajSmene;
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
@@ -85,7 +91,7 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            //Poziv kontrolera za promenu smene
+            rasporedLekaraKontroler.PromeniSmenu(IdIzabranogLekara, radniDanZaPromenuSmene, cbSmena.Text);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

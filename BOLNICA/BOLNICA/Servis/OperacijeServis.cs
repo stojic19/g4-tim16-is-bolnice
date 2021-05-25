@@ -256,7 +256,7 @@ namespace Bolnica.Model
 
         private bool TerminOdgovaraHitnojOperaciji(SpecijalizacijeLekara oblastLekara, int trajanje, Termin t)
         {
-            return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje;
+            return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.Specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje;
         }
 
         private List<String> DobaviPocetkeTermina(ref int sat, ref int minut)
@@ -305,7 +305,7 @@ namespace Bolnica.Model
             vreme = DobaviPocetkeTermina(ref sat, ref minut);
             foreach (Termin t in sviTermini)
             {
-                if (sat != 23 && DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje)
+                if (sat != 23 && DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.Specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje)
                 {
                     foreach (String cas in vreme)
                     {
@@ -316,7 +316,7 @@ namespace Bolnica.Model
                         }
                     }
                 }
-                else if ((DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 || DateTime.Compare(t.Datum.Date, DateTime.Now.AddDays(1).Date) == 0) && t.Lekar.specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje)
+                else if ((DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 || DateTime.Compare(t.Datum.Date, DateTime.Now.AddDays(1).Date) == 0) && t.Lekar.Specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje)
                 {
                     foreach (String cas in vreme)
                     {

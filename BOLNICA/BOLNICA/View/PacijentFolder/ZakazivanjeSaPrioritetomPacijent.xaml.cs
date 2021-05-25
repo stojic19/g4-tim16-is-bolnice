@@ -189,7 +189,7 @@ namespace Bolnica
             List<Lekar> pomocna = new List<Lekar>();
             foreach (Lekar l in TerminiServis.sviLekari)
             {
-                if (l.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                if (l.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
                     pomocna.Add(l);
             }
             lekariOpstePrakse = pomocna;

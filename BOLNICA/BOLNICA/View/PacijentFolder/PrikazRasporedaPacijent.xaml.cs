@@ -93,7 +93,7 @@ namespace Bolnica
                     return false;
                 }
             }
-            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
             {
                 MessageBox.Show("Možete pomeriti termin samo kod lekara opšte prakse!");
                 return false;
@@ -113,7 +113,7 @@ namespace Bolnica
                 MessageBox.Show("Izaberite termin koji želite da otkažete!");
                 return false;
             }
-            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.specijalizacija.Equals(SpecijalizacijeLekara.nema))
+            if (!((Termin)SviTerminiPacijenta.SelectedItem).Lekar.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
             {
                 MessageBox.Show("Možete otkazati termin samo kod lekara opšte prakse!");
                 return false;

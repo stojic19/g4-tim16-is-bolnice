@@ -27,8 +27,10 @@ namespace Bolnica
         //List<Sekretar> Sekretari = new List<Sekretar>();
         List<Osoba> Sekretari = new List<Osoba>();
         List<Pacijent> Pacijenti = new List<Pacijent>();
+        List<Lekar> Lekari = new List<Lekar>();
 
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         
         public Login()
@@ -38,18 +40,13 @@ namespace Bolnica
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić", DateTime.Now, Pol.muski, "1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
 
-            if (TerminiServis.brojac == 0)
-            {
-                TerminiServis.PrivremenaInicijalizacijaLekara();
-            }
-
-            TerminiServis.brojac++;
-
             ProstoriServis.DeserijalizacijaProstora();
             //ObavestenjaServis.Ucitaj();
-           // RukovanjeTerminima.InicijalizacijaSTermina();
+            // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
+            // TerminiServis.PrivremenaInicijalizacijaLekara();
             Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
+            Lekari = lekariKontroler.DobaviSveLekare();
 
             hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
             AnketeRepozitorijum.inicijalizujPitanjaOBolnici();
@@ -113,7 +110,7 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Lekar l in TerminiServis.sviLekari)
+            foreach (Lekar l in Lekari)
             {
                 if (l.KorisnickoIme.Equals(username.Text))
                 {

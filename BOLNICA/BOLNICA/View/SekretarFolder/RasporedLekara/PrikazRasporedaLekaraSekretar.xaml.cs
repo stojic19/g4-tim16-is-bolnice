@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -25,6 +26,8 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PrikazRasporedaLekaraSekretar : UserControl
     {
+        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+
         private ObservableCollection<RadniDan> RadniDani;
         private ObservableCollection<Odsustvo> Odsustva;
 
@@ -40,7 +43,14 @@ namespace Bolnica.SekretarFolder
             RadniDani = new ObservableCollection<RadniDan>();
             Odsustva = new ObservableCollection<Odsustvo>();
 
-            //Dodavanje radnih i slobodnih dana u tabele za prikaz
+            foreach(RadniDan radniDan in rasporedLekaraKontroler.DobaviRadneDanePoIdLekara(idIzabranogLekara))
+            {
+                RadniDani.Add(radniDan);
+            }
+            foreach(Odsustvo odsustvo in rasporedLekaraKontroler.DobaviOdsustvoPoIdLekara(idIzabranogLekara))
+            {
+                Odsustva.Add(odsustvo);
+            }
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
@@ -98,22 +108,39 @@ namespace Bolnica.SekretarFolder
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             //Promeni smenu
+            if (dataGridRadniDani.SelectedIndex != -1)
+            {
+                RadniDan radniDanZaPromenuSmene = ((RadniDan)dataGridRadniDani.SelectedItem);
 
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PromenaSmeneSekretar(idIzabranogLekara, new RadniDan(DateTime.Now,DateTime.Now));
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                usc = new PromenaSmeneSekretar(idIzabranogLekara, radniDanZaPromenuSmene);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite radni dan za promenu smene!");
+            }
         }
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
             //Ukloni radni dan
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+            if (dataGridRadniDani.SelectedIndex != -1)
+            {
+                RadniDan radniDanZaUklanjanje = ((RadniDan)dataGridRadniDani.SelectedItem);
 
-            usc = new UklanjanjeRadnogDanaSekretar(idIzabranogLekara, new RadniDan(DateTime.Now, DateTime.Now));
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new UklanjanjeRadnogDanaSekretar(idIzabranogLekara, radniDanZaUklanjanje);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite radni dan za uklanjanje!");
+            }
         }
 
         private void Button_Click3(object sender, RoutedEventArgs e)
@@ -129,21 +156,39 @@ namespace Bolnica.SekretarFolder
         private void Button_Click4(object sender, RoutedEventArgs e)
         {
             //Ukloni slobodne dane
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+            if (dataGridOdsustva.SelectedIndex != -1)
+            {
+                Odsustvo odsustvoZaUklanjanje = ((Odsustvo)dataGridOdsustva.SelectedItem);
 
-            usc = new UklanjanjeSlobodnogDanaSekretar(idIzabranogLekara, new Odsustvo(DateTime.Now, DateTime.Now));
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new UklanjanjeSlobodnogDanaSekretar(idIzabranogLekara, odsustvoZaUklanjanje);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite slobodne dane za uklanjanje!");
+            }
         }
 
         private void Button_Click5(object sender, RoutedEventArgs e)
         {
             //Ažuriranje trajanja odmora
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+            if (dataGridOdsustva.SelectedIndex != -1)
+            {
+                Odsustvo odsustvoZaIzmenu = ((Odsustvo)dataGridOdsustva.SelectedItem);
 
-            usc = new PromenaTrajanjaOdmora(idIzabranogLekara, new Odsustvo(DateTime.Now, DateTime.Now));
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+                usc = new PromenaTrajanjaOdmora(idIzabranogLekara, odsustvoZaIzmenu);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite slobodne dane za uklanjanje!");
+            }    
         }
     }
 }

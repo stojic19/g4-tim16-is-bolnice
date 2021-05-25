@@ -30,7 +30,6 @@ namespace Bolnica.Repozitorijum
                 fileStream.Close();
                 return sviObjekti;
             }
-
         }
 
         public T PretraziPoId(String obrazacPretrage)
@@ -85,7 +84,6 @@ namespace Bolnica.Repozitorijum
             TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, sviObjekti);
             tw.Close();
-
         }
 
     }

@@ -70,6 +70,8 @@
     </ApplicationDefinition>
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
+    <Compile Include="Kontroler\LekariKontroler.cs" />
+    <Compile Include="Kontroler\RasporedLekaraKontroler.cs" />
     <Compile Include="Kontroler\LekoviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
@@ -83,12 +85,16 @@
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\LekariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\NaloziPacijenataRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\ObavestenjaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\OperacijeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PreglediRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\LekariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
+    <Compile Include="Servis\LekariServis.cs" />
+    <Compile Include="Servis\RasporedLekaraServis.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>

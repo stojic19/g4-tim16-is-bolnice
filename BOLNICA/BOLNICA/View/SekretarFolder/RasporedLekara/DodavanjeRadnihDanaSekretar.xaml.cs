@@ -1,4 +1,6 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using System;
 using System.Collections.Generic;
@@ -9,11 +11,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.SekretarFolder
 {
@@ -22,6 +26,7 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class DodavanjeRadnihDanaSekretar : UserControl
     {
+        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
         private String IdIzabranogLekara;
         public DodavanjeRadnihDanaSekretar(String idIzabranogLekara)
         {
@@ -82,13 +87,39 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            //Poziv kontrolera za dodavanje radnih dana
+            if (!PodaciValidni())
+            {
+                return;
+            }
+            if (rasporedLekaraKontroler.DaLiJeMoguceRaditiUZadatomPeriodu(IdIzabranogLekara, new RadniDan(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
+            {
+                rasporedLekaraKontroler.DodajRadneDane(IdIzabranogLekara, new RadniDan(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value), cbSmena.Text);
 
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("U zadatom periodu lekar ima slobodne dane!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        private bool PodaciValidni()
+        {
+            if (dpPocetniDatum.ToString().Equals("") || dpKrajnjiDatum.ToString().Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate odabrati oba datuma!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (DateTime.Compare(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value) > 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Pocetni datum ne sme biti kasnije od krajnjeg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

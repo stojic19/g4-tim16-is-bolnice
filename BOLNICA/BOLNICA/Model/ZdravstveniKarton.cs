@@ -61,7 +61,6 @@ namespace Model
             List<Alergeni> novaLista = new List<Alergeni>();
             foreach (Alergeni alergen in Alergeni)
             {
-                Console.WriteLine(alergen.IdAlergena);
                 if (!alergen.IdAlergena.Equals(alergenZaUklanjanje.IdAlergena))
                     novaLista.Add(alergen);
             }

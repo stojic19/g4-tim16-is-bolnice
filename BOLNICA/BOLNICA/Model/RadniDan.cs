@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    public class RadniDan 
+    public class RadniDan : INotifyPropertyChanged
     {
-        private DateTime PocetakSmene { get; set; }
-        private DateTime KrajSmene { get; set; }
+        private DateTime pocetakSmene;
+        private DateTime krajSmene;
 
         public RadniDan(DateTime pocetakSmene, DateTime krajSmene)
         {
@@ -18,6 +18,28 @@ namespace Bolnica.Model
             this.KrajSmene = krajSmene;
         }
 
+        public DateTime PocetakSmene
+        {
+            get
+            {
+                return pocetakSmene;
+            }
+            set
+            {
+                pocetakSmene = value;
+            }
+        }
+        public DateTime KrajSmene
+        {
+            get
+            {
+                return krajSmene;
+            }
+            set
+            {
+                krajSmene = value;
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {

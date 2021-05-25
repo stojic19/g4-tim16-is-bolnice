@@ -1,4 +1,5 @@
 ﻿using Bolnica.Servis;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace Bolnica.Kontroler
 {
     class LekariKontroler
     {
-        LekariServis lekariServis = new LekariServis();
+        LekariServis lekariServis= new LekariServis();
+        
+        public List<Lekar> DobaviSveLekare()
+        {
+            return lekariServis.SviLekari();
+        }
     }
 }

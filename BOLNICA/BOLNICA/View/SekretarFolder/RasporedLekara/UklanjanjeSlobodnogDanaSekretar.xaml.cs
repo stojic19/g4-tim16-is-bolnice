@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using System;
@@ -23,6 +24,8 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class UklanjanjeSlobodnogDanaSekretar : UserControl
     {
+        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+
         private string idIzabranogLekara;
         private Odsustvo OdsustvoZaUklanjanje;
 
@@ -87,7 +90,7 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Pozivanje kontrolera za uklanjanje slobodnog dana
+            rasporedLekaraKontroler.UkloniSlobodneDane(idIzabranogLekara, OdsustvoZaUklanjanje);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

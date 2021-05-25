@@ -9,5 +9,6 @@ namespace Bolnica.Repozitorijum.Interfejsi
 {
     interface LekariRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Lekar>
     {
+        void IzmeniLekara(Lekar lekar);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using System;
@@ -10,11 +11,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.SekretarFolder
 {
@@ -23,6 +26,8 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PromenaTrajanjaOdmora : UserControl
     {
+        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+
         private String IdIzabranogLekara;
         private Odsustvo odsustvoZaIzmenu;
         public PromenaTrajanjaOdmora(String idIzabranogLekara, Odsustvo odsustvo)
@@ -30,6 +35,9 @@ namespace Bolnica.SekretarFolder
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
             odsustvoZaIzmenu = odsustvo;
+
+            dpPocetniDatum.SelectedDate = odsustvoZaIzmenu.PocetakOdsustva;
+            dpKrajnjiDatum.SelectedDate = odsustvoZaIzmenu.KrajOdsustva;
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
@@ -85,13 +93,40 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            //Poziv kontrolera za promenu trajanja odmora
+            if(!PodaciValidni())
+            {
+                return;
+            }
+            if(rasporedLekaraKontroler.DaLiJeMogucGodisnjiUZadatomPeriodu(IdIzabranogLekara, new Odsustvo(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
+            {
+                rasporedLekaraKontroler.IzmeniSlobodneDane(IdIzabranogLekara, odsustvoZaIzmenu, new Odsustvo(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value));
 
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Nije moguc odlazak na odmor u zadatom periodu!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private bool PodaciValidni()
+        {
+            if (dpPocetniDatum.ToString().Equals("") || dpKrajnjiDatum.ToString().Equals(""))
+            {
+                System.Windows.Forms.MessageBox.Show("Morate odabrati oba datuma!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(DateTime.Compare(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value) > 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Pocetni datum ne sme biti kasnije od krajnjeg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

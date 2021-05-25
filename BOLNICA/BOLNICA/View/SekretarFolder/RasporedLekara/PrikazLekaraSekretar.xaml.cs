@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Kontroler;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
@@ -24,6 +25,7 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PrikazLekaraSekretar : UserControl
     {
+        LekariKontroler lekariKontroler = new LekariKontroler();
         public static ObservableCollection<Lekar> Lekari{ get; set; }
 
         public PrikazLekaraSekretar()
@@ -34,7 +36,7 @@ namespace Bolnica.SekretarFolder
 
             Lekari = new ObservableCollection<Lekar>();
 
-            foreach (Lekar lekar in TerminiServis.sviLekari)
+            foreach (Lekar lekar in lekariKontroler.DobaviSveLekare())
             {
                 Lekari.Add(lekar);
             }
