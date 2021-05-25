@@ -37,9 +37,14 @@
                 <Run Text="Stacionarno lečenje"/>
             </Bold>
         </Button>
-        <Button Background="FloralWhite" Width="325" Height="77" Margin="356,568,343,123" Click="Transfer_Click" FontFamily="Times New Roman" FontSize="15px">
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="167,574,532,117" Click="Transfer_Click" FontFamily="Times New Roman" FontSize="15px">
             <Bold>
                 <Run Text="Transfer pacijenata"/>
+            </Bold>
+        </Button>
+        <Button Background="FloralWhite" Width="325" Height="77" Margin="532,574,167,117" Click="RasporedLekara_Click" FontFamily="Times New Roman" FontSize="15px">
+            <Bold>
+                <Run Text="Raspored lekara"/>
             </Bold>
         </Button>
         <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="938,40,0,693" Width="29" FontSize="25" FontWeight="Bold">

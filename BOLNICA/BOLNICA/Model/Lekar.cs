@@ -1,9 +1,17 @@
+using Bolnica.Model;
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
     public class Lekar : Osoba
     {
+        private List<RadniDan> RadniDani { get; set; }
+
+        private Godisnji Godisnji { get; set; }
+
+        private List<Odsustvo> Odsustvo { get; set; }
+
         public SpecijalizacijeLekara specijalizacija { get; set; } = SpecijalizacijeLekara.nema;
         public Boolean dostupnost { get; set; } = false;
         public Lekar() { }
@@ -35,6 +43,10 @@ namespace Model
             this.KontaktTelefon = telefon;
             this.Email = email;
             this.Lozinka = lozinka;
+
+            RadniDani = new List<RadniDan>();
+            Godisnji = new Godisnji(DateTime.Now.Year, 20);
+            Odsustvo = new List<Odsustvo>();
         }
 
         public Lekar(string korisnickoIme, string ime, string prezime)
@@ -51,7 +63,6 @@ namespace Model
             this.specijalizacija = specijalizacija;
             this.dostupnost = dostupnost;
         }
-
 
     }
 }

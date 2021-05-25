@@ -77,6 +77,10 @@
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Model\Entitet.cs" />
+    <Compile Include="Model\Enumi\BracniStatus.cs" />
+    <Compile Include="Model\Godisnji.cs" />
+    <Compile Include="Model\Odsustvo.cs" />
+    <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
@@ -305,6 +309,30 @@
     </Compile>
     <Compile Include="View\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\PromenaTrajanjaOdmora.xaml.cs">
+      <DependentUpon>PromenaTrajanjaOdmora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\PromenaSmeneSekretar.xaml.cs">
+      <DependentUpon>PromenaSmeneSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml.cs">
+      <DependentUpon>DodavanjeSlobodnihDanaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml.cs">
+      <DependentUpon>DodavanjeRadnihDanaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml.cs">
+      <DependentUpon>UklanjanjeSlobodnogDanaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml.cs">
+      <DependentUpon>UklanjanjeRadnogDanaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml.cs">
+      <DependentUpon>PrikazRasporedaLekaraSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.xaml.cs">
+      <DependentUpon>PrikazLekaraSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpravnikFolder\DetaljiOLijeku.xaml.cs">
       <DependentUpon>DetaljiOLijeku.xaml</DependentUpon>
@@ -684,6 +712,38 @@
     <Page Include="View\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\PromenaTrajanjaOdmora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\PromenaSmeneSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\UpravnikFolder\DetaljiOLijeku.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,5 +1,6 @@
 using Bolnica;
 using Bolnica.Model;
+using Bolnica.Model.Enumi;
 using System;
 using System.Collections.Generic;
 
@@ -7,6 +8,11 @@ namespace Model
 {
     public class ZdravstveniKarton
     {
+
+        private BracniStatus BracniStatus;
+
+        private String MestoZaposlenja;
+
         public String IDPacijenta { get; set; }
 
         public ZdravstveniKarton() { }
@@ -15,6 +21,8 @@ namespace Model
         {
             IDPacijenta = iDPacijenta;
             Alergeni = new List<Alergeni>();
+            BracniStatus = BracniStatus.neozenjenNeudata;
+            MestoZaposlenja = "";
         }
 
         public List<Alergeni> Alergeni { get; set; }

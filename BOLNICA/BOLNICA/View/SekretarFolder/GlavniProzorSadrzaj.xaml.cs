@@ -80,5 +80,14 @@ namespace Bolnica.SekretarFolder
             var myWindow = Window.GetWindow(this);
             myWindow.Close();
         }
+
+        private void RasporedLekara_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazLekaraSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
     }
 }

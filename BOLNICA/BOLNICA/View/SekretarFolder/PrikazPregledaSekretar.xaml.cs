@@ -1,4 +1,5 @@
 ﻿using Bolnica.Sekretar.Pregled;
+using Bolnica.SekretarFolder.Operacija;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,6 @@ namespace Bolnica.SekretarFolder
         public PrikazPregledaSekretar()
         {
             InitializeComponent();
-
-            UserControl usc = null;
-            usc = new TerminiPregledaSekretar();
-            MainPanel.Children.Add(usc);
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
@@ -61,6 +58,14 @@ namespace Bolnica.SekretarFolder
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new ObavestenjaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Operacije_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
