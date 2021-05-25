@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Model
 {
-   public class Osoba: INotifyPropertyChanged
+   public class Osoba : INotifyPropertyChanged
    {
         public String Ime { get; set; }
         public String Prezime { get; set; }
