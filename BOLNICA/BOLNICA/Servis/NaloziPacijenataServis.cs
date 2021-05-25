@@ -16,7 +16,7 @@ namespace Model
         private LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
         public Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
         {
-            naloziPacijenataRepozitorijum.DodajPacijenta(pacijentZaDodavanje);
+            naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
             PrikazNalogaSekretar.NaloziPacijenata.Add(pacijentZaDodavanje);
 
             if (SviNalozi().Contains(pacijentZaDodavanje))
@@ -64,7 +64,7 @@ namespace Model
                 return false;
             }
 
-            naloziPacijenataRepozitorijum.ObrisiPacijenta(pacijentZaUklanjanje);
+            naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNalogaZaUklanjanje + "']");
             PrikazNalogaSekretar.NaloziPacijenata.Remove(pacijentZaUklanjanje);
 
             if (SviNalozi().Contains(pacijentZaUklanjanje) || PrikazNalogaSekretar.NaloziPacijenata.Contains(pacijentZaUklanjanje))
@@ -79,24 +79,16 @@ namespace Model
 
         public Pacijent PretraziPoId(String idNaloga)
         {
-            foreach (Pacijent pacijent in SviNalozi())
-            {
-                if (pacijent.KorisnickoIme.Equals(idNaloga))
-                {
-
-                    return pacijent;
-                }
-            }
-            return null;
+            return naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNaloga + "']");
         }
 
         public List<Pacijent> SviNalozi()
         {
-            return naloziPacijenataRepozitorijum.DobaviSveNalogePacijenata();
+            return naloziPacijenataRepozitorijum.DobaviSveObjekte();
         }
         public List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
         {
-            return PretraziPoId(idPacijenta).DobaviAlergene();
+            return naloziPacijenataRepozitorijum.DobaviAlergenePacijenta(idPacijenta);
         }
         public Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
         {

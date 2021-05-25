@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Repozitorijum.Interfejsi;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,36 +11,14 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
-    class OperacijeRepozitorijum
+    class OperacijeRepozitorijum : GlavniRepozitorijum<Termin>, OperacijeRepozitorijumInterfejs
     {
-
-        private static String imeFajla = "terminiOperacija.xml";
-
-        public List<Termin> DobaviSveTermineOperacija()
+        public OperacijeRepozitorijum()
         {
-            List<Termin> sveOperacije = new List<Termin>();
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return sveOperacije;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
-                sveOperacije = (List<Termin>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return sveOperacije;
-            }
-
+            imeFajla = "terminiOperacija.xml";
         }
-
+        
         /*
-        public static List<Alergeni> DobaviAlergenePacijenta(String pacijentKorisnickoIme)
-        {
-            return DobaviPacijentaPoId(pacijentKorisnickoIme).DobaviAlergene();
-        }
-        */
-
         public Termin DobaviTerminPoId(String idTermina)
         {
             XmlDocument doc = new XmlDocument();
@@ -49,56 +28,12 @@ namespace Bolnica.Repozitorijum
             XmlNode node = root.SelectSingleNode("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']", nsmgr);
             Termin termin = KonvertujCvorUObjekat(node);
             return termin;
-        }
-
-        private Termin KonvertujCvorUObjekat(XmlNode cvorTermina)
-        {
-            MemoryStream stm = new MemoryStream();
-            StreamWriter stw = new StreamWriter(stm);
-            stw.Write(cvorTermina.OuterXml);
-            stw.Flush();
-            stm.Position = 0;
-            XmlSerializer ser = new XmlSerializer(typeof(Termin));
-            return (ser.Deserialize(stm) as Termin);
-        }
-
-        private List<Termin> KonvertujSveCvoroveUObjekte(XmlNodeList cvoroviTermina)
-        {
-            List<Termin> objektiTermina = new List<Termin>();
-            foreach (XmlNode node in cvoroviTermina)
-            {
-                objektiTermina.Add(KonvertujCvorUObjekat(node));
-            }
-            return objektiTermina;
-        }
-
-        public void ObrisiTermin(Termin terminZaBrisanje)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(imeFajla);
-            XmlNode root = doc.DocumentElement;
-            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
-            XmlNode node = root.SelectSingleNode("//ArrayOfTermin/Termin[IdTermina='" + terminZaBrisanje.IdTermina + "']", nsmgr);
-            XmlNode parent = node.ParentNode;
-            parent.RemoveChild(node);
-            doc.Save(imeFajla);
-        }
-
-        public void DodajTermin(Termin terminZaUpis)
-        {
-            List<Termin> termini = DobaviSveTermineOperacija();
-            termini.Add(terminZaUpis);
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Termin>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, termini);
-            tw.Close();
-
-        }
+        }*/
 
         public void IzmeniTermin(Termin termin)
         {
-            ObrisiTermin(termin);
-            DodajTermin(termin);
+            ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
+            DodajObjekat(termin);
         }
 
     }

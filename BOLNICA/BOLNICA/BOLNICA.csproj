@@ -80,6 +80,9 @@
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\NaloziPacijenataRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\ObavestenjaRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\OperacijeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PreglediRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">

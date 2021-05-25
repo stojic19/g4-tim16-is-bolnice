@@ -1,5 +1,131 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pacijent>
+    <Ime>Aleksa</Ime>
+    <Prezime>Stojic</Prezime>
+    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+    <Jmbg>1901</Jmbg>
+    <AdresaStanovanja>NN</AdresaStanovanja>
+    <KontaktTelefon>062</KontaktTelefon>
+    <Email>asns</Email>
+    <KorisnickoIme>stojic19</KorisnickoIme>
+    <Lozinka>sekretar</Lozinka>
+    <Pol>muski</Pol>
+    <VrstaNaloga>regularan</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>stojic19</IDPacijenta>
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IdAlergena>
+          <Lek>
+            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+            <NazivLeka>Aerius</NazivLeka>
+            <Jacina>10mg</Jacina>
+            <Kolicina>3212</Kolicina>
+            <Proizvodjac>Brufesa</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s42</Naziv>
+                <Kolicina>3</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene />
+          </Lek>
+          <OpisReakcije>Natekne</OpisReakcije>
+          <VremeZaPojavu>20min</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
+      <Recepti />
+      <Anamneze />
+      <Uputi />
+    </ZdravstveniKarton>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
+    <Blokiran>false</Blokiran>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Milenko</Ime>
+    <Prezime>Milenkic</Prezime>
+    <DatumRodjenja>2021-05-08T15:49:43.0114386+02:00</DatumRodjenja>
+    <Jmbg>19011901</Jmbg>
+    <AdresaStanovanja />
+    <KontaktTelefon />
+    <Email />
+    <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
+    <Lozinka />
+    <Pol>muski</Pol>
+    <VrstaNaloga>gost</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IdAlergena>
+          <Lek>
+            <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+            <NazivLeka>Brufen</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>3232</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s1</Naziv>
+                <Kolicina>100</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s2</Naziv>
+                <Kolicina>200</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s3</Naziv>
+                <Kolicina>300</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s7</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s33</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Verifikacija>true</Verifikacija>
+            <Zamene>
+              <Lek>
+                <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                <NazivLeka>Roaccutane</NazivLeka>
+                <Jacina>20mg</Jacina>
+                <Kolicina>432</Kolicina>
+                <Proizvodjac>Biofarm</Proizvodjac>
+                <Sastojci>
+                  <Sastojak>
+                    <Naziv>s4</Naziv>
+                    <Kolicina>4</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s5</Naziv>
+                    <Kolicina>5</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s8</Naziv>
+                    <Kolicina>2</Kolicina>
+                  </Sastojak>
+                </Sastojci>
+                <Verifikacija>true</Verifikacija>
+                <Zamene />
+              </Lek>
+            </Zamene>
+          </Lek>
+          <OpisReakcije>1212</OpisReakcije>
+          <VremeZaPojavu>1212</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
+      <Recepti />
+      <Anamneze />
+      <Uputi />
+    </ZdravstveniKarton>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
+    <Blokiran>false</Blokiran>
+  </Pacijent>
   <Pacijent>
     <Ime>Magdalena</Ime>
     <Prezime>Reljin</Prezime>
@@ -387,132 +513,6 @@
           <KrajStacionarnog>2021-06-02T00:00:00</KrajStacionarnog>
         </Uput>
       </Uputi>
-    </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
-    <Blokiran>false</Blokiran>
-  </Pacijent>
-  <Pacijent>
-    <Ime>Aleksa</Ime>
-    <Prezime>Stojic</Prezime>
-    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
-    <Jmbg>1901</Jmbg>
-    <AdresaStanovanja>NN</AdresaStanovanja>
-    <KontaktTelefon>062</KontaktTelefon>
-    <Email>asns</Email>
-    <KorisnickoIme>stojic19</KorisnickoIme>
-    <Lozinka>sekretar</Lozinka>
-    <Pol>muski</Pol>
-    <VrstaNaloga>regularan</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>stojic19</IDPacijenta>
-      <Alergeni>
-        <Alergeni>
-          <IdAlergena>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IdAlergena>
-          <Lek>
-            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
-            <NazivLeka>Aerius</NazivLeka>
-            <Jacina>10mg</Jacina>
-            <Kolicina>3212</Kolicina>
-            <Proizvodjac>Brufesa</Proizvodjac>
-            <Sastojci>
-              <Sastojak>
-                <Naziv>s42</Naziv>
-                <Kolicina>3</Kolicina>
-              </Sastojak>
-            </Sastojci>
-            <Verifikacija>true</Verifikacija>
-            <Zamene />
-          </Lek>
-          <OpisReakcije>Natekne</OpisReakcije>
-          <VremeZaPojavu>20min</VremeZaPojavu>
-        </Alergeni>
-      </Alergeni>
-      <Recepti />
-      <Anamneze />
-      <Uputi />
-    </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
-    <Blokiran>false</Blokiran>
-  </Pacijent>
-  <Pacijent>
-    <Ime>Milenko</Ime>
-    <Prezime>Milenkic</Prezime>
-    <DatumRodjenja>2021-05-08T15:49:43.0114386+02:00</DatumRodjenja>
-    <Jmbg>19011901</Jmbg>
-    <AdresaStanovanja />
-    <KontaktTelefon />
-    <Email />
-    <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
-    <Lozinka />
-    <Pol>muski</Pol>
-    <VrstaNaloga>gost</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
-      <Alergeni>
-        <Alergeni>
-          <IdAlergena>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IdAlergena>
-          <Lek>
-            <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
-            <NazivLeka>Brufen</NazivLeka>
-            <Jacina>500mg</Jacina>
-            <Kolicina>3232</Kolicina>
-            <Proizvodjac>Biofarm</Proizvodjac>
-            <Sastojci>
-              <Sastojak>
-                <Naziv>s1</Naziv>
-                <Kolicina>100</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s2</Naziv>
-                <Kolicina>200</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s3</Naziv>
-                <Kolicina>300</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s7</Naziv>
-                <Kolicina>2</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s33</Naziv>
-                <Kolicina>4</Kolicina>
-              </Sastojak>
-            </Sastojci>
-            <Verifikacija>true</Verifikacija>
-            <Zamene>
-              <Lek>
-                <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
-                <NazivLeka>Roaccutane</NazivLeka>
-                <Jacina>20mg</Jacina>
-                <Kolicina>432</Kolicina>
-                <Proizvodjac>Biofarm</Proizvodjac>
-                <Sastojci>
-                  <Sastojak>
-                    <Naziv>s4</Naziv>
-                    <Kolicina>4</Kolicina>
-                  </Sastojak>
-                  <Sastojak>
-                    <Naziv>s5</Naziv>
-                    <Kolicina>5</Kolicina>
-                  </Sastojak>
-                  <Sastojak>
-                    <Naziv>s8</Naziv>
-                    <Kolicina>2</Kolicina>
-                  </Sastojak>
-                </Sastojci>
-                <Verifikacija>true</Verifikacija>
-                <Zamene />
-              </Lek>
-            </Zamene>
-          </Lek>
-          <OpisReakcije>1212</OpisReakcije>
-          <VremeZaPojavu>1212</VremeZaPojavu>
-        </Alergeni>
-      </Alergeni>
-      <Recepti />
-      <Anamneze />
-      <Uputi />
     </ZdravstveniKarton>
     <ZloupotrebioSistem>0</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>

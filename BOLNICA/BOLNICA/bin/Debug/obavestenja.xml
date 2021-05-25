@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfObavestenje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Obavestenje>
     <IdObavestenja>O0</IdObavestenja>
@@ -719,5 +719,13 @@ vremenski interval između doza: dsah.</Tekst>
     <Datum>2021-06-05T08:00:00</Datum>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>O74</IdObavestenja>
+    <Naslov>nas</Naslov>
+    <Tekst>nas</Tekst>
+    <Datum>2021-05-25T14:49:38.6772637+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>svi</IdPrimaoca>
   </Obavestenje>
 </ArrayOfObavestenje>

@@ -18,7 +18,7 @@ namespace Model
 
       public Obavestenje DodajObavestenje(Obavestenje obavestenje)
       {
-            obavestenjaRepozitorijum.DodajObavestenje(obavestenje);
+            obavestenjaRepozitorijum.DodajObjekat(obavestenje);
             ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
 
             if (SvaObavestenja().Contains(obavestenje))
@@ -33,7 +33,7 @@ namespace Model
 
         public Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
         {
-            obavestenjaRepozitorijum.DodajObavestenje(obavestenje);
+            obavestenjaRepozitorijum.DodajObjekat(obavestenje);
 
             if (SvaObavestenja().Contains(obavestenje))
             {
@@ -76,7 +76,7 @@ namespace Model
                 return false;
             }
 
-            obavestenjaRepozitorijum.ObrisiObavestenje(obavestenje);
+            obavestenjaRepozitorijum.ObrisiObjekat("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + idObavestenja + "']");
             ObavestenjaSekretar.SvaObavestenja.Remove(obavestenje);
 
             return !DaLiListeSadrzeObavestenje(obavestenje);
@@ -88,19 +88,12 @@ namespace Model
 
         public Obavestenje PretraziPoId(String idObavestenja)
         {
-            foreach (Obavestenje o in obavestenjaRepozitorijum.DobaviSvaObavestenja())
-            {
-                if (o.IdObavestenja.Equals(idObavestenja))
-                {
-                    return o;
-                }
-            }
-            return null;
+            return obavestenjaRepozitorijum.PretraziPoId("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + idObavestenja + "']");
         }
       
       public List<Obavestenje> SvaObavestenja()
       {
-            return obavestenjaRepozitorijum.DobaviSvaObavestenja();
+            return obavestenjaRepozitorijum.DobaviSveObjekte();
       }
 
     }
