@@ -3,7 +3,7 @@
   <Lekar>
     <Ime>Marko</Ime>
     <Prezime>Andjelic</Prezime>
-    <DatumRodjenja>2021-05-25T23:23:02.8347947+02:00</DatumRodjenja>
+    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
     <Jmbg>43413</Jmbg>
     <AdresaStanovanja>Adresa Adresić 343</AdresaStanovanja>
     <KontaktTelefon>06342</KontaktTelefon>
@@ -11,27 +11,19 @@
     <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
     <Lozinka>markoandjelic</Lozinka>
     <Pol>muski</Pol>
+    <RadniDani />
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva />
     <Specijalizacija>neurohirurg</Specijalizacija>
-    <Dostupnost>false</Dostupnost>
-  </Lekar>
-  <Lekar>
-    <Ime>Magdalena</Ime>
-    <Prezime>Reljin</Prezime>
-    <DatumRodjenja>2021-05-25T23:23:02.8347947+02:00</DatumRodjenja>
-    <Jmbg>33313</Jmbg>
-    <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-    <KontaktTelefon>0634</KontaktTelefon>
-    <Email>reljinn@lekar.com</Email>
-    <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-    <Lozinka>ajdemolimte</Lozinka>
-    <Pol>zenski</Pol>
-    <Specijalizacija>nema</Specijalizacija>
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
     <Ime>Jelena</Ime>
     <Prezime>Hrnjak</Prezime>
-    <DatumRodjenja>2021-05-25T23:23:02.8347947+02:00</DatumRodjenja>
+    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
     <Jmbg>431</Jmbg>
     <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
     <KontaktTelefon>06343</KontaktTelefon>
@@ -39,13 +31,19 @@
     <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
     <Lozinka>jelenahrnjak</Lozinka>
     <Pol>zenski</Pol>
+    <RadniDani />
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva />
     <Specijalizacija>nema</Specijalizacija>
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
     <Ime>Kristina</Ime>
     <Prezime>Stojic</Prezime>
-    <DatumRodjenja>2021-05-25T23:23:02.8347947+02:00</DatumRodjenja>
+    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
     <Jmbg>43121</Jmbg>
     <AdresaStanovanja>Adresa Adresić 54</AdresaStanovanja>
     <KontaktTelefon>0634313</KontaktTelefon>
@@ -53,13 +51,52 @@
     <KorisnickoIme>KristinaStojic</KorisnickoIme>
     <Lozinka>kristinastojic</Lozinka>
     <Pol>zenski</Pol>
+    <RadniDani />
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva />
     <Specijalizacija>internista</Specijalizacija>
+    <Dostupnost>false</Dostupnost>
+  </Lekar>
+  <Lekar>
+    <Ime>Magdalena</Ime>
+    <Prezime>Reljin</Prezime>
+    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
+    <Jmbg>33313</Jmbg>
+    <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+    <KontaktTelefon>0634</KontaktTelefon>
+    <Email>reljinn@lekar.com</Email>
+    <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+    <Lozinka>ajdemolimte</Lozinka>
+    <Pol>zenski</Pol>
+    <RadniDani>
+      <RadniDan>
+        <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-02T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-03T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-04T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-04T15:00:00</KrajSmene>
+      </RadniDan>
+    </RadniDani>
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva />
+    <Specijalizacija>nema</Specijalizacija>
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
     <Ime>Aleksa</Ime>
     <Prezime>Stojic</Prezime>
-    <DatumRodjenja>2021-05-25T23:23:02.8327921+02:00</DatumRodjenja>
+    <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
     <Jmbg>421</Jmbg>
     <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
     <KontaktTelefon>06332</KontaktTelefon>
@@ -67,6 +104,22 @@
     <KorisnickoIme>AleksaStojic</KorisnickoIme>
     <Lozinka>aleksastojic</Lozinka>
     <Pol>muski</Pol>
+    <RadniDani>
+      <RadniDan>
+        <PocetakSmene>2021-05-26T15:00:00</PocetakSmene>
+        <KrajSmene>2021-05-26T23:00:00</KrajSmene>
+      </RadniDan>
+    </RadniDani>
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva>
+      <Odsustvo>
+        <PocetakOdsustva>2021-06-07T00:00:00</PocetakOdsustva>
+        <KrajOdsustva>2021-06-13T00:00:00</KrajOdsustva>
+      </Odsustvo>
+    </Odsustva>
     <Specijalizacija>neurohirurg</Specijalizacija>
     <Dostupnost>false</Dostupnost>
   </Lekar>

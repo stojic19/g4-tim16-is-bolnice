@@ -11,7 +11,8 @@ namespace Bolnica.Model
     {
         private DateTime pocetakOdsustva;
         private DateTime krajOdsustva;
-
+        
+        public Odsustvo() { }
         public Odsustvo(DateTime pocetakOdsustva,DateTime krajOdsustva)
         {
             this.PocetakOdsustva = pocetakOdsustva;

@@ -32,7 +32,8 @@ namespace Bolnica
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
-        
+
+        TerminiServis terminiServis = new TerminiServis();
         public Login()
         {
             InitializeComponent();
@@ -44,11 +45,11 @@ namespace Bolnica
             //ObavestenjaServis.Ucitaj();
             // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
-            // TerminiServis.PrivremenaInicijalizacijaLekara();
+            //terminiServis.PrivremenaInicijalizacijaLekara();
             Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
             Lekari = lekariKontroler.DobaviSveLekare();
 
-            hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
+            //hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
             AnketeRepozitorijum.inicijalizujPitanjaOBolnici();
             AnketeRepozitorijum.inicijalizujPitanjaOTerminu();
             AnketeRepozitorijum.DeserijalizacijaAnketa();

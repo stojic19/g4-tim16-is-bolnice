@@ -1,5 +1,6 @@
 ﻿using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.Servis;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -11,47 +12,20 @@ namespace Bolnica.Model
 {
     class OperacijeServis
     {
+        SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
         OperacijeRepozitorijum operacijeRepozitorijum = new OperacijeRepozitorijum();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-
-        public static List<Termin> sviTermini = new List<Termin>();
-        public static List<Termin> slobodniTermini = new List<Termin>();
-
-        public static List<Lekar> sviLekari = new List<Lekar>();
-
-        public void PrivremenaInicijalizacijaLekara()
+         
+        public List<Termin> DobaviSveOperacije()
         {
-
-            sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic", SpecijalizacijeLekara.neurohirurg));
-            sviLekari.Add(new Lekar("NinaStojic", "Nina", "Stojic", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "nina@lekar.com", "ninastojic", SpecijalizacijeLekara.kardiohirurg));
-            sviLekari.Add(new Lekar("MicaUbica", "Mica", "Ubica", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "micaubica", SpecijalizacijeLekara.kardiohirurg));
-
-            slobodniTermini.Add(new Termin("T12", VrsteTermina.pregled, "14:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P1"), null, pretraziLekare("AleksaStojic")));
-            slobodniTermini.Add(new Termin("T13", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(1), ProstoriServis.PretraziPoId("P1"), null, pretraziLekare("AleksaStojic")));
-            sviTermini.Add(new Termin("T14", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P2"), naloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("NinaStojic")));
-            slobodniTermini.Add(new Termin("T19", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(2), ProstoriServis.PretraziPoId("P2"), null, pretraziLekare("NinaStojic")));
-            sviTermini.Add(new Termin("T29", VrsteTermina.pregled, "20:00", 420, DateTime.Now, ProstoriServis.PretraziPoId("P3"), naloziPacijenataServis.PretraziPoId("magdalena"), pretraziLekare("MicaUbica")));
-            slobodniTermini.Add(new Termin("T30", VrsteTermina.pregled, "14:00", 420, DateTime.Now.AddDays(3), ProstoriServis.PretraziPoId("P3"), null, pretraziLekare("MicaUbica")));
-        }
-        public Lekar pretraziLekare(String id)
-        {
-            foreach (Lekar l in sviLekari)
-            {
-
-                if (l.KorisnickoIme.Equals(id))
-                {
-                    return l;
-                }
-            }
-
-            return null;
+            return operacijeRepozitorijum.DobaviSveObjekte();
         }
         public void OsveziSlobodneTermine(int trenutniSat, int trenutniMinut)
         {
             string[] vreme;
             int pocetniSatTermina, pocetniMinutTermina, trajanje;
             List<Termin> pomocni = new List<Termin>();
-            foreach (Termin t in slobodniTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 Termin termin = t;
                 vreme = termin.PocetnoVreme.Split(':');
@@ -78,7 +52,12 @@ namespace Bolnica.Model
                     pomocni.Add(termin);
                 }
             }
-            slobodniTermini = pomocni;
+            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
+                slobodniTerminiServis.UkloniSlobodanTermin(termin);
+
+            foreach (Termin termin in pomocni)
+                slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
+
         }
 
         private bool TerminSeZavrsio(int trenutniSat,int trenutniMinut,int pocetniSatTermina,int pocetniMinutTermina)
@@ -151,7 +130,7 @@ namespace Bolnica.Model
             String[] vreme;
             OsveziSlobodneTermine(Convert.ToInt32(DateTime.Now.ToString("HH")), Convert.ToInt32(DateTime.Now.ToString("mm")));
             List<Termin> pomocni = new List<Termin>();
-            foreach (Termin termin in slobodniTermini)
+            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 int sat, minut;
                 string krajTermina = "";
@@ -162,7 +141,7 @@ namespace Bolnica.Model
                 if (KrajTerminaSutra(Convert.ToInt32(vreme[0]), sat))   //Kraj termina je sutradan
                 {
                     pomocni.Add(termin);
-                    foreach (Termin termin1 in slobodniTermini)
+                    foreach (Termin termin1 in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
                     {
                         if (TerminiSeNastavljaju(termin, krajTermina, termin1))
                         {
@@ -176,7 +155,7 @@ namespace Bolnica.Model
                 else                                //Kraj termina je isti dan
                 {
                     pomocni.Add(termin);
-                    foreach (Termin termin1 in slobodniTermini)
+                    foreach (Termin termin1 in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
                     {
                         if (TerminiSeNastavljajuIstiDan(termin, krajTermina, termin1))
                         {
@@ -188,7 +167,11 @@ namespace Bolnica.Model
                     }
                 }
             }
-            slobodniTermini = pomocni;
+            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
+                slobodniTerminiServis.UkloniSlobodanTermin(termin);
+
+            foreach (Termin termin in pomocni)
+                slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
         }
 
         private bool TerminiSeNastavljajuIstiDan(Termin termin, string krajTermina, Termin termin1)
@@ -237,7 +220,7 @@ namespace Bolnica.Model
             OsveziSlobodneTermine(sat, minut);
 
             vreme = DobaviPocetkeTermina(ref sat, ref minut);
-            foreach (Termin t in slobodniTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (TerminOdgovaraHitnojOperaciji(oblastLekara, trajanje, t))
                 {
@@ -303,7 +286,7 @@ namespace Bolnica.Model
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
             vreme = DobaviPocetkeTermina(ref sat, ref minut);
-            foreach (Termin t in sviTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (sat != 23 && DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && t.Lekar.Specijalizacija.Equals(oblastLekara) && t.Trajanje >= trajanje)
                 {
@@ -341,7 +324,7 @@ namespace Bolnica.Model
             List<Termin> pomocna = new List<Termin>();
             TimeSpan vreme;
             int danaPomereno = -1;
-            foreach (Termin t in slobodniTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (TerminPogodanZaPomeranje(termin, t))
                 {
@@ -368,7 +351,7 @@ namespace Bolnica.Model
         {
             List<Termin> pomocna = new List<Termin>();
             TimeSpan vreme;
-            foreach (Termin t in slobodniTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (TerminPogodanZaPomeranje(termin, t))
                 {
@@ -377,9 +360,9 @@ namespace Bolnica.Model
                     {
                         t.Pacijent = termin.Pacijent;
                         ZakazivanjeHitneOperacije(t,(int)termin.Trajanje);
-                        sviTermini.Remove(termin);
-                        termin.Pacijent = null;   
-                        slobodniTermini.Add(termin);
+                        UkloniOperaciju(termin);
+                        termin.Pacijent = null;
+                        slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
                         break;
                     }
                 }
@@ -410,9 +393,9 @@ namespace Bolnica.Model
             {
                 return false;
             }
-            sviTermini.Remove(termin);
+            UkloniOperaciju(termin);
             termin.Pacijent = null;
-            slobodniTermini.Add(termin);
+            slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
             ProveriTermineZaSpajanje();
             return true;
         }
@@ -449,15 +432,15 @@ namespace Bolnica.Model
                 termin.PocetnoVreme = trenutnoVreme;
             }
             termin.Trajanje = trajanje;
-            foreach (Termin t in slobodniTermini)
+            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (t.IdTermina.Equals(termin.IdTermina))
                 {
-                    slobodniTermini.Remove(t);
+                    slobodniTerminiServis.UkloniSlobodanTermin(termin);
                     break;
                 }
             }
-            sviTermini.Add(termin);
+            operacijeRepozitorijum.DodajObjekat(termin);
             if (preostaloVreme - trajanje == 0)
             {    
                 Termin ostatak;
@@ -495,13 +478,17 @@ namespace Bolnica.Model
                     }
                     ostatak = new Termin(generisiID(), VrsteTermina.operacija, trenutnoVreme, preostaloVreme - trajanje, DateTime.Now, termin.Prostor, termin.Pacijent, termin.Lekar);
                 }
-                slobodniTermini.Add(ostatak);
+                slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(ostatak);
             }
             return true;
         }
         public string generisiID()
         {
             return Guid.NewGuid().ToString();
+        }
+        public void UkloniOperaciju(Termin termin)
+        {
+            operacijeRepozitorijum.ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
         }
     }   
 }

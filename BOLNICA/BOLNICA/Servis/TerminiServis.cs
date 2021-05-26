@@ -1,6 +1,7 @@
 ﻿using Bolnica;
 using Bolnica.Repozitorijum;
 using Bolnica.Sekretar.Pregled;
+using Bolnica.Servis;
 using MoreLinq;
 using System;
 using System.Collections.Generic;
@@ -13,21 +14,25 @@ namespace Model
     public class TerminiServis
     {
         private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
+        LekariServis lekariServis = new LekariServis();
         public static List<Lekar> sviLekari = new List<Lekar>();
         public static int brojac { get; set; } = 0;
 
-        public static void PrivremenaInicijalizacijaLekara()
+        public void PrivremenaInicijalizacijaLekara()
         {
+            List<Lekar> lekari = new List<Lekar>();
+            lekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic", SpecijalizacijeLekara.neurohirurg));
+            lekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic", DateTime.Now, Pol.muski, "43413", "Adresa Adresić 343", "06342", "markic@lekar.com", "markoandjelic", SpecijalizacijeLekara.neurohirurg));
+            lekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "ajdemolimte", SpecijalizacijeLekara.nema));
+            lekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak",SpecijalizacijeLekara.nema));
+            lekari.Add(new Lekar("KristinaStojic", "Kristina", "Stojic", DateTime.Now, Pol.zenski, "43121", "Adresa Adresić 54", "0634313", "kristojic@lekar.com", "kristinastojic", SpecijalizacijeLekara.internista));
 
-            sviLekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic", SpecijalizacijeLekara.neurohirurg));
-            sviLekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic", DateTime.Now, Pol.muski, "43413", "Adresa Adresić 343", "06342", "markic@lekar.com", "markoandjelic", SpecijalizacijeLekara.neurohirurg));
-            sviLekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "ajdemolimte", SpecijalizacijeLekara.nema));
-            sviLekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak",SpecijalizacijeLekara.nema));
-            sviLekari.Add(new Lekar("KristinaStojic", "Kristina", "Stojic", DateTime.Now, Pol.zenski, "43121", "Adresa Adresić 54", "0634313", "kristojic@lekar.com", "kristinastojic", SpecijalizacijeLekara.internista));
-
-            Serijalizuj();
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
+            TextWriter tw = new StreamWriter("lekari.xml");
+            xmlSerializer.Serialize(tw, lekari);
+            tw.Close();
         }
-        public static void Serijalizuj()
+        public void Serijalizuj()
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
             TextWriter tw = new StreamWriter("lekari.xml");

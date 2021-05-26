@@ -28,8 +28,9 @@ namespace Bolnica.SekretarFolder
     {
         RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
 
-        private ObservableCollection<RadniDan> RadniDani;
-        private ObservableCollection<Odsustvo> Odsustva;
+        public static ObservableCollection<RadniDan> RadniDani { get; set; }
+
+        public static ObservableCollection<Odsustvo> Odsustva { get; set; }
 
         private string idIzabranogLekara;
         public PrikazRasporedaLekaraSekretar(String idLekara)
@@ -187,8 +188,17 @@ namespace Bolnica.SekretarFolder
             }
             else
             {
-                MessageBox.Show("Izaberite slobodne dane za uklanjanje!");
+                MessageBox.Show("Izaberite slobodne dane za ažuriranje!");
             }    
+        }
+
+        private void Povratak_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazLekaraSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

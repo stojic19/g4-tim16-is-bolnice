@@ -85,6 +85,7 @@
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\SlobodniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\NaloziPacijenataRepozitorijumInterfejs.cs" />
@@ -93,8 +94,10 @@
     <Compile Include="Repozitorijum\Interfejsi\PreglediRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\LekariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
     <Compile Include="Servis\LekariServis.cs" />
     <Compile Include="Servis\RasporedLekaraServis.cs" />
+    <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>

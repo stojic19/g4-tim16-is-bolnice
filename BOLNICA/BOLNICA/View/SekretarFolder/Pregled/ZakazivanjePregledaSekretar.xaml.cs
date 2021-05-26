@@ -27,6 +27,7 @@ namespace Bolnica.Sekretar.Pregled
     public partial class ZakazivanjePregledaSekretar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
 
         TerminKontroler terminKontroler = new TerminKontroler();
         public static ObservableCollection<Pacijent> SviPacijenti { get; set; }
@@ -44,7 +45,7 @@ namespace Bolnica.Sekretar.Pregled
             {
                 SviPacijenti.Add(p);
             }
-            foreach (Lekar l in TerminiServis.sviLekari)
+            foreach (Lekar l in lekariKontroler.DobaviSveLekare())
             {
                 SviLekari.Add(l);
             }

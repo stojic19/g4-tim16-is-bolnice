@@ -25,6 +25,7 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
 
         String korisnik = null;
@@ -45,7 +46,7 @@ namespace Bolnica
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;
 
-            this.TabelaLekara.ItemsSource = TerminiServis.sviLekari;
+            this.TabelaLekara.ItemsSource = lekariKontroler.DobaviSveLekare();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 

@@ -12,6 +12,7 @@ namespace Bolnica.Model
         private DateTime pocetakSmene;
         private DateTime krajSmene;
 
+        public RadniDan() { }
         public RadniDan(DateTime pocetakSmene, DateTime krajSmene)
         {
             this.PocetakSmene = pocetakSmene;

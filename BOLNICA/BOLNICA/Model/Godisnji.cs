@@ -11,6 +11,7 @@ namespace Bolnica.Model
         private int godinaZaGodisnji;
         private int preostaliBrojSlobodnihDana;
 
+        public Godisnji() { }
         public Godisnji(int godina,int brojSlobodnihDana)
         {
             GodinaZaGodisnji = godina;

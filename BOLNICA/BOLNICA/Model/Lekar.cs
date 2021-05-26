@@ -12,11 +12,11 @@ namespace Model
         private SpecijalizacijeLekara specijalizacija = SpecijalizacijeLekara.nema;
         private bool dostupnost = false;
 
-        private List<RadniDan> RadniDani { get => radniDani; set => radniDani = value; }
+        public List<RadniDan> RadniDani { get => radniDani; set => radniDani = value; }
 
-        private Godisnji Godisnji { get => godisnji; set => godisnji = value; }
+        public Godisnji Godisnji { get => godisnji; set => godisnji = value; }
 
-        private List<Odsustvo> Odsustva { get => odsustva; set => odsustva = value; }
+        public List<Odsustvo> Odsustva { get => odsustva; set => odsustva = value; }
 
         public SpecijalizacijeLekara Specijalizacija { get => specijalizacija; set => specijalizacija = value; }
         public Boolean Dostupnost { get => dostupnost; set => dostupnost = value; }
@@ -35,10 +35,10 @@ namespace Model
             this.Email = email;
             this.Lozinka = lozinka;
             this.specijalizacija = specijalizacija;
-
             this.RadniDani = new List<RadniDan>();
             this.Godisnji = new Godisnji(DateTime.Now.Year, 20);
             this.Odsustva = new List<Odsustvo>();
+            Console.WriteLine("Dodao lekara");
         }
 
         public Lekar(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
@@ -53,7 +53,6 @@ namespace Model
             this.KontaktTelefon = telefon;
             this.Email = email;
             this.Lozinka = lozinka;
-
             this.RadniDani = new List<RadniDan>();
             this.Godisnji = new Godisnji(DateTime.Now.Year, 20);
             this.Odsustva = new List<Odsustvo>();
@@ -80,7 +79,9 @@ namespace Model
         }
         public void DodajRadniDan(RadniDan radniDan)
         {
-            RadniDani.Add(radniDan);
+            List<RadniDan> novaLista = RadniDani;
+            novaLista.Add(radniDan);
+            RadniDani = novaLista;
         }
         public void IzmeniRadniDan(RadniDan stariRadniDan, RadniDan noviRadniDan)
         {

@@ -20,6 +20,7 @@ namespace Bolnica
 { 
     public partial class PomeranjeSaPrioritetom : UserControl
     {
+        LekariKontroler lekariKontroler = new LekariKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
         public static List<Termin> datumiZaIzmenu = new List<Termin>();
         public String idTermina = null;
@@ -109,7 +110,7 @@ namespace Bolnica
         public void bindcombo()
         {
             List<Lekar> pomocna = new List<Lekar>();
-            foreach (Lekar l in TerminiServis.sviLekari)
+            foreach (Lekar l in lekariKontroler.DobaviSveLekare())
             {
                 if (l.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
                     pomocna.Add(l);

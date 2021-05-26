@@ -28,6 +28,7 @@ namespace Bolnica
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
 
         private List<String> primaoci;
         public DodavanjeObavestenja()
@@ -53,7 +54,7 @@ namespace Bolnica
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }
-            foreach (Lekar lekar in TerminiServis.sviLekari)
+            foreach (Lekar lekar in lekariKontroler.DobaviSveLekare())
             {
                 primaoci.Add(lekar.KorisnickoIme + " " + lekar.Prezime + " " + lekar.Ime);
             }

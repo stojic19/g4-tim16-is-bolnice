@@ -46,7 +46,7 @@
             <Button Grid.Row="7" Background="Black" x:Name="Transfer">
                 <Image Source="/Slike/Sekretar/Ikonice/transfer.jpg" />
             </Button>
-            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Pocetna_Click">
+            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Povratak_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/nazad.jpg" />
             </Button>
             <Button Grid.Row="9" Background="Black" x:Name="Licna">
@@ -84,28 +84,29 @@
             </Border>
             <Label Content="Radni dani:" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="199"/>
             <DataGrid x:Name="dataGridRadniDani" ItemsSource="{Binding RadniDani}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="2" Margin="50,0,36,46" Background="WhiteSmoke"
+                  SelectionMode="Single" Grid.RowSpan="2" Margin="50,0,36,94" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Početak smene:" Binding="{Binding PocetakSmene}"  Width="*"/>
                     <DataGridTextColumn Header="Kraj smene:" Binding="{Binding KrajSmene}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Row="2" Content="Dodaj radne dane" Margin="256,110,362,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
-            <Button Grid.Row="2" Content="Promeni smenu" Margin="403,110,215,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click1"  Background="WhiteSmoke"/>
-            <Button Grid.Row="2" Content="Ukloni radni dan" Margin="550,110,68,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click2"  Background="WhiteSmoke"/>
-            <Label Content="Slobodni dani i godišnji:" FontSize="20" HorizontalAlignment="Left" Margin="50,143,0,0" VerticalAlignment="Top" Height="37" Width="226" Grid.Row="2" Grid.RowSpan="2"/>
+            <Button Grid.Row="2" Content="Dodaj radne dane" Margin="256,59,362,51" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click"  Background="WhiteSmoke"/>
+            <Button Grid.Row="2" Content="Promeni smenu" Margin="403,59,215,51" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click1"  Background="WhiteSmoke"/>
+            <Button Grid.Row="2" Content="Ukloni radni dan" Margin="550,59,68,51" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click2"  Background="WhiteSmoke"/>
+            <Label Content="Slobodni dani i godišnji:" FontSize="20" HorizontalAlignment="Left" Margin="50,98,0,0" VerticalAlignment="Top" Height="37" Width="226" Grid.Row="2"/>
             <DataGrid x:Name="dataGridOdsustva" ItemsSource="{Binding Odsustva}" IsReadOnly="true"
-                SelectionMode="Single" Grid.RowSpan="2" Margin="50,32,36,60" Background="WhiteSmoke"
-                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2" >
+                SelectionMode="Single" Grid.RowSpan="3" Margin="50,135,36,105" Background="WhiteSmoke"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="2" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Početak" Binding="{Binding PocetakOdsustva}"  Width="*"/>
                     <DataGridTextColumn Header="Kraj" Binding="{Binding KrajOdsustva}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Row="4" Content="Dodaj slobodne dane" Margin="256,92,362,17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click3"  Background="WhiteSmoke"/>
-            <Button Grid.Row="4" Content="Ukloni slobodne dane" Margin="550,92,68,17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click4"  Background="WhiteSmoke"/>
-            <Button Grid.Row="4" Content="Ažuriraj trajanje" Margin="403,92,215,17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click5"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Dodaj slobodne dane" Margin="256,47,362,62" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click3"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Ukloni slobodne dane" Margin="550,47,68,62" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click4"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Ažuriraj trajanje" Margin="403,47,215,62" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click5"  Background="WhiteSmoke"/>
+            <Button Grid.Row="4" Content="Povratak" Margin="403,90,215,19" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Povratak_Click"  Background="WhiteSmoke"/>
         </Grid>
     </StackPanel>
 </UserControl>

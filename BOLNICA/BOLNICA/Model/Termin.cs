@@ -28,7 +28,17 @@ namespace Model
             Pacijent = pacijent;
             Lekar = lekar;
         }
-
+        public Termin(VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Lekar lekar)
+        {
+            IdTermina = generisiID();
+            VrstaTermina = vrstaTermina;
+            PocetnoVreme = pocetnoVreme;
+            Trajanje = trajanje;
+            Datum = datum;
+            Prostor = null;
+            Pacijent = null;
+            Lekar = lekar;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {
@@ -55,6 +65,9 @@ namespace Model
                 return "Pregled";
             }
         }
-
+        public static string generisiID()
+        {
+            return Guid.NewGuid().ToString();
+        }
     }
 }

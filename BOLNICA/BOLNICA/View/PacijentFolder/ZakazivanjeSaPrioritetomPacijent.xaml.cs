@@ -21,6 +21,7 @@ namespace Bolnica
     {
          public static List<Termin> datumi = new List<Termin>();
         TerminKontroler terminKontroler = new TerminKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         public ZakazivanjeSaPrioritetomPacijent()
         {
             InitializeComponent();
@@ -187,7 +188,7 @@ namespace Bolnica
         public void bindcombo()
         {
             List<Lekar> pomocna = new List<Lekar>();
-            foreach (Lekar l in TerminiServis.sviLekari)
+            foreach (Lekar l in lekariKontroler.DobaviSveLekare())
             {
                 if (l.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
                     pomocna.Add(l);

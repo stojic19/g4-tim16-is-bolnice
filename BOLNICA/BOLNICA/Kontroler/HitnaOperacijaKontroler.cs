@@ -13,6 +13,10 @@ namespace Bolnica.Kontroler
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         OperacijeServis operacijeServis = new OperacijeServis();
 
+        public List<Termin> DobaviSveOperacije()
+        {
+            return operacijeServis.DobaviSveOperacije();
+        }
         public void DodajGuestNalog(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataServis.DodajNalog(pacijentZaDodavanje);
@@ -21,11 +25,6 @@ namespace Bolnica.Kontroler
         public List<Pacijent> DobaviSveNaloge()
         {
             return naloziPacijenataServis.SviNalozi();
-        }
-
-        internal void PrivremenaInicijalizacijaLekara()
-        {
-            operacijeServis.PrivremenaInicijalizacijaLekara();
         }
 
         public List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara specijalizacijeLekara, int trajanjeOperacije)
