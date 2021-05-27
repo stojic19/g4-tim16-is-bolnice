@@ -28,6 +28,8 @@ namespace Bolnica.Sekretar.Pregled
     public partial class PomeranjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
+
         private static Termin terminStari;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
         public PomeranjePregledaTerminiSekretar(Termin stariTermin,List<Termin> termini)
@@ -60,7 +62,7 @@ namespace Bolnica.Sekretar.Pregled
             }
 
             termin.Pacijent = terminStari.Pacijent;
-            terminKontroler.ZakaziPregledSekretar(termin);
+            terminKontroler.ZakaziPregled(termin);
             terminKontroler.OtkaziPregledSekretar(terminStari.IdTermina);
 
             UserControl usc = null;
@@ -74,7 +76,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             Termin termin = new Termin();
             bool postoji = false;
-            foreach (Termin t in TerminRepozitorijum.slobodniTermini)
+            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

@@ -19,6 +19,7 @@ namespace Bolnica
         ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
         PreglediKontroler preglediKontroler = new PreglediKontroler();
         LekoviKontroler lekoviKontroler = new LekoviKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         Pregled izabranPregled = null;
         String idAnamneze = null;
         String sifraLeka = null;
@@ -68,7 +69,7 @@ namespace Bolnica
 
         private void CuvanjeAnamneze(object sender, RoutedEventArgs e)
         {
-            String imeiprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeiprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
 
             if (this.tekst.Text.Equals(""))

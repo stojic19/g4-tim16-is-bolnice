@@ -24,6 +24,7 @@ namespace Bolnica
     public partial class InformacijeAnamaneza : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         Anamneza izabranaAnamneza = null;
@@ -54,7 +55,7 @@ namespace Bolnica
         {
 
             Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranaAnamneza.IdPacijenta);
-            Lekar l = TerminiServis.pretraziLekare(izabranaAnamneza.IdLekara);
+            Lekar l = lekariKontroler.PretraziPoId(izabranaAnamneza.IdLekara);
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;

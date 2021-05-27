@@ -25,6 +25,7 @@ namespace Bolnica
     public partial class IzmenaTerminaLekar : UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
 
         String izabran = null;
         String korisnik = null;
@@ -150,7 +151,7 @@ namespace Bolnica
         {
             Termin izabranT = terminKontroler.PretraziPoId(izabran);
             slobodniTermini.Clear();
-            foreach (Termin t in TerminRepozitorijum.slobodniTermini)
+            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.Datum.CompareTo(izabranDatum)==0 && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
                 {

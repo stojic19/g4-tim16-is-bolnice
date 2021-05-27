@@ -44,9 +44,6 @@ namespace Bolnica
 
         private void strelica_Click(object sender, RoutedEventArgs e)
         {
-            TerminRepozitorijum.SerijalizacijaTermina();
-            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            // NaloziPacijenataServis.Sacuvaj();
             Login login = new Login();
             login.Show();
             this.Close();
@@ -102,9 +99,7 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TerminRepozitorijum.SerijalizacijaTermina();
-            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            // NaloziPacijenataServis.Sacuvaj();
+
         }
       
 

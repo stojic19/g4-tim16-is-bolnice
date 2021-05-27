@@ -31,23 +31,14 @@ namespace Bolnica.LekarFolder
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             Login prozorLogovanje = new Login();
             prozorLogovanje.Show();
             this.Close();
-
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Serijalizacije();
-
-        }
-
-        private void Serijalizacije()
-        {
-            TerminRepozitorijum.SerijalizacijaTermina();
-            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
+            
         }
 
         public void PromenaPogleda(UserControl userControl)
@@ -63,21 +54,18 @@ namespace Bolnica.LekarFolder
 
         private void PocetnaStrana(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
         }
 
         private void PrikazRasporeda(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new PrikazTerminaLekara(KoriscnickoImeLekara));
         }
 
         private void ZakazivanjeTermina(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new ZakazivanjeTerminaLekar(KoriscnickoImeLekara));
         }
@@ -89,14 +77,12 @@ namespace Bolnica.LekarFolder
 
         private void PrikazBaze(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new BazaLekova(KoriscnickoImeLekara));
         }
 
         private void VerifikacijaLekova(object sender, RoutedEventArgs e)
         {
-            Serijalizacije();
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new VerifikacijaLekova(KoriscnickoImeLekara));
         }

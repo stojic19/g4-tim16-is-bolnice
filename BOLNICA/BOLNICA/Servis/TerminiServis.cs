@@ -13,32 +13,9 @@ namespace Model
 {
     public class TerminiServis
     {
+        SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
         private TerminRepozitorijum terminRepozitorijum = new TerminRepozitorijum();
         LekariServis lekariServis = new LekariServis();
-        public static List<Lekar> sviLekari = new List<Lekar>();
-        public static int brojac { get; set; } = 0;
-
-        public void PrivremenaInicijalizacijaLekara()
-        {
-            List<Lekar> lekari = new List<Lekar>();
-            lekari.Add(new Lekar("AleksaStojic", "Aleksa", "Stojic", DateTime.Now, Pol.muski, "421", "Adresa Adresić 123", "06332", "leksa@lekar.com", "aleksastojic", SpecijalizacijeLekara.neurohirurg));
-            lekari.Add(new Lekar("MarkoAndjelic", "Marko", "Andjelic", DateTime.Now, Pol.muski, "43413", "Adresa Adresić 343", "06342", "markic@lekar.com", "markoandjelic", SpecijalizacijeLekara.neurohirurg));
-            lekari.Add(new Lekar("MagdalenaReljin", "Magdalena", "Reljin", DateTime.Now, Pol.zenski, "33313", "Adresa Adresić 353", "0634", "reljinn@lekar.com", "ajdemolimte", SpecijalizacijeLekara.nema));
-            lekari.Add(new Lekar("JelenaHrnjak", "Jelena", "Hrnjak", DateTime.Now, Pol.zenski, "431", "Adresa Adresić 9", "06343", "jelenah@lekar.com", "jelenahrnjak",SpecijalizacijeLekara.nema));
-            lekari.Add(new Lekar("KristinaStojic", "Kristina", "Stojic", DateTime.Now, Pol.zenski, "43121", "Adresa Adresić 54", "0634313", "kristojic@lekar.com", "kristinastojic", SpecijalizacijeLekara.internista));
-
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-            TextWriter tw = new StreamWriter("lekari.xml");
-            xmlSerializer.Serialize(tw, lekari);
-            tw.Close();
-        }
-        public void Serijalizuj()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Lekar>));
-            TextWriter tw = new StreamWriter("lekari.xml");
-            xmlSerializer.Serialize(tw, sviLekari);
-            tw.Close();
-        }
 
         public List<Termin> PretraziPoLekaru(string korisnickoIme)
         {
@@ -47,7 +24,7 @@ namespace Model
 
         public Termin PretraziSlobodnePoId(string idTermina)
         {
-            return terminRepozitorijum.PretraziSlobodnePoId(idTermina);
+            return slobodniTerminiServis.PretraziPoId(idTermina);
         }
 
         public void OtkaziPregledSekretar(string terminZaOtkazivanje)
@@ -55,54 +32,9 @@ namespace Model
             terminRepozitorijum.OtkaziPregledSekretar(terminZaOtkazivanje);
         }
 
-        public static List<Lekar> DobaviSpecijaliste()
-        {
-            List<Lekar> specijaliste = new List<Lekar>();
-
-            foreach(Lekar l in sviLekari)
-            {
-                if (l.Specijalizacija != SpecijalizacijeLekara.nema) specijaliste.Add(l);
-            }
-
-            return specijaliste;
-        }
-
-        public static String ImeiPrezime(String id)
-        {
-            foreach (Lekar l in sviLekari)
-            {
-
-                if (l.KorisnickoIme.Equals(id))
-                {
-                    return l.Ime + " " + l.Prezime;
-                }
-            }
-
-            return null;
-        }
-
         public void OtkaziTermin(string idTermina)
         {
             terminRepozitorijum.OtkaziTermin(idTermina);
-        }
-
-        public void ZakaziPregledSekretar(Termin termin)
-        {
-            terminRepozitorijum.ZakaziPregledSekretar(termin);
-        }
-
-        public static Lekar pretraziLekare(String id)
-        {
-            foreach (Lekar l in sviLekari)
-            {
-
-                if (l.KorisnickoIme.Equals(id))
-                {
-                    return l;
-                }
-            }
-
-            return null;
         }
 
         public void ZakaziTermin(Termin termin, string korisnickoIme)
@@ -146,9 +78,9 @@ namespace Model
             return terminRepozitorijum.DobaviZakazanTerminPoId(idTermina);
         }
 
-        public void ZakaziPregledPacijent(Termin termin)
+        public void ZakaziPregled(Termin termin)
         {
-            terminRepozitorijum.ZakaziPregledPacijent(termin);
+            terminRepozitorijum.ZakaziPregled(termin);
         }
 
         public void OtkaziPregledPacijent(String idTermina)

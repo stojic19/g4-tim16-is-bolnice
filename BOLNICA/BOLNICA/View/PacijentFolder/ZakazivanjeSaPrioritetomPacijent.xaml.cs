@@ -31,7 +31,7 @@ namespace Bolnica
         private void nastavi_Click(object sender, RoutedEventArgs e)
         {
            
-            Lekar lekar = TerminiServis.pretraziLekare(((Lekar)lekarCombo.SelectedItem).KorisnickoIme);
+            Lekar lekar = lekariKontroler.PretraziPoId(((Lekar)lekarCombo.SelectedItem).KorisnickoIme);
 
             if (lekarCombo.SelectedIndex==-1 || !this.datumod.SelectedDate.HasValue || !this.datumdo.SelectedDate.HasValue || PrioritetCombo.SelectedIndex == -1)
             {

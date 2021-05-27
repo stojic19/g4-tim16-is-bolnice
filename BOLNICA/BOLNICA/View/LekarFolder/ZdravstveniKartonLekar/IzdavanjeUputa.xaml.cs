@@ -18,6 +18,7 @@ namespace Bolnica.LekarFolder
     {
         //Dodato dok ne dodas kontroler za to
         ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         String idLekaraSpecijaliste = null;
@@ -32,7 +33,7 @@ namespace Bolnica.LekarFolder
             InicijalizacijaPoljaStacionarno();
             InicijalizacijaSobaStacionarno();
 
-            this.TabelaLekara.ItemsSource = TerminiServis.DobaviSpecijaliste();
+            this.TabelaLekara.ItemsSource = lekariKontroler.DobaviSpecijaliste();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 
@@ -102,7 +103,7 @@ namespace Bolnica.LekarFolder
 
             }
 
-            String imeprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
 
             zdravstvenKartoniKontroler.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
@@ -126,7 +127,7 @@ namespace Bolnica.LekarFolder
         {
             if (!ValidacijaStacionarnog()) return;
 
-            String imeprezime = TerminiServis.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
+            String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             Console.WriteLine(imeprezime);
             noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.STACIONARNO, DateTime.Now, nalazStac.Text, imeprezime,
                     (DateTime)pocetakStacionarnog.SelectedDate, (DateTime)krajStacionarnog.SelectedDate, null); //ispravi

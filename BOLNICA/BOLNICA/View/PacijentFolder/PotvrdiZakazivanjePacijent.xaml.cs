@@ -43,9 +43,7 @@ namespace Bolnica
         {
             Termin t = terminKontroler.DobaviSlobodanTerminPoId(idTermina);
             t.Pacijent = naloziPacijenataKontroler.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
-            terminKontroler.ZakaziPregledPacijent(t);
-
-        
+            terminKontroler.ZakaziPregled(t);
 
             UserControl usc = null;
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();

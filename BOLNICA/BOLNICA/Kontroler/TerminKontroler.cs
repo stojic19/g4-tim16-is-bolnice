@@ -45,9 +45,9 @@ namespace Bolnica.Kontroler
             return terminiServis.PretraziPoLekaru(korisnickoIme);
         }
 
-        public void ZakaziPregledPacijent(Termin termin)
+        public void ZakaziPregled(Termin termin)
         {
-            terminiServis.ZakaziPregledPacijent(termin);
+            terminiServis.ZakaziPregled(termin);
         }
 
         public void OtkaziPregledPacijent(String idTermina)
@@ -83,11 +83,6 @@ namespace Bolnica.Kontroler
         public void OtkaziTermin(string idTermina)
         {
             terminiServis.OtkaziTermin(idTermina);
-        }
-
-        public void ZakaziPregledSekretar(Termin termin)
-        {
-            terminiServis.ZakaziPregledSekretar(termin);
         }
 
         public bool ProveriMogucnostPomeranjaVreme(String vreme)

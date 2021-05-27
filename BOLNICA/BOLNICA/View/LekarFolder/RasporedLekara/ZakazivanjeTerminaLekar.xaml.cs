@@ -25,6 +25,7 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
 
@@ -65,7 +66,7 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e) //potvrdi
         {
 
-            Lekar lekar = TerminiServis.pretraziLekare(izabranLekar);
+            Lekar lekar = lekariKontroler.PretraziPoId(izabranLekar);
             Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPacijent);
 
 
@@ -183,7 +184,7 @@ namespace Bolnica
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            foreach (Termin t in TerminRepozitorijum.slobodniTermini)
+            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(izabranLekar) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
                 {

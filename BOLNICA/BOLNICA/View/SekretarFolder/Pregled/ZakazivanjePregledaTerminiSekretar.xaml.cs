@@ -29,6 +29,7 @@ namespace Bolnica.Sekretar.Pregled
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
 
         private static String IdPacijenta;
         public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
@@ -63,7 +64,7 @@ namespace Bolnica.Sekretar.Pregled
                 return;
             }    
             termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
-            terminKontroler.ZakaziPregledSekretar(termin);
+            terminKontroler.ZakaziPregled(termin);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -76,7 +77,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             bool postoji = false;
             Termin termin = new Termin();
-            foreach (Termin t in TerminRepozitorijum.slobodniTermini)
+            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

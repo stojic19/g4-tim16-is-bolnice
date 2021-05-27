@@ -16,5 +16,17 @@ namespace Bolnica.Kontroler
         {
             return lekariServis.SviLekari();
         }
+        public List<Lekar> DobaviSpecijaliste()
+        {
+            return lekariServis.DobaviSpecijaliste();
+        }
+        public String ImeiPrezime(String idLekara)
+        {
+            return lekariServis.ImeiPrezime(idLekara);
+        }
+        public Lekar PretraziPoId(String idLekara)
+        {
+            return lekariServis.PretraziPoId(idLekara);
+        }
     }
 }

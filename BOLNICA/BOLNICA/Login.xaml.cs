@@ -166,8 +166,6 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TerminRepozitorijum.SerijalizacijaTermina();
-            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
             ProstoriServis.SerijalizacijaProstora();
             AnketeRepozitorijum.SerijalizacijaAnketa();
             GlavniProzorSekretar.getInstance().Close();

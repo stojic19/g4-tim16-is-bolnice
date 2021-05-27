@@ -33,5 +33,27 @@ namespace Bolnica.Servis
         {
             return PretraziPoId(idLekara).DobaviSlobodneDane();
         }
+        public List<Lekar> DobaviSpecijaliste()
+        {
+            List<Lekar> specijaliste = new List<Lekar>();
+            foreach (Lekar l in SviLekari())
+            {
+                if (l.Specijalizacija != SpecijalizacijeLekara.nema) specijaliste.Add(l);
+            }
+            return specijaliste;
+        }
+        public String ImeiPrezime(String id)
+        {
+            foreach (Lekar l in SviLekari())
+            {
+
+                if (l.KorisnickoIme.Equals(id))
+                {
+                    return l.Ime + " " + l.Prezime;
+                }
+            }
+
+            return null;
+        }
     }
 }

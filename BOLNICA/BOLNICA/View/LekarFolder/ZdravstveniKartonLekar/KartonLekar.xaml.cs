@@ -90,11 +90,8 @@ namespace Bolnica
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            TerminRepozitorijum.SerijalizacijaSlobodnihTermina();
-            TerminRepozitorijum.SerijalizacijaTermina();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme));
-
         }
 
 

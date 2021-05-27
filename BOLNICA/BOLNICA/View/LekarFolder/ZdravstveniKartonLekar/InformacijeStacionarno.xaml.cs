@@ -22,6 +22,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
     public partial class InformacijeStacionarno : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         Pregled izabranPregled = null;
         Uput izabranUput = null;
@@ -39,7 +40,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         {
 
             Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
-            Lekar specijalista = TerminiServis.pretraziLekare(izabranUput.IDLekaraSpecijaliste);
+            Lekar specijalista = lekariKontroler.PretraziPoId(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;

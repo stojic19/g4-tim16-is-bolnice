@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,12 @@ namespace Bolnica.LekarFolder
     public partial class PocetnaStranicaLekar : UserControl
     {
         private String KorisnickoImeLekara = null;
+        LekariKontroler lekariKontroler = new LekariKontroler();
         public PocetnaStranicaLekar(string koriscnickoImeLekara)
         {
             InitializeComponent();
             KorisnickoImeLekara = koriscnickoImeLekara;
-            imePrezime.Content = TerminiServis.ImeiPrezime(koriscnickoImeLekara) + "!";
+            imePrezime.Content = lekariKontroler.ImeiPrezime(koriscnickoImeLekara) + "!";
         }
 
         

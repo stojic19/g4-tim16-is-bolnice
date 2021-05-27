@@ -26,6 +26,9 @@ namespace Bolnica.LekarFolder
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
+
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
@@ -51,7 +54,7 @@ namespace Bolnica.LekarFolder
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
             Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
             pacijent.Text = p.imePrezime();
-            lekar.Text = TerminiServis.ImeiPrezime(idLekarSpecijalista);
+            lekar.Text = lekariKontroler.ImeiPrezime(idLekarSpecijalista);
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
@@ -68,7 +71,7 @@ namespace Bolnica.LekarFolder
 
             Termin t = (Termin)pocVreme.SelectedItem;
 
-            t.Lekar = TerminiServis.pretraziLekare(idLekarSpecijalista);
+            t.Lekar = lekariKontroler.PretraziPoId(idLekarSpecijalista);
             t.Pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             if (izabranaVrstaTermina.Equals("Operacija"))
@@ -145,7 +148,7 @@ namespace Bolnica.LekarFolder
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            foreach (Termin t in TerminRepozitorijum.slobodniTermini)
+            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(idLekarSpecijalista) &&
                     t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
