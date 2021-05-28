@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <IdTermina>9d44625f-35fb-439b-b525-86ed2a3abd61</IdTermina>
@@ -375,6 +375,60 @@
       </Godisnji>
       <Odsustva />
       <Specijalizacija>nema</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>a949cb7f-0c15-428a-b8c2-500887c14737</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>07:00</PocetnoVreme>
+    <Trajanje>240</Trajanje>
+    <Datum>2021-06-01T07:00:00</Datum>
+    <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <RadniDani />
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>neurohirurg</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>a2397177-f687-4466-b17a-93ceae06baeb</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>07:00</PocetnoVreme>
+    <Trajanje>240</Trajanje>
+    <Datum>2021-06-02T07:00:00</Datum>
+    <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <RadniDani />
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>neurohirurg</Specijalizacija>
       <Dostupnost>false</Dostupnost>
     </Lekar>
   </Termin>
