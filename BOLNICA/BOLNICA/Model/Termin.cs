@@ -6,39 +6,86 @@ namespace Model
 {
     public class Termin : INotifyPropertyChanged
     {
-        public String IdTermina { get; set; }
-        
-        public VrsteTermina VrstaTermina { get; set; }
-        public String PocetnoVreme { get; set; }
-        public Double Trajanje { get; set; }
-        public DateTime Datum { get; set;  }
+        private String idTermina;
+        private VrsteTermina vrstaTermina;
+        private String pocetnoVreme;
+        private double trajanje;
+        private DateTime datum;
+        private Prostor prostor;
+        private Pacijent pacijent;
+        private Lekar lekar;
 
-        public Prostor Prostor { get; set; }
-        public Pacijent Pacijent { get; set; }
-        public Lekar Lekar { get; set; }
+        public String IdTermina
+        {
+            get { return idTermina; }
+            set { idTermina = value; }
+        }
+        public VrsteTermina VrstaTermina
+        {
+            get { return vrstaTermina; }
+            set { vrstaTermina = value; }
+        }
+        public String PocetnoVreme
+        {
+            get { return pocetnoVreme; }
+            set { pocetnoVreme = value; }
+        }
+
+        public double Trajanje
+        {
+            get { return trajanje; }
+            set { trajanje = value; }
+        }
+
+        public DateTime Datum
+        {
+            get { return datum; }
+            set { datum = value; }
+        }
+
+        public Prostor Prostor
+        {
+            get { return prostor; }
+            set { prostor = value; }
+        }
+
+        public Pacijent Pacijent
+        {
+            get { return pacijent; }
+            set { pacijent = value; }
+        }
+
+        public Lekar Lekar
+        {
+            get { return lekar; }
+            set { lekar = value; }
+        }
+
+
         public Termin() { }
         public Termin(string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
         {
-            IdTermina = idTermina;
-            VrstaTermina = vrstaTermina;
-            PocetnoVreme = pocetnoVreme;
-            Trajanje = trajanje;
-            Datum = datum;
-            Prostor = prostor;
-            Pacijent = pacijent;
-            Lekar = lekar;
+            this.idTermina = idTermina;
+            this.vrstaTermina = vrstaTermina;
+            this.pocetnoVreme = pocetnoVreme;
+            this.trajanje = trajanje;
+            this.datum = datum;
+            this.prostor = prostor;
+            this.pacijent = pacijent;
+            this.lekar = lekar;
         }
         public Termin(VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Lekar lekar)
         {
-            IdTermina = generisiID();
-            VrstaTermina = vrstaTermina;
-            PocetnoVreme = pocetnoVreme;
-            Trajanje = trajanje;
-            Datum = datum;
-            Prostor = null;
-            Pacijent = null;
-            Lekar = lekar;
+            this.idTermina = generisiID();
+            this.vrstaTermina = vrstaTermina;
+            this.pocetnoVreme = pocetnoVreme;
+            this.trajanje = trajanje;
+            this.datum = datum;
+            this.prostor = null;
+            this.pacijent = null;
+            this.lekar = lekar;
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {
