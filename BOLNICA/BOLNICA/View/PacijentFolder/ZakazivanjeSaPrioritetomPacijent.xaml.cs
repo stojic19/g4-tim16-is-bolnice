@@ -1,4 +1,5 @@
 ﻿using Bolnica.Kontroler;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,183 +20,14 @@ namespace Bolnica
 {
     public partial class ZakazivanjeSaPrioritetomPacijent : UserControl
     {
-         public static List<Termin> datumi = new List<Termin>();
-        TerminKontroler terminKontroler = new TerminKontroler();
-        LekariKontroler lekariKontroler = new LekariKontroler();
-        public ZakazivanjeSaPrioritetomPacijent()
+        private ZakazivanjeViewModel zakazivanjeViewModel;
+        public ZakazivanjeSaPrioritetomPacijent(String korisnickoIme)
         {
             InitializeComponent();
-            bindcombo();
+            zakazivanjeViewModel = new ZakazivanjeViewModel(korisnickoIme);
+            this.DataContext = zakazivanjeViewModel;
         }
 
-        private void nastavi_Click(object sender, RoutedEventArgs e)
-        {
-           
-            Lekar lekar = lekariKontroler.PretraziPoId(((Lekar)lekarCombo.SelectedItem).KorisnickoIme);
-
-            if (lekarCombo.SelectedIndex==-1 || !this.datumod.SelectedDate.HasValue || !this.datumdo.SelectedDate.HasValue || PrioritetCombo.SelectedIndex == -1)
-            {
-                MessageBox.Show("Popunite sva polja!");
-                return;
-            }
-
-            if (PacijentGlavniProzor.ulogovani.Blokiran)
-            {
-                MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara.");
-                return;
-            }
-
-            if (DateTime.Compare(((DateTime)datumod.SelectedDate).Date, DateTime.Now.Date) <= 0){
-                MessageBox.Show("Ne možete izabrati datum u prošlosti!");
-                return;
-            }
-           
-            if (DateTime.Compare(((DateTime)datumdo.SelectedDate).Date,((DateTime)datumod.SelectedDate).Date) <= 0)
-            {
-                MessageBox.Show("Početni datum mora biti raniji od krajnjeg!");
-                return;
-            }
-
-
-            List<Termin> pomocna = new List<Termin>();
-
-            bool nasao = false;
-
-            datumi.Clear();
-
-
-            pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumod.SelectedDate, (DateTime)datumdo.SelectedDate), lekar.KorisnickoIme);
-            foreach (Termin t in pomocna)
-            {
-                nasao = false;
-                foreach (Termin t1 in datumi)
-                {
-                    if (t1.Datum.Equals(t.Datum))
-                    {
-                        nasao = true;
-                        break;
-                    }
-                }
-                if (!nasao)
-                {
-                    datumi.Add(t);
-                }
-
-            }
-
-            if (datumi.Count == 0)
-            {
-                if (PrioritetCombo.SelectedIndex == 0)
-                {
-                    DateTime tr1 = ((DateTime)datumod.SelectedDate).AddDays(-7);
-                    DateTime tr2 = ((DateTime)datumdo.SelectedDate).AddDays(7);
-
-                    pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumod.SelectedDate, (DateTime)datumdo.SelectedDate), lekar.KorisnickoIme);
-
-                    foreach (Termin t in pomocna)
-                    {
-                        nasao = false;
-                        foreach (Termin t1 in datumi)
-                        {
-                            if (t1.Datum.Equals(t.Datum))
-                            {
-                                nasao = true;
-                                break;
-                            }
-                        }
-                        if (!nasao)
-                        {
-                            datumi.Add(t);
-                        }
-
-                    }
-
-                    if (datumi.Count == 0)
-                    {
-                        MessageBox.Show("Nema slobodnih datuma!");
-                        return;
-                    }
-                    UserControl usc = null;
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-                    usc = new PrikazDatumaPacijentKodIzabranog();
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-                }
-                else if (PrioritetCombo.SelectedIndex == 1)
-                {
-                    pomocna = terminKontroler.NadjiTermineUIntervalu((DateTime)datumod.SelectedDate, (DateTime)datumdo.SelectedDate);
-                    foreach (Termin t in pomocna)
-                    {
-                        nasao = false;
-                        foreach (Termin t1 in datumi)
-                        {
-                            if (t1.Datum.Equals(t.Datum) && t1.Lekar.KorisnickoIme.Equals(t.Lekar.KorisnickoIme))
-                            {
-                                nasao = true;
-                                break;
-                            }
-                        }
-                        if (!nasao)
-                        {
-                            datumi.Add(t);
-                        }
-
-                    }
-
-                    if (datumi.Count == 0)
-                    {
-                        MessageBox.Show("Nema slobodnih datuma!");
-                        return;
-                    }
-                    
-                   
-                    UserControl usc = null;
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-                    usc = new PrikazSlobodnihDatumaPacijent();
-                    PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-
-
-
-                }
-
-            }
-            else
-            {
-
-
-                UserControl usc = null;
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-                usc = new PrikazDatumaPacijentKodIzabranog();
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-
-                
-
-            }
-
-            
-            
-        }
-
-        public List<Termin> NadjiDatumUIntervalu(DateTime datumOd,DateTime datumDo)
-        {
-            return terminKontroler.NadjiTermineUIntervalu(datumOd,datumDo);
-        }
-
-        public List<Lekar> lekariOpstePrakse { get; set; }
-
-        public void bindcombo()
-        {
-            List<Lekar> pomocna = new List<Lekar>();
-            foreach (Lekar l in lekariKontroler.DobaviSveLekare())
-            {
-                if (l.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
-                    pomocna.Add(l);
-            }
-            lekariOpstePrakse = pomocna;
-            lekarCombo.ItemsSource = lekariOpstePrakse;
-        }
 
     }
 }

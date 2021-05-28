@@ -10,21 +10,21 @@
         <StackPanel Margin="20 100">
             <Label>LEKAR</Label>
 
-            <TextBox Height="25" x:Name="TextLekar"  AcceptsReturn="True" TextWrapping="Wrap" Margin="5,0" IsReadOnly="True"></TextBox>
+            <TextBox Height="25" Text="{Binding Path=IzabraniTermin.Lekar.ImeIPrezime}" AcceptsReturn="True" TextWrapping="Wrap" Margin="5,0" IsReadOnly="True"></TextBox>
             <!--<Label>Pacijent</Label>
 
             <TextBox Name="TextPacijent" IsReadOnly="True"></TextBox>
             -->
             <Label>DATUM</Label>
-            <TextBox Height="25" Name="TextDatum" Margin="5,0"  IsReadOnly="True"></TextBox>
+            <TextBox Height="25" Name="TextDatum" Margin="5,0"  IsReadOnly="True" Text="{Binding Path=IzabraniTermin.Datum,StringFormat={}{0:MM/dd/yyyy}}"></TextBox>
             <Label>VREME</Label>
-            <TextBox Height="26" Name="TextVreme" Margin="5,0,5,30" IsReadOnly="True"></TextBox>
+            <TextBox Height="26" Name="TextVreme" Margin="5,0,5,30" IsReadOnly="True" Text="{Binding Path=IzabraniTermin.Vreme}"></TextBox>
 
-            <Button Click="Button_Click" Height="25" Margin="5" Background="#FF31577E">
+            <Button  Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=PotvrdiKomanda}">
                 <Run Foreground="AntiqueWhite">POTVRDI</Run>
             </Button>
-            <Button Click="Button_Click_1" Height="25" Margin="5" Background="#FF31577E">
-                <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+            <Button  Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
+                <Run Foreground="AntiqueWhite">VRATI SE</Run>
             </Button>
 
             <Grid Margin="00 50">

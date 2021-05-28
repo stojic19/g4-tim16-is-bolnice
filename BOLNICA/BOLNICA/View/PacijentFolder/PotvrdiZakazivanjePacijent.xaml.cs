@@ -1,5 +1,7 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -17,48 +19,17 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PotvrdiZakazivanjePacijent.xaml
-    /// </summary>
-    /// 
     public partial class PotvrdiZakazivanjePacijent : UserControl
     {
-        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        TerminKontroler terminKontroler = new TerminKontroler();
-
-        public String idTermina = null;
-
-        public PotvrdiZakazivanjePacijent(Termin izabrani)
+        PotvrdiZakazivanjeViewModel potvrdiZakazivanjeViewModel;
+        public PotvrdiZakazivanjePacijent(TerminDTO selektovaniTermin,ZakazivanjePregledaDTO podaciZakazivanja)
         {
             InitializeComponent();
-            Termin termin = terminKontroler.PretraziPoId(izabrani.IdTermina);
+            potvrdiZakazivanjeViewModel = new PotvrdiZakazivanjeViewModel(selektovaniTermin, podaciZakazivanja);
+            this.DataContext = potvrdiZakazivanjeViewModel;
 
-            TextLekar.Text = termin.Lekar.KorisnickoIme;
-            TextDatum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            TextVreme.Text = termin.PocetnoVreme;
-            idTermina = termin.IdTermina;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Termin t = terminKontroler.DobaviSlobodanTerminPoId(idTermina);
-            t.Pacijent = naloziPacijenataKontroler.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
-            terminKontroler.ZakaziPregled(t, PacijentGlavniProzor.ulogovani.KorisnickoIme);
-
-            UserControl usc = null;
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-            usc = new PrikazRasporedaPacijent();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-            usc = new ZakazivanjeSaPrioritetomPacijent();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-        }
+       
     }
 }

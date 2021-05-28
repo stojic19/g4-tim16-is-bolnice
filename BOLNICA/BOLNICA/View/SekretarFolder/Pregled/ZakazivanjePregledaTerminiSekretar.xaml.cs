@@ -64,7 +64,7 @@ namespace Bolnica.Sekretar.Pregled
                 return;
             }    
             termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
-            terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
+        //    terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

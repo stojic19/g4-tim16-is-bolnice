@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.ViewModel.PacijentViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,34 +18,16 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PrikazSlobodnihDatumaPacijent.xaml
-    /// </summary>
     public partial class PrikazSlobodnihDatumaPacijent : UserControl
     {
-        public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
-        public PrikazSlobodnihDatumaPacijent()
+        private DatumiViewModel datumiViewModel;
+        public PrikazSlobodnihDatumaPacijent(ZakazivanjePregledaDTO podaci)
         {
             InitializeComponent();
-            SlobodniDatumi = new ObservableCollection<Termin>();
-
-            foreach (Termin t in ZakazivanjeSaPrioritetomPacijent.datumi)
-            {
-                SlobodniDatumi.Add(t);
-            }
-
-            slobodniDatumiLista.ItemsSource = SlobodniDatumi;
+            datumiViewModel = new DatumiViewModel(podaci);
+            this.slobodniDatumi.ItemsSource = datumiViewModel.SlobodniDatumi;
+            this.DataContext = datumiViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-           // PrikazVremenaTerminaPacijent pr = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
-            UserControl usc = null;
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-            usc = new PrikazVremenaTerminaPacijent(((Termin)slobodniDatumiLista.SelectedItem));
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
-        }
     }
 }

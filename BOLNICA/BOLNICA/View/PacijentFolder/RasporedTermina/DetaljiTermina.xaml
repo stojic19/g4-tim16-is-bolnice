@@ -32,13 +32,13 @@
                 <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Content="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="2">Vreme:</Label>
-                <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" Content="{Binding PocetnoVreme}"></Label>
+                <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" Content="{Binding Vreme}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="3">Lekar:</Label>
                 <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" Content="{Binding Lekar.KorisnickoIme}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="4">Tip:</Label>
-                <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" Content="{Binding VrstaTermina}"></Label>
+                <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" Content="{Binding TipTermina}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="5">Prostor:</Label>
                 <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" Content="{Binding Prostor.IdProstora}"></Label>

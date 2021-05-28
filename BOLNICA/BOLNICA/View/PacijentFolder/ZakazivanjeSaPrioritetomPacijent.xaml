@@ -12,19 +12,20 @@
 
         <Label >LEKAR</Label>
 
-        <ComboBox Name="lekarCombo" Height="25" Margin="5" ItemsSource="{Binding}" DisplayMemberPath="KorisnickoIme" SelectedValuePath="KorisnickoIme"></ComboBox>
+        <ComboBox Name="lekarCombo" Height="25" Margin="5" ItemsSource="{Binding Path=SviLekari}" DisplayMemberPath="ImeIPrezime" SelectedValuePath="ImeIPrezime" SelectedItem="{Binding Path=Podaci.IzabraniLekar}" ></ComboBox>
         
         <Label>DATUM OD</Label>
-        <DatePicker Name="datumod" Height="25" Margin="5"></DatePicker>
+        <DatePicker Name="datumod" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumOd}" ></DatePicker>
         <Label>DATUM DO</Label>
-        <DatePicker Name="datumdo" Height="25" Margin="5"></DatePicker>
+        <DatePicker Name="datumdo" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumDo}"></DatePicker>
         <Label>PRIORITET</Label>
 
-        <ComboBox Name="PrioritetCombo"  Margin="5,0,5.4,30" Height="25" >
-            <ComboBoxItem Margin="5">lekar</ComboBoxItem>
+        <ComboBox Name="PrioritetCombo"  Margin="5,0,5.4,30" Height="25" SelectedIndex="{Binding Path=Podaci.Prioritet}">
+            <ComboBoxItem Margin="5" >lekar</ComboBoxItem>
             <ComboBoxItem Margin="5">datum</ComboBoxItem>
         </ComboBox>
-        <Button Name="nastavi" Click="nastavi_Click" Height="25" Margin="5" Background="#FF31577E">
+        <Label Margin="5 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
+        <Button Name="nastavi"  Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=PrikaziDatume}">
             <Run Foreground="AntiqueWhite">NASTAVI</Run>
         </Button>
         <Image Source="/Slike/PacijentSlike/IMG_4560.jpeg" />

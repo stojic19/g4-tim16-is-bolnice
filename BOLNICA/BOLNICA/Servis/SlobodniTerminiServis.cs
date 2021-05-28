@@ -114,36 +114,38 @@ namespace Bolnica.Servis
         }
 
 
-
-
         public List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
+          
             List<Termin> dupliTermini = new List<Termin>();
-            foreach (Termin termin in DobaviSveSlobodneTermine())
+            foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
             {
-                if (termin.Datum.Equals(izabraniTermin.Datum) &&
+                if (DateTime.Compare(termin.Datum.Date, izabraniTermin.Datum.Date) == 0 &&
                  izabraniTermin.Lekar.KorisnickoIme.Equals(termin.Lekar.KorisnickoIme))
+                {
                     dupliTermini.Add(termin);
+                }
             }
-            return SortTerminaPoPocetnomVremenu(UkloniDupleDatume(dupliTermini));
+            return SortTerminaPoPocetnomVremenu(dupliTermini);
         }
 
         private List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
         {
             List<Termin> jedinstveniTermini = new List<Termin>();
-            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
+            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum.Date))
                 jedinstveniTermini.Add(termin);
             return jedinstveniTermini;
         }
 
         private List<Termin> SortTerminaPoPocetnomVremenu(List<Termin> nesortiraniTermini)
         {
-            return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
+            return nesortiraniTermini.OrderBy(user => user.Datum.TimeOfDay).ToList();
+            
         }
 
         private List<Termin> SortTerminaPoDatumu(List<Termin> nesrotiraniDatumi)
         {
-            return nesrotiraniDatumi.OrderBy(user => user.Datum).ToList();
+            return nesrotiraniDatumi.OrderBy(user => user.Datum.Date).ToList();
         }
 
         public List<Termin> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
@@ -160,11 +162,16 @@ namespace Bolnica.Servis
         public List<Termin> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
         {
             List<Termin> terminiUIntervalu = new List<Termin>();
-            foreach (Termin t in DobaviSveSlobodneTermine())
+            foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
             {
-                if (DateTime.Compare(t.Datum, pocetakIntervala) >= 0 && DateTime.Compare(t.Datum, krajIntervala) <= 0)
-                    terminiUIntervalu.Add(t);
+                if (DateTime.Compare(termin.Datum, pocetakIntervala) >= 0 && DateTime.Compare(termin.Datum, krajIntervala) <= 0)
+                    terminiUIntervalu.Add(termin);
             }
+            Console.WriteLine("DOBAVI SVE OBJEKTE "+ slobodniTerminiRepozitorijum.DobaviSveObjekte().Count);
+            Console.WriteLine("DOBAVI SVE OBJsavvavasvvadvsEKTE "+ terminiUIntervalu.Count);
+            Console.WriteLine(pocetakIntervala);
+            Console.WriteLine(krajIntervala);
+
             return FiltrirajTerminePoSpecijalizaciji(terminiUIntervalu);
         }
 
@@ -179,7 +186,13 @@ namespace Bolnica.Servis
             return UkloniDupleDatume(SortTerminaPoDatumu(terminiOpstePrakse));
         }
 
-      
+        public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String lekar)
+        {
+            List<Termin> terminiKodIzabranogLekara = new List<Termin>();
+            List<Termin> datumiUIntervalu = NadjiTermineUIntervalu(interval[0], interval[1]);
+            terminiKodIzabranogLekara = PretraziPoLekaruUIntervalu(datumiUIntervalu,lekar);
+            return terminiKodIzabranogLekara;
+        }
 
     }
 }

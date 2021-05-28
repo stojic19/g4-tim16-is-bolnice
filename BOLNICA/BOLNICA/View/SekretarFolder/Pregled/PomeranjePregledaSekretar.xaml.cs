@@ -116,7 +116,7 @@ namespace Bolnica.Sekretar.Pregled
 
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
-            return terminKontroler.NadjiTermineUIntervalu(datumOd, datumDo);
+             return terminKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

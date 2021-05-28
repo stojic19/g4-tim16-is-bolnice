@@ -35,5 +35,10 @@ namespace Bolnica.Kontroler
         {
            naloziPacijenataServis.UkolniNalog(pacijentZaUklanjanje);
         }
+
+        public bool NalogJeBlokiran(String korisnickoIme)
+        {
+            return naloziPacijenataServis.NalogJeBlokiran(korisnickoIme);
+        }
     }
 }

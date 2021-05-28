@@ -9,7 +9,7 @@
     <StackPanel Background="White">
         <Label FontFamily="Times New Roman" FontSize="15" Margin="17,0,0,0">Lista slobodnih termina:</Label>
 
-        <ListBox x:Name="slobodiTerminiVremena" SelectionMode="Single" Height="450" Width="300"    >
+        <ListBox x:Name="slobodniTerminiVremena" SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=SlobodniTermini}"   SelectedItem="{Binding Path=SelektovaniTermin}" >
 
             <ListBox.ItemTemplate >
                 <DataTemplate>
@@ -18,7 +18,7 @@
                         <StackPanel  Margin="10"  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
 
-                            <TextBlock   Text="{Binding PocetnoVreme}"/>
+                            <TextBlock   Text="{Binding Vreme}"/>
 
                         </StackPanel>
 
@@ -29,8 +29,11 @@
         </ListBox>
 
 
-        <Button Name="izaberiTermin" Click="izaberiTermin_Click" Height="25" Margin="22,5" Background="#FF31577E">
-            <Run Foreground="AntiqueWhite">IZABERI TERMIN</Run>
+        <Button Height="25" Margin="22,5" Background="#FF31577E"  Command="{Binding Path=PotvrdiZakazivanjeKomanda}">
+            <Run Foreground="AntiqueWhite">IZABERI TERMIN</Run>   
+        </Button>
+        <Button  Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
+            <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
 
         <Grid Margin="00 50">

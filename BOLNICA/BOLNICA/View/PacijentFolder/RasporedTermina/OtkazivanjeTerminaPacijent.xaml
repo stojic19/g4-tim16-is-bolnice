@@ -33,7 +33,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Click="Button_Click_1" Grid.Column="1"  Margin="10 20 10 10" Background="#FF31577E" Height="30">
+                <Button Click="Button_Click_1" Grid.Column="1"  Margin="10 20 10 10" Background="#FF31577E" Height="30" Command="{Binding Path=PotvrdiOtkazivanjeKomanda}">
 
                     <Run Foreground="AntiqueWhite">POTVRDI</Run>
                 </Button>

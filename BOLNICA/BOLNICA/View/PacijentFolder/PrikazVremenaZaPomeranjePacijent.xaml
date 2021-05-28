@@ -27,7 +27,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Name="izaberiTermin"  Click="izaberiTermin_Click" Height="25" Margin="22,5" Background="#FF31577E">
+        <Button Height="25" Margin="22,5" Background="#FF31577E">
             <Run Foreground="AntiqueWhite">IZABERI TERMIN</Run>
         </Button>
 

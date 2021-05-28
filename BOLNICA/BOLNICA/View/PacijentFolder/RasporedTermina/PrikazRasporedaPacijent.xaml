@@ -8,7 +8,7 @@
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista zakazanih termina</Label>
-        <ListBox x:Name="SviTerminiPacijenta" SelectionMode="Single" Height="450" Width="300">
+        <ListBox SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay}" SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -45,11 +45,11 @@
                                     <TextBlock Grid.Column="1" Grid.Row="0"   FontSize="15" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Text="{Binding PocetnoVreme}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Text="{Binding Vreme}"/>
 
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="{Binding Lekar.KorisnickoIme}" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="{Binding Lekar.ImeIPrezime}" />
 
 
                                 </Grid>
@@ -72,13 +72,15 @@
 
 
         </ListBox>
-        <Button Margin="25 10"  x:Name="informacije" Click="informacije_Click" Background="#FF31577E" Height="30">
+        <Label Margin="25 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
+
+        <Button Margin="25 10"  x:Name="informacije"  Background="#FF31577E" Height="30" Command="{Binding Path=DetaljiPregledaKomanda}">
             <Run Foreground="AntiqueWhite">VIŠE INFORMACIJA</Run>
         </Button>
-        <Button Margin="25 10" x:Name="pomeri" Click="pomeri_Click"  Background="#FF31577E" Height="30">
+        <Button Margin="25 10" x:Name="pomeri"  Background="#FF31577E" Height="30" Command="{Binding Path=PomeriPregledKomanda}">
             <Run Foreground="AntiqueWhite" >IZMENI PREGLED</Run>
         </Button>
-        <Button Margin="25 10" x:Name="otkazi" Click="otkazi_Click"  Background="#FF31577E" Height="30">
+        <Button Margin="25 10" x:Name="otkazi" Background="#FF31577E" Height="30" Command="{Binding Path=OtkaziPregledKomanda}">
             <Run Foreground="AntiqueWhite">OTKAŽI PREGLED</Run>
         </Button>
 

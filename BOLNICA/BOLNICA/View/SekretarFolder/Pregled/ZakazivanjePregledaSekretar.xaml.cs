@@ -133,7 +133,7 @@ namespace Bolnica.Sekretar.Pregled
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
                 {
-                    pomocna = terminKontroler.NadjiTermineUIntervalu(pom, pom1);
+                    pomocna = terminKontroler.NadjiTermineUIntervaluSekretar(pom, pom1);
                     foreach (Termin t in pomocna)
                     {
                         nasao = false;
@@ -202,7 +202,7 @@ namespace Bolnica.Sekretar.Pregled
 
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
-            return terminKontroler.NadjiTermineUIntervalu(datumOd, datumDo);
+            return terminKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

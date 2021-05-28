@@ -138,5 +138,12 @@ namespace Model
             return pacijent;
         }
 
+        public bool NalogJeBlokiran(String korisnickoIme)
+        {
+            if (PretraziPoId(korisnickoIme).Blokiran)
+                return true;
+            return false;
+        }
+
     }
 }

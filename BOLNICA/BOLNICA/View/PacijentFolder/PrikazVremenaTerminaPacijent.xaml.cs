@@ -1,4 +1,6 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -17,35 +19,15 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PrikazVremenaTerminaPacijent.xaml
-    /// </summary>
     public partial class PrikazVremenaTerminaPacijent : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
-        public static ObservableCollection<Termin> VremenaTermina { get; set; }
-        public PrikazVremenaTerminaPacijent(Termin izabraniTermin)
+        VremenaViewModel vremenaViewModel;
+        public PrikazVremenaTerminaPacijent(TerminDTO termin,ZakazivanjePregledaDTO podaci)
         {
             InitializeComponent();
-            VremenaTermina = new ObservableCollection<Termin>();
-            foreach (Termin t in terminKontroler.NadjiVremeTermina(izabraniTermin))
-                VremenaTermina.Add(t);
-            slobodiTerminiVremena.ItemsSource = VremenaTermina;
-        }
-
-        private void izaberiTermin_Click(object sender, RoutedEventArgs e)
-        {
-            if (slobodiTerminiVremena.SelectedIndex == -1)
-            {
-                MessageBox.Show("Izaberite termin!");
-                return;
-            }
-           // PotvrdiZakazivanjePacijent pz = new PotvrdiZakazivanjePacijent(((Termin)slobodiTerminiVremena.SelectedItem));
-            UserControl usc = null;
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-
-            usc = new PotvrdiZakazivanjePacijent(((Termin)slobodiTerminiVremena.SelectedItem));
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(usc);
+            vremenaViewModel = new VremenaViewModel(termin, podaci);
+            this.slobodniTerminiVremena.ItemsSource = vremenaViewModel.SlobodniTermini;
+            this.DataContext = vremenaViewModel;
         }
     }
 }

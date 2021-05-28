@@ -26,12 +26,12 @@ namespace Bolnica
 
         private static Grid GlavniSadrzaj;
         public static Pacijent ulogovani = null;
-   
-        public PacijentGlavniProzor(String id)
+        private String korisnickoIme;
+        public PacijentGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
-            
-            ulogovani = naloziPacijenataKontroler.PretraziPoId(id);
+            this.korisnickoIme = korisnickoIme;
+            ulogovani = naloziPacijenataKontroler.PretraziPoId(korisnickoIme);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PrikazObavestenjaPacijent());
@@ -63,13 +63,13 @@ namespace Bolnica
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent());
+            PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent(korisnickoIme));
             naslovStrane.Content = "    Zakaži pregled";
         }
 
         private void Raspored_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazRasporedaPacijent());
+            PromeniPrikaz(new PrikazRasporedaPacijent(korisnickoIme));
             naslovStrane.Content = "          Raspored";
         }
 

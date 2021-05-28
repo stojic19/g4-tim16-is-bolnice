@@ -98,9 +98,9 @@ namespace Model
             zakazaniTerminiRepozitorijum.ZakaziTermin(termin, korisnickoIme);
         }
 
-        public Termin PretraziZakazanePoId(string idTermina)
+        public Termin DobaviZakazanTerminPoId(string idTermina)
         {
-            return zakazaniTerminiRepozitorijum.PretraziPoId(idTermina);
+            return zakazaniTerminiRepozitorijum.DobaviZakazanTerminPoId(idTermina);
         }
 
         public void IzmeniTermin(Termin stariTermin, Termin noviTermin, string korisnik)
@@ -124,6 +124,7 @@ namespace Model
             naloziPacijenataServis.IzmeniStanjeNalogaPacijenta(terminZaOtkazivanje.Pacijent);
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje);
             terminZaOtkazivanje.Pacijent = null;
+            terminZaOtkazivanje.Prostor = null;
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaOtkazivanje);
         }
 
@@ -132,6 +133,7 @@ namespace Model
         {
             noviTermin.Pacijent = stariTermin.Pacijent;
             stariTermin.Pacijent = null;
+            stariTermin.Prostor = null;
             ZameniTermine(stariTermin, noviTermin);
             naloziPacijenataServis.IzmeniStanjeNalogaPacijenta(noviTermin.Pacijent);
         }
@@ -171,5 +173,6 @@ namespace Model
             zakazaniTerminiRepozitorijum.SacuvajZakazanTermin(termin);
             slobodniTerminiServis.UkloniSlobodanTermin(termin);
         }
+
     }
 }

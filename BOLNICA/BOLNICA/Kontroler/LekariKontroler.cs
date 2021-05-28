@@ -1,4 +1,6 @@
-﻿using Bolnica.Servis;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Servis;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ namespace Bolnica.Kontroler
     class LekariKontroler
     {
         LekariServis lekariServis= new LekariServis();
+        LekarKonverter lekarKonverter = new LekarKonverter();
         
         public List<Lekar> DobaviSveLekare()
         {
@@ -27,6 +30,13 @@ namespace Bolnica.Kontroler
         public Lekar PretraziPoId(String idLekara)
         {
             return lekariServis.PretraziPoId(idLekara);
+        }
+        public List<LekarDTO> DobaviLekareOpstePrakse()
+        {
+            List<LekarDTO> lekariOpstePrakse = new List<LekarDTO>();
+            foreach (Lekar lekar in lekariServis.DobaviLekareOpstePrakse()) 
+                lekariOpstePrakse.Add(lekarKonverter.LekarModelUDTO(lekar));
+            return lekariOpstePrakse;
         }
     }
 }

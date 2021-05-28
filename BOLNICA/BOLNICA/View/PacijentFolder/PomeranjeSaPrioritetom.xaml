@@ -20,10 +20,10 @@
         </ComboBox>
 
 
-        <Button x:Name="nastavi" Click="nastavi_Click"  Background="#FF31577E" Height="25" Margin="0 20">
+        <Button x:Name="nastavi" Background="#FF31577E" Height="25" Margin="0 20">
             <Run Foreground="AntiqueWhite">NASTAVI</Run>
         </Button>
-        <Button x:Name="odustani" Click="odustani_Click"  Background="#FF31577E" Height="25">
+        <Button x:Name="odustani" Background="#FF31577E" Height="25">
             <Run Foreground="AntiqueWhite">ODUSTANI</Run>
         </Button>
 

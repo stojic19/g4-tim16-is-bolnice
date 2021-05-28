@@ -514,7 +514,7 @@
         </Uput>
       </Uputi>
     </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
+    <ZloupotrebioSistem>1</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

@@ -52,6 +52,15 @@ namespace Bolnica.Servis
             }
             return specijaliste;
         }
+
+        public List<Lekar> DobaviLekareOpstePrakse()
+        {
+            List<Lekar> lekariOpstePrakse = new List<Lekar>();
+            foreach (Lekar l in SviLekari())
+                if (l.Specijalizacija == SpecijalizacijeLekara.nema) lekariOpstePrakse.Add(l);
+            return lekariOpstePrakse;
+        }
+
         public String ImeiPrezime(String id)
         {
             foreach (Lekar l in SviLekari())

@@ -36,7 +36,7 @@ namespace Bolnica
         {
            // terminKontroler.PomeriPregledPacijent(noviTermin);
             ProveriNalogPacijenta();
-            PromeniPrikaz(new PrikazRasporedaPacijent());
+           // PromeniPrikaz(new PrikazRasporedaPacijent());
         }
 
         private void ProveriNalogPacijenta()
@@ -47,7 +47,7 @@ namespace Bolnica
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazRasporedaPacijent());
+          
         }
 
         public void PromeniPrikaz(UserControl userControl)

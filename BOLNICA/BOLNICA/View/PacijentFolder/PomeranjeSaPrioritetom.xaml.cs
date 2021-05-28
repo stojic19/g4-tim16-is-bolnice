@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using MoreLinq;
 using PowerfulExtensions.Linq;
@@ -24,14 +25,14 @@ namespace Bolnica
         TerminKontroler terminKontroler = new TerminKontroler();
         public static List<Termin> datumiZaIzmenu = new List<Termin>();
         public String idTermina = null;
-        public PomeranjeSaPrioritetom(Termin termin)
+        public PomeranjeSaPrioritetom(TerminDTO terminZaPomeranje)
         {
             InitializeComponent();
-            bindcombo();
-            PodesavanjePrikaza(termin);
+           // bindcombo();
+           // PodesavanjePrikaza(termin);
         }
 
-        private void PodesavanjePrikaza(Termin termin)
+      /*  private void PodesavanjePrikaza(Termin termin)
         {
             lekarCombo.SelectedIndex = konstruisiCombo(termin.Lekar.KorisnickoIme);
             datum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -47,8 +48,8 @@ namespace Bolnica
                 return;
             }
             datumiZaIzmenu.Clear();
-            List<Termin> terminiUIntervalu = NadjiDatumeUIntervalu();
-            List<Termin> terminiKodIzabranog = terminKontroler.PretraziPoLekaruUIntervalu(terminiUIntervalu, PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme);
+           // List<Termin> terminiUIntervalu = NadjiDatumeUIntervalu();
+          //  List<Termin> terminiKodIzabranog = terminKontroler.PretraziPoLekaruUIntervalu(terminiUIntervalu, PrikazRasporedaPacijent.TerminZaPomeranje.Lekar.KorisnickoIme);
 
             if (terminiKodIzabranog.Count == 0)
             {
@@ -80,15 +81,15 @@ namespace Bolnica
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
         }
 
-        public List<Termin> NadjiDatumeUIntervalu()
-        {
-            DateTime pocetak = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(-2);
-            DateTime kraj = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(2);
-            return terminKontroler.NadjiTermineUIntervalu(pocetak, kraj);
-        }
+    //    public List<Termin> NadjiDatumeUIntervalu()
+       // {
+           // DateTime pocetak = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(-2);
+           // DateTime kraj = PrikazRasporedaPacijent.TerminZaPomeranje.Datum.AddDays(2);
+            //return terminKontroler.NadjiTermineUIntervalu(pocetak, kraj);
+       // }
 
-        private void UbaciDostupneDatume(List<Termin> datumiZaPomeranje)
-        {
+       private void UbaciDostupneDatume(List<Termin> datumiZaPomeranje)
+       {
             foreach (Termin t in datumiZaPomeranje)
                 datumiZaIzmenu.Add(t);
 
@@ -97,7 +98,7 @@ namespace Bolnica
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazRasporedaPacijent());
+          //  PromeniPrikaz(new PrikazRasporedaPacijent());
         }
 
 
@@ -128,6 +129,6 @@ namespace Bolnica
             }
             return 0;
 
-        }
+        }*/
     }
 }
