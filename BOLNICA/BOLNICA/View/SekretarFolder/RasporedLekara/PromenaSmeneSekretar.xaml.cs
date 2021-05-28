@@ -11,11 +11,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.SekretarFolder
 {
@@ -91,13 +93,21 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            rasporedLekaraKontroler.PromeniSmenu(IdIzabranogLekara, radniDanZaPromenuSmene, cbSmena.Text);
+            if (rasporedLekaraKontroler.DaLiJeMogucePromenitiSmenu(radniDanZaPromenuSmene))
+            {
+                rasporedLekaraKontroler.PromeniSmenu(IdIzabranogLekara, radniDanZaPromenuSmene, cbSmena.Text);
 
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+                usc = new PrikazRasporedaLekaraSekretar(IdIzabranogLekara);
+                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Nije moguće promeniti smenu za dan koji je prošao ili je u toku!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

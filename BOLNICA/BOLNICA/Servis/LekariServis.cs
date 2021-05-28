@@ -29,6 +29,16 @@ namespace Bolnica.Servis
         {
             return PretraziPoId(idLekara).DobaviRadneDane();
         }
+
+        public void ProveriDaLiTrebaDodatiDaneZaGodisnji()
+        {
+            List<Lekar> lekari = SviLekari();
+            foreach(Lekar lekar in lekari)
+            {
+                  lekar.ProveriSlobodneDaneZaAzuriranje();
+            }
+        }
+
         public List<Odsustvo> DobaviOdsustvoPoIdLekara(string idLekara)
         {
             return PretraziPoId(idLekara).DobaviSlobodneDane();

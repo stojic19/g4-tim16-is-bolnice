@@ -22,6 +22,12 @@ namespace Bolnica.Servis
             lekariServis.IzmeniLekara(lekar);
             slobodniTerminiServis.UkloniRadniDan(idLekara, radniDan);
         }
+
+        public void ProveriDaLiTrebaDodatiDaneZaGodisnji()
+        {
+            lekariServis.ProveriDaLiTrebaDodatiDaneZaGodisnji();
+        }
+
         public void PromeniSmenu(String idLekara, RadniDan radniDan, string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
@@ -55,6 +61,12 @@ namespace Bolnica.Servis
             }
             lekariServis.IzmeniLekara(lekar);
         }
+
+        public bool DaLiJeMogucePromenitiSmenu(RadniDan radniDanZaPromenuSmene)
+        {
+            return DateTime.Compare(radniDanZaPromenuSmene.PocetakSmene.Date, DateTime.Now.Date) > 0;
+        }
+
         private void DodajRadneDaneSpecijalista(string idLekara,RadniDan radniDan,string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
@@ -96,12 +108,17 @@ namespace Bolnica.Servis
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
             {
-                if (lekar.DaLiJeNaGodisnjemNaProsledjenDatum(datum.Date))
+                if (lekar.DaLiJeNaGodisnjemNaProsledjenDatum(datum.Date) && DatumJeUBuducnosti(datum.Date))
                 {
                     return false;
                 }
             }
             return true;
+        }
+
+        private bool DatumJeUBuducnosti(DateTime datum)
+        {
+            return DateTime.Compare(datum.Date, DateTime.Now.Date) > 0;
         }
 
         private TimeSpan DobaviPocetakSmene(string smena)

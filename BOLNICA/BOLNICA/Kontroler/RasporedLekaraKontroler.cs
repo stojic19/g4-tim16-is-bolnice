@@ -11,6 +11,14 @@ namespace Bolnica.Kontroler
     class RasporedLekaraKontroler
     {
         RasporedLekaraServis rasporedLekaraServis = new RasporedLekaraServis();
+        public RasporedLekaraKontroler()
+        {
+            ProveriDaLiTrebaDodatiDaneZaGodisnji();
+        }
+        private void ProveriDaLiTrebaDodatiDaneZaGodisnji()
+        {
+            rasporedLekaraServis.ProveriDaLiTrebaDodatiDaneZaGodisnji();
+        }
         public void UkloniRadniDan(String idLekara, RadniDan radniDan)
         {
             rasporedLekaraServis.UkloniRadniDan(idLekara, radniDan);
@@ -50,6 +58,11 @@ namespace Bolnica.Kontroler
         public List<Odsustvo> DobaviOdsustvoPoIdLekara(string idLekara)
         {
             return rasporedLekaraServis.DobaviOdsustvoPoIdLekara(idLekara);
+        }
+
+        public bool DaLiJeMogucePromenitiSmenu(RadniDan radniDanZaPromenuSmene)
+        {
+            return rasporedLekaraServis.DaLiJeMogucePromenitiSmenu(radniDanZaPromenuSmene);
         }
     }
 }

@@ -17,7 +17,14 @@ namespace Bolnica.Model
             GodinaZaGodisnji = godina;
             PreostaliBrojSlobodnihDana = brojSlobodnihDana; 
         }
-
+        public void DodajSlobodneDane(int slobodniDani)
+        {
+            PreostaliBrojSlobodnihDana += slobodniDani;
+        }
+        public void OduzmiSlobodneDane(int slobodniDani)
+        {
+            PreostaliBrojSlobodnihDana -= slobodniDani;
+        }
         public int GodinaZaGodisnji
         {
             get
@@ -38,6 +45,15 @@ namespace Bolnica.Model
             set
             {
                 preostaliBrojSlobodnihDana = value;
+            }
+        }
+
+        public void ProveriSlobodneDaneZaAzuriranje()
+        {
+            if (GodinaZaGodisnji != DateTime.Now.Year)
+            {
+                GodinaZaGodisnji = DateTime.Now.Year;
+                PreostaliBrojSlobodnihDana += 20;
             }
         }
     }

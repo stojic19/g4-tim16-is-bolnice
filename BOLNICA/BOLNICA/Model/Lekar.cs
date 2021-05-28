@@ -38,7 +38,6 @@ namespace Model
             this.RadniDani = new List<RadniDan>();
             this.Godisnji = new Godisnji(DateTime.Now.Year, 20);
             this.Odsustva = new List<Odsustvo>();
-            Console.WriteLine("Dodao lekara");
         }
 
         public Lekar(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
@@ -117,18 +116,28 @@ namespace Model
         public void DodajSlobodneDane(Odsustvo odsustvo)
         {
             Odsustva.Add(odsustvo);
+            OduzmiOdSlobodnihDana(odsustvo);
+        }
+        private void OduzmiOdSlobodnihDana(Odsustvo odsustvo)
+        {
+            int brojSlobodnihDanaZaOduzimanje = 0;
+            for (DateTime datum = odsustvo.PocetakOdsustva; DateTime.Compare(datum.Date, odsustvo.KrajOdsustva.Date) <= 0; datum = datum.AddDays(1))
+            {
+                if(DaLiJeDatumRadniDan(datum))
+                {
+                    brojSlobodnihDanaZaOduzimanje += 1;
+                }
+            }
+            Godisnji.OduzmiSlobodneDane(brojSlobodnihDanaZaOduzimanje);
+        }
+        private bool DaLiJeDatumRadniDan(DateTime datum)
+        {
+            return datum.DayOfWeek != DayOfWeek.Saturday && datum.DayOfWeek != DayOfWeek.Sunday;
         }
         public void IzmeniSlobodneDane(Odsustvo staroOdsustvo, Odsustvo novoOdsustvo)
         {
-            foreach (Odsustvo odsustvo in Odsustva)
-            {
-                if (DateTime.Compare(odsustvo.PocetakOdsustva.Date, staroOdsustvo.PocetakOdsustva.Date) == 0)
-                {
-                    odsustvo.PocetakOdsustva = novoOdsustvo.PocetakOdsustva;
-                    odsustvo.KrajOdsustva = novoOdsustvo.KrajOdsustva;
-                    break;
-                }
-            }
+            UkloniSlobodneDane(staroOdsustvo);
+            DodajSlobodneDane(novoOdsustvo);
         }
         public void UkloniSlobodneDane(Odsustvo odsustvoZaUklanjanje)
         {
@@ -139,6 +148,24 @@ namespace Model
                     novaLista.Add(odsustvo);
             }
             Odsustva = novaLista;
+            DodajSlobodnimDanima(odsustvoZaUklanjanje);
+        }
+
+        private void DodajSlobodnimDanima(Odsustvo odsustvo)
+        {
+            int brojSlobodnihDanaZaVracanje = 0;
+            for (DateTime datum = odsustvo.PocetakOdsustva; DateTime.Compare(datum.Date, odsustvo.KrajOdsustva.Date) <= 0; datum = datum.AddDays(1))
+            {
+                if(DateTime.Compare(datum, DateTime.Now)>0 && DaLiJeDatumRadniDan(datum))
+                {
+                    brojSlobodnihDanaZaVracanje += 1;
+                }
+            }
+            Godisnji.DodajSlobodneDane(brojSlobodnihDanaZaVracanje);
+        }
+        public void ProveriSlobodneDaneZaAzuriranje()
+        {
+            Godisnji.ProveriSlobodneDaneZaAzuriranje();
         }
         public bool DaLiJeDostupanNaProsledjenDatum(DateTime prosledjenDatum)
         {

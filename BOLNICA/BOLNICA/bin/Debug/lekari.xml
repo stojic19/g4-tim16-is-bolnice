@@ -61,39 +61,6 @@
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
-    <Ime>Magdalena</Ime>
-    <Prezime>Reljin</Prezime>
-    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-    <Jmbg>33313</Jmbg>
-    <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-    <KontaktTelefon>0634</KontaktTelefon>
-    <Email>reljinn@lekar.com</Email>
-    <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-    <Lozinka>ajdemolimte</Lozinka>
-    <Pol>zenski</Pol>
-    <RadniDani>
-      <RadniDan>
-        <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-04T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-04T15:00:00</KrajSmene>
-      </RadniDan>
-    </RadniDani>
-    <Godisnji>
-      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-    </Godisnji>
-    <Odsustva />
-    <Specijalizacija>nema</Specijalizacija>
-    <Dostupnost>false</Dostupnost>
-  </Lekar>
-  <Lekar>
     <Ime>Aleksa</Ime>
     <Prezime>Stojic</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
@@ -104,23 +71,33 @@
     <KorisnickoIme>AleksaStojic</KorisnickoIme>
     <Lozinka>aleksastojic</Lozinka>
     <Pol>muski</Pol>
-    <RadniDani>
-      <RadniDan>
-        <PocetakSmene>2021-05-26T15:00:00</PocetakSmene>
-        <KrajSmene>2021-05-26T23:00:00</KrajSmene>
-      </RadniDan>
-    </RadniDani>
+    <RadniDani />
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>
       <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
     </Godisnji>
-    <Odsustva>
-      <Odsustvo>
-        <PocetakOdsustva>2021-06-07T00:00:00</PocetakOdsustva>
-        <KrajOdsustva>2021-06-13T00:00:00</KrajOdsustva>
-      </Odsustvo>
-    </Odsustva>
+    <Odsustva />
     <Specijalizacija>neurohirurg</Specijalizacija>
+    <Dostupnost>false</Dostupnost>
+  </Lekar>
+  <Lekar>
+    <Ime>Magdalena</Ime>
+    <Prezime>Reljin</Prezime>
+    <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
+    <Jmbg>33313</Jmbg>
+    <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+    <KontaktTelefon>0634</KontaktTelefon>
+    <Email>reljinn@lekar.com</Email>
+    <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+    <Lozinka>ajdemolimte</Lozinka>
+    <Pol>zenski</Pol>
+    <RadniDani />
+    <Godisnji>
+      <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+      <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+    </Godisnji>
+    <Odsustva />
+    <Specijalizacija>nema</Specijalizacija>
     <Dostupnost>false</Dostupnost>
   </Lekar>
 </ArrayOfLekar>
