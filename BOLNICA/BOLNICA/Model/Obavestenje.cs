@@ -33,7 +33,15 @@ namespace Model
             JeProcitano = false;
             IdPrimaoca = idPrimaoca;
         }
-
+        public Obavestenje(string naslov, string tekst, DateTime datum, string idPrimaoca)
+        {
+            IdObavestenja = generisiID();
+            Naslov = naslov;
+            Tekst = tekst;
+            Datum = datum;
+            JeProcitano = false;
+            IdPrimaoca = idPrimaoca;
+        }
         public Obavestenje() { }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -47,6 +55,10 @@ namespace Model
         public string[] DobaviPrimaoce()
         {
             return IdPrimaoca.Split(' ');
+        }
+        private static string generisiID()
+        {
+            return Guid.NewGuid().ToString();
         }
     }
 }

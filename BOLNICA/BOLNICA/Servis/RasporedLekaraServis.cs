@@ -13,7 +13,8 @@ namespace Bolnica.Servis
     {
         LekariServis lekariServis = new LekariServis();
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
+        ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
+        OperacijeServis operacijeServis = new OperacijeServis();
 
         public void UkloniRadniDan(String idLekara, RadniDan radniDan)
         {
@@ -21,6 +22,14 @@ namespace Bolnica.Servis
             lekar.UkloniRadniDan(radniDan);
             lekariServis.IzmeniLekara(lekar);
             slobodniTerminiServis.UkloniRadniDan(idLekara, radniDan);
+            if (lekar.JeSpecijalista())
+            {
+                operacijeServis.UkloniRadniDan(idLekara, radniDan);
+            }
+            else
+            {
+                zakazaniTerminiServis.UkloniRadniDan(idLekara, radniDan);
+            }
         }
 
         public void ProveriDaLiTrebaDodatiDaneZaGodisnji()
@@ -31,15 +40,22 @@ namespace Bolnica.Servis
         public void PromeniSmenu(String idLekara, RadniDan radniDan, string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            lekar.IzmeniRadniDan(radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date,smena));
+            lekar.IzmeniRadniDan(radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, smena));
             lekariServis.IzmeniLekara(lekar);
-            //terminiServis.PromeniSmenu(idLekara,radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, smena));
             slobodniTerminiServis.PromeniSmenu(idLekara, radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, smena));
+            if (lekar.JeSpecijalista())
+            {
+                operacijeServis.PromeniSmenu(idLekara, radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, smena));
+            }
+            else
+            {
+                zakazaniTerminiServis.PromeniSmenu(idLekara, radniDan, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, smena));
+            }
         }
         public void DodajRadneDane(String idLekara, RadniDan radniDan, string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            if(lekar.Specijalizacija == SpecijalizacijeLekara.nema)
+            if (lekar.Specijalizacija == SpecijalizacijeLekara.nema)
             {
                 DodajRadneDaneOpstaPraksa(idLekara, radniDan, smena);
             }
@@ -48,7 +64,7 @@ namespace Bolnica.Servis
                 DodajRadneDaneSpecijalista(idLekara, radniDan, smena);
             }
         }
-        private void DodajRadneDaneOpstaPraksa(string idLekara,RadniDan radniDan,string smena)
+        private void DodajRadneDaneOpstaPraksa(string idLekara, RadniDan radniDan, string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
@@ -67,7 +83,7 @@ namespace Bolnica.Servis
             return DateTime.Compare(radniDanZaPromenuSmene.PocetakSmene.Date, DateTime.Now.Date) > 0;
         }
 
-        private void DodajRadneDaneSpecijalista(string idLekara,RadniDan radniDan,string smena)
+        private void DodajRadneDaneSpecijalista(string idLekara, RadniDan radniDan, string smena)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
@@ -85,7 +101,7 @@ namespace Bolnica.Servis
             return datum.DayOfWeek != DayOfWeek.Saturday && datum.DayOfWeek != DayOfWeek.Sunday;
         }
 
-        private RadniDan KonstruisiRadniDanNaOsnovuParametara(DateTime datum,string smena)
+        private RadniDan KonstruisiRadniDanNaOsnovuParametara(DateTime datum, string smena)
         {
             DateTime pocetakSmene, krajSmene;
             pocetakSmene = datum.Date + DobaviPocetakSmene(smena);
@@ -162,7 +178,7 @@ namespace Bolnica.Servis
             lekar.UkloniSlobodneDane(odsustvo);
             lekariServis.IzmeniLekara(lekar);
         }
-        public void IzmeniSlobodneDane(String idLekara, Odsustvo staroOdsustvo,Odsustvo novoOdsustvo)
+        public void IzmeniSlobodneDane(String idLekara, Odsustvo staroOdsustvo, Odsustvo novoOdsustvo)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.IzmeniSlobodneDane(staroOdsustvo, novoOdsustvo);

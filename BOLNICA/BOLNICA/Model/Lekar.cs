@@ -196,5 +196,10 @@ namespace Model
         {
             return Odsustva;
         }
+
+        public bool JeSpecijalista()
+        {
+            return Specijalizacija != SpecijalizacijeLekara.nema;
+        }
     }
 }

@@ -23,6 +23,11 @@ namespace Bolnica.Repozitorijum
             imeFajla = "termini.xml";
         }
         
+        public void IzmeniTermin(Termin termin)
+        {
+            ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
+            DodajObjekat(termin);
+        }
         public Termin ZakaziTermin(Termin t, String lekar)
         {
             DodajObjekat(t);

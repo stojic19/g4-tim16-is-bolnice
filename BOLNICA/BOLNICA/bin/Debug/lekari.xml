@@ -71,7 +71,12 @@
     <KorisnickoIme>AleksaStojic</KorisnickoIme>
     <Lozinka>aleksastojic</Lozinka>
     <Pol>muski</Pol>
-    <RadniDani />
+    <RadniDani>
+      <RadniDan>
+        <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-02T15:00:00</KrajSmene>
+      </RadniDan>
+    </RadniDani>
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>
       <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
@@ -91,7 +96,12 @@
     <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
     <Lozinka>ajdemolimte</Lozinka>
     <Pol>zenski</Pol>
-    <RadniDani />
+    <RadniDani>
+      <RadniDan>
+        <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-02T15:00:00</KrajSmene>
+      </RadniDan>
+    </RadniDani>
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>
       <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>

@@ -18,23 +18,28 @@ namespace Bolnica.Repozitorijum
             imeFajla = "terminiOperacija.xml";
         }
         
-        /*
-        public Termin DobaviTerminPoId(String idTermina)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(imeFajla);
-            XmlNode root = doc.DocumentElement;
-            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
-            XmlNode node = root.SelectSingleNode("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']", nsmgr);
-            Termin termin = KonvertujCvorUObjekat(node);
-            return termin;
-        }*/
-
         public void IzmeniTermin(Termin termin)
         {
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
             DodajObjekat(termin);
         }
 
+        internal void UkloniOperaciju(Termin termin)
+        {
+            ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
+        }
+
+        public List<Termin> DobaviOperacijePoIdLekara(string idLekara)
+        {
+            List<Termin> termini = new List<Termin>();
+            foreach (Termin termin in DobaviSveObjekte())
+            {
+                if (termin.Lekar.KorisnickoIme.Equals(idLekara))
+                {
+                    termini.Add(termin);
+                }
+            }
+            return termini;
+        }
     }
 }

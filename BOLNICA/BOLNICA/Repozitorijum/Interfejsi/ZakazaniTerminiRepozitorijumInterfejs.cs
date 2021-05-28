@@ -41,7 +41,6 @@ namespace Bolnica.Repozitorijum.Interfejsi
       
         
         void SacuvajZakazanTermin(Termin terminZaUpis);
-
-       
+        void IzmeniTermin(Termin termin);
     }
 }

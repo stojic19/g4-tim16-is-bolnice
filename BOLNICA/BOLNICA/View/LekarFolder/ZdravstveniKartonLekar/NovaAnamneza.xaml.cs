@@ -147,7 +147,7 @@ namespace Bolnica
                "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
 
             
-            Obavestenje o = new Obavestenje(new Guid().ToString(), "Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Obavestenje o = new Obavestenje("Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
             obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
             DateTime datum;
@@ -163,7 +163,7 @@ namespace Bolnica
                 DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
 
                
-                o = new Obavestenje(new Guid().ToString(), "Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
+                o = new Obavestenje("Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
                 obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
                 //
