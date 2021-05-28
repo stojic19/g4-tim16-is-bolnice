@@ -1,6 +1,8 @@
 ﻿using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
+using MoreLinq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +11,11 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Servis
 {
-    class SlobodniTerminiServis
+    public class SlobodniTerminiServis
     {
-        SlobodniTerminiRepozitorijum slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
+        SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
+        //ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
+        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         LekariServis lekariServis = new LekariServis();
         public List<Termin> DobaviSveSlobodneTermine()
         {
@@ -108,5 +112,74 @@ namespace Bolnica.Servis
         {
             slobodniTerminiRepozitorijum.DodajObjekat(ostatak);
         }
+
+
+
+
+        public List<Termin> NadjiVremeTermina(Termin izabraniTermin)
+        {
+            List<Termin> dupliTermini = new List<Termin>();
+            foreach (Termin termin in DobaviSveSlobodneTermine())
+            {
+                if (termin.Datum.Equals(izabraniTermin.Datum) &&
+                 izabraniTermin.Lekar.KorisnickoIme.Equals(termin.Lekar.KorisnickoIme))
+                    dupliTermini.Add(termin);
+            }
+            return SortTerminaPoPocetnomVremenu(UkloniDupleDatume(dupliTermini));
+        }
+
+        private List<Termin> UkloniDupleDatume(List<Termin> dupliTermini)
+        {
+            List<Termin> jedinstveniTermini = new List<Termin>();
+            foreach (Termin termin in dupliTermini.DistinctBy(t => t.Datum))
+                jedinstveniTermini.Add(termin);
+            return jedinstveniTermini;
+        }
+
+        private List<Termin> SortTerminaPoPocetnomVremenu(List<Termin> nesortiraniTermini)
+        {
+            return nesortiraniTermini.OrderBy(user => DateTime.ParseExact(user.PocetnoVreme, "HH:mm", null)).ToList();
+        }
+
+        private List<Termin> SortTerminaPoDatumu(List<Termin> nesrotiraniDatumi)
+        {
+            return nesrotiraniDatumi.OrderBy(user => user.Datum).ToList();
+        }
+
+        public List<Termin> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
+        {
+            List<Termin> terminiKodIzabranog = new List<Termin>();
+            foreach (Termin termin in terminiUIntervalu)
+            {
+                if (termin.Lekar.KorisnickoIme.Equals(korisnickoImeLekara) && termin.Lekar.Specijalizacija == SpecijalizacijeLekara.nema)
+                    terminiKodIzabranog.Add(termin);
+            }
+            return terminiKodIzabranog;
+        }
+
+        public List<Termin> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
+        {
+            List<Termin> terminiUIntervalu = new List<Termin>();
+            foreach (Termin t in DobaviSveSlobodneTermine())
+            {
+                if (DateTime.Compare(t.Datum, pocetakIntervala) >= 0 && DateTime.Compare(t.Datum, krajIntervala) <= 0)
+                    terminiUIntervalu.Add(t);
+            }
+            return FiltrirajTerminePoSpecijalizaciji(terminiUIntervalu);
+        }
+
+        private List<Termin> FiltrirajTerminePoSpecijalizaciji(List<Termin> terminiSvihLekara)
+        {
+            List<Termin> terminiOpstePrakse = new List<Termin>();
+            foreach (Termin termin in terminiSvihLekara)
+            {
+                if (termin.Lekar.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
+                    terminiOpstePrakse.Add(termin);
+            }
+            return UkloniDupleDatume(SortTerminaPoDatumu(terminiOpstePrakse));
+        }
+
+      
+
     }
 }

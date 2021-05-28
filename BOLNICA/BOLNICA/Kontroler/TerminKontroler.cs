@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Servis;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,105 +10,101 @@ namespace Bolnica.Kontroler
 {
     public class TerminKontroler
     {
-        private TerminiServis terminiServis=new TerminiServis();
+        private ZakazaniTerminiServis zakazaniTerminiServis=new ZakazaniTerminiServis();
+        private SlobodniTerminiServis slobodniTerminiServis=new SlobodniTerminiServis();
         public List<Termin> DobaviSveSlobodneTermine()
         {
-            return terminiServis.DobaviSveSlobodneTermine();
+            return slobodniTerminiServis.DobaviSveSlobodneTermine();
         }
         public List<Termin> DobaviSveZakazaneTermine()
         {
-            return terminiServis.DobaviSveZakazaneTermine();
+            return zakazaniTerminiServis.DobaviSveZakazaneTermine();
         }
 
         public List<Termin> DobaviSveZakazaneTerminePacijenta(String pacijentKorisnickoIme)
         {
-            return terminiServis.DobaviSveZakazaneTerminePacijenta(pacijentKorisnickoIme);
+            return zakazaniTerminiServis.DobaviSveZakazaneTerminePacijenta(pacijentKorisnickoIme);
         }
 
 
         public Termin DobaviSlobodanTerminPoId(String idTermina)
         {
-            return terminiServis.DobaviSlobodanTerminPoId(idTermina);
+            return slobodniTerminiServis.PretraziPoId(idTermina);
         }
 
         public Termin DobaviZakazanTerminPoId(String idTermina)
         {
-            return terminiServis.DobaviZakazanTerminPoId(idTermina);
-        }
-
-        public Termin PretraziSlobodnePoId(string idTermina)
-        {
-            return terminiServis.PretraziSlobodnePoId(idTermina);
+            return zakazaniTerminiServis.PretraziZakazanePoId(idTermina);
         }
 
         public List<Termin> PretraziPoLekaru(string korisnickoIme)
         {
-            return terminiServis.PretraziPoLekaru(korisnickoIme);
+            return zakazaniTerminiServis.PretraziPoLekaru(korisnickoIme);
         }
 
-        public void ZakaziPregled(Termin termin)
+        public void ZakaziPregled(Termin termin,String korisnickoImePacijenta)
         {
-            terminiServis.ZakaziPregled(termin);
+          //  slobodniTerminiServis.ZakaziPregled(termin, korisnickoImePacijenta);
         }
 
-        public void OtkaziPregledPacijent(String idTermina)
+        public void OtkaziPregledPacijent(Termin termin)
         {
-            terminiServis.OtkaziPregledPacijent(idTermina);
+            zakazaniTerminiServis.OtkaziPregledPacijent(termin);
         }
 
-        public void PomeriPregledPacijent(String idTermina)
+        public void PomeriPregledPacijent(Termin stariTermin,Termin noviTermin)
         {
-            terminiServis.PomeriPregledPacijent(idTermina);
+            zakazaniTerminiServis.PomeriPregledPacijent(stariTermin, noviTermin);
         }
 
         public void OtkaziPregledSekretar(string terminZaOtkazivanje)
         {
-            terminiServis.OtkaziPregledSekretar(terminZaOtkazivanje);
+            zakazaniTerminiServis.OtkaziPregledSekretar(terminZaOtkazivanje);
         }
 
         public List<Termin> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
         {
-            return terminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, korisnickoImeLekara);
+            return slobodniTerminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, korisnickoImeLekara);
         }
 
         public List<Termin> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
         {
-            return terminiServis.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
+            return slobodniTerminiServis.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
         }
 
         public bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
         {
-            return terminiServis.ProveriMogucnostPomeranjaDatum(datumPregleda);
+            return zakazaniTerminiServis.ProveriMogucnostPomeranjaDatum(datumPregleda);
         }
 
         public void OtkaziTermin(string idTermina)
         {
-            terminiServis.OtkaziTermin(idTermina);
+            zakazaniTerminiServis.OtkaziTermin(idTermina);
         }
 
         public bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
-            return terminiServis.ProveriMogucnostPomeranjaVreme(vreme);
+            return zakazaniTerminiServis.ProveriMogucnostPomeranjaVreme(vreme);
         }
 
         public List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
-            return terminiServis.NadjiVremeTermina(izabraniTermin);
+            return slobodniTerminiServis.NadjiVremeTermina(izabraniTermin);
         }
 
         public void ZakaziTermin(Termin termin, string korisnickoIme)
         {
-            terminiServis.ZakaziTermin(termin, korisnickoIme);
+            zakazaniTerminiServis.ZakaziTermin(termin, korisnickoIme);
         }
 
         public Termin PretraziPoId(string idTermina)
         {
-            return terminiServis.PretraziPoId(idTermina);
+            return zakazaniTerminiServis.PretraziZakazanePoId(idTermina);
         }
 
         public void IzmeniTermin(Termin stariTermin, Termin noviTermin, string korisnik)
         {
-            terminiServis.IzmeniTermin(stariTermin, noviTermin, korisnik);
+            zakazaniTerminiServis.IzmeniTermin(stariTermin, noviTermin, korisnik);
         }
     }
 }

@@ -184,7 +184,7 @@ namespace Bolnica
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
+            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(izabranLekar) && t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
                 {

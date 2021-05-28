@@ -13,7 +13,7 @@ namespace Model
 {
     public class ProstoriServis
     {
-        TerminiServis terminiServis = new TerminiServis();
+        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
 
         private static String imeFajla = "prostori.xml";
         private static String imeFajla1 = "renoviranje.xml";

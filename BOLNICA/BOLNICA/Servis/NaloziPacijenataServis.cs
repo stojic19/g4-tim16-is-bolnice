@@ -122,5 +122,21 @@ namespace Model
             AlergeniSekretar.AlergeniPacijenta.Insert(indeks, a1);
         }
 
+        public void IzmeniStanjeNalogaPacijenta(Pacijent pacijentZaIzmenu)
+        {
+            Pacijent pacijent = DetektujZloupotrebuSistema(pacijentZaIzmenu);
+            if (pacijent.ZloupotrebioSistem > 5)
+                pacijent.Blokiran = true;
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+        }
+
+
+        public Pacijent DetektujZloupotrebuSistema(Pacijent pacijent)
+        {
+            int brojZloupotreba = pacijent.ZloupotrebioSistem + 1;
+            pacijent.ZloupotrebioSistem = brojZloupotreba;
+            return pacijent;
+        }
+
     }
 }

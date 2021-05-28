@@ -151,7 +151,7 @@ namespace Bolnica
         {
             Termin izabranT = terminKontroler.PretraziPoId(izabran);
             slobodniTermini.Clear();
-            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
+            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.Datum.CompareTo(izabranDatum)==0 && t.getVrstaTerminaString().Equals(izabranaVrstaTermina) && t.Lekar.KorisnickoIme.Equals(izabranT.Lekar.KorisnickoIme))
                 {

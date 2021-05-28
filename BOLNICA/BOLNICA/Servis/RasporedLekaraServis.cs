@@ -13,7 +13,7 @@ namespace Bolnica.Servis
     {
         LekariServis lekariServis = new LekariServis();
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        TerminiServis terminiServis = new TerminiServis();
+        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
 
         public void UkloniRadniDan(String idLekara, RadniDan radniDan)
         {

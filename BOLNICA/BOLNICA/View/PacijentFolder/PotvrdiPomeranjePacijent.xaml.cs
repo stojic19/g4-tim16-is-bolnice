@@ -34,7 +34,7 @@ namespace Bolnica
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            terminKontroler.PomeriPregledPacijent(noviTermin.IdTermina);
+           // terminKontroler.PomeriPregledPacijent(noviTermin);
             ProveriNalogPacijenta();
             PromeniPrikaz(new PrikazRasporedaPacijent());
         }

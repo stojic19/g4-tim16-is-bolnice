@@ -93,7 +93,7 @@
     <Compile Include="Repozitorijum\Interfejsi\ObavestenjaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\OperacijeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PreglediRepozitorijumInterfejs.cs" />
-    <Compile Include="Repozitorijum\Interfejsi\TerminiRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\ZakazaniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\LekariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
@@ -163,7 +163,7 @@
     <Compile Include="Repozitorijum\NaloziPacijenataRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
-    <Compile Include="Repozitorijum\TerminRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ZakazaniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZahteviRepozitorijum.cs" />
     <Compile Include="View\PacijentFolder\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
@@ -847,7 +847,7 @@
     <Compile Include="Model\Prostor.cs" />
     <Compile Include="Servis\NaloziPacijenataServis.cs" />
     <Compile Include="Servis\ProstoriServis.cs" />
-    <Compile Include="Servis\TerminiServis.cs" />
+    <Compile Include="Servis\ZakazaniTerminiServis.cs" />
     <Compile Include="Model\Sekretar.cs" />
     <Compile Include="Model\Enumi\SpecijalizacijeLekara.cs" />
     <Compile Include="Model\Termin.cs" />

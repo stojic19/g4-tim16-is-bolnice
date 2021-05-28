@@ -33,7 +33,7 @@ namespace Bolnica
         LekariKontroler lekariKontroler = new LekariKontroler();
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
 
-        TerminiServis terminiServis = new TerminiServis();
+        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         public Login()
         {
             InitializeComponent();

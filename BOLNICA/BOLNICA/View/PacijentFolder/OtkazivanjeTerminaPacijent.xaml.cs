@@ -44,7 +44,7 @@ namespace Bolnica
                 return;
             }
 
-            terminKontroler.OtkaziPregledPacijent(izabranZaOtkazivanje.IdTermina);
+            terminKontroler.OtkaziPregledPacijent(izabranZaOtkazivanje);
             ProveraNalogaPacijenta();
             this.Close();
         }

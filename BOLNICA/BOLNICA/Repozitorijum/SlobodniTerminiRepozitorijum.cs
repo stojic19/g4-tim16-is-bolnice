@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum
 {
-    class SlobodniTerminiRepozitorijum : GlavniRepozitorijum<Termin>, SlobodniTerminiRepozitorijumInterfejs
+    public class SlobodniTerminiRepozitorijum : GlavniRepozitorijum<Termin>, SlobodniTerminiRepozitorijumInterfejs
     {
         public SlobodniTerminiRepozitorijum()
         {
@@ -33,7 +33,7 @@ namespace Bolnica.Repozitorijum
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
             DodajObjekat(termin);
         }
-        private void UkloniTermin(Termin termin)
+        public void UkloniTermin(Termin termin)
         {
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
         }

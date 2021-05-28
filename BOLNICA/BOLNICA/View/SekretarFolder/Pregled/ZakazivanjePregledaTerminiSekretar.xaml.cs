@@ -64,7 +64,7 @@ namespace Bolnica.Sekretar.Pregled
                 return;
             }    
             termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
-            terminKontroler.ZakaziPregled(termin);
+            terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -77,7 +77,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             bool postoji = false;
             Termin termin = new Termin();
-            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
+            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

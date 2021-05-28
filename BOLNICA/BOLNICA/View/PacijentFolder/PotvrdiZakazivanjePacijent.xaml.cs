@@ -31,7 +31,7 @@ namespace Bolnica
         public PotvrdiZakazivanjePacijent(Termin izabrani)
         {
             InitializeComponent();
-            Termin termin = terminKontroler.PretraziSlobodnePoId(izabrani.IdTermina);
+            Termin termin = terminKontroler.PretraziPoId(izabrani.IdTermina);
 
             TextLekar.Text = termin.Lekar.KorisnickoIme;
             TextDatum.Text = termin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -43,7 +43,7 @@ namespace Bolnica
         {
             Termin t = terminKontroler.DobaviSlobodanTerminPoId(idTermina);
             t.Pacijent = naloziPacijenataKontroler.PretraziPoId(PacijentGlavniProzor.ulogovani.KorisnickoIme);
-            terminKontroler.ZakaziPregled(t);
+            terminKontroler.ZakaziPregled(t, PacijentGlavniProzor.ulogovani.KorisnickoIme);
 
             UserControl usc = null;
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();

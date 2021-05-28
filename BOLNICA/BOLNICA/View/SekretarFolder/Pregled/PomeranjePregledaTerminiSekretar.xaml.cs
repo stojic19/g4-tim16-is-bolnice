@@ -62,7 +62,7 @@ namespace Bolnica.Sekretar.Pregled
             }
 
             termin.Pacijent = terminStari.Pacijent;
-            terminKontroler.ZakaziPregled(termin);
+            terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
             terminKontroler.OtkaziPregledSekretar(terminStari.IdTermina);
 
             UserControl usc = null;
@@ -76,7 +76,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             Termin termin = new Termin();
             bool postoji = false;
-            foreach (Termin t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
+            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {
