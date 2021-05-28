@@ -3,12 +3,17 @@ using System.ComponentModel;
 
 namespace Model
 {
-   public class Alergeni
-   {
-        public String IdAlergena { get; set; }
-        public Lek Lek { get; set; }
-        public String OpisReakcije { get; set; }
-        public String VremeZaPojavu { get; set; }
+    public class Alergeni
+    {
+        private string idAlergena;
+        private Lek lek;
+        private string opisReakcije;
+        private string vremeZaPojavu;
+
+        public String IdAlergena { get => idAlergena; set => idAlergena = value; }
+        public Lek Lek { get => lek; set => lek = value; }
+        public String OpisReakcije { get => opisReakcije; set => opisReakcije = value; }
+        public String VremeZaPojavu { get => vremeZaPojavu; set => vremeZaPojavu = value; }
         public Alergeni() { }
         public Alergeni(string idAlergena, string opisReakcije, string vremeZaPojavu)
         {

@@ -8,26 +8,23 @@ namespace Model
 {
     public class Pacijent : Osoba
     {
+        private VrsteNaloga vrstaNaloga;
+        private ZdravstveniKarton zdravstveniKarton;
+        private int zloupotrebioSistem;
+        private bool blokiran;
 
-        public VrsteNaloga VrstaNaloga { get; set; }
-
-        public ZdravstveniKarton ZdravstveniKarton { get; set; }
-
-        public int ZloupotrebioSistem { get; set; }
-        public bool Blokiran { get; set; }
+        public VrsteNaloga VrstaNaloga { get => vrstaNaloga; set => vrstaNaloga = value; }
+        public ZdravstveniKarton ZdravstveniKarton { get => zdravstveniKarton; set => zdravstveniKarton = value; }
+        public int ZloupotrebioSistem { get => zloupotrebioSistem; set => zloupotrebioSistem = value; }
+        public bool Blokiran { get => blokiran; set => blokiran = value; }
 
         public Pacijent() { }
-
-        public Pacijent(string korisnickoIme)
-        {
-            this.KorisnickoIme = korisnickoIme;
-        }
 
         public String imePrezime()
         {
             return (this.Ime + " " + this.Prezime);
         }
-        public Pacijent(string ime,string prezime,string jmbg,Pol pol)
+        public Pacijent(string ime, string prezime, string jmbg, Pol pol)
         {
             string korisnickoIme = generisiID();
             this.KorisnickoIme = korisnickoIme;
@@ -48,7 +45,7 @@ namespace Model
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
-            if(korisnickoIme.Length == 0)
+            if (korisnickoIme.Length == 0)
                 this.KorisnickoIme = generisiID();
             else
                 this.KorisnickoIme = korisnickoIme;

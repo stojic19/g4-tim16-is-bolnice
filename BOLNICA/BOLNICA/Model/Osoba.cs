@@ -4,20 +4,31 @@ using System.ComponentModel;
 
 namespace Model
 {
-   public class Osoba : INotifyPropertyChanged
-   {
-        public String Ime { get; set; }
-        public String Prezime { get; set; }
-        public DateTime DatumRodjenja { get; set; }
-        public String Jmbg { get; set; }
-        public String AdresaStanovanja { get; set; }
-        public String KontaktTelefon { get; set; }
-        public String Email { get; set; }
+    public class Osoba : INotifyPropertyChanged
+    {
+        private string ime;
+        private string prezime;
+        private DateTime datumRodjenja;
+        private string jmbg;
+        private string adresaStanovanja;
+        private string kontaktTelefon;
+        private string email;
+        private string korisnickoIme;
+        private string lozinka;
+        private Pol pol;
 
-        public String KorisnickoIme { get; set; }
-        public String Lozinka { get; set; }
+        public String Ime { get => ime; set => ime = value; }
+        public String Prezime { get => prezime; set => prezime = value; }
+        public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
+        public String Jmbg { get => jmbg; set => jmbg = value; }
+        public String AdresaStanovanja { get => adresaStanovanja; set => adresaStanovanja = value; }
+        public String KontaktTelefon { get => kontaktTelefon; set => kontaktTelefon = value; }
+        public String Email { get => email; set => email = value; }
 
-        public Pol Pol { get; set; }
+        public String KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
+        public String Lozinka { get => lozinka; set => lozinka = value; }
+
+        public Pol Pol { get => pol; set => pol = value; }
 
         public Osoba(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
         {

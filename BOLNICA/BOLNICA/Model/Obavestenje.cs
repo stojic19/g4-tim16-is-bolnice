@@ -10,15 +10,21 @@ namespace Model
 {
     public class Obavestenje : INotifyPropertyChanged
     {
-      public String IdObavestenja { get; set; }
-        public String Naslov { get; set; }
-        public String Tekst { get; set; }
-        public DateTime Datum { get; set; }
-        public bool JeProcitano { get; set; }
+        private string idObavestenja;
+        private string naslov;
+        private string tekst;
+        private DateTime datum;
+        private bool jeProcitano;
+        private string idPrimaoca;
 
-        public String IdPrimaoca { get; set; }
+        public String IdObavestenja { get => idObavestenja; set => idObavestenja = value; }
+        public String Naslov { get => naslov; set => naslov = value; }
+        public String Tekst { get => tekst; set => tekst = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
+        public bool JeProcitano { get => jeProcitano; set => jeProcitano = value; }
+        public String IdPrimaoca { get => idPrimaoca; set => idPrimaoca = value; }
 
-        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum,string idPrimaoca)
+        public Obavestenje(string idObavestenja, string naslov, string tekst, DateTime datum, string idPrimaoca)
         {
             IdObavestenja = idObavestenja;
             Naslov = naslov;
@@ -27,7 +33,7 @@ namespace Model
             JeProcitano = false;
             IdPrimaoca = idPrimaoca;
         }
-       
+
         public Obavestenje() { }
 
         public event PropertyChangedEventHandler PropertyChanged;
