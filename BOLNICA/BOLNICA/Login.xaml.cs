@@ -48,11 +48,9 @@ namespace Bolnica
             //terminiServis.PrivremenaInicijalizacijaLekara();
             Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
             Lekari = lekariKontroler.DobaviSveLekare();
-
+          
             //hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
-            AnketeRepozitorijum.inicijalizujPitanjaOBolnici();
-            AnketeRepozitorijum.inicijalizujPitanjaOTerminu();
-            AnketeRepozitorijum.DeserijalizacijaAnketa();
+            
             
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -167,7 +165,6 @@ namespace Bolnica
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ProstoriServis.SerijalizacijaProstora();
-            AnketeRepozitorijum.SerijalizacijaAnketa();
             GlavniProzorSekretar.getInstance().Close();
         }
     }

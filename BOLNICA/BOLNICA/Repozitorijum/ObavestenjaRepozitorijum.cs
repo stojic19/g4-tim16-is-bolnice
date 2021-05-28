@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
-    class ObavestenjaRepozitorijum : GlavniRepozitorijum<Obavestenje>, ObavestenjaRepozitorijumInterfejs
+    public class ObavestenjaRepozitorijum : GlavniRepozitorijum<Obavestenje>, ObavestenjaRepozitorijumInterfejs
     {
         public ObavestenjaRepozitorijum()
         {
@@ -22,6 +22,23 @@ namespace Bolnica.Repozitorijum
         {
             ObrisiObjekat("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + obavestenjeZaIzmenu.IdObavestenja + "']");
             DodajObjekat(obavestenjeZaIzmenu);
+        }
+
+        public Obavestenje PretraziObavestenjaPoId(String idObavestenja)
+        {
+            return PretraziPoId("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + idObavestenja + "']");
+        }
+
+
+        public List<Obavestenje> DobaviSvaObavestenjaOsobe(String idOsobe)
+        {
+            List<Obavestenje> obavestenjaOsobe = new List<Obavestenje>();
+            foreach(Obavestenje obavestenje in DobaviSveObjekte())
+            {
+                if (obavestenje.IdPrimaoca.Equals(idOsobe))
+                    obavestenjaOsobe.Add(obavestenje);
+            }
+            return obavestenjaOsobe;
         }
     }
 }

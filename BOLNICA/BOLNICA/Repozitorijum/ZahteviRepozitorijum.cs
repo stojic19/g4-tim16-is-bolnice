@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum
 {
-    class ZahteviRepozitorijum
+    public class ZahteviRepozitorijum
     {
     }
 }

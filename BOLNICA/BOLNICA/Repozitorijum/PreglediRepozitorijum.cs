@@ -29,5 +29,16 @@ namespace Bolnica.Repozitorijum
         {
             return DobaviSveObjekte().OrderBy(user => user.Termin.Datum).ToList();
         }
+
+        public List<Pregled> DobaviSvePregledePacijenta(String korisnickoImePacijenta)
+        {
+            List<Pregled> obavljeniPreglediPacijenta = new List<Pregled>();
+            foreach(Pregled pregled in DobaviSveObjekte())
+            {
+                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(korisnickoImePacijenta) && pregled.Odrzan)
+                    obavljeniPreglediPacijenta.Add(pregled);
+            }
+            return obavljeniPreglediPacijenta;
+        }
     }
 }

@@ -69,8 +69,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
+    <Compile Include="Kontroler\AnketaKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
+    <Compile Include="Kontroler\PitanjaKontroler.cs" />
     <Compile Include="Kontroler\RasporedLekaraKontroler.cs" />
     <Compile Include="Kontroler\LekoviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
@@ -85,7 +87,9 @@
     <Compile Include="Model\Odsustvo.cs" />
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\AnketeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\PitanjaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\SlobodniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
@@ -96,8 +100,10 @@
     <Compile Include="Repozitorijum\Interfejsi\ZakazaniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\LekariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\PitanjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
     <Compile Include="Servis\LekariServis.cs" />
+    <Compile Include="Servis\PitanjaServis.cs" />
     <Compile Include="Servis\RasporedLekaraServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
@@ -165,25 +171,25 @@
     <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZakazaniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZahteviRepozitorijum.cs" />
-    <Compile Include="View\PacijentFolder\Pomoc.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocAnkete.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocAnkete.xaml.cs">
       <DependentUpon>PomocAnkete.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocGlavniMeni.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocGlavniMeni.xaml.cs">
       <DependentUpon>PomocGlavniMeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocIzmenaIOtkazivanje.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocIzmenaIOtkazivanje.xaml.cs">
       <DependentUpon>PomocIzmenaIOtkazivanje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocTerapija.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocTerapija.xaml.cs">
       <DependentUpon>PomocTerapija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocZakazivanje.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocZakazivanje.xaml.cs">
       <DependentUpon>PomocZakazivanje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomocZdravsteniKarton.xaml.cs">
+    <Compile Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml.cs">
       <DependentUpon>PomocZdravsteniKarton.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
@@ -484,31 +490,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\Pomoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocAnkete.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocAnkete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocGlavniMeni.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocGlavniMeni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocIzmenaIOtkazivanje.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocIzmenaIOtkazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocTerapija.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocTerapija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocZakazivanje.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocZakazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomocZdravsteniKarton.xaml">
+    <Page Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

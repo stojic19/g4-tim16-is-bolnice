@@ -1,5 +1,7 @@
 ﻿using Bolnica.Model;
 using Bolnica.Model.Enumi;
+using Bolnica.Repozitorijum.Interfejsi;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,77 +12,29 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
-    public class AnketeRepozitorijum
+    public class AnketeRepozitorijum: GlavniRepozitorijum<Anketa>, AnketeRepozitorijumInterfejs
     {
-        public static String sveAnketeFajl = "sveAnkete.xml";
-        public static List<Pitanje> pitanjaOPregledu = new List<Pitanje>();
-        public static List<Pitanje> pitanjaOBolnici = new List<Pitanje>();
-        public static List<Anketa> popunjeneAnkete = new List<Anketa>();
-        public static void inicijalizujPitanjaOTerminu()
+        public AnketeRepozitorijum()
         {
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Ljubaznost lekara"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Stručnost lekara"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Dužina čekanja na prijem"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Čistoća prostorija"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Ljubaznost osoblja"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Zadovoljstvo pruženom uslugom"));
-            pitanjaOPregledu.Add(new Pitanje(OcenaPitanja.pet, "Celokupna ocena za lekara"));
+            imeFajla = "sveAnkete.xml";
         }
 
-        public static void inicijalizujPitanjaOBolnici()
+        public List<Anketa> NadjiSveAnketePacijentaOBolnici(Pacijent pacijent)
         {
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Izgled bolnice"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Higijena bolnice"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Lokacija bolnice"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Obezbeđen parking"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Aplikacija bolnice"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Celokupna ocena osoblja"));
-            pitanjaOBolnici.Add(new Pitanje(OcenaPitanja.pet, "Celokupna ocena bolnice"));
-        }
-        public static List<Anketa> DeserijalizacijaAnketa()
-        {
-            if (!File.Exists(sveAnketeFajl) || File.ReadAllText(sveAnketeFajl).Trim().Equals(""))
+            List<Anketa> anketePacijenta = new List<Anketa>();
+            foreach(Anketa anketa in DobaviSveObjekte())
             {
-                return popunjeneAnkete;
+                if (anketa.Pacijent.KorisnickoIme.Equals(pacijent.KorisnickoIme) 
+                    && anketa.Pregled==null)
+                    anketePacijenta.Add(anketa);
             }
-            else
-            {
-                FileStream fileStream = File.OpenRead(sveAnketeFajl);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Anketa>));
-                popunjeneAnkete = (List<Anketa>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return popunjeneAnkete;
-            }
-
-        }
-        public static void SerijalizacijaAnketa()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Anketa>));
-            TextWriter tw = new StreamWriter(sveAnketeFajl);
-            xmlSerializer.Serialize(tw, popunjeneAnkete);
-            tw.Close();
-
-        }
-
-        public static List<Pitanje> DobaviSvaPitanjaOPregledu()
-        {
-            return pitanjaOPregledu;
+            return anketePacijenta;
         }
 
 
-        public static List<Pitanje> DobaviSvaPitanjaOBolnici()
-        {
-            return pitanjaOBolnici;
-        }
-        public static List<Anketa> DobaviSveAnkete()
-        {
-            return popunjeneAnkete;
-        }
 
-        public static void DodajAnketu(Anketa anketa)
-        {
-            popunjeneAnkete.Add(anketa);
-        }
+
+
 
     }
 }

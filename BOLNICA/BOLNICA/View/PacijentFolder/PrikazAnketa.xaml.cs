@@ -24,6 +24,7 @@ namespace Bolnica.PacijentFolder
     /// </summary>
     public partial class PrikazAnketa : UserControl
     {
+        AnketaKontroler anketeKontroler = new AnketaKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         public static ObservableCollection<Pregled> StariPregledi { get; set; }
         public PrikazAnketa()
@@ -52,7 +53,7 @@ namespace Bolnica.PacijentFolder
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            if (!AnketeServis.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovani))
+            if (!anketeKontroler.DostupnaAnketaOBolnici(PacijentGlavniProzor.ulogovani))
             {
                 MessageBox.Show("Već ste ocenili bolnicu!");
                 return;

@@ -94,5 +94,10 @@ namespace Bolnica.Model.Rukovanja
         {
             return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Anamneza[IdAnamneze='" + idAnamneze + "']");
         }
+
+        public List<Pregled> DobaviSveObavljenePregledePacijenta(Pacijent pacijent)
+        {
+            return preglediRepozitorijum.DobaviSvePregledePacijenta(pacijent.KorisnickoIme);
+        }
     }
 }

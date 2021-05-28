@@ -68,5 +68,9 @@ namespace Bolnica.Kontroler
             return preglediServis.PretragaPoAnamnezi(idAnamneze);
 
         }
+        public List<Pregled> DobaviSveObavljenePregledePacijenta(Pacijent pacijent)
+        {
+            return preglediServis.DobaviSveObavljenePregledePacijenta(pacijent);
+        }
     }
 }

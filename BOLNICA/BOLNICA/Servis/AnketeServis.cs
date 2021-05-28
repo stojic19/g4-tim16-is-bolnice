@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model.Enumi;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -13,37 +14,38 @@ namespace Bolnica.Model.Rukovanja
 {
     public class AnketeServis
     {
-        public static bool DostupnaAnketaOBolnici(Pacijent pacijent)
+        private AnketeRepozitorijumInterfejs anketeRepozitorijum = new AnketeRepozitorijum();
+
+        public  bool DostupnaAnketaOBolnici(Pacijent pacijent)
         {
             DateTime novaAnketa = NadjiDatumPoslednjeAnketeOBolnici(pacijent).AddMonths(3);
-            if (DateTime.Compare(DateTime.Now.Date, novaAnketa.Date) >= 0)
+            if (ProsloJeTriMesecaOdOcene(novaAnketa))
                 return true;
 
             return false;
         }
-
-        public static DateTime NadjiDatumPoslednjeAnketeOBolnici(Pacijent pacijent)
+        private bool ProsloJeTriMesecaOdOcene(DateTime novaAnketa)
         {
-            List<Anketa> anketePacijenta = new List<Anketa>();
-            foreach (Anketa anketa in AnketeRepozitorijum.popunjeneAnkete)
-            {
-                if (anketa.Pacijent.KorisnickoIme.Equals(pacijent.KorisnickoIme) && anketa.Pregled == null)
-                {
-                    anketePacijenta.Add(anketa);
-                }
-            }
-            if (anketePacijenta.Count == 0)
-            {
-                return DateTime.Now.Date.AddMonths(-3);
-            }
-
-
-            return SortirajAnketePoDatumu(anketePacijenta)[0].OcenioBolnicu;
+            if (DateTime.Compare(DateTime.Now.Date, novaAnketa.Date) >= 0)
+                return true;
+            return false;
         }
 
-        public static List<Anketa> SortirajAnketePoDatumu(List<Anketa> nesortiraniDatumi)
+        private DateTime NadjiDatumPoslednjeAnketeOBolnici(Pacijent pacijent)
         {
-            return nesortiraniDatumi.OrderByDescending(user => user.OcenioBolnicu).ToList();
+           List<Anketa> anketePacijenta = SortirajPoDatumuRastuce(anketeRepozitorijum.NadjiSveAnketePacijentaOBolnici(pacijent));
+          
+            
+            if (anketePacijenta.Count == 0)
+                return DateTime.Now.Date.AddMonths(-3);
+            else
+                return anketePacijenta[0].OcenioBolnicu;
+            
+        }
+
+        public static List<Anketa> SortirajPoDatumuRastuce(List<Anketa> nesortiraneAnkete)
+        {
+            return nesortiraneAnkete.OrderByDescending(user => user.OcenioBolnicu).ToList();
         }
 
         

@@ -146,8 +146,8 @@ namespace Bolnica
             String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
                "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
 
-            String idObavestenja = obavestenjaKontroler.GenerisiIdObavestenja();
-            Obavestenje o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
+            
+            Obavestenje o = new Obavestenje(new Guid().ToString(), "Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
             obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
             DateTime datum;
@@ -162,8 +162,8 @@ namespace Bolnica
                 //assigns year, month, day, hour, min, seconds
                 DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
 
-                idObavestenja = obavestenjaKontroler.GenerisiIdObavestenja();
-                o = new Obavestenje(idObavestenja, "Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
+               
+                o = new Obavestenje(new Guid().ToString(), "Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
                 obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
                 //

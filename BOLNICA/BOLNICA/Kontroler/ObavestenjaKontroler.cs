@@ -26,30 +26,9 @@ namespace Bolnica.Kontroler
             obavestenjaServis.DodajObavestenjePacijentu(obavestenje);
         }
 
-        public String GenerisiIdObavestenja()
-        {
-            int brojac = obavestenjaServis.SvaObavestenja().Count;
-            bool postoji;
-            do
-            {
-                postoji = false;
-                foreach (Obavestenje o in obavestenjaServis.SvaObavestenja())
-                {
-                    if (o.IdObavestenja.Equals("O" + brojac.ToString()))
-                    {
-                        postoji = true;
-                        brojac++;
-                        break;
-                    }
-                }
-            } while (postoji);
-
-            return "O" + brojac.ToString();
-        }
-
         public Obavestenje PretraziPoId(string idObavestenja)
         {
-            return obavestenjaServis.PretraziPoId(idObavestenja);
+            return obavestenjaServis.PretraziObavestenjaPoId(idObavestenja);
         }
 
         public void UkolniObavestenje(string izabranoZaUklanjanje)
@@ -65,6 +44,14 @@ namespace Bolnica.Kontroler
         public void IzmeniObavestenje(Obavestenje obavestenje)
         {
             obavestenjaServis.IzmeniObavestenje(obavestenje);
+        }
+        public Obavestenje PretraziObavestenjaPoId(String idObavestenja)
+        {
+            return obavestenjaServis.PretraziObavestenjaPoId(idObavestenja);
+        }
+        public List<Obavestenje> DobaviSvaObavestenjaOsobe(String IdOsobe)
+        {
+            return obavestenjaServis.DobaviSvaObavestenjaOsobe(IdOsobe);
         }
     }
 }

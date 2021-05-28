@@ -31,7 +31,7 @@ namespace Bolnica.PacijentFolder
 
         private void PosaljiAnketu_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < AnketeRepozitorijum.pitanjaOPregledu.Count; i++)
+            for (int i = 0; i < 5; i++) //i < AnketeRepozitorijum.pitanjaOPregledu.Count
             {
 
                 int indexCombo = i + 1;
@@ -39,8 +39,8 @@ namespace Bolnica.PacijentFolder
 
             }
             predmetAnkete.OcenjenPregled = true;
-            AnketeRepozitorijum.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now, predmetAnkete, AnketeRepozitorijum.pitanjaOPregledu, DodatniKomentar.Text));
-            AnketeRepozitorijum.SerijalizacijaAnketa();
+            //AnketeRepozitorijum.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now, predmetAnkete, AnketeRepozitorijum.pitanjaOPregledu, DodatniKomentar.Text));
+            //AnketeRepozitorijum.SerijalizacijaAnketa();
        
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());
@@ -53,19 +53,19 @@ namespace Bolnica.PacijentFolder
             {
 
                 case 0:
-                    AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.jedan;
+                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.jedan;
                     break;
                 case 1:
-                    AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.dva;
+                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.dva;
                     break;
                 case 2:
-                    AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.tri;
+                  //  AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.tri;
                     break;
                 case 3:
-                    AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.cetiri;
+                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.cetiri;
                     break;
                 case 4:
-                    AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.pet;
+                  //  AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.pet;
                     break;
             }
         }

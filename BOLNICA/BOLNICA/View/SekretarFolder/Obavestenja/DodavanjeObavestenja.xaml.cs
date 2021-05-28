@@ -35,7 +35,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            idObavestenja.Text = obavestenjaKontroler.GenerisiIdObavestenja();
+            idObavestenja.Text = new Guid().ToString();
             datum.SelectedDate = DateTime.Now;
 
             InicijalizujPrimaoca();       

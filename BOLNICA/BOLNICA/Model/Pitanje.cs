@@ -9,15 +9,35 @@ namespace Bolnica.Model
 {
     public class Pitanje
     {
-        public String TekstPitanja { get; set; }
-        public OcenaPitanja Ocena { get; set; }
+        private String tekstPitanja;
+        private OcenaPitanja ocena;
+        private bool pitanjeOBolnici;
 
+        public String TekstPitanja
+        {
+            get { return tekstPitanja; }
+            set { tekstPitanja = value; }
+        }
+
+        public OcenaPitanja Ocena
+        {
+            get { return ocena; }
+            set { ocena = value; }
+        }
+
+
+        public bool PitanjeOBolnici
+        {
+            get { return pitanjeOBolnici; }
+            set { pitanjeOBolnici = value; }
+        }
         public Pitanje() { }
-
-        public Pitanje(OcenaPitanja ocena, string tekstPitanja)
+        public Pitanje(OcenaPitanja ocena, string tekstPitanja,  bool pitanjeOBolnici)
         {
             Ocena = ocena;
             TekstPitanja = tekstPitanja;
+            PitanjeOBolnici = pitanjeOBolnici;
+           
         }
     }
 }
