@@ -41,5 +41,13 @@ namespace Bolnica.DTO
             this.jacina = jacina;
             this.kolicina = kolicina;
         }
+
+        public LekDTO(string idLeka, string nazivLeka, string jacina)
+        {
+            this.idLeka = idLeka;
+            this.nazivLeka = nazivLeka;
+            this.jacina = jacina;
+            this.kolicina = 0;
+        }
     }
 }

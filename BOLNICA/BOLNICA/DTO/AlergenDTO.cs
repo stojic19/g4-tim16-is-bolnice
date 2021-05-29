@@ -34,7 +34,7 @@ namespace Bolnica.DTO
             set { lek = value; }
         }
 
-        AlergenDTO() { }
+        public AlergenDTO() { }
 
         public AlergenDTO(string idAlergena, LekDTO lek, string opisReakcije, string vremeZaPojavu)
         {
@@ -43,5 +43,13 @@ namespace Bolnica.DTO
             this.opisReakcije = opisReakcije;
             this.vremeZaPojavu = vremeZaPojavu;
         }
+
+        public AlergenDTO(string idAlergena, string opisReakcije, string vremeZaPojavu)
+        {
+            this.idAlergena = idAlergena;
+            this.opisReakcije = opisReakcije;
+            this.vremeZaPojavu = vremeZaPojavu;
+        }
+
     }
 }

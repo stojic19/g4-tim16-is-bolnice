@@ -1,10 +1,12 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -27,32 +29,22 @@ namespace Bolnica
 {
     public partial class DodavanjeAlergena : UserControl
     {
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
-        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
-        public static ObservableCollection<Lek> SviLekovi { get; set; }
-        private static String izabranPacijent = null;
+        DodavanjeAlergenaViewModel dodavanjeAlergenaViewModel; // 
 
         public DodavanjeAlergena(String idPacijenta)
         {
             InitializeComponent();
-
-            izabranPacijent = idPacijenta;
-            this.DataContext = this;
-
-            SviLekovi = new ObservableCollection<Lek>();
-            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
-            {
-                SviLekovi.Add(l);
-            }
+            dodavanjeAlergenaViewModel = new DodavanjeAlergenaViewModel(idPacijenta);
+            this.DataContext = dodavanjeAlergenaViewModel;
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        /*private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if(!IspravniUnetiPodaci())
             {
                 return;
             }
 
-            alergeniKontroler.DodajAlergen(izabranPacijent, new Alergeni((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
+            alergeniKontroler.DodajAlergen(izabranPacijent, new AlergeniDTO((((Lek)dataGridLekSekretar.SelectedItem).IDLeka), opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -73,7 +65,7 @@ namespace Bolnica
                 System.Windows.Forms.MessageBox.Show("Izaberite lek!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Alergeni ale in alergeniKontroler.DobaviAlergenePoIdPacijenta(izabranPacijent))
+            foreach (AlergeniPrikazDTO ale in alergeniKontroler.DobaviAlergenePoIdPacijenta(izabranPacijent))
             {
                 if (ale.IdAlergena.Equals(idLeka))
                 {
@@ -101,7 +93,7 @@ namespace Bolnica
 
             usc = new AlergeniSekretar(izabranPacijent);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
+        }*/
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

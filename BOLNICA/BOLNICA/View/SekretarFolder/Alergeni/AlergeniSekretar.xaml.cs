@@ -1,7 +1,9 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -25,22 +27,14 @@ namespace Bolnica
     /// </summary>
     public partial class AlergeniSekretar : UserControl
     {
-        AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
-        String izabran = null;
-        public static ObservableCollection<Alergeni> AlergeniPacijenta { get; set; }
+        private AlergeniViewModel alergeniViewModel;//
+
         public AlergeniSekretar(String idPacijenta)
         {
             InitializeComponent();
-
-            this.DataContext = this;
-            izabran = idPacijenta;
-            AlergeniPacijenta = new ObservableCollection<Alergeni>();
-
-            foreach (Alergeni a in alergeniKontroler.DobaviAlergenePoIdPacijenta(idPacijenta))
-            {
-                AlergeniPacijenta.Add(a);
-            }
-        }
+            alergeniViewModel = new AlergeniViewModel(idPacijenta);
+            this.DataContext = alergeniViewModel;
+        }/*
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Dodavanje alergena
@@ -94,7 +88,7 @@ namespace Bolnica
 
             usc = new PrikazNalogaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
+        }*/
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

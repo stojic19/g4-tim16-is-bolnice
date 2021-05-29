@@ -76,7 +76,28 @@ namespace Model
                 return true;
             }
         }
-
+        public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
+        {
+            foreach (Alergeni alergeni in DobaviAlergenePoIdPacijenta(idPacijenta))
+            {
+                if (alergeni.IdAlergena.Equals(idLeka))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public Alergeni DobaviAlergenPacijentaPoId(String idPacijenta, String idAlergena)
+        {
+            foreach (Alergeni alergen in DobaviAlergenePoIdPacijenta(idPacijenta))
+            {
+                if (alergen.IdAlergena.Equals(idAlergena))
+                {
+                    return alergen;
+                }
+            }
+            return null;
+        }
         public Pacijent PretraziPoId(String idNaloga)
         {
             return naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNaloga + "']");
@@ -93,7 +114,6 @@ namespace Model
         public Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
         {
             Pacijent pacijent = PretraziPoId(idPacijenta);
-            // AlergeniSekretar.AlergeniPacijenta.Remove(alergen);
             pacijent.UkloniAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             return true;
@@ -103,7 +123,6 @@ namespace Model
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.IzmeniAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
-            // AzurirajPrikazAlergena(alergen);
             return true;
         }
         public Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
@@ -112,14 +131,7 @@ namespace Model
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.DodajAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
-            AlergeniSekretar.AlergeniPacijenta.Add(alergen);
             return true;
-        }
-        private void AzurirajPrikazAlergena(Alergeni a1)
-        {
-            int indeks = AlergeniSekretar.AlergeniPacijenta.IndexOf(a1);
-            AlergeniSekretar.AlergeniPacijenta.RemoveAt(indeks);
-            AlergeniSekretar.AlergeniPacijenta.Insert(indeks, a1);
         }
 
         public void IzmeniStanjeNalogaPacijenta(Pacijent pacijentZaIzmenu)

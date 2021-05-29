@@ -1,4 +1,7 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Model.Rukovanja;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +13,48 @@ namespace Bolnica.Kontroler
     class AlergeniKontroler
     {
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-
-        public List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
+        LekoviServis lekoviServis = new LekoviServis();
+        AlergeniKonverter alergeniKonverter = new AlergeniKonverter();
+        LekKonverter lekKonverter = new LekKonverter();
+        public List<LekDTO> DobaviLekoveZaDodavanje()
         {
-            return naloziPacijenataServis.DobaviAlergenePoIdPacijenta(idPacijenta);
+            List<LekDTO> lekovi = new List<LekDTO>();
+            foreach (Lek lek in lekoviServis.DobaviSveLekove())
+                lekovi.Add(lekKonverter.LekModelULekDTO(lek));
+            return lekovi;
+        }
+        public List<AlergeniPrikazDTO> DobaviAlergenePoIdPacijenta(String idPacijenta)
+        {
+            List<AlergeniPrikazDTO> alergeniPacijenta = new List<AlergeniPrikazDTO>();
+            foreach (Alergeni alergen in naloziPacijenataServis.DobaviAlergenePoIdPacijenta(idPacijenta))
+                alergeniPacijenta.Add(alergeniKonverter.AlergeniModelPrikazUDTO(alergen));
+            return alergeniPacijenta;
         }
 
-        public void UkloniAlergen(string izabranPacijent, Alergeni alergen)
+        public void UkloniAlergen(string izabranPacijent, string idAlergena)
         {
+            Alergeni alergen = naloziPacijenataServis.DobaviAlergenPacijentaPoId(izabranPacijent, idAlergena);
             naloziPacijenataServis.UkloniAlergen(izabranPacijent, alergen);
         }
 
-        public void DodajAlergen(string izabranPacijent, Alergeni alergenZaDodavanje)
+        public void DodajAlergen(string izabranPacijent, AlergenDTO alergenZaDodavanje)
         {
-            naloziPacijenataServis.DodajAlergen(izabranPacijent, alergenZaDodavanje);
+            naloziPacijenataServis.DodajAlergen(izabranPacijent, alergeniKonverter.AlergenDTOUModel(alergenZaDodavanje));
         }
 
-        internal void IzmeniAlergen(string izabranPacijent, Alergeni alergenZaIzmenu)
+        public void IzmeniAlergen(string izabranPacijent, AlergenDTO alergenZaIzmenu)
         {
-            naloziPacijenataServis.IzmeniAlergen(izabranPacijent, alergenZaIzmenu);
+            naloziPacijenataServis.IzmeniAlergen(izabranPacijent, alergeniKonverter.AlergenDTOUModel(alergenZaIzmenu));
+        }
+
+        public AlergenDTO AlergeniPrikazDTOUAlergeniDTO(AlergeniPrikazDTO alergeniPrikazDTO)
+        {
+            return alergeniKonverter.AlergeniPrikazDTOUAlergenDTO(alergeniPrikazDTO);
+        }
+
+        public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
+        {
+            return naloziPacijenataServis.DaLiLekVecPostojiUAlergenimaPacijenta(idPacijenta, idLeka);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -44,14 +45,8 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            foreach(Alergeni alergen in alergeniKontroler.DobaviAlergenePoIdPacijenta(izabranPacijent))
-            {
-                if(alergen.IdAlergena.Equals(izabranAlergen))
-                {
-                    alergeniKontroler.UkloniAlergen(izabranPacijent, alergen);
-                    break;
-                }
-            }
+            alergeniKontroler.UkloniAlergen(izabranPacijent, izabranAlergen);
+
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 

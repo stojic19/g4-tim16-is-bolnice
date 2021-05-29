@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DTO\AlergenDTO.cs" />
+    <Compile Include="DTO\AlergeniPrikazDTO.cs" />
     <Compile Include="DTO\AnamnezaDTO.cs" />
     <Compile Include="DTO\KartonPacijentaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
@@ -94,7 +95,9 @@
     <Compile Include="Kontroler\SlobodniTerminiKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
+    <Compile Include="Konverter\AlergeniKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
+    <Compile Include="Konverter\LekKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
@@ -131,6 +134,8 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\AlergeniViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\DodavanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>

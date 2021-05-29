@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -36,7 +37,7 @@ namespace Bolnica
             izabranPacijent = idPacijenta;
             izabranAlergen = idAlergena;
 
-            foreach(Alergeni a in alergeniKontroler.DobaviAlergenePoIdPacijenta(idPacijenta))
+            foreach(AlergeniPrikazDTO a in alergeniKontroler.DobaviAlergenePoIdPacijenta(idPacijenta))
             {
                 if(a.IdAlergena.Equals(idAlergena))
                 {
@@ -55,7 +56,7 @@ namespace Bolnica
                 return;
             }    
 
-            alergeniKontroler.IzmeniAlergen(izabranPacijent, new Alergeni(izabranAlergen, opis.Text, vreme.Text));
+            alergeniKontroler.IzmeniAlergen(izabranPacijent, new AlergenDTO(izabranAlergen, opis.Text, vreme.Text));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

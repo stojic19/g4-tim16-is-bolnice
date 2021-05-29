@@ -1086,7 +1086,6 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\V
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAlergenaPacijenta.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAnketa.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazKartona.g.cs
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazTerapijePacijent.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Alergeni\AlergeniSekretar.g.cs
@@ -1171,7 +1170,6 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\V
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAlergenaPacijenta.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAnketa.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazKartona.baml
-C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazTerapijePacijent.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Alergeni\AlergeniSekretar.baml
@@ -3058,3 +3056,7 @@ C:\Users\computer\Desktop\simsssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA
 C:\Users\computer\Desktop\simsssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
 C:\Users\computer\Desktop\simsssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\simsssssssssssssssssssssss\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviDvijeProstorije.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviJednuProstoriju.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviDvijeProstorije.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviJednuProstoriju.baml
