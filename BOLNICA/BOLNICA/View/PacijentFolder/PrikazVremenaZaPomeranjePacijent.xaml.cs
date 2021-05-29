@@ -1,4 +1,6 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,12 +21,14 @@ namespace Bolnica
 {
     public partial class PrikazVremenaZaPomeranjePacijent : UserControl
     {
-     
-        public PrikazVremenaZaPomeranjePacijent(Termin izabraniTermin)
+
+        VremenaPomeranjaViewModel vremenaPomeranjaViewModel;
+        public PrikazVremenaZaPomeranjePacijent(List<TerminDTO> terminiZaIzmenu, ZakazivanjePregledaDTO podaci)
         {
             InitializeComponent();
-        
+            vremenaPomeranjaViewModel = new VremenaPomeranjaViewModel(terminiZaIzmenu, podaci);
+            vremenaZaPomeranje.ItemsSource = vremenaPomeranjaViewModel.SlobodniTermini;
+            this.DataContext = vremenaPomeranjaViewModel;
         }
-
     }
 }

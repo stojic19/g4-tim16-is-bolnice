@@ -123,8 +123,12 @@
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="ViewModel\PacijentViewModel\DatumiViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\DatumiZaPomeranjeViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\PomeranjePregledaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\RasporedTerminaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
@@ -269,9 +273,6 @@
     </Compile>
     <Compile Include="View\PacijentFolder\PrikazKartona.xaml.cs">
       <DependentUpon>PrikazKartona.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.xaml.cs">
-      <DependentUpon>PrikazDatumaZaPomeranjeLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjePrioritet.xaml</DependentUpon>
@@ -584,10 +585,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PacijentFolder\PrikazKartona.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

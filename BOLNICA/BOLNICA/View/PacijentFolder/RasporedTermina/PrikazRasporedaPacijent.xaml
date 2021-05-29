@@ -8,7 +8,8 @@
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista zakazanih termina</Label>
-        <ListBox SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay}" SelectedItem="{Binding Path=SelektovaniTermin}">
+        <ListBox Margin="20 0 20 0" SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+ SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -42,14 +43,14 @@
 
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="0"   FontSize="15" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="0"   FontSize="15" Text="{Binding Datum , StringFormat={}{0:dd/MM/yyyy},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Text="{Binding Vreme}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="15" Text="{Binding Vreme,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="{Binding Lekar.ImeIPrezime}" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Text="{Binding Lekar.ImeIPrezime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
 
 
                                 </Grid>

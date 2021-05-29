@@ -108,7 +108,7 @@ namespace Model
             zakazaniTerminiRepozitorijum.IzmeniTermin(stariTermin, noviTermin, korisnik);
         }
 
-      
+
         public List<Termin> DobaviSveZakazaneTermine()
         {
             return zakazaniTerminiRepozitorijum.DobaviSveZakazaneTermine();
@@ -129,7 +129,7 @@ namespace Model
         }
 
 
-        public void PomeriPregledPacijent(Termin stariTermin,Termin noviTermin)
+        public void PomeriPregledPacijent(Termin stariTermin, Termin noviTermin)
         {
             noviTermin.Pacijent = stariTermin.Pacijent;
             stariTermin.Pacijent = null;
@@ -145,7 +145,7 @@ namespace Model
             slobodniTerminiServis.UkloniSlobodanTermin(noviTermin);
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin);
         }
-       
+
 
         public bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
         {
@@ -167,12 +167,11 @@ namespace Model
         }
 
 
-         public void ZakaziPregled(Termin termin,String korisnickoImePacijenta)
+        public void ZakaziPregled(Termin termin, String korisnickoImePacijenta)
         {
             termin.Pacijent = naloziPacijenataServis.PretraziPoId(korisnickoImePacijenta);
             zakazaniTerminiRepozitorijum.SacuvajZakazanTermin(termin);
             slobodniTerminiServis.UkloniSlobodanTermin(termin);
         }
-
     }
 }

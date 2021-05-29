@@ -1,5 +1,7 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,41 +21,12 @@ namespace Bolnica
 { 
     public partial class PotvrdiPomeranjePacijent : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
-        private Termin noviTermin = null;
-        public PotvrdiPomeranjePacijent(Termin izabrani)
+        PotvrdiPomeranjeViewModel potvrdiPomeranjeViewModel;
+        public PotvrdiPomeranjePacijent(List<TerminDTO> terminiZaIzmenu, ZakazivanjePregledaDTO podaci)
         {
             InitializeComponent();
-            noviTermin = terminKontroler.DobaviSlobodanTerminPoId(izabrani.IdTermina);
-
-            TextLekar.Text = noviTermin.Lekar.KorisnickoIme;
-            TextDatum.Text = noviTermin.Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            TextVreme.Text = noviTermin.PocetnoVreme;
-           
-        }
-
-        private void potvrdi_Click(object sender, RoutedEventArgs e)
-        {
-           // terminKontroler.PomeriPregledPacijent(noviTermin);
-            ProveriNalogPacijenta();
-           // PromeniPrikaz(new PrikazRasporedaPacijent());
-        }
-
-        private void ProveriNalogPacijenta()
-        {
-            if (PacijentGlavniProzor.ulogovani.Blokiran)
-                MessageBox.Show("Ovo je poslednji pomeren termin! Vaš nalog je blokiran.");
-        }
-
-        private void odustani_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-        public void PromeniPrikaz(UserControl userControl)
-        {
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
+            potvrdiPomeranjeViewModel = new PotvrdiPomeranjeViewModel(terminiZaIzmenu, podaci);
+            this.DataContext = potvrdiPomeranjeViewModel;
         }
     }
 }

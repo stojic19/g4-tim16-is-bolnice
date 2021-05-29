@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.ViewModel.PacijentViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,35 +18,16 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for PrikazDatumaZaPomeranjePrioritet.xaml
-    /// </summary>
     public partial class PrikazDatumaZaPomeranjePrioritet : UserControl
     {
-        public static ObservableCollection<Termin> SlobodniDatumiIzmena { get; set; }
-        public PrikazDatumaZaPomeranjePrioritet()
+        DatumiZaPomeranjeViewModel datumiZaPomeranjeViewModel;
+        public PrikazDatumaZaPomeranjePrioritet(TerminDTO izabraniTermin, ZakazivanjePregledaDTO podaci)
         {
             InitializeComponent();
-            SlobodniDatumiIzmena = new ObservableCollection<Termin>();
-            foreach (Termin t in PomeranjeSaPrioritetom.datumiZaIzmenu)
-                SlobodniDatumiIzmena.Add(t);
-            slobodniDatumiPomeranjePrioritet.ItemsSource = SlobodniDatumiIzmena;
+            datumiZaPomeranjeViewModel = new DatumiZaPomeranjeViewModel(izabraniTermin, podaci);
+            slobodniDatumiPomeranjePrioritet.ItemsSource = datumiZaPomeranjeViewModel.SlobodniDatumi;
+            this.DataContext = datumiZaPomeranjeViewModel;
         }
 
-        private void izaberiDatum_Click(object sender, RoutedEventArgs e)
-        {
-            if(slobodniDatumiPomeranjePrioritet.SelectedIndex==-1)
-            {
-                MessageBox.Show("Izaberite datum!");
-                return;
-            }
-            PromeniPrikaz(new PrikazVremenaZaPomeranjePacijent((Termin)slobodniDatumiPomeranjePrioritet.SelectedItem));
-        }
-        
-        public void PromeniPrikaz(UserControl userControl)
-        {
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(userControl);
-        }
     }
 }

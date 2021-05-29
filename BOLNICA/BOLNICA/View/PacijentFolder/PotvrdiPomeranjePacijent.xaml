@@ -10,21 +10,21 @@
         <StackPanel Margin="20 100">
             <Label Height="25" >LEKAR</Label>
 
-            <TextBox Height="25" x:Name="TextLekar" IsReadOnly="True" ></TextBox>
+            <TextBox Height="25" x:Name="TextLekar" IsReadOnly="True" Text="{Binding Path=NoviTermin.Lekar.ImeIPrezime}" ></TextBox>
 
 
             <Label Height="25">DATUM</Label>
-            <TextBox Height="25" Name="TextDatum"  IsReadOnly="True"></TextBox>
+            <TextBox Height="25" Name="TextDatum"  IsReadOnly="True" Text="{Binding Path=NoviTermin.Datum, StringFormat={}{0:dd/MM/yyyy}}"></TextBox>
             <Label Height="25">VREME</Label>
-            <TextBox Height="25" Name="TextVreme" Margin="00 00 00 30"  IsReadOnly="True"></TextBox>
+            <TextBox Height="25" Name="TextVreme" Margin="00 00 00 30"  IsReadOnly="True" Text="{Binding Path=NoviTermin.Vreme}"></TextBox>
 
-          
 
-            <Button Name="potvrdi" Click="potvrdi_Click" Height="25" Margin="5" Background="#FF31577E">
+
+            <Button Name="potvrdi"  Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=PomeriTerminKomanda}">
                 <Run Foreground="AntiqueWhite">POTVRDI</Run>
             </Button>
-            <Button Name="odustani" Click="odustani_Click" Height="25" Margin="5" Background="#FF31577E">
-                <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+            <Button Name="odustani"   Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=VratiSe}">
+                <Run Foreground="AntiqueWhite">VRATI SE</Run>
             </Button>
 
             <Grid Margin="00 50">
@@ -38,3 +38,4 @@
         </StackPanel>
     </Grid>
 </UserControl>
+

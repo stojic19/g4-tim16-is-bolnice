@@ -35,12 +35,14 @@ namespace Bolnica.ViewModel
             UcitajUKolekciju();
             otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
             detaljiPregledaKomanda = new RelayCommand(PrikazDetalja);
+            pomeriPregledKomanda = new RelayCommand(PomeriPregled);
         }
 
         public RasporedTerminaViewModel(TerminDTO izabraniTermin)
         {
             selektovaniTermin = izabraniTermin;
             this.potvrdiOtkazivanjeKomanda = new RelayCommand(Potvrdi);
+            UcitajUKolekciju();
         }
 
         public void UcitajUKolekciju()
@@ -48,7 +50,7 @@ namespace Bolnica.ViewModel
             ZakazaniTerminiPacijenta = new ObservableCollection<TerminDTO>();
             foreach (TerminDTO termin in terminKontroler.DobaviSveZakazaneTerminePacijenta(korisnickoIme))
             {
-                zakazaniTerminiPacijenta.Add(termin);
+                ZakazaniTerminiPacijenta.Add(termin);
             }
         }
 
@@ -82,7 +84,7 @@ namespace Bolnica.ViewModel
                 {
                     if (!naloziPacijenataKontroler.NalogJeBlokiran(korisnickoIme))
                     {
-                      
+
                         OtkazivanjeTerminaPacijent otkazivanje = new OtkazivanjeTerminaPacijent(SelektovaniTermin);
                         otkazivanje.Show();
                     }
@@ -130,6 +132,7 @@ namespace Bolnica.ViewModel
         }
         public void Potvrdi()
         {
+
             terminKontroler.OtkaziPregledPacijent(SelektovaniTermin);
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazRasporedaPacijent(korisnickoIme));
@@ -151,7 +154,7 @@ namespace Bolnica.ViewModel
                     if (!naloziPacijenataKontroler.NalogJeBlokiran(korisnickoIme))
                     {
                         PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-                        //PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PomeranjeSaPrioritetom(selektovaniTermin));
+                        PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PomeranjeSaPrioritetom(SelektovaniTermin));
                     }
                     else
                     {
@@ -190,6 +193,8 @@ namespace Bolnica.ViewModel
             }
         }
 
-        
-    }
+
+    
+
+}
 }

@@ -8,26 +8,26 @@
          d:DesignHeight="600" d:DesignWidth="350">
     <StackPanel Margin="30 100">
         <TextBlock Height="25" >LEKAR</TextBlock>
-        <ComboBox Name="lekarCombo" Height="25" ItemsSource="{Binding}" DisplayMemberPath="KorisnickoIme" SelectedValuePath="KorisnickoIme"></ComboBox>
+        <ComboBox Name="lekarCombo" Height="25" ItemsSource="{Binding Path=SviLekari}" DisplayMemberPath="ImeIPrezime" SelectedValuePath="ImeIPrezime" SelectedItem="{Binding Path=PodaciIzmene.IzabraniLekar}"></ComboBox>
         <TextBlock Height="25">DATUM</TextBlock>
-        <TextBox Height="25" x:Name="datum" IsReadOnly="True" ></TextBox>
+        <TextBox Height="25" x:Name="datum" IsReadOnly="True" Text="{Binding Path=IzabraniTermin.Datum,StringFormat={}{0:dd/MM/yyyy}}" ></TextBox>
         <TextBlock  Height="25" >VREME</TextBlock>
-        <TextBox  x:Name="vreme" IsReadOnly="True"></TextBox>
+        <TextBox  x:Name="vreme" IsReadOnly="True" Text="{Binding Path=IzabraniTermin.Vreme}"></TextBox>
         <TextBlock Height="25">PRIORITET</TextBlock>
-        <ComboBox Height="25" x:Name="prioritet">
+        <ComboBox Height="25" x:Name="prioritet" SelectedIndex="{Binding Path=PodaciIzmene.Prioritet}" >
             <ComboBoxItem>lekar</ComboBoxItem>
             <ComboBoxItem>datum</ComboBoxItem>
         </ComboBox>
 
 
-        <Button x:Name="nastavi" Background="#FF31577E" Height="25" Margin="0 20">
-            <Run Foreground="AntiqueWhite">NASTAVI</Run>
+        <Button x:Name="nastavi" Background="#FF31577E" Height="25" Margin="0 20" Command="{Binding Path=PrikaziDatumeKomanda}">
+            <Run Foreground="AntiqueWhite"  >NASTAVI</Run>
         </Button>
-        <Button x:Name="odustani" Background="#FF31577E" Height="25">
-            <Run Foreground="AntiqueWhite">ODUSTANI</Run>
+        <Button x:Name="odustani" Background="#FF31577E" Height="25" Command="{Binding Path=VratiSeKomanda}">
+            <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
 
-
+        <Label Margin="22,5"  Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Grid Margin="00 50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
