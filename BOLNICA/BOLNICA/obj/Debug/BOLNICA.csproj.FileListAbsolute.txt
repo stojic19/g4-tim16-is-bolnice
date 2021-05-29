@@ -2588,3 +2588,7 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeProstora.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UpravnikGlavniProzor.baml
+C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviDvijeProstorije.g.cs
+C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviJednuProstoriju.g.cs
+C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviDvijeProstorije.baml
+C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\NapraviJednuProstoriju.baml

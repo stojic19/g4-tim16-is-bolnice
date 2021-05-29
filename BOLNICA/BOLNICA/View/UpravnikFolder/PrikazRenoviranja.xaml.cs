@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Bolnica.Model;
+using Bolnica.Servis;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,30 @@ namespace Bolnica.UpravnikFolder
     /// </summary>
     public partial class PrikazRenoviranja : UserControl
     {
+        public static ObservableCollection<Renoviranje> Renoviranja { get; set; }
+
         public PrikazRenoviranja()
         {
             InitializeComponent();
+
+            this.DataContext = this;
+
+            Renoviranja = new ObservableCollection<Renoviranje>();
+
+            foreach (Renoviranje r in RenoviranjeServis.SvaRenoviranja())
+            {
+                Renoviranja.Add(r);
+            }
+        }
+
+        private void JednaProstorija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DvijeProstorije_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

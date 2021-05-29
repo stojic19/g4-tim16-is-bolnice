@@ -9,13 +9,15 @@ namespace Bolnica.Model
 {
     public class Renoviranje
     {
+        public String IdRenoviranja { get; set; }
         public Prostor Prostor { get; set; }
         public DateTime PocetniDatum { get; set; }
         public DateTime DatumKraja { get; set; }
 
         public Renoviranje() { }
-        public Renoviranje(Prostor prostor, DateTime argStartDay, DateTime argEndDay)
+        public Renoviranje(String id, Prostor prostor, DateTime argStartDay, DateTime argEndDay)
         {
+            IdRenoviranja = id;
             Prostor = prostor;
             PocetniDatum = argStartDay;
             DatumKraja = argEndDay;

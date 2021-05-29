@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Bolnica.NapraviDvijeProstorije"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica"
+             mc:Ignorable="d" 
+             d:DesignHeight="385" d:DesignWidth="675">
+    <StackPanel Background="White" Margin="0,0,0,0.4">
+        <Grid Background="LightBlue" Height="384" Margin="0,0,0.2,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="650*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Naziv 1. prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="1" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+
+            <TextBox AcceptsReturn="True" Name="NazivProstora" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="159,28,0,14" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+
+
+            <Label Content="Vrsta 1. prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="2" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+
+            <ComboBox IsEditable="True" Name="VrstaProstora" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="159,28,0,14" SelectedIndex="0"
+                   Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
+
+                <ComboBoxItem HorizontalAlignment="Left">Ordinacija</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left">Sala</ComboBoxItem>
+                <ComboBoxItem HorizontalAlignment="Left">Soba</ComboBoxItem>
+            </ComboBox>
+
+            <Label Content="Sprat:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="3" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+
+            <TextBox AcceptsReturn="True"  Name="Sprat" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="159,32,0,10" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.468,2.343" Grid.ColumnSpan="2" />
+
+            <Label Content="Kvadratura:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="4" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+
+            <TextBox AcceptsReturn="True" Name="Kvadratura" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="159,24,0,18" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+
+            <Label Content="Pravljenje dvije prostorije renoviranjem jedne " HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                FontSize="15" FontWeight="Bold" Grid.Column="1" Margin="0,24,157.2,10" Height="30" Width="338"/>
+
+            <Label Content="Naziv 2. prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                Grid.Column="1" Grid.Row="1" Margin="0,24,186.2,10" Height="30" Width="150"/>
+            <TextBox AcceptsReturn="True" x:Name="NazivProstora_Copy" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,28,0,14" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+            <Label Content="Vrsta 2. prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                Grid.Column="1" Grid.Row="2" Margin="0,24,186.2,10" Height="30" Width="150"/>
+            <ComboBox IsEditable="True" x:Name="VrstaProstora_Copy" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,28,0,14" SelectedIndex="0"
+                Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1">
+
+                <ComboBoxItem HorizontalAlignment="Left" Content="Ordinacija"/>
+                <ComboBoxItem HorizontalAlignment="Left" Content="Sala"/>
+                <ComboBoxItem HorizontalAlignment="Left" Content="Soba"/>
+            </ComboBox>
+
+            <Label Content="Sprat:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                Grid.Column="1" Grid.Row="3" Margin="0,24,186.2,10" Height="30" Width="150"/>
+            <TextBox AcceptsReturn="True"  x:Name="Sprat_Copy" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,32,0,10" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.468,2.343" Grid.Column="1" />
+
+            <Label Content="Kvadratura:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+                Grid.Column="1" Grid.Row="4" Margin="0,26,186.2,8" Height="30" Width="150"/>
+            <TextBox AcceptsReturn="True" x:Name="Kvadratura_Copy" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,24,0,18" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" />
+
+
+        </Grid>
+
+    </StackPanel>
+</UserControl>

@@ -2,6 +2,7 @@ using Bolnica;
 using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Servis;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,10 +17,8 @@ namespace Model
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
 
         private static String imeFajla = "prostori.xml";
-        private static String imeFajla1 = "renoviranje.xml";
         public static List<Prostor> prostori = new List<Prostor>();
         public static List<Oprema> oprema = new List<Oprema>();
-        public static List<Renoviranje> prostorKojiSeRenovira = new List<Renoviranje>();
        
        
         public static void DodajProstor(Prostor p)
@@ -86,44 +85,6 @@ namespace Model
             return oprema;
         }
 
-        public static bool DodajZaRenoviranje(Renoviranje renoviranje)
-        {
-
-            prostorKojiSeRenovira.Add(renoviranje);
-            return true;
-
-        }
-
-        public static void ProveriRenoviranje()
-        {
-
-
-            foreach (Renoviranje r in prostorKojiSeRenovira)
-            {
-                if (provjeraDatuma(r.PocetniDatum.Date, r.DatumKraja.Date))
-                {
-                    PostaviDaSeRenovira(r);
-                }
-                else
-                {
-                    PostaviDaSeNeRenovira(r);
-                }
-            }
-        }
-
-        public static bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
-        {
-            if (DateTime.Compare(datumPocetka.Date, DateTime.Now.Date) <= 0 && DateTime.Compare(DateTime.Now.Date, datumKraja.Date) <= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
         public static void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
         {
             foreach (Oprema o in prostorIzKojegPremjestamo.Oprema)
@@ -133,6 +94,9 @@ namespace Model
                     o.Kolicina -= kolicina;
                 }
             }
+
+            if (oprema.NazivOpreme.Equals("krevet"))
+                prostorIzKojegPremjestamo.BrojSlobodnihKreveta -= kolicina;
         }
 
         public static void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
@@ -159,29 +123,7 @@ namespace Model
             return null;
         }
 
-        public static void PostaviDaSeRenovira(Renoviranje r)
-        {
-           /* foreach (Prostor p in prostori)
-            {
-                if (p.IdProstora.Equals(r.RoomId))
-                {
-                    p.JeRenoviranje = true;
-                    break;
-                }
-            }*/
-        }
-
-        public static void PostaviDaSeNeRenovira(Renoviranje r)
-        {
-          /*  foreach (Prostor p in prostori)
-            {
-                if (p.IdProstora.Equals(r.RoomId))
-                {
-                    p.JeRenoviranje = false;
-                    break;
-                }
-            }*/
-        }
+       
 
         public static bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
         {
@@ -190,14 +132,15 @@ namespace Model
                 if (o == oprema)
                 {
                     o.Kolicina += kolicina;
+                    if (oprema.NazivOpreme.Equals("krevet"))
+                    {
+                        prostorUKojiPrebacujemo.BrojSlobodnihKreveta += kolicina;
+                    }
                     return true;
                 }
 
             }
-            return false;
-
-            if (oprema.NazivOpreme.Equals("krevet"))
-                prostorUKojiPrebacujemo.BrojSlobodnihKreveta += kolicina;
+            return false;         
         }
 
         public static void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
@@ -221,7 +164,7 @@ namespace Model
 
         public static List<Prostor> DeserijalizacijaProstora()
         {
-            DeserijalizacijaProstoraZaRenoviranje();
+            RenoviranjeServis.DeserijalizacijaProstoraZaRenoviranje();
             if (File.ReadAllText(imeFajla).Trim().Equals(""))
             {
                 return prostori;
@@ -240,37 +183,10 @@ namespace Model
 
         public static void SerijalizacijaProstora()
         {
-            SerijalizacijaProstoraZaRenoviranje();
+            RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
             TextWriter tw = new StreamWriter(imeFajla);
             xmlSerializer.Serialize(tw, prostori);
-            tw.Close();
-
-        }
-
-        public static List<Renoviranje> DeserijalizacijaProstoraZaRenoviranje()
-        {
-            if (File.ReadAllText(imeFajla1).Trim().Equals(""))
-            {
-                return prostorKojiSeRenovira;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla1);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
-                prostorKojiSeRenovira = (List<Renoviranje>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return prostorKojiSeRenovira;
-
-            }
-
-        }
-
-        public static void SerijalizacijaProstoraZaRenoviranje()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
-            TextWriter tw = new StreamWriter(imeFajla1);
-            xmlSerializer.Serialize(tw, prostorKojiSeRenovira);
             tw.Close();
 
         }

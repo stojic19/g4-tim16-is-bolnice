@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Servis;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -33,13 +34,14 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            Renoviranje renoviranje = new Renoviranje(/*izabranProstor.IdProstora*/ new Prostor(), DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
+            Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), new Prostor(), DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
 
             prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate);
 
            // izabranProstor.Renoviranje = renoviranje;
-            ProstoriServis.DodajZaRenoviranje(renoviranje);
-            ProstoriServis.ProveriRenoviranje();
+            RenoviranjeServis.DodajZaRenoviranje(renoviranje);
+            RenoviranjeServis.ProveriRenoviranje();
+            RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
             ProstoriServis.SerijalizacijaProstora();
 
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
