@@ -23,7 +23,7 @@ namespace Bolnica.UpravnikFolder
     /// </summary>
     public partial class PrikazRenoviranja : UserControl
     {
-        public static ObservableCollection<Renoviranje> Renoviranja { get; set; }
+        public static ObservableCollection<Renoviranje> Renoviranje { get; set; }
 
         public PrikazRenoviranja()
         {
@@ -31,11 +31,11 @@ namespace Bolnica.UpravnikFolder
 
             this.DataContext = this;
 
-            Renoviranja = new ObservableCollection<Renoviranje>();
+            Renoviranje = new ObservableCollection<Renoviranje>();
 
             foreach (Renoviranje r in RenoviranjeServis.SvaRenoviranja())
             {
-                Renoviranja.Add(r);
+                Renoviranje.Add(r);
             }
         }
 

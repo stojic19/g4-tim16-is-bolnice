@@ -21,12 +21,18 @@ namespace Bolnica
 
     public partial class NapraviDvijeProstorije : UserControl
     {
+        private Prostor izabranaProstorija;
 
-        public NapraviDvijeProstorije()
+        public NapraviDvijeProstorije(Prostor izabran)
         {
             InitializeComponent();
+            izabranaProstorija = izabran;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
 
         }
-      
     }
 }

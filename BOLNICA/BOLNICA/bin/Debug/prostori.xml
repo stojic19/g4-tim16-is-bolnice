@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>P33</IdProstora>
     <NazivProstora>p1</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
@@ -17,6 +18,7 @@
     </Oprema>
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>P1</IdProstora>
     <NazivProstora>o1</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
@@ -33,6 +35,7 @@
     </Oprema>
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>P3</IdProstora>
     <NazivProstora>o22</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
@@ -42,6 +45,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>P4</IdProstora>
     <NazivProstora>p11</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
@@ -51,6 +55,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>OP1</IdProstora>
     <NazivProstora>s1</NazivProstora>
     <VrstaProstora>sala</VrstaProstora>
@@ -60,6 +65,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>f0482fe3-2189-4188-a730-e87e71ad6057</IdProstora>
     <NazivProstora>o10</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
@@ -69,6 +75,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>5405b020-28e7-41d9-8e3a-dddb2f6449c0</IdProstora>
     <NazivProstora>p2</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
@@ -78,6 +85,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>1b02489a-3b29-44fd-ba9d-3889fa1dc571</IdProstora>
     <NazivProstora>p4</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
@@ -87,6 +95,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>ccc6463c-f2f1-43de-9e38-460e8d0d3a12</IdProstora>
     <NazivProstora>p3</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
@@ -96,6 +105,7 @@
     <Oprema />
   </Prostor>
   <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
     <IdProstora>59b9842a-927c-4b4d-864c-5d0801808206</IdProstora>
     <NazivProstora>o5</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>

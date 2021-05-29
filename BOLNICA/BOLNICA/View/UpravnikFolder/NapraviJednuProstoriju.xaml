@@ -56,8 +56,10 @@
 
             <Label Content="Pravljenje jedne prostorije spajanjem dvije " HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                 FontSize="15" FontWeight="Bold" Grid.Column="0" Margin="0,24,178.2,10" Height="30" Width="338" Grid.ColumnSpan="2"/>
+            <Button x:Name="odustani" Click="odustani_Click" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="55.8,21,0,0" Grid.Row="5"/>
+            <Button x:Name="potvrdi" Click="potvrdi_Click" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="197.8,21,0,0" Grid.Row="5"/>
 
-            
+
 
         </Grid>
 

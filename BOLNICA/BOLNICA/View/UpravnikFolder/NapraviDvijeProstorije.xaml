@@ -76,6 +76,7 @@
             <Label Content="Kvadratura:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                 Grid.Column="1" Grid.Row="4" Margin="0,26,186.2,8" Height="30" Width="150"/>
             <TextBox AcceptsReturn="True" x:Name="Kvadratura_Copy" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,24,0,18" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" />
+            <Button x:Name="button" Click="button_Click" Content="Ok" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="130.8,10,0,0" Grid.Row="5"/>
 
 
         </Grid>

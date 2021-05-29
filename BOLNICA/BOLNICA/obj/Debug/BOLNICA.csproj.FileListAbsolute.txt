@@ -2416,7 +2416,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAlergenaPacijenta.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAnketa.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazKartona.g.cs
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazTerapijePacijent.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Alergeni\AlergeniSekretar.g.cs
@@ -2519,7 +2518,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAlergenaPacijenta.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazAnketa.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazKartona.baml
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjeLekar.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\PrikazTerapijePacijent.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Alergeni\AlergeniSekretar.baml

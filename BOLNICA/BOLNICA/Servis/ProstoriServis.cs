@@ -149,17 +149,17 @@ namespace Model
             
         }
 
-        public void ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
+        public bool ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
             foreach (Termin t in terminiServis.DobaviSveZakazaneTermine())
             {
                 if (t.Datum >= pocetniDatum && t.Datum <= zavrsniDatum)
                 {
                     System.Windows.Forms.MessageBox.Show("Postoje zakazani termini za taj period, trazite drugi datum !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    return true;
                 }
-
             }
+            return false;
         }
 
         public static List<Prostor> DeserijalizacijaProstora()

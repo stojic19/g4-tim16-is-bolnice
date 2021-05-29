@@ -102,19 +102,30 @@ namespace Bolnica
 
         private void Renoviraj_Click(object sender, RoutedEventArgs e)
         {
-            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
-            if (izabran != null)
-            {
-
+          
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
                 UserControl usc = null;
-                usc = new RenoviranjeProstorije(izabran);
+                usc = new RenoviranjeProstorije();
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-            {
-                MessageBox.Show("Izaberite prostor koji zelite da renovirate!");
-            }
+           
+        }
+
+        private void JedanUDva_Click(object sender, RoutedEventArgs e)
+        {
+            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
+
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new NapraviDvijeProstorije(izabran);
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+        }
+
+        private void DvaUJedan_Click(object sender, RoutedEventArgs e)
+        {
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new NapraviJednuProstoriju();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

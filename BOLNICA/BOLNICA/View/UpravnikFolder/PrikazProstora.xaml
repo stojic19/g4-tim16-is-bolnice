@@ -42,10 +42,14 @@
                 HorizontalContentAlignment="Center" Click="Izmjeni_Click" Background="WhiteSmoke"/>
             <Button Grid.Row="3" Content="Uklanjanje prostora" Margin="348,30.2,74.6,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Ukloni_Click" Background="WhiteSmoke"/>
-            <Button Grid.Row="2" Content="Renoviraj" Margin="0.4,95.8,8.2,67.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Renoviraj_Click" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2"/>
+            <Button Grid.Row="2" Content="Renoviraj " Margin="0,95.8,8.2,67.4" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="Renoviraj_Click" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Right" Width="121"/>
             <Button Grid.Row="3" Content="Raspored opreme" Margin="0.4,30.2,8.4,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="RasporedOpreme_Click" Background="WhiteSmoke" Grid.Column="1"/>
+            <Button Grid.Row="2" Content="1 u 2" Click="JedanUDva_Click" Margin="0,65.8,13.2,97.4" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Background="WhiteSmoke" HorizontalAlignment="Right" Width="121" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Button Grid.Row="2" Content="2 u 1 " Click="DvaUJedan_Click" Margin="0,26.8,8.2,38.8" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Background="WhiteSmoke" Grid.Column="1" HorizontalAlignment="Right" Width="121"/>
 
 
 

@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.UpravnikFolder;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,15 +20,14 @@ namespace Bolnica.Servis
         {
             return renoviranja;
         }
-        public static bool DodajZaRenoviranje(Renoviranje renoviranje)
+        public static void DodajZaRenoviranje(Renoviranje renoviranje)
         {
-            renoviranja.Add(renoviranje);
-            return true;
+                renoviranja.Add(renoviranje);
+                PrikazRenoviranja.Renoviranje.Add(renoviranje);
         }
 
         public static void ProveriRenoviranje()
         {
-
 
             foreach (Renoviranje r in renoviranja)
             {

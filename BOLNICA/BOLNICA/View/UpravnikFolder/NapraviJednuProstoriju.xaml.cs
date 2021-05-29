@@ -28,5 +28,14 @@ namespace Bolnica
 
         }
 
+        private void odustani_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void potvrdi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
