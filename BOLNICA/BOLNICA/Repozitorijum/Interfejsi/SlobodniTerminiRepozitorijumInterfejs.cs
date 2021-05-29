@@ -12,10 +12,11 @@ namespace Bolnica.Repozitorijum.Interfejsi
 
         List<Termin> DobaviSlobodneTerminePoIdLekara(string idLekara);
 
-
         void IzmeniTermin(Termin termin);
 
         void UkloniTermin(Termin termin);
-       
+
+        List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar);
+
     }
 }

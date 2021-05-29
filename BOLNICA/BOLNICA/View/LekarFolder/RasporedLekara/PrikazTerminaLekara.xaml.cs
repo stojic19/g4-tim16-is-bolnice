@@ -1,8 +1,7 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.Model;
-using Bolnica.Model.Rukovanja;
-using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.ObjectModel;
@@ -15,7 +14,7 @@ namespace Bolnica
     {
         TerminKontroler terminKontroler = new TerminKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        public static ObservableCollection<Termin> Termini { get; set; }
+        public static ObservableCollection<TerminDTO> Termini { get; set; }
         public String korisnik = null;
 
         public PrikazTerminaLekara(String korIme)
@@ -25,9 +24,9 @@ namespace Bolnica
             korisnik = korIme;
             this.DataContext = this;
 
-            Termini = new ObservableCollection<Termin>();
+            Termini = new ObservableCollection<TerminDTO>();
 
-            foreach (Termin t in terminKontroler.PretraziPoLekaru(korIme))
+            foreach (TerminDTO t in terminKontroler.PretraziPoLekaru(korIme))
             {
                 if (t.Datum.AddDays(7).Date.CompareTo(DateTime.Now) >= 0)
                 {
@@ -37,14 +36,14 @@ namespace Bolnica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //zakazivanje
+        private void ZakaziTermin(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) //izmena
+        private void IzmeniTermin(object sender, RoutedEventArgs e)
         {
             Termin izabranZaMenjanje = (Termin)dataGridTermini.SelectedItem;
 
@@ -56,16 +55,18 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e) //otkazivanje
+        private void OtkaziTermin(object sender, RoutedEventArgs e)
         {
 
-            Termin izabranZaBrisanje = (Termin)dataGridTermini.SelectedItem;
+            TerminDTO izabranZaBrisanje = (TerminDTO)dataGridTermini.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
-
                 preglediKontroler.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
-                terminKontroler.OtkaziTermin(izabranZaBrisanje.IdTermina);
+                if (terminKontroler.OtkaziTerminLekar(izabranZaBrisanje.IdTermina))
+                {
+                    Termini.Remove(izabranZaBrisanje);
+                }
             }
             else
             {
@@ -75,11 +76,11 @@ namespace Bolnica
 
         private void PrikazKartonaPacijenta(object sender, RoutedEventArgs e)
         {
-            Termin izabranTermin = (Termin)dataGridTermini.SelectedItem;
+            TerminDTO izabranTermin = (TerminDTO)dataGridTermini.SelectedItem;
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = preglediKontroler.PristupPregledu(terminKontroler.PretraziPoId(izabranTermin.IdTermina));
+                Pregled noviPregled = preglediKontroler.PristupPregledu(izabranTermin.IdTermina);
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));

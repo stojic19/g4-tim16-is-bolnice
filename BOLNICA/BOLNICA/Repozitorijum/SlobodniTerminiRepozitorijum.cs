@@ -18,9 +18,9 @@ namespace Bolnica.Repozitorijum
         public List<Termin> DobaviSlobodneTerminePoIdLekara(string idLekara)
         {
             List<Termin> termini = new List<Termin>();
-            foreach(Termin termin in DobaviSveObjekte())
+            foreach (Termin termin in DobaviSveObjekte())
             {
-                if(termin.Lekar.KorisnickoIme.Equals(idLekara))
+                if (termin.Lekar.KorisnickoIme.Equals(idLekara))
                 {
                     termini.Add(termin);
                 }
@@ -38,5 +38,17 @@ namespace Bolnica.Repozitorijum
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
         }
 
+        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar)
+        {
+            List<Termin> slobodniTermini = new List<Termin>();
+            foreach (Termin t in DobaviSlobodneTerminePoIdLekara(izabranLekar))
+            {
+                if (t.Datum.Date.CompareTo(terminZaPoredjenje.Datum.Date) == 0 && t.VrstaTermina.Equals(terminZaPoredjenje.VrstaTermina))
+                {
+                    slobodniTermini.Add(t);
+                }
+            }
+            return slobodniTermini;
+        }
     }
 }

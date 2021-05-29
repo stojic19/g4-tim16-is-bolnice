@@ -16,6 +16,8 @@ namespace Bolnica.DTO
         private String prostor;
         private String tipTermina;
         private String idPacijenta;
+        private PacijentDTO pacijent;
+        private Double trajanjeDouble;
 
         public String IdTermina
         {
@@ -44,10 +46,22 @@ namespace Bolnica.DTO
             set { lekar = value; }
         }
 
+        public PacijentDTO Pacijent
+        {
+            get { return pacijent; }
+            set { pacijent = value; }
+        }
+
         public String Trajanje
         {
             get { return trajanje; }
             set { trajanje = value; }
+        }
+
+        public Double TrajanjeDouble
+        {
+            get { return trajanjeDouble; }
+            set { trajanjeDouble = value; }
         }
 
         public String Prostor
@@ -62,7 +76,7 @@ namespace Bolnica.DTO
         }
         public TerminDTO() { }
 
-        public TerminDTO(string idTermina, DateTime datum, string vreme, LekarDTO lekar, string trajanje, string prostor, string tipTermina, string idPacijenta)
+        public TerminDTO(string idTermina, DateTime datum, string vreme, LekarDTO lekar, string trajanje, string prostor, string tipTermina, string idPacijenta, Double trajanjeDouble, PacijentDTO pacijent)
         {
             this.idTermina = idTermina;
             this.datum = datum;
@@ -72,15 +86,25 @@ namespace Bolnica.DTO
             this.prostor = prostor;
             this.tipTermina = tipTermina;
             this.idPacijenta = idPacijenta;
+            this.trajanjeDouble = trajanjeDouble;
+            this.pacijent = pacijent;
         }
 
-        public TerminDTO(string idTermina, DateTime datum, string vreme, LekarDTO lekar, string trajanje, string prostor, string tipTermina)
+        public TerminDTO(string idTermina, DateTime datum, string vreme, LekarDTO lekar, string trajanje, string prostor, string tipTermina, Double trajanjeDouble)
         {
             this.idTermina = idTermina;
             this.datum = datum;
             this.vreme = vreme;
             this.lekar = lekar;
             this.trajanje = trajanje;
+            this.prostor = prostor;
+            this.tipTermina = tipTermina;
+            this.trajanjeDouble = trajanjeDouble;
+        }
+
+        public TerminDTO(DateTime datum, string prostor, string tipTermina)
+        {
+            this.datum = datum;
             this.prostor = prostor;
             this.tipTermina = tipTermina;
         }

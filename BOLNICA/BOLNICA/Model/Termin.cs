@@ -76,7 +76,7 @@ namespace Model
         }
         public Termin(VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Lekar lekar)
         {
-            this.idTermina = generisiID();
+            this.idTermina = Guid.NewGuid().ToString();
             this.vrstaTermina = vrstaTermina;
             this.pocetnoVreme = pocetnoVreme;
             this.trajanje = trajanje;
@@ -84,6 +84,21 @@ namespace Model
             this.prostor = null;
             this.pacijent = null;
             this.lekar = lekar;
+        }
+
+        public Termin(VrsteTermina vrstaTermina, DateTime datum, Prostor prostor)
+        {
+            this.vrstaTermina = vrstaTermina;
+            this.datum = datum;
+            this.prostor = prostor;
+        }
+
+        public Termin(VrsteTermina vrstaTermina, DateTime datum, Prostor prostor, String pocetnoVreme)
+        {
+            this.vrstaTermina = vrstaTermina;
+            this.datum = datum;
+            this.prostor = prostor;
+            this.pocetnoVreme = pocetnoVreme;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -107,14 +122,11 @@ namespace Model
             {
                 return "Operacija";
             }
-            else 
+            else
             {
                 return "Pregled";
             }
         }
-        public static string generisiID()
-        {
-            return Guid.NewGuid().ToString();
-        }
+
     }
 }

@@ -26,9 +26,9 @@ namespace Bolnica.Kontroler
             return preglediServis.PretraziPoId(idPregleda);
         }
 
-        public Pregled PristupPregledu(Termin terminPregleda)
+        public Pregled PristupPregledu(String idTermina)
         {
-            return preglediServis.PristupPregledu(terminPregleda);
+            return preglediServis.PristupPregledu(idTermina);
 
         }
 

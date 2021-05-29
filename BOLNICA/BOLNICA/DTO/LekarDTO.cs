@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Bolnica.DTO
 {
-    public class LekarDTO
+    public class LekarDTO : OsobaDTO
     {
         private String imeIPrezime;
         private String korisnickoIme;
         private SpecijalizacijeLekara specijalizacija;
+        private string korisnickoIme1;
 
         public String ImeIPrezime
         {
@@ -34,6 +35,19 @@ namespace Bolnica.DTO
             this.imeIPrezime = imeIPrezimeLekara;
             this.korisnickoIme = korisnickoIme;
             this.specijalizacija = specijalizacija;
+        }
+
+        public LekarDTO(string korisnickoIme)
+        {
+            this.korisnickoIme = korisnickoIme;
+        }
+
+        public LekarDTO(string ime, string prezime, string jmbg, string korisnickoIme)
+        {
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.Jmbg = jmbg;
+            this.KorisnickoIme = korisnickoIme;
         }
     }
 }

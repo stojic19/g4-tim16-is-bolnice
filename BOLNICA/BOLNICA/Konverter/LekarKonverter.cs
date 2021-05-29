@@ -13,7 +13,12 @@ namespace Bolnica.Konverter
 
         public LekarDTO LekarModelUDTO(Lekar lekar)
         {
-            return new LekarDTO(lekar.Ime+lekar.Prezime,lekar.KorisnickoIme,lekar.Specijalizacija);
+            return new LekarDTO(lekar.Ime + lekar.Prezime, lekar.KorisnickoIme, lekar.Specijalizacija);
+        }
+
+        public LekarDTO LekarZaZakazivanjeUDTO(Lekar l)
+        {
+            return new LekarDTO(l.Ime, l.Prezime, l.Jmbg, l.KorisnickoIme);
         }
     }
 }

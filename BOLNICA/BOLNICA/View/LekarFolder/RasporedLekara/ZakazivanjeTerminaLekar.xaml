@@ -137,7 +137,7 @@
 
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding PocetnoVreme}"/>
+                        <TextBlock Text="{Binding Vreme}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
@@ -153,7 +153,7 @@
                 Click="Povratak" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
 
             <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+                Click="Potvrda" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
 
 
         </StackPanel>

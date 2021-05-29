@@ -88,26 +88,38 @@ namespace Model
             zakazaniTerminiRepozitorijum.OtkaziPregledSekretar(terminZaOtkazivanje);
         }
 
-        public void OtkaziTermin(string idTermina)
+        public Boolean OtkaziTerminLekar(string idTermina)
         {
-            zakazaniTerminiRepozitorijum.OtkaziTermin(idTermina);
+            return zakazaniTerminiRepozitorijum.OtkaziTerminLekar(idTermina);
         }
 
-        public void ZakaziTermin(Termin termin, string korisnickoIme)
+        public Boolean ZakaziTerminLekar(Termin termin)
         {
-            zakazaniTerminiRepozitorijum.ZakaziTermin(termin, korisnickoIme);
+            zakazaniTerminiRepozitorijum.DodajObjekat(termin);
+            slobodniTerminiServis.UkloniSlobodanTermin(termin);
+            return zakazaniTerminiRepozitorijum.DaLiPostojiTermin(termin);
+
         }
 
         public Termin DobaviZakazanTerminPoId(string idTermina)
         {
-            return zakazaniTerminiRepozitorijum.DobaviZakazanTerminPoId(idTermina);
+            return zakazaniTerminiRepozitorijum.PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
         }
 
-        public void IzmeniTermin(Termin stariTermin, Termin noviTermin, string korisnik)
+        public void IzmeniTermin(Termin stariTermin, Termin noviTermin)
         {
-            zakazaniTerminiRepozitorijum.IzmeniTermin(stariTermin, noviTermin, korisnik);
+            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
+            slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
+            ZakaziTerminLekar(KopirajPodatke(stariTermin, noviTermin));
         }
 
+        public Termin KopirajPodatke(Termin stari, Termin novi)
+        {
+            novi.Lekar = stari.Lekar;
+            novi.Pacijent = stari.Pacijent;
+
+            return novi;
+        }
 
         public List<Termin> DobaviSveZakazaneTermine()
         {
@@ -122,7 +134,7 @@ namespace Model
         public void OtkaziPregledPacijent(Termin terminZaOtkazivanje)
         {
             naloziPacijenataServis.IzmeniStanjeNalogaPacijenta(terminZaOtkazivanje.Pacijent);
-            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje);
+            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje.IdTermina);
             terminZaOtkazivanje.Pacijent = null;
             terminZaOtkazivanje.Prostor = null;
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaOtkazivanje);
@@ -143,7 +155,7 @@ namespace Model
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
             zakazaniTerminiRepozitorijum.DodajObjekat(noviTermin);
             slobodniTerminiServis.UkloniSlobodanTermin(noviTermin);
-            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin);
+            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
         }
 
 
@@ -166,11 +178,10 @@ namespace Model
             return true;
         }
 
-
         public void ZakaziPregled(Termin termin, String korisnickoImePacijenta)
         {
             termin.Pacijent = naloziPacijenataServis.PretraziPoId(korisnickoImePacijenta);
-            zakazaniTerminiRepozitorijum.SacuvajZakazanTermin(termin);
+            zakazaniTerminiRepozitorijum.DodajObjekat(termin);
             slobodniTerminiServis.UkloniSlobodanTermin(termin);
         }
     }

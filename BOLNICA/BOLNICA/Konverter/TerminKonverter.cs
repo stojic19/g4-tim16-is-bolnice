@@ -1,26 +1,47 @@
 ﻿using Bolnica.DTO;
 using Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bolnica.Konverter
 {
     public class TerminKonverter
     {
+        LekarKonverter lekarKonverter = new LekarKonverter();
 
         public TerminDTO ZakazaniTerminModelUDTO(Termin termin, String korisnickoIme)
         {
+            PacijentDTO pacijent = new PacijentDTO(termin.Pacijent.Ime, termin.Pacijent.Prezime, termin.Pacijent.Jmbg);
             LekarDTO lekar = new LekarDTO(termin.Lekar.Ime + termin.Lekar.Prezime, termin.Lekar.KorisnickoIme, termin.Lekar.Specijalizacija);
-            return new TerminDTO(termin.IdTermina, termin.Datum, termin.PocetnoVreme, lekar, termin.Trajanje.ToString(), null, termin.VrstaTermina.ToString(), korisnickoIme); 
+            return new TerminDTO(termin.IdTermina, termin.Datum, termin.PocetnoVreme, lekar, termin.Trajanje.ToString(), null, termin.VrstaTermina.ToString(), korisnickoIme, termin.Trajanje, pacijent);
         }
 
         public TerminDTO SlobodniTerminModelUDTO(Termin termin)
         {
             LekarDTO lekar = new LekarDTO(termin.Lekar.Ime + termin.Lekar.Prezime, termin.Lekar.KorisnickoIme, termin.Lekar.Specijalizacija);
-            return new TerminDTO(termin.IdTermina, termin.Datum, termin.PocetnoVreme, lekar, termin.Trajanje.ToString(), null, termin.VrstaTermina.ToString());
+            return new TerminDTO(termin.IdTermina, termin.Datum, termin.PocetnoVreme, lekar, termin.Trajanje.ToString(), null, termin.VrstaTermina.ToString(), termin.Trajanje);
+        }
+
+        public Termin PodaciZaSlobodanTermin(TerminDTO terminSaPodacima)
+        {
+            return new Termin(getVrstaTermina(terminSaPodacima.TipTermina), terminSaPodacima.Datum, null);
+        }
+
+        public VrsteTermina getVrstaTermina(String vrstaTermina)
+        {
+
+            if (vrstaTermina.Equals("Operacija"))
+            {
+                return VrsteTermina.operacija;
+            }
+            else
+            {
+                return VrsteTermina.pregled;
+            }
+        }
+
+        public Termin TerminZaIzmenu(TerminDTO terminSaPodacima)
+        {
+            return new Termin(getVrstaTermina(terminSaPodacima.TipTermina), terminSaPodacima.Datum, null, terminSaPodacima.Vreme);
         }
 
 

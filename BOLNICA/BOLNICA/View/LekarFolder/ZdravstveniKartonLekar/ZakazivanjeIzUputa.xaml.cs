@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
@@ -35,9 +36,8 @@ namespace Bolnica.LekarFolder
         private String izabranaVrstaTermina = null;
         Pregled izabranPregled = null;
         private String izabranaProstorija = null;
-        public static ObservableCollection<Termin> slobodniTermini { get; set; } = new ObservableCollection<Termin>();
+        public static ObservableCollection<TerminDTO> slobodniTermini { get; set; } = new ObservableCollection<TerminDTO>();
         public static ObservableCollection<Prostor> Prostorije { get; set; } = new ObservableCollection<Prostor>();
-
 
         public ZakazivanjeIzUputa(String lekarSpecijalista, String idPregleda)
         {
@@ -69,23 +69,34 @@ namespace Bolnica.LekarFolder
 
             if (!ValidacijaPodataka()) return;
 
-            Termin t = (Termin)pocVreme.SelectedItem;
+            TerminDTO t = (TerminDTO)pocVreme.SelectedItem;
 
-            t.Lekar = lekariKontroler.PretraziPoId(idLekarSpecijalista);
-            t.Pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            t.Lekar.KorisnickoIme = idLekarSpecijalista;
+            t.Pacijent.KorisnickoIme = izabranPregled.Termin.Pacijent.KorisnickoIme;
+            t.TrajanjeDouble = OdrediTrajanje();
 
+            if (terminKontroler.ZakaziTerminLekar(t) && izabranPregled.Termin.Lekar.KorisnickoIme.Equals(idLekarSpecijalista))
+            {
+                PrikazTerminaLekara.Termini.Add(t);
+            }
+
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+
+        }
+
+        private Double OdrediTrajanje()
+        {
             if (izabranaVrstaTermina.Equals("Operacija"))
             {
-                t.Trajanje = 120;
+                return 120;
             }
             else
             {
-                t.Trajanje = 30;
+                return 30;
             }
 
-            terminKontroler.ZakaziTermin(t, izabranPregled.Termin.Lekar.KorisnickoIme);
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+            return 0;
 
         }
 
@@ -148,23 +159,14 @@ namespace Bolnica.LekarFolder
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
+            if (izabranaVrstaTermina == null) return;
+
+            TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, izabranaProstorija, izabranaVrstaTermina);
+
+            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista))
             {
-                if (t.Datum.CompareTo(izabranDatum) == 0 && t.Lekar.KorisnickoIme.Equals(idLekarSpecijalista) &&
-                    t.getVrstaTerminaString().Equals(izabranaVrstaTermina))
-                {
-                    if (izabranaProstorija == null)
-                    {
-                        slobodniTermini.Add(t);
-                    }
-                    else if (t.Prostor.IdProstora.Equals(izabranaProstorija))
-                    {
-                        slobodniTermini.Add(t);
-                    }
-
-
-                }
-
+                slobodniTermini.Add(t);
+                Console.WriteLine(t.Vreme);
             }
         }
 

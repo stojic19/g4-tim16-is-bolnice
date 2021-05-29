@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.DTO
 {
-    public class PacijentDTO: OsobaDTO
+    public class PacijentDTO : OsobaDTO
     {
         private VrsteNaloga vrstaNaloga;
         KartonPacijentaDTO karton;
@@ -42,5 +42,13 @@ namespace Bolnica.DTO
             this.Pol = pol;
             this.VrstaNaloga = vrstaNaloga;
         }
+
+        public PacijentDTO(String ime, String prezime, String jmbg)
+        {
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.Jmbg = jmbg;
+        }
+
     }
 }

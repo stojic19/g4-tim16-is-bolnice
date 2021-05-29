@@ -14,7 +14,6 @@ namespace Bolnica.Servis
     public class SlobodniTerminiServis
     {
         SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
-        // ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         LekariServis lekariServis = new LekariServis();
         public List<Termin> DobaviSveSlobodneTermine()
@@ -108,9 +107,9 @@ namespace Bolnica.Servis
         {
             slobodniTerminiRepozitorijum.DodajObjekat(ostatak);
         }
-        public void DodajSlobodanTerminZaPregled(Termin ostatak)
+        public void DodajSlobodanTerminZaPregled(Termin slobodanTermin)
         {
-            slobodniTerminiRepozitorijum.DodajObjekat(ostatak);
+            slobodniTerminiRepozitorijum.DodajObjekat(slobodanTermin);
         }
 
 
@@ -236,6 +235,11 @@ namespace Bolnica.Servis
                     return true;
             }
             return false;
+        }
+
+        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar)
+        {
+            return slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
         }
     }
 }

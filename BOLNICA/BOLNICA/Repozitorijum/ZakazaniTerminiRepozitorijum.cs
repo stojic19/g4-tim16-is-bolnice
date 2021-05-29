@@ -4,12 +4,7 @@ using Bolnica.Servis;
 using Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
@@ -22,55 +17,36 @@ namespace Bolnica.Repozitorijum
         {
             imeFajla = "termini.xml";
         }
-        
+
         public void IzmeniTermin(Termin termin)
         {
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
             DodajObjekat(termin);
         }
-        public Termin ZakaziTermin(Termin t, String lekar)
+
+        public Boolean DaLiPostojiTermin(Termin t)
         {
-            DodajObjekat(t);
-            foreach (Termin term in slobodniTerminiServis.DobaviSveSlobodneTermine())
-            {
-                if (term.IdTermina.Equals(t.IdTermina))
-                {
-                    slobodniTerminiServis.UkloniSlobodanTermin(term);
-                }
-            }
-
-
-            if (t.Lekar.KorisnickoIme.Equals(lekar))
-            {
-                PrikazTerminaLekara.Termini.Add(t);
-            }
-
             if (DobaviSveObjekte().Contains(t))
             {
-                return t;
+                return true;
             }
             else
             {
-                return null;
+                return false;
             }
         }
 
-        public Boolean OtkaziTermin(String idTermina)
+        public Boolean OtkaziTerminLekar(String idTermina)
         {
-            Termin t = PretraziPoId(idTermina);
+            Termin terminZaBrisanje = DobaviZakazanTerminPoId(idTermina);
 
-            if (t == null)
-            {
-                return false;
-            }
+            if (terminZaBrisanje == null) return false;
 
-            ObrisiZakazanTermin(t);
-            t.Pacijent = null;
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(t);
+            ObrisiZakazanTermin(terminZaBrisanje.IdTermina);
+            terminZaBrisanje.Pacijent = null;
+            slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaBrisanje);
 
-            PrikazTerminaLekara.Termini.Remove(t);
-
-            if (DobaviSveObjekte().Contains(t) || PrikazTerminaLekara.Termini.Contains(t))
+            if (DobaviSveObjekte().Contains(terminZaBrisanje))
             {
                 return false;
             }
@@ -79,6 +55,7 @@ namespace Bolnica.Repozitorijum
                 return true;
             }
         }
+
         public Boolean OtkaziPregledSekretar(String idTermina)
         {
             Termin termin = PretraziPoId(idTermina);
@@ -88,7 +65,7 @@ namespace Bolnica.Repozitorijum
                 return false;
             }
 
-            ObrisiZakazanTermin(termin);
+            ObrisiZakazanTermin(termin.IdTermina);
             termin.Pacijent = null;
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(termin);
 
@@ -99,38 +76,6 @@ namespace Bolnica.Repozitorijum
         public bool DaLiListeSadrzeTerminSekretar(Termin termin)
         {
             return DobaviSveObjekte().Contains(termin) || TerminiPregledaSekretar.TerminiPregleda.Contains(termin);
-        }
-
-        public Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik)
-        {
-
-            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermine())
-            {
-                if (t.IdTermina.Equals(novi.IdTermina))
-                {
-                    slobodniTerminiServis.UkloniSlobodanTermin(t);
-                    DodajObjekat(t);
-                }
-
-            }
-
-            foreach (Termin t in DobaviSveObjekte().ToList())
-            {
-                if (t.IdTermina.Equals(stari.IdTermina))
-                {
-                    ObrisiZakazanTermin(t);
-                    slobodniTerminiServis.DodajSlobodanTerminZaPregled(stari);
-                }
-            }
-
-            if (novi.Lekar.KorisnickoIme.Equals(korisnik))
-            {
-                int indeks = PrikazTerminaLekara.Termini.IndexOf(stari);
-                PrikazTerminaLekara.Termini.RemoveAt(indeks);
-                PrikazTerminaLekara.Termini.Insert(indeks, novi);
-            }
-
-            return true;
         }
 
         public List<Termin> PretraziPoLekaru(String korImeLekara)
@@ -148,13 +93,13 @@ namespace Bolnica.Repozitorijum
             }
             return lekaroviTermini;
         }
-        //OVO SU NOVE METODE ZA DIREKTNO CITANJE IZ DATOTEKE KOJE SVI TREBA DA KORISTE
+
 
         public List<Termin> DobaviSveSlobodneTermine()
         {
             return slobodniTerminiServis.DobaviSveSlobodneTermine();
         }
-        public  List<Termin> DobaviSveZakazaneTermine()
+        public List<Termin> DobaviSveZakazaneTermine()
         {
             return DobaviSveObjekte();
         }
@@ -174,21 +119,17 @@ namespace Bolnica.Repozitorijum
         {
             return PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
         }
-        public void ObrisiZakazanTermin(Termin terminZaBrisanje)
+        public void ObrisiZakazanTermin(String terminZaBrisanje)
         {
-            ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + terminZaBrisanje.IdTermina + "']");
-        }
-       
-        public void SacuvajZakazanTermin(Termin terminZaUpis)
-        {
-            DodajObjekat(terminZaUpis);
+            ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + terminZaBrisanje + "']");
         }
 
-       
-        
 
 
-      
+
+
+
+
 
     }
 }

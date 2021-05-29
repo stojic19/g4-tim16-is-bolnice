@@ -33,12 +33,44 @@ namespace Bolnica.Repozitorijum
         public List<Pregled> DobaviSvePregledePacijenta(String korisnickoImePacijenta)
         {
             List<Pregled> obavljeniPreglediPacijenta = new List<Pregled>();
-            foreach(Pregled pregled in DobaviSveObjekte())
+            foreach (Pregled pregled in DobaviSveObjekte())
             {
                 if (pregled.Termin.Pacijent.KorisnickoIme.Equals(korisnickoImePacijenta) && pregled.Odrzan)
                     obavljeniPreglediPacijenta.Add(pregled);
             }
             return obavljeniPreglediPacijenta;
+        }
+
+        public Pregled PretragaPoTerminu(String idTermina)
+        {
+            foreach (Pregled p in DobaviSveObjekte())
+            {
+                if (p.Termin == null) continue;
+                if (p.Termin.IdTermina.Equals(idTermina))
+                {
+                    return p;
+                }
+            }
+
+            return null;
+        }
+
+        public Pregled PretraziPoAnamnezi(String idAnamneze)
+        {
+            foreach (Pregled p in DobaviSveObjekte())
+            {
+                if (p.Anamneza.IdAnamneze.Equals(idAnamneze))
+                {
+                    return p;
+                }
+            }
+
+            return null;
+        }
+
+        public Pregled DobaviPregledPoId(String idPregleda)
+        {
+            return PretraziPoId("//ArrayOfPregled/Pregled[IdPregleda='" + idPregleda + "']");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Bolnica.Model.Rukovanja
     class PreglediServis
     {
         private PreglediRepozitorijumInterfejs preglediRepozitorijum = new PreglediRepozitorijum();
+        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         public List<Pregled> DobaviSvePreglede()
         {
             return preglediRepozitorijum.DobaviSveObjekte();
@@ -26,16 +27,16 @@ namespace Bolnica.Model.Rukovanja
 
         public Pregled PretraziPoId(String idPregleda)
         {
-            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled[IdPregleda='" + idPregleda + "']");
+            return preglediRepozitorijum.DobaviPregledPoId(idPregleda);
         }
 
-        public Pregled PristupPregledu(Termin terminPregleda)
+        public Pregled PristupPregledu(String idTermina)
         {
-            Pregled noviPregled = preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Termin[IdTermina='" + terminPregleda.IdTermina + "']");
+            Pregled noviPregled = preglediRepozitorijum.PretragaPoTerminu(idTermina);
 
             if (noviPregled == null)
             {
-                noviPregled = new Pregled(Guid.NewGuid().ToString(), terminPregleda);
+                noviPregled = new Pregled(Guid.NewGuid().ToString(), terminiServis.DobaviZakazanTerminPoId(idTermina));
                 preglediRepozitorijum.DodajObjekat(noviPregled);
 
             }
@@ -46,17 +47,19 @@ namespace Bolnica.Model.Rukovanja
 
         public void UklanjanjePregleda(String terminOtkazanogPregleda)
         {
-            preglediRepozitorijum.ObrisiObjekat("//ArrayOfPregled/Pregled/Termin[IdTermina='" + terminOtkazanogPregleda + "']");
+            Pregled pregledZaBrisanje = PretragaPoTerminu(terminOtkazanogPregleda);
+            if (pregledZaBrisanje == null) return;
+            preglediRepozitorijum.ObrisiObjekat("//ArrayOfPregled/Pregled[IdPregleda='" + pregledZaBrisanje.IdPregleda + "']");
         }
 
         public Pregled PretragaPoTerminu(String idTermina)
         {
-            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Termin[IdTermina='" + idTermina + "']");
+            return preglediRepozitorijum.PretragaPoTerminu(idTermina);
         }
 
         public void DodajUput(String idIzabranogPregleda, Uput noviUput)
         {
-            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            Pregled pregledZaIzmenu = preglediRepozitorijum.DobaviPregledPoId(idIzabranogPregleda);
             pregledZaIzmenu.Odrzan = true;
             pregledZaIzmenu.Uputi.Add(noviUput);
 
@@ -65,7 +68,7 @@ namespace Bolnica.Model.Rukovanja
 
         public void DodajRecept(String idPregleda, Recept novRecept)
         {
-            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idPregleda);
+            Pregled pregledZaIzmenu = preglediRepozitorijum.DobaviPregledPoId(idPregleda);
             pregledZaIzmenu.Odrzan = true;
             pregledZaIzmenu.Recepti.Add(novRecept);
 
@@ -74,7 +77,7 @@ namespace Bolnica.Model.Rukovanja
 
         public void DodajAnamnezu(String idIzabranogPregleda, Anamneza novaAnamneza)
         {
-            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            Pregled pregledZaIzmenu = preglediRepozitorijum.DobaviPregledPoId(idIzabranogPregleda);
             pregledZaIzmenu.Odrzan = true;
             pregledZaIzmenu.Anamneza = novaAnamneza;
 
@@ -83,7 +86,7 @@ namespace Bolnica.Model.Rukovanja
 
         public void UklanjanjeAnamneze(String idIzabranogPregleda)
         {
-            Pregled pregledZaIzmenu = preglediRepozitorijum.PretraziPoId(idIzabranogPregleda);
+            Pregled pregledZaIzmenu = preglediRepozitorijum.DobaviPregledPoId(idIzabranogPregleda);
             pregledZaIzmenu.Odrzan = true;
             pregledZaIzmenu.Anamneza = null;
 
@@ -92,7 +95,7 @@ namespace Bolnica.Model.Rukovanja
 
         public Pregled PretragaPoAnamnezi(String idAnamneze)
         {
-            return preglediRepozitorijum.PretraziPoId("//ArrayOfPregled/Pregled/Anamneza[IdAnamneze='" + idAnamneze + "']");
+            return preglediRepozitorijum.PretraziPoAnamnezi(idAnamneze);
         }
 
         public List<Pregled> DobaviSveObavljenePregledePacijenta(Pacijent pacijent)

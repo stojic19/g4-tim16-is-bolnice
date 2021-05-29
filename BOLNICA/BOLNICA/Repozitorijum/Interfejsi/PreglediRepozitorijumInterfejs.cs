@@ -9,5 +9,8 @@ namespace Bolnica.Repozitorijum.Interfejsi
         void IzmeniPregled(Pregled pregledZaIzmenu);
         List<Pregled> SortPoDatumuPregleda();
         List<Pregled> DobaviSvePregledePacijenta(String korisnickoImePacijenta);
+        Pregled PretragaPoTerminu(String idTermina);
+        Pregled PretraziPoAnamnezi(String idAnamneze);
+        Pregled DobaviPregledPoId(String id);
     }
 }

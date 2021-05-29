@@ -9,38 +9,24 @@ namespace Bolnica.Repozitorijum.Interfejsi
 {
     public interface ZakazaniTerminiRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Termin>
     {
-        Termin ZakaziTermin(Termin t, String lekar);
-        
+        Boolean DaLiPostojiTermin(Termin t);
 
-        Boolean OtkaziTermin(String idTermina);
-  
+        Boolean OtkaziTerminLekar(String idTermina);
+
         Boolean OtkaziPregledSekretar(String idTermina);
-    
-        bool DaLiListeSadrzeTerminSekretar(Termin termin);
-        
 
-        Boolean IzmeniTermin(Termin stari, Termin novi, String korisnik);
-        
+        bool DaLiListeSadrzeTerminSekretar(Termin termin);
 
         List<Termin> PretraziPoLekaru(String korImeLekara);
-      
 
         List<Termin> DobaviSveSlobodneTermine();
-       
+
         List<Termin> DobaviSveZakazaneTermine();
-        
 
         List<Termin> DobaviSveZakazaneTerminePacijenta(String pacijentKorisnickoIme);
-     
 
-        
-        Termin DobaviZakazanTerminPoId(String idTermina);
-        
-        void ObrisiZakazanTermin(Termin terminZaBrisanje);
-       
-      
-        
-        void SacuvajZakazanTermin(Termin terminZaUpis);
+        void ObrisiZakazanTermin(String terminZaBrisanje);
+
         void IzmeniTermin(Termin termin);
     }
 }
