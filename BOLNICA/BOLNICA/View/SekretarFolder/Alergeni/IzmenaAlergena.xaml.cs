@@ -3,6 +3,7 @@ using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -27,66 +28,13 @@ namespace Bolnica
     /// </summary>
     public partial class IzmenaAlergena : UserControl
     {
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
-        private static String izabranPacijent = null;
-        private static String izabranAlergen = null;
+        IzmenaAlergenaViewModel izmenaAlergenaViewModel;
 
         public IzmenaAlergena(String idPacijenta,String idAlergena)
         {
             InitializeComponent();
-            izabranPacijent = idPacijenta;
-            izabranAlergen = idAlergena;
-
-            foreach(AlergeniPrikazDTO a in alergeniKontroler.DobaviAlergenePoIdPacijenta(idPacijenta))
-            {
-                if(a.IdAlergena.Equals(idAlergena))
-                {
-                    idLeka.Text = a.IdAlergena;
-                    opis.Text = a.OpisReakcije;
-                    vreme.Text = a.VremeZaPojavu;
-                    break;
-                }
-            }
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
-            if(!PoljaPravilnoPopunjena())
-            {
-                return;
-            }    
-
-            alergeniKontroler.IzmeniAlergen(izabranPacijent, new AlergenDTO(izabranAlergen, opis.Text, vreme.Text));
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new AlergeniSekretar(izabranPacijent);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private bool PoljaPravilnoPopunjena()
-        {
-            if (vreme.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti vreme potrebno za pojavu reakcije!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (opis.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti opis reaksije!", "Proverite sva polja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new AlergeniSekretar(izabranPacijent);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            izmenaAlergenaViewModel = new IzmenaAlergenaViewModel(idPacijenta, idAlergena);
+            this.DataContext = izmenaAlergenaViewModel;
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)

@@ -488,28 +488,7 @@
     <VrstaNaloga>regularan</VrstaNaloga>
     <ZdravstveniKarton>
       <IDPacijenta>stojic19</IDPacijenta>
-      <Alergeni>
-        <Alergeni>
-          <IdAlergena>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IdAlergena>
-          <Lek>
-            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
-            <NazivLeka>Aerius</NazivLeka>
-            <Jacina>10mg</Jacina>
-            <Kolicina>3212</Kolicina>
-            <Proizvodjac>Brufesa</Proizvodjac>
-            <Sastojci>
-              <Sastojak>
-                <Naziv>s42</Naziv>
-                <Kolicina>3</Kolicina>
-              </Sastojak>
-            </Sastojci>
-            <Verifikacija>true</Verifikacija>
-            <Zamene />
-          </Lek>
-          <OpisReakcije>Natekne</OpisReakcije>
-          <VremeZaPojavu>20min</VremeZaPojavu>
-        </Alergeni>
-      </Alergeni>
+      <Alergeni />
       <Recepti />
       <Anamneze />
       <Uputi />

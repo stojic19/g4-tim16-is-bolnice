@@ -135,6 +135,8 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\AlergeniViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\UklanjanjeAlergenaViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\IzmenaAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">

@@ -3,6 +3,7 @@ using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -25,33 +26,12 @@ namespace Bolnica
     /// </summary>
     public partial class UklanjanjeAlergena : UserControl
     {
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
-        private static String izabranPacijent = null;
-        private static String izabranAlergen = null;
+        UklanjanjeAlergenaViewModel uklanjanjeAlergenaViewModel;
         public UklanjanjeAlergena(String idPacijenta,String idAlergena)
         {
             InitializeComponent();
-            izabranAlergen = idAlergena;
-            izabranPacijent = idPacijenta;
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new AlergeniSekretar(izabranPacijent);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            alergeniKontroler.UkloniAlergen(izabranPacijent, izabranAlergen);
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new AlergeniSekretar(izabranPacijent);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            uklanjanjeAlergenaViewModel = new UklanjanjeAlergenaViewModel(idPacijenta, idAlergena);
+            this.DataContext = uklanjanjeAlergenaViewModel;
         }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {

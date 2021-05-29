@@ -122,7 +122,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
             usc = new DodavanjeAlergena(korisnickoIme);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-        private RelayCommand potvrdiDodavanjeKomanda;
 
         private RelayCommand nazadKomanda;
 

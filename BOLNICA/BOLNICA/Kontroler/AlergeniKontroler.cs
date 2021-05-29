@@ -37,6 +37,10 @@ namespace Bolnica.Kontroler
             naloziPacijenataServis.UkloniAlergen(izabranPacijent, alergen);
         }
 
+        public AlergenDTO DobaviAlergenPacijentaPoId(string izabranPacijent, string idAlergena)
+        {
+            return alergeniKonverter.AlergeniModelUDTO(naloziPacijenataServis.DobaviAlergenPacijentaPoId(izabranPacijent, idAlergena));
+        }
         public void DodajAlergen(string izabranPacijent, AlergenDTO alergenZaDodavanje)
         {
             naloziPacijenataServis.DodajAlergen(izabranPacijent, alergeniKonverter.AlergenDTOUModel(alergenZaDodavanje));
