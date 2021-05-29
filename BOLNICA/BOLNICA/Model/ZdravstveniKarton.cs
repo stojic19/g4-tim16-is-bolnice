@@ -10,9 +10,9 @@ namespace Model
     {
 
         private BracniStatus BracniStatus;
-
         private String MestoZaposlenja;
-
+        private String imeRoditelja;
+        private String brojKartona;
         public String IDPacijenta { get; set; }
 
         public ZdravstveniKarton() { }
@@ -23,6 +23,8 @@ namespace Model
             Alergeni = new List<Alergeni>();
             BracniStatus = BracniStatus.neozenjenNeudata;
             MestoZaposlenja = "";
+            imeRoditelja = "";
+            brojKartona = "";
         }
 
         public List<Alergeni> Alergeni { get; set; }

@@ -68,7 +68,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DTO\AlergenDTO.cs" />
+    <Compile Include="DTO\AnamnezaDTO.cs" />
+    <Compile Include="DTO\KartonPacijentaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
+    <Compile Include="DTO\LekDTO.cs" />
+    <Compile Include="DTO\OsobaDTO.cs" />
+    <Compile Include="DTO\PacijentDTO.cs" />
+    <Compile Include="DTO\PregledDTO.cs" />
+    <Compile Include="DTO\ReceptDTO.cs" />
+    <Compile Include="DTO\TerapijaDTO.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
     <Compile Include="Komande\RelayCommand.cs" />
