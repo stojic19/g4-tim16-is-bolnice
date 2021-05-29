@@ -98,6 +98,7 @@
     <Compile Include="Konverter\AlergeniKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
+    <Compile Include="Konverter\PacijentKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\PacijentViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\AlergeniViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\IzmenaAlergenaViewModel.cs" />

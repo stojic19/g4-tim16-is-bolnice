@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -50,7 +51,7 @@ namespace Bolnica
             primaoci.Add("Lekari");
             primaoci.Add("Sekretari");
             primaoci.Add("Upravnici");
-            foreach (Pacijent pacijent in naloziPacijenataKontroler.DobaviSveNaloge())
+            foreach (PacijentDTO pacijent in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }

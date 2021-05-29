@@ -2,6 +2,7 @@
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,105 +24,15 @@ namespace Bolnica
 
     public partial class PrikazNalogaSekretar : UserControl
     {
-        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
-        public static ObservableCollection<Pacijent> NaloziPacijenata { get; set; }
+        PacijentViewModel pacijentViewModel;
 
         public PrikazNalogaSekretar()
         {
             InitializeComponent();
-
-            this.DataContext = this;
-
-            NaloziPacijenata = new ObservableCollection<Pacijent>();
-
-            foreach (Pacijent p in naloziPacijenataKontroler.DobaviSveNaloge())
-            {
-                NaloziPacijenata.Add(p);
-            }
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new DodavanjeNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            pacijentViewModel = new PacijentViewModel();
+            this.DataContext = pacijentViewModel;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (dataGridNaloziPacijenata.SelectedIndex != -1)
-            {
-                String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(id);
-
-                UserControl usc = null;
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-                usc = new IzmenaNalogaSekretar(pacijent.KorisnickoIme);
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-            {
-                MessageBox.Show("Izaberite nalog za izmenu!");
-            }
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-            if (dataGridNaloziPacijenata.SelectedIndex != -1)
-            {
-                UserControl usc = null;
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-                usc = new UklanjanjeNalogaSekretar(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-                MessageBox.Show("Izaberite nalog za uklanjanje!");
-
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if (dataGridNaloziPacijenata.SelectedIndex != -1)
-            {
-                String id = (((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(id);
-
-                UserControl usc = null;
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-                usc = new AlergeniSekretar(id);
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-            {
-                MessageBox.Show("Izaberite nalog za ažuriranje alergena!");
-            }
-        }
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            if (dataGridNaloziPacijenata.SelectedIndex != -1)
-            {
-                if (((Pacijent)dataGridNaloziPacijenata.SelectedItem).Blokiran == false)
-                {
-                    MessageBox.Show("Nalog nije blokiran!");
-                    return;
-                }
-                Pacijent p = naloziPacijenataKontroler.PretraziPoId(((Pacijent)dataGridNaloziPacijenata.SelectedItem).KorisnickoIme);
-                p.Blokiran = false;
-                p.ZloupotrebioSistem = 0;
-                // NaloziPacijenataServis.Sacuvaj();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite nalog koji želite da odblokirate!");
-            }
-        }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

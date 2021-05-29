@@ -31,6 +31,8 @@ namespace Bolnica.DTO
         public String KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public String Lozinka { get => lozinka; set => lozinka = value; }
 
+        public Pol Pol { get => pol; set => pol = value; }
+
         public OsobaDTO(string ime, string prezime, DateTime datumRodjenja, string jmbg, string adresaStanovanja, string kontaktTelefon, string email, string korisnickoIme, string lozinka, Pol pol)
         {
             this.ime = ime;

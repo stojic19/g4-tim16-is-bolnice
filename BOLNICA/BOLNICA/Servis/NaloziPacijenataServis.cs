@@ -14,23 +14,12 @@ namespace Model
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
         private LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
-        public Pacijent DodajNalog(Pacijent pacijentZaDodavanje)
+        public void DodajNalog(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
-            PrikazNalogaSekretar.NaloziPacijenata.Add(pacijentZaDodavanje);
-
-            if (SviNalozi().Contains(pacijentZaDodavanje))
-            {
-                return pacijentZaDodavanje;
-            }
-            else
-            {
-                return null;
-            }
         }
-
         
-        public Boolean IzmeniNalog(String stariId, Pacijent pacijentZaIZmenu)
+        public void IzmeniNalog(String stariId, Pacijent pacijentZaIZmenu)
         {
             Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
 
@@ -46,36 +35,16 @@ namespace Model
             pacijentKojiSeMenja.VrstaNaloga = pacijentZaIZmenu.VrstaNaloga;
             pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = pacijentZaIZmenu.KorisnickoIme;
 
-            //int indeks = PrikazNalogaSekretar.NaloziPacijenata.IndexOf(pacijentKojiSeMenja);
-            //PrikazNalogaSekretar.NaloziPacijenata.RemoveAt(indeks);
-            //PrikazNalogaSekretar.NaloziPacijenata.Insert(indeks, pacijentKojiSeMenja);
-
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentKojiSeMenja);
-
-            return true;
         }
 
-        public Boolean UkolniNalog(String idNalogaZaUklanjanje)
+        public void UkolniNalog(String idNalogaZaUklanjanje)
         {
             Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
-
-            if (pacijentZaUklanjanje == null)
-            {
-                return false;
-            }
-
             naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNalogaZaUklanjanje + "']");
-            PrikazNalogaSekretar.NaloziPacijenata.Remove(pacijentZaUklanjanje);
 
-            if (SviNalozi().Contains(pacijentZaUklanjanje) || PrikazNalogaSekretar.NaloziPacijenata.Contains(pacijentZaUklanjanje))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
+        
         public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
         {
             foreach (Alergeni alergeni in DobaviAlergenePoIdPacijenta(idPacijenta))
@@ -155,6 +124,13 @@ namespace Model
             if (PretraziPoId(korisnickoIme).Blokiran)
                 return true;
             return false;
+        }
+
+        public void OdblokirajNalog(String idPacijenta)
+        {
+            Pacijent pacijent = PretraziPoId(idPacijenta);
+            pacijent.Blokiran = false;
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }
 
     }

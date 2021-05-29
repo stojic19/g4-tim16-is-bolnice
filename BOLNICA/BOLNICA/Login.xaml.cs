@@ -46,7 +46,7 @@ namespace Bolnica
             // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
             //terminiServis.PrivremenaInicijalizacijaLekara();
-            Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
+            Pacijenti = naloziPacijenataKontroler.DobaviSveNalogeNeDTO();
             Lekari = lekariKontroler.DobaviSveLekare();
           
             //hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();

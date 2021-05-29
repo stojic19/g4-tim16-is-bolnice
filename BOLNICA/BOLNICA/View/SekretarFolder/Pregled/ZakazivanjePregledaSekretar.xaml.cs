@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -30,7 +31,7 @@ namespace Bolnica.Sekretar.Pregled
         LekariKontroler lekariKontroler = new LekariKontroler();
 
         TerminKontroler terminKontroler = new TerminKontroler();
-        public static ObservableCollection<Pacijent> SviPacijenti { get; set; }
+        public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
         public static ObservableCollection<Lekar> SviLekari { get; set; }
 
         public ZakazivanjePregledaSekretar()
@@ -38,10 +39,10 @@ namespace Bolnica.Sekretar.Pregled
             InitializeComponent();
 
             this.DataContext = this;
-            SviPacijenti = new ObservableCollection<Pacijent>();
+            SviPacijenti = new ObservableCollection<PacijentDTO>();
             SviLekari = new ObservableCollection<Lekar>();
 
-            foreach (Pacijent p in naloziPacijenataKontroler.DobaviSveNaloge())
+            foreach (PacijentDTO p in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 SviPacijenti.Add(p);
             }

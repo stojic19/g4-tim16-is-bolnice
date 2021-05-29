@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -121,7 +122,7 @@ namespace Bolnica
                 }
                 if (!pacijentZaIzmenu.KorisnickoIme.Equals(idPacijenta.Text))
                 {
-                    foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
+                    foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                     {
                         if (pacijentZaProveru.KorisnickoIme.Equals(idPacijenta.Text))
                         {
@@ -133,7 +134,7 @@ namespace Bolnica
             }
             if (!pacijentZaIzmenu.Jmbg.Equals(jmbg.Text))
             {
-                foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
+                foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                 {
                     if (pacijentZaProveru.Jmbg.Equals(jmbg.Text))
                     {
@@ -142,7 +143,7 @@ namespace Bolnica
                     }
                 }
             }
-            naloziPacijenataKontroler.IzmeniNalog(izabranPacijent, new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text, tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost));
+            naloziPacijenataKontroler.IzmeniNalog(izabranPacijent, new PacijentDTO(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, pol.SelectedIndex == 0 ? Pol.zenski : Pol.muski, jmbg.Text, adresa.Text, telefon.Text, email.Text, tipNaloga.SelectedIndex == 0 ? VrsteNaloga.regularan : VrsteNaloga.gost));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -81,7 +82,7 @@ namespace Bolnica
                     System.Windows.Forms.MessageBox.Show("Lozinka se mora sastojati od minimum 8 znakova!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }    
-                foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
+                foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
                 {
                     if (pacijentZaProveru.KorisnickoIme.Equals(idPacijenta.Text))
                     {
@@ -95,7 +96,7 @@ namespace Bolnica
                 vrsteNaloga = VrsteNaloga.gost;
             }
 
-            foreach (Pacijent pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
+            foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 if (pacijentZaProveru.Jmbg.Equals(jmbg.Text))
                 {
@@ -112,7 +113,7 @@ namespace Bolnica
             {
                 polUnetogPacijenta = Pol.muski;
             }
-            Pacijent pacijentZaDodavanje = new Pacijent(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polUnetogPacijenta, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
+            PacijentDTO pacijentZaDodavanje = new PacijentDTO(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polUnetogPacijenta, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
      
             naloziPacijenataKontroler.DodajNalog(pacijentZaDodavanje);
 

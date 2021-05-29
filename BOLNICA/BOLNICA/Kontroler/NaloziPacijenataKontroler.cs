@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,24 @@ namespace Bolnica.Kontroler
     class NaloziPacijenataKontroler
     {
         private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
+        PacijentKonverter pacijentKonverter = new PacijentKonverter();
 
-        public List<Pacijent> DobaviSveNaloge()
+        public List<Pacijent> DobaviSveNalogeNeDTO()
         {
             return naloziPacijenataServis.SviNalozi();
         }
 
-        public void DodajNalog(Pacijent pacijentZaDodavanje)
+        public List<PacijentDTO> DobaviSveNaloge()
         {
-            naloziPacijenataServis.DodajNalog(pacijentZaDodavanje);
+            List<PacijentDTO> pacijenti = new List<PacijentDTO>();
+            foreach (Pacijent pacijent in naloziPacijenataServis.SviNalozi())
+                pacijenti.Add(pacijentKonverter.PacijentModelUDTO(pacijent));
+            return pacijenti;
+        }
+
+        public void DodajNalog(PacijentDTO pacijentZaDodavanje)
+        {
+            naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
         public Pacijent PretraziPoId(string idPacijenta)
@@ -26,9 +37,9 @@ namespace Bolnica.Kontroler
             return naloziPacijenataServis.PretraziPoId(idPacijenta);
         }
 
-        public void IzmeniNalog(string stariIdPacijenta, Pacijent pacijentZaIzmenu)
+        public void IzmeniNalog(string stariIdPacijenta, PacijentDTO pacijentZaIzmenu)
         {
-            naloziPacijenataServis.IzmeniNalog(stariIdPacijenta, pacijentZaIzmenu);
+            naloziPacijenataServis.IzmeniNalog(stariIdPacijenta, pacijentKonverter.PacijentDTOUModel(pacijentZaIzmenu));
         }
 
         public void UkolniNalog(string pacijentZaUklanjanje)
@@ -39,6 +50,10 @@ namespace Bolnica.Kontroler
         public bool NalogJeBlokiran(String korisnickoIme)
         {
             return naloziPacijenataServis.NalogJeBlokiran(korisnickoIme);
+        }
+        public void OdblokirajNalog(String idPacijenta)
+        {
+            naloziPacijenataServis.OdblokirajNalog(idPacijenta);
         }
     }
 }
