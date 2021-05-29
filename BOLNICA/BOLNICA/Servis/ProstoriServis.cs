@@ -21,6 +21,7 @@ namespace Model
         public static List<Oprema> oprema = new List<Oprema>();
         public static List<Renoviranje> prostorKojiSeRenovira = new List<Renoviranje>();
        
+       
         public static void DodajProstor(Prostor p)
         { 
             if (!prostori.Contains(p))
@@ -37,6 +38,7 @@ namespace Model
             {
                 if (p.IdProstora.Equals(noviPodaci.IdProstora))
                 {
+                    p.NazivProstora = noviPodaci.NazivProstora;
                     p.VrstaProstora = noviPodaci.VrstaProstora;
                     p.Sprat = noviPodaci.Sprat;
                     p.Kvadratura = noviPodaci.Kvadratura;
@@ -141,6 +143,8 @@ namespace Model
                 Oprema o = new Oprema(oprema.IdOpreme, oprema.NazivOpreme, oprema.VrstaOpreme, kolicina);
                 ProstoriServis.DodajOpremuProstoru(prostorUKojiPremjestamo, o);
             }
+            if (oprema.NazivOpreme.Equals("krevet"))
+                prostorUKojiPremjestamo.BrojSlobodnihKreveta += kolicina;
         }
 
         public static Oprema PretraziOpremuUProstoru(Prostor prostor, Oprema oprema)
@@ -191,11 +195,15 @@ namespace Model
 
             }
             return false;
+
+            if (oprema.NazivOpreme.Equals("krevet"))
+                prostorUKojiPrebacujemo.BrojSlobodnihKreveta += kolicina;
         }
 
         public static void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
         {
             prostorUKojiPrebacujemo.Oprema.Add(o);
+            
         }
 
         public void ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)

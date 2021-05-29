@@ -2,6 +2,7 @@
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
     <IdProstora>P33</IdProstora>
+    <NazivProstora>p1</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>66</Sprat>
     <Kvadratura>6</Kvadratura>
@@ -17,9 +18,10 @@
   </Prostor>
   <Prostor>
     <IdProstora>P1</IdProstora>
+    <NazivProstora>o1</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>1</Sprat>
-    <Kvadratura>1</Kvadratura>
+    <Kvadratura>111</Kvadratura>
     <JeRenoviranje>true</JeRenoviranje>
     <Oprema>
       <Oprema>
@@ -32,6 +34,7 @@
   </Prostor>
   <Prostor>
     <IdProstora>P3</IdProstora>
+    <NazivProstora>o22</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>6</Sprat>
     <Kvadratura>6</Kvadratura>
@@ -40,6 +43,7 @@
   </Prostor>
   <Prostor>
     <IdProstora>P4</IdProstora>
+    <NazivProstora>p11</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>9</Kvadratura>
@@ -48,6 +52,7 @@
   </Prostor>
   <Prostor>
     <IdProstora>OP1</IdProstora>
+    <NazivProstora>s1</NazivProstora>
     <VrstaProstora>sala</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>40</Kvadratura>
@@ -56,6 +61,7 @@
   </Prostor>
   <Prostor>
     <IdProstora>f0482fe3-2189-4188-a730-e87e71ad6057</IdProstora>
+    <NazivProstora>o10</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
     <Sprat>3</Sprat>
     <Kvadratura>555</Kvadratura>
@@ -64,6 +70,7 @@
   </Prostor>
   <Prostor>
     <IdProstora>5405b020-28e7-41d9-8e3a-dddb2f6449c0</IdProstora>
+    <NazivProstora>p2</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>36</Kvadratura>
@@ -72,9 +79,28 @@
   </Prostor>
   <Prostor>
     <IdProstora>1b02489a-3b29-44fd-ba9d-3889fa1dc571</IdProstora>
+    <NazivProstora>p4</NazivProstora>
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>1</Sprat>
     <Kvadratura>37</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <IdProstora>ccc6463c-f2f1-43de-9e38-460e8d0d3a12</IdProstora>
+    <NazivProstora>p3</NazivProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>22</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <IdProstora>59b9842a-927c-4b4d-864c-5d0801808206</IdProstora>
+    <NazivProstora>o5</NazivProstora>
+    <VrstaProstora>ordinacija</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>33</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>

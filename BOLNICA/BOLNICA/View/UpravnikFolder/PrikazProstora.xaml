@@ -25,7 +25,7 @@
                   SelectionMode="Single" Grid.RowSpan="3" Margin="20,20,9.6,19.8" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Prostora" Binding="{Binding IdProstora}" Width="67*"/>
+                    <DataGridTextColumn Header="Naziv prostora" Binding="{Binding NazivProstora}" Width="90*"/>
                     <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="100*"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="80*"/>
                     <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>
@@ -42,7 +42,7 @@
                 HorizontalContentAlignment="Center" Click="Izmjeni_Click" Background="WhiteSmoke"/>
             <Button Grid.Row="3" Content="Uklanjanje prostora" Margin="348,30.2,74.6,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Ukloni_Click" Background="WhiteSmoke"/>
-            <Button Grid.Row="2" Content="Renoviraj" Margin="0.4,95.8,6.2,67.4" VerticalContentAlignment="Center" 
+            <Button Grid.Row="2" Content="Renoviraj" Margin="0.4,95.8,8.2,67.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Renoviraj_Click" Background="WhiteSmoke" Grid.Column="1" Grid.RowSpan="2"/>
             <Button Grid.Row="3" Content="Raspored opreme" Margin="0.4,30.2,8.4,35.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="RasporedOpreme_Click" Background="WhiteSmoke" Grid.Column="1"/>

@@ -29,6 +29,7 @@ namespace Bolnica
 
             Prostor prostor = ProstoriServis.PretraziPoId(id);
             stari = id;
+            NazivProstora.Text = prostor.NazivProstora;
   
             if (prostor.VrstaProstora == VrsteProstora.ordinacija)
             {
@@ -55,7 +56,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Prostor p = new Prostor(stari ,ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
+            Prostor p = new Prostor(stari, NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
             ProstoriServis.IzmeniProstor(p);
 
             this.Close();

@@ -36,7 +36,7 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            Prostor p = new Prostor(Guid.NewGuid().ToString(), ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
+            Prostor p = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
             ProstoriServis.DodajProstor(p);
 
             this.Close();
