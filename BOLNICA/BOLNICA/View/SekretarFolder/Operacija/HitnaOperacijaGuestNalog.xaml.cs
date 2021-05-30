@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
@@ -89,11 +90,11 @@ namespace Bolnica.SekretarFolder.Operacija
             {
                 return;
             }
-            Pacijent pacijent = new Pacijent(tbIme.Text, tbPrezime.Text, tbJmbg.Text, DobaviIzabranPol());
+            PacijentDTO pacijent = new PacijentDTO(tbIme.Text, tbPrezime.Text, tbJmbg.Text, DobaviIzabranPol());
             hitnaOperacijaKontroler.DodajGuestNalog(pacijent);
             int trajanje = Convert.ToInt32(tbTrajanje.Text);
 
-            List<Termin> slobodniTermini = hitnaOperacijaKontroler.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
+            List<TerminDTO> slobodniTermini = hitnaOperacijaKontroler.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
             if (slobodniTermini.Count == 0)
             {
                 //termini za pomeranje;
@@ -106,7 +107,7 @@ namespace Bolnica.SekretarFolder.Operacija
             else
             {
                 //zakazivanje prvog slobodnog
-                Termin t = slobodniTermini[0];
+                TerminDTO t = slobodniTermini[0];
                 t.Pacijent = pacijent;
                 hitnaOperacijaKontroler.ZakazivanjeHitneOperacije(t, trajanje);
 
@@ -172,7 +173,7 @@ namespace Bolnica.SekretarFolder.Operacija
                 System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            foreach (Pacijent p1 in hitnaOperacijaKontroler.DobaviSveNaloge())
+            foreach (PacijentDTO p1 in hitnaOperacijaKontroler.DobaviSveNaloge())
             {
                 if (p1.Jmbg.Equals(tbJmbg.Text))
                 {

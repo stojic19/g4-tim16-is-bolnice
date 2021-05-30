@@ -76,9 +76,11 @@
     <Compile Include="DTO\LekarDTO.cs" />
     <Compile Include="DTO\LekDTO.cs" />
     <Compile Include="DTO\ObavestenjeDTO.cs" />
+    <Compile Include="DTO\OdsustvoDTO.cs" />
     <Compile Include="DTO\OsobaDTO.cs" />
     <Compile Include="DTO\PacijentDTO.cs" />
     <Compile Include="DTO\PregledDTO.cs" />
+    <Compile Include="DTO\RadniDanDTO.cs" />
     <Compile Include="DTO\ReceptDTO.cs" />
     <Compile Include="DTO\TerapijaDTO.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
@@ -105,8 +107,10 @@
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
     <Compile Include="Konverter\ObavestenjeKonverter.cs" />
+    <Compile Include="Konverter\OdsustvoKonverter.cs" />
     <Compile Include="Konverter\PacijentKonverter.cs" />
     <Compile Include="Konverter\PregledKonverter.cs" />
+    <Compile Include="Konverter\RadniDanKonverter.cs" />
     <Compile Include="Konverter\ReceptKonverter.cs" />
     <Compile Include="Konverter\TerapijaKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />

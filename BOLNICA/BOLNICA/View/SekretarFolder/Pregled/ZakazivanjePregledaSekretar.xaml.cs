@@ -32,7 +32,7 @@ namespace Bolnica.Sekretar.Pregled
 
         TerminKontroler terminKontroler = new TerminKontroler();
         public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
-        public static ObservableCollection<Lekar> SviLekari { get; set; }
+        public static ObservableCollection<LekarDTO> SviLekari { get; set; }
 
         public ZakazivanjePregledaSekretar()
         {
@@ -40,13 +40,13 @@ namespace Bolnica.Sekretar.Pregled
 
             this.DataContext = this;
             SviPacijenti = new ObservableCollection<PacijentDTO>();
-            SviLekari = new ObservableCollection<Lekar>();
+            SviLekari = new ObservableCollection<LekarDTO>();
 
             foreach (PacijentDTO p in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 SviPacijenti.Add(p);
             }
-            foreach (Lekar l in lekariKontroler.DobaviSveLekare())
+            foreach (LekarDTO l in lekariKontroler.DobaviSveLekare())
             {
                 SviLekari.Add(l);
             }
@@ -58,8 +58,8 @@ namespace Bolnica.Sekretar.Pregled
             {
                 return;
             }
-            String idPacijenta = (((Pacijent)dataGridPacijenti.SelectedItem).KorisnickoIme);
-            String idLekara = (((Lekar)dataGridLekari.SelectedItem).KorisnickoIme);
+            String idPacijenta = (((PacijentDTO)dataGridPacijenti.SelectedItem).KorisnickoIme);
+            String idLekara = (((LekarDTO)dataGridLekari.SelectedItem).KorisnickoIme);
 
             List<Termin> datumi = new List<Termin>();
 

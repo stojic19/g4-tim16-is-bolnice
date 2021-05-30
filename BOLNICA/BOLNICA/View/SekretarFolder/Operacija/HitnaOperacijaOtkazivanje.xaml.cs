@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
@@ -27,8 +28,8 @@ namespace Bolnica.SekretarFolder.Operacija
     public partial class HitnaOperacijaOtkazivanje : UserControl
     {
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
-        private static Termin terminZaOtkazivanje;
-        public HitnaOperacijaOtkazivanje(Termin termin)
+        private static TerminDTO terminZaOtkazivanje;
+        public HitnaOperacijaOtkazivanje(TerminDTO termin)
         {
             InitializeComponent();
             terminZaOtkazivanje = termin;

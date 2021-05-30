@@ -20,5 +20,10 @@ namespace Bolnica.Konverter
         {
             return new LekarDTO(l.Ime, l.Prezime, l.Jmbg, l.KorisnickoIme);
         }
+
+        public LekarDTO LekarModelUDTOLogin(Lekar lekar)
+        {
+            return new LekarDTO(lekar.KorisnickoIme, lekar.Lozinka);
+        }
     }
 }

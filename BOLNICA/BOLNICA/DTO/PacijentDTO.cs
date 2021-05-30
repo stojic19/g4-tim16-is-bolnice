@@ -88,5 +88,10 @@ namespace Bolnica.DTO
             this.Jmbg = jmbg;
         }
 
+        public PacijentDTO(string ime, string prezime, string jmbg, Pol pol) : this(ime, prezime, jmbg)
+        {
+            this.Pol = pol;
+            this.PolInt = (int)pol;
+        }
     }
 }

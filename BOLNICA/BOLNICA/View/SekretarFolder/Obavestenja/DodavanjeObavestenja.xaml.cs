@@ -55,7 +55,7 @@ namespace Bolnica
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);
             }
-            foreach (Lekar lekar in lekariKontroler.DobaviSveLekare())
+            foreach (LekarDTO lekar in lekariKontroler.DobaviSveLekare())
             {
                 primaoci.Add(lekar.KorisnickoIme + " " + lekar.Prezime + " " + lekar.Ime);
             }

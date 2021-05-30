@@ -10,19 +10,12 @@ namespace Bolnica.DTO
     public class LekarDTO : OsobaDTO
     {
         private String imeIPrezime;
-        private String korisnickoIme;
         private SpecijalizacijeLekara specijalizacija;
-        private string korisnickoIme1;
 
         public String ImeIPrezime
         {
             get { return imeIPrezime; }
             set { imeIPrezime = value; }
-        }
-        public String KorisnickoIme
-        {
-            get { return korisnickoIme; }
-            set { korisnickoIme = value; }
         }
         public SpecijalizacijeLekara Specijalizacija
         {
@@ -33,13 +26,19 @@ namespace Bolnica.DTO
         public LekarDTO(string imeIPrezimeLekara, string korisnickoIme, SpecijalizacijeLekara specijalizacija)
         {
             this.imeIPrezime = imeIPrezimeLekara;
-            this.korisnickoIme = korisnickoIme;
+            this.KorisnickoIme = korisnickoIme;
             this.specijalizacija = specijalizacija;
+        }
+
+        public LekarDTO(string korisnickoIme, string lozinka)
+        {
+            this.KorisnickoIme = korisnickoIme;
+            this.Lozinka = lozinka;
         }
 
         public LekarDTO(string korisnickoIme)
         {
-            this.korisnickoIme = korisnickoIme;
+            this.KorisnickoIme = korisnickoIme;
         }
 
         public LekarDTO(string ime, string prezime, string jmbg, string korisnickoIme)

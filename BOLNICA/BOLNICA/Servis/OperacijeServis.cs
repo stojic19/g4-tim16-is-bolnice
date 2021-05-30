@@ -1,4 +1,6 @@
-﻿using Bolnica.Repozitorijum;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder.Operacija;
 using Bolnica.Servis;
 using Model;
@@ -16,7 +18,10 @@ namespace Bolnica.Model
         OperacijeRepozitorijum operacijeRepozitorijum = new OperacijeRepozitorijum();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
-         
+        LekariServis lekariServis = new LekariServis();
+        PacijentKonverter pacijentKonverter = new PacijentKonverter();
+        TerminKonverter terminKonverter = new TerminKonverter();
+
         public List<Termin> DobaviSveOperacije()
         {
             return operacijeRepozitorijum.DobaviSveObjekte();
@@ -335,9 +340,9 @@ namespace Bolnica.Model
             return vreme;
         }
 
-        public Dictionary<Termin, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanje)
+        public Dictionary<TerminDTO, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanje)
         {
-            List<Termin> pomocna = new List<Termin>();
+            List<TerminDTO> pomocna = new List<TerminDTO>();
             List<String> vreme = new List<string>();
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
@@ -350,7 +355,7 @@ namespace Bolnica.Model
                     {
                         if (cas.Equals(t.PocetnoVreme))
                         {
-                            pomocna.Add(t);
+                            pomocna.Add(terminKonverter.SlobodniTerminModelUDTO(t));
                             break;
                         }
                     }
@@ -361,23 +366,26 @@ namespace Bolnica.Model
                     {
                         if (cas.Equals(t.PocetnoVreme))
                         {
-                            pomocna.Add(t);
+                            pomocna.Add(terminKonverter.SlobodniTerminModelUDTO(t));
                             break;
                         }
                     }
                 }
 
             }
-            var map = new Dictionary<Termin, int>();
-            foreach (Termin t in pomocna)
+            var map = new Dictionary<TerminDTO, int>();
+            foreach (TerminDTO t in pomocna)
             {
                 map.Add(t, PomeranjeOperacije(t));
             }
             return map;
         }
-        public int PomeranjeOperacije(Termin termin)
+        public int PomeranjeOperacije(TerminDTO noviTermin)
         {
-            List<Termin> pomocna = new List<Termin>();
+            Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, new Prostor(), new Pacijent(), lekar);
+
+            List<TerminDTO> pomocna = new List<TerminDTO>();
             TimeSpan vreme;
             int danaPomereno = -1;
             foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
@@ -415,7 +423,7 @@ namespace Bolnica.Model
                     if ((int)vreme.TotalDays == brojDana)
                     {
                         t.Pacijent = termin.Pacijent;
-                        ZakazivanjeHitneOperacije(t,(int)termin.Trajanje);
+                        ZakazivanjeHitneOperacije(terminKonverter.SlobodniTerminModelUDTO(t),(int)termin.Trajanje);
                         UkloniOperaciju(termin);
                         termin.Pacijent = null;
                         slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
@@ -424,16 +432,23 @@ namespace Bolnica.Model
                 }
             }
         }
-        public bool PomeriOperacijuIZakaziNovu(Termin termin,int brojDana,Pacijent pacijent,int trajanje)
+        public bool PomeriOperacijuIZakaziNovu(TerminDTO noviTermin,int brojDana,PacijentDTO pacijentDTO,int trajanje)
         {
+            Pacijent pacijent = pacijentKonverter.PacijentDTOUModel(pacijentDTO);
+            Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, trajanje, noviTermin.Datum, new Prostor(), pacijent, lekar);
             PomeriTerminUSledeciSlobodan(termin, brojDana);
             termin.Pacijent = pacijent;
-            bool povratnaVrednost = ZakazivanjeHitneOperacije(termin, trajanje);
+            bool povratnaVrednost = ZakazivanjeHitneOperacije(noviTermin, trajanje);
             ProveriTermineZaSpajanje();
             return povratnaVrednost;
         }
-        public bool OtkazivanjeOperacije(Termin termin)
+        public bool OtkazivanjeOperacije(TerminDTO noviTermin)
         {
+            Pacijent pacijent = naloziPacijenataServis.PretraziPoId(noviTermin.Pacijent.KorisnickoIme);
+            Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, noviTermin.TrajanjeDouble, noviTermin.Datum, new Prostor(), pacijent, lekar);
+
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
             string[] vreme = termin.PocetnoVreme.Split(':');
@@ -455,8 +470,11 @@ namespace Bolnica.Model
             ProveriTermineZaSpajanje();
             return true;
         }
-        public bool ZakazivanjeHitneOperacije(Termin termin,int trajanje)
+        public bool ZakazivanjeHitneOperacije(TerminDTO noviTermin, int trajanje)
         {
+            Pacijent pacijent = naloziPacijenataServis.PretraziPoId(noviTermin.IdPacijenta);
+            Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, new Prostor(), pacijent, lekar);
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
             string trenutnoVreme;

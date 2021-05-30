@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -26,7 +27,7 @@ namespace Bolnica.SekretarFolder
     public partial class PrikazLekaraSekretar : UserControl
     {
         LekariKontroler lekariKontroler = new LekariKontroler();
-        public static ObservableCollection<Lekar> Lekari{ get; set; }
+        public static ObservableCollection<LekarDTO> Lekari{ get; set; }
 
         public PrikazLekaraSekretar()
         {
@@ -34,9 +35,9 @@ namespace Bolnica.SekretarFolder
 
             this.DataContext = this;
 
-            Lekari = new ObservableCollection<Lekar>();
+            Lekari = new ObservableCollection<LekarDTO>();
 
-            foreach (Lekar lekar in lekariKontroler.DobaviSveLekare())
+            foreach (LekarDTO lekar in lekariKontroler.DobaviSveLekare())
             {
                 Lekari.Add(lekar);
             }
@@ -88,7 +89,7 @@ namespace Bolnica.SekretarFolder
         {
             if (dataGridLekari.SelectedIndex != -1)
             {
-                String idLekara = (((Lekar)dataGridLekari.SelectedItem).KorisnickoIme);
+                String idLekara = (((LekarDTO)dataGridLekari.SelectedItem).KorisnickoIme);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

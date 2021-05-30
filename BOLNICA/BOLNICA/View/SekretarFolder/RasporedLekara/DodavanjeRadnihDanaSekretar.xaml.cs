@@ -91,9 +91,9 @@ namespace Bolnica.SekretarFolder
             {
                 return;
             }
-            if (rasporedLekaraKontroler.DaLiJeMoguceRaditiUZadatomPeriodu(IdIzabranogLekara, new RadniDan(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
+            if (rasporedLekaraKontroler.DaLiJeMoguceRaditiUZadatomPeriodu(IdIzabranogLekara, new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
             {
-                rasporedLekaraKontroler.DodajRadneDane(IdIzabranogLekara, new RadniDan(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value), cbSmena.Text);
+                rasporedLekaraKontroler.DodajRadneDane(IdIzabranogLekara, new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value), cbSmena.Text);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

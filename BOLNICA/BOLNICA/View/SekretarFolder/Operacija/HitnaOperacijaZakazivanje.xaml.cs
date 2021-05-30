@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
@@ -28,7 +29,7 @@ namespace Bolnica.SekretarFolder.Operacija
     public partial class HitnaOperacijaZakazivanje : UserControl
     {
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
-        public static ObservableCollection<Pacijent> SviPacijenti { get; set; }
+        public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
         public HitnaOperacijaZakazivanje()
         {
             InitializeComponent();
@@ -39,9 +40,9 @@ namespace Bolnica.SekretarFolder.Operacija
 
         private void PopuniTabeluPacijenata()
         {
-            SviPacijenti = new ObservableCollection<Pacijent>();
+            SviPacijenti = new ObservableCollection<PacijentDTO>();
 
-            foreach (Pacijent p in hitnaOperacijaKontroler.DobaviSveNaloge())
+            foreach (PacijentDTO p in hitnaOperacijaKontroler.DobaviSveNaloge())
             {
                 SviPacijenti.Add(p);
             }
@@ -99,21 +100,21 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             int trajanje = Convert.ToInt32(tbTrajanje.Text);
-            List<Termin> slobodniTermini = hitnaOperacijaKontroler.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
+            List<TerminDTO> slobodniTermini = hitnaOperacijaKontroler.HitnaOperacijaSlobodniTermini(DobaviOblastLekara(), trajanje);
             if (slobodniTermini.Count == 0)
             {
                 //termini za pomeranje;
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-                usc = new HitnaOperacijaPomeranje((Pacijent)dataGridPacijenti.SelectedItem, DobaviOblastLekara(), trajanje);
+                usc = new HitnaOperacijaPomeranje((PacijentDTO)dataGridPacijenti.SelectedItem, DobaviOblastLekara(), trajanje);
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else
             {
                 //zakazivanje prvog slobodnog
-                Termin t = slobodniTermini[0];
-                t.Pacijent = (Pacijent)dataGridPacijenti.SelectedItem;
+                TerminDTO t = slobodniTermini[0];
+                t.Pacijent = (PacijentDTO)dataGridPacijenti.SelectedItem;
                 hitnaOperacijaKontroler.ZakazivanjeHitneOperacije(t, trajanje);
 
                 UserControl usc = null;

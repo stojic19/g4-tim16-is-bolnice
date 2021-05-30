@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
@@ -26,8 +27,8 @@ namespace Bolnica
         List<Upravnik> Upravnici = new List<Upravnik>();
         //List<Sekretar> Sekretari = new List<Sekretar>();
         List<Osoba> Sekretari = new List<Osoba>();
-        List<Pacijent> Pacijenti = new List<Pacijent>();
-        List<Lekar> Lekari = new List<Lekar>();
+        List<PacijentDTO> Pacijenti = new List<PacijentDTO>();
+        List<LekarDTO> Lekari = new List<LekarDTO>();
 
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
@@ -42,15 +43,9 @@ namespace Bolnica
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
 
             ProstoriServis.DeserijalizacijaProstora();
-            //ObavestenjaServis.Ucitaj();
-            // RukovanjeTerminima.InicijalizacijaSTermina();
             ZahteviServis.DeserijalizacijaZahtjeva();
-            //terminiServis.PrivremenaInicijalizacijaLekara();
-            Pacijenti = naloziPacijenataKontroler.DobaviSveNalogeNeDTO();
-            Lekari = lekariKontroler.DobaviSveLekare();
-          
-            //hitnaOperacijaKontroler.PrivremenaInicijalizacijaLekara();
-            
+            Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
+            Lekari = lekariKontroler.DobaviSveLekareLogin();
             
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -109,7 +104,7 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Lekar l in Lekari)
+            foreach (LekarDTO l in Lekari)
             {
                 if (l.KorisnickoIme.Equals(username.Text))
                 {
@@ -127,7 +122,7 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Pacijent p in Pacijenti)
+            foreach (PacijentDTO p in Pacijenti)
             {
                 if (p.KorisnickoIme.Equals(username.Text))
                 {
@@ -152,7 +147,7 @@ namespace Bolnica
             return;
         }
 
-        private bool ProveraNalogaPacijenta(Pacijent pacijent)
+        private bool ProveraNalogaPacijenta(PacijentDTO pacijent)
         {
             if (pacijent.Blokiran)
             {

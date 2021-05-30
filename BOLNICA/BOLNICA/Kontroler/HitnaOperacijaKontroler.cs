@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,42 +14,59 @@ namespace Bolnica.Kontroler
     {
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         OperacijeServis operacijeServis = new OperacijeServis();
+        TerminKonverter terminKonverter = new TerminKonverter();
+        PacijentKonverter pacijentKonverter = new PacijentKonverter();
 
-        public List<Termin> DobaviSveOperacije()
+        public List<TerminDTO> DobaviSveOperacije()
         {
-            return operacijeServis.DobaviSveOperacije();
+            List<TerminDTO> termini = new List<TerminDTO>();
+            foreach(Termin termin in operacijeServis.DobaviSveOperacije())
+            {
+                termini.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
+            }
+            return termini;
         }
-        public void DodajGuestNalog(Pacijent pacijentZaDodavanje)
+        public void DodajGuestNalog(PacijentDTO pacijentZaDodavanje)
         {
-            naloziPacijenataServis.DodajNalog(pacijentZaDodavanje);
-        }
-
-        public List<Pacijent> DobaviSveNaloge()
-        {
-            return naloziPacijenataServis.SviNalozi();
-        }
-
-        public List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara specijalizacijeLekara, int trajanjeOperacije)
-        {
-            return operacijeServis.HitnaOperacijaSlobodniTermini(specijalizacijeLekara, trajanjeOperacije);
+            naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
-        public void ZakazivanjeHitneOperacije(Termin terminZaZakazivanje, int trajanjeOperacije)
+        public List<PacijentDTO> DobaviSveNaloge()
+        {
+            List<PacijentDTO> pacijenti = new List<PacijentDTO>();
+            foreach (Pacijent pacijent in naloziPacijenataServis.SviNalozi())
+            {
+                pacijenti.Add(pacijentKonverter.PacijentModelUDTO(pacijent));
+            }
+            return pacijenti;
+        }
+
+        public List<TerminDTO> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara specijalizacijeLekara, int trajanjeOperacije)
+        {
+            List<TerminDTO> termini = new List<TerminDTO>();
+            foreach (Termin termin in operacijeServis.HitnaOperacijaSlobodniTermini(specijalizacijeLekara, trajanjeOperacije))
+            {
+                termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
+            }
+            return termini;
+        }
+
+        public void ZakazivanjeHitneOperacije(TerminDTO terminZaZakazivanje, int trajanjeOperacije)
         {
             operacijeServis.ZakazivanjeHitneOperacije(terminZaZakazivanje, trajanjeOperacije);
         }
 
-        public Dictionary<Termin, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanjeOperacije)
+        public Dictionary<TerminDTO, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanjeOperacije)
         {
             return operacijeServis.HitnaOperacijaTerminiZaPomeranje(oblastLekara, trajanjeOperacije);
         }
 
-        public bool PomeriOperacijuIZakaziNovu(Termin terminZaOperaciju, int brojDanaZaPomeranje, Pacijent odabraniPacijent, int trajanjeOperacije)
+        public bool PomeriOperacijuIZakaziNovu(TerminDTO terminZaOperaciju, int brojDanaZaPomeranje, PacijentDTO odabraniPacijent, int trajanjeOperacije)
         {
             return operacijeServis.PomeriOperacijuIZakaziNovu(terminZaOperaciju, brojDanaZaPomeranje, odabraniPacijent, trajanjeOperacije);
         }
 
-        public bool OtkazivanjeOperacije(Termin terminZaOtkazivanje)
+        public bool OtkazivanjeOperacije(TerminDTO terminZaOtkazivanje)
         {
             return operacijeServis.OtkazivanjeOperacije(terminZaOtkazivanje);
         }

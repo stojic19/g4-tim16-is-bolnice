@@ -28,9 +28,9 @@ namespace Bolnica.SekretarFolder
     {
         RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
 
-        public static ObservableCollection<RadniDan> RadniDani { get; set; }
+        public static ObservableCollection<RadniDanDTO> RadniDani { get; set; }
 
-        public static ObservableCollection<Odsustvo> Odsustva { get; set; }
+        public static ObservableCollection<OdsustvoDTO> Odsustva { get; set; }
 
         private string idIzabranogLekara;
         public PrikazRasporedaLekaraSekretar(String idLekara)
@@ -41,14 +41,14 @@ namespace Bolnica.SekretarFolder
             
             this.DataContext = this;
 
-            RadniDani = new ObservableCollection<RadniDan>();
-            Odsustva = new ObservableCollection<Odsustvo>();
+            RadniDani = new ObservableCollection<RadniDanDTO>();
+            Odsustva = new ObservableCollection<OdsustvoDTO>();
 
-            foreach(RadniDan radniDan in rasporedLekaraKontroler.DobaviRadneDanePoIdLekara(idIzabranogLekara))
+            foreach(RadniDanDTO radniDan in rasporedLekaraKontroler.DobaviRadneDanePoIdLekara(idIzabranogLekara))
             {
                 RadniDani.Add(radniDan);
             }
-            foreach(Odsustvo odsustvo in rasporedLekaraKontroler.DobaviOdsustvoPoIdLekara(idIzabranogLekara))
+            foreach(OdsustvoDTO odsustvo in rasporedLekaraKontroler.DobaviOdsustvoPoIdLekara(idIzabranogLekara))
             {
                 Odsustva.Add(odsustvo);
             }
@@ -111,7 +111,7 @@ namespace Bolnica.SekretarFolder
             //Promeni smenu
             if (dataGridRadniDani.SelectedIndex != -1)
             {
-                RadniDan radniDanZaPromenuSmene = ((RadniDan)dataGridRadniDani.SelectedItem);
+                RadniDanDTO radniDanZaPromenuSmene = ((RadniDanDTO)dataGridRadniDani.SelectedItem);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -130,7 +130,7 @@ namespace Bolnica.SekretarFolder
             //Ukloni radni dan
             if (dataGridRadniDani.SelectedIndex != -1)
             {
-                RadniDan radniDanZaUklanjanje = ((RadniDan)dataGridRadniDani.SelectedItem);
+                RadniDanDTO radniDanZaUklanjanje = ((RadniDanDTO)dataGridRadniDani.SelectedItem);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -159,7 +159,7 @@ namespace Bolnica.SekretarFolder
             //Ukloni slobodne dane
             if (dataGridOdsustva.SelectedIndex != -1)
             {
-                Odsustvo odsustvoZaUklanjanje = ((Odsustvo)dataGridOdsustva.SelectedItem);
+                OdsustvoDTO odsustvoZaUklanjanje = ((OdsustvoDTO)dataGridOdsustva.SelectedItem);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -178,7 +178,7 @@ namespace Bolnica.SekretarFolder
             //Ažuriranje trajanja odmora
             if (dataGridOdsustva.SelectedIndex != -1)
             {
-                Odsustvo odsustvoZaIzmenu = ((Odsustvo)dataGridOdsustva.SelectedItem);
+                OdsustvoDTO odsustvoZaIzmenu = ((OdsustvoDTO)dataGridOdsustva.SelectedItem);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

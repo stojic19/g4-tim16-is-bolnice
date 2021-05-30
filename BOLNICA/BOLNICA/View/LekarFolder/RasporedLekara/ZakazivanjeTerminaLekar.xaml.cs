@@ -36,7 +36,7 @@ namespace Bolnica
             CollectionView view1 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaPacijenata.ItemsSource);
             view1.Filter = UserFilterPacijent;
 
-            this.TabelaLekara.ItemsSource = lekariKontroler.DobaviSveLekareDTO();
+            this.TabelaLekara.ItemsSource = lekariKontroler.DobaviSveLekare();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 

@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Konverter;
+using Bolnica.Model;
 using Bolnica.Servis;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,9 @@ namespace Bolnica.Kontroler
     class RasporedLekaraKontroler
     {
         RasporedLekaraServis rasporedLekaraServis = new RasporedLekaraServis();
+        RadniDanKonverter radniDanKonverter = new RadniDanKonverter();
+        OdsustvoKonverter odsustvoKonverter = new OdsustvoKonverter();
+
         public RasporedLekaraKontroler()
         {
             ProveriDaLiTrebaDodatiDaneZaGodisnji();
@@ -19,50 +23,60 @@ namespace Bolnica.Kontroler
         {
             rasporedLekaraServis.ProveriDaLiTrebaDodatiDaneZaGodisnji();
         }
-        public void UkloniRadniDan(String idLekara, RadniDan radniDan)
+        public void UkloniRadniDan(String idLekara, RadniDanDTO radniDan)
         {
-            rasporedLekaraServis.UkloniRadniDan(idLekara, radniDan);
+            rasporedLekaraServis.UkloniRadniDan(idLekara, radniDanKonverter.RadniDanDTOUModel(radniDan));
         }
-        public void PromeniSmenu(String idLekara, RadniDan radniDan, string smena)
+        public void PromeniSmenu(String idLekara, RadniDanDTO radniDan, string smena)
         {
-            rasporedLekaraServis.PromeniSmenu(idLekara, radniDan, smena);
+            rasporedLekaraServis.PromeniSmenu(idLekara, radniDanKonverter.RadniDanDTOUModel(radniDan), smena);
         }
-        public void DodajRadneDane(String idLekara, RadniDan radniDan, string smena)
+        public void DodajRadneDane(String idLekara, RadniDanDTO radniDan, string smena)
         {
-            rasporedLekaraServis.DodajRadneDane(idLekara, radniDan, smena);
+            rasporedLekaraServis.DodajRadneDane(idLekara, radniDanKonverter.RadniDanDTOUModel(radniDan), smena);
         }
-        public void DodajSlobodneDane(String idLekara, Odsustvo odsustvo)
+        public void DodajSlobodneDane(String idLekara, OdsustvoDTO odsustvo)
         {
-            rasporedLekaraServis.DodajSlobodneDane(idLekara, odsustvo);
+            rasporedLekaraServis.DodajSlobodneDane(idLekara, odsustvoKonverter.OdsustvoDTOUModel(odsustvo));
         }
-        public void UkloniSlobodneDane(String idLekara, Odsustvo odsustvo)
+        public void UkloniSlobodneDane(String idLekara, OdsustvoDTO odsustvo)
         {
-            rasporedLekaraServis.UkloniSlobodneDane(idLekara, odsustvo);
+            rasporedLekaraServis.UkloniSlobodneDane(idLekara, odsustvoKonverter.OdsustvoDTOUModel(odsustvo));
         }
-        public void IzmeniSlobodneDane(String idLekara, Odsustvo staroOdsustvo, Odsustvo novoOdsustvo)
+        public void IzmeniSlobodneDane(String idLekara, OdsustvoDTO staroOdsustvo, OdsustvoDTO novoOdsustvo)
         {
-            rasporedLekaraServis.IzmeniSlobodneDane(idLekara, staroOdsustvo, novoOdsustvo);
+            rasporedLekaraServis.IzmeniSlobodneDane(idLekara, odsustvoKonverter.OdsustvoDTOUModel(staroOdsustvo), odsustvoKonverter.OdsustvoDTOUModel(novoOdsustvo));
         }
-        public bool DaLiJeMogucGodisnjiUZadatomPeriodu(String idLekara, Odsustvo odsustvo)
+        public bool DaLiJeMogucGodisnjiUZadatomPeriodu(String idLekara, OdsustvoDTO odsustvo)
         {
-            return rasporedLekaraServis.DaLiJeMogucGodisnjiUZadatomPeriodu(idLekara, odsustvo);
+            return rasporedLekaraServis.DaLiJeMogucGodisnjiUZadatomPeriodu(idLekara, odsustvoKonverter.OdsustvoDTOUModel(odsustvo));
         }
-        public bool DaLiJeMoguceRaditiUZadatomPeriodu(string idLekara, RadniDan radniDan)
+        public bool DaLiJeMoguceRaditiUZadatomPeriodu(string idLekara, RadniDanDTO radniDan)
         {
-            return rasporedLekaraServis.DaLiJeMoguceRaditiUZadatomPeriodu(idLekara, radniDan);
+            return rasporedLekaraServis.DaLiJeMoguceRaditiUZadatomPeriodu(idLekara, radniDanKonverter.RadniDanDTOUModel(radniDan));
         }
-        public List<RadniDan> DobaviRadneDanePoIdLekara(string idLekara)
+        public List<RadniDanDTO> DobaviRadneDanePoIdLekara(string idLekara)
         {
-            return rasporedLekaraServis.DobaviRadneDanePoIdLekara(idLekara);
+            List<RadniDanDTO> radniDani = new List<RadniDanDTO>();
+            foreach(RadniDan radniDan in rasporedLekaraServis.DobaviRadneDanePoIdLekara(idLekara))
+            {
+                radniDani.Add(radniDanKonverter.RadniDanModelUDTO(radniDan));
+            }
+            return radniDani;
         }
-        public List<Odsustvo> DobaviOdsustvoPoIdLekara(string idLekara)
+        public List<OdsustvoDTO> DobaviOdsustvoPoIdLekara(string idLekara)
         {
-            return rasporedLekaraServis.DobaviOdsustvoPoIdLekara(idLekara);
+            List<OdsustvoDTO> odsustva = new List<OdsustvoDTO>();
+            foreach (Odsustvo odsustvo in rasporedLekaraServis.DobaviOdsustvoPoIdLekara(idLekara))
+            {
+                odsustva.Add(odsustvoKonverter.OdsustvoModelUDTO(odsustvo));
+            }
+            return odsustva;
         }
 
-        public bool DaLiJeMogucePromenitiSmenu(RadniDan radniDanZaPromenuSmene)
+        public bool DaLiJeMogucePromenitiSmenu(RadniDanDTO radniDanZaPromenuSmene)
         {
-            return rasporedLekaraServis.DaLiJeMogucePromenitiSmenu(radniDanZaPromenuSmene);
+            return rasporedLekaraServis.DaLiJeMogucePromenitiSmenu(radniDanKonverter.RadniDanDTOUModel(radniDanZaPromenuSmene));
         }
     }
 }

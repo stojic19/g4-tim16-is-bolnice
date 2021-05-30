@@ -15,12 +15,12 @@ namespace Bolnica.Kontroler
         LekariServis lekariServis = new LekariServis();
         LekarKonverter lekarKonverter = new LekarKonverter();
 
-        public List<Lekar> DobaviSveLekare()
+        public List<Lekar> DobaviSveLekareNeDTO()
         {
             return lekariServis.SviLekari();
         }
 
-        public List<LekarDTO> DobaviSveLekareDTO()
+        public List<LekarDTO> DobaviSveLekare()
         {
             List<LekarDTO> sviLekari = new List<LekarDTO>();
 
@@ -48,6 +48,13 @@ namespace Bolnica.Kontroler
             foreach (Lekar lekar in lekariServis.DobaviLekareOpstePrakse())
                 lekariOpstePrakse.Add(lekarKonverter.LekarModelUDTO(lekar));
             return lekariOpstePrakse;
+        }
+        public List<LekarDTO> DobaviSveLekareLogin()
+        {
+            List<LekarDTO> lekari = new List<LekarDTO>();
+            foreach (Lekar lekar in lekariServis.DobaviLekareOpstePrakse())
+                lekari.Add(lekarKonverter.LekarModelUDTOLogin(lekar));
+            return lekari;
         }
     }
 }

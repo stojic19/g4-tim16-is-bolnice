@@ -60,6 +60,7 @@ namespace Bolnica.Kontroler
         {
             naloziPacijenataServis.OdblokirajNalog(idPacijenta);
         }
+
         public bool DaLiJeKorisnickoImeJedinstveno(String korisnickoIme)
         {
             return naloziPacijenataServis.DaLiJeKorisnickoImeJedinstveno(korisnickoIme);

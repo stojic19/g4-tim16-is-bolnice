@@ -27,9 +27,9 @@ namespace Bolnica.SekretarFolder
         RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
 
         private string idIzabranogLekara;
-        private RadniDan radniDanZaUklanjanje;
+        private RadniDanDTO radniDanZaUklanjanje;
 
-        public UklanjanjeRadnogDanaSekretar(String idLekara,RadniDan radniDan)
+        public UklanjanjeRadnogDanaSekretar(String idLekara, RadniDanDTO radniDan)
         {
             InitializeComponent();
 

@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
@@ -26,7 +27,7 @@ namespace Bolnica.SekretarFolder.Operacija
     public partial class HitnaOperacijePregled : UserControl
     {
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
-        public ObservableCollection<Termin> TerminiHitnihOperacija { get; set; }
+        public ObservableCollection<TerminDTO> TerminiHitnihOperacija { get; set; }
         public HitnaOperacijePregled()
         {
             InitializeComponent();
@@ -38,8 +39,8 @@ namespace Bolnica.SekretarFolder.Operacija
 
         private void PopuniTabeluTermina()
         {
-            TerminiHitnihOperacija = new ObservableCollection<Termin>();
-            foreach (Termin t in hitnaOperacijaKontroler.DobaviSveOperacije())
+            TerminiHitnihOperacija = new ObservableCollection<TerminDTO>();
+            foreach (TerminDTO t in hitnaOperacijaKontroler.DobaviSveOperacije())
             {
                 TerminiHitnihOperacija.Add(t);
             }
@@ -59,7 +60,7 @@ namespace Bolnica.SekretarFolder.Operacija
             //Otkazivanje
             if (dataGridTerminiPregleda.SelectedIndex != -1)
             {
-                Termin t = (Termin)dataGridTerminiPregleda.SelectedItem;
+                TerminDTO t = (TerminDTO)dataGridTerminiPregleda.SelectedItem;
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

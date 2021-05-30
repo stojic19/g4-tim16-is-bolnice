@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
 using Model;
@@ -28,10 +29,10 @@ namespace Bolnica.SekretarFolder.Operacija
     public partial class HitnaOperacijaPomeranje : UserControl
     {
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
-        public static ObservableCollection<KeyValuePair<Termin, int>> TerminiZaPomeranje { get; set; }
-        private static Pacijent pacijent;
+        public static ObservableCollection<KeyValuePair<TerminDTO, int>> TerminiZaPomeranje { get; set; }
+        private static PacijentDTO pacijent;
         private static int TrajanjeOperacije;
-        public HitnaOperacijaPomeranje(Pacijent pacijentIzabrani,SpecijalizacijeLekara oblast,int trajanjeOperacije)
+        public HitnaOperacijaPomeranje(PacijentDTO pacijentIzabrani,SpecijalizacijeLekara oblast,int trajanjeOperacije)
         {
             InitializeComponent();
             pacijent = pacijentIzabrani;
@@ -43,9 +44,9 @@ namespace Bolnica.SekretarFolder.Operacija
 
         private void PopuniListuTerminimaZaPomeranje(SpecijalizacijeLekara oblast)
         {
-            TerminiZaPomeranje = new ObservableCollection<KeyValuePair<Termin, int>>();
+            TerminiZaPomeranje = new ObservableCollection<KeyValuePair<TerminDTO, int>>();
 
-            foreach (KeyValuePair<Termin, int> t in hitnaOperacijaKontroler.HitnaOperacijaTerminiZaPomeranje(oblast, TrajanjeOperacije).OrderBy(key => key.Value))
+            foreach (KeyValuePair<TerminDTO, int> t in hitnaOperacijaKontroler.HitnaOperacijaTerminiZaPomeranje(oblast, TrajanjeOperacije).OrderBy(key => key.Value))
             {
                 TerminiZaPomeranje.Add(t);
             }
@@ -103,7 +104,7 @@ namespace Bolnica.SekretarFolder.Operacija
             {
                 return;
             }
-            KeyValuePair<Termin, int> termin = (KeyValuePair<Termin, int>)terminiZaPomeranjeLista.SelectedItem;
+            KeyValuePair<TerminDTO, int> termin = (KeyValuePair<TerminDTO, int>)terminiZaPomeranjeLista.SelectedItem;
             if (!hitnaOperacijaKontroler.PomeriOperacijuIZakaziNovu(termin.Key, termin.Value, pacijent, TrajanjeOperacije))
             {
                 System.Windows.Forms.MessageBox.Show("Neuspešno pomeranje!", "Odaberite drugi termin", MessageBoxButtons.OK, MessageBoxIcon.Error);
