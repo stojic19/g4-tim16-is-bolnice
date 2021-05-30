@@ -26,5 +26,10 @@ namespace Bolnica.Repozitorijum
             DodajObjekat(pacijent);
         }
 
+        public void IzmeniPacijentaSaKorisnickim(string stariId, Pacijent pacijentKojiSeMenja)
+        {
+            ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + stariId + "']");
+            DodajObjekat(pacijentKojiSeMenja);
+        }
     }
 }

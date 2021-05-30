@@ -54,7 +54,7 @@ namespace Bolnica
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranaAnamneza.IdPacijenta);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranaAnamneza.IdPacijenta);
             Lekar l = lekariKontroler.PretraziPoId(izabranaAnamneza.IdLekara);
 
             ime.Text = p.Ime;

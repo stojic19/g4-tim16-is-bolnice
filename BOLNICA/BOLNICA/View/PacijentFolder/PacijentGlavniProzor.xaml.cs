@@ -31,7 +31,7 @@ namespace Bolnica
         {
             InitializeComponent();
             this.korisnickoIme = korisnickoIme;
-            ulogovani = naloziPacijenataKontroler.PretraziPoId(korisnickoIme);
+            ulogovani = naloziPacijenataKontroler.PretraziPoIdNeDTO(korisnickoIme);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
             MainPanel.Children.Add(new PrikazObavestenjaPacijent());

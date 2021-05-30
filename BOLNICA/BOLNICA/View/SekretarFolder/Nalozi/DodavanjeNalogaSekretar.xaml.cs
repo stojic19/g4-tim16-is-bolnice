@@ -3,6 +3,7 @@ using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,114 +25,14 @@ namespace Bolnica
 {
     public partial class DodavanjeNalogaSekretar : UserControl
     {
-        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        DodavanjeNalogaViewModel dodavanjeNalogaViewModel;
         public DodavanjeNalogaSekretar()
         {
             InitializeComponent();
+            dodavanjeNalogaViewModel = new DodavanjeNalogaViewModel();
+            this.DataContext = dodavanjeNalogaViewModel;
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            VrsteNaloga vrsteNaloga;
-            if (ime.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti ime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (prezime.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti prezime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (jmbg.Text.Equals(""))
-            {
-                System.Windows.Forms.MessageBox.Show("Morate uneti jmbg pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (tipNaloga.Text.Equals("Regularan"))
-            {
-                vrsteNaloga = VrsteNaloga.regularan;
-
-                if (idPacijenta.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Morate uneti korisničko ime pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (adresa.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Morate uneti adresu pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (telefon.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Morate uneti kontakt telefon pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (email.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Morate uneti email pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (lozinka.Text.Equals(""))
-                {
-                    System.Windows.Forms.MessageBox.Show("Morate uneti lozinku pacijenta!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if(lozinka.Text.Length<8)
-                {
-                    System.Windows.Forms.MessageBox.Show("Lozinka se mora sastojati od minimum 8 znakova!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }    
-                foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
-                {
-                    if (pacijentZaProveru.KorisnickoIme.Equals(idPacijenta.Text))
-                    {
-                        System.Windows.Forms.MessageBox.Show("Već postoji uneto korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-            else
-            {
-                vrsteNaloga = VrsteNaloga.gost;
-            }
-
-            foreach (PacijentDTO pacijentZaProveru in naloziPacijenataKontroler.DobaviSveNaloge())
-            {
-                if (pacijentZaProveru.Jmbg.Equals(jmbg.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Već postoji uneti jmbg!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-            Pol polUnetogPacijenta;
-            if (pol.Text.Equals("Ženski"))
-            {
-                polUnetogPacijenta = Pol.zenski;
-            }
-            else
-            {
-                polUnetogPacijenta = Pol.muski;
-            }
-            PacijentDTO pacijentZaDodavanje = new PacijentDTO(idPacijenta.Text, ime.Text, prezime.Text, this.datum.SelectedDate ?? DateTime.Now, polUnetogPacijenta, jmbg.Text, adresa.Text, telefon.Text, email.Text, vrsteNaloga,lozinka.Text);
-     
-            naloziPacijenataKontroler.DodajNalog(pacijentZaDodavanje);
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
+        
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

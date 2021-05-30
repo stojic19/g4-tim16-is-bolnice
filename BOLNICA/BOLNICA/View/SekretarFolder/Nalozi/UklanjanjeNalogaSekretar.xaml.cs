@@ -2,6 +2,7 @@
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,33 +22,12 @@ namespace Bolnica
 {
     public partial class UklanjanjeNalogaSekretar : UserControl
     {
-        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
-        String izabranPacijentZaUklanjanje = null;
+        UklanjanjeNalogaViewModel uklanjanjeNalogaViewModel;
         public UklanjanjeNalogaSekretar(String idPacijentaZaUklananje)
         {
-            izabranPacijentZaUklanjanje = idPacijentaZaUklananje;
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-            naloziPacijenataKontroler.UkolniNalog(izabranPacijentZaUklanjanje);
-
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+            uklanjanjeNalogaViewModel = new UklanjanjeNalogaViewModel(idPacijentaZaUklananje);
+            this.DataContext = uklanjanjeNalogaViewModel;
         }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {

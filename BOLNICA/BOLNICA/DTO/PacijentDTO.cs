@@ -10,11 +10,16 @@ namespace Bolnica.DTO
     public class PacijentDTO : OsobaDTO
     {
         private VrsteNaloga vrstaNaloga;
+        private bool blokiran;
         KartonPacijentaDTO karton;
-
+        private int polInt;
+        private int vrstaNalogaInt;
         public VrsteNaloga VrstaNaloga { get => vrstaNaloga; set => vrstaNaloga = value; }
+        public bool Blokiran { get => blokiran; set => blokiran = value; }
+        public int PolInt { get => polInt; set => polInt = value; }
+        public int VrstaNalogaInt { get => vrstaNalogaInt; set => vrstaNalogaInt = value; }
 
-        public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
+        public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka, bool blokiran)
         {
             this.Ime = ime;
             this.Prezime = prezime;
@@ -27,6 +32,9 @@ namespace Bolnica.DTO
             this.Lozinka = lozinka;
             this.Pol = pol;
             this.VrstaNaloga = vrstaNaloga;
+            this.Blokiran = blokiran;
+            this.PolInt = (int)pol;
+            this.VrstaNalogaInt = (int)vrstaNaloga;
         }
         public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
@@ -41,6 +49,20 @@ namespace Bolnica.DTO
             this.Lozinka = "";
             this.Pol = pol;
             this.VrstaNaloga = vrstaNaloga;
+            this.PolInt = (int)pol;
+            this.VrstaNalogaInt = (int)vrstaNaloga;
+        }
+
+        public PacijentDTO() 
+        {
+            this.Ime = "";
+            this.Prezime = "";
+            this.Jmbg = "";
+            this.AdresaStanovanja = "";
+            this.KontaktTelefon = "";
+            this.Email = "";
+            this.KorisnickoIme = "";
+            this.Lozinka = "";
         }
 
         public PacijentDTO(String ime, String prezime, String jmbg)

@@ -9,5 +9,7 @@ namespace Bolnica.Repozitorijum.Interfejsi
         List<Alergeni> DobaviAlergenePacijenta(String pacijentKorisnickoIme);
 
         void IzmeniPacijenta(Pacijent pacijent);
+
+        void IzmeniPacijentaSaKorisnickim(string stariId, Pacijent pacijentKojiSeMenja);
     }
 }

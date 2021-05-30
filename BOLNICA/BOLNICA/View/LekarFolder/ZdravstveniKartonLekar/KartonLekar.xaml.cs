@@ -51,7 +51,7 @@ namespace Bolnica
 
         private void inicijalizacijaTabela()
         {
-            Pacijent pacijent = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent pacijent = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             Recepti = new ObservableCollection<Recept>();
             foreach (Recept r in pacijent.ZdravstveniKarton.Recepti)

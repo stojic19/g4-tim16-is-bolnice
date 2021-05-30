@@ -32,9 +32,14 @@ namespace Bolnica.Kontroler
             naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
-        public Pacijent PretraziPoId(string idPacijenta)
+        public Pacijent PretraziPoIdNeDTO(string idPacijenta)
         {
             return naloziPacijenataServis.PretraziPoId(idPacijenta);
+        }
+
+        public PacijentDTO PretraziPoId(string idPacijenta)
+        {
+            return pacijentKonverter.PacijentModelUDTO(naloziPacijenataServis.PretraziPoId(idPacijenta));
         }
 
         public void IzmeniNalog(string stariIdPacijenta, PacijentDTO pacijentZaIzmenu)
@@ -54,6 +59,14 @@ namespace Bolnica.Kontroler
         public void OdblokirajNalog(String idPacijenta)
         {
             naloziPacijenataServis.OdblokirajNalog(idPacijenta);
+        }
+        public bool DaLiJeKorisnickoImeJedinstveno(String korisnickoIme)
+        {
+            return naloziPacijenataServis.DaLiJeKorisnickoImeJedinstveno(korisnickoIme);
+        }
+        public bool DaLiJeJmbgJedinstven(String jmbg)
+        {
+            return naloziPacijenataServis.DaLiJeJmbgJedinstven(jmbg);
         }
     }
 }

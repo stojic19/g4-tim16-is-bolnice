@@ -39,7 +39,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         private void inicijalizacijaPolja()
         {
 
-            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
             Lekar specijalista = lekariKontroler.PretraziPoId(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;

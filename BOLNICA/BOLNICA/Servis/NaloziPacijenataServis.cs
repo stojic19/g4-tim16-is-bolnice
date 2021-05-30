@@ -35,7 +35,7 @@ namespace Model
             pacijentKojiSeMenja.VrstaNaloga = pacijentZaIZmenu.VrstaNaloga;
             pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = pacijentZaIZmenu.KorisnickoIme;
 
-            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentKojiSeMenja);
+            naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentKojiSeMenja);
         }
 
         public void UkolniNalog(String idNalogaZaUklanjanje)
@@ -133,5 +133,27 @@ namespace Model
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }
 
+        public bool DaLiJeKorisnickoImeJedinstveno(String korisnickoIme)
+        {
+            foreach (Pacijent pacijentZaProveru in SviNalozi())
+            {
+                if (pacijentZaProveru.KorisnickoIme.Equals(korisnickoIme))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool DaLiJeJmbgJedinstven(String jmbg)
+        {
+            foreach (Pacijent pacijentZaProveru in SviNalozi())
+            {
+                if (pacijentZaProveru.Jmbg.Equals(jmbg))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

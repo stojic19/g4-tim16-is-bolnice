@@ -52,7 +52,7 @@ namespace Bolnica.LekarFolder
         private void inicijalizacijaPolja()
         {
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
-            Pacijent p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
             pacijent.Text = p.imePrezime();
             lekar.Text = lekariKontroler.ImeiPrezime(idLekarSpecijalista);
         }

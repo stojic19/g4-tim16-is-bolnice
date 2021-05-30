@@ -63,7 +63,7 @@ namespace Bolnica.Sekretar.Pregled
             {
                 return;
             }    
-            termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
+            termin.Pacijent = naloziPacijenataKontroler.PretraziPoIdNeDTO(IdPacijenta);
         //    terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
 
             UserControl usc = null;
