@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
 using System;
@@ -24,8 +25,8 @@ namespace Bolnica
     /// </summary>
     public partial class RenoviranjeProstorije : System.Windows.Controls.UserControl
     {
-        ProstoriServis prostoriServis = new ProstoriServis();
-        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
         public RenoviranjeProstorije()
@@ -35,7 +36,7 @@ namespace Bolnica
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in prostoriServis.SviProstori())
+            foreach (Prostor p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -43,12 +44,12 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            if (!prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
+            if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
                 Prostor izabranZaRenoviranje = (Prostor)dataGridProstori.SelectedItem;
                 Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
-                renoviranjeServis.DodajZaRenoviranje(renoviranje);
-                renoviranjeServis.ProveriRenoviranje();
+                renoviranjeKontroler.DodajZaRenoviranje(renoviranje);
+                renoviranjeKontroler.ProveriRenoviranje();
        
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
                 System.Windows.Controls.UserControl usc = null;

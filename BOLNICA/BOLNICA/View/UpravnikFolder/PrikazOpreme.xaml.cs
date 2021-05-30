@@ -1,4 +1,5 @@
-﻿using Bolnica.UpravnikFolder;
+﻿using Bolnica.Kontroler;
+using Bolnica.UpravnikFolder;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Bolnica
 
     public partial class PrikazOpreme : UserControl
     {
-        OpremaServis opremaServis = new OpremaServis();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
         public static ObservableCollection<Oprema> Oprema { get; set; }
 
         public PrikazOpreme()
@@ -32,7 +33,7 @@ namespace Bolnica
 
             Oprema = new ObservableCollection<Oprema>();
 
-            foreach (Oprema o in opremaServis.SvaOprema())
+            foreach (Oprema o in opremaKontroler.SvaOprema())
             {
                 Oprema.Add(o);
             }

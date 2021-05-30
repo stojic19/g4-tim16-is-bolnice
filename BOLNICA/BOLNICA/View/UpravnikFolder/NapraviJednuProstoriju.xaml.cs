@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Bolnica.UpravnikFolder;
 using Model;
@@ -24,8 +25,8 @@ namespace Bolnica
     public partial class NapraviJednuProstoriju : UserControl
     {
         private List<Prostor> ProstoriKojiSeBrisu = new List<Prostor>();
-        ProstoriServis prostoriServis = new ProstoriServis();
-        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
 
         public NapraviJednuProstoriju(List<Prostor> prostoriZaRenoviranje)
         {
@@ -47,7 +48,7 @@ namespace Bolnica
             Prostor prostor = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
 
 
-            if (!prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndDate.SelectedDate))
+            if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndDate.SelectedDate))
             {
                 RenovirajProstor(prostor,ProstoriKojiSeBrisu);
 
@@ -66,8 +67,8 @@ namespace Bolnica
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[0]);
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[1]);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSePravi);     
-            renoviranjeServis.DodajZaRenoviranje(renoviranje);
-            renoviranjeServis.ProveriRenoviranje();   
+            renoviranjeKontroler.DodajZaRenoviranje(renoviranje);
+            renoviranjeKontroler.ProveriRenoviranje();   
         }
 
         private VrsteProstora ProvjeriVrstuProstora()

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Bolnica
     public partial class UklanjanjeProstora : Window
     {
         String izabran = null;
-        ProstoriServis prostoriServis = new ProstoriServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         public UklanjanjeProstora(String idProstora)
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            prostoriServis.UkloniProstor(izabran);
+            prostoriKontroler.UkloniProstor(izabran);
             this.Close();
         }
     }

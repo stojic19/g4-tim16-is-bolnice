@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Bolnica.UpravnikFolder;
 using Model;
@@ -24,8 +25,8 @@ namespace Bolnica
     public partial class NapraviDvijeProstorije : UserControl
     {
         private Prostor izabranaProstorija;
-        ProstoriServis prostoriServis = new ProstoriServis();
-        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
         public NapraviDvijeProstorije(Prostor izabran)
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Bolnica
             Prostor prostor1 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora1.Text, ProvjeriVrstuProstora1(), int.Parse(this.Sprat1.Text), float.Parse(this.Kvadratura1.Text), false);
             Prostor prostor2 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora2.Text, ProvjeriVrstuProstora2(), int.Parse(this.Sprat2.Text), float.Parse(this.Kvadratura2.Text), false);
 
-            if (!prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
+            if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
                 RenovirajProstor(izabranaProstorija,prostor1,prostor2);
 
@@ -56,8 +57,8 @@ namespace Bolnica
             renoviranje.ProstoriKojiSeBrisu.Add(izabranaProstorija);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje1);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje2);
-            renoviranjeServis.DodajZaRenoviranje(renoviranje);
-            renoviranjeServis.ProveriRenoviranje();         
+            renoviranjeKontroler.DodajZaRenoviranje(renoviranje);
+            renoviranjeKontroler.ProveriRenoviranje();         
        
         }
 

@@ -18,7 +18,7 @@ namespace Model
         ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
 
-        public static List<Oprema> oprema = new List<Oprema>();
+        //public static List<Oprema> oprema = new List<Oprema>();
        
        
         public void DodajProstor(Prostor p)
@@ -27,7 +27,7 @@ namespace Model
         }
 
 
-        public  Boolean IzmeniProstor(Prostor noviPodaci)
+        public void IzmeniProstor(Prostor noviPodaci)
         {
             Prostor p = prostoriRepozitorijum.PretraziProstorPoId(noviPodaci.IdProstora);
 
@@ -37,7 +37,6 @@ namespace Model
             p.Kvadratura = noviPodaci.Kvadratura;
 
             prostoriRepozitorijum.IzmenaProstora(p);
-            return true;
      
         }
 
@@ -123,12 +122,13 @@ namespace Model
                     {
                         prostorUKojiPrebacujemo.BrojSlobodnihKreveta += kolicina;
                     }
-                    prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
                     return true;
                 }
 
             }
             return false;
+
+            prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
         }
 
 
@@ -145,7 +145,6 @@ namespace Model
             {
                 if (t.Datum >= pocetniDatum && t.Datum <= zavrsniDatum)
                 {
-                    System.Windows.Forms.MessageBox.Show("Postoje zakazani termini za taj period, trazite drugi datum !", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return true;
                 }
             }

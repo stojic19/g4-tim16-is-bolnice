@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.UpravnikFolder;
 using Model;
@@ -24,8 +25,7 @@ namespace Bolnica
     public partial class UpravnikGlavniProzor : Window
     {
         private static UpravnikGlavniProzor instance = null;
-        ProstoriServis prostoriServis = new ProstoriServis();
-
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         public static UpravnikGlavniProzor getInstance()
         {
             if (instance == null)
@@ -35,7 +35,7 @@ namespace Bolnica
         private UpravnikGlavniProzor()
         {
             InitializeComponent();        
-            prostoriServis.ProvjeriDaLiJeProstorRenoviran();
+            prostoriKontroler.ProvjeriDaLiJeProstorRenoviran();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)

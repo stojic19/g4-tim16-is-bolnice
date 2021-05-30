@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,8 +25,8 @@ namespace Bolnica
     {
         String idOpreme = null;
         String idProstoraIzKojegPrebacujem = null;
-        ProstoriServis prostoriServis = new ProstoriServis();
-        OpremaServis opremaServis = new OpremaServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
 
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
@@ -40,7 +41,7 @@ namespace Bolnica
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in prostoriServis.SviProstori())
+            foreach (Prostor p in prostoriKontroler.SviProstori())
             {
                 if (!p.IdProstora.Equals(idProstoraIzKojegPrebacujem))
                 {
@@ -59,8 +60,8 @@ namespace Bolnica
         {
             Prostor prostorUKojiPremjestamo = (Prostor)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
-            Prostor prostorIzKojegPremjestamo = prostoriServis.PretraziPoId(idProstoraIzKojegPrebacujem);
-            Oprema opremaKojuPremjestamo = opremaServis.PretraziPoId(idOpreme);
+            Prostor prostorIzKojegPremjestamo = prostoriKontroler.PretraziProstorPoId(idProstoraIzKojegPrebacujem);
+            Oprema opremaKojuPremjestamo = opremaKontroler.PretraziPoId(idOpreme);
 
             if (prostorUKojiPremjestamo == null)
             {
@@ -74,12 +75,12 @@ namespace Bolnica
             }
             else
             {
-                opremaServis.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
+                opremaKontroler.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
             }
 
             // Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
-            prostoriServis.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
-            prostoriServis.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
+            prostoriKontroler.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
+            prostoriKontroler.PremjestiOpremu(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
 
   
             this.Close();

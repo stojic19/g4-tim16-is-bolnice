@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
     <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
@@ -101,16 +101,6 @@
     <VrstaProstora>soba</VrstaProstora>
     <Sprat>2</Sprat>
     <Kvadratura>22</Kvadratura>
-    <JeRenoviranje>false</JeRenoviranje>
-    <Oprema />
-  </Prostor>
-  <Prostor>
-    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
-    <IdProstora>59b9842a-927c-4b4d-864c-5d0801808206</IdProstora>
-    <NazivProstora>o5</NazivProstora>
-    <VrstaProstora>ordinacija</VrstaProstora>
-    <Sprat>2</Sprat>
-    <Kvadratura>33</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
   </Prostor>

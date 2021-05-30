@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
 using System;
@@ -25,20 +26,20 @@ namespace Bolnica.UpravnikFolder
     public partial class PrikazRenoviranja : UserControl
     {
         public static ObservableCollection<Renoviranje> Renoviranje { get; set; }
-        ProstoriServis prostoriServis = new ProstoriServis();
-        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
 
         public PrikazRenoviranja()
         {
             InitializeComponent();
 
-            prostoriServis.ProvjeriDaLiJeProstorRenoviran();
+            prostoriKontroler.ProvjeriDaLiJeProstorRenoviran();
 
             this.DataContext = this;
 
             Renoviranje = new ObservableCollection<Renoviranje>();
 
-            foreach (Renoviranje r in renoviranjeServis.SvaRenoviranja())
+            foreach (Renoviranje r in renoviranjeKontroler.SvaRenoviranja())
             {
                 Renoviranje.Add(r);
             }

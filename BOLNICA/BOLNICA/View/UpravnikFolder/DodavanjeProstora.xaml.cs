@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Bolnica
 
     public partial class DodavanjeProstora : Window
     {
-        ProstoriServis prostoriServis = new ProstoriServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         public DodavanjeProstora()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Bolnica
         {
 
             Prostor p = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
-            prostoriServis.DodajProstor(p);
+            prostoriKontroler.DodajProstor(p);
 
             this.Close();
 

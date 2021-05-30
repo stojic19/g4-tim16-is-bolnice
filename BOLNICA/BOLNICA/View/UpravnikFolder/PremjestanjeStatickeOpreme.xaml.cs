@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,8 +26,9 @@ namespace Bolnica.UpravnikFolder
     {
         public static ObservableCollection<Prostor> Prostori { get; set; }
         public static ObservableCollection<Oprema> Oprema { get; set; }
-        ProstoriServis prostoriServis = new ProstoriServis();
-        OpremaServis opremaServis = new OpremaServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
+
         public PremjestanjeStatickeOpreme()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace Bolnica.UpravnikFolder
             Oprema = new ObservableCollection<Oprema>();
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Oprema o in opremaServis.SvaOprema())
+            foreach (Oprema o in opremaKontroler.SvaOprema())
             {
                 if (o.VrstaOpreme == VrsteOpreme.staticka)
                 {
@@ -43,7 +45,7 @@ namespace Bolnica.UpravnikFolder
                 }
             }
 
-            foreach (Prostor p in prostoriServis.SviProstori())
+            foreach (Prostor p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -57,7 +59,7 @@ namespace Bolnica.UpravnikFolder
 
             if (DateTime.Today >= DateTime.Parse(DatumPremjestanja.Text))
             {
-                opremaServis.PremjestiKolicinuOpreme(prostor, oprema, kolicina);
+                opremaKontroler.PremjestiKolicinuOpreme(prostor, oprema, kolicina);
               
             }
 

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,19 +22,19 @@ namespace Bolnica
     {
 
         public static ObservableCollection<Prostor> Prostori { get; set; }
-        ProstoriServis prostoriServis = new ProstoriServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
         public PrikazProstora()
         {
             InitializeComponent();
 
-            prostoriServis.ProvjeriDaLiJeProstorRenoviran();
+            prostoriKontroler.ProvjeriDaLiJeProstorRenoviran();
 
             this.DataContext = this;
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in prostoriServis.SviProstori())
+            foreach (Prostor p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }

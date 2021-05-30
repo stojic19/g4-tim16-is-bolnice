@@ -1,6 +1,7 @@
 ﻿using Bolnica.Model;
 using Bolnica.Repozitorijum;
 using Bolnica.UpravnikFolder;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,7 @@ namespace Bolnica.Servis
     class RenoviranjeServis
     {
         RenoviranjeRepozitorijum renoviranjeRepozitorijum = new RenoviranjeRepozitorijum();
+        ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
 
         public List<Renoviranje> SvaRenoviranja()
         {
@@ -24,8 +26,6 @@ namespace Bolnica.Servis
             renoviranjeRepozitorijum.DodajObjekat(renoviranje);
  
         }
-
-       
 
         public  void ProveriRenoviranje()
         {
@@ -62,26 +62,26 @@ namespace Bolnica.Servis
 
         public void PostaviDaSeRenovira(Renoviranje r)
         {
-            /* foreach (Prostor p in prostori)
+             foreach (Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
              {
-                 if (p.IdProstora.Equals(r.RoomId))
+                 if (p.IdProstora.Equals(r.Prostor.IdProstora))
                  {
                      p.JeRenoviranje = true;
                      break;
                  }
-             }*/
+             }
         }
 
         public  void PostaviDaSeNeRenovira(Renoviranje r)
         {
-            /*  foreach (Prostor p in prostori)
+              foreach (Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
               {
-                  if (p.IdProstora.Equals(r.RoomId))
+                  if (p.IdProstora.Equals(r.Prostor.IdProstora))
                   {
                       p.JeRenoviranje = false;
                       break;
                   }
-              }*/
+              }
         }
 
     }

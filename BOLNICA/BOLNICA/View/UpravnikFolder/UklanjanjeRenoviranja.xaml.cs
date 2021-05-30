@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
 using System;
@@ -24,7 +25,7 @@ namespace Bolnica
     public partial class UklanjanjeRenoviranja : Window
     {
         Renoviranje izabranZaUklanjanje = null;
-        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
+        RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
         public UklanjanjeRenoviranja(Renoviranje renoviranje)
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            renoviranjeServis.UkloniRenoviranje(izabranZaUklanjanje);
+            renoviranjeKontroler.UkloniRenoviranje(izabranZaUklanjanje);
             this.Close();
         }
     }

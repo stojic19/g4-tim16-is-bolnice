@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Bolnica
     public partial class UklanjanjeOpreme : Window
     {
         String izabran = null;
-        OpremaServis opremaServis = new OpremaServis();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
 
         public UklanjanjeOpreme(String idOpreme)
         {
@@ -37,7 +38,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            opremaServis.UkloniOpremu(izabran);
+            opremaKontroler.UkloniOpremu(izabran);
             this.Close();
         }
     }

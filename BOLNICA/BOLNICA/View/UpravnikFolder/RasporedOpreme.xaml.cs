@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,15 +26,14 @@ namespace Bolnica
 
         public ObservableCollection<Oprema> oprema;
         public static string IdProstorije { get; set; }
-        public ObservableCollection<Oprema> Oprema { get => oprema; set => oprema = value; }
-        ProstoriServis prostoriServis = new ProstoriServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
         public RasporedOpreme(String idProstorije)
         {
             InitializeComponent();
             this.DataContext = this;
             oprema = new ObservableCollection<Oprema>();
-            foreach(Oprema o in prostoriServis.PretraziPoId(idProstorije).Oprema){
+            foreach(Oprema o in prostoriKontroler.PretraziProstorPoId(idProstorije).Oprema){
                 oprema.Add(o);
             }
             

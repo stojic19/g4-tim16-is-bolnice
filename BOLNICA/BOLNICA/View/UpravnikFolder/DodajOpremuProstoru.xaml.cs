@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,13 @@ namespace Bolnica
     {
         private List<Oprema> oprema;
         private string IdProstora;
-        ProstoriServis prostoriServis = new ProstoriServis();
-        OpremaServis opremaServis = new OpremaServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
 
         public DodajOpremuProstoru(string idProstora)
         {
             InitializeComponent();
-            oprema = opremaServis.SvaOprema();
+            oprema = opremaKontroler.SvaOprema();
             this.DataContext = this;
             IdProstora = idProstora;
         }
@@ -47,15 +48,10 @@ namespace Bolnica
                 System.Windows.MessageBox.Show("Unesite kolicinu!");
                 return;
             }
-            Prostor p = prostoriServis.PretraziPoId(IdProstora);
-            opremaServis.PremjestiKolicinuOpreme(p, oprema, Kolicina);
+            Prostor p = prostoriKontroler.PretraziProstorPoId(IdProstora);
+            opremaKontroler.PremjestiKolicinuOpreme(p, oprema, Kolicina);
      
             this.Close();
-        }
-
-        private void dataGridOprema_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOprema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Oprema>
-    <IdOpreme>s1</IdOpreme>
-    <NazivOpreme>krevet</NazivOpreme>
-    <VrstaOpreme>staticka</VrstaOpreme>
-    <Kolicina>6</Kolicina>
-  </Oprema>
   <Oprema>
     <IdOpreme>s8</IdOpreme>
     <NazivOpreme>ormar</NazivOpreme>

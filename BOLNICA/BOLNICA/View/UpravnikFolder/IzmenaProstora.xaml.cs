@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,13 @@ namespace Bolnica
     public partial class IzmenaProstora : Window
     {
         String stari = null;
-        ProstoriServis prostoriServis = new ProstoriServis();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
         public IzmenaProstora(String id)//korisnik unosi informacije
         {
             InitializeComponent();
 
-            Prostor prostor = prostoriServis.PretraziPoId(id);
+            Prostor prostor = prostoriKontroler.PretraziProstorPoId(id);
             stari = id;
             NazivProstora.Text = prostor.NazivProstora;
   
@@ -57,7 +58,7 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             Prostor p = new Prostor(stari, NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
-            prostoriServis.IzmeniProstor(p);
+            prostoriKontroler.IzmeniProstor(p);
 
             this.Close();
         }

@@ -94,12 +94,15 @@
     <Compile Include="Kontroler\BeleskaKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
+    <Compile Include="Kontroler\OpremaKontroler.cs" />
     <Compile Include="Kontroler\PitanjaKontroler.cs" />
+    <Compile Include="Kontroler\ProstoriKontroler.cs" />
     <Compile Include="Kontroler\RasporedLekaraKontroler.cs" />
     <Compile Include="Kontroler\LekoviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\PreglediKontorler.cs" />
+    <Compile Include="Kontroler\RenoviranjeKontroler.cs" />
     <Compile Include="Kontroler\SlobodniTerminiKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />

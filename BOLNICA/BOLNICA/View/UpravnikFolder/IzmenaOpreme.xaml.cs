@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.Kontroler;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +21,14 @@ namespace Bolnica
     public partial class IzmenaOpreme : Window
     {
         String stari = null;
-        OpremaServis opremaServis = new OpremaServis();
+        OpremaKontroler opremaKontroler = new OpremaKontroler();
 
         public IzmenaOpreme(String id)//korisnik unosi informacije
         {
             InitializeComponent();
 
             stari = id;
-            Oprema o = opremaServis.PretraziPoId(id);
+            Oprema o = opremaKontroler.PretraziPoId(id);
 
             NazivOpreme.Text = o.NazivOpreme;
 
@@ -52,7 +53,7 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             Oprema o = new Oprema(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
-            opremaServis.IzmeniOpremu(o);
+            opremaKontroler.IzmeniOpremu(o);
            
             this.Close();
         }
