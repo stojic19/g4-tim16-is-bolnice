@@ -67,7 +67,7 @@ namespace Bolnica
 
             if (!Validacija()) return;
 
-            Lek prepisanLek = lekoviKontroler.PretraziPoID(sifraLeka);
+            Lek prepisanLek = lekoviKontroler.PretraziPoID2(sifraLeka);
             Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
             zdravstveniKartoniKontroler.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);

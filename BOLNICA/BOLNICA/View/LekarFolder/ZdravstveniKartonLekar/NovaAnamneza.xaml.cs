@@ -133,7 +133,7 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = lekoviKontroler.PretraziPoID(sifraLeka);
+            Lek preporucenLek = lekoviKontroler.PretraziPoID2(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
             Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
             ZdravstveniKartoniServis.dodajPrivremeno(t); //brisi

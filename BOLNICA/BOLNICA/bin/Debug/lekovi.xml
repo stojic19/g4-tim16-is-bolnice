@@ -213,7 +213,7 @@
   <Lek>
     <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
     <NazivLeka>Brufen</NazivLeka>
-    <Jacina>500mg</Jacina>
+    <Jacina>400mg</Jacina>
     <Kolicina>312</Kolicina>
     <Sastojci>
       <Sastojak>
@@ -229,15 +229,21 @@
         <Kolicina>300</Kolicina>
       </Sastojak>
       <Sastojak>
-        <Naziv>s7</Naziv>
-        <Kolicina>2</Kolicina>
-      </Sastojak>
-      <Sastojak>
         <Naziv>s33</Naziv>
         <Kolicina>4</Kolicina>
       </Sastojak>
     </Sastojci>
     <Verifikacija>false</Verifikacija>
-    <Zamene />
+    <Zamene>
+      <Lek>
+        <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+        <NazivLeka>Rapidol</NazivLeka>
+        <Jacina>500mg</Jacina>
+        <Kolicina>0</Kolicina>
+        <Sastojci />
+        <Verifikacija>false</Verifikacija>
+        <Zamene />
+      </Lek>
+    </Zamene>
   </Lek>
 </ArrayOfLek>

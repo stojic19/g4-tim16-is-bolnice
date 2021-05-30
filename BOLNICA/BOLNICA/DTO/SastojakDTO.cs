@@ -28,5 +28,6 @@ namespace Bolnica.DTO
             this.naziv = naziv;
             this.kolicina = kolicina;
         }
+
     }
 }
