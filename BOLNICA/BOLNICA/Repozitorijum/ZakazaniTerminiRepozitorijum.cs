@@ -24,16 +24,14 @@ namespace Bolnica.Repozitorijum
             DodajObjekat(termin);
         }
 
-        public Boolean DaLiPostojiTermin(Termin t)
+        public Boolean DaLiPostojiTermin(Termin termin)
         {
-            if (DobaviSveObjekte().Contains(t))
+            foreach(Termin t in DobaviSveObjekte())
             {
-                return true;
+                if (t.IdTermina.Equals(termin.IdTermina)) return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         public Boolean OtkaziTerminLekar(String idTermina)

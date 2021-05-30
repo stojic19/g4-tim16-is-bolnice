@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>efa4181b-f468-4f23-a116-c945ad741bf8</IdTermina>
+    <IdTermina>f7a6aa9c-7db1-4200-94e7-ba4bf62a7a3e</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>7:00</PocetnoVreme>
+    <PocetnoVreme>07:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T07:00:00</Datum>
+    <Datum>2021-06-02T07:30:00</Datum>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
@@ -419,11 +419,11 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>6e96ff9a-0395-4435-909c-b0c8f56a71a0</IdTermina>
+    <IdTermina>9eb0eb46-0ec5-453b-bd8a-59c773590c4a</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>10:30</PocetnoVreme>
+    <PocetnoVreme>08:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T10:30:00</Datum>
+    <Datum>2021-06-02T08:30:00</Datum>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
@@ -812,7 +812,7 @@
           </Uput>
         </Uputi>
       </ZdravstveniKarton>
-      <ZloupotrebioSistem>1</ZloupotrebioSistem>
+      <ZloupotrebioSistem>2</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
     </Pacijent>
     <Lekar>
@@ -826,7 +826,12 @@
       <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
       <Lozinka>ajdemolimte</Lozinka>
       <Pol>zenski</Pol>
-      <RadniDani />
+      <RadniDani>
+        <RadniDan>
+          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
+        </RadniDan>
+      </RadniDani>
       <Godisnji>
         <GodinaZaGodisnji>2021</GodinaZaGodisnji>
         <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>

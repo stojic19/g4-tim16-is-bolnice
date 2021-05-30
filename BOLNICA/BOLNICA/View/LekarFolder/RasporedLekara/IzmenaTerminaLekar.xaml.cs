@@ -50,57 +50,41 @@ namespace Bolnica
 
         private void PotvrdaIzmene(object sender, RoutedEventArgs e)
         {
+            if (!ValidacijaDatuma() || !ValidacijaUnosaPolja()) return;
 
+            TerminDTO stari = terminKontroler.DobaviZakazanTerminDTO(izabran, korisnik);
+            TerminDTO novi = (TerminDTO)pocVreme.SelectedItem;
+
+            terminKontroler.IzmeniTerminLekar(stari, novi);
+
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
+        }
+
+
+        private Boolean ValidacijaUnosaPolja()
+        {
             if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1)
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
 
             }
 
+            return true;
+        }
+
+        private Boolean ValidacijaDatuma()
+        {
             DateTime danas = DateTime.Now;
 
             if (danas.CompareTo(datum.SelectedDate) > 0)
             {
 
                 System.Windows.Forms.MessageBox.Show("Izabran datum je prošao!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                return false;
             }
-
-            TerminDTO stari = terminKontroler.DobaviZakazanTerminDTO(izabran, korisnik);
-            TerminDTO novi = (TerminDTO)pocVreme.SelectedItem;
-
-            novi.TrajanjeDouble = OdrediTrajanje();
-            stari.TrajanjeDouble = 0;
-            novi.Pacijent = stari.Pacijent;
-            stari.Pacijent = null;
-
-            terminKontroler.IzmeniTerminLekar(stari, novi);
-
-            if (novi.Lekar.KorisnickoIme.Equals(korisnik))
-            {
-                int indeks = PrikazTerminaLekara.Termini.IndexOf(stari);
-                PrikazTerminaLekara.Termini.RemoveAt(indeks);
-                PrikazTerminaLekara.Termini.Insert(indeks, novi);
-            }
-
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-        }
-
-        private Double OdrediTrajanje()
-        {
-            if (izabranaVrstaTermina.Equals("Operacija"))
-            {
-                return 120;
-            }
-            else
-            {
-                return 30;
-            }
-
-            return 0;
-
+            return true;
         }
 
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -23,7 +23,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        
+
         <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="4" />
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
         <Label Content="Izmena termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
@@ -72,7 +72,7 @@
 
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding PocetnoVreme}"/>
+                    <TextBlock Text="{Binding Vreme}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>

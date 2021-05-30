@@ -45,7 +45,7 @@ namespace Bolnica
 
         private void IzmeniTermin(object sender, RoutedEventArgs e)
         {
-            Termin izabranZaMenjanje = (Termin)dataGridTermini.SelectedItem;
+            TerminDTO izabranZaMenjanje = (TerminDTO)dataGridTermini.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {

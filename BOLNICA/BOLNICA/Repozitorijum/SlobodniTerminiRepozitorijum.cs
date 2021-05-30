@@ -48,7 +48,9 @@ namespace Bolnica.Repozitorijum
                     slobodniTermini.Add(t);
                 }
             }
-            return slobodniTermini;
+
+            return slobodniTermini.OrderBy(user => user.Datum).ToList();
+            //return slobodniTermini;
         }
     }
 }

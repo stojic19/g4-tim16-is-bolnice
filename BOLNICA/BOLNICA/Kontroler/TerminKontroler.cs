@@ -148,7 +148,7 @@ namespace Bolnica.Kontroler
         public void IzmeniTerminLekar(TerminDTO stariTermin, TerminDTO noviTermin)
         {
             Termin stari = DobaviZakazanTerminPoId(stariTermin.IdTermina);
-            Termin novi = terminKonverter.TerminZaIzmenu(noviTermin);
+            Termin novi = DobaviSlobodanTerminPoId(noviTermin.IdTermina);
             zakazaniTerminiServis.IzmeniTermin(stari, novi);
         }
         public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String lekar)
