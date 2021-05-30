@@ -126,7 +126,10 @@
     <Compile Include="Repozitorijum\Interfejsi\AnketeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\BeleskaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\OpremaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PitanjaRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\ProstoriRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\RenoviranjeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\SlobodniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
@@ -137,7 +140,10 @@
     <Compile Include="Repozitorijum\Interfejsi\ZakazaniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\LekariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\OpremaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\PitanjaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\ProstoriRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\RenoviranjeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />

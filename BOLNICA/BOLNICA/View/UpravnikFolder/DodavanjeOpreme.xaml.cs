@@ -19,7 +19,7 @@ namespace Bolnica
 
     public partial class DodavanjeOpreme : Window
     {
-
+        OpremaServis opremaServis = new OpremaServis();
         public DodavanjeOpreme()
         {
             InitializeComponent();
@@ -35,8 +35,7 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             Oprema o = new Oprema(Guid.NewGuid().ToString(), this.nazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(this.kolicina.Text));
-            OpremaServis.DodajOpremu(o);
-            OpremaServis.SerijalizacijaOpreme();
+            opremaServis.DodajOpremu(o);
 
             this.Close();
         }

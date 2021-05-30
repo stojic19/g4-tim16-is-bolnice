@@ -15,77 +15,73 @@ namespace Model
     public class ProstoriServis
     {
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
+        ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
+        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
 
-        private static String imeFajla = "prostori.xml";
-        public static List<Prostor> prostori = new List<Prostor>();
         public static List<Oprema> oprema = new List<Oprema>();
        
        
-        public static void DodajProstor(Prostor p)
-        { 
-            if (!prostori.Contains(p))
-            {
-                prostori.Add(p);
-                PrikazProstora.Prostori.Add(p);
-            }
+        public void DodajProstor(Prostor p)
+        {
+            prostoriRepozitorijum.DodajObjekat(p);
         }
 
 
-        public static Boolean IzmeniProstor(Prostor noviPodaci)
+        public  Boolean IzmeniProstor(Prostor noviPodaci)
         {
-            foreach (Prostor p in ProstoriServis.SviProstori())
+            Prostor p = prostoriRepozitorijum.PretraziProstorPoId(noviPodaci.IdProstora);
+
+            p.NazivProstora = noviPodaci.NazivProstora;
+            p.VrstaProstora = noviPodaci.VrstaProstora;
+            p.Sprat = noviPodaci.Sprat;
+            p.Kvadratura = noviPodaci.Kvadratura;
+
+            prostoriRepozitorijum.IzmenaProstora(p);
+            return true;
+     
+        }
+
+        public  void UkloniProstor(String idProstora)
+        {
+            prostoriRepozitorijum.ObrisiObjekat("//ArrayOfProstor/Prostor[IdProstora='" + idProstora + "']");
+        }
+
+        public Prostor PretraziPoId(String idProstora)
+        {
+            return prostoriRepozitorijum.PretraziProstorPoId(idProstora);
+        }
+
+        public void ProvjeriDaLiJeProstorRenoviran()
+        {
+            foreach (Renoviranje r in renoviranjeServis.SvaRenoviranja())
             {
-                if (p.IdProstora.Equals(noviPodaci.IdProstora))
+                if (DateTime.Compare(DateTime.Now.Date, r.DatumKraja.Date) >= 0)
                 {
-                    p.NazivProstora = noviPodaci.NazivProstora;
-                    p.VrstaProstora = noviPodaci.VrstaProstora;
-                    p.Sprat = noviPodaci.Sprat;
-                    p.Kvadratura = noviPodaci.Kvadratura;
+                    foreach (Prostor p in r.ProstoriKojiSeBrisu)
+                    {
+                       UkloniProstor(p.IdProstora);
+                    }
 
-                    int indeks = PrikazProstora.Prostori.IndexOf(p);
-                    PrikazProstora.Prostori.RemoveAt(indeks);
-                    PrikazProstora.Prostori.Insert(indeks, p);
-                    return true;
-                } 
+                    foreach(Prostor p in r.ProstoriKojiSeDodaju)
+                    {
+                        DodajProstor(p);
+                    }
+
+                    renoviranjeServis.UkloniRenoviranje(r);
+                }   
+              
             }
-
-            return false;
+            
         }
 
-        public static void UkloniProstor(String idProstora)
+     
+
+        public  List<Prostor> SviProstori()
         {
-            Prostor prostor = PretraziPoId(idProstora);
-            prostori.Remove(prostor);
-            PrikazProstora.Prostori.Remove(prostor);
-                
+            return prostoriRepozitorijum.DobaviSveObjekte();
         }
 
-        public static Prostor PretraziPoId(String idProstora)
-        {
-            foreach (Prostor p in prostori)
-            {
-                if (p.IdProstora.Equals(idProstora))
-                {
-                    return p;
-                }
-            }
-
-            return null;
-        }
-
-        public static List<Prostor> SviProstori()
-        {
-
-            return prostori;
-        }
-
-        public static List<Oprema> SvaOpremaProstora()
-        {
-
-            return oprema;
-        }
-
-        public static void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
+        public  void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
         {
             foreach (Oprema o in prostorIzKojegPremjestamo.Oprema)
             {
@@ -97,35 +93,26 @@ namespace Model
 
             if (oprema.NazivOpreme.Equals("krevet"))
                 prostorIzKojegPremjestamo.BrojSlobodnihKreveta -= kolicina;
+
+            prostoriRepozitorijum.IzmenaProstora(prostorIzKojegPremjestamo);
+
         }
 
-        public static void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
+        public  void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
         {
 
             if (!DodajSamoKolicinu(prostorUKojiPremjestamo, oprema, kolicina))
             {
                 Oprema o = new Oprema(oprema.IdOpreme, oprema.NazivOpreme, oprema.VrstaOpreme, kolicina);
-                ProstoriServis.DodajOpremuProstoru(prostorUKojiPremjestamo, o);
+                DodajOpremuProstoru(prostorUKojiPremjestamo, o);
             }
             if (oprema.NazivOpreme.Equals("krevet"))
                 prostorUKojiPremjestamo.BrojSlobodnihKreveta += kolicina;
-        }
 
-        public static Oprema PretraziOpremuUProstoru(Prostor prostor, Oprema oprema)
-        {
-            foreach (Oprema o in prostor.Oprema)
-            {
-                if (o == oprema)
-                {
-                    return o;
-                }
-            }
-            return null;
+            prostoriRepozitorijum.IzmenaProstora(prostorUKojiPremjestamo);
         }
-
        
-
-        public static bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
+        public  bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
         {
             foreach (Oprema o in prostorUKojiPrebacujemo.Oprema)
             {
@@ -140,14 +127,18 @@ namespace Model
                 }
 
             }
-            return false;         
+            return false;
+
+            prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
         }
 
-        public static void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
+
+        public  void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
         {
             prostorUKojiPrebacujemo.Oprema.Add(o);
-            
+            prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
         }
+    
 
         public bool ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
@@ -162,34 +153,6 @@ namespace Model
             return false;
         }
 
-        public static List<Prostor> DeserijalizacijaProstora()
-        {
-            RenoviranjeServis.DeserijalizacijaProstoraZaRenoviranje();
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return prostori;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
-                prostori = (List<Prostor>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return prostori;
-
-            }
-
-        }
-
-        public static void SerijalizacijaProstora()
-        {
-            RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Prostor>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, prostori);
-            tw.Close();
-
-        }
 
     }
 }

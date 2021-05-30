@@ -24,7 +24,7 @@ namespace Bolnica
     public partial class UpravnikGlavniProzor : Window
     {
         private static UpravnikGlavniProzor instance = null;
-
+        ProstoriServis prostoriServis = new ProstoriServis();
 
         public static UpravnikGlavniProzor getInstance()
         {
@@ -34,9 +34,8 @@ namespace Bolnica
         }
         private UpravnikGlavniProzor()
         {
-            InitializeComponent();
-            OpremaServis.DeserijalizacijaOpreme();
-            ProstoriServis.DeserijalizacijaProstora();
+            InitializeComponent();        
+            prostoriServis.ProvjeriDaLiJeProstorRenoviran();
         }
 
         private void strelica_Click(object sender, RoutedEventArgs e)
@@ -76,8 +75,6 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ProstoriServis.SerijalizacijaProstora();
-            OpremaServis.SerijalizacijaOpreme();
             ZahteviServis.SerijalizacijaZahtjeva();
         }
 

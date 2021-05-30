@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model;
+using Bolnica.Repozitorijum;
 using Bolnica.UpravnikFolder;
 using System;
 using System.Collections.Generic;
@@ -12,24 +13,23 @@ namespace Bolnica.Servis
 {
     class RenoviranjeServis
     {
-        private static String imeFajla1 = "renoviranje.xml";
+        RenoviranjeRepozitorijum renoviranjeRepozitorijum = new RenoviranjeRepozitorijum();
 
-        public static List<Renoviranje> renoviranja = new List<Renoviranje>();
-
-        public static List<Renoviranje> SvaRenoviranja()
+        public List<Renoviranje> SvaRenoviranja()
         {
-            return renoviranja;
+            return renoviranjeRepozitorijum.DobaviSveObjekte();
         }
-        public static void DodajZaRenoviranje(Renoviranje renoviranje)
+        public void DodajZaRenoviranje(Renoviranje renoviranje)
         {
-            renoviranja.Add(renoviranje);
-            PrikazRenoviranja.Renoviranje.Add(renoviranje);
+            renoviranjeRepozitorijum.DodajObjekat(renoviranje);
+ 
         }
 
-        public static void ProveriRenoviranje()
-        {
+       
 
-            foreach (Renoviranje r in renoviranja)
+        public  void ProveriRenoviranje()
+        {
+            foreach (Renoviranje r in SvaRenoviranja())
             {
                 if (provjeraDatuma(r.PocetniDatum.Date, r.DatumKraja.Date))
                 {
@@ -42,13 +42,12 @@ namespace Bolnica.Servis
             }
         }
 
-        public static void UkloniRenoviranje(Renoviranje renoviranje)
+        public void UkloniRenoviranje(Renoviranje renoviranje)
         {
-            renoviranja.Remove(renoviranje);
-            PrikazRenoviranja.Renoviranje.Remove(renoviranje);
+            renoviranjeRepozitorijum.ObrisiRenoviranje(renoviranje.IdRenoviranja);
         }
 
-        public static bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
+        public bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
         {
             if (DateTime.Compare(datumPocetka.Date, DateTime.Now.Date) <= 0 && DateTime.Compare(DateTime.Now.Date, datumKraja.Date) <= 0)
             {
@@ -61,7 +60,7 @@ namespace Bolnica.Servis
 
         }
 
-        public static void PostaviDaSeRenovira(Renoviranje r)
+        public void PostaviDaSeRenovira(Renoviranje r)
         {
             /* foreach (Prostor p in prostori)
              {
@@ -73,7 +72,7 @@ namespace Bolnica.Servis
              }*/
         }
 
-        public static void PostaviDaSeNeRenovira(Renoviranje r)
+        public  void PostaviDaSeNeRenovira(Renoviranje r)
         {
             /*  foreach (Prostor p in prostori)
               {
@@ -83,33 +82,6 @@ namespace Bolnica.Servis
                       break;
                   }
               }*/
-        }
-
-        public static List<Renoviranje> DeserijalizacijaProstoraZaRenoviranje()
-        {
-            if (File.ReadAllText(imeFajla1).Trim().Equals(""))
-            {
-                return renoviranja;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla1);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
-                renoviranja = (List<Renoviranje>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return renoviranja;
-
-            }
-
-        }
-
-        public static void SerijalizacijaProstoraZaRenoviranje()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Renoviranje>));
-            TextWriter tw = new StreamWriter(imeFajla1);
-            xmlSerializer.Serialize(tw, renoviranja);
-            tw.Close();
-
         }
 
     }

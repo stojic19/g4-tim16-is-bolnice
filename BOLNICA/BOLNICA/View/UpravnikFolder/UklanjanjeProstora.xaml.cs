@@ -22,6 +22,7 @@ namespace Bolnica
     public partial class UklanjanjeProstora : Window
     {
         String izabran = null;
+        ProstoriServis prostoriServis = new ProstoriServis();
         public UklanjanjeProstora(String idProstora)
         {
             InitializeComponent();
@@ -35,8 +36,7 @@ namespace Bolnica
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            ProstoriServis.UkloniProstor(izabran);
-            ProstoriServis.SerijalizacijaProstora();
+            prostoriServis.UkloniProstor(izabran);
             this.Close();
         }
     }

@@ -22,6 +22,7 @@ namespace Bolnica
     public partial class UklanjanjeOpreme : Window
     {
         String izabran = null;
+        OpremaServis opremaServis = new OpremaServis();
 
         public UklanjanjeOpreme(String idOpreme)
         {
@@ -36,9 +37,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-
-            OpremaServis.UkloniOpremu(izabran);
-            OpremaServis.SerijalizacijaOpreme();
+            opremaServis.UkloniOpremu(izabran);
             this.Close();
         }
     }

@@ -21,7 +21,7 @@ namespace Bolnica
 
     public partial class PrikazOpreme : UserControl
     {
-
+        OpremaServis opremaServis = new OpremaServis();
         public static ObservableCollection<Oprema> Oprema { get; set; }
 
         public PrikazOpreme()
@@ -32,7 +32,7 @@ namespace Bolnica
 
             Oprema = new ObservableCollection<Oprema>();
 
-            foreach (Oprema o in OpremaServis.SvaOprema())
+            foreach (Oprema o in opremaServis.SvaOprema())
             {
                 Oprema.Add(o);
             }

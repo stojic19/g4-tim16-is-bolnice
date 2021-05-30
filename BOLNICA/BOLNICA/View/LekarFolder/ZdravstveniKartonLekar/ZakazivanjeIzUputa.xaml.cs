@@ -29,6 +29,7 @@ namespace Bolnica.LekarFolder
         TerminKontroler terminKontroler = new TerminKontroler();
         SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
+        ProstoriServis prostoriServis = new ProstoriServis();
 
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private String idLekarSpecijalista = null;
@@ -129,7 +130,7 @@ namespace Bolnica.LekarFolder
         {
             Prostorije.Clear();
 
-            foreach (Prostor p in ProstoriServis.SviProstori())
+            foreach (Prostor p in prostoriServis.SviProstori())
             {
                 if (izabranaVrstaTermina.Equals("Pregled") && p.VrstaProstora == VrsteProstora.ordinacija)
                 {

@@ -23,6 +23,7 @@ namespace Bolnica.LekarFolder
         Pregled izabranPregled = null;
         String idLekaraSpecijaliste = null;
         Uput noviUput = null;
+        ProstoriServis prostoriServis = new ProstoriServis();
         public static ObservableCollection<Prostor> slobodneSobe { get; set; } = new ObservableCollection<Prostor>();
         public IzdavanjeUputa(string idPregleda)
         {
@@ -72,7 +73,7 @@ namespace Bolnica.LekarFolder
 
         private void InicijalizacijaSobaStacionarno()
         {
-            foreach(Prostor p in ProstoriServis.SviProstori())
+            foreach(Prostor p in prostoriServis.SviProstori())
             {
                 if(p.VrstaProstora == VrsteProstora.soba && !p.JeRenoviranje)
                 {

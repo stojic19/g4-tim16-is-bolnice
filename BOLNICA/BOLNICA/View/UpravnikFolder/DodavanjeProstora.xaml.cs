@@ -20,7 +20,7 @@ namespace Bolnica
 
     public partial class DodavanjeProstora : Window
     {
-
+        ProstoriServis prostoriServis = new ProstoriServis();
         public DodavanjeProstora()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Bolnica
         {
 
             Prostor p = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
-            ProstoriServis.DodajProstor(p);
+            prostoriServis.DodajProstor(p);
 
             this.Close();
 

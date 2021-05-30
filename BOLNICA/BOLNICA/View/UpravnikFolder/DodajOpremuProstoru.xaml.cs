@@ -21,15 +21,16 @@ namespace Bolnica
     {
         private List<Oprema> oprema;
         private string IdProstora;
+        ProstoriServis prostoriServis = new ProstoriServis();
+        OpremaServis opremaServis = new OpremaServis();
+
         public DodajOpremuProstoru(string idProstora)
         {
             InitializeComponent();
-            oprema = OpremaServis.SvaOprema();
+            oprema = opremaServis.SvaOprema();
             this.DataContext = this;
             IdProstora = idProstora;
         }
-
-        public List<Oprema> Oprema { get => oprema; set => oprema = value; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,10 +47,9 @@ namespace Bolnica
                 System.Windows.MessageBox.Show("Unesite kolicinu!");
                 return;
             }
-            Prostor p = ProstoriServis.PretraziPoId(IdProstora);
-            OpremaServis.PremjestiKolicinuOpreme(p, oprema, Kolicina);
-            OpremaServis.SerijalizacijaOpreme();
-            ProstoriServis.SerijalizacijaProstora();
+            Prostor p = prostoriServis.PretraziPoId(IdProstora);
+            opremaServis.PremjestiKolicinuOpreme(p, oprema, Kolicina);
+     
             this.Close();
         }
 

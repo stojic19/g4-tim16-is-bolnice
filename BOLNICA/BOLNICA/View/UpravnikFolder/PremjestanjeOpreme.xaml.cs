@@ -24,6 +24,8 @@ namespace Bolnica
     {
         String idOpreme = null;
         String idProstoraIzKojegPrebacujem = null;
+        ProstoriServis prostoriServis = new ProstoriServis();
+        OpremaServis opremaServis = new OpremaServis();
 
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
@@ -38,7 +40,7 @@ namespace Bolnica
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in ProstoriServis.SviProstori())
+            foreach (Prostor p in prostoriServis.SviProstori())
             {
                 if (!p.IdProstora.Equals(idProstoraIzKojegPrebacujem))
                 {
@@ -57,8 +59,8 @@ namespace Bolnica
         {
             Prostor prostorUKojiPremjestamo = (Prostor)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
-            Prostor prostorIzKojegPremjestamo = ProstoriServis.PretraziPoId(idProstoraIzKojegPrebacujem);
-            Oprema opremaKojuPremjestamo = OpremaServis.PretraziPoId(idOpreme);
+            Prostor prostorIzKojegPremjestamo = prostoriServis.PretraziPoId(idProstoraIzKojegPrebacujem);
+            Oprema opremaKojuPremjestamo = opremaServis.PretraziPoId(idOpreme);
 
             if (prostorUKojiPremjestamo == null)
             {
@@ -72,14 +74,14 @@ namespace Bolnica
             }
             else
             {
-                OpremaServis.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
+                opremaServis.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
             }
 
             // Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
-            ProstoriServis.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
-            ProstoriServis.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
+            prostoriServis.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
+            prostoriServis.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
 
-            ProstoriServis.SerijalizacijaProstora();
+  
             this.Close();
         }
     }

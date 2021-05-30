@@ -25,6 +25,7 @@ namespace Bolnica
     public partial class RenoviranjeProstorije : System.Windows.Controls.UserControl
     {
         ProstoriServis prostoriServis = new ProstoriServis();
+        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
         public static ObservableCollection<Prostor> Prostori { get; set; }
 
         public RenoviranjeProstorije()
@@ -34,7 +35,7 @@ namespace Bolnica
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in ProstoriServis.SviProstori())
+            foreach (Prostor p in prostoriServis.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -46,11 +47,9 @@ namespace Bolnica
             {
                 Prostor izabranZaRenoviranje = (Prostor)dataGridProstori.SelectedItem;
                 Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
-                RenoviranjeServis.DodajZaRenoviranje(renoviranje);
-                RenoviranjeServis.ProveriRenoviranje();
-                RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
-                ProstoriServis.SerijalizacijaProstora();
-
+                renoviranjeServis.DodajZaRenoviranje(renoviranje);
+                renoviranjeServis.ProveriRenoviranje();
+       
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
                 System.Windows.Controls.UserControl usc = null;
                 usc = new PrikazProstora();

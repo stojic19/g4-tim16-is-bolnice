@@ -24,6 +24,7 @@ namespace Bolnica
     public partial class UklanjanjeRenoviranja : Window
     {
         Renoviranje izabranZaUklanjanje = null;
+        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
         public UklanjanjeRenoviranja(Renoviranje renoviranje)
         {
             InitializeComponent();
@@ -36,9 +37,7 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            RenoviranjeServis.UkloniRenoviranje(izabranZaUklanjanje);
-            RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
+            renoviranjeServis.UkloniRenoviranje(izabranZaUklanjanje);
             this.Close();
         }
     }

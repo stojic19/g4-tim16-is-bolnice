@@ -14,6 +14,9 @@ namespace Bolnica.Model
         public DateTime PocetniDatum { get; set; }
         public DateTime DatumKraja { get; set; }
 
+        public List<Prostor> ProstoriKojiSeBrisu = new List<Prostor>();
+        public List<Prostor> ProstoriKojiSeDodaju = new List<Prostor>();
+
         public Renoviranje() { }
         public Renoviranje(String id, Prostor prostor, DateTime argStartDay, DateTime argEndDay)
         {

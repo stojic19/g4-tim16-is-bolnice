@@ -20,14 +20,14 @@ namespace Bolnica
     public partial class IzmenaOpreme : Window
     {
         String stari = null;
-
+        OpremaServis opremaServis = new OpremaServis();
 
         public IzmenaOpreme(String id)//korisnik unosi informacije
         {
             InitializeComponent();
 
             stari = id;
-            Oprema o = OpremaServis.PretraziPoId(id);
+            Oprema o = opremaServis.PretraziPoId(id);
 
             NazivOpreme.Text = o.NazivOpreme;
 
@@ -52,8 +52,8 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             Oprema o = new Oprema(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
-            OpremaServis.IzmeniOpremu(o);
-            OpremaServis.SerijalizacijaOpreme();
+            opremaServis.IzmeniOpremu(o);
+           
             this.Close();
         }
 

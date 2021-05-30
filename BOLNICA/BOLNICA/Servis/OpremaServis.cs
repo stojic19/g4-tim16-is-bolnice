@@ -1,4 +1,5 @@
 ﻿using Bolnica;
+using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,70 +10,63 @@ namespace Model
 {
     public class OpremaServis
     {
-        private static String imeFajla = "oprema.xml";
-        public static List<Oprema> oprema = new List<Oprema>();
+        OpremaRepozitorijum opremaRepozitorijum = new OpremaRepozitorijum();
+        ProstoriServis prostoriServis = new ProstoriServis();
 
-        public static bool DodajOpremu(Oprema o)
+        public void DodajOpremu(Oprema o)
         {
+            opremaRepozitorijum.DodajObjekat(o);
+        }
 
-            if (oprema.Contains(o))
-            {
-                return false;
-            }
+        public Boolean IzmeniOpremu(Oprema novaOprema)
+        {
+            Oprema o = opremaRepozitorijum.PretraziOpremuPoId(novaOprema.IdOpreme);
+            o.NazivOpreme = novaOprema.NazivOpreme;
+            o.VrstaOpreme = novaOprema.VrstaOpreme;
+            o.Kolicina = novaOprema.Kolicina;
 
-            oprema.Add(o);
-            PrikazOpreme.Oprema.Add(o);
+            opremaRepozitorijum.IzmenaOpreme(o);
             return true;
         }
 
-        public static Boolean IzmeniOpremu(Oprema novaOprema)
+        public void UkloniOpremu(String idOpreme)
         {
-            foreach (Oprema o in OpremaServis.SvaOprema())
-            {
-                if (o.IdOpreme.Equals(novaOprema.IdOpreme))
-                {
-                    o.NazivOpreme = novaOprema.NazivOpreme;
-                    o.VrstaOpreme = novaOprema.VrstaOpreme;
-                    o.Kolicina = novaOprema.Kolicina;
-
-                    int indeks = PrikazOpreme.Oprema.IndexOf(o);
-                    PrikazOpreme.Oprema.RemoveAt(indeks);
-                    PrikazOpreme.Oprema.Insert(indeks, o);
-                    return true;
-                }
-            }
-
-            return false;
+            opremaRepozitorijum.ObrisiObjekat("//ArrayOfOprema/Oprema[IdOpreme='" + idOpreme + "']");
         }
 
-        public static void UkloniOpremu(String idOpreme)
+        public Oprema PretraziPoId(String idOpreme)
         {
-            Oprema o = PretraziPoId(idOpreme);
-            oprema.Remove(o);
-            PrikazOpreme.Oprema.Remove(o);
+            return opremaRepozitorijum.PretraziOpremuPoId(idOpreme);
         }
 
+        public List<Oprema> SvaOprema()
+        {
+            return opremaRepozitorijum.DobaviSveObjekte();
+        }
 
-        public static void PremjestiKolicinuOpreme(Prostor prostorUKojiPrebacujemo, Oprema opremaKojuPrebacujemo, int kolicina)
+        public  void PremjestiKolicinuOpreme(Prostor prostorUKojiPrebacujemo, Oprema opremaKojuPrebacujemo, int kolicina)
         {
             ProvjeriKolicinuKojuPremjestamo(opremaKojuPrebacujemo, kolicina);
 
-            foreach (Oprema o in OpremaServis.SvaOprema())
+            foreach (Oprema oprema in SvaOprema())
             {
-                if (o.IdOpreme.Equals(opremaKojuPrebacujemo.IdOpreme))
+                if (oprema.IdOpreme.Equals(opremaKojuPrebacujemo.IdOpreme))
                 {
-                    o.Kolicina -= kolicina;
+                    oprema.Kolicina -= kolicina;
+                    opremaKojuPrebacujemo = oprema;
                 }
             }
 
-            if (!ProstoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina))
+            if (!prostoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina))
             {
                 Oprema o = new Oprema(opremaKojuPrebacujemo.IdOpreme, opremaKojuPrebacujemo.NazivOpreme, opremaKojuPrebacujemo.VrstaOpreme, kolicina);
-                ProstoriServis.DodajOpremuProstoru(prostorUKojiPrebacujemo, o);
+                prostoriServis.DodajOpremuProstoru(prostorUKojiPrebacujemo, o);
             }
+
+            opremaRepozitorijum.IzmenaOpreme(opremaKojuPrebacujemo);
         }
 
-        public static bool ProvjeriKolicinuKojuPremjestamo(Oprema oprema, int kolicina)
+        public bool ProvjeriKolicinuKojuPremjestamo(Oprema oprema, int kolicina)
         {
             if (oprema.Kolicina < kolicina)
             {
@@ -81,53 +75,6 @@ namespace Model
             }
             return true;
         }
-
-        public static Oprema PretraziPoId(String idOpreme)
-        {
-            foreach (Oprema o in oprema)
-            {
-                if (o.IdOpreme.Equals(idOpreme))
-                {
-                    return o;
-                }
-            }
-
-            return null;
-        }
-
-        public static List<Oprema> SvaOprema()
-        {
-
-            return oprema;
-        }
-
-        public static List<Oprema> DeserijalizacijaOpreme()
-        {
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
-            {
-                return oprema;
-            }
-            else
-            {
-                FileStream fileStream = File.OpenRead(imeFajla);
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Oprema>));
-                oprema = (List<Oprema>)xmlSerializer.Deserialize(fileStream);
-                fileStream.Close();
-                return oprema;
-
-            }
-
-        }
-
-        public static void SerijalizacijaOpreme()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Oprema>));
-            TextWriter tw = new StreamWriter(imeFajla);
-            xmlSerializer.Serialize(tw, oprema);
-            tw.Close();
-
-        }
-
 
     }
 }

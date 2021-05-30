@@ -21,20 +21,22 @@ namespace Bolnica
     {
 
         public static ObservableCollection<Prostor> Prostori { get; set; }
+        ProstoriServis prostoriServis = new ProstoriServis();
 
         public PrikazProstora()
         {
             InitializeComponent();
 
+            prostoriServis.ProvjeriDaLiJeProstorRenoviran();
+
             this.DataContext = this;
 
             Prostori = new ObservableCollection<Prostor>();
 
-            foreach (Prostor p in ProstoriServis.SviProstori())
+            foreach (Prostor p in prostoriServis.SviProstori())
             {
                 Prostori.Add(p);
             }
-
         }
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
@@ -123,11 +125,19 @@ namespace Bolnica
         private void DvaUJedan_Click(object sender, RoutedEventArgs e)
         {
             List<Prostor> prostoriZaRenoviranje = new List<Prostor>();
-            //(Prostor)dataGridProstori.SelectedItems;
+            if(dataGridProstori.SelectedItems.Count != 2)
+            {
+                MessageBox.Show("Morate izabrati dva prostora!");
+            }
+
+            foreach (Prostor p in dataGridProstori.SelectedItems)
+            {
+                prostoriZaRenoviranje.Add(p);
+            }
 
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UserControl usc = null;
-            usc = new NapraviJednuProstoriju(new Prostor(), new Prostor());
+            usc = new NapraviJednuProstoriju(prostoriZaRenoviranje);
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
     }

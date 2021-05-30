@@ -25,6 +25,7 @@ namespace Bolnica
     {
         private Prostor izabranaProstorija;
         ProstoriServis prostoriServis = new ProstoriServis();
+        RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
         public NapraviDvijeProstorije(Prostor izabran)
         {
             InitializeComponent();
@@ -38,32 +39,26 @@ namespace Bolnica
 
             if (!prostoriServis.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
-                RenovirajProstor(izabranaProstorija);
+                RenovirajProstor(izabranaProstorija,prostor1,prostor2);
 
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
                 UserControl usc = null;
                 usc = new PrikazProstora();
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
-            }
-
-            if (DateTime.Compare(DateTime.Now.Date, (DateTime)PickEndtDate.SelectedDate) >= 0)
-            {
-                ProstoriServis.UkloniProstor(izabranaProstorija.IdProstora);
-                ProstoriServis.DodajProstor(prostor1);
-                ProstoriServis.DodajProstor(prostor2);
-            }
-
+            }     
         }
 
 
-        private void RenovirajProstor(Prostor prostor)
+        private void RenovirajProstor(Prostor prostor,Prostor prostorKojiSeDodaje1,Prostor prostorKojiSeDodaje2)
         {
             Prostor izabranZaRenoviranje = prostor;
             Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
-            RenoviranjeServis.DodajZaRenoviranje(renoviranje);
-            RenoviranjeServis.ProveriRenoviranje();
-            RenoviranjeServis.SerijalizacijaProstoraZaRenoviranje();
-            ProstoriServis.SerijalizacijaProstora();
+            renoviranje.ProstoriKojiSeBrisu.Add(izabranaProstorija);
+            renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje1);
+            renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje2);
+            renoviranjeServis.DodajZaRenoviranje(renoviranje);
+            renoviranjeServis.ProveriRenoviranje();         
+       
         }
 
         private VrsteProstora ProvjeriVrstuProstora1()

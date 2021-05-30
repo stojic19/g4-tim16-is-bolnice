@@ -1,20 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRenoviranje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Renoviranje>
-    <IdRenoviranja>938781bb-7780-49d0-9af4-d2a0c59a293c</IdRenoviranja>
-    <Prostor>
-      <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
-      <IdProstora>59b9842a-927c-4b4d-864c-5d0801808206</IdProstora>
-      <NazivProstora>o5</NazivProstora>
-      <VrstaProstora>ordinacija</VrstaProstora>
-      <Sprat>2</Sprat>
-      <Kvadratura>33</Kvadratura>
-      <JeRenoviranje>false</JeRenoviranje>
-      <Oprema />
-    </Prostor>
-    <PocetniDatum>2021-06-10T00:00:00</PocetniDatum>
-    <DatumKraja>2021-06-11T00:00:00</DatumKraja>
-  </Renoviranje>
   <Renoviranje>
     <IdRenoviranja>d006a69a-f540-47c7-822e-6c33480c9140</IdRenoviranja>
     <Prostor>
