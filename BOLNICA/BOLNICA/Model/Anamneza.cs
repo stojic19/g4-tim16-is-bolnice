@@ -38,7 +38,12 @@ namespace Model
             Terapije = terapije;
         }
 
-
-
+        public Anamneza(string idAnamneze, string idPacijenta, string dijagnoza, List<Terapija> terapije)
+        {
+            IdAnamneze = idAnamneze;
+            IdPacijenta = idPacijenta;
+            Dijagnoza = dijagnoza;
+            Terapije = terapije;
+        }
     }
 }

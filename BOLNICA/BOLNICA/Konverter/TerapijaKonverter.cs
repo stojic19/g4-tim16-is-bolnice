@@ -17,5 +17,12 @@ namespace Bolnica.Konverter
                 terapija.KrajTerapije, terapija.Kolicina, terapija.Satnica, terapija.UputsvoKonzumiranja,
                 lekKonverter.LekModelULekDTO(terapija.PreporucenLek));
         }
+        public Terapija TerapijaDTOUModel(TerapijaDTO terapija)
+        {
+            LekKonverter lekKonverter = new LekKonverter();
+            return new Terapija(terapija.IdTerapije, terapija.IdAnamneze, terapija.PocetakTerapije,
+               terapija.KrajTerapije, terapija.Kolicina, terapija.Satnica, terapija.UputsvoKonzumiranja,
+               lekKonverter.LekDTOUModel(terapija.Lek));
+        }
     }
 }

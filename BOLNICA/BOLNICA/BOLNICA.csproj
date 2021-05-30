@@ -71,6 +71,7 @@
     <Compile Include="DTO\AlergenDTO.cs" />
     <Compile Include="DTO\AlergeniPrikazDTO.cs" />
     <Compile Include="DTO\AnamnezaDTO.cs" />
+    <Compile Include="DTO\BeleskaDTO.cs" />
     <Compile Include="DTO\KartonPacijentaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
     <Compile Include="DTO\LekDTO.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Komande\RelayCommand.cs" />
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\AnketaKontroler.cs" />
+    <Compile Include="Kontroler\BeleskaKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
     <Compile Include="Kontroler\PitanjaKontroler.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Konverter\AlergeniKonverter.cs" />
     <Compile Include="Konverter\AnamnezaKonverter.cs" />
+    <Compile Include="Konverter\BeleskaKonverter.cs" />
     <Compile Include="Konverter\KartonKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
@@ -107,13 +110,16 @@
     <Compile Include="Konverter\ReceptKonverter.cs" />
     <Compile Include="Konverter\TerapijaKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />
+    <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
     <Compile Include="Model\Godisnji.cs" />
     <Compile Include="Model\Odsustvo.cs" />
     <Compile Include="Model\RadniDan.cs" />
+    <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\AnketeRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\BeleskaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PitanjaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\SlobodniTerminiRepozitorijumInterfejs.cs" />
@@ -128,12 +134,14 @@
     <Compile Include="Repozitorijum\OperacijeRepozitorijum.cs" />
     <Compile Include="Repozitorijum\PitanjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\SlobodniTerminiRepozitorijum.cs" />
+    <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />
     <Compile Include="Servis\PitanjaServis.cs" />
     <Compile Include="Servis\RasporedLekaraServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="ViewModel\PacijentViewModel\AlergeniPacijentaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\BeleskaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\DatumiViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\DatumiZaPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\IstorijaPregledaViewModel.cs" />
