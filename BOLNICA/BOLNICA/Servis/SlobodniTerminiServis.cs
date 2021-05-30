@@ -14,8 +14,8 @@ namespace Bolnica.Servis
     public class SlobodniTerminiServis
     {
         SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
-        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         LekariServis lekariServis = new LekariServis();
+
         public List<Termin> DobaviSveSlobodneTermine()
         {
             return slobodniTerminiRepozitorijum.DobaviSveObjekte();

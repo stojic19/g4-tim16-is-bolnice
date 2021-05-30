@@ -54,26 +54,14 @@ namespace Bolnica.Repozitorijum
             }
         }
 
-        public Boolean OtkaziPregledSekretar(String idTermina)
+        public void OtkaziPregledSekretar(String idTermina)
         {
             Termin termin = PretraziPoId(idTermina);
 
-            if (termin == null)
-            {
-                return false;
-            }
 
             ObrisiZakazanTermin(termin.IdTermina);
             termin.Pacijent = null;
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(termin);
-
-            TerminiPregledaSekretar.TerminiPregleda.Remove(termin);
-
-            return !DaLiListeSadrzeTerminSekretar(termin);
-        }
-        public bool DaLiListeSadrzeTerminSekretar(Termin termin)
-        {
-            return DobaviSveObjekte().Contains(termin) || TerminiPregledaSekretar.TerminiPregleda.Contains(termin);
         }
 
         public List<Termin> PretraziPoLekaru(String korImeLekara)

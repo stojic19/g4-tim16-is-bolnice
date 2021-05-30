@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -26,20 +27,17 @@ namespace Bolnica.Sekretar.Pregled
     public partial class TerminiPregledaSekretar : UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
-        public static ObservableCollection<Termin> TerminiPregleda { get; set; }
+        public static ObservableCollection<TerminDTO> TerminiPregleda { get; set; }
         public TerminiPregledaSekretar()
         {
             InitializeComponent();
 
             this.DataContext = this;
-            TerminiPregleda = new ObservableCollection<Termin>();
+            TerminiPregleda = new ObservableCollection<TerminDTO>();
 
-            foreach (Termin t in terminKontroler.DobaviSveZakazaneTermine())
+            foreach (TerminDTO t in terminKontroler.DobaviSveZakazaneTermine())
             {
-                if(t.VrstaTermina == VrsteTermina.pregled)
-                {
                     TerminiPregleda.Add(t);
-                }
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,7 +55,7 @@ namespace Bolnica.Sekretar.Pregled
             //Pomeranje
             if (dataGridTerminiPregleda.SelectedIndex != -1)
             {
-                Termin t = (((Termin)dataGridTerminiPregleda.SelectedItem));
+                TerminDTO t = (((TerminDTO)dataGridTerminiPregleda.SelectedItem));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

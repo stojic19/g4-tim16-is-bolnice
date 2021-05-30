@@ -1,33 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
-    <IdTermina>9d44625f-35fb-439b-b525-86ed2a3abd61</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T08:00:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani />
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>cfc788f7-bdd1-4266-ac5d-db132fcc5fe2</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>09:00</PocetnoVreme>
@@ -298,33 +271,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>a949cb7f-0c15-428a-b8c2-500887c14737</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>07:00</PocetnoVreme>
-    <Trajanje>240</Trajanje>
-    <Datum>2021-06-01T07:00:00</Datum>
-    <Lekar>
-      <Ime>Aleksa</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
-      <Jmbg>421</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
-      <KontaktTelefon>06332</KontaktTelefon>
-      <Email>leksa@lekar.com</Email>
-      <KorisnickoIme>AleksaStojic</KorisnickoIme>
-      <Lozinka>aleksastojic</Lozinka>
-      <Pol>muski</Pol>
-      <RadniDani />
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>neurohirurg</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>efa4181b-f468-4f23-a116-c945ad741bf8</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>7:00</PocetnoVreme>
@@ -417,6 +363,33 @@
       </Godisnji>
       <Odsustva />
       <Specijalizacija>nema</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>a949cb7f-0c15-428a-b8c2-500887c14737</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>07:00</PocetnoVreme>
+    <Trajanje>240</Trajanje>
+    <Datum>2021-06-01T07:00:00</Datum>
+    <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <RadniDani />
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>neurohirurg</Specijalizacija>
       <Dostupnost>false</Dostupnost>
     </Lekar>
   </Termin>

@@ -95,9 +95,6 @@ namespace Bolnica.LekarFolder
             {
                 return 30;
             }
-
-            return 0;
-
         }
 
         private Boolean ValidacijaPodataka()

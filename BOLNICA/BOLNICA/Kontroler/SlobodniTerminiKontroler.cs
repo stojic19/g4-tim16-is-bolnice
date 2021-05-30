@@ -10,11 +10,6 @@ namespace Bolnica.Kontroler
 {
     class SlobodniTerminiKontroler
     {
-       // SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
 
-       /* public List<Termin> DobaviSveSlobodneTermine()
-        {
-            return slobodniTerminiServis.DobaviSveSlobodneTermine();
-        }*/
     }
 }

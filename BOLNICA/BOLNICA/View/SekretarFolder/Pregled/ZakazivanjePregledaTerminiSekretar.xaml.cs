@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -29,19 +30,18 @@ namespace Bolnica.Sekretar.Pregled
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
-        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
 
         private static String IdPacijenta;
-        public static ObservableCollection<Termin> SlobodniDatumi { get; set; }
+        public static ObservableCollection<TerminDTO> SlobodniDatumi { get; set; }
 
-        public ZakazivanjePregledaTerminiSekretar(String idPacijenta, List<Termin> datumi)
+        public ZakazivanjePregledaTerminiSekretar(String idPacijenta, List<TerminDTO> datumi)
         {
             InitializeComponent();
 
-            SlobodniDatumi = new ObservableCollection<Termin>();
+            SlobodniDatumi = new ObservableCollection<TerminDTO>();
             IdPacijenta = idPacijenta;
 
-            foreach (Termin t in datumi)
+            foreach (TerminDTO t in datumi)
             {
                 SlobodniDatumi.Add(t);
             }
@@ -58,28 +58,28 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Termin termin = TerminIdaljeSlobodan();
+            TerminDTO termin = TerminIdaljeSlobodan();
             if(termin == null)
             {
                 return;
             }    
-            termin.Pacijent = naloziPacijenataKontroler.PretraziPoIdNeDTO(IdPacijenta);
-        //    terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
+            termin.Pacijent = naloziPacijenataKontroler.PretraziPoId(IdPacijenta);
+            terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new GlavniProzorSadrzaj();
+            usc = new TerminiPregledaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
-        private Termin TerminIdaljeSlobodan()
+        private TerminDTO TerminIdaljeSlobodan()
         {
             bool postoji = false;
-            Termin termin = new Termin();
-            foreach (Termin t in terminKontroler.DobaviSveSlobodneTermine())
+            TerminDTO termin = new TerminDTO();
+            foreach (TerminDTO t in terminKontroler.DobaviSveSlobodneTermine())
             {
-                if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
+                if (t.IdTermina.Equals(((TerminDTO)slobodniTerminiLista.SelectedItem).IdTermina))
                 {
                     termin = t;
                     postoji = true;

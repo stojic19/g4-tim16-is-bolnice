@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
@@ -26,8 +27,8 @@ namespace Bolnica.Sekretar.Pregled
     public partial class PomeranjePregledaSekretar : UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
-        private static Termin termin;
-        public PomeranjePregledaSekretar(Termin t)
+        private static TerminDTO termin;
+        public PomeranjePregledaSekretar(TerminDTO t)
         {
             InitializeComponent();
             termin = t;
@@ -39,24 +40,24 @@ namespace Bolnica.Sekretar.Pregled
                 return;
             }
 
-            List<Termin> datumi = new List<Termin>();
+            List<TerminDTO> datumi = new List<TerminDTO>();
 
             DateTime? datum = this.datumPocetak.SelectedDate;
             DateTime? datum1 = this.datumKraj.SelectedDate;
             DateTime pom = (DateTime)datum;
             DateTime pom1 = (DateTime)datum1;
 
-            List<Termin> pomocna = new List<Termin>();
+            List<TerminDTO> pomocna = new List<TerminDTO>();
 
             bool nasao = false;
 
             datumi.Clear();
 
             pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), termin.Lekar.KorisnickoIme);
-            foreach (Termin t in pomocna)
+            foreach (TerminDTO t in pomocna)
             {
                 nasao = false;
-                foreach (Termin t1 in datumi)
+                foreach (TerminDTO t1 in datumi)
                 {
                     if (t1.Datum.Equals(t.Datum))
                     {

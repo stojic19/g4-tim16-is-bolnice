@@ -79,7 +79,7 @@
                                 <StackPanel  Margin="10"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                                     <TextBlock   Text="{Binding Datum}"/>
                                     <TextBlock Text="   -   "></TextBlock>
-                                    <TextBlock Text="{Binding PocetnoVreme}"></TextBlock>
+                                    <TextBlock Text="{Binding Vreme}"></TextBlock>
                                 </StackPanel>
                             </WrapPanel>
                         </DataTemplate>

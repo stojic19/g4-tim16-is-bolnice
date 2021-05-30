@@ -49,7 +49,7 @@ namespace Bolnica.Model
             foreach (Termin termin in termini)
             {
                 termin.Datum = termin.Datum.AddMinutes(novaSmena);
-                termin.PocetnoVreme = termin.Datum.ToString("H:mm");
+                termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
                 operacijeRepozitorijum.IzmeniTermin(termin);
                 obavestenjaServis.DodajObavestenje(ObavestenjeOPromeniSmene(termin));
             }

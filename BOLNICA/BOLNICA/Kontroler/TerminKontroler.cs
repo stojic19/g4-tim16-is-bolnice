@@ -17,13 +17,19 @@ namespace Bolnica.Kontroler
         private TerminKonverter terminKonverter = new TerminKonverter();
         LekariServis lekariServis = new LekariServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        public List<Termin> DobaviSveSlobodneTermine()
+        public List<TerminDTO> DobaviSveSlobodneTermine()
         {
-            return slobodniTerminiServis.DobaviSveSlobodneTermine();
+            List<TerminDTO> termini = new List<TerminDTO>();
+            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermine())
+                termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
+            return termini;
         }
-        public List<Termin> DobaviSveZakazaneTermine()
+        public List<TerminDTO> DobaviSveZakazaneTermine()
         {
-            return zakazaniTerminiServis.DobaviSveZakazaneTermine();
+            List<TerminDTO> termini = new List<TerminDTO>();
+            foreach (Termin termin in zakazaniTerminiServis.DobaviSveZakazaneTermine())
+                termini.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
+            return termini;
         }
 
         public List<TerminDTO> DobaviSveZakazaneTerminePacijenta(String korisnickoIme)
@@ -88,9 +94,12 @@ namespace Bolnica.Kontroler
             zakazaniTerminiServis.OtkaziPregledSekretar(terminZaOtkazivanje);
         }
 
-        public List<Termin> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
+        public List<TerminDTO> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
         {
-            return slobodniTerminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, korisnickoImeLekara);
+            List<TerminDTO> termini = new List<TerminDTO>();
+            foreach (Termin termin in slobodniTerminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, korisnickoImeLekara))
+                termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
+            return termini;
         }
 
         public List<TerminDTO> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)

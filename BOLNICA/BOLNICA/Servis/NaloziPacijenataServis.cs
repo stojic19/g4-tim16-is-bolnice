@@ -42,7 +42,6 @@ namespace Model
         {
             Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
             naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNalogaZaUklanjanje + "']");
-
         }
         
         public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
@@ -71,7 +70,6 @@ namespace Model
         {
             return naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNaloga + "']");
         }
-
         public List<Pacijent> SviNalozi()
         {
             return naloziPacijenataRepozitorijum.DobaviSveObjekte();

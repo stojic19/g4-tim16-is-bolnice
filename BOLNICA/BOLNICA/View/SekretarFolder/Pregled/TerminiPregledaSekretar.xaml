@@ -88,9 +88,9 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id Termina" Binding="{Binding IdTermina}" Width="2*"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="2*"/>
-                    <DataGridTextColumn Header="Vreme početka" Binding="{Binding PocetnoVreme}" Width="2*"/>
-                    <DataGridTextColumn Header="Prostor" Binding="{Binding Prostor.IdProstora}" Width="2*"/>
-                    <DataGridTextColumn Header="Pacijent" Binding="{Binding Pacijent.KorisnickoIme }" Width="2*"/>
+                    <DataGridTextColumn Header="Vreme početka" Binding="{Binding Vreme}" Width="2*"/>
+                    <DataGridTextColumn Header="Prostor" Binding="{Binding Prostor}" Width="2*"/>
+                    <DataGridTextColumn Header="Pacijent" Binding="{Binding IdPacijenta }" Width="2*"/>
                     <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar.KorisnickoIme}" Width="2*"/>
                 </DataGrid.Columns>
             </DataGrid>

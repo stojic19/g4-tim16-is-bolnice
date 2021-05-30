@@ -62,6 +62,7 @@ namespace Bolnica
             primaoci.Add("Lekari");
             primaoci.Add("Sekretari");
             primaoci.Add("Upravnici");
+
             foreach (PacijentDTO pacijent in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 primaoci.Add(pacijent.KorisnickoIme + " " + pacijent.Prezime + " " + pacijent.Ime);

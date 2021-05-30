@@ -126,9 +126,6 @@ namespace Model
             {
                 return 30;
             }
-
-            return 0;
-
         }
 
         public Termin KopirajPodatke(Termin stari, Termin novi)

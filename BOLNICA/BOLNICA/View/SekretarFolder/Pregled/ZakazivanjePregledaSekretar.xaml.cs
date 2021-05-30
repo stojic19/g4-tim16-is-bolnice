@@ -61,24 +61,24 @@ namespace Bolnica.Sekretar.Pregled
             String idPacijenta = (((PacijentDTO)dataGridPacijenti.SelectedItem).KorisnickoIme);
             String idLekara = (((LekarDTO)dataGridLekari.SelectedItem).KorisnickoIme);
 
-            List<Termin> datumi = new List<Termin>();
+            List<TerminDTO> datumi = new List<TerminDTO>();
 
                 DateTime? datum = this.datumPocetak.SelectedDate;
                 DateTime? datum1 = this.datumKraj.SelectedDate;
                 DateTime pom = (DateTime)datum;
                 DateTime pom1 = (DateTime)datum1;
 
-                List<Termin> pomocna = new List<Termin>();
+                List<TerminDTO> pomocna = new List<TerminDTO>();
 
                 bool nasao = false;
 
                 datumi.Clear();
 
                 pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
-            foreach (Termin t in pomocna)
+            foreach (TerminDTO t in pomocna)
                 {
                     nasao = false;
-                    foreach (Termin t1 in datumi)
+                    foreach (TerminDTO t1 in datumi)
                     {
                         if (t1.Datum.Equals(t.Datum))
                         {
@@ -101,10 +101,10 @@ namespace Bolnica.Sekretar.Pregled
 
                     pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
 
-                    foreach (Termin t in pomocna)
+                    foreach (TerminDTO t in pomocna)
                     {
                         nasao = false;
-                        foreach (Termin t1 in datumi)
+                        foreach (TerminDTO t1 in datumi)
                         {
                             if (t1.Datum.Equals(t.Datum))
                             {
@@ -134,11 +134,11 @@ namespace Bolnica.Sekretar.Pregled
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
                 {
-                    pomocna = terminKontroler.NadjiTermineUIntervaluSekretar(pom, pom1);
-                    foreach (Termin t in pomocna)
+                    pomocna = terminKontroler.NadjiTermineUIntervalu(pom, pom1);
+                    foreach (TerminDTO t in pomocna)
                     {
                         nasao = false;
-                        foreach (Termin t1 in datumi)
+                        foreach (TerminDTO t1 in datumi)
                         {
                             if (t1.Datum.Equals(t.Datum) && t1.Lekar.KorisnickoIme.Equals(t.Lekar.KorisnickoIme))
                             {

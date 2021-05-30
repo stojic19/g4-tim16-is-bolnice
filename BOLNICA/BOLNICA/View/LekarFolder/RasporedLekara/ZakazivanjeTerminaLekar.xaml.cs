@@ -83,9 +83,6 @@ namespace Bolnica
             {
                 return 30;
             }
-
-            return 0;
-
         }
 
         private Boolean ProveraPopunjenostiPolja()
