@@ -1,34 +1,22 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
-using Bolnica.Model.Rukovanja;
-using Bolnica.Repozitorijum;
 using Model;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Bolnica.LekarFolder
 {
     public partial class BazaLekova : UserControl
     {
         String KorisnickoImeLekara = null;
-        public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
-        public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
-        public static ObservableCollection<Lek> Zamenski { get; set; } = new ObservableCollection<Lek>();
+        public static ObservableCollection<LekDTO> Lekovi { get; set; } = new ObservableCollection<LekDTO>();
+        public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
+        public static ObservableCollection<LekDTO> Zamenski { get; set; } = new ObservableCollection<LekDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
 
         public BazaLekova(String korisnickoImeLekara)
@@ -37,67 +25,73 @@ namespace Bolnica.LekarFolder
             KorisnickoImeLekara = korisnickoImeLekara;
 
             this.DataContext = this;
-
-            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
-            {
-                Lekovi.Add(l);
-            }
-
             Sastojci.Clear();
             Zamenski.Clear();
 
-            this.dataGridLekovi.ItemsSource = lekoviKontroler.DobaviSveLekove();
-            CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
-            view2.Filter = FiltriranjeLeka;
+            InicijalizacijaTabele();
+            InicijalizacijaPretrage();
 
         }
 
+        private void InicijalizacijaTabele()
+        {
+            Lekovi.Clear();
+            foreach (LekDTO l in lekoviKontroler.DobaviSveLekove())
+            {
+                Lekovi.Add(l);
+            }
+        }
+
+        private void InicijalizacijaPretrage()
+        {
+            this.dataGridLekovi.ItemsSource = lekoviKontroler.DobaviSveLekove();
+            CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource);
+            view2.Filter = FiltriranjeLeka;
+        }
 
         private void IzmenaLeka(object sender, RoutedEventArgs e)
         {
-            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
+            LekDTO izabranLek = (LekDTO)dataGridLekovi.SelectedItem;
 
             if (izabranLek != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IDLeka, KorisnickoImeLekara));
-
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IdLeka, KorisnickoImeLekara));
             }
-
-
         }
-
 
         private void VerifikacijaLeka(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
-
         }
 
         private void dataGridLekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
+            LekDTO izabranLek = (LekDTO)dataGridLekovi.SelectedItem;
 
             if (izabranLek != null)
             {
-                PopunjavanjeSastojakaZamena(izabranLek.IDLeka);
-
+                PopunjavanjeSastojaka(izabranLek.IdLeka);
+                PopunjavanjeZamena(izabranLek.IdLeka);
             }
         }
 
-        private void PopunjavanjeSastojakaZamena(String idIzabranogLeka)
+        private void PopunjavanjeSastojaka(String idIzabranogLeka)
         {
             Sastojci.Clear();
-            Zamenski.Clear();
 
-            foreach (Sastojak s in lekoviKontroler.PretraziPoID(idIzabranogLeka).Sastojci)
+            foreach (SastojakDTO s in lekoviKontroler.DobaviSastojkeLeka(idIzabranogLeka))
             {
                 Sastojci.Add(s);
             }
+        }
 
-            foreach (Lek l in lekoviKontroler.PretraziPoID(idIzabranogLeka).Zamene)
+        private void PopunjavanjeZamena(String idIzabranogLeka)
+        {
+            Zamenski.Clear();
+
+            foreach (LekDTO l in lekoviKontroler.DobaviZameneLeka(idIzabranogLeka))
             {
                 Zamenski.Add(l);
             }
@@ -108,22 +102,22 @@ namespace Bolnica.LekarFolder
             if (String.IsNullOrEmpty(pretragaLeka.Text))
                 return true;
             else
-                return ((item as Lek).NazivLeka.IndexOf(pretragaLeka.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as LekDTO).NazivLeka.IndexOf(pretragaLeka.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void pretragaLeka_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dataGridLekovi.ItemsSource).Refresh();
         }
-           
+
         private void IzmenaZamena(object sender, RoutedEventArgs e)
         {
-            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
+            LekDTO izabranLek = (LekDTO)dataGridLekovi.SelectedItem;
 
             if (izabranLek != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IDLeka, KorisnickoImeLekara));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IdLeka, KorisnickoImeLekara));
 
             }
         }

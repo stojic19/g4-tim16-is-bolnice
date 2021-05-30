@@ -1,4 +1,7 @@
 ﻿
+using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -9,11 +12,18 @@ namespace Bolnica.Kontroler
     class LekoviKontroler
     {
 
-        private LekoviServis lekoviServis = new LekoviServis();
+        LekoviServis lekoviServis = new LekoviServis();
+        LekKonverter lekKonverter = new LekKonverter();
+        SastojciKonverter sastojciKonverter = new SastojciKonverter();
 
-        public List<Lek> DobaviSveLekove()
+        public List<LekDTO> DobaviSveLekove()
         {
-            return lekoviServis.DobaviSveLekove();
+            List<LekDTO> sviLekoviDTO = new List<LekDTO>();
+            foreach (Lek l in lekoviServis.DobaviSveLekove())
+            {
+                sviLekoviDTO.Add(lekKonverter.LekSaKolicinomDTO(l));
+            }
+            return sviLekoviDTO;
         }
 
         public void DodajLek(Lek noviLek)
@@ -21,20 +31,60 @@ namespace Bolnica.Kontroler
             lekoviServis.DodajLek(noviLek);
         }
 
-        public Lek PretraziPoID(String sifraLeka)
+        public LekDTO PretraziPoID(String sifraLeka)
+        {
+            Lek pronadjenLek = lekoviServis.PretraziPoID(sifraLeka);
+            return lekKonverter.LekModelULekDTO(pronadjenLek);
+        }
+
+        //BRISI
+        public Lek PretraziPoID2(String sifraLeka)
         {
             return lekoviServis.PretraziPoID(sifraLeka);
         }
 
-        public void IzmenaLeka(Lek noviPodaci)
+        public void IzmenaLeka(LekDTO noviPodaci, List<SastojakDTO> noviSastojci)
         {
-            lekoviServis.IzmenaLeka(noviPodaci);
+            List<Sastojak> konvertovaniSastojci = new List<Sastojak>();
+            foreach (SastojakDTO s in noviSastojci)
+            {
+                konvertovaniSastojci.Add(sastojciKonverter.SastojakDTOuModel(s));
+            }
+            lekoviServis.IzmenaLeka(lekKonverter.LekDTOUModel(noviPodaci), konvertovaniSastojci);
         }
 
-        public void IzmenaZamenskihLekova(String idLeka, List<Lek> noviZamenski)
+        public void IzmenaZamenskihLekova(String idLeka, List<LekDTO> noviZamenski)
         {
-            lekoviServis.IzmenaZamenskihLekova(idLeka, noviZamenski);
+            List<Lek> zamenskiLekovi = new List<Lek>();
+            foreach (LekDTO zamena in noviZamenski)
+            {
+                zamenskiLekovi.Add(lekKonverter.LekDTOUModel(zamena));
+            }
 
+            lekoviServis.IzmenaZamenskihLekova(idLeka, zamenskiLekovi);
+        }
+
+        public List<SastojakDTO> DobaviSastojkeLeka(String idLeka)
+        {
+            List<SastojakDTO> sastojciLeka = new List<SastojakDTO>();
+
+            foreach (Sastojak s in lekoviServis.PretraziPoID(idLeka).Sastojci)
+            {
+                sastojciLeka.Add(sastojciKonverter.SastojakModelUDTO(s));
+            }
+
+            return sastojciLeka;
+        }
+
+        public List<LekDTO> DobaviZameneLeka(String idLeka)
+        {
+            List<LekDTO> zameneLeka = new List<LekDTO>();
+
+            foreach (Lek l in lekoviServis.PretraziPoID(idLeka).Zamene)
+            {
+                zameneLeka.Add(lekKonverter.LekModelULekDTO(l));
+            }
+            return zameneLeka;
         }
     }
 }

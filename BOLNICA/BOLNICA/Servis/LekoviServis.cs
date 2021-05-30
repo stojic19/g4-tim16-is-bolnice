@@ -25,24 +25,25 @@ namespace Bolnica.Model.Rukovanja
             return lekoviRepozitorijum.PretraziLekPoId(sifraLeka);
         }
 
-        public void IzmenaLeka(Lek noviPodaci)
+        public void IzmenaLeka(Lek noviPodaci, List<Sastojak> noviSastojci)
         {
             Lek stariPodaci = lekoviRepozitorijum.PretraziLekPoId(noviPodaci.IDLeka);
-            KopiranjePodatakaLeka(stariPodaci, noviPodaci);
+            Lek izmenjenLek = KopiranjePodatakaLeka(stariPodaci, noviPodaci, noviSastojci);
 
-            lekoviRepozitorijum.IzmenaLeka(noviPodaci);
+            lekoviRepozitorijum.IzmenaLeka(izmenjenLek);
 
         }
 
-        public void KopiranjePodatakaLeka(Lek stariPodaci, Lek noviPodaci)
+        public Lek KopiranjePodatakaLeka(Lek stariPodaci, Lek noviPodaci, List<Sastojak> noviSastojci)
         {
             stariPodaci.NazivLeka = noviPodaci.NazivLeka;
             stariPodaci.Jacina = noviPodaci.Jacina;
             stariPodaci.Sastojci.Clear();
-            foreach (Sastojak s in noviPodaci.Sastojci)
+            foreach (Sastojak s in noviSastojci)
             {
                 stariPodaci.Sastojci.Add(s);
             }
+            return stariPodaci;
         }
 
         public void IzmenaZamenskihLekova(String idLeka, List<Lek> noviZamenski)

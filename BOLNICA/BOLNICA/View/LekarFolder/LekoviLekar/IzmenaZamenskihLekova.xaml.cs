@@ -1,34 +1,24 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
-using Bolnica.Model.Rukovanja;
-using Bolnica.Repozitorijum;
 using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Bolnica
 {
     public partial class IzmenaZamenskihLekova : UserControl
     {
-        Lek izabranLek = null;
+        LekDTO izabranLek = null;
         String KorisnickoImeLekara = null;
-        List<Lek> noviZamenski = new List<Lek>();
+        List<LekDTO> noviZamenski = new List<LekDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
-        public static ObservableCollection<Lek> Zamenski { get; set; } = new ObservableCollection<Lek>();
-        public static ObservableCollection<Lek> SviLekovi { get; set; } = new ObservableCollection<Lek>();
+        public static ObservableCollection<LekDTO> Zamenski { get; set; } = new ObservableCollection<LekDTO>();
+        public static ObservableCollection<LekDTO> SviLekovi { get; set; } = new ObservableCollection<LekDTO>();
         public IzmenaZamenskihLekova(String idLeka, String idLekara)
         {
             InitializeComponent();
@@ -37,7 +27,7 @@ namespace Bolnica
             this.DataContext = this;
             inicijalizacijaPolja();
             inicijalizacijaTabeleZamenskih();
-            inicijalizacijaTabeleSvihLekova();
+            InicijalizacijaTabeleSvihLekova();
             podesavanjePretrageLekova();
         }
 
@@ -51,7 +41,7 @@ namespace Bolnica
         private void inicijalizacijaTabeleZamenskih()
         {
             Zamenski.Clear();
-            foreach (Lek l in izabranLek.Zamene)
+            foreach (LekDTO l in lekoviKontroler.DobaviZameneLeka(izabranLek.IdLeka))
             {
                 Zamenski.Add(l);
                 noviZamenski.Add(l);
@@ -59,27 +49,25 @@ namespace Bolnica
 
         }
 
-        private void inicijalizacijaTabeleSvihLekova()
+        private void InicijalizacijaTabeleSvihLekova()
         {
             SviLekovi.Clear();
 
-            foreach (Lek l in lekoviKontroler.DobaviSveLekove())
+            foreach (LekDTO l in lekoviKontroler.DobaviSveLekove())
             {
-                if (!l.IDLeka.Equals(izabranLek.IDLeka) && !ProveraPostojanjaZamenskog(l.IDLeka) )
+                if (!l.IdLeka.Equals(izabranLek.IdLeka) && !DaLiJeVecZamenski(l.IdLeka))
                 {
                     SviLekovi.Add(l);
                 }
-                
             }
-
         }
 
-        private Boolean ProveraPostojanjaZamenskog(String idLeka)
+        private Boolean DaLiJeVecZamenski(String idLeka)
         {
 
-            foreach(Lek l in izabranLek.Zamene)
+            foreach (LekDTO l in lekoviKontroler.DobaviZameneLeka(idLeka))
             {
-                if (l.IDLeka.Equals(idLeka))
+                if (l.IdLeka.Equals(idLeka))
                 {
                     return true;
                 }
@@ -98,7 +86,7 @@ namespace Bolnica
             if (String.IsNullOrEmpty(pretragaLekova.Text))
                 return true;
             else
-                return ((item as Lek).NazivLeka.IndexOf(pretragaLekova.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as LekDTO).NazivLeka.IndexOf(pretragaLekova.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void podesavanjePretrageLekova()
@@ -110,13 +98,13 @@ namespace Bolnica
 
         private void BrisanjeZamenskog(object sender, RoutedEventArgs e)
         {
-            Lek izabranZamenski = (Lek)dataGridZamenski.SelectedItem;
+            LekDTO izabranZamenski = (LekDTO)dataGridZamenski.SelectedItem;
 
             if (izabranZamenski != null)
             {
-                foreach (Lek l in noviZamenski)
+                foreach (LekDTO l in noviZamenski)
                 {
-                    if (l.IDLeka.Equals(izabranZamenski.IDLeka))
+                    if (l.IdLeka.Equals(izabranZamenski.IdLeka))
                     {
                         noviZamenski.Remove(l);
                         Zamenski.Remove(l);
@@ -129,19 +117,17 @@ namespace Bolnica
 
         private void DodavanjeZamenskog(object sender, RoutedEventArgs e)
         {
-            Lek izabranZamenski = (Lek)dataGridSviLekovi.SelectedItem;
+            LekDTO izabranZamenski = (LekDTO)dataGridSviLekovi.SelectedItem;
+            if (izabranZamenski == null) return;
 
-            if (izabranZamenski != null)
+            foreach (LekDTO l in lekoviKontroler.DobaviSveLekove())
             {
-                foreach (Lek l in lekoviKontroler.DobaviSveLekove())
+                if (l.IdLeka.Equals(izabranZamenski.IdLeka))
                 {
-                    if (l.IDLeka.Equals(izabranZamenski.IDLeka))
-                    {
-                        SviLekovi.Remove(izabranZamenski);
-                        noviZamenski.Add(l);
-                        Zamenski.Add(l);
-                        break;
-                    }
+                    SviLekovi.Remove(izabranZamenski);
+                    noviZamenski.Add(l);
+                    Zamenski.Add(l);
+                    break;
                 }
             }
         }
@@ -154,7 +140,7 @@ namespace Bolnica
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
         {
-            lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IDLeka, noviZamenski);
+            lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IdLeka, noviZamenski);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
         }

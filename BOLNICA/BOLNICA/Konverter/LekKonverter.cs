@@ -18,5 +18,10 @@ namespace Bolnica.Konverter
         {
             return new Lek(lek.IdLeka, lek.NazivLeka, lek.Jacina);
         }
+
+        public LekDTO LekSaKolicinomDTO(Lek lek)
+        {
+            return new LekDTO(lek.IDLeka, lek.NazivLeka, lek.Jacina, lek.Kolicina);
+        }
     }
 }

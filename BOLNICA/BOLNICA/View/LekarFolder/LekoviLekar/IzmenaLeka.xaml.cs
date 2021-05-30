@@ -1,34 +1,22 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
-using Bolnica.Model.Rukovanja;
-using Bolnica.Repozitorijum;
-using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Bolnica.LekarFolder.LekoviLekar
 {
     public partial class IzmenaLeka : System.Windows.Controls.UserControl
     {
-        Lek izabranLek = null;
-        List<Sastojak> izmenjeniSastojci = new List<Sastojak>();
+        LekDTO izabranLek = null;
+        List<SastojakDTO> izmenjeniSastojci = new List<SastojakDTO>();
         String KorisnickoIme = null;
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
-        public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
+        public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
 
         public IzmenaLeka(String idIzabranogLeka, String korisnickoImeLekara)
         {
@@ -45,8 +33,9 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             this.nazivLeka.Text = izabranLek.NazivLeka;
             this.jacinaLeka.Text = izabranLek.Jacina;
+
             Sastojci.Clear();
-            foreach (Sastojak s in izabranLek.Sastojci)
+            foreach (SastojakDTO s in lekoviKontroler.DobaviSastojkeLeka(izabranLek.IdLeka))
             {
                 Sastojci.Add(s);
                 izmenjeniSastojci.Add(s);
@@ -55,11 +44,11 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
         private void BrisanjeSastojka(object sender, RoutedEventArgs e)
         {
-            Sastojak izabranSastojak = (Sastojak)dataGridSastojci.SelectedItem;
+            SastojakDTO izabranSastojak = (SastojakDTO)dataGridSastojci.SelectedItem;
 
             if (izabranSastojak != null)
             {
-                foreach (Sastojak s in izmenjeniSastojci)
+                foreach (SastojakDTO s in izmenjeniSastojci)
                 {
                     if (s.Naziv.Equals(izabranSastojak.Naziv))
                     {
@@ -75,8 +64,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             if (!ValidacijaNovogSastojka()) return;
 
-            Sastojak noviSastojak = new Sastojak(nazivSastojka.Text, Double.Parse(kolicinaSastojka.Text));
-            
+            SastojakDTO noviSastojak = new SastojakDTO(nazivSastojka.Text, Double.Parse(kolicinaSastojka.Text));
 
             izmenjeniSastojci.Add(noviSastojak);
             Sastojci.Add(noviSastojak);
@@ -100,7 +88,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
                 kolicinaSastojka.Text = String.Empty;
                 validacijaPolja.Content = "Količina mora biti broj!";
                 validacijaPolja.Visibility = Visibility.Visible;
-                
+
                 return false;
             }
 
@@ -119,9 +107,8 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
             izabranLek.NazivLeka = nazivLeka.Text;
             izabranLek.Jacina = jacinaLeka.Text;
-            izabranLek.Sastojci = izmenjeniSastojci;
 
-            lekoviKontroler.IzmenaLeka(izabranLek);
+            lekoviKontroler.IzmenaLeka(izabranLek, izmenjeniSastojci);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
