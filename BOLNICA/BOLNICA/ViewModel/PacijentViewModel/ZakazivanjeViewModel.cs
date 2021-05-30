@@ -20,6 +20,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             Podaci = new ZakazivanjePregledaDTO();
             Podaci.KorisnickoImePacijenta = korisnickoIme;
+            podaci.DatumOd = DateTime.Now.AddDays(1).Date;
+            podaci.DatumDo = DateTime.Now.AddDays(3).Date;
             UcitajUKolekciju();
             prikaziDatume = new RelayCommand(Prikazi);
         }

@@ -24,18 +24,22 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
         private void UcitajTerapije()
         {
-            Terapije = new ObservableCollection<TerapijaDTO>();
-            foreach (TerapijaDTO terapija in pregled.Anamneza.SveTerapije)
-                Terapije.Add(terapija);
-
+            if (pregled.Anamneza.SveTerapije != null)
+            {
+                Terapije = new ObservableCollection<TerapijaDTO>();
+                foreach (TerapijaDTO terapija in pregled.Anamneza.SveTerapije)
+                    Terapije.Add(terapija);
+            }
 
         }
         private void UcitajRecepte()
         {
-            Recepti = new ObservableCollection<ReceptDTO>();
-            foreach (ReceptDTO recept in pregled.Recepti)
-                Recepti.Add(recept);
-
+            if (pregled.Recepti != null)
+            {
+                Recepti = new ObservableCollection<ReceptDTO>();
+                foreach (ReceptDTO recept in pregled.Recepti)
+                    Recepti.Add(recept);
+            }
         }
 
         public PregledDTO Pregled
