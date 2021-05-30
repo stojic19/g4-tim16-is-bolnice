@@ -13,7 +13,7 @@ namespace Model
     public class NaloziPacijenataServis
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
-        private LekoviRepozitorijumInterfejs lekoviRepozitorijum = new LekoviRepozitorijum();
+        private LekoviServis lekoviServis = new LekoviServis();
         public void DodajNalog(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
@@ -94,7 +94,7 @@ namespace Model
         }
         public Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
         {
-            alergen.Lek = lekoviRepozitorijum.PretraziLekPoId(alergen.IdAlergena);
+            alergen.Lek = lekoviServis.PretraziPoID(alergen.IdAlergena);
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.DodajAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
