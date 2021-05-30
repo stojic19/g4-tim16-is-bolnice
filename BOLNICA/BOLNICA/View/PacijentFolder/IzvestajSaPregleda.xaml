@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Bolnica.PacijentFolder"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="350">
+             d:DesignHeight="700" d:DesignWidth="350">
     <ScrollViewer>
         <StackPanel Background="White">
             <Label Width="304">ANAMNEZA</Label>
@@ -213,10 +213,10 @@
 
             </ListBox>
 
-            <Button Margin="25 10"   Background="#FF31577E" Height="30" Command="{Binding Path=KreirajBelesku}">
+            <Button Margin="16 5 "   Background="#FF31577E" Height="25" Command="{Binding Path=KreirajBelesku}">
                 <Run Foreground="AntiqueWhite">KREIRAJ BELEŠKU</Run>
             </Button>
-            <Button Margin="25 10"   Background="#FF31577E" Height="30" Command="{Binding Path=VratiSe}">
+            <Button Margin="16 5 16 20"   Background="#FF31577E" Height="25" Command="{Binding Path=VratiSe}">
                 <Run Foreground="AntiqueWhite">VRATI SE</Run>
             </Button>
         </StackPanel>

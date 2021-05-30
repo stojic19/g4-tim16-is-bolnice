@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bolnica.DTO;
+using Bolnica.ViewModel.PacijentViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,12 @@ namespace Bolnica.View.PacijentFolder
 {
     public partial class KreirajPodsetnik : UserControl
     {
-        public KreirajPodsetnik(String tekstBeleske)
+        KreirajPodsetnikViewModel kreirajPodsetnikViewModel;
+        public KreirajPodsetnik(String tekstBeleske, PregledDTO pregled)
         {
             InitializeComponent();
+            kreirajPodsetnikViewModel = new KreirajPodsetnikViewModel(tekstBeleske, pregled);
+            this.DataContext = kreirajPodsetnikViewModel;
         }
     }
 }

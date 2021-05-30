@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfBeleska xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Beleska>
-    <Datum>2021-05-30T13:44:39.5126043+02:00</Datum>
-    <Tekst>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Tekst>
-    <IdBeleske>00000000-0000-0000-0000-000000000000</IdBeleske>
+    <Datum>2021-05-30T17:53:00.2045661+02:00</Datum>
+    <Tekst>Neka beleskaaaaaa</Tekst>
+    <IdBeleske>4ee7b005-0665-4797-a65a-992804deeb37</IdBeleske>
     <Anamneza>
       <IdAnamneze>712f49c2-05b8-4950-a549-448a2e194b0f</IdAnamneze>
       <IdPacijenta>magdalena</IdPacijenta>

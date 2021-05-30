@@ -63,7 +63,7 @@ namespace Bolnica.Sekretar.Pregled
             }
 
             termin.Pacijent = terminStari.Pacijent;
-            terminKontroler.ZakaziPregled(termin,termin.Pacijent.KorisnickoIme);
+            terminKontroler.ZakaziPregledPacijent(termin,termin.Pacijent.KorisnickoIme);
             terminKontroler.OtkaziPregledSekretar(terminStari.IdTermina);
 
             UserControl usc = null;

@@ -183,15 +183,45 @@ namespace Model
 
         public bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
-            DateTime vremePregleda = DateTime.ParseExact(vreme, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime vremePregleda = KonverzijaPocetnogVremena(vreme);
+            if (!SatPregledaJeRanijiOdSadasnjegSata(vremePregleda)) return false;
+            else if (!SatPregledaJeJednakSadasnjemSatu(vremePregleda) && !MinutPregledaJeJednakSasanjemMinutu(vremePregleda)) return false;
+            else if (!SatPregledaJeJednakSadasnjemSatu(vremePregleda) && !MinutPregledaJeKasnijiOdSadasnjeg(vremePregleda)) return false;
+            return true;
+        }
+
+        private DateTime KonverzijaPocetnogVremena(String vremePregleda)
+        {
+            return DateTime.ParseExact(vremePregleda, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+        }
+
+        private bool SatPregledaJeRanijiOdSadasnjegSata(DateTime vremePregleda)
+        {
             if (vremePregleda.Hour < DateTime.Now.Hour)
-                return false;
-            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute == vremePregleda.Minute)
-                return false;
-            else if (vremePregleda.Hour == DateTime.Now.Hour && DateTime.Now.Minute > vremePregleda.Minute)
                 return false;
             return true;
         }
+        private bool SatPregledaJeJednakSadasnjemSatu(DateTime vremePregleda)
+        {
+            if (vremePregleda.Hour == DateTime.Now.Hour)
+                return false;
+            return true;
+
+        }
+
+        private bool MinutPregledaJeJednakSasanjemMinutu(DateTime vremePregleda)
+        {
+            if (DateTime.Now.Minute == vremePregleda.Minute)
+                return false;
+            return true;
+        }
+        private bool MinutPregledaJeKasnijiOdSadasnjeg(DateTime vremePregleda)
+        {
+            if (DateTime.Now.Minute > vremePregleda.Minute)
+                return false;
+            return true;
+        }
+
 
         public void ZakaziPregled(Termin termin, String korisnickoImePacijenta)
         {
@@ -199,5 +229,8 @@ namespace Model
             zakazaniTerminiRepozitorijum.DodajObjekat(termin);
             slobodniTerminiServis.UkloniSlobodanTermin(termin);
         }
+
+
+       
     }
 }

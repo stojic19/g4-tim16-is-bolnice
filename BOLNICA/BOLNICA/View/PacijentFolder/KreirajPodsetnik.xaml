@@ -7,35 +7,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="350" >
 
-    <ScrollViewer>
-    <StackPanel Background="White" Margin="10 0" >
+
+    <StackPanel Background="White" Margin="20 20" >
 
         <Label FontWeight="DemiBold" FontSize="20" >Kreiraj podsetnik</Label>
-        
+
 
         <Label >NASLOV</Label>
-        <TextBox></TextBox>
+        <TextBox  Height="25"  Text="{Binding Path=Podsetnik.Naslov}"></TextBox>
         <Label >TEKST</Label>
 
         <Border BorderBrush="SlateGray"  BorderThickness="2"    >
-            <TextBox Height="250" ></TextBox>
+            <TextBox Height="250" Text="{Binding Path=Podsetnik.Tekst}"></TextBox>
         </Border>
 
         <Label>DATUM OD</Label>
-        <DatePicker Name="datumod" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumOd}" ></DatePicker>
+        <DatePicker Height="25" Margin="5"  SelectedDate="{Binding Path=Podsetnik.DatumOd}"></DatePicker>
         <Label>DATUM DO</Label>
-        <DatePicker Name="datumdo" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumDo}"></DatePicker>
+        <DatePicker  Height="25" Margin="5"  SelectedDate="{Binding Path=Podsetnik.DatumDo}"></DatePicker>
         <Label>VREME</Label>
-        <TextBox></TextBox>
+        <TextBox Height="25" Margin="5" Text="{Binding Path=Podsetnik.Vreme,StringFormat={}{0:HH:mm}}"></TextBox>
         <Label Margin="5 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
-       
 
-        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=SacuvajPodsetnikKomanda}">
+
+        <Button Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=SacuvajPodsetnikKomanda}">
             <Run Foreground="AntiqueWhite">SAČUVAJ PODSETNIK</Run>
         </Button>
-        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=VratiSe}">
+        <Button Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
             <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
     </StackPanel>
-    </ScrollViewer>
+
 </UserControl>

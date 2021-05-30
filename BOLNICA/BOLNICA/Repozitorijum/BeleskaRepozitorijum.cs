@@ -26,5 +26,13 @@ namespace Bolnica.Repozitorijum
             }
             return null;
         }
+        public void ObrisiBelesku(String idBeleske)
+        {
+            ObrisiObjekat("//ArrayOfBeleska/Beleska[IdBeleske='" + idBeleske + "']");
+        }
+        public Beleska PretraziBeleskePoId(String idBeleske)
+        {
+            return PretraziPoId("//ArrayOfBeleska/Beleska[IdBeleske='" + idBeleske + "']");
+        }
     }
 }

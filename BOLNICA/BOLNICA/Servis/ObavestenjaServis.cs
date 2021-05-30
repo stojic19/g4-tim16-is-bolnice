@@ -4,6 +4,7 @@
 // Purpose: Definition of Class RukovanjeObavestenjimaSekratar
 
 using Bolnica;
+using Bolnica.DTO;
 using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,18 @@ namespace Model
         public List<Obavestenje> DobaviSvaObavestenjaOsobe(String IdOsobe)
         {
             return obavestenjaRepozitorijum.DobaviSvaObavestenjaOsobe(IdOsobe);
+        }
+
+        public void DodajPodsetnikOAnamnezi(PodsetnikDTO podsetnik, String idPacijenta)
+        {
+            int intervalObavestenja = (int)(podsetnik.DatumDo - podsetnik.DatumOd).TotalDays + 1;
+            for (int i = 0; i < intervalObavestenja; i++)
+            {
+               DateTime  datumObavestenja = podsetnik.DatumOd.AddDays(i);
+               DateTime formatiranDatum = new DateTime(datumObavestenja.Year, datumObavestenja.Month, datumObavestenja.Day, podsetnik.Vreme.Hour, podsetnik.Vreme.Minute, 0);
+               Obavestenje novoObavestenje = new Obavestenje(podsetnik.Naslov, podsetnik.Tekst, formatiranDatum, idPacijenta);
+               DodajObavestenjePacijentu(novoObavestenje);
+            }
         }
 
     }

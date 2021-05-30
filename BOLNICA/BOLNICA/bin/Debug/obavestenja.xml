@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfObavestenje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Obavestenje>
     <IdObavestenja>O0</IdObavestenja>
@@ -727,5 +727,37 @@ vremenski interval između doza: dsah.</Tekst>
     <Datum>2021-05-25T14:49:38.6772637+02:00</Datum>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>svi</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>e15578f1-9f81-4004-9ce4-1a01c20ce1b9</IdObavestenja>
+    <Naslov>Naslov </Naslov>
+    <Tekst>Tekst beleske</Tekst>
+    <Datum>2021-05-30T17:53:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>c35cd247-1663-40ab-9141-b77af7793b73</IdObavestenja>
+    <Naslov>Naslov </Naslov>
+    <Tekst>Tekst beleske</Tekst>
+    <Datum>2021-05-31T17:53:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>aa62daed-f172-47df-a856-2746d5a99925</IdObavestenja>
+    <Naslov>Naslov </Naslov>
+    <Tekst>Tekst beleske</Tekst>
+    <Datum>2021-06-01T17:53:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>578e8c10-6ee2-457b-9cdb-a30e89b6fa5b</IdObavestenja>
+    <Naslov>Naslov </Naslov>
+    <Tekst>Tekst beleske</Tekst>
+    <Datum>2021-06-02T17:53:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
 </ArrayOfObavestenje>

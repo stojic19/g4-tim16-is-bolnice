@@ -12,16 +12,21 @@ namespace Bolnica.Servis
     {
         private BeleskaRepozitorijum beleskaRepozitorijum = new BeleskaRepozitorijum();
 
-        public String PronadjiTekstBeleske(String idAnamneze)
-        {
-            Beleska beleska= beleskaRepozitorijum.PretraziBeleskuPoAnamnezi(idAnamneze);
-            if (beleska == null)
-                return "";
-            return beleska.Tekst;
-        }
+
         public void SacuvajBelesku(Beleska beleska)
         {
             beleskaRepozitorijum.DodajObjekat(beleska);
+        }
+
+        public void IzmeniBelesku(Beleska beleska)
+        {
+            beleskaRepozitorijum.ObrisiBelesku(beleska.IdBeleske);
+            beleskaRepozitorijum.DodajObjekat(beleska);
+        }
+
+        public Beleska PretraziBeleskePoIdAnaneze(String idAnamneze)
+        {
+            return beleskaRepozitorijum.PretraziBeleskuPoAnamnezi(idAnamneze);
         }
     }
 }

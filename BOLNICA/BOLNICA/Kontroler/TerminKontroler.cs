@@ -17,6 +17,8 @@ namespace Bolnica.Kontroler
         private TerminKonverter terminKonverter = new TerminKonverter();
         LekariServis lekariServis = new LekariServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
+
+
         public List<TerminDTO> DobaviSveSlobodneTermine()
         {
             List<TerminDTO> termini = new List<TerminDTO>();
@@ -69,7 +71,7 @@ namespace Bolnica.Kontroler
 
         }
 
-        public void ZakaziPregled(TerminDTO termin, String korisnickoImePacijenta)
+        public void ZakaziPregledPacijent(TerminDTO termin, String korisnickoImePacijenta)
         {
             Termin noviTermin = slobodniTerminiServis.PretraziPoId(termin.IdTermina);
             zakazaniTerminiServis.ZakaziPregled(noviTermin, korisnickoImePacijenta);
@@ -77,7 +79,6 @@ namespace Bolnica.Kontroler
 
         public void OtkaziPregledPacijent(TerminDTO termin)
         {
-
             Termin terminZaOtkazivanje = DobaviZakazanTerminPoId(termin.IdTermina);
             zakazaniTerminiServis.OtkaziPregledPacijent(terminZaOtkazivanje);
         }
@@ -114,9 +115,7 @@ namespace Bolnica.Kontroler
 
         public List<Termin> NadjiTermineUIntervaluSekretar(DateTime pocetakIntervala, DateTime krajIntervala)
         {
-
             return slobodniTerminiServis.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
-
         }
 
 

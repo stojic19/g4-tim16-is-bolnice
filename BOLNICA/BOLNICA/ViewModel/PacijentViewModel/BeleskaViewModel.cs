@@ -19,14 +19,24 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private String tekst;
         private String poruka;
         BeleskaKontroler beleskaKontroler = new BeleskaKontroler();
-        public BeleskaViewModel(PregledDTO pregled){
+
+        public BeleskaViewModel(PregledDTO pregled)
+        {
             this.pregled = pregled;
+            PostaviTekstBeleske(pregled.Anamneza.IdAnamneze);
             vratiSeKomanda = new RelayCommand(VratiSe);
             kreirajPodsetnikKomanda = new RelayCommand(Kreiraj);
             sacuvajBeleskuKomanda = new RelayCommand(Sacuvaj);
-            Tekst = beleskaKontroler.PronadjiTekstBeleske(pregled.Anamneza.IdAnamneze);
         }
-       
+
+        private void PostaviTekstBeleske(String idAnamneze)
+        {
+            if (beleskaKontroler.PretraziBeleskePoIdAnamneze(pregled.Anamneza.IdAnamneze) != null)
+                Tekst = beleskaKontroler.PretraziBeleskePoIdAnamneze(pregled.Anamneza.IdAnamneze).Tekst;
+            else
+                Tekst = "";
+        }
+
         public BeleskaDTO Beleska
         {
             get { return beleska; }
@@ -85,9 +95,20 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         private void Sacuvaj()
         {
-            Beleska = new BeleskaDTO(DateTime.Now, Tekst, new Guid().ToString(), pregled.Anamneza);
-            beleskaKontroler.SacuvajBelesku(Beleska);
-            Poruka = "*Beleska uspešno sačuvana!";
+            BeleskaDTO beelska = beleskaKontroler.PretraziBeleskePoIdAnamneze(pregled.Anamneza.IdAnamneze);
+            if (beelska != null)
+            {
+                beelska.Tekst = Tekst;
+                beleskaKontroler.IzmeniBelesku(beelska);
+                Poruka = "*Beleska uspešno izmenjena!";
+            }
+            else
+            {
+                BeleskaDTO novaBeleska = new BeleskaDTO(DateTime.Now, Tekst, Guid.NewGuid().ToString(), pregled.Anamneza);
+                beleskaKontroler.SacuvajBelesku(novaBeleska);
+                Poruka = "*Beleska uspešno sačuvana!";
+            }
+
         }
 
         private RelayCommand kreirajPodsetnikKomanda;
@@ -99,7 +120,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private void Kreiraj()
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new KreirajPodsetnik(Tekst));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new KreirajPodsetnik(Tekst, Pregled));
         }
     }
 }

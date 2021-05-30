@@ -24,17 +24,16 @@ namespace Bolnica.Repozitorijum
             List<Anketa> anketePacijenta = new List<Anketa>();
             foreach(Anketa anketa in DobaviSveObjekte())
             {
-                if (anketa.Pacijent.KorisnickoIme.Equals(pacijent.KorisnickoIme) 
+                if (AnketaPripadaPacijentu(anketa, pacijent)
                     && anketa.Pregled==null)
                     anketePacijenta.Add(anketa);
             }
             return anketePacijenta;
         }
-
-
-
-
-
-
+        private bool AnketaPripadaPacijentu(Anketa anketa,Pacijent pacijent)
+        {
+            if (anketa.Pacijent.KorisnickoIme.Equals(pacijent.KorisnickoIme)) return true;
+            return false;
+        }
     }
 }

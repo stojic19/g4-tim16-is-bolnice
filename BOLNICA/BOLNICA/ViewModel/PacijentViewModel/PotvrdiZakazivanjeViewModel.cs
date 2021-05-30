@@ -53,7 +53,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         private void Potvrdi()
         {
-            terminKontroler.ZakaziPregled(IzabraniTermin, podaciZaPrikaz.KorisnickoImePacijenta);
+            terminKontroler.ZakaziPregledPacijent(IzabraniTermin, podaciZaPrikaz.KorisnickoImePacijenta);
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazRasporedaPacijent(podaciZaPrikaz.KorisnickoImePacijenta));
         }

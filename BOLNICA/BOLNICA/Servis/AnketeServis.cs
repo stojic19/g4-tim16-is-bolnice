@@ -35,7 +35,6 @@ namespace Bolnica.Model.Rukovanja
         {
            List<Anketa> anketePacijenta = SortirajPoDatumuRastuce(anketeRepozitorijum.NadjiSveAnketePacijentaOBolnici(pacijent));
           
-            
             if (anketePacijenta.Count == 0)
                 return DateTime.Now.Date.AddMonths(-3);
             else

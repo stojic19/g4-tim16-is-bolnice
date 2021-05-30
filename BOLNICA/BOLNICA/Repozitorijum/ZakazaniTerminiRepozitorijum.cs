@@ -110,12 +110,5 @@ namespace Bolnica.Repozitorijum
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + terminZaBrisanje + "']");
         }
 
-
-
-
-
-
-
-
     }
 }

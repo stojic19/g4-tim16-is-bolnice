@@ -79,6 +79,7 @@
     <Compile Include="DTO\OdsustvoDTO.cs" />
     <Compile Include="DTO\OsobaDTO.cs" />
     <Compile Include="DTO\PacijentDTO.cs" />
+    <Compile Include="DTO\PodsetnikDTO.cs" />
     <Compile Include="DTO\PregledDTO.cs" />
     <Compile Include="DTO\RadniDanDTO.cs" />
     <Compile Include="DTO\ReceptDTO.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="ViewModel\PacijentViewModel\IstorijaPregledaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\IzvestajSaPregledaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\KartonViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\KreirajPodsetnikViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PomeranjePregledaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />

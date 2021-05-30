@@ -56,5 +56,9 @@ namespace Bolnica.Kontroler
         {
             return obavestenjaServis.DobaviSvaObavestenjaOsobe(IdOsobe);
         }
+        public void DodajPodsetnikOAnamnezi(PodsetnikDTO podsetnik, String idPacijenta)
+        {
+            obavestenjaServis.DodajPodsetnikOAnamnezi(podsetnik, idPacijenta);
+        }
     }
 }

@@ -29,7 +29,10 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             ObavljeniPregledi = new ObservableCollection<PregledDTO>();
             foreach (PregledDTO pregled in preglediKontroler.DobaviSveObavljenePregledePacijenta(KorisnickoIme))
-                obavljeniPregledi.Add(pregled);
+            {
+                if (pregled.Anamneza.IdAnamneze != null)
+                    obavljeniPregledi.Add(pregled);
+            }
         }
         public ObservableCollection<PregledDTO> ObavljeniPregledi
         {
@@ -49,10 +52,12 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public String Poruka
         {
             get { return poruka; }
-            set { poruka = value;
+            set
+            {
+                poruka = value;
                 OnPropertyChanged();
             }
-           
+
         }
 
 
