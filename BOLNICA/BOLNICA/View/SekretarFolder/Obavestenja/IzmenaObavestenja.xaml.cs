@@ -46,7 +46,7 @@ namespace Bolnica
         {
             InicijalizujPrimaoca();
 
-            Obavestenje o = obavestenjaKontroler.PretraziPoId(izabranoObavestenje);
+            ObavestenjeDTO o = obavestenjaKontroler.PretraziPoId(izabranoObavestenje);
             idObavestenja.Text = o.IdObavestenja;
             datum.SelectedDate = Convert.ToDateTime(o.Datum);
             naslov.Text = o.Naslov;
@@ -128,7 +128,7 @@ namespace Bolnica
                 return;
             }
 
-            obavestenjaKontroler.IzmeniObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            obavestenjaKontroler.IzmeniObavestenje(new ObavestenjeDTO(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

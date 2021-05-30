@@ -36,7 +36,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            idObavestenja.Text = new Guid().ToString();
+            idObavestenja.Text = Guid.NewGuid().ToString();
             datum.SelectedDate = DateTime.Now;
 
             InicijalizujPrimaoca();       
@@ -69,7 +69,7 @@ namespace Bolnica
             {
                 return;
             }
-            obavestenjaKontroler.DodajObavestenje(new Obavestenje(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
+            obavestenjaKontroler.DodajObavestenje(new ObavestenjeDTO(idObavestenja.Text, naslov.Text, tekst.Text, DateTime.Now, DobaviIzabraneKategorije()));
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

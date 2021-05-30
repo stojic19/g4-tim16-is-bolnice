@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -25,15 +26,15 @@ namespace Bolnica
     {
         ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
 
-        public static ObservableCollection<Obavestenje> obavestenjaPacijenta { get; set; }
+        public static ObservableCollection<ObavestenjeDTO> obavestenjaPacijenta { get; set; }
         public PrikazObavestenjaPacijent()
         {
             InitializeComponent();
-            obavestenjaPacijenta = new ObservableCollection<Obavestenje>();
+            obavestenjaPacijenta = new ObservableCollection<ObavestenjeDTO>();
 
-            List<Obavestenje> datumi = obavestenjaKontroler.DobaviSvaObavestenja().OrderByDescending(user => user.Datum).ToList();
+            List<ObavestenjeDTO> datumi = obavestenjaKontroler.DobaviSvaObavestenja().OrderByDescending(user => user.Datum).ToList();
 
-            foreach (Obavestenje o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
+            foreach (ObavestenjeDTO o in datumi)//Izmeniti kada je u pitanju personalizacija obavestenja
             {
                 if (o.IdPrimaoca.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme))
                 {

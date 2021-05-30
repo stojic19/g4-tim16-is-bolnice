@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,21 @@ namespace Bolnica.Kontroler
     class ObavestenjaKontroler
     {
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
+        ObavestenjeKonverter obavestenjeKonverter = new ObavestenjeKonverter();
 
-        public List<Obavestenje> DobaviSvaObavestenja()
+        public List<ObavestenjeDTO> DobaviSvaObavestenja()
         {
-            return obavestenjaServis.SvaObavestenja();
+            List<ObavestenjeDTO> obavestenja = new List<ObavestenjeDTO>();
+            foreach(Obavestenje obavestenje in obavestenjaServis.SvaObavestenja())
+            {
+                obavestenja.Add(obavestenjeKonverter.ObavestenjeModelUDTO(obavestenje));
+            }
+            return obavestenja;
         }
 
-        public void DodajObavestenje(Obavestenje obavestenje)
+        public void DodajObavestenje(ObavestenjeDTO obavestenje)
         {
-            obavestenjaServis.DodajObavestenje(obavestenje);
+            obavestenjaServis.DodajObavestenje(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
         }
 
         public void DodajObavestenjePacijentu(Obavestenje obavestenje)
@@ -26,9 +34,9 @@ namespace Bolnica.Kontroler
             obavestenjaServis.DodajObavestenjePacijentu(obavestenje);
         }
 
-        public Obavestenje PretraziPoId(string idObavestenja)
+        public ObavestenjeDTO PretraziPoId(string idObavestenja)
         {
-            return obavestenjaServis.PretraziObavestenjaPoId(idObavestenja);
+            return obavestenjeKonverter.ObavestenjeModelUDTO(obavestenjaServis.PretraziObavestenjaPoId(idObavestenja));
         }
 
         public void UkolniObavestenje(string izabranoZaUklanjanje)
@@ -40,14 +48,9 @@ namespace Bolnica.Kontroler
         {
             return PretraziPoId(izabranoObavestenje).DobaviPrimaoce();
         }
-
-        public void IzmeniObavestenje(Obavestenje obavestenje)
+        public void IzmeniObavestenje(ObavestenjeDTO obavestenje)
         {
-            obavestenjaServis.IzmeniObavestenje(obavestenje);
-        }
-        public Obavestenje PretraziObavestenjaPoId(String idObavestenja)
-        {
-            return obavestenjaServis.PretraziObavestenjaPoId(idObavestenja);
+            obavestenjaServis.IzmeniObavestenje(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
         }
         public List<Obavestenje> DobaviSvaObavestenjaOsobe(String IdOsobe)
         {

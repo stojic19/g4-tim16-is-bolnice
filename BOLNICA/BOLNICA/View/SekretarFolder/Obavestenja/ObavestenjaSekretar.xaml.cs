@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
@@ -27,7 +28,7 @@ namespace Bolnica
     {
         ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
 
-        public static ObservableCollection<Obavestenje> SvaObavestenja { get; set; }
+        public static ObservableCollection<ObavestenjeDTO> SvaObavestenja { get; set; }
         public ObavestenjaSekretar()
         {
             InitializeComponent();
@@ -38,8 +39,8 @@ namespace Bolnica
 
         private void PopuniTabeluObavestenja()
         {
-            SvaObavestenja = new ObservableCollection<Obavestenje>();
-            foreach (Obavestenje o in obavestenjaKontroler.DobaviSvaObavestenja())
+            SvaObavestenja = new ObservableCollection<ObavestenjeDTO>();
+            foreach (ObavestenjeDTO o in obavestenjaKontroler.DobaviSvaObavestenja())
             {
                 if (!o.Naslov.Equals("Terapija"))
                 {
@@ -61,8 +62,8 @@ namespace Bolnica
         {
             if (dataGridObavestenjaSekretar.SelectedIndex != -1)
             {
-                String id = (((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
-                Obavestenje obavestenje = obavestenjaKontroler.PretraziPoId(id);
+                String id = (((ObavestenjeDTO)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
+                ObavestenjeDTO obavestenje = obavestenjaKontroler.PretraziPoId(id);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -84,7 +85,7 @@ namespace Bolnica
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-                usc = new UklanjanjeObavestenja(((Obavestenje)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
+                usc = new UklanjanjeObavestenja(((ObavestenjeDTO)dataGridObavestenjaSekretar.SelectedItem).IdObavestenja);
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
             }
             else

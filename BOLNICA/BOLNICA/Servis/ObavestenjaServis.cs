@@ -16,19 +16,9 @@ namespace Model
    {
         ObavestenjaRepozitorijum obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
 
-      public Obavestenje DodajObavestenje(Obavestenje obavestenje)
+      public void DodajObavestenje(Obavestenje obavestenje)
       {
             obavestenjaRepozitorijum.DodajObjekat(obavestenje);
-            ObavestenjaSekretar.SvaObavestenja.Add(obavestenje);
-
-            if (SvaObavestenja().Contains(obavestenje))
-            {
-                return obavestenje;
-            }
-            else
-            {
-                return null;
-            }
         }
 
         public Obavestenje DodajObavestenjePacijentu(Obavestenje obavestenje)
@@ -45,7 +35,7 @@ namespace Model
             }
         }
 
-        public Boolean IzmeniObavestenje(Obavestenje obavestenje)
+        public void IzmeniObavestenje(Obavestenje obavestenje)
         {
             Obavestenje obavestenjeAzurirano = obavestenjaRepozitorijum.PretraziObavestenjaPoId(obavestenje.IdObavestenja);
 
@@ -53,37 +43,14 @@ namespace Model
             obavestenjeAzurirano.Tekst = obavestenje.Tekst;
             obavestenjeAzurirano.IdPrimaoca = obavestenje.IdPrimaoca;
 
-            // AzurirajObavestenjeUPrikazu(obavestenjeAzurirano);
-
             obavestenjaRepozitorijum.IzmeniObavestenje(obavestenjeAzurirano);
-
-            return true;
         }
 
-        private void AzurirajObavestenjeUPrikazu(Obavestenje obavestenje)
-        {
-            int indeks = ObavestenjaSekretar.SvaObavestenja.IndexOf(obavestenje);
-            ObavestenjaSekretar.SvaObavestenja.RemoveAt(indeks);
-            ObavestenjaSekretar.SvaObavestenja.Insert(indeks, obavestenje);
-        }
-
-        public Boolean UkolniObavestenje(String idObavestenja)
+        public void UkolniObavestenje(String idObavestenja)
         {
             Obavestenje obavestenje = obavestenjaRepozitorijum.PretraziObavestenjaPoId(idObavestenja);
 
-            if (obavestenje == null)
-            {
-                return false;
-            }
-
             obavestenjaRepozitorijum.ObrisiObjekat("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + idObavestenja + "']");
-            ObavestenjaSekretar.SvaObavestenja.Remove(obavestenje);
-
-            return !DaLiListeSadrzeObavestenje(obavestenje);
-        }
-        private bool DaLiListeSadrzeObavestenje(Obavestenje obavestenje)
-        {
-            return SvaObavestenja().Contains(obavestenje) || ObavestenjaSekretar.SvaObavestenja.Contains(obavestenje);
         }
 
         public Obavestenje PretraziObavestenjaPoId(String idObavestenja)
