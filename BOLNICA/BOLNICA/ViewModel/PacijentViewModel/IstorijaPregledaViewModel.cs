@@ -13,6 +13,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 {
     public class IstorijaPregledaViewModel: ViewModel
     {
+        private String poruka;
         private ObservableCollection<PregledDTO> obavljeniPregledi;
         private PregledDTO selektovaniTermin;
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
@@ -45,6 +46,14 @@ namespace Bolnica.ViewModel.PacijentViewModel
             get { return selektovaniTermin; }
             set { selektovaniTermin = value; }
         }
+        public String Poruka
+        {
+            get { return poruka; }
+            set { poruka = value;
+                OnPropertyChanged();
+            }
+           
+        }
 
 
         private RelayCommand izvestajPregleda;
@@ -54,8 +63,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void PrikaziIzvestaj()
         {
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajSaPregleda(SelektovaniTermin));
+            if (SelektovaniTermin != null)
+            {
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajSaPregleda(SelektovaniTermin));
+            }
+            else
+            {
+                Poruka = "*Izaberite pregled!";
+            }
         }
 
         private RelayCommand vratiSe;
@@ -66,7 +82,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public void VratiSeNaIstoriju()
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IstorijaPregleda(korisnickoIme));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazKartona(korisnickoIme));
         }
     }
 }

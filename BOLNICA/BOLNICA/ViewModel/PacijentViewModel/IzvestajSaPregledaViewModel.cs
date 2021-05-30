@@ -1,5 +1,7 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Komande;
+using Bolnica.PacijentFolder;
+using Bolnica.View.PacijentFolder;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +22,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
             this.pregled = pregled;
             UcitajTerapije();
             UcitajRecepte();
+            vratiSe = new RelayCommand(VratiSeNaIstoriju);
+            kreirajBelesku = new RelayCommand(Kreiraj);
         }
 
         private void UcitajTerapije()
@@ -79,7 +83,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void Kreiraj()
         {
-
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new KreirajBelesku(Pregled));
         }
         private RelayCommand vratiSe;
         public RelayCommand VratiSe
@@ -88,6 +93,9 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void VratiSeNaIstoriju()
         {
+
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IstorijaPregleda(Pregled.Termin.IdPacijenta));
         }
     }
 }

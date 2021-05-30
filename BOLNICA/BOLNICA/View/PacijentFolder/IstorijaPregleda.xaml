@@ -8,7 +8,7 @@
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista obaveljenih termina</Label>
-        <ListBox x:Name="TerminiUProslosti" SelectionMode="Single" Height="455" Margin="25,0,25.4,0" SelectedItem="{Binding Path=SelektovaniTermin}">
+        <ListBox x:Name="TerminiUProslosti" SelectionMode="Single" Height="436" Margin="25,0,25.4,0" SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -67,6 +67,7 @@
 
 
         </ListBox>
+        <Label Margin="25 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Button Margin="25 10"   Background="#FF31577E" Height="30" Command="{Binding Path=IzvestajPregleda}">
             <Run Foreground="AntiqueWhite">IZVEŠTAJ SA PREGLEDA</Run>
         </Button>

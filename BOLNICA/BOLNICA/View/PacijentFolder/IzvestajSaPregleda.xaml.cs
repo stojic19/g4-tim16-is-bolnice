@@ -30,7 +30,7 @@ namespace Bolnica.PacijentFolder
             izvestajPregledaViewModel = new IzvestajSaPregledaViewModel(izabraniPregled);
             Lekovi.ItemsSource = izvestajPregledaViewModel.Terapije;
             Recepti.ItemsSource = izvestajPregledaViewModel.Recepti;
-            this.DataContext = izabraniPregled;
+            this.DataContext = izvestajPregledaViewModel;
         }
 
     }

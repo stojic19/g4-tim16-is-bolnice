@@ -220,6 +220,9 @@
     <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZakazaniTerminiRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZahteviRepozitorijum.cs" />
+    <Compile Include="View\PacijentFolder\KreirajBelesku.xaml.cs">
+      <DependentUpon>KreirajBelesku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PacijentFolder\Pomoc\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
@@ -536,6 +539,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PacijentFolder\DetaljiTerapije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\KreirajBelesku.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
