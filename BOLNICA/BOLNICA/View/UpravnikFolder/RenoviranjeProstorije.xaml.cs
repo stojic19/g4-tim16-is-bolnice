@@ -26,7 +26,7 @@ namespace Bolnica
     {
         ProstoriServis prostoriServis = new ProstoriServis();
         public static ObservableCollection<Prostor> Prostori { get; set; }
-       
+
         public RenoviranjeProstorije()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace Bolnica
                 usc = new PrikazProstora();
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
             }
-           
+
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

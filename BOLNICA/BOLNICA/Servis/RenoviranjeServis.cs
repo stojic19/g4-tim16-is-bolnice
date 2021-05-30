@@ -22,8 +22,8 @@ namespace Bolnica.Servis
         }
         public static void DodajZaRenoviranje(Renoviranje renoviranje)
         {
-                renoviranja.Add(renoviranje);
-                PrikazRenoviranja.Renoviranje.Add(renoviranje);
+            renoviranja.Add(renoviranje);
+            PrikazRenoviranja.Renoviranje.Add(renoviranje);
         }
 
         public static void ProveriRenoviranje()
@@ -40,6 +40,12 @@ namespace Bolnica.Servis
                     PostaviDaSeNeRenovira(r);
                 }
             }
+        }
+
+        public static void UkloniRenoviranje(Renoviranje renoviranje)
+        {
+            renoviranja.Remove(renoviranje);
+            PrikazRenoviranja.Renoviranje.Remove(renoviranje);
         }
 
         public static bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)

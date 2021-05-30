@@ -19,7 +19,7 @@
                 SelectionMode="Single" Margin="83,66,61.2,148" Background="WhiteSmoke"
                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Prostora" Binding="{Binding IdProstora}" Width="67*"/>
+                    <DataGridTextColumn Header="Naziv prostora" Binding="{Binding NazivProstora}" Width="67*"/>
                     <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="100*"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="80*"/>
                     <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>

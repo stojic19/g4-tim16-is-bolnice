@@ -52,6 +52,11 @@
 
             </Button>
 
+            <Button Background="#FF31577E" Grid.Column="2" Name="renoviranje" Click="renoviranje_Click_1">
+                <Image Source="/Slike/UpravnikSlike/renovation.png" />
+
+            </Button>
+
         </Grid>
 
         <StackPanel  Height="385" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,-0.4,0" >
@@ -85,7 +90,7 @@
 
                 <Button Content="Zahtjevi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Grid.RowSpan="2"/>
-                
+
                 <Button Content="Radnici" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5" Grid.RowSpan="2"/>
 

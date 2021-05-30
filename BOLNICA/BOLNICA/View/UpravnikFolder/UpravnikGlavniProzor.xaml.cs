@@ -98,5 +98,14 @@ namespace Bolnica
             usc = new PrikazRenoviranja();
             MainPanel.Children.Add(usc);
         }
+
+        private void renoviranje_Click_1(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new RenoviranjeProstorije();
+            MainPanel.Children.Add(usc);
+        }
     }
 }

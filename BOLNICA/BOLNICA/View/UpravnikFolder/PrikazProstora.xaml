@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
 
             <DataGrid x:Name="dataGridProstori" ItemsSource="{Binding Prostori}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="3" Margin="20,20,9.6,19.8" Background="WhiteSmoke"
+                  SelectionMode="Extended" Grid.RowSpan="3" Margin="20,20,9.6,19.8" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv prostora" Binding="{Binding NazivProstora}" Width="90*"/>

@@ -102,12 +102,12 @@ namespace Bolnica
 
         private void Renoviraj_Click(object sender, RoutedEventArgs e)
         {
-          
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-                UserControl usc = null;
-                usc = new RenoviranjeProstorije();
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
-           
+
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+            UserControl usc = null;
+            usc = new RenoviranjeProstorije();
+            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+
         }
 
         private void JedanUDva_Click(object sender, RoutedEventArgs e)
@@ -122,9 +122,12 @@ namespace Bolnica
 
         private void DvaUJedan_Click(object sender, RoutedEventArgs e)
         {
+            List<Prostor> prostoriZaRenoviranje = new List<Prostor>();
+            //(Prostor)dataGridProstori.SelectedItems;
+
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UserControl usc = null;
-            usc = new NapraviJednuProstoriju();
+            usc = new NapraviJednuProstoriju(new Prostor(), new Prostor());
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
         }
     }

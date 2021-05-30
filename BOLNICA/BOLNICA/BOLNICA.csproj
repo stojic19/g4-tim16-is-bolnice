@@ -474,6 +474,9 @@
     <Compile Include="View\UpravnikFolder\UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UpravnikFolder\UklanjanjeRenoviranja.xaml.cs">
+      <DependentUpon>UklanjanjeRenoviranja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UpravnikFolder\UpravnikGlavniProzor.xaml.cs">
       <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
     </Compile>
@@ -913,6 +916,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\UpravnikFolder\UklanjanjeRenoviranja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UpravnikFolder\UpravnikGlavniProzor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1061,7 +1068,9 @@
   <ItemGroup>
     <Resource Include="Slike\UpravnikSlike\slusalice.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Slike\UpravnikSlike\renovation.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\PacijentSlike\sledeci.png" />
   </ItemGroup>

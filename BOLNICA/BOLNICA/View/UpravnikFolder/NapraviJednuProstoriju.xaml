@@ -31,9 +31,9 @@
 
 
             <Label Content="Vrsta prostora:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="2" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="2" Margin="-10,0,19.2,34" Height="30" Width="150"/>
 
-            <ComboBox IsEditable="True" Name="VrstaProstora" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,28,0,14" SelectedIndex="0"
+            <ComboBox IsEditable="True" Name="VrstaProstora" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,0,0,42" SelectedIndex="0"
                    Height="22" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
 
                 <ComboBoxItem HorizontalAlignment="Left">Ordinacija</ComboBoxItem>
@@ -42,22 +42,26 @@
             </ComboBox>
 
             <Label Content="Sprat:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="2" Margin="-10,34,19.2,0" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True"  Name="Sprat" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,24,0,10" Height="22" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.468,2.343" />
+            <TextBox AcceptsReturn="True"  Name="Sprat" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,42,0,0" Height="22" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.468,2.343" />
 
 
 
             <Label Content="Kvadratura:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="4" Margin="-10,24,19.2,10" Height="30" Width="150"/>
+               Grid.Column="0" Grid.Row="3" Margin="-10,5,19.2,29" Height="30" Width="150"/>
 
-            <TextBox AcceptsReturn="True" Name="Kvadratura" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,24,0,10" Height="22" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+            <TextBox AcceptsReturn="True" Name="Kvadratura" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.8,13,0,29" Height="22" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
 
             <Label Content="Pravljenje jedne prostorije spajanjem dvije " HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                 FontSize="15" FontWeight="Bold" Grid.Column="0" Margin="0,24,178.2,10" Height="30" Width="338" Grid.ColumnSpan="2"/>
             <Button x:Name="odustani" Click="odustani_Click" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="55.8,21,0,0" Grid.Row="5"/>
             <Button x:Name="potvrdi" Click="potvrdi_Click" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="197.8,21,0,0" Grid.Row="5"/>
+            <Label x:Name="label" Content="Pocetak renoviranja prostorija:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="271.8,26,0,0" Grid.Row="1" RenderTransformOrigin="0.466,0.497"/>
+            <DatePicker Name="PickStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="271.8,63,0,0" Grid.Row="1" Grid.RowSpan="2" Width="138"/>
+            <Label x:Name="label1" Content="Kraj renoviranja prostorija:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="271.8,36,0,0" Grid.Row="2"/>
+            <DatePicker Name="PickEndDate" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="271.8,13,0,0" Grid.Row="3" Width="138"/>
 
 
 

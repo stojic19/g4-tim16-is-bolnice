@@ -39,13 +39,21 @@ namespace Bolnica.UpravnikFolder
             }
         }
 
-        private void JednaProstorija_Click(object sender, RoutedEventArgs e)
+        private void ukloni_Click(object sender, RoutedEventArgs e)
         {
 
-        }
+            Renoviranje izabranZaBrisanje = (Renoviranje)dataGridRenoviranje.SelectedItem;
 
-        private void DvijeProstorije_Click(object sender, RoutedEventArgs e)
-        {
+            if (izabranZaBrisanje != null)
+            {
+
+                UklanjanjeRenoviranja uklanjanje = new UklanjanjeRenoviranja(izabranZaBrisanje);
+                uklanjanje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite renoviranje koje želite da otkažete!");
+            }
 
         }
     }
