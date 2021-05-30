@@ -96,9 +96,14 @@
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Konverter\AlergeniKonverter.cs" />
+    <Compile Include="Konverter\AnamnezaKonverter.cs" />
+    <Compile Include="Konverter\KartonKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
     <Compile Include="Konverter\PacijentKonverter.cs" />
+    <Compile Include="Konverter\PregledKonverter.cs" />
+    <Compile Include="Konverter\ReceptKonverter.cs" />
+    <Compile Include="Konverter\TerapijaKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
@@ -126,8 +131,12 @@
     <Compile Include="Servis\RasporedLekaraServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\AlergeniPacijentaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\DatumiViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\DatumiZaPomeranjeViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\IstorijaPregledaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\IzvestajSaPregledaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\KartonViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PomeranjePregledaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />

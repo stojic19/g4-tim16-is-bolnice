@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Konverter
 {
-    class LekKonverter
+    public class LekKonverter
     {
         public LekDTO LekModelULekDTO(Lek lek)
         {

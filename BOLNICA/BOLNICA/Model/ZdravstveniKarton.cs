@@ -9,8 +9,8 @@ namespace Model
     public class ZdravstveniKarton
     {
 
-        private BracniStatus BracniStatus;
-        private String MestoZaposlenja;
+        private BracniStatus bracniStatus;
+        private String mestoZaposlenja;
         private String imeRoditelja;
         private String brojKartona;
         public String IDPacijenta { get; set; }
@@ -20,11 +20,11 @@ namespace Model
         public ZdravstveniKarton(string iDPacijenta)
         {
             IDPacijenta = iDPacijenta;
-            Alergeni = new List<Alergeni>();
-            BracniStatus = BracniStatus.neozenjenNeudata;
-            MestoZaposlenja = "";
-            imeRoditelja = "";
-            brojKartona = "";
+            this.Alergeni = new List<Alergeni>();
+            this.bracniStatus = BracniStatus.neozenjenNeudata;
+            this.mestoZaposlenja = "";
+            this.imeRoditelja = "";
+            this.brojKartona = "";
         }
 
         public List<Alergeni> Alergeni { get; set; }
@@ -34,6 +34,26 @@ namespace Model
         public List<Anamneza> Anamneze { get; set; } = new List<Anamneza>();
 
         public List<Uput> Uputi { get; set; } = new List<Uput>();
+        public BracniStatus BracniStatus
+        {
+            get { return bracniStatus; }
+            set { bracniStatus = value; }
+        }
+        public String MestoZaposlenja
+        {
+            get { return mestoZaposlenja; }
+            set { mestoZaposlenja = value; }
+        }
+        public String ImeRoditelja
+        {
+            get { return imeRoditelja; }
+            set { imeRoditelja = value; }
+        }
+        public String BrojKartona
+        {
+            get { return brojKartona; }
+            set { brojKartona = value; }
+        }
 
         public List<Alergeni> DobaviAlergene()
         {

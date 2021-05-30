@@ -98,9 +98,9 @@ namespace Bolnica.Model.Rukovanja
             return preglediRepozitorijum.PretraziPoAnamnezi(idAnamneze);
         }
 
-        public List<Pregled> DobaviSveObavljenePregledePacijenta(Pacijent pacijent)
+        public List<Pregled> DobaviSveObavljenePregledePacijenta(String korisnickoIme)
         {
-            return preglediRepozitorijum.DobaviSvePregledePacijenta(pacijent.KorisnickoIme);
+            return preglediRepozitorijum.DobaviSvePregledePacijenta(korisnickoIme);
         }
     }
 }

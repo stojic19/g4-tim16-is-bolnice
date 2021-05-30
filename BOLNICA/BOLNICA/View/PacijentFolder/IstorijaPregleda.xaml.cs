@@ -1,6 +1,7 @@
 ﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,29 +23,14 @@ namespace Bolnica.PacijentFolder
 {
     public partial class IstorijaPregleda : UserControl
     {
-        public static ObservableCollection<Pregled> ObavljeniPregledi { get; set; }
-        private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        public IstorijaPregleda()
+        IstorijaPregledaViewModel istorijaPregledaViewModel;
+        public IstorijaPregleda(String korisnickoIme)
         {
             InitializeComponent();
-            ObavljeniPregledi = new ObservableCollection<Pregled>();
-            foreach (Pregled pregled in preglediKontroler.DobaviSvePreglede())
-            {
-                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(PacijentGlavniProzor.ulogovani.KorisnickoIme) && pregled.Odrzan)
-                    ObavljeniPregledi.Add(pregled);
-            }
-            TerminiUProslosti.ItemsSource = ObavljeniPregledi;
+            istorijaPregledaViewModel = new IstorijaPregledaViewModel(korisnickoIme);
+            TerminiUProslosti.ItemsSource = istorijaPregledaViewModel.ObavljeniPregledi;
+            this.DataContext = istorijaPregledaViewModel;
         }
 
-        private void IzvestajSaTermina_Click(object sender, RoutedEventArgs e)
-        {
-            if (TerminiUProslosti.SelectedIndex == -1)
-            {
-                MessageBox.Show("Izaberite termin!");
-                    return;
-            }
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajSaPregleda((Pregled)TerminiUProslosti.SelectedItem));
-        }
     }
 }

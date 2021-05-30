@@ -26,5 +26,11 @@ namespace Bolnica.Konverter
         {
             return new Alergeni(alergeniDTO.IdAlergena, alergeniDTO.OpisReakcije, alergeniDTO.VremeZaPojavu);
         }
+
+        public AlergenDTO AlergenModelUAlergenDTO(Alergeni alergeni)
+        {
+            LekKonverter lekKonverter = new LekKonverter();
+            return new AlergenDTO(alergeni.IdAlergena, lekKonverter.LekModelULekDTO(alergeni.Lek), alergeni.OpisReakcije, alergeni.VremeZaPojavu);
+        }
     }
 }

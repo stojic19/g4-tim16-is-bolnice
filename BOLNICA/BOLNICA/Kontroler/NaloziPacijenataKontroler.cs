@@ -68,5 +68,10 @@ namespace Bolnica.Kontroler
         {
             return naloziPacijenataServis.DaLiJeJmbgJedinstven(jmbg);
         }
+
+        public PacijentDTO PretraziPoKorisnickomImenu(String koricnickoIme)
+        {
+            return pacijentKonverter.PacijentModelUPacijentDTO(naloziPacijenataServis.PretraziPoId(koricnickoIme));
+        }
     }
 }

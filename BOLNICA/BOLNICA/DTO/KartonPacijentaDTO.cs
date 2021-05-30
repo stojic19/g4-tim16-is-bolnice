@@ -69,5 +69,15 @@ namespace Bolnica.DTO
             this.alergeni = alergeni;
             this.idPacijenta = idPacijenta;
         }
+
+        public KartonPacijentaDTO(BracniStatus bracniStatus, string mestoZaposlenja, string imeRoditelja, string brojKartona, List<AlergenDTO> alergeni, string idPacijenta)
+        {
+            this.bracniStatus = bracniStatus;
+            this.mestoZaposlenja = mestoZaposlenja;
+            this.imeRoditelja = imeRoditelja;
+            this.brojKartona = brojKartona;
+            this.alergeni = alergeni;
+            this.idPacijenta = idPacijenta;
+        }
     }
 }

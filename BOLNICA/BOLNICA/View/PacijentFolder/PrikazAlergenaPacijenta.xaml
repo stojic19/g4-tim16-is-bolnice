@@ -17,7 +17,7 @@
 
                     <WrapPanel Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Grid  Margin="10"  Width="260" Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <TextBlock Text="{Binding IdAlergena}" />
+                            <TextBlock Text="{Binding Lek.NazivLeka}" />
                         </Grid>
 
                     </WrapPanel>
@@ -30,8 +30,12 @@
 
 
         </ListBox>
+        <Button  Height="25" Margin="20 10" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
+            <Run Foreground="AntiqueWhite">VRATI SE</Run>
+        </Button>
         <Image Source="/Slike/PacijentSlike/alergije.png" Height="221" Margin="96,0,0.4,0" />
 
 
     </StackPanel>
 </UserControl>
+

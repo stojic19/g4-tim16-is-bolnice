@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.ViewModel.PacijentViewModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,21 +19,16 @@ using System.Windows.Shapes;
 
 namespace Bolnica.PacijentFolder
 {
-    /// <summary>
-    /// Interaction logic for PrikazAlergenaPacijenta.xaml
-    /// </summary>
     public partial class PrikazAlergenaPacijenta : UserControl
     {
-        public static ObservableCollection<Alergeni> sviAlergeniPacijenta { get; set; }
-        public PrikazAlergenaPacijenta()
+        AlergeniPacijentaViewModel alergeniViewModel;
+        public PrikazAlergenaPacijenta(PacijentDTO pacijent)
         {
             InitializeComponent();
-            sviAlergeniPacijenta = new ObservableCollection<Alergeni>();
-            foreach (Alergeni a in PacijentGlavniProzor.ulogovani.ZdravstveniKarton.Alergeni)
-            {
-                    sviAlergeniPacijenta.Add(a);
-            }
-            alergeniPacijenta.ItemsSource = sviAlergeniPacijenta;
+            alergeniViewModel = new AlergeniPacijentaViewModel(pacijent);
+            alergeniPacijenta.ItemsSource = alergeniViewModel.Alergeni;
+            this.DataContext = alergeniViewModel;
+
         }
     }
 }

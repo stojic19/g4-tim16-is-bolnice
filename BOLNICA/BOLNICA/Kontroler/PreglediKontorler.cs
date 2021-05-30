@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -12,6 +14,7 @@ namespace Bolnica.Kontroler
     public class PreglediKontroler
     {
         private PreglediServis preglediServis = new PreglediServis();
+        private PregledKonverter pregledKonverter = new PregledKonverter();
         public List<Pregled> DobaviSvePreglede()
         {
             return preglediServis.DobaviSvePreglede();
@@ -68,9 +71,13 @@ namespace Bolnica.Kontroler
             return preglediServis.PretragaPoAnamnezi(idAnamneze);
 
         }
-        public List<Pregled> DobaviSveObavljenePregledePacijenta(Pacijent pacijent)
+
+        public List<PregledDTO> DobaviSveObavljenePregledePacijenta(String korisnickoIme)
         {
-            return preglediServis.DobaviSveObavljenePregledePacijenta(pacijent);
+            List<PregledDTO> obavljeniPregledi = new List<PregledDTO>();
+            foreach (Pregled pregled in preglediServis.DobaviSveObavljenePregledePacijenta(korisnickoIme))
+                obavljeniPregledi.Add(pregledKonverter.PregledModelUDTO(pregled));
+            return obavljeniPregledi;
         }
     }
 }

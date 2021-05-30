@@ -1,5 +1,7 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,25 +21,17 @@ using System.Windows.Shapes;
 
 namespace Bolnica.PacijentFolder
 {
-    /// <summary>
-    /// Interaction logic for IzvestajSaPregleda.xaml
-    /// </summary>
     public partial class IzvestajSaPregleda : UserControl
     {
-        public static ObservableCollection<Terapija> TerapijaPregleda { get; set; }
-        public IzvestajSaPregleda(Pregled izabraniPregled)
+        IzvestajSaPregledaViewModel izvestajPregledaViewModel;
+        public IzvestajSaPregleda(PregledDTO izabraniPregled)
         {
             InitializeComponent();
-            DataContext = izabraniPregled;
-            TerapijaPregleda = new ObservableCollection<Terapija>();
-
-            foreach (Terapija terapija in izabraniPregled.Anamneza.Terapije)
-            {
-                TerapijaPregleda.Add(terapija);
-            }
-
-            Lekovi.ItemsSource = TerapijaPregleda;
+            izvestajPregledaViewModel = new IzvestajSaPregledaViewModel(izabraniPregled);
+            Lekovi.ItemsSource = izvestajPregledaViewModel.Terapije;
+            Recepti.ItemsSource = izvestajPregledaViewModel.Recepti;
+            this.DataContext = izabraniPregled;
         }
-       
+
     }
 }

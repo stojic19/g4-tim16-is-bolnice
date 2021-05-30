@@ -47,5 +47,9 @@ namespace Bolnica.DTO
             this.dijagnoza = dijagnoza;
             this.sveTerapije = sveTerapije;
         }
+
+        public AnamnezaDTO()
+        {
+        }
     }
 }

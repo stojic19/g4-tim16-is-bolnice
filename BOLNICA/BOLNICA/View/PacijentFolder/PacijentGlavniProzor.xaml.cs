@@ -81,7 +81,7 @@ namespace Bolnica
 
         private void Karton_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazKartona());
+            PromeniPrikaz(new PrikazKartona(korisnickoIme));
             naslovStrane.Content = "Zdravstveni karton";
         }
 

@@ -18,6 +18,7 @@ namespace Bolnica.DTO
         public bool Blokiran { get => blokiran; set => blokiran = value; }
         public int PolInt { get => polInt; set => polInt = value; }
         public int VrstaNalogaInt { get => vrstaNalogaInt; set => vrstaNalogaInt = value; }
+        public KartonPacijentaDTO Karton { get => karton; set => karton = value; }
 
         public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka, bool blokiran)
         {
@@ -51,6 +52,21 @@ namespace Bolnica.DTO
             this.VrstaNaloga = vrstaNaloga;
             this.PolInt = (int)pol;
             this.VrstaNalogaInt = (int)vrstaNaloga;
+        }
+
+        public PacijentDTO(KartonPacijentaDTO karton, String ime, String prezime, DateTime datumRodjenja, String jmbg, String adresaStanovanja, String kontaktTelefon, String email, String korisnickoIme, String lozinka, Pol pol) : base(ime, prezime, datumRodjenja, jmbg, adresaStanovanja, kontaktTelefon, email, korisnickoIme, lozinka, pol)
+        {
+            this.karton = karton;
+            this.Ime = ime;
+            this.Prezime = prezime;
+            this.DatumRodjenja = datumRodjenja;
+            this.Jmbg = jmbg;
+            this.AdresaStanovanja = adresaStanovanja;
+            this.KontaktTelefon = kontaktTelefon;
+            this.Email = email;
+            this.KorisnickoIme = korisnickoIme;
+            this.Lozinka = lozinka;
+            this.Pol = pol;
         }
 
         public PacijentDTO() 
