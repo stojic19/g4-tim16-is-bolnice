@@ -123,13 +123,12 @@ namespace Model
                     {
                         prostorUKojiPrebacujemo.BrojSlobodnihKreveta += kolicina;
                     }
+                    prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
                     return true;
                 }
 
             }
             return false;
-
-            prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
         }
 
 

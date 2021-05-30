@@ -10,9 +10,6 @@ namespace Bolnica.Repozitorijum
 {
     public class ZakazaniTerminiRepozitorijum : GlavniRepozitorijum<Termin>, ZakazaniTerminiRepozitorijumInterfejs
     {
-        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-
         public ZakazaniTerminiRepozitorijum()
         {
             imeFajla = "termini.xml";
@@ -42,7 +39,6 @@ namespace Bolnica.Repozitorijum
 
             ObrisiZakazanTermin(terminZaBrisanje.IdTermina);
             terminZaBrisanje.Pacijent = null;
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaBrisanje);
 
             if (DobaviSveObjekte().Contains(terminZaBrisanje))
             {
@@ -52,16 +48,6 @@ namespace Bolnica.Repozitorijum
             {
                 return true;
             }
-        }
-
-        public void OtkaziPregledSekretar(String idTermina)
-        {
-            Termin termin = PretraziPoId(idTermina);
-
-
-            ObrisiZakazanTermin(termin.IdTermina);
-            termin.Pacijent = null;
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(termin);
         }
 
         public List<Termin> PretraziPoLekaru(String korImeLekara)
@@ -80,11 +66,6 @@ namespace Bolnica.Repozitorijum
             return lekaroviTermini;
         }
 
-
-        public List<Termin> DobaviSveSlobodneTermine()
-        {
-            return slobodniTerminiServis.DobaviSveSlobodneTermine();
-        }
         public List<Termin> DobaviSveZakazaneTermine()
         {
             return DobaviSveObjekte();

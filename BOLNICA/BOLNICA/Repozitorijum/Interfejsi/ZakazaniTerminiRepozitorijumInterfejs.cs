@@ -13,11 +13,7 @@ namespace Bolnica.Repozitorijum.Interfejsi
 
         Boolean OtkaziTerminLekar(String idTermina);
 
-        void OtkaziPregledSekretar(String idTermina);
-
         List<Termin> PretraziPoLekaru(String korImeLekara);
-
-        List<Termin> DobaviSveSlobodneTermine();
 
         List<Termin> DobaviSveZakazaneTermine();
 

@@ -15,9 +15,9 @@ namespace Model
 {
     public class ZakazaniTerminiServis
     {
+        ZakazaniTerminiRepozitorijum zakazaniTerminiRepozitorijum = new ZakazaniTerminiRepozitorijum();
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        private ZakazaniTerminiRepozitorijumInterfejs zakazaniTerminiRepozitorijum = new ZakazaniTerminiRepozitorijum();
         LekariServis lekariServis = new LekariServis();
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
 
@@ -28,7 +28,7 @@ namespace Model
             {
                 if (DateTime.Compare(DateTime.Now, termin.Datum) < 0)
                 {
-                    zakazaniTerminiRepozitorijum.OtkaziPregledSekretar(termin.IdTermina);
+                    zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(termin.IdTermina);
                     obavestenjaServis.DodajObavestenje(ObavestenjeOOtkazivanjuPregleda(termin));
                 }
             }
@@ -85,11 +85,16 @@ namespace Model
 
         public void OtkaziPregledSekretar(string terminZaOtkazivanje)
         {
-            zakazaniTerminiRepozitorijum.OtkaziPregledSekretar(terminZaOtkazivanje);
+            Termin termin = DobaviZakazanTerminPoId(terminZaOtkazivanje);
+            termin.Pacijent = null;
+            slobodniTerminiServis.DodajSlobodanTerminZaPregled(termin);
+            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje);
         }
 
         public Boolean OtkaziTerminLekar(string idTermina)
         {
+            Termin terminZaBrisanje = DobaviZakazanTerminPoId(idTermina);
+            slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaBrisanje);
             return zakazaniTerminiRepozitorijum.OtkaziTerminLekar(idTermina);
         }
 
