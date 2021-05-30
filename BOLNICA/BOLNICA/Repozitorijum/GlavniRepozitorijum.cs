@@ -18,7 +18,7 @@ namespace Bolnica.Repozitorijum
         public List<T> DobaviSveObjekte()
         {
             List<T> sviObjekti = new List<T>();
-            if (File.ReadAllText(imeFajla).Trim().Equals(""))
+            if (File.ReadAllText(imeFajla).Trim().Equals("") || !File.Exists(imeFajla))
             {
                 return sviObjekti;
             }

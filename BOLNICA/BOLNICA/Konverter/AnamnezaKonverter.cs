@@ -27,8 +27,12 @@ namespace Bolnica.Konverter
                 return new Anamneza();
             List<Terapija> terapije = new List<Terapija>();
             TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
-            foreach (TerapijaDTO terapija in anamneza.SveTerapije)
-                terapije.Add(terapijaKonverter.TerapijaDTOUModel(terapija));
+            if (anamneza.SveTerapije != null)
+            {
+                foreach (TerapijaDTO terapija in anamneza.SveTerapije)
+                    terapije.Add(terapijaKonverter.TerapijaDTOUModel(terapija));
+            }
+           
             return new Anamneza(anamneza.IdAnamneze, anamneza.IdPacijenta, anamneza.Dijagnoza, terapije);
         }
     }

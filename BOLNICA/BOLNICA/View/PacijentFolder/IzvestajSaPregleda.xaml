@@ -10,7 +10,7 @@
         <StackPanel Background="White">
             <Label Width="304">ANAMNEZA</Label>
             <Border BorderThickness="1" BorderBrush="SlateGray"  Margin="20 0">
-                <TextBlock Height="200" Name="anamneza"  Text="{Binding Anamneza.Dijagnoza}"></TextBlock>
+                <TextBlock Height="200" Name="anamneza"  Text="{Binding Path=Pregled.Anamneza.Dijagnoza}"></TextBlock>
             </Border>
 
             <Label Width="304">TERAPIJA</Label>

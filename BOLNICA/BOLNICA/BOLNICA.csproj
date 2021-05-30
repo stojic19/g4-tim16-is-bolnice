@@ -231,6 +231,9 @@
     <Compile Include="View\PacijentFolder\KreirajBelesku.xaml.cs">
       <DependentUpon>KreirajBelesku.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PacijentFolder\KreirajPodsetnik.xaml.cs">
+      <DependentUpon>KreirajPodsetnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PacijentFolder\Pomoc\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
@@ -551,6 +554,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PacijentFolder\KreirajBelesku.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PacijentFolder\KreirajPodsetnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

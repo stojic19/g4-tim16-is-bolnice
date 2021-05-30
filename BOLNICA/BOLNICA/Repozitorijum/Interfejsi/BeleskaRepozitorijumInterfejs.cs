@@ -9,6 +9,6 @@ namespace Bolnica.Repozitorijum.Interfejsi
 {
     public interface BeleskaRepozitorijumInterfejs: GlavniRepozitorijumInterfejs<Beleska>
     {
-        Beleska PretraziBeleskuPoId(String idPacijenta);
+        Beleska PretraziBeleskuPoAnamnezi(String idPacijenta);
     }
 }

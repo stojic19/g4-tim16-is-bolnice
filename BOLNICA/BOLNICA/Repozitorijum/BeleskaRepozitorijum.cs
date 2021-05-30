@@ -16,12 +16,12 @@ namespace Bolnica.Repozitorijum
 
         }
 
-        public Beleska PretraziBeleskuPoId(String idPacijenta)
+        public Beleska PretraziBeleskuPoAnamnezi(String idAnamneze)
         {
 
             foreach (Beleska beleska in DobaviSveObjekte())
             {
-                if (beleska.Anamneza.IdPacijenta.Equals(idPacijenta))
+                if (beleska.Anamneza.IdAnamneze.Equals(idAnamneze))
                     return beleska;
             }
             return null;

@@ -1,6 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.ViewModel.PacijentViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +15,11 @@ using System.Windows.Shapes;
 
 namespace Bolnica.View.PacijentFolder
 {
-    public partial class KreirajBelesku : UserControl
+    public partial class KreirajPodsetnik : UserControl
     {
-        BeleskaViewModel beleskaViewModel;
-        public KreirajBelesku(PregledDTO pregled)
+        public KreirajPodsetnik(String tekstBeleske)
         {
             InitializeComponent();
-            beleskaViewModel = new BeleskaViewModel(pregled);
-            this.DataContext = beleskaViewModel;
         }
     }
 }

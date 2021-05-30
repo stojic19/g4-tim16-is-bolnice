@@ -11,17 +11,17 @@
     <StackPanel Background="White" Margin="10 0" >
 
         <Label FontWeight="DemiBold" FontSize="20" Margin="22 10 0 0" >Kreiraj belešku</Label>
-        <Border BorderBrush="SlateGray"  BorderThickness="2"  Margin="22, 5  "  >
-            <TextBox Height="350" ></TextBox>
+        <Border BorderBrush="SlateGray"  BorderThickness="2"  Margin="22, 5  "   >
+            <TextBox Height="350" Text="{Binding Path=Tekst}" ></TextBox>
         </Border>
-
+        <Label Margin="25 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=SacuvajBeleskuKomanda}">
             <Run Foreground="AntiqueWhite">SAČUVAJ BELEŠKU</Run>
         </Button>
-        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=NapraviPodsetnikKomanda}">
+        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=KreirajPodsetnikKomanda}">
             <Run Foreground="AntiqueWhite">NAPRAVI PODSETNIK</Run>
         </Button>
-        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=VratiSe}">
+        <Button Height="25" Margin="22,5" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
             <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
     </StackPanel>
