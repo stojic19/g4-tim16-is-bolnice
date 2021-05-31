@@ -3,9 +3,9 @@
   <Termin>
     <IdTermina>9eb0eb46-0ec5-453b-bd8a-59c773590c4a</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:30</PocetnoVreme>
+    <PocetnoVreme>16:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T08:30:00</Datum>
+    <Datum>2021-06-02T16:30:00</Datum>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
@@ -17,6 +17,7 @@
       <KorisnickoIme>magdalena</KorisnickoIme>
       <Lozinka>magdalena</Lozinka>
       <Pol>zenski</Pol>
+      <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
         <IDPacijenta>magdalena</IDPacijenta>
@@ -427,9 +428,9 @@
   <Termin>
     <IdTermina>9d44625f-35fb-439b-b525-86ed2a3abd61</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>08:00</PocetnoVreme>
+    <PocetnoVreme>16:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T08:00:00</Datum>
+    <Datum>2021-06-02T16:00:00</Datum>
     <Pacijent>
       <Ime>Milenko</Ime>
       <Prezime>Milenkic</Prezime>
@@ -441,6 +442,7 @@
       <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
       <Lozinka />
       <Pol>muski</Pol>
+      <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
       <VrstaNaloga>gost</VrstaNaloga>
       <ZdravstveniKarton>
         <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
@@ -538,9 +540,9 @@
   <Termin>
     <IdTermina>cfc788f7-bdd1-4266-ac5d-db132fcc5fe2</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
+    <PocetnoVreme>17:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T09:00:00</Datum>
+    <Datum>2021-06-02T17:00:00</Datum>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
@@ -552,6 +554,7 @@
       <KorisnickoIme>magdalena</KorisnickoIme>
       <Lozinka>magdalena</Lozinka>
       <Pol>zenski</Pol>
+      <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
       <VrstaNaloga>regularan</VrstaNaloga>
       <ZdravstveniKarton>
         <IDPacijenta>magdalena</IDPacijenta>

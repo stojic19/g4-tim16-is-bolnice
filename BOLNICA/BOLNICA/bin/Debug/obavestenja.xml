@@ -824,4 +824,28 @@ vremenski interval između doza: dsah.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>fff2356f-7039-43dd-a97b-27080fad2fad</IdObavestenja>
+    <Naslov>Pomeranje termina 9eb0eb46-0ec5-453b-bd8a-59c773590c4a</Naslov>
+    <Tekst>Termin za dan 02-Jun-21 0:00:00 je pomeren na 16:30.</Tekst>
+    <Datum>2021-05-31T20:40:59.5615976+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena MagdalenaReljin</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>5e49148f-ac54-46dc-96e7-2050437763d6</IdObavestenja>
+    <Naslov>Pomeranje termina 9d44625f-35fb-439b-b525-86ed2a3abd61</Naslov>
+    <Tekst>Termin za dan 02-Jun-21 0:00:00 je pomeren na 16:00.</Tekst>
+    <Datum>2021-05-31T20:40:59.6726027+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>6402af5d-a72a-403e-a26d-e77958808da3 MagdalenaReljin</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>900c5c41-4adb-477a-bf09-b3c37f0f3229</IdObavestenja>
+    <Naslov>Pomeranje termina cfc788f7-bdd1-4266-ac5d-db132fcc5fe2</Naslov>
+    <Tekst>Termin za dan 02-Jun-21 0:00:00 je pomeren na 17:00.</Tekst>
+    <Datum>2021-05-31T20:40:59.6976026+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena MagdalenaReljin</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

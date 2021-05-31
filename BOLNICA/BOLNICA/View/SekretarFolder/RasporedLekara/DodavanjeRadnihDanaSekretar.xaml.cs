@@ -32,6 +32,13 @@ namespace Bolnica.SekretarFolder
         {
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
+            InicijalizujDatume();
+        }
+
+        private void InicijalizujDatume()
+        {
+            dpPocetniDatum.DisplayDateStart = DateTime.Today.AddDays(1);
+            dpKrajnjiDatum.DisplayDateStart = DateTime.Today.AddDays(1);
         }
 
         private void Pocetna_Click(object sender, RoutedEventArgs e)
