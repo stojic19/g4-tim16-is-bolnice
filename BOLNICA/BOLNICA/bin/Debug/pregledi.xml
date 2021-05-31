@@ -2847,6 +2847,44 @@
         <PocetakStacionarnog>0001-01-01T00:00:00</PocetakStacionarnog>
         <KrajStacionarnog>0001-01-01T00:00:00</KrajStacionarnog>
       </Uput>
+      <Uput>
+        <IDUputa>3331c98f-369d-4f06-b3b8-af7a4d87fe2d</IDUputa>
+        <TipUputa>STACIONARNO</TipUputa>
+        <DatumIzdavanja>2021-05-31T04:56:07.2856189+02:00</DatumIzdavanja>
+        <ImePrezimeLekar>Magdalena Reljin</ImePrezimeLekar>
+        <NalazMisljenje>Paziti na pacijenta</NalazMisljenje>
+        <PocetakStacionarnog>2021-06-01T00:00:00</PocetakStacionarnog>
+        <KrajStacionarnog>2021-06-05T00:00:00</KrajStacionarnog>
+        <Prostor>
+          <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+          <IdProstora>P33</IdProstora>
+          <NazivProstora>p1</NazivProstora>
+          <VrstaProstora>soba</VrstaProstora>
+          <Sprat>66</Sprat>
+          <Kvadratura>6</Kvadratura>
+          <JeRenoviranje>false</JeRenoviranje>
+          <Oprema />
+        </Prostor>
+      </Uput>
+      <Uput>
+        <IDUputa>f8907f2b-8cfb-42e2-8d91-2113812251e2</IDUputa>
+        <TipUputa>STACIONARNO</TipUputa>
+        <DatumIzdavanja>2021-05-31T06:19:11.1842962+02:00</DatumIzdavanja>
+        <ImePrezimeLekar>Magdalena Reljin</ImePrezimeLekar>
+        <NalazMisljenje>Molim pregled</NalazMisljenje>
+        <PocetakStacionarnog>2021-06-01T00:00:00</PocetakStacionarnog>
+        <KrajStacionarnog>2021-06-07T00:00:00</KrajStacionarnog>
+        <Prostor>
+          <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+          <IdProstora>adsda</IdProstora>
+          <NazivProstora>Soba1</NazivProstora>
+          <VrstaProstora>soba</VrstaProstora>
+          <Sprat>1</Sprat>
+          <Kvadratura>111</Kvadratura>
+          <JeRenoviranje>false</JeRenoviranje>
+          <Oprema />
+        </Prostor>
+      </Uput>
     </Uputi>
     <Alergeni />
     <OcenjenPregled>false</OcenjenPregled>

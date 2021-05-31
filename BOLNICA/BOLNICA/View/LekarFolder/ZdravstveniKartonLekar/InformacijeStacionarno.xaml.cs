@@ -1,22 +1,8 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Kontroler;
-using Bolnica.Model;
-using Bolnica.Model.Rukovanja;
-using Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
 {
@@ -25,6 +11,9 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
+        ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
+
         PregledDTO izabranPregled = null;
         UputDTO izabranUput = null;
         public InformacijeStacionarno(UputDTO informacijeUput, string idIzabranogPregleda)
@@ -35,6 +24,7 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
             izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
 
             inicijalizacijaPolja();
+
         }
 
         private void inicijalizacijaPolja()
@@ -49,12 +39,59 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
             nalaz.Text = izabranUput.NalazMisljenje;
             pocetakStacionarnog.Text = izabranUput.PocetakStacionarnog.ToString("dd/MM/yyy", System.Globalization.CultureInfo.InvariantCulture);
             krajStacionarnog.Text = izabranUput.KrajStacionarnog.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
+            soba.Text = izabranUput.Prostor.NazivProstora;
+            krajStacionarnogPromena.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, izabranUput.KrajStacionarnog.Date));
         }
 
         private void ProduzavanjeLecenja(object sender, RoutedEventArgs e)
         {
+            krajLecenja.Visibility = Visibility.Hidden;
+            Produzavanje.Visibility = Visibility.Hidden;
+            Potvrda.Visibility = Visibility.Visible;
+            promenaKrajaLecenja.Visibility = Visibility.Visible;
+            nalaz.IsReadOnly = false;
+            nalaz.Text = String.Empty;
+        }
 
+        private void krajStacionarnogPromena_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(prostoriKontroler.DaLiSeSobaRenovira(izabranUput.Prostor.IdProstora, (DateTime)krajStacionarnogPromena.SelectedDate))
+            {
+                Upozorenje.Content = "Soba će se renovirati u odabranom periodu!";
+                Upozorenje.Visibility = Visibility.Visible;
+
+            }
+        }
+
+        private void PovrdiProduzavanje(object sender, RoutedEventArgs e)
+        {
+            if (!ProveraPopunjenostiPolja()) return;
+
+            izabranUput.KrajStacionarnog = (DateTime)krajStacionarnogPromena.SelectedDate;
+            izabranUput.NalazMisljenje = nalaz.Text;
+
+            zdravstvenKartoniKontroler.IzmeniUput(izabranPregled.Termin.IdPacijenta, izabranUput);
+            preglediKontroler.DodajUput(izabranPregled.IdPregleda, izabranUput);
+
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+        }
+
+        private Boolean ProveraPopunjenostiPolja()
+        {
+            if (this.nalaz.Text.Equals("") ||  !krajStacionarnogPromena.SelectedDate.HasValue)
+            {
+                Upozorenje.Content = "Niste popunili sva polja!";
+                Upozorenje.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            return true;
+        }
+
+        private void krajStacionarnogPromena_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Upozorenje.Visibility = Visibility.Hidden;
         }
     }
 }

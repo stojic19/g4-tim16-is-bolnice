@@ -107,7 +107,6 @@
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\PreglediKontorler.cs" />
     <Compile Include="Kontroler\RenoviranjeKontroler.cs" />
-    <Compile Include="Kontroler\SlobodniTerminiKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Konverter\AlergeniKonverter.cs" />

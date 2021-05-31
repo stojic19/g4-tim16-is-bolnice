@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProstor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Prostor>
-    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
-    <IdProstora>P33</IdProstora>
-    <NazivProstora>p1</NazivProstora>
-    <VrstaProstora>soba</VrstaProstora>
-    <Sprat>66</Sprat>
-    <Kvadratura>6</Kvadratura>
-    <JeRenoviranje>false</JeRenoviranje>
-    <Oprema>
-      <Oprema>
-        <IdOpreme>s1</IdOpreme>
-        <NazivOpreme>krevet</NazivOpreme>
-        <VrstaOpreme>staticka</VrstaOpreme>
-        <Kolicina>2</Kolicina>
-      </Oprema>
-    </Oprema>
-  </Prostor>
-  <Prostor>
-    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+    <BrojSlobodnihKreveta>1</BrojSlobodnihKreveta>
     <IdProstora>P1</IdProstora>
     <NazivProstora>o1</NazivProstora>
     <VrstaProstora>ordinacija</VrstaProstora>
@@ -113,5 +96,39 @@
     <Kvadratura>44</Kvadratura>
     <JeRenoviranje>false</JeRenoviranje>
     <Oprema />
+  </Prostor>
+  <Prostor>
+    <BrojSlobodnihKreveta>2</BrojSlobodnihKreveta>
+    <IdProstora>P33</IdProstora>
+    <NazivProstora>p1</NazivProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>66</Sprat>
+    <Kvadratura>6</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema>
+      <Oprema>
+        <IdOpreme>s1</IdOpreme>
+        <NazivOpreme>krevet</NazivOpreme>
+        <VrstaOpreme>staticka</VrstaOpreme>
+        <Kolicina>2</Kolicina>
+      </Oprema>
+    </Oprema>
+  </Prostor>
+  <Prostor>
+    <BrojSlobodnihKreveta>5</BrojSlobodnihKreveta>
+    <IdProstora>adsda</IdProstora>
+    <NazivProstora>Soba1</NazivProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>1</Sprat>
+    <Kvadratura>111</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema>
+      <Oprema>
+        <IdOpreme>s1</IdOpreme>
+        <NazivOpreme>krevet</NazivOpreme>
+        <VrstaOpreme>staticka</VrstaOpreme>
+        <Kolicina>1</Kolicina>
+      </Oprema>
+    </Oprema>
   </Prostor>
 </ArrayOfProstor>

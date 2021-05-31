@@ -49,6 +49,11 @@ namespace Bolnica.Kontroler
             zdravstveniKartoniServis.DodajUput(idPacijenta, uputiKonverter.UputDTOuModel(noviUput));
         }
 
+        public void IzmeniUput(String idPacijenta, UputDTO izmenjenUput)
+        {
+            zdravstveniKartoniServis.IzmeniUput(idPacijenta, uputiKonverter.UputDTOuModel(izmenjenUput));
+        }
+
         public List<ReceptDTO> DobaviReceptePacijenta(String idPacijenta)
         {
             List<ReceptDTO> receptiPacijenta = new List<ReceptDTO>();

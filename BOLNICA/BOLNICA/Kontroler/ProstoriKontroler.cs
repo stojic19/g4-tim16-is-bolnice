@@ -42,18 +42,18 @@ namespace Bolnica.Kontroler
 
         public List<ProstorDTO> SviProstori()
         {
-            List<ProstorDTO> prostori= new List<ProstorDTO>();
+            List<ProstorDTO> prostori = new List<ProstorDTO>();
             foreach (Prostor prostor in prostoriServis.SviProstori())
                 prostori.Add(prostorKonverter.ProstorModelUProstorDTO(prostor));
             return prostori;
         }
 
-        public void OduzmiKolicinuOpreme(ProstorDTO prostorIzKojegPremjestamo,OpremaDTO oprema, int kolicina)
+        public void OduzmiKolicinuOpreme(ProstorDTO prostorIzKojegPremjestamo, OpremaDTO oprema, int kolicina)
         {
             prostoriServis.OduzmiKolicinuOpreme(prostorKonverter.ProstorDTOUModel(prostorIzKojegPremjestamo), opremaKonverter.OpremaDTOUModel(oprema), kolicina);
         }
 
-        public void PremjestiOpremu(ProstorDTO prostorUKojiPremjestamo,OpremaDTO oprema, int kolicina)
+        public void PremjestiOpremu(ProstorDTO prostorUKojiPremjestamo, OpremaDTO oprema, int kolicina)
         {
             prostoriServis.PremjestiOpremuUDrugiProstor(prostorKonverter.ProstorDTOUModel(prostorUKojiPremjestamo), opremaKonverter.OpremaDTOUModel(oprema), kolicina);
         }
@@ -70,11 +70,33 @@ namespace Bolnica.Kontroler
 
         public Boolean ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
-            if(prostoriServis.ProvjeriZakazaneTermine(pocetniDatum, zavrsniDatum))
+            if (prostoriServis.ProvjeriZakazaneTermine(pocetniDatum, zavrsniDatum))
             {
                 return true;
             }
             return false;
+        }
+
+        public List<ProstorDTO> DobaviSveSlobodneSobe(DateTime krajLecenja)
+        {
+            List<ProstorDTO> slobodneSobe = new List<ProstorDTO>();
+
+            foreach (Prostor prostor in prostoriServis.DobaviSlobodneSobe(krajLecenja))
+            {
+                slobodneSobe.Add(prostorKonverter.ProstorModelUProstorDTO(prostor));
+            }
+            return slobodneSobe;
+
+        }
+
+        public void SmanjiBrojSlobodnihKreveta(String idProstora)
+        {
+            prostoriServis.SmanjiBrojSlobodnihKreveta(idProstora);
+        }
+
+        public Boolean DaLiSeSobaRenovira(String idProstora, DateTime krajLecenja)
+        {
+            return prostoriServis.ProveraRenoviranjaUBuducnosti(idProstora, krajLecenja);
         }
     }
 }

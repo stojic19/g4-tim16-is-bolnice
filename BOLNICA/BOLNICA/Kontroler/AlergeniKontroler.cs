@@ -51,11 +51,6 @@ namespace Bolnica.Kontroler
             naloziPacijenataServis.IzmeniAlergen(izabranPacijent, alergeniKonverter.AlergenDTOUModel(alergenZaIzmenu));
         }
 
-        public AlergenDTO AlergeniPrikazDTOUAlergeniDTO(AlergeniPrikazDTO alergeniPrikazDTO)
-        {
-            return alergeniKonverter.AlergeniPrikazDTOUAlergenDTO(alergeniPrikazDTO);
-        }
-
         public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
         {
             return naloziPacijenataServis.DaLiLekVecPostojiUAlergenimaPacijenta(idPacijenta, idLeka);

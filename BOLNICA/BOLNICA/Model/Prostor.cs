@@ -33,6 +33,7 @@ namespace Model
            
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
         {

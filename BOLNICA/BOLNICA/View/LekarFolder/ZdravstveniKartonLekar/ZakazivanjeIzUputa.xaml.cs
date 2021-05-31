@@ -27,7 +27,6 @@ namespace Bolnica.LekarFolder
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
-        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         ProstoriServis prostoriServis = new ProstoriServis();
 

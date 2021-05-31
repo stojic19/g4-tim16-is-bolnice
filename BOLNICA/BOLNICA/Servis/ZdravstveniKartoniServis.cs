@@ -91,6 +91,23 @@ namespace Bolnica.Model
             naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
         }
 
+        public void IzmeniUput(String idPacijenta, Uput izmenjenUput)
+        {
+            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
+            
+            foreach(Uput u in p.ZdravstveniKarton.Uputi)
+            {
+                if (u.IDUputa.Equals(izmenjenUput.IDUputa))
+                {
+                    p.ZdravstveniKarton.Uputi.Remove(u);
+                    break;
+                }
+            }
+            p.ZdravstveniKarton.Uputi.Add(izmenjenUput);
+
+            naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
+        }
+
         public List<Recept> DobaviReceptePacijenta(String idPacijenta)
         {
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);

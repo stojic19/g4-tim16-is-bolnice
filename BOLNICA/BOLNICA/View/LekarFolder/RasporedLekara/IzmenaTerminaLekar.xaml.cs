@@ -13,7 +13,6 @@ namespace Bolnica
     public partial class IzmenaTerminaLekar : UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
-        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
 
         String izabran = null;
         String korisnik = null;

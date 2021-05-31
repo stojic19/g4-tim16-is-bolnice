@@ -19,7 +19,7 @@ namespace Bolnica.DTO
         private String nalazMisljenje;
         private DateTime pocetakStacionarnog;
         private DateTime krajStacionarnog;
-        private Prostor prostor;
+        private ProstorDTO prostor;
         private String idLekaraSpecijaliste;
         public String IdUputa
         {
@@ -57,7 +57,7 @@ namespace Bolnica.DTO
             get { return krajStacionarnog; }
             set { krajStacionarnog = value; }
         }
-        public Prostor Prostor
+        public ProstorDTO Prostor
         {
             get { return prostor; }
             set { prostor = value; }
@@ -77,7 +77,7 @@ namespace Bolnica.DTO
 
         public UputDTO() { }
 
-        public UputDTO(string idUputa, string tipUputa, DateTime datumIzdavanja, string lekar, string idLekaraSpecijaliste, string nalaz)
+        public UputDTO(string idUputa, string tipUputa, DateTime datumIzdavanja, string lekar, string idLekaraSpecijaliste, string nalaz, ProstorDTO prostor, DateTime pocetakStac, DateTime krajStac)
         {
             this.idUputa = idUputa;
             this.tipUputa = tipUputa;
@@ -85,6 +85,9 @@ namespace Bolnica.DTO
             this.lekarOpstePrakse = lekar;
             this.idLekaraSpecijaliste = idLekaraSpecijaliste;
             this.nalazMisljenje = nalaz;
+            this.prostor = prostor;
+            this.pocetakStacionarnog = pocetakStac;
+            this.krajStacionarnog = krajStac;
         }
 
         public UputDTO(string idUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string lekar, string idLekaraSpecijaliste, string nalaz)
@@ -97,5 +100,17 @@ namespace Bolnica.DTO
             this.nalazMisljenje = nalaz;
         }
 
+        public UputDTO(string idUputa, TipoviUputa tipUputaEnum, DateTime datumIzdavanja, string nalazMisljenje, string lekarOpstePrakse,
+                        DateTime pocetakStacionarnog, DateTime krajStacionarnog, ProstorDTO prostor)
+        {
+            this.idUputa = idUputa;
+            this.tipUputaEnum = tipUputaEnum;
+            this.datumIzdavanja = datumIzdavanja;
+            this.lekarOpstePrakse = lekarOpstePrakse;
+            this.nalazMisljenje = nalazMisljenje;
+            this.pocetakStacionarnog = pocetakStacionarnog;
+            this.krajStacionarnog = krajStacionarnog;
+            this.prostor = prostor;
+        }
     }
 }

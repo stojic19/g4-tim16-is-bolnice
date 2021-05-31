@@ -14,11 +14,6 @@ namespace Bolnica.Kontroler
         private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         PacijentKonverter pacijentKonverter = new PacijentKonverter();
 
-        public List<Pacijent> DobaviSveNalogeNeDTO()
-        {
-            return naloziPacijenataServis.SviNalozi();
-        }
-
         public List<PacijentDTO> DobaviSveNaloge()
         {
             List<PacijentDTO> pacijenti = new List<PacijentDTO>();

@@ -15,11 +15,6 @@ namespace Bolnica.Kontroler
         LekariServis lekariServis = new LekariServis();
         LekarKonverter lekarKonverter = new LekarKonverter();
 
-        public List<Lekar> DobaviSveLekareNeDTO()
-        {
-            return lekariServis.SviLekari();
-        }
-
         public List<LekarDTO> DobaviSveLekare()
         {
             List<LekarDTO> sviLekari = new List<LekarDTO>();

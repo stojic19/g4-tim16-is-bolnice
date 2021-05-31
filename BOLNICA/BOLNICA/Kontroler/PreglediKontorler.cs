@@ -24,12 +24,6 @@ namespace Bolnica.Kontroler
             return preglediServis.SortPoDatumuPregleda();
         }
 
-        public PregledDTO PretraziPoId(String idPregleda)
-        {
-            return pregledKonverter.PregledModelUDTO(preglediServis.PretraziPoId(idPregleda));
-        }
-
-
         public String PristupPregledu(String idTermina)
         {
             return preglediServis.PristupPregledu(idTermina).IdPregleda;
@@ -39,11 +33,6 @@ namespace Bolnica.Kontroler
         public void UklanjanjePregleda(String terminOtkazanogPregleda)
         {
             preglediServis.UklanjanjePregleda(terminOtkazanogPregleda);
-        }
-
-        public Pregled PretragaPoTerminu(String idTermina)
-        {
-            return preglediServis.PretragaPoTerminu(idTermina);
         }
 
         public void DodajUput(String idIzabranogPregleda, UputDTO noviUput)
@@ -59,18 +48,6 @@ namespace Bolnica.Kontroler
         public void DodajAnamnezu(String idPregleda, AnamnezaDTO novaAnamneza)
         {
             preglediServis.DodajAnamnezu(idPregleda, anamnezaKonverter.AnamnezaSaLekaromUModel(novaAnamneza));
-        }
-
-        public void UklanjanjeAnamneze(String idPregleda)
-        {
-            preglediServis.UklanjanjeAnamneze(idPregleda);
-        }
-
-        public Pregled PretragaPoAnamnezi(String idAnamneze)
-        {
-
-            return preglediServis.PretragaPoAnamnezi(idAnamneze);
-
         }
 
         public List<PregledDTO> DobaviSveObavljenePregledePacijenta(String korisnickoIme)

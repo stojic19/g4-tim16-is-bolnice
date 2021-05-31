@@ -19,8 +19,8 @@ namespace Model
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
 
         //public static List<Oprema> oprema = new List<Oprema>();
-       
-       
+
+
         public void DodajProstor(Prostor p)
         {
             prostoriRepozitorijum.DodajObjekat(p);
@@ -37,10 +37,10 @@ namespace Model
             p.Kvadratura = noviPodaci.Kvadratura;
 
             prostoriRepozitorijum.IzmenaProstora(p);
-     
+
         }
 
-        public  void UkloniProstor(String idProstora)
+        public void UkloniProstor(String idProstora)
         {
             prostoriRepozitorijum.ObrisiObjekat("//ArrayOfProstor/Prostor[IdProstora='" + idProstora + "']");
         }
@@ -58,29 +58,27 @@ namespace Model
                 {
                     foreach (Prostor p in r.ProstoriKojiSeBrisu)
                     {
-                       UkloniProstor(p.IdProstora);
+                        UkloniProstor(p.IdProstora);
                     }
 
-                    foreach(Prostor p in r.ProstoriKojiSeDodaju)
+                    foreach (Prostor p in r.ProstoriKojiSeDodaju)
                     {
                         DodajProstor(p);
                     }
 
                     renoviranjeServis.UkloniRenoviranje(r);
-                }   
-              
+                }
+
             }
-            
+
         }
 
-     
-
-        public  List<Prostor> SviProstori()
+        public List<Prostor> SviProstori()
         {
             return prostoriRepozitorijum.DobaviSveObjekte();
         }
 
-        public  void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
+        public void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
         {
             foreach (Oprema o in prostorIzKojegPremjestamo.Oprema)
             {
@@ -97,7 +95,7 @@ namespace Model
 
         }
 
-        public  void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
+        public void PremjestiOpremuUDrugiProstor(Prostor prostorUKojiPremjestamo, Oprema oprema, int kolicina)
         {
 
             if (!DodajSamoKolicinu(prostorUKojiPremjestamo, oprema, kolicina))
@@ -110,8 +108,8 @@ namespace Model
 
             prostoriRepozitorijum.IzmenaProstora(prostorUKojiPremjestamo);
         }
-       
-        public  bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
+
+        public bool DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
         {
             foreach (Oprema o in prostorUKojiPrebacujemo.Oprema)
             {
@@ -132,12 +130,12 @@ namespace Model
         }
 
 
-        public  void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
+        public void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema o)
         {
             prostorUKojiPrebacujemo.Oprema.Add(o);
             prostoriRepozitorijum.IzmenaProstora(prostorUKojiPrebacujemo);
         }
-    
+
 
         public bool ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
@@ -151,6 +149,41 @@ namespace Model
             return false;
         }
 
+        public List<Prostor> DobaviSlobodneSobe(DateTime krajLecenja)
+        {
+            List<Prostor> slobodneSobe = new List<Prostor>();
+
+            foreach (Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
+            {
+                if (!p.JeRenoviranje && p.VrstaProstora.Equals(VrsteProstora.soba) && p.BrojSlobodnihKreveta > 0 && !ProveraRenoviranjaUBuducnosti(p.IdProstora,krajLecenja))
+                {
+                    slobodneSobe.Add(p);
+
+                }
+            }
+
+            return slobodneSobe;
+        }
+
+        public bool ProveraRenoviranjaUBuducnosti(String idProstora, DateTime krajLecenja)
+        {
+            foreach (Renoviranje r in renoviranjeServis.SvaRenoviranja())
+            {
+                if (r.Prostor.IdProstora.Equals(idProstora) && DateTime.Compare(r.PocetniDatum, krajLecenja) <= 0)
+                    return true;
+            }
+
+            return false;
+
+        }
+
+
+        public void SmanjiBrojSlobodnihKreveta(String idProstora)
+        {
+            Prostor zaIzmenu = prostoriRepozitorijum.PretraziProstorPoId(idProstora);
+            zaIzmenu.BrojSlobodnihKreveta--;
+            prostoriRepozitorijum.IzmenaProstora(zaIzmenu);
+        }
 
     }
 }

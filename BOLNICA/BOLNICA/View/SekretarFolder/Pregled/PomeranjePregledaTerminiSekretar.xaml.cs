@@ -23,13 +23,9 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
-    /// <summary>
-    /// Interaction logic for PomeranjePregledaTerminiSekretar.xaml
-    /// </summary>
     public partial class PomeranjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
         TerminKontroler terminKontroler = new TerminKontroler();
-        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
 
         private static TerminDTO terminStari;
         public static ObservableCollection<TerminDTO> SlobodniDatumi { get; set; }
