@@ -35,10 +35,17 @@ namespace Bolnica.Repozitorijum
             List<Pregled> obavljeniPreglediPacijenta = new List<Pregled>();
             foreach (Pregled pregled in DobaviSveObjekte())
             {
-                if (pregled.Termin.Pacijent.KorisnickoIme.Equals(korisnickoImePacijenta) && pregled.Odrzan)
-                    obavljeniPreglediPacijenta.Add(pregled);
+                if (pregled.Termin != null)
+                {
+                    if (pregled.Termin.Pacijent.KorisnickoIme.Equals(korisnickoImePacijenta) && pregled.Odrzan)
+                        obavljeniPreglediPacijenta.Add(pregled);
+                }
             }
             return obavljeniPreglediPacijenta;
+        }
+        public void ObrisiPregled(String idPregleda)
+        {
+            ObrisiObjekat("//ArrayOfPregled/Pregled[IdPregleda='" + idPregleda + "']");
         }
 
         public Pregled PretragaPoTerminu(String idTermina)

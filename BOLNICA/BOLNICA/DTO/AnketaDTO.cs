@@ -1,22 +1,20 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolnica.Model
+namespace Bolnica.DTO
 {
-    public class Anketa
+    public class AnketaDTO
     {
-        private Pacijent pacijent;
+        private PacijentDTO pacijent;
         private DateTime ocenioBolnicu;
-        private Pregled pregled;
-        private List<Pitanje> pitanjaAnkete;
+        private PregledDTO pregled;
+        private List<PitanjeDTO> pitanjaAnkete;
         private String dodatniKomentar;
-        
 
-        public Pacijent Pacijent
+        public PacijentDTO Pacijent
         {
             get { return pacijent; }
             set { pacijent = value; }
@@ -28,13 +26,13 @@ namespace Bolnica.Model
             set { ocenioBolnicu = value; }
         }
 
-        public Pregled Pregled
+        public PregledDTO Pregled
         {
             get { return pregled; }
             set { pregled = value; }
         }
 
-        public List<Pitanje> PitanjaAnkete
+        public List<PitanjeDTO> PitanjaAnkete
         {
             get { return pitanjaAnkete; }
             set { pitanjaAnkete = value; }
@@ -46,9 +44,9 @@ namespace Bolnica.Model
             set { dodatniKomentar = value; }
         }
 
-        public Anketa() { }
+        public AnketaDTO() { }
 
-        public Anketa(Pacijent pacijent, DateTime ocenioBolnicu, Pregled pregled, List<Pitanje> pitanjaAnkete, string dodatniKomentar)
+        public AnketaDTO(PacijentDTO pacijent, DateTime ocenioBolnicu, PregledDTO pregled, List<PitanjeDTO> pitanjaAnkete, string dodatniKomentar)
         {
             this.pacijent = pacijent;
             this.ocenioBolnicu = ocenioBolnicu;
@@ -57,10 +55,11 @@ namespace Bolnica.Model
             this.dodatniKomentar = dodatniKomentar;
         }
 
-        public Anketa(List<Pitanje> pitanja, String dodatniKomentar)
+        public AnketaDTO(List<PitanjeDTO> pitanjaAnkete, string dodatniKomentar)
         {
-            this.pitanjaAnkete = pitanja;
+            this.pitanjaAnkete = pitanjaAnkete;
             this.dodatniKomentar = dodatniKomentar;
         }
+
     }
 }

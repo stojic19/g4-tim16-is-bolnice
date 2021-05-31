@@ -22,15 +22,15 @@ namespace Bolnica.Repozitorijum
         public List<Anketa> NadjiSveAnketePacijentaOBolnici(Pacijent pacijent)
         {
             List<Anketa> anketePacijenta = new List<Anketa>();
-            foreach(Anketa anketa in DobaviSveObjekte())
+            foreach (Anketa anketa in DobaviSveObjekte())
             {
                 if (AnketaPripadaPacijentu(anketa, pacijent)
-                    && anketa.Pregled==null)
+                    && anketa.Pregled == null)
                     anketePacijenta.Add(anketa);
             }
             return anketePacijenta;
         }
-        private bool AnketaPripadaPacijentu(Anketa anketa,Pacijent pacijent)
+        private bool AnketaPripadaPacijentu(Anketa anketa, Pacijent pacijent)
         {
             if (anketa.Pacijent.KorisnickoIme.Equals(pacijent.KorisnickoIme)) return true;
             return false;

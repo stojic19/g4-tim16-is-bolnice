@@ -13,10 +13,14 @@ namespace Bolnica.Repozitorijum
 {
     public class PitanjaRepozitorijum: GlavniRepozitorijum<Pitanje>, PitanjaRepozitorijumInterfejs
     {
+        public PitanjaRepozitorijum()
+        {
+            imeFajla = "pitanjaAnkete.xml";
+        }
         public List<Pitanje> DobaviSvaPitanjaOBolnici()
         {
             List<Pitanje> pitanjaOBolnici = new List<Pitanje>();
-            foreach(Pitanje pitanje in DobaviSveObjekte())
+            foreach (Pitanje pitanje in DobaviSveObjekte())
             {
                 if (pitanje.PitanjeOBolnici)
                     pitanjaOBolnici.Add(pitanje);
@@ -34,6 +38,7 @@ namespace Bolnica.Repozitorijum
             }
             return pitanjaOPregledu;
         }
+
 
     }
 }

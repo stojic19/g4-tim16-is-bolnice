@@ -1,13 +1,12 @@
-﻿using Bolnica.Model.Enumi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bolnica.Model
+namespace Bolnica.DTO
 {
-    public class Pitanje
+    public class PitanjeDTO
     {
         private String tekstPitanja;
         private int ocena;
@@ -31,13 +30,13 @@ namespace Bolnica.Model
             get { return pitanjeOBolnici; }
             set { pitanjeOBolnici = value; }
         }
-        public Pitanje() { }
-        public Pitanje(int ocena, string tekstPitanja,  bool pitanjeOBolnici)
+        public PitanjeDTO() { }
+        public PitanjeDTO(int ocena, string tekstPitanja, bool pitanjeOBolnici)
         {
-            Ocena = ocena;
-            TekstPitanja = tekstPitanja;
-            PitanjeOBolnici = pitanjeOBolnici;
-           
+            this.ocena = ocena;
+            this.tekstPitanja = tekstPitanja;
+            this.pitanjeOBolnici = pitanjeOBolnici;
+
         }
     }
 }

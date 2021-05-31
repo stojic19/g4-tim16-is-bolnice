@@ -29,6 +29,10 @@ namespace Bolnica.Model
             
         }
 
+        public Pregled(string idPregleda, Termin termin, Anamneza anamneza, List<Recept> recepti, bool ocenjenPregled) : this(idPregleda, termin)
+        {
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

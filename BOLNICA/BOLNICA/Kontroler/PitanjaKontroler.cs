@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Bolnica.Model;
 using Bolnica.Servis;
 using System;
 using System.Collections.Generic;
@@ -11,14 +13,15 @@ namespace Bolnica.Kontroler
     public class PitanjaKontroler
     {
         private PitanjaServis pitanjaServis = new PitanjaServis();
+        private PitanjeKonverter pitanjeKonverter = new PitanjeKonverter();
 
-        public List<Pitanje> DobaviPitanjaOBolnici()
+        public List<PitanjeDTO> DobaviPitanjaOBolnici()
         {
-            return pitanjaServis.DobaviPitanjaOBolnici();
+            return pitanjeKonverter.PitanjeModeliUDTO(pitanjaServis.DobaviPitanjaOBolnici());
         }
-        public List<Pitanje> DobaviPitanjaOPregledu()
+        public List<PitanjeDTO> DobaviPitanjaOPregledu()
         {
-            return pitanjaServis.DobaviPitanjaOPregledu();
+            return pitanjeKonverter.PitanjeModeliUDTO(pitanjaServis.DobaviPitanjaOPregledu());
         }
     }
 }

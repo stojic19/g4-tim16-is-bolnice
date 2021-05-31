@@ -58,6 +58,15 @@ namespace Bolnica.Kontroler
             return obavljeniPregledi;
         }
 
+
+        public List<PregledDTO> DobaviSveNeocenjenePregledePacijenta(String korisnickoIme)
+        {
+            List<PregledDTO> obavljeniPregledi = new List<PregledDTO>();
+            foreach (Pregled pregled in preglediServis.DobaviSveNeocenjenePregledePacijenta(korisnickoIme))
+                obavljeniPregledi.Add(pregledKonverter.PregledModelUDTO(pregled));
+            return obavljeniPregledi;
+        }
+
         public PregledDTO DobaviPregled(String idPregleda)
         {
             return pregledKonverter.OsnovniPodaciUDTO(preglediServis.PretraziPoId(idPregleda));
@@ -65,6 +74,11 @@ namespace Bolnica.Kontroler
         public bool ProveraPostojanjaAnamneze(String idPregleda)
         {
             return preglediServis.ProveraPostojanjaAnamneze(idPregleda);
+        }
+
+        public void PostaviOcenuPregledu(PregledDTO pregled)
+        {
+            preglediServis.PostaviOcenuPregledu(pregled.IdPregleda);
         }
 
     }

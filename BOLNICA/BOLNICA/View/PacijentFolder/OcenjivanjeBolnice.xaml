@@ -122,7 +122,7 @@
             </Grid>
             <Label Margin="10 0" FontSize="12" >Dodatni komentari, saveti i primedbe</Label>
             <TextBox x:Name="DodatniKomentar" Margin="10 0" Height="300"></TextBox>
-            <Button Name="OceniBolnicu" Click="OceniBolnicu_Click"  Height="30"  Margin="5 10 10 30" Background="#FF31577E" >
+            <Button Name="OceniBolnicu"  Height="30"  Margin="5 10 10 30" Background="#FF31577E" >
                 <Run Foreground="AntiqueWhite">OCENI BOLNICU</Run>
             </Button>
 

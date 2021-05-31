@@ -2,72 +2,72 @@
 <ArrayOfPitanje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pitanje>
     <TekstPitanja>Ljubaznost lekara</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Stručnost lekara</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Dužina čekanja na prijem</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Čistoća prostorija</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Ljubaznost osoblja</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Zadovoljstvo pruženom uslugom</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Celokupna ocena za lekara</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>false</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Izgled bolnice</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Higijena bolnice</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Lokacija bolnice</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Obezbeđen parking</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Aplikacija bolnice</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Celokupna ocena osoblja</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
   <Pitanje>
     <TekstPitanja>Celokupna ocena bolnice</TekstPitanja>
-    <Ocena>pet</Ocena>
+    <Ocena>5</Ocena>
     <PitanjeOBolnici>true</PitanjeOBolnici>
   </Pitanje>
 </ArrayOfPitanje>

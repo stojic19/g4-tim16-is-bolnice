@@ -101,10 +101,28 @@ namespace Bolnica.Model.Rukovanja
             return preglediRepozitorijum.DobaviSvePregledePacijenta(korisnickoIme);
         }
 
+        public List<Pregled> DobaviSveNeocenjenePregledePacijenta(String korisnickoIme)
+        {
+            List<Pregled> neocenjeniPregledi = new List<Pregled>();
+            foreach (Pregled pregled in preglediRepozitorijum.DobaviSvePregledePacijenta(korisnickoIme))
+            {
+                if (!pregled.OcenjenPregled && pregled.Termin != null)
+                    neocenjeniPregledi.Add(pregled);
+            }
+            return neocenjeniPregledi;
+        }
+
         public bool ProveraPostojanjaAnamneze(String idPregleda)
         {
             if (PretraziPoId(idPregleda).Anamneza == null) return false;
             return true;
+        }
+        public void PostaviOcenuPregledu(String idPregleda)
+        {
+            Pregled pregled = PretraziPoId(idPregleda);
+            pregled.OcenjenPregled = true;
+            preglediRepozitorijum.ObrisiPregled(idPregleda);
+            preglediRepozitorijum.DodajObjekat(pregled);
         }
     }
 }

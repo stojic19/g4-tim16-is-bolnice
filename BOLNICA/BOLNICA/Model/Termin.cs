@@ -14,6 +14,12 @@ namespace Model
         private Prostor prostor;
         private Pacijent pacijent;
         private Lekar lekar;
+        private string vreme;
+        private string trajanje1;
+        private string prostor1;
+        private string tipTermina;
+        private string idPacijenta;
+        private double v;
 
         public String IdTermina
         {
@@ -99,6 +105,20 @@ namespace Model
             this.datum = datum;
             this.prostor = prostor;
             this.pocetnoVreme = pocetnoVreme;
+        }
+
+        public Termin(string idTermina, DateTime datum, string vreme, Lekar lekar, string trajanje1, string prostor1, string tipTermina, string idPacijenta, double v, Pacijent pacijent)
+        {
+            this.idTermina = idTermina;
+            this.datum = datum;
+            this.vreme = vreme;
+            this.lekar = lekar;
+            this.trajanje1 = trajanje1;
+            this.prostor1 = prostor1;
+            this.tipTermina = tipTermina;
+            this.idPacijenta = idPacijenta;
+            this.v = v;
+            this.pacijent = pacijent;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

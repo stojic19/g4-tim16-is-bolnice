@@ -87,7 +87,7 @@ namespace Bolnica
 
         private void Ankete_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazAnketa());
+            PromeniPrikaz(new PrikazAnketa(korisnickoIme));
             naslovStrane.Content = "          Ankete";
         }
 

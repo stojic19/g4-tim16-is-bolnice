@@ -8,7 +8,7 @@
             d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista dostupnih anketa</Label>
-        <ListBox x:Name="AnketePacijenta" SelectionMode="Single" Height="468" Margin="25,0,25.4,0">
+        <ListBox x:Name="AnketePacijenta" SelectionMode="Single" Height="468" Margin="25,0,25.4,0" SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -41,7 +41,7 @@
                                     <TextBlock Grid.Column="1" Grid.Row="0" FontSize="15"  Text="{Binding Termin.Datum , StringFormat={}{0:dd/MM/yyyy}}"/>
 
 
-                                    <TextBlock Grid.Column="1" Grid.Row="1" FontSize="15"  Text="{Binding Termin.PocetnoVreme}"/>
+                                    <TextBlock Grid.Column="1" Grid.Row="1" FontSize="15"  Text="{Binding Termin.Vreme}"/>
 
 
                                     <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15"  Text="{Binding Termin.Lekar.KorisnickoIme}" />
@@ -54,7 +54,7 @@
 
                             </StackPanel>
                         </Border>
-                        
+
                     </WrapPanel>
 
 
@@ -68,20 +68,14 @@
 
 
         </ListBox>
+
+        <Label Margin="25 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Label Margin="25,0,0.4,0">*izaberite neku od dostupnih anketa za popunjavanje</Label>
-        <Button Margin="25 10"  x:Name="PopuniAnketu"  Background="#FF31577E" Height="30" Click="PopuniAnketu_Click">
+        <Button Margin="25 10"  x:Name="PopuniAnketu"  Background="#FF31577E" Height="30" Command="{Binding Path=PopuniAnketu}">
             <Run Foreground="AntiqueWhite">POPUNI ANKETU</Run>
         </Button>
-        <Button Margin="25 10"  x:Name="OceniBolnicu"  Background="#FF31577E" Height="30" Click="OceniBolnicu_Click">
+        <Button Margin="25 10"  x:Name="OceniBolnicu"  Background="#FF31577E" Height="30" Command="{Binding Path=OceniBolnicu}">
             <Run Foreground="AntiqueWhite">OCENI BOLNICU</Run>
         </Button>
-        <!--
-        <Button Margin="25 10" x:Name="pomeri" Background="#FF31577E" Height="30">
-            <Run Foreground="AntiqueWhite" >IZMENI PREGLED</Run>
-        </Button>
-        <Button Margin="25 10" x:Name="otkazi"  Background="#FF31577E" Height="30">
-            <Run Foreground="AntiqueWhite">OTKAŽI PREGLED</Run>
-        </Button>
-             -->
     </StackPanel>
 </UserControl>

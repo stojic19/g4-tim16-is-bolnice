@@ -19,9 +19,7 @@ using System.Windows.Shapes;
 
 namespace Bolnica.PacijentFolder
 {
-    /// <summary>
-    /// Interaction logic for OcenjivanjeBolnice.xaml
-    /// </summary>
+    
     public partial class OcenjivanjeBolnice : UserControl
     {
         public OcenjivanjeBolnice()
@@ -29,7 +27,7 @@ namespace Bolnica.PacijentFolder
             InitializeComponent();
         }
 
-        private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
+      /*  private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < 5 ; i++)//i < AnketeRepozitorijum.pitanjaOBolnici.Count
             {
@@ -66,6 +64,6 @@ namespace Bolnica.PacijentFolder
                    // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.pet;
                     break;
             }
-        }
+        }*/
     }
 }

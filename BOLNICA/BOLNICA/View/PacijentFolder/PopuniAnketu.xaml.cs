@@ -1,7 +1,9 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Model;
 using Bolnica.Model.Enumi;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,52 +24,12 @@ namespace Bolnica.PacijentFolder
 {
     public partial class PopuniAnketu : UserControl
     {
-        public static Pregled predmetAnkete;
-        public PopuniAnketu(Pregled izabranZaAnketu)
+        PopuniAnketuViewModel popuniAnketuViewModel;
+        public PopuniAnketu(PregledDTO izabranZaAnketu)
         {
             InitializeComponent();
-            predmetAnkete = izabranZaAnketu;
-        }
-
-        private void PosaljiAnketu_Click(object sender, RoutedEventArgs e)
-        {
-            for (int i = 0; i < 5; i++) //i < AnketeRepozitorijum.pitanjaOPregledu.Count
-            {
-
-                int indexCombo = i + 1;
-                postaviOcenuZaPitanje(((ComboBox)this.FindName("pitanje" + indexCombo)).SelectedIndex, i);
-
-            }
-            predmetAnkete.OcenjenPregled = true;
-            //AnketeRepozitorijum.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now, predmetAnkete, AnketeRepozitorijum.pitanjaOPregledu, DodatniKomentar.Text));
-            //AnketeRepozitorijum.SerijalizacijaAnketa();
-       
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());
-
-        }
-
-        private void postaviOcenuZaPitanje(int indexCombo, int indexPitanje)
-        {
-            switch (indexCombo)
-            {
-
-                case 0:
-                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.jedan;
-                    break;
-                case 1:
-                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.dva;
-                    break;
-                case 2:
-                  //  AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.tri;
-                    break;
-                case 3:
-                   // AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.cetiri;
-                    break;
-                case 4:
-                  //  AnketeRepozitorijum.pitanjaOPregledu[indexPitanje].Ocena = OcenaPitanja.pet;
-                    break;
-            }
+            popuniAnketuViewModel = new PopuniAnketuViewModel(izabranZaAnketu);
+            this.DataContext = popuniAnketuViewModel;
         }
     }
 }

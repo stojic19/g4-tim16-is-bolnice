@@ -15,8 +15,9 @@ namespace Bolnica.Model.Rukovanja
     public class AnketeServis
     {
         private AnketeRepozitorijumInterfejs anketeRepozitorijum = new AnketeRepozitorijum();
-
-        public  bool DostupnaAnketaOBolnici(Pacijent pacijent)
+        private PreglediServis preglediServis = new PreglediServis();
+        private NaloziPacijenataServis naloziPacijentaServis = new NaloziPacijenataServis();
+        public bool DostupnaAnketaOBolnici(Pacijent pacijent)
         {
             DateTime novaAnketa = NadjiDatumPoslednjeAnketeOBolnici(pacijent).AddMonths(3);
             if (ProsloJeTriMesecaOdOcene(novaAnketa))
@@ -33,13 +34,13 @@ namespace Bolnica.Model.Rukovanja
 
         private DateTime NadjiDatumPoslednjeAnketeOBolnici(Pacijent pacijent)
         {
-           List<Anketa> anketePacijenta = SortirajPoDatumuRastuce(anketeRepozitorijum.NadjiSveAnketePacijentaOBolnici(pacijent));
-          
+            List<Anketa> anketePacijenta = SortirajPoDatumuRastuce(anketeRepozitorijum.NadjiSveAnketePacijentaOBolnici(pacijent));
+
             if (anketePacijenta.Count == 0)
                 return DateTime.Now.Date.AddMonths(-3);
             else
                 return anketePacijenta[0].OcenioBolnicu;
-            
+
         }
 
         public static List<Anketa> SortirajPoDatumuRastuce(List<Anketa> nesortiraneAnkete)
@@ -47,6 +48,14 @@ namespace Bolnica.Model.Rukovanja
             return nesortiraneAnkete.OrderByDescending(user => user.OcenioBolnicu).ToList();
         }
 
-        
+        public void DodajAnketu(Anketa anketa, String idPregleda)
+        {
+            Pregled pregled = preglediServis.PretraziPoId(idPregleda);
+            anketa.Pregled = pregled;
+            anketa.Pacijent = naloziPacijentaServis.PretraziPoId(pregled.Termin.Pacijent.KorisnickoIme);
+            anketeRepozitorijum.DodajObjekat(anketa);
+        }
+
+
     }
 }

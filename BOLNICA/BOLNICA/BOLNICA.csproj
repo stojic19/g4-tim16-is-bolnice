@@ -71,6 +71,7 @@
     <Compile Include="DTO\AlergenDTO.cs" />
     <Compile Include="DTO\AlergeniPrikazDTO.cs" />
     <Compile Include="DTO\AnamnezaDTO.cs" />
+    <Compile Include="DTO\AnketaDTO.cs" />
     <Compile Include="DTO\BeleskaDTO.cs" />
     <Compile Include="DTO\KartonPacijentaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="DTO\OpremaDTO.cs" />
     <Compile Include="DTO\OsobaDTO.cs" />
     <Compile Include="DTO\PacijentDTO.cs" />
+    <Compile Include="DTO\PitanjeDTO.cs" />
     <Compile Include="DTO\PodsetnikDTO.cs" />
     <Compile Include="DTO\PregledDTO.cs" />
     <Compile Include="DTO\ProstorDTO.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Konverter\AlergeniKonverter.cs" />
     <Compile Include="Konverter\AnamnezaKonverter.cs" />
+    <Compile Include="Konverter\AnketaKonverter.cs" />
     <Compile Include="Konverter\BeleskaKonverter.cs" />
     <Compile Include="Konverter\KartonKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Konverter\OdsustvoKonverter.cs" />
     <Compile Include="Konverter\OpremaKonverter.cs" />
     <Compile Include="Konverter\PacijentKonverter.cs" />
+    <Compile Include="Konverter\PitanjeKonverter.cs" />
     <Compile Include="Konverter\PregledKonverter.cs" />
     <Compile Include="Konverter\ProstorKonverter.cs" />
     <Compile Include="Konverter\RadniDanKonverter.cs" />
@@ -173,9 +177,11 @@
     <Compile Include="ViewModel\PacijentViewModel\KartonViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\KreirajPodsetnikViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PomeranjePregledaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\PopuniAnketuViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\RasporedTerminaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\SveAnketeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />

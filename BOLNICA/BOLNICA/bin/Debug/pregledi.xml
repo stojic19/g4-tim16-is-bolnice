@@ -2887,6 +2887,6 @@
       </Uput>
     </Uputi>
     <Alergeni />
-    <OcenjenPregled>false</OcenjenPregled>
+    <OcenjenPregled>true</OcenjenPregled>
   </Pregled>
 </ArrayOfPregled>

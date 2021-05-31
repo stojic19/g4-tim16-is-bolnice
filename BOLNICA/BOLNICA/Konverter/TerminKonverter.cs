@@ -43,7 +43,11 @@ namespace Bolnica.Konverter
         {
             return new Termin(getVrstaTermina(terminSaPodacima.TipTermina), terminSaPodacima.Datum, null, terminSaPodacima.Vreme);
         }
-
+        public Termin ZakazaniTerminDTOUModel(TerminDTO termin)
+        {
+            PacijentKonverter pacijentKonverter = new PacijentKonverter();
+            return new Termin(termin.IdTermina, termin.Datum, termin.Vreme, lekarKonverter.LekarDTOUModel(termin.Lekar), termin.Trajanje, termin.Prostor, termin.TipTermina, termin.IdPacijenta, Double.Parse(termin.Trajanje), pacijentKonverter.PacijentDTOUModel(termin.Pacijent));
+        }
 
     }
 }

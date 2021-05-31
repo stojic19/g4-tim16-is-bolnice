@@ -29,6 +29,16 @@ namespace Bolnica.Konverter
             return new PregledDTO(pregled.IdPregleda, terminKonverter.ZakazaniTerminModelUDTO(pregled.Termin, pregled.Termin.Pacijent.KorisnickoIme));
         }
 
+        public Pregled PregledDTOUModel(PregledDTO pregled)
+        {
+            List<Recept> recepti = new List<Recept>();
+            foreach (ReceptDTO recept in pregled.Recepti)
+                recepti.Add(receptKonverter.ReceptDTOuModel(recept));
+            return new Pregled(pregled.IdPregleda, terminKonverter.ZakazaniTerminDTOUModel(pregled.Termin),
+                anamnezaKonverter.AnamnezaDTOUModel(pregled.Anamneza), recepti, pregled.OcenjenPregled);
+
+        }
+
 
     }
 }
