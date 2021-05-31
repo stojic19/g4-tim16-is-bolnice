@@ -89,6 +89,7 @@
     <Compile Include="DTO\SastojakDTO.cs" />
     <Compile Include="DTO\TerapijaDTO.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
+    <Compile Include="DTO\UputDTO.cs" />
     <Compile Include="DTO\ZahtevDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
     <Compile Include="Komande\RelayCommand.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Konverter\SastojciKonverter.cs" />
     <Compile Include="Konverter\TerapijaKonverter.cs" />
     <Compile Include="Konverter\TerminKonverter.cs" />
+    <Compile Include="Konverter\UputKonverter.cs" />
     <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />

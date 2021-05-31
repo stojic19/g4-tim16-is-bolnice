@@ -32,7 +32,7 @@ namespace Bolnica.Kontroler
             naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
-        public Pacijent PretraziPoIdNeDTO(string idPacijenta)
+        public Pacijent PretraziPoIdNeDTO(string idPacijenta) //BRISI
         {
             return naloziPacijenataServis.PretraziPoId(idPacijenta);
         }
@@ -49,7 +49,7 @@ namespace Bolnica.Kontroler
 
         public void UkolniNalog(string pacijentZaUklanjanje)
         {
-           naloziPacijenataServis.UkolniNalog(pacijentZaUklanjanje);
+            naloziPacijenataServis.UkolniNalog(pacijentZaUklanjanje);
         }
 
         public bool NalogJeBlokiran(String korisnickoIme)

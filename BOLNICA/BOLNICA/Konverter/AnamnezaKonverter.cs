@@ -10,12 +10,14 @@ namespace Bolnica.Konverter
 {
     public class AnamnezaKonverter
     {
+
+        TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
+
         public AnamnezaDTO AnamnezaModelUDTO(Anamneza anamneza)
         {
             if (anamneza == null)
                 return new AnamnezaDTO();
             List<TerapijaDTO> terapije = new List<TerapijaDTO>();
-            TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
             foreach (Terapija terapija in anamneza.Terapije)
                 terapije.Add(terapijaKonverter.TerapijaModelUDTO(terapija));
             return new AnamnezaDTO(anamneza.IdAnamneze, anamneza.IdPacijenta, anamneza.Dijagnoza, terapije);
@@ -23,17 +25,41 @@ namespace Bolnica.Konverter
 
         public Anamneza AnamnezaDTOUModel(AnamnezaDTO anamneza)
         {
-            if (anamneza == null)
-                return new Anamneza();
+            if (anamneza == null) return new Anamneza();
+
             List<Terapija> terapije = new List<Terapija>();
-            TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
+
             if (anamneza.SveTerapije != null)
             {
                 foreach (TerapijaDTO terapija in anamneza.SveTerapije)
                     terapije.Add(terapijaKonverter.TerapijaDTOUModel(terapija));
             }
-           
+
             return new Anamneza(anamneza.IdAnamneze, anamneza.IdPacijenta, anamneza.Dijagnoza, terapije);
+        }
+
+        public AnamnezaDTO AnamnezaSaLekaromUDTO(Anamneza anamneza)
+        {
+            List<TerapijaDTO> terapije = new List<TerapijaDTO>();
+
+            foreach (Terapija terapija in anamneza.Terapije)
+            {
+                terapije.Add(terapijaKonverter.TerapijaModelUDTO(terapija));
+            }
+
+            return new AnamnezaDTO(anamneza.IdAnamneze, anamneza.ImeIPrezimeLekara, anamneza.Datum, terapije, anamneza.Dijagnoza, anamneza.IdLekara, anamneza.IdPacijenta);
+        }
+
+        public Anamneza AnamnezaSaLekaromUModel(AnamnezaDTO anamneza)
+        {
+            List<Terapija> terapije = new List<Terapija>();
+
+            foreach (TerapijaDTO terapija in anamneza.SveTerapije)
+            {
+                terapije.Add(terapijaKonverter.TerapijaDTOUModel(terapija));
+            }
+
+            return new Anamneza(anamneza.IdAnamneze, anamneza.IdLekara, anamneza.Lekar, anamneza.IdPacijenta, anamneza.Datum, anamneza.Dijagnoza, terapije);
         }
     }
 }

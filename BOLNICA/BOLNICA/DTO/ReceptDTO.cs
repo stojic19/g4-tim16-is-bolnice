@@ -12,7 +12,6 @@ namespace Bolnica.DTO
         private DateTime datum;
         private LekDTO lek;
 
-
         public String IdRecepta
         {
             get { return idRecepta; }
@@ -28,6 +27,7 @@ namespace Bolnica.DTO
             get { return lek; }
             set { lek = value; }
         }
+
         ReceptDTO() { }
 
         public ReceptDTO(string idRecepta, DateTime datum, LekDTO lek)
@@ -36,5 +36,6 @@ namespace Bolnica.DTO
             this.datum = datum;
             this.lek = lek;
         }
+
     }
 }

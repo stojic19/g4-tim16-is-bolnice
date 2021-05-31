@@ -2,11 +2,8 @@
 using Bolnica;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
-using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace Model
 {
@@ -18,7 +15,7 @@ namespace Model
         {
             naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
         }
-        
+
         public void IzmeniNalog(String stariId, Pacijent pacijentZaIZmenu)
         {
             Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
@@ -38,12 +35,17 @@ namespace Model
             naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentKojiSeMenja);
         }
 
+        public void IzmeniPacijentaSaKorisnickim(String stariId, Pacijent pacijentZaIZmenu)
+        {
+            naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentZaIZmenu);
+        }
+
         public void UkolniNalog(String idNalogaZaUklanjanje)
         {
             Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
             naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNalogaZaUklanjanje + "']");
         }
-        
+
         public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
         {
             foreach (Alergeni alergeni in DobaviAlergenePoIdPacijenta(idPacijenta))
@@ -78,21 +80,21 @@ namespace Model
         {
             return naloziPacijenataRepozitorijum.DobaviAlergenePacijenta(idPacijenta);
         }
-        public Boolean UkloniAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean UkloniAlergen(String idPacijenta, Alergeni alergen)
         {
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.UkloniAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             return true;
         }
-        public Boolean IzmeniAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean IzmeniAlergen(String idPacijenta, Alergeni alergen)
         {
             Pacijent pacijent = PretraziPoId(idPacijenta);
             pacijent.IzmeniAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
             return true;
         }
-        public Boolean DodajAlergen(String idPacijenta,Alergeni alergen)
+        public Boolean DodajAlergen(String idPacijenta, Alergeni alergen)
         {
             alergen.Lek = lekoviServis.PretraziPoID(alergen.IdAlergena);
             Pacijent pacijent = PretraziPoId(idPacijenta);
