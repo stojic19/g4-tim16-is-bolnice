@@ -88,7 +88,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
 
             obavestenjaKontroler.DodajPodsetnikOAnamnezi(Podsetnik, Pregled.Termin.IdPacijenta);
-            Poruka = "*Beleška uspešno sačuvana!";
+            Poruka = "*Podsetnik uspešno sačuvan!";
 
 
         }

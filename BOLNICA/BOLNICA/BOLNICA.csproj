@@ -182,6 +182,7 @@
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\RasporedTerminaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\SveAnketeViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\TerapijaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />

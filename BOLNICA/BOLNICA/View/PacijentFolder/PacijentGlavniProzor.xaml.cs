@@ -22,19 +22,16 @@ namespace Bolnica
 
     public partial class PacijentGlavniProzor : Window
     {
-        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-
+       //NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private static Grid GlavniSadrzaj;
-        public static Pacijent ulogovani = null;
         private String korisnickoIme;
         public PacijentGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
             this.korisnickoIme = korisnickoIme;
-            ulogovani = naloziPacijenataKontroler.PretraziPoIdNeDTO(korisnickoIme);
             GlavniSadrzaj = this.MainPanel;
             MainPanel.Children.Clear();
-            MainPanel.Children.Add(new PrikazObavestenjaPacijent());
+            MainPanel.Children.Add(new PrikazObavestenjaPacijent(korisnickoIme));
         }
         
         public static Grid GetGlavniSadrzaj()
@@ -57,7 +54,7 @@ namespace Bolnica
 
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazObavestenjaPacijent());
+            PromeniPrikaz(new PrikazObavestenjaPacijent(korisnickoIme));
             naslovStrane.Content = "          Obaveštenja";
         }
 
@@ -75,7 +72,7 @@ namespace Bolnica
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
-            PromeniPrikaz(new PrikazTerapijePacijent());
+            PromeniPrikaz(new PrikazTerapijePacijent(korisnickoIme));
             naslovStrane.Content = "          Terapija";
         }
 

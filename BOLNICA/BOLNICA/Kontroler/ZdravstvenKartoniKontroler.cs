@@ -14,6 +14,7 @@ namespace Bolnica.Kontroler
         AnamnezaKonverter anamnezaKonverter = new AnamnezaKonverter();
         UputKonverter uputiKonverter = new UputKonverter();
         LekKonverter lekoviKonverter = new LekKonverter();
+        TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
 
         public List<LekDTO> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
         {
@@ -34,9 +35,12 @@ namespace Bolnica.Kontroler
             zdravstveniKartoniServis.DodajRecept(idPacijenta, receptKonverter.ReceptDTOuModel(novRecept));
         }
 
-        public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
+        public List<TerapijaDTO> DobaviSveTerapijePacijenta(String idPacijenta)
         {
-            return zdravstveniKartoniServis.DobaviSveTerapijePacijenta(idPacijenta);
+            List<TerapijaDTO> terapijePacijenta = new List<TerapijaDTO>();
+            foreach (Terapija terapija in zdravstveniKartoniServis.DobaviSveTerapijePacijenta(idPacijenta))
+                terapijePacijenta.Add(terapijaKonverter.TerapijaModelUDTO(terapija));
+            return terapijePacijenta;
         }
 
         public void DodajAnamnezu(AnamnezaDTO novaAnamneza)

@@ -54,25 +54,7 @@ namespace Bolnica.Model
             naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
         }
 
-        public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
-        {
-            List<Terapija> pomocna = new List<Terapija>();
-
-            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
-
-            foreach (Anamneza a in p.ZdravstveniKarton.Anamneze)
-            {
-                if (a.IdPacijenta.Equals(p.KorisnickoIme))
-                {
-                    foreach (Terapija t in a.Terapije)
-                    {
-
-                        pomocna.Add(t);
-                    }
-                }
-            }
-            return pomocna;
-        }
+       
 
         public void DodajAnamnezu(Anamneza novaAnamneza)
         {
@@ -142,6 +124,47 @@ namespace Bolnica.Model
                 anamnezePacijenta.Add(a);
             }
             return anamnezePacijenta;
+        }
+
+        public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
+        {
+            List<Terapija> terapijePacijenta = new List<Terapija>();
+            foreach (Anamneza anamneza in DobaviSveAnamnezePacijenta(idPacijenta))
+            {
+                foreach (Terapija t in anamneza.Terapije)
+                    terapijePacijenta.Add(t);
+            }
+
+            return UkloniStareTerapije(terapijePacijenta);
+        }
+
+        private List<Anamneza> DobaviSveAnamnezePacijenta(String idPacijenta)
+        {
+            Pacijent pacijent = naloziPacijenataServis.PretraziPoId(idPacijenta);
+            List<Anamneza> anamnezePacijenta = new List<Anamneza>();
+            foreach (Anamneza anamneza in pacijent.ZdravstveniKarton.Anamneze)
+            {
+                if (anamneza.IdPacijenta.Equals(pacijent.KorisnickoIme))
+                    anamnezePacijenta.Add(anamneza);
+            }
+
+            return anamnezePacijenta;
+        }
+
+        private List<Terapija> UkloniStareTerapije(List<Terapija> sveTerapije)
+        {
+            List<Terapija> terapijeUSadasnjosti = new List<Terapija>();
+            foreach (Terapija terapija in sveTerapije)
+            {
+                if (DatumTerapijeJeUSadasnjosti(terapija))
+                    terapijeUSadasnjosti.Add(terapija);
+            }
+            return terapijeUSadasnjosti;
+        }
+        private bool DatumTerapijeJeUSadasnjosti(Terapija terapija)
+        {
+            if (DateTime.Compare(DateTime.Now.Date, terapija.KrajTerapije) <= 0) return true;
+            return false;
         }
 
     }

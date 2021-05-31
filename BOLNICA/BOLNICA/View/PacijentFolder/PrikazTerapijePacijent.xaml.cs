@@ -1,6 +1,7 @@
 ﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.PacijentFolder;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.ObjectModel;
@@ -11,33 +12,13 @@ namespace Bolnica
 {
     public partial class PrikazTerapijePacijent : UserControl
     {
-        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
-        public static ObservableCollection<Terapija> sveTerapijePacijenta { get; set; }
-        public PrikazTerapijePacijent()
+        TerapijaViewModel terapijaViewModel;
+        public PrikazTerapijePacijent(String korisnickoIme)
         {
             InitializeComponent();
-            sveTerapijePacijenta = new ObservableCollection<Terapija>();
-
-            foreach (Terapija t in zdravstvenKartoniKontroler.DobaviSveTerapijePacijenta(PacijentGlavniProzor.ulogovani.KorisnickoIme))
-            {
-                if(DateTime.Compare(DateTime.Now.Date,t.KrajTerapije)<=0)
-                sveTerapijePacijenta.Add(t);
-            }
-
-            LekoviLista.ItemsSource = sveTerapijePacijenta;
-        }
-
-    
-
-        private void izvestaj_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void informacije_Click(object sender, RoutedEventArgs e)
-        {
-            DetaljiTerapije prikazDetalja = new DetaljiTerapije((Terapija)LekoviLista.SelectedItem);
-            prikazDetalja.Show();
+            terapijaViewModel = new TerapijaViewModel(korisnickoIme);
+            Lekovi.ItemsSource = terapijaViewModel.TerapijePacijenta;
+            this.DataContext = terapijaViewModel;
         }
     }
 }
