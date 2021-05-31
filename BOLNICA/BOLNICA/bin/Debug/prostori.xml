@@ -88,33 +88,6 @@
     <Oprema />
   </Prostor>
   <Prostor>
-    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
-    <IdProstora>ee620d42-3a17-432a-9bf6-cec653a4dfc9</IdProstora>
-    <NazivProstora>p44</NazivProstora>
-    <VrstaProstora>soba</VrstaProstora>
-    <Sprat>2</Sprat>
-    <Kvadratura>44</Kvadratura>
-    <JeRenoviranje>false</JeRenoviranje>
-    <Oprema />
-  </Prostor>
-  <Prostor>
-    <BrojSlobodnihKreveta>2</BrojSlobodnihKreveta>
-    <IdProstora>P33</IdProstora>
-    <NazivProstora>p1</NazivProstora>
-    <VrstaProstora>soba</VrstaProstora>
-    <Sprat>66</Sprat>
-    <Kvadratura>6</Kvadratura>
-    <JeRenoviranje>false</JeRenoviranje>
-    <Oprema>
-      <Oprema>
-        <IdOpreme>s1</IdOpreme>
-        <NazivOpreme>krevet</NazivOpreme>
-        <VrstaOpreme>staticka</VrstaOpreme>
-        <Kolicina>2</Kolicina>
-      </Oprema>
-    </Oprema>
-  </Prostor>
-  <Prostor>
     <BrojSlobodnihKreveta>5</BrojSlobodnihKreveta>
     <IdProstora>adsda</IdProstora>
     <NazivProstora>Soba1</NazivProstora>
@@ -130,5 +103,25 @@
         <Kolicina>1</Kolicina>
       </Oprema>
     </Oprema>
+  </Prostor>
+  <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+    <IdProstora>8243dcea-d1e9-44f8-a051-dffa192a7587</IdProstora>
+    <NazivProstora>p1111</NazivProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>25</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema />
+  </Prostor>
+  <Prostor>
+    <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+    <IdProstora>6e6b8a81-16dc-4ff2-8d77-d40013134d5c</IdProstora>
+    <NazivProstora>p2222</NazivProstora>
+    <VrstaProstora>soba</VrstaProstora>
+    <Sprat>2</Sprat>
+    <Kvadratura>25</Kvadratura>
+    <JeRenoviranje>false</JeRenoviranje>
+    <Oprema />
   </Prostor>
 </ArrayOfProstor>

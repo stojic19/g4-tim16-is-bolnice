@@ -18,12 +18,24 @@ namespace Bolnica.Model
         public List<Prostor> ProstoriKojiSeDodaju = new List<Prostor>();
 
         public Renoviranje() { }
+        public Renoviranje(String id, Prostor prostor, DateTime argStartDay, DateTime argEndDay,List<Prostor> prostoriKojiSeBrisu, List<Prostor> prostoriKojiSeDodaju)
+        {
+            IdRenoviranja = id;
+            Prostor = prostor;
+            PocetniDatum = argStartDay;
+            DatumKraja = argEndDay;
+            ProstoriKojiSeBrisu = prostoriKojiSeBrisu;
+            ProstoriKojiSeDodaju = prostoriKojiSeDodaju;
+
+        }
+
         public Renoviranje(String id, Prostor prostor, DateTime argStartDay, DateTime argEndDay)
         {
             IdRenoviranja = id;
             Prostor = prostor;
             PocetniDatum = argStartDay;
             DatumKraja = argEndDay;
+
         }
 
 

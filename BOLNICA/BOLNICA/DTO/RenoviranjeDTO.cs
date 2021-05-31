@@ -59,6 +59,8 @@ namespace Bolnica.DTO
             this.prostor = prostor;
             this.pocetniDatum = pocetniDatum;
             this.datumKraja = datumKraja;
+            this.prostoriKojiSeBrisu = new List<ProstorDTO>();
+            this.prostoriKojiSeDodaju = new List<ProstorDTO>();
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Bolnica.Kontroler
 
         public void IzmeniLek(LekDTO noviPodaci)
         {
-            zahtjeviServis.IzmeniLek(lekKonverter.LekDTOUModel(noviPodaci));
+            zahtjeviServis.IzmeniLek(lekKonverter.LekSaKolicinomModel(noviPodaci));
         }
 
         public void UklanjanjeLeka(String idLeka)
@@ -83,6 +83,5 @@ namespace Bolnica.Kontroler
 
             return sastojciLeka;
         }
-
     }
 }

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRenoviranje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Renoviranje>
+    <ProstoriKojiSeBrisu />
+    <ProstoriKojiSeDodaju />
     <IdRenoviranja>d006a69a-f540-47c7-822e-6c33480c9140</IdRenoviranja>
     <Prostor>
       <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>

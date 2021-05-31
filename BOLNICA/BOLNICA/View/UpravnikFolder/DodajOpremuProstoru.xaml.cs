@@ -3,6 +3,7 @@ using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,17 +22,27 @@ namespace Bolnica
 
     public partial class DodajOpremuProstoru : Window
     {
-        private List<OpremaDTO> oprema;
+        public static ObservableCollection<OpremaDTO> Oprema { get; set; }
         private string IdProstora;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         OpremaKontroler opremaKontroler = new OpremaKontroler();
 
         public DodajOpremuProstoru(string idProstora)
         {
-            InitializeComponent();
+            /*InitializeComponent();
             oprema = opremaKontroler.SvaOprema();
-            this.DataContext = this;
+            this.DataContext = this;*/
+            InitializeComponent();
+
             IdProstora = idProstora;
+            Oprema = new ObservableCollection<OpremaDTO>();
+
+            foreach (OpremaDTO o in opremaKontroler.SvaOprema())
+            {
+                Oprema.Add(o);
+            }
+
+            this.DataContext = this;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

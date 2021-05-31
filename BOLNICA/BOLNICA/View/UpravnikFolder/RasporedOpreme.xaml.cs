@@ -25,7 +25,7 @@ namespace Bolnica
     {
 
 
-        public ObservableCollection<OpremaDTO> oprema;
+        public static ObservableCollection<OpremaDTO> Oprema { get; set; }
         public static string IdProstorije { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
@@ -33,12 +33,12 @@ namespace Bolnica
         {
             InitializeComponent();
             this.DataContext = this;
-            oprema = new ObservableCollection<OpremaDTO>();
+            Oprema = new ObservableCollection<OpremaDTO>();
             foreach(OpremaDTO o in prostoriKontroler.PretraziProstorPoId(idProstorije).Oprema){
-                oprema.Add(o);
+                Oprema.Add(o);
             }
             
-            dataGridRasporedOpreme.ItemsSource = oprema;
+            dataGridRasporedOpreme.ItemsSource = Oprema;
             IdProstorije = idProstorije;
         }
 

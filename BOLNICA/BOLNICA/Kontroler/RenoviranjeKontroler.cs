@@ -2,6 +2,7 @@
 using Bolnica.Konverter;
 using Bolnica.Model;
 using Bolnica.Servis;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Bolnica.Kontroler
     {
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
         RenoviranjeKonverter renoviranjeKonverter = new RenoviranjeKonverter();
+        ProstorKonverter prostorKonverter = new ProstorKonverter();
 
         public List<RenoviranjeDTO> SvaRenoviranja()
         {
@@ -22,9 +24,24 @@ namespace Bolnica.Kontroler
                 renoviranje.Add(renoviranjeKonverter.RenoviranjeModelUDTO(r));
             return renoviranje;
         }
+
+        
         public void DodajZaRenoviranje(RenoviranjeDTO renoviranje)
         {
-            renoviranjeServis.DodajZaRenoviranje(renoviranjeKonverter.RenoviranjeDTOUModel(renoviranje));
+            List<Prostor> prostoriKojiSeBrisu = new List<Prostor>();
+            List<Prostor> prostoriKojiSeDodaju = new List<Prostor>();
+
+            foreach (ProstorDTO p in renoviranje.ProstoriKojiSeBrisu)
+            {
+                prostoriKojiSeBrisu.Add(prostorKonverter.ProstorDTOUModel(p));
+            }
+
+            foreach (ProstorDTO p in renoviranje.ProstoriKojiSeDodaju)
+            {
+                prostoriKojiSeDodaju.Add(prostorKonverter.ProstorDTOUModel(p));
+            }
+
+            renoviranjeServis.DodajZaRenoviranje(new Renoviranje(renoviranje.IdRenoviranja, prostorKonverter.ProstorDTOUModel(renoviranje.Prostor), renoviranje.PocetniDatum, renoviranje.DatumKraja,prostoriKojiSeBrisu,prostoriKojiSeDodaju));
 
         }
 

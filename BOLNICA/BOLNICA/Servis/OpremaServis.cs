@@ -34,6 +34,18 @@ namespace Model
             opremaRepozitorijum.ObrisiObjekat("//ArrayOfOprema/Oprema[IdOpreme='" + idOpreme + "']");
         }
 
+        public Boolean ProvjeriValidnostNaziva(String nazivOpreme)
+        {
+            foreach (Oprema o in opremaRepozitorijum.DobaviSveObjekte())
+            {
+                if (o.NazivOpreme.Equals(nazivOpreme))
+                {
+                    System.Windows.MessageBox.Show("Postoji prostor sa takvim nazivom!");
+                    return false;
+                }
+            }
+            return true;
+        }
         public Oprema PretraziPoId(String idOpreme)
         {
             return opremaRepozitorijum.PretraziOpremuPoId(idOpreme);

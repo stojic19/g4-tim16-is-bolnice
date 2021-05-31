@@ -36,10 +36,12 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            OpremaDTO o = new OpremaDTO(Guid.NewGuid().ToString(), this.nazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(this.kolicina.Text));
-            opremaKontroler.DodajOpremu(o);
-
-            this.Close();
+            if (opremaKontroler.ProvjeriValidnostNaziva(this.nazivOpreme.Text))
+            {
+                OpremaDTO o = new OpremaDTO(Guid.NewGuid().ToString(), this.nazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(this.kolicina.Text));
+                opremaKontroler.DodajOpremu(o);
+                this.Close();
+            }
         }
 
         private VrsteOpreme ProvjeriVrstuOpreme()

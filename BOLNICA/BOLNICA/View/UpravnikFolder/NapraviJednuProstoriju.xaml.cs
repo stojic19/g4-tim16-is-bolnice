@@ -25,14 +25,15 @@ namespace Bolnica
 
     public partial class NapraviJednuProstoriju : UserControl
     {
-        private List<ProstorDTO> ProstoriKojiSeBrisu = new List<ProstorDTO>();
+        private List<ProstorDTO> ProstoriKojiSeBrisu;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
 
         public NapraviJednuProstoriju(List<ProstorDTO> prostoriZaRenoviranje)
         {
             InitializeComponent();
-            ProstoriKojiSeBrisu = prostoriZaRenoviranje;
+            ProstoriKojiSeBrisu = new List<ProstorDTO>();
+            ProstoriKojiSeBrisu= prostoriZaRenoviranje;
 
         }
 

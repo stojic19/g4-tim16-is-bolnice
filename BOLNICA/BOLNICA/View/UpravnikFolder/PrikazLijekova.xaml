@@ -26,10 +26,10 @@
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" SelectionChanged="dataGridLijekovi_SelectionChanged">
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Header=" Naziv lijeka" Binding="{Binding Lijek.NazivLeka}" Width="80*"/>
-                    <DataGridTextColumn Header=" Jacina lijeka" Binding="{Binding Lijek.Jacina}" Width="70*"/>
-                    <DataGridTextColumn Header=" Kolicina" Binding="{Binding Lijek.Kolicina}" Width="67*"/>
-                    <DataGridTextColumn Header=" Je verifikovan" Binding="{Binding Lijek.Verifikacija}" Width="80*"/>
+                    <DataGridTextColumn Header=" Naziv lijeka" Binding="{Binding Lek.NazivLeka}" Width="80*"/>
+                    <DataGridTextColumn Header=" Jacina lijeka" Binding="{Binding Lek.Jacina}" Width="70*"/>
+                    <DataGridTextColumn Header=" Kolicina" Binding="{Binding Lek.Kolicina}" Width="67*"/>
+                    <DataGridTextColumn Header=" Je verifikovan" Binding="{Binding Lek.Verifikacija}" Width="80*"/>
 
 
                 </DataGrid.Columns>

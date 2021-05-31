@@ -19,7 +19,7 @@ namespace Bolnica.Repozitorijum
 
         public void IzmenaOpreme(Oprema noviPodaci)
         {
-            ObrisiObjekat("//ArrayOfOprema/Oprema[IdOprema='" + noviPodaci.IdOpreme + "']");
+            ObrisiObjekat("//ArrayOfOprema/Oprema[IdOpreme='" + noviPodaci.IdOpreme + "']");
             DodajObjekat(noviPodaci);
         }
     }

@@ -51,12 +51,12 @@ namespace Bolnica
         private void Izmjena_Click(object sender, RoutedEventArgs e)
         {
 
-            Zahtjev izabranZaMenjanje = (Zahtjev)dataGridLijekovi.SelectedItem;
+            ZahtjevDTO izabranZaMenjanje = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {
 
-                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.Lijek.IDLeka);
+                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.Lek.IdLeka);
                 izmjena.Show();
             }
             else
@@ -67,23 +67,18 @@ namespace Bolnica
 
         private void Uklanjanje_Click(object sender, RoutedEventArgs e)
         {
-            Zahtjev izabranZaBrisanje = (Zahtjev)dataGridLijekovi.SelectedItem;
+            ZahtjevDTO izabranZaBrisanje = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
 
-                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.Lijek.IDLeka);
+                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.Lek.IdLeka);
                 uklanjanje.Show();
             }
             else
             {
                 MessageBox.Show("Izaberite lijek koji želite da uklonite!");
             }
-        }
-
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
         }
 
         private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,13 +88,13 @@ namespace Bolnica
 
         private void Detalji_Click(object sender, RoutedEventArgs e)
         {
-            Zahtjev izabran = (Zahtjev)dataGridLijekovi.SelectedItem;
+            ZahtjevDTO izabran = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
 
             if (izabran != null)
             {
 
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.Lijek.IDLeka));
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.Lek.IdLeka));
             }
             else
             {

@@ -30,6 +30,13 @@ namespace Bolnica.Kontroler
             opremaServis.UkloniOpremu(idOpreme);
         }
 
+        public Boolean ProvjeriValidnostNaziva(String nazivOpreme)
+        {
+            if (opremaServis.ProvjeriValidnostNaziva(nazivOpreme))
+                return true;
+            return false;
+        }
+
         public OpremaDTO PretraziPoId(String idOpreme)
         {
             return opremaKonverter.OpremaModelUOpremaDTO(opremaServis.PretraziPoId(idOpreme));

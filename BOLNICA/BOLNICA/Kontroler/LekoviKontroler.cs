@@ -44,7 +44,7 @@ namespace Bolnica.Kontroler
             {
                 konvertovaniSastojci.Add(sastojciKonverter.SastojakDTOuModel(s));
             }
-            lekoviServis.IzmenaLeka(lekKonverter.LekDTOUModel(noviPodaci), konvertovaniSastojci);
+            lekoviServis.IzmenaLeka(lekKonverter.LekSaKolicinomModel(noviPodaci), konvertovaniSastojci);
         }
 
         public void IzmenaZamenskihLekova(String idLeka, List<LekDTO> noviZamenski)
@@ -52,7 +52,7 @@ namespace Bolnica.Kontroler
             List<Lek> zamenskiLekovi = new List<Lek>();
             foreach (LekDTO zamena in noviZamenski)
             {
-                zamenskiLekovi.Add(lekKonverter.LekDTOUModel(zamena));
+                zamenskiLekovi.Add(lekKonverter.LekSaKolicinomModel(zamena));
             }
 
             lekoviServis.IzmenaZamenskihLekova(idLeka, zamenskiLekovi);

@@ -30,7 +30,6 @@ namespace Model
             Jacina = jacina;
             Kolicina = kolicina;
         }
-
         public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, string proizvodjac, List<Sastojak> sastojci, bool verifikacija)
         {
             IDLeka = iDLeka;

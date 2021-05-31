@@ -25,6 +25,7 @@ namespace Bolnica
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } 
         String IDLeka = null;
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        LekoviKontroler lekKontroler = new LekoviKontroler();
         public DetaljiOLijeku(String id)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Bolnica
             this.DataContext = this;
             Sastojci = new ObservableCollection<SastojakDTO>();
 
-            foreach (SastojakDTO s in izabran.Sastojci)
+            foreach (SastojakDTO s in lekKontroler.DobaviSastojkeLeka(IDLeka))
             {
                 Sastojci.Add(s);
             }

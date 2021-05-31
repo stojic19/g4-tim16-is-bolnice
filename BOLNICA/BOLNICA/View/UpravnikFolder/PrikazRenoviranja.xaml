@@ -11,7 +11,7 @@
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,95.6,97.4" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header=" ID prostora" Binding="{Binding Prostor.IdProstora}" Width="67*"/>
+                <DataGridTextColumn Header=" ID prostora" Binding="{Binding Prostor.NazivProstora}" Width="67*"/>
                 <DataGridTextColumn Header=" Vrsta prostora" Binding="{Binding Prostor.VrstaProstora}" Width="80*"/>
                 <DataGridTextColumn Header=" Datum pocetka " Binding="{Binding PocetniDatum}" Width="95*"/>
                 <DataGridTextColumn Header=" Datum kraja" Binding="{Binding DatumKraja}" Width="67*"/>
