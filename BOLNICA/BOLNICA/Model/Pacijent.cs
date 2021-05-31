@@ -12,7 +12,8 @@ namespace Model
         private ZdravstveniKarton zdravstveniKarton;
         private int zloupotrebioSistem;
         private bool blokiran;
-
+        private DateTime poslednjaZloupotreba; 
+        public DateTime PoslednjaZloupotreba { get => poslednjaZloupotreba; set => poslednjaZloupotreba = value; }
         public VrsteNaloga VrstaNaloga { get => vrstaNaloga; set => vrstaNaloga = value; }
         public ZdravstveniKarton ZdravstveniKarton { get => zdravstveniKarton; set => zdravstveniKarton = value; }
         public int ZloupotrebioSistem { get => zloupotrebioSistem; set => zloupotrebioSistem = value; }
@@ -41,6 +42,7 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
+            DateTime? poslednjaZloupotreba = null;
         }
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
@@ -62,6 +64,7 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
+            DateTime? poslednjaZloupotreba = null;
         }
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
@@ -82,6 +85,7 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
+            DateTime? poslednjaZloupotreba = null;
         }
         public String DobaviPolTekst()
         {

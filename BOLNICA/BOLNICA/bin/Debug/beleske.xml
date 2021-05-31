@@ -12,4 +12,35 @@
       <Terapije />
     </Anamneza>
   </Beleska>
+  <Beleska>
+    <Datum>2021-05-31T12:10:57.6356694+02:00</Datum>
+    <Tekst>Neka druga beleska</Tekst>
+    <IdBeleske>93533f5e-d362-499f-9caf-f73e9043c76a</IdBeleske>
+    <Anamneza>
+      <IdAnamneze>663c1ab7-4e0b-42b9-b71a-02247b1216c0</IdAnamneze>
+      <IdPacijenta>magdalena</IdPacijenta>
+      <Datum>0001-01-01T00:00:00</Datum>
+      <Dijagnoza>Nova anamneza</Dijagnoza>
+      <Terapije>
+        <Terapija>
+          <IDTerapije>4bd46eec-5db3-4dfa-9c20-40a6fc0ecf07</IDTerapije>
+          <IDAnamneze>663c1ab7-4e0b-42b9-b71a-02247b1216c0</IDAnamneze>
+          <PocetakTerapije>2021-06-01T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-06-04T00:00:00</KrajTerapije>
+          <Kolicina>3</Kolicina>
+          <Satnica>8</Satnica>
+          <UputsvoKonzumiranja>Pij</UputsvoKonzumiranja>
+          <PreporucenLek>
+            <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+            <NazivLeka>Buscopan</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>0</Kolicina>
+            <Sastojci />
+            <Verifikacija>false</Verifikacija>
+            <Zamene />
+          </PreporucenLek>
+        </Terapija>
+      </Terapije>
+    </Anamneza>
+  </Beleska>
 </ArrayOfBeleska>

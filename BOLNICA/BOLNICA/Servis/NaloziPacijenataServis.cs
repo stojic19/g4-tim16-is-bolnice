@@ -103,22 +103,33 @@ namespace Model
             return true;
         }
 
-        public void IzmeniStanjeNalogaPacijenta(Pacijent pacijentZaIzmenu)
+        public void IzmeniStanjeNalogaPacijenta(Pacijent pacijent)
         {
-            Pacijent pacijent = DetektujZloupotrebuSistema(pacijentZaIzmenu);
-            if (pacijent.ZloupotrebioSistem > 5)
-                pacijent.Blokiran = true;
+            int broj = pacijent.ZloupotrebioSistem + 1;
+            pacijent.ZloupotrebioSistem = broj;
+            if (PrekoracioBrojZloupotreba(pacijent))
+            {
+                BlokirajNalogPacijenta(pacijent);
+                return;
+            }
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }
-
-
-        public Pacijent DetektujZloupotrebuSistema(Pacijent pacijent)
+        private void BlokirajNalogPacijenta(Pacijent pacijent)
         {
-            int brojZloupotreba = pacijent.ZloupotrebioSistem + 1;
-            pacijent.ZloupotrebioSistem = brojZloupotreba;
-            return pacijent;
+            pacijent.Blokiran = true;
+            pacijent.PoslednjaZloupotreba = DateTime.Now.Date;
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
+        }
+        private bool PrekoracioBrojZloupotreba(Pacijent pacijent)
+        {
+            if (pacijent.ZloupotrebioSistem > 5)
+                return true;
+            return false;
         }
 
+
+
+        //
         public bool NalogJeBlokiran(String korisnickoIme)
         {
             if (PretraziPoId(korisnickoIme).Blokiran)
@@ -154,6 +165,51 @@ namespace Model
                 }
             }
             return true;
+        }
+       
+        public bool ProveraNalogaPacijenta(String korisnickoIme)
+        {
+            Pacijent pacijent = PretraziPoId(korisnickoIme);
+            if (JeBlokiran(pacijent))
+            {
+                if (ProsloJe30DanaOdZloupotrebe(pacijent))
+                {
+                    odblokirajPacijenta(pacijent);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (ProsloJe30DanaOdZloupotrebe(pacijent))
+                    resetujZloupotrebuSistema(pacijent);
+            }
+            return true;
+        }
+        public bool ProsloJe30DanaOdZloupotrebe(Pacijent pacijent)
+        {
+            if (DateTime.Compare(DateTime.Now.Date.AddDays(30), pacijent.PoslednjaZloupotreba.Date) > 0)
+                return true;
+            return false;
+        }
+        private void odblokirajPacijenta(Pacijent pacijent)
+        {
+            pacijent.ZloupotrebioSistem = 0;
+            pacijent.Blokiran = false;
+
+        }
+        private void resetujZloupotrebuSistema(Pacijent pacijent)
+        {
+            pacijent.ZloupotrebioSistem = 0;
+        }
+        private bool JeBlokiran(Pacijent pacijent)
+        {
+            if (pacijent.Blokiran)
+                return true;
+            return false;
         }
     }
 }

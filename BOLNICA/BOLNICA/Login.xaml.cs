@@ -29,7 +29,7 @@ namespace Bolnica
         List<Osoba> Sekretari = new List<Osoba>();
         List<PacijentDTO> Pacijenti = new List<PacijentDTO>();
         List<LekarDTO> Lekari = new List<LekarDTO>();
-
+      
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
@@ -127,7 +127,7 @@ namespace Bolnica
                 {
                     if (p.Lozinka.Equals(password.Password))
                     {
-                        if (!ProveraNalogaPacijenta(p))
+                        if (!naloziPacijenataKontroler.ProveraNalogaPacijenta(p.KorisnickoIme))
                             return;
                         PacijentGlavniProzor pgp = new PacijentGlavniProzor(p.KorisnickoIme);
                         pgp.Show();
@@ -146,15 +146,7 @@ namespace Bolnica
             return;
         }
 
-        private bool ProveraNalogaPacijenta(PacijentDTO pacijent)
-        {
-            if (pacijent.Blokiran)
-            {
-                System.Windows.MessageBox.Show("Vaš nalog je blokiran! Kontaktirajte sekretara!");
-                return false;
-            }
-            return true;
-        }
+        
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

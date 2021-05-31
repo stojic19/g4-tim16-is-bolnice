@@ -69,5 +69,9 @@ namespace Bolnica.Kontroler
         {
             return pacijentKonverter.PacijentModelUPacijentDTO(naloziPacijenataServis.PretraziPoId(koricnickoIme));
         }
+        public bool ProveraNalogaPacijenta(String korisnickoIme)
+        {
+            return naloziPacijenataServis.ProveraNalogaPacijenta(korisnickoIme);
+        }
     }
 }

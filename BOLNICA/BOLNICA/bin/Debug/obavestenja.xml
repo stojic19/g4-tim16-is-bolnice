@@ -792,4 +792,36 @@ vremenski interval između doza: dsah.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>d6e84e25-b941-42a6-b6c0-d723fefd12f9</IdObavestenja>
+    <Naslov>naslov obavestenja</Naslov>
+    <Tekst>Neka druga beleska</Tekst>
+    <Datum>2021-05-31T12:10:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>1b56474f-8a7c-4018-931d-f52ebe676de8</IdObavestenja>
+    <Naslov>naslov obavestenja</Naslov>
+    <Tekst>Neka druga beleska</Tekst>
+    <Datum>2021-06-01T12:10:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>e21c20d2-d5fa-4850-83e8-f5ec323baccc</IdObavestenja>
+    <Naslov>naslov obavestenja</Naslov>
+    <Tekst>Neka druga beleska</Tekst>
+    <Datum>2021-06-02T12:10:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>f3b70ef3-fb55-4509-91f8-e69deea1205b</IdObavestenja>
+    <Naslov>naslov obavestenja</Naslov>
+    <Tekst>Neka druga beleska</Tekst>
+    <Datum>2021-06-03T12:10:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>
