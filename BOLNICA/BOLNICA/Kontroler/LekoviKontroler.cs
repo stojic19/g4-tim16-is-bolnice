@@ -26,9 +26,9 @@ namespace Bolnica.Kontroler
             return sviLekoviDTO;
         }
 
-        public void DodajLek(Lek noviLek)
+        public void DodajLek(LekDTO noviLek)
         {
-            lekoviServis.DodajLek(noviLek);
+            lekoviServis.DodajLek(lekKonverter.LekDTOUModel(noviLek));
         }
 
         public LekDTO PretraziPoID(String sifraLeka)

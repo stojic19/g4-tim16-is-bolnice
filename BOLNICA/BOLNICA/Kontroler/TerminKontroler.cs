@@ -42,17 +42,6 @@ namespace Bolnica.Kontroler
             return terminiPacijenta;
         }
 
-
-        public Termin DobaviSlobodanTerminPoId(String idTermina)
-        {
-            return slobodniTerminiServis.PretraziPoId(idTermina);
-        }
-
-        public Termin DobaviZakazanTerminPoId(String idTermina)
-        {
-            return zakazaniTerminiServis.DobaviZakazanTerminPoId(idTermina);
-        }
-
         public TerminDTO DobaviZakazanTerminDTO(String idTermina)
         {
             Termin t = zakazaniTerminiServis.DobaviZakazanTerminPoId(idTermina);
@@ -79,7 +68,7 @@ namespace Bolnica.Kontroler
 
         public void OtkaziPregledPacijent(TerminDTO termin)
         {
-            Termin terminZaOtkazivanje = DobaviZakazanTerminPoId(termin.IdTermina);
+            Termin terminZaOtkazivanje = zakazaniTerminiServis.DobaviZakazanTerminPoId(termin.IdTermina);
             zakazaniTerminiServis.OtkaziPregledPacijent(terminZaOtkazivanje);
         }
 
@@ -155,8 +144,8 @@ namespace Bolnica.Kontroler
 
         public void IzmeniTerminLekar(TerminDTO stariTermin, TerminDTO noviTermin)
         {
-            Termin stari = DobaviZakazanTerminPoId(stariTermin.IdTermina);
-            Termin novi = DobaviSlobodanTerminPoId(noviTermin.IdTermina);
+            Termin stari = zakazaniTerminiServis.DobaviZakazanTerminPoId(stariTermin.IdTermina);
+            Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
             zakazaniTerminiServis.IzmeniTermin(stari, novi);
         }
         public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String lekar)

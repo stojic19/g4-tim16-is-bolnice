@@ -16,14 +16,20 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="310*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="260*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label  Content="Pretraga rasporeda po datumu:" VerticalAlignment="Center" />
+            <TextBox  Height="25" Width="150" Margin="7,8,57.8,7" Name="pretragaDatuma" TextChanged="pretragaDatuma_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        </StackPanel>
+
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="0" Grid.ColumnSpan="4"
-                  MinWidth="800" MinHeight="300" Margin="17.5 , 10" Width="800">
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
+                  MinWidth="800" MinHeight="260" Margin="17.5 , 10" Width="800">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Vrsta termina" Binding="{Binding TipTermina}" Width="90*"/>
                 <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
@@ -39,13 +45,13 @@
 
 
 
-        <Button Grid.Row="1" Grid.Column="0" Content="Zakazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button Grid.Row="2" Grid.Column="0" Content="Zakazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="ZakaziTermin" Background="WhiteSmoke" Height="27" Width="185"/>
-        <Button  Grid.Row="1" Grid.Column="1" Content="Izmena termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="1" Content="Izmena termina" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="IzmeniTermin" Background="WhiteSmoke" Height="27" Width="185"/>
-        <Button  Grid.Row="1" Grid.Column="2" Content="Otkazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="2" Content="Otkazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="OtkaziTermin" Background="WhiteSmoke" Height="27" Width="185"/>
-        <Button  Grid.Row="1" Grid.Column="3" Content="Karton pacijenta" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="3" Content="Karton pacijenta" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta" Background="WhiteSmoke" Height="27" Width="185"/>
 
 

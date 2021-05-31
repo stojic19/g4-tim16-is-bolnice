@@ -6,6 +6,7 @@ using Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Data;
 
 namespace Bolnica
 {
@@ -34,6 +35,8 @@ namespace Bolnica
                 }
             }
 
+            InicijalizacijaPretrage();
+
         }
 
         private void ZakaziTermin(object sender, RoutedEventArgs e)
@@ -41,6 +44,22 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
 
+        }
+
+        private void InicijalizacijaPretrage()
+        {
+            this.dataGridTermini.ItemsSource = Termini;
+            CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridTermini.ItemsSource);
+            view2.Filter = FiltriranjeTermina;
+        }
+
+        private bool FiltriranjeTermina(object item)
+        {
+            if (String.IsNullOrEmpty(pretragaDatuma.Text))
+                return true;
+            else
+                return ((item as TerminDTO).Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(pretragaDatuma.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+           
         }
 
         private void IzmeniTermin(object sender, RoutedEventArgs e)
@@ -85,6 +104,12 @@ namespace Bolnica
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(idNovogPregleda, 0));
             }
+        }
+
+        private void pretragaDatuma_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridTermini.ItemsSource).Refresh();
+
         }
     }
 }

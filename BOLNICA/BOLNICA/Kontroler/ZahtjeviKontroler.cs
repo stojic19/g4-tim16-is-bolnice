@@ -71,5 +71,18 @@ namespace Bolnica.Kontroler
         {
             return lekKonverter.LekModelULekDTO(zahtjeviServis.pretraziLekPoId(idLeka));
         }
+
+        public List<SastojakDTO> DobaviSastojkeLeka(String idLeka)
+        {
+            List<SastojakDTO> sastojciLeka = new List<SastojakDTO>();
+
+            foreach (Sastojak s in zahtjeviServis.pretraziLekPoId(idLeka).Sastojci)
+            {
+                sastojciLeka.Add(sastojciKonverter.SastojakModelUDTO(s));
+            }
+
+            return sastojciLeka;
+        }
+
     }
 }

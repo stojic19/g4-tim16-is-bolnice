@@ -36,8 +36,8 @@
                   MinWidth="470" MinHeight="250" Margin="18,14,0,0"  Width="530" Height="250" MaxHeight="250">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum kreiranja" Binding="{Binding DatumSlanja, StringFormat={}{0:dd/MM/yyyy}}" Width="150*"/>
-                <DataGridTextColumn Header="Naziv leka" Binding="{Binding Lijek.NazivLeka}" Width="150*"/>
-                <DataGridTextColumn Header="Jacina leka" Binding="{Binding Lijek.Jacina}" Width="150*"/>
+                <DataGridTextColumn Header="Naziv leka" Binding="{Binding Lek.NazivLeka}" Width="150*"/>
+                <DataGridTextColumn Header="Jacina leka" Binding="{Binding Lek.Jacina}" Width="150*"/>
                 <DataGridTextColumn Header="Odgovor" Binding="{Binding Odgovor}" Width="150*"/>
 
             </DataGrid.Columns>

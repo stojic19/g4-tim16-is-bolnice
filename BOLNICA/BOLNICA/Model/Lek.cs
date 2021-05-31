@@ -22,6 +22,15 @@ namespace Model
             NazivLeka = nazivLeka;
             Jacina = jacina;
         }
+
+        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina)
+        {
+            IDLeka = iDLeka;
+            NazivLeka = nazivLeka;
+            Jacina = jacina;
+            Kolicina = kolicina;
+        }
+
         public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, string proizvodjac, List<Sastojak> sastojci, bool verifikacija)
         {
             IDLeka = iDLeka;

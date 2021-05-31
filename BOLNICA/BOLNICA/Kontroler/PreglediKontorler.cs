@@ -19,11 +19,6 @@ namespace Bolnica.Kontroler
         AnamnezaKonverter anamnezaKonverter = new AnamnezaKonverter();
         UputKonverter uputKonverter = new UputKonverter();
 
-        public List<Pregled> SortPoDatumuPregleda()
-        {
-            return preglediServis.SortPoDatumuPregleda();
-        }
-
         public String PristupPregledu(String idTermina)
         {
             return preglediServis.PristupPregledu(idTermina).IdPregleda;

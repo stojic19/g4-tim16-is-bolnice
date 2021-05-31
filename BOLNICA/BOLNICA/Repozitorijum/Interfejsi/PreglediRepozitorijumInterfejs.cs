@@ -11,7 +11,7 @@ namespace Bolnica.Repozitorijum.Interfejsi
         List<Pregled> DobaviSvePregledePacijenta(String korisnickoImePacijenta);
         Pregled PretragaPoTerminu(String idTermina);
         Pregled PretraziPoAnamnezi(String idAnamneze);
-        Pregled DobaviPregledPoId(String id);
+        Pregled DobaviPregledPoId(String idPregleda);
         void ObrisiPregled(String idPregleda);
     }
 }

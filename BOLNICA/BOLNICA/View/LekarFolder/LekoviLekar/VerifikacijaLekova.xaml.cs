@@ -47,21 +47,20 @@ namespace Bolnica.LekarFolder
         private void dataGridZahtevi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             vecPostojiOdgovor.Visibility = Visibility.Hidden;
-            Zahtjev izabranZahtev = (Zahtjev)dataGridZahtevi.SelectedItem;
+            ZahtjevDTO izabranZahtev = (ZahtjevDTO)dataGridZahtevi.SelectedItem;
 
             if (izabranZahtev != null)
             {
-                PopunjavanjeSastojakaZamena(izabranZahtev.Lijek.IDLeka);
+                PopunjavanjeSastojakaZamena(izabranZahtev.Lek.IdLeka);
 
             }
         }
-
 
         private void PopunjavanjeSastojakaZamena(String idIzabranogLeka)
         {
             Sastojci.Clear();
 
-            foreach (SastojakDTO s in zahtjeviKontroler.pretraziLekPoId(idIzabranogLeka).Sastojci)
+            foreach (SastojakDTO s in zahtjeviKontroler.DobaviSastojkeLeka(idIzabranogLeka))
             {
                 Sastojci.Add(s);
             }
@@ -79,18 +78,18 @@ namespace Bolnica.LekarFolder
             if (String.IsNullOrEmpty(pretragaZahteva.Text))
                 return true;
             else
-                return ((item as Zahtjev).DatumSlanja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(pretragaZahteva.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as ZahtjevDTO).DatumSlanja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(pretragaZahteva.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void Odbijanje(object sender, RoutedEventArgs e)
         {
 
-            Zahtjev izabranZahtev = (Zahtjev)dataGridZahtevi.SelectedItem;
+            ZahtjevDTO izabranZahtev = (ZahtjevDTO)dataGridZahtevi.SelectedItem;
 
             if (Validacija(izabranZahtev))
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new OdbijanjeLeka(izabranZahtev.IdZahtjeva, KorisnickoImeLekara));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new OdbijanjeLeka(izabranZahtev.IDZahtjeva, KorisnickoImeLekara));
 
             }
 
@@ -98,13 +97,13 @@ namespace Bolnica.LekarFolder
 
         private void Odobravanje(object sender, RoutedEventArgs e)
         {
-            Zahtjev izabranZahtev = (Zahtjev)dataGridZahtevi.SelectedItem;
+            ZahtjevDTO izabranZahtev = (ZahtjevDTO)dataGridZahtevi.SelectedItem;
 
             if (Validacija(izabranZahtev))
             {
-                if (zahtjeviKontroler.OdobriZahtev(izabranZahtev.IdZahtjeva))
+                if (zahtjeviKontroler.OdobriZahtev(izabranZahtev.IDZahtjeva))
                 {
-                    lekoviKontroler.DodajLek(izabranZahtev.Lijek);
+                    lekoviKontroler.DodajLek(izabranZahtev.Lek);
                 }
 
                 inicijalizacijaTabeleZahteva();
@@ -112,7 +111,7 @@ namespace Bolnica.LekarFolder
             }
         }
 
-        private bool Validacija(Zahtjev izabranZahtev)
+        private bool Validacija(ZahtjevDTO izabranZahtev)
         {
             if (izabranZahtev != null && izabranZahtev.Odgovor == Model.Enumi.VrsteOdgovora.Čekanje) return true;
 

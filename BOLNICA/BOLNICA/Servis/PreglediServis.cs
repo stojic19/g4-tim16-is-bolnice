@@ -3,11 +3,6 @@ using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace Bolnica.Model.Rukovanja
 {
@@ -15,16 +10,7 @@ namespace Bolnica.Model.Rukovanja
     {
         private PreglediRepozitorijumInterfejs preglediRepozitorijum = new PreglediRepozitorijum();
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
-        public List<Pregled> DobaviSvePreglede()
-        {
-            return preglediRepozitorijum.DobaviSveObjekte();
-        }
-
-        public List<Pregled> SortPoDatumuPregleda()
-        {
-            return preglediRepozitorijum.SortPoDatumuPregleda();
-        }
-
+       
         public Pregled PretraziPoId(String idPregleda)
         {
             return preglediRepozitorijum.DobaviPregledPoId(idPregleda);
@@ -80,20 +66,6 @@ namespace Bolnica.Model.Rukovanja
             pregledZaIzmenu.Anamneza = novaAnamneza;
 
             preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
-        }
-
-        public void UklanjanjeAnamneze(String idIzabranogPregleda)
-        {
-            Pregled pregledZaIzmenu = preglediRepozitorijum.DobaviPregledPoId(idIzabranogPregleda);
-            pregledZaIzmenu.Odrzan = true;
-            pregledZaIzmenu.Anamneza = null;
-
-            preglediRepozitorijum.IzmeniPregled(pregledZaIzmenu);
-        }
-
-        public Pregled PretragaPoAnamnezi(String idAnamneze)
-        {
-            return preglediRepozitorijum.PretraziPoAnamnezi(idAnamneze);
         }
 
         public List<Pregled> DobaviSveObavljenePregledePacijenta(String korisnickoIme)
