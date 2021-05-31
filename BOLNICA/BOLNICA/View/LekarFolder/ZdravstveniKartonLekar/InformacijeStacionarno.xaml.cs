@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
@@ -25,14 +24,14 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        PregledDTO izabranPregled = null;
-        UputDTO izabranUput = null;
-        public InformacijeStacionarno(UputDTO informacijeUput, string idIzabranogPregleda)
+        Pregled izabranPregled = null;
+        Uput izabranUput = null;
+        public InformacijeStacionarno(Uput informacijeUput, string idIzabranogPregleda)
         {
             InitializeComponent();
             InitializeComponent();
             izabranUput = informacijeUput;
-            izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(idIzabranogPregleda);
 
             inicijalizacijaPolja();
         }
@@ -40,7 +39,8 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         private void inicijalizacijaPolja()
         {
 
-            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Lekar specijalista = lekariKontroler.PretraziPoId(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;

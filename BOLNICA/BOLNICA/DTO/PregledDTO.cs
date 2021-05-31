@@ -14,7 +14,6 @@ namespace Bolnica.DTO
         private AnamnezaDTO anamneza;
         private List<ReceptDTO> recepti;
         private bool ocenjenPregled;
-        private DateTime datumPregleda;
 
         public String IdPregleda
         {
@@ -46,13 +45,6 @@ namespace Bolnica.DTO
             get { return ocenjenPregled; }
             set { ocenjenPregled = value; }
         }
-
-        public DateTime Datum
-        {
-            get { return datumPregleda; }
-            set { datumPregleda = value; }
-        }
-
         PregledDTO() { }
 
         public PregledDTO(string idPregleda, bool odrzan, TerminDTO termin, AnamnezaDTO anamneza, List<ReceptDTO> recepti, bool ocenjenPregled)
@@ -63,12 +55,6 @@ namespace Bolnica.DTO
             this.anamneza = anamneza;
             this.recepti = recepti;
             this.ocenjenPregled = ocenjenPregled;
-        }
-
-        public PregledDTO(string idPregleda, TerminDTO termin)
-        {
-            this.idPregleda = idPregleda;
-            this.termin = termin;
         }
     }
 }

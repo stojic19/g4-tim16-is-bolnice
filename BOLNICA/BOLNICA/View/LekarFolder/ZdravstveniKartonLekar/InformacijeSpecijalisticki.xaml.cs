@@ -1,7 +1,21 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
+using Model;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
 {
@@ -9,24 +23,24 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
-        PreglediKontroler preglediKontroler = new PreglediKontroler();
-        PregledDTO izabranPregled = null;
-        UputDTO izabranUput = null;
-
-        public InformacijeSpecijalisticki(UputDTO informacijeUput, String IDIzabranogPregleda)
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
+        Pregled izabranPregled = null;
+        Uput izabranUput = null;
+        public InformacijeSpecijalisticki(Uput informacijeUput, String IDIzabranogPregleda)
         {
 
             InitializeComponent();
             izabranUput = informacijeUput;
-            izabranPregled = preglediKontroler.DobaviPregled(IDIzabranogPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(IDIzabranogPregleda);
 
             inicijalizacijaPolja();
         }
 
         private void inicijalizacijaPolja()
         {
-            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
-            LekarDTO specijalista = lekariKontroler.PretraziPoId(izabranUput.IdLekaraSpecijaliste);
+
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            Lekar specijalista = lekariKontroler.PretraziPoId(izabranUput.IDLekaraSpecijaliste);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;

@@ -31,9 +31,9 @@
 
 
         <Label Content="Vrsta termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="2" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" />
+               Grid.Column="0" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
-        <ComboBox SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" 
+        <ComboBox SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="9.6,1,0,1">
 
             <ComboBoxItem HorizontalAlignment="Left">Pregled</ComboBoxItem>
@@ -77,7 +77,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <!--<Label Content="Prostorija:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+        <Label Content="Prostorija:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="2" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
         <ComboBox ItemsSource="{Binding Prostorije}"  Name="prostorije" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" 
@@ -88,7 +88,7 @@
                     <TextBlock Text="{Binding IdProstora}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
-        </ComboBox> -->
+        </ComboBox>
 
         <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top">
 

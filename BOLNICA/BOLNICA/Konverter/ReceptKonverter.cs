@@ -1,20 +1,19 @@
 ﻿using Bolnica.DTO;
 using Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Bolnica.Konverter
 {
     public class ReceptKonverter
     {
-        LekKonverter lekKonverter = new LekKonverter();
-
         public ReceptDTO ReceptModelUDTO(Recept recept)
         {
+            LekKonverter lekKonverter = new LekKonverter();
             return new ReceptDTO(recept.IDRecepta, recept.Datum, lekKonverter.LekModelULekDTO(recept.Lek));
-        }
-
-        public Recept ReceptDTOuModel(ReceptDTO recept)
-        {
-            return new Recept(recept.IdRecepta, recept.Datum, lekKonverter.LekDTOUModel(recept.Lek));
         }
     }
 }

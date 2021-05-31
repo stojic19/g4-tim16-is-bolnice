@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
@@ -27,16 +28,16 @@ namespace Bolnica
     {
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
-        public static ObservableCollection<Prostor> Prostori { get; set; }
+        public static ObservableCollection<ProstorDTO> Prostori { get; set; }
 
         public RenoviranjeProstorije()
         {
             InitializeComponent();
             this.DataContext = this;
 
-            Prostori = new ObservableCollection<Prostor>();
+            Prostori = new ObservableCollection<ProstorDTO>();
 
-            foreach (Prostor p in prostoriKontroler.SviProstori())
+            foreach (ProstorDTO p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -47,7 +48,7 @@ namespace Bolnica
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
                 Prostor izabranZaRenoviranje = (Prostor)dataGridProstori.SelectedItem;
-                Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
+                RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
                 renoviranjeKontroler.DodajZaRenoviranje(renoviranje);
                 renoviranjeKontroler.ProveriRenoviranje();
        

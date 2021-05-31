@@ -27,7 +27,7 @@ namespace Bolnica
             InitializeComponent();
             korisnik = lekar;
             izabran = id;
-            TerminDTO t = terminKontroler.DobaviZakazanTerminDTO(izabran);
+            TerminDTO t = terminKontroler.DobaviZakazanTerminDTO(izabran, korisnik);
 
             imePacijenta.Text = t.Pacijent.Ime;
             prezimePacijenta.Text = t.Pacijent.Prezime;
@@ -52,7 +52,7 @@ namespace Bolnica
         {
             if (!ValidacijaDatuma() || !ValidacijaUnosaPolja()) return;
 
-            TerminDTO stari = terminKontroler.DobaviZakazanTerminDTO(izabran);
+            TerminDTO stari = terminKontroler.DobaviZakazanTerminDTO(izabran, korisnik);
             TerminDTO novi = (TerminDTO)pocVreme.SelectedItem;
 
             terminKontroler.IzmeniTerminLekar(stari, novi);
@@ -119,7 +119,7 @@ namespace Bolnica
 
         private void refresujPocetnoVreme()
         {
-            TerminDTO izabranT = terminKontroler.DobaviZakazanTerminDTO(izabran);
+            TerminDTO izabranT = terminKontroler.DobaviZakazanTerminDTO(izabran, korisnik);
 
             slobodniTermini.Clear();
 

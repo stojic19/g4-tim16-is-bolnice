@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,17 @@ namespace Bolnica.Kontroler
     class ProstoriKontroler
     {
         ProstoriServis prostoriServis = new ProstoriServis();
+        ProstorKonverter prostorKonverter = new ProstorKonverter();
+        OpremaKonverter opremaKonverter = new OpremaKonverter();
 
-        public void DodajProstor(Prostor p)
+        public void DodajProstor(ProstorDTO p)
         {
-            prostoriServis.DodajProstor(p);
+            prostoriServis.DodajProstor(prostorKonverter.ProstorDTOUModel(p));
         }
 
-        public void IzmeniProstor(Prostor noviPodaci)
+        public void IzmeniProstor(ProstorDTO noviPodaci)
         {
-            prostoriServis.IzmeniProstor(noviPodaci);
+            prostoriServis.IzmeniProstor(prostorKonverter.ProstorDTOUModel(noviPodaci));
         }
 
         public void UkloniProstor(String idProstora)
@@ -26,9 +30,9 @@ namespace Bolnica.Kontroler
             prostoriServis.UkloniProstor(idProstora);
         }
 
-        public Prostor PretraziProstorPoId(String idProstora)
+        public ProstorDTO PretraziProstorPoId(String idProstora)
         {
-            return prostoriServis.PretraziPoId(idProstora);
+            return prostorKonverter.ProstorModelUProstorDTO(prostoriServis.PretraziPoId(idProstora));
         }
 
         public void ProvjeriDaLiJeProstorRenoviran()
@@ -36,19 +40,22 @@ namespace Bolnica.Kontroler
             prostoriServis.ProvjeriDaLiJeProstorRenoviran();
         }
 
-        public List<Prostor> SviProstori()
+        public List<ProstorDTO> SviProstori()
         {
-            return prostoriServis.SviProstori();
+            List<ProstorDTO> prostori= new List<ProstorDTO>();
+            foreach (Prostor prostor in prostoriServis.SviProstori())
+                prostori.Add(prostorKonverter.ProstorModelUProstorDTO(prostor));
+            return prostori;
         }
 
-        public void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo,Oprema oprema, int kolicina)
+        public void OduzmiKolicinuOpreme(ProstorDTO prostorIzKojegPremjestamo,OpremaDTO oprema, int kolicina)
         {
-            prostoriServis.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, oprema, kolicina);
+            prostoriServis.OduzmiKolicinuOpreme(prostorKonverter.ProstorDTOUModel(prostorIzKojegPremjestamo), opremaKonverter.OpremaDTOUModel(oprema), kolicina);
         }
 
-        public void PremjestiOpremu(Prostor prostorUKojiPremjestamo,Oprema oprema, int kolicina)
+        public void PremjestiOpremu(ProstorDTO prostorUKojiPremjestamo,OpremaDTO oprema, int kolicina)
         {
-            prostoriServis.PremjestiOpremuUDrugiProstor(prostorUKojiPremjestamo, oprema, kolicina);
+            prostoriServis.PremjestiOpremuUDrugiProstor(prostorKonverter.ProstorDTOUModel(prostorUKojiPremjestamo), opremaKonverter.OpremaDTOUModel(oprema), kolicina);
         }
 
         /*public void DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)

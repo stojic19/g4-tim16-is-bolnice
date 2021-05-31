@@ -35,16 +35,16 @@ namespace Bolnica.LekarFolder
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
         private String izabranaVrstaTermina = null;
-        PregledDTO izabranPregled = null;
+        Pregled izabranPregled = null;
         private String izabranaProstorija = null;
         public static ObservableCollection<TerminDTO> slobodniTermini { get; set; } = new ObservableCollection<TerminDTO>();
-        
+        public static ObservableCollection<Prostor> Prostorije { get; set; } = new ObservableCollection<Prostor>();
 
         public ZakazivanjeIzUputa(String lekarSpecijalista, String idPregleda)
         {
             InitializeComponent();
             idLekarSpecijalista = lekarSpecijalista;
-            izabranPregled = preglediKontroler.DobaviPregled(idPregleda);
+            izabranPregled = preglediKontroler.PretraziPoId(idPregleda);
             inicijalizacijaPolja();
             refresujPocetnoVreme();
             this.DataContext = this;
@@ -53,8 +53,8 @@ namespace Bolnica.LekarFolder
         private void inicijalizacijaPolja()
         {
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
-            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
-            pacijent.Text = p.Ime + " " + p.Prezime;
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            pacijent.Text = p.imePrezime();
             lekar.Text = lekariKontroler.ImeiPrezime(idLekarSpecijalista);
         }
 
@@ -121,7 +121,26 @@ namespace Bolnica.LekarFolder
                 izabranaVrstaTermina = "Operacija";
             }
 
+
+            refresujProstorije();
             refresujPocetnoVreme();
+        }
+
+        private void refresujProstorije()
+        {
+            Prostorije.Clear();
+
+            foreach (Prostor p in prostoriServis.SviProstori())
+            {
+                if (izabranaVrstaTermina.Equals("Pregled") && p.VrstaProstora == VrsteProstora.ordinacija)
+                {
+                    Prostorije.Add(p);
+                }
+                else if (izabranaVrstaTermina.Equals("Operacija") && p.VrstaProstora == VrsteProstora.sala)
+                {
+                    Prostorije.Add(p);
+                }
+            }
         }
 
         private void datum_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -140,7 +159,7 @@ namespace Bolnica.LekarFolder
             slobodniTermini.Clear();
             if (izabranaVrstaTermina == null) return;
 
-            TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, null, izabranaVrstaTermina);
+            TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, izabranaProstorija, izabranaVrstaTermina);
 
             foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista))
             {
@@ -149,5 +168,18 @@ namespace Bolnica.LekarFolder
             }
         }
 
+        private void prostorije_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Prostor izabran = (Prostor)prostorije.SelectedItem;
+            izabranaProstorija = null;
+            if (izabran != null)
+            {
+                izabranaProstorija = izabran.IdProstora;
+                Console.WriteLine(izabranaProstorija);
+                refresujPocetnoVreme();
+
+            }
+
+        }
     }
 }

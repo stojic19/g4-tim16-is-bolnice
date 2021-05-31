@@ -31,17 +31,15 @@ namespace Bolnica.Model
             NalazMisljenje = nalazMisljenje;
         }
 
-        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string imePrezimeLekar, string iDLekaraSpecijaliste, string nalazMisljenje, DateTime pocetakStacionarnog, DateTime krajStacionarnog, Prostor prostor)
+        public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string nalazMisljenje, string imePrezimeLekar, DateTime pocetakStacionarnog, DateTime krajStacionarnog, Prostor prostor)
         {
             IDUputa = iDUputa;
             TipUputa = tipUputa;
             DatumIzdavanja = datumIzdavanja;
             ImePrezimeLekar = imePrezimeLekar;
-            IDLekaraSpecijaliste = iDLekaraSpecijaliste;
             NalazMisljenje = nalazMisljenje;
-            PocetakStacionarnog = pocetakStacionarnog;
-            KrajStacionarnog = krajStacionarnog;
-            Prostor = prostor;
+            this.PocetakStacionarnog = pocetakStacionarnog;
+            this.KrajStacionarnog = krajStacionarnog;
         }
 
         public String TipUputaTekst()

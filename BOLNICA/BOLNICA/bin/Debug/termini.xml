@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <IdTermina>9eb0eb46-0ec5-453b-bd8a-59c773590c4a</IdTermina>
@@ -536,11 +536,11 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>efa4181b-f468-4f23-a116-c945ad741bf8</IdTermina>
+    <IdTermina>cbbd0de3-7449-4a3b-b13b-e964749c445d</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>7:00</PocetnoVreme>
+    <PocetnoVreme>08:00</PocetnoVreme>
     <Trajanje>30</Trajanje>
-    <Datum>2021-06-02T07:00:00</Datum>
+    <Datum>2021-06-03T08:00:00</Datum>
     <Pacijent>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
@@ -930,7 +930,7 @@
         </Uputi>
         <BracniStatus>ozenjenUdata</BracniStatus>
       </ZdravstveniKarton>
-      <ZloupotrebioSistem>2</ZloupotrebioSistem>
+      <ZloupotrebioSistem>1</ZloupotrebioSistem>
       <Blokiran>false</Blokiran>
     </Pacijent>
     <Lekar>
@@ -948,10 +948,6 @@
         <RadniDan>
           <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
           <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
         </RadniDan>
       </RadniDani>
       <Godisnji>

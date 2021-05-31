@@ -1,15 +1,26 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
 using Bolnica.Model;
 using Bolnica.Model.Enumi;
 using Bolnica.Model.Rukovanja;
+using Bolnica.Repozitorijum;
 using Model;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
@@ -17,18 +28,17 @@ namespace Bolnica
     public partial class KartonLekar : UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        PreglediKontroler preglediKontroler = new PreglediKontroler();
-        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
-        PregledDTO izabranPregled = null;
-        public static ObservableCollection<ReceptDTO> Recepti { get; set; }
-        public static ObservableCollection<AnamnezaDTO> Anamneze { get; set; }
-        public static ObservableCollection<UputDTO> Uputi { get; set; }
+        private PreglediKontroler preglediKontroler = new PreglediKontroler();
+        Pregled izabranPregled = null;
+        public static ObservableCollection<Recept> Recepti { get; set; }
+        public static ObservableCollection<Anamneza> Anamneze { get; set; }
+        public static ObservableCollection<Uput> Uputi { get; set; }
 
-        public KartonLekar(String idIzabranogPregleda, int indeksTaba)
+        public KartonLekar(String IDIzabranog, int indeksTaba)
         {
             InitializeComponent();
 
-            this.izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
+            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             Tabovi.SelectedIndex = indeksTaba;
 
             inicijalizacijaPolja();
@@ -41,21 +51,22 @@ namespace Bolnica
 
         private void inicijalizacijaTabela()
         {
-            String idPacijenta = izabranPregled.Termin.Pacijent.KorisnickoIme;
-            Recepti = new ObservableCollection<ReceptDTO>();
-            foreach (ReceptDTO r in zdravstvenKartoniKontroler.DobaviReceptePacijenta(idPacijenta))
+            Pacijent pacijent = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranPregled.Termin.Pacijent.KorisnickoIme);
+
+            Recepti = new ObservableCollection<Recept>();
+            foreach (Recept r in pacijent.ZdravstveniKarton.Recepti)
             {
                 Recepti.Add(r);
             }
 
-            Anamneze = new ObservableCollection<AnamnezaDTO>();
-            foreach (AnamnezaDTO a in zdravstvenKartoniKontroler.DobaviAnamnezePacijenta(idPacijenta))
+            Anamneze = new ObservableCollection<Anamneza>();
+            foreach (Anamneza a in pacijent.ZdravstveniKarton.Anamneze)
             {
                 Anamneze.Add(a);
             }
 
-            Uputi = new ObservableCollection<UputDTO>();
-            foreach (UputDTO u in zdravstvenKartoniKontroler.DobaviUputePacijenta(idPacijenta))
+            Uputi = new ObservableCollection<Uput>();
+            foreach (Uput u in pacijent.ZdravstveniKarton.Uputi)
             {
                 Uputi.Add(u);
             }
@@ -65,7 +76,7 @@ namespace Bolnica
         private void inicijalizacijaPolja()
         {
 
-            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.IdPacijenta);
+            Pacijent p = izabranPregled.Termin.Pacijent;
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
@@ -73,8 +84,8 @@ namespace Bolnica
             telefon.Text = p.KontaktTelefon;
             adresa.Text = p.AdresaStanovanja;
             datum.Text = p.DatumRodjenja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            pol.Text = p.PolString;
-            status.Text = p.VrstaNaloga.ToString();
+            pol.Text = p.DobaviPolTekst();
+            status.Text = p.DobaviVrstuNalogaTekst();
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
@@ -89,10 +100,10 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodavanjeRecepta(izabranPregled.IdPregleda));
 
-        }
-        private void DodavanjeAnamneze(object sender, RoutedEventArgs e) 
+        } 
+        private void DodavanjeAnamneze(object sender, RoutedEventArgs e)  //MOZDA PROMENITI U IZMENU
         {
-            if (preglediKontroler.ProveraPostojanjaAnamneze(izabranPregled.IdPregleda))
+            if (izabranPregled.Anamneza != null)
             {
                 System.Windows.Forms.MessageBox.Show("Anamneza za ovaj pregledveć postoji!", "Anamneza postoji", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -107,7 +118,7 @@ namespace Bolnica
         private void PrikazInformacijaAnamneza(object sender, RoutedEventArgs e)
         {
 
-            AnamnezaDTO izabranaAnamneza = (AnamnezaDTO)TabelaAnamneza.SelectedItem;
+            Anamneza izabranaAnamneza = (Anamneza)TabelaAnamneza.SelectedItem;
 
             if (izabranaAnamneza != null)
             {
@@ -118,20 +129,23 @@ namespace Bolnica
 
         private void PrikazInformacijaUput(object sender, RoutedEventArgs e)
         {
-            UputDTO izabranUput = (UputDTO)dataGridUputi.SelectedItem;
+            Uput izabranUput = (Uput)dataGridUputi.SelectedItem;
             if (izabranUput == null) return;
 
-            if (izabranUput.TipUputa.Equals("Specijalističko-ambulantni pregled"))
+            if (izabranUput.TipUputa == TipoviUputa.SPECIJALISTA)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeSpecijalisticki(izabranUput, izabranPregled.IdPregleda));
             }
-            else if (izabranUput.TipUputa.Equals("Stacionarno lečenje"))
+            else if (izabranUput.TipUputa == TipoviUputa.STACIONARNO)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeStacionarno(izabranUput, izabranPregled.IdPregleda));
             }
-            else {}
+            else
+            {
+
+            }
         }
 
         private void DodavanjeUputa(object sender, RoutedEventArgs e)

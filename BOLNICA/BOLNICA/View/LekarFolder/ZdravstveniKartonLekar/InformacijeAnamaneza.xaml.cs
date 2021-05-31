@@ -1,10 +1,22 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
+using Bolnica.Model;
+using Bolnica.Model.Rukovanja;
+using Model;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Bolnica
 {
@@ -14,35 +26,36 @@ namespace Bolnica
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
-        PregledDTO izabranPregled = null;
-        AnamnezaDTO izabranaAnamneza = null;
-        public static ObservableCollection<TerapijaDTO> Terapije { get; set; }
+        Pregled izabranPregled = null;
+        Anamneza izabranaAnamneza = null;
+        public static ObservableCollection<Terapija> Terapije { get; set; }
 
-        public InformacijeAnamaneza(AnamnezaDTO odabranaAnamneza, String IDIzabranog)
+        public InformacijeAnamaneza(Anamneza odabranaAnamneza, String IDIzabranog)
         {
 
             InitializeComponent();
-            this.izabranPregled = preglediKontroler.DobaviPregled(IDIzabranog);
+            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
             this.izabranaAnamneza = odabranaAnamneza;
 
             inicijalizacijaPolja();
 
             this.DataContext = this;
 
-            Terapije = new ObservableCollection<TerapijaDTO>();
+            Terapije = new ObservableCollection<Terapija>();
 
-            foreach (TerapijaDTO t in izabranaAnamneza.SveTerapije)
+            foreach (Terapija t in izabranaAnamneza.Terapije)
             {
                 Terapije.Add(t);
             }
+
+
         }
 
         private void inicijalizacijaPolja()
         {
 
-            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranaAnamneza.IdPacijenta);
-            LekarDTO l = lekariKontroler.PretraziPoId(izabranaAnamneza.IdLekara);
+            Pacijent p = naloziPacijenataKontroler.PretraziPoIdNeDTO(izabranaAnamneza.IdPacijenta);
+            Lekar l = lekariKontroler.PretraziPoId(izabranaAnamneza.IdLekara);
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;

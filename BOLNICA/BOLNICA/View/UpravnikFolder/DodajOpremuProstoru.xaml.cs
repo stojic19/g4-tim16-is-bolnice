@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Bolnica
 
     public partial class DodajOpremuProstoru : Window
     {
-        private List<Oprema> oprema;
+        private List<OpremaDTO> oprema;
         private string IdProstora;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         OpremaKontroler opremaKontroler = new OpremaKontroler();
@@ -41,14 +42,14 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Oprema oprema = (Oprema)dataGridOprema.SelectedItem;
+            OpremaDTO oprema = (OpremaDTO)dataGridOprema.SelectedItem;
             int Kolicina = Int32.Parse(kolicina.Text);
             if (this.kolicina.Text.Equals(""))
             {
                 System.Windows.MessageBox.Show("Unesite kolicinu!");
                 return;
             }
-            Prostor p = prostoriKontroler.PretraziProstorPoId(IdProstora);
+            ProstorDTO p = prostoriKontroler.PretraziProstorPoId(IdProstora);
             opremaKontroler.PremjestiKolicinuOpreme(p, oprema, Kolicina);
      
             this.Close();

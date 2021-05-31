@@ -30,25 +30,17 @@ namespace Bolnica.Kontroler
             }
             return sviLekari;
         }
-        public List<LekarDTO> DobaviSpecijaliste()
+        public List<Lekar> DobaviSpecijaliste()
         {
-            List<LekarDTO> lekariSpecijaliste = new List<LekarDTO>();
-
-            foreach (Lekar lekar in lekariServis.DobaviSpecijaliste())
-            {
-                lekariSpecijaliste.Add(lekarKonverter.LekarZaZakazivanjeUDTO(lekar));
-            }
-
-            return lekariSpecijaliste;
+            return lekariServis.DobaviSpecijaliste();
         }
-
         public String ImeiPrezime(String idLekara)
         {
             return lekariServis.ImeiPrezime(idLekara);
         }
-        public LekarDTO PretraziPoId(String idLekara)
+        public Lekar PretraziPoId(String idLekara)
         {
-            return lekarKonverter.LekarZaZakazivanjeUDTO(lekariServis.PretraziPoId(idLekara));
+            return lekariServis.PretraziPoId(idLekara);
         }
         public List<LekarDTO> DobaviLekareOpstePrakse()
         {

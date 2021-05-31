@@ -1,37 +1,29 @@
-﻿using Bolnica.DTO;
-using Bolnica.Konverter;
-using Bolnica.Model;
+﻿using Bolnica.Model;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Bolnica.Kontroler
 {
     public class ZdravstvenKartoniKontroler
     {
         ZdravstveniKartoniServis zdravstveniKartoniServis = new ZdravstveniKartoniServis();
-        ReceptKonverter receptKonverter = new ReceptKonverter();
-        AnamnezaKonverter anamnezaKonverter = new AnamnezaKonverter();
-        UputKonverter uputiKonverter = new UputKonverter();
-        LekKonverter lekoviKonverter = new LekKonverter();
 
-        public List<LekDTO> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
+        public List<Lek> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
         {
-            List<LekDTO> lekoviBezAlergena = new List<LekDTO>();
-            foreach (Lek l in zdravstveniKartoniServis.DobaviLekoveBezAlergena(idIzabranogPacijenta))
-            {
-                lekoviBezAlergena.Add(lekoviKonverter.LekModelULekDTO(l));
-            }
-            return lekoviBezAlergena;
+            return zdravstveniKartoniServis.DobaviLekoveBezAlergena(idIzabranogPacijenta);
         }
         public Boolean ProveraAlergicnosti(String idIzabranogPacijenta, String idLeka)
         {
             return zdravstveniKartoniServis.ProveraAlergicnosti(idIzabranogPacijenta, idLeka);
         }
 
-        public void DodajRecept(String idPacijenta, ReceptDTO novRecept)
+        public void DodajRecept(String idPacijenta, Recept novRecept)
         {
-            zdravstveniKartoniServis.DodajRecept(idPacijenta, receptKonverter.ReceptDTOuModel(novRecept));
+            zdravstveniKartoniServis.DodajRecept(idPacijenta, novRecept);
         }
 
         public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
@@ -39,50 +31,14 @@ namespace Bolnica.Kontroler
             return zdravstveniKartoniServis.DobaviSveTerapijePacijenta(idPacijenta);
         }
 
-        public void DodajAnamnezu(AnamnezaDTO novaAnamneza)
+        public void DodajAnamnezu(Anamneza novaAnamneza)
         {
-            zdravstveniKartoniServis.DodajAnamnezu(anamnezaKonverter.AnamnezaSaLekaromUModel(novaAnamneza));
+            zdravstveniKartoniServis.DodajAnamnezu(novaAnamneza);
         }
 
-        public void DodajUput(String idPacijenta, UputDTO noviUput)
+        public void DodajUput(String idPacijenta, Uput noviUput)
         {
-            zdravstveniKartoniServis.DodajUput(idPacijenta, uputiKonverter.UputDTOuModel(noviUput));
-        }
-
-        public List<ReceptDTO> DobaviReceptePacijenta(String idPacijenta)
-        {
-            List<ReceptDTO> receptiPacijenta = new List<ReceptDTO>();
-
-            foreach (Recept r in zdravstveniKartoniServis.DobaviReceptePacijenta(idPacijenta))
-            {
-                receptiPacijenta.Add(receptKonverter.ReceptModelUDTO(r));
-            }
-
-            return receptiPacijenta;
-        }
-
-        public List<AnamnezaDTO> DobaviAnamnezePacijenta(String idPacijenta)
-        {
-            List<AnamnezaDTO> anamnezePacijenta = new List<AnamnezaDTO>();
-
-            foreach (Anamneza a in zdravstveniKartoniServis.DobaviAnamnezePacijenta(idPacijenta))
-            {
-                anamnezePacijenta.Add(anamnezaKonverter.AnamnezaSaLekaromUDTO(a));
-            }
-
-            return anamnezePacijenta;
-        }
-
-        public List<UputDTO> DobaviUputePacijenta(String idPacijenta)
-        {
-            List<UputDTO> uputiPacijenta = new List<UputDTO>();
-
-            foreach (Uput u in zdravstveniKartoniServis.DobaviUputePacijenta(idPacijenta))
-            {
-                uputiPacijenta.Add(uputiKonverter.UputModelUDTO(u));
-            }
-
-            return uputiPacijenta;
+            zdravstveniKartoniServis.DodajUput(idPacijenta, noviUput);
         }
 
     }

@@ -40,7 +40,9 @@ namespace Bolnica.Model.Rukovanja
                 preglediRepozitorijum.DodajObjekat(noviPregled);
 
             }
+
             return noviPregled;
+
         }
 
         public void UklanjanjePregleda(String terminOtkazanogPregleda)
@@ -99,12 +101,6 @@ namespace Bolnica.Model.Rukovanja
         public List<Pregled> DobaviSveObavljenePregledePacijenta(String korisnickoIme)
         {
             return preglediRepozitorijum.DobaviSvePregledePacijenta(korisnickoIme);
-        }
-
-        public bool ProveraPostojanjaAnamneze(String idPregleda)
-        {
-            if (PretraziPoId(idPregleda).Anamneza == null) return false;
-            return true;
         }
     }
 }

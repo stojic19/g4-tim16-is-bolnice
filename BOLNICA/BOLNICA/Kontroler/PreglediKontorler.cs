@@ -15,24 +15,23 @@ namespace Bolnica.Kontroler
     {
         private PreglediServis preglediServis = new PreglediServis();
         private PregledKonverter pregledKonverter = new PregledKonverter();
-        ReceptKonverter receptKonverter = new ReceptKonverter();
-        AnamnezaKonverter anamnezaKonverter = new AnamnezaKonverter();
-        UputKonverter uputKonverter = new UputKonverter();
-
+        public List<Pregled> DobaviSvePreglede()
+        {
+            return preglediServis.DobaviSvePreglede();
+        }
         public List<Pregled> SortPoDatumuPregleda()
         {
             return preglediServis.SortPoDatumuPregleda();
         }
 
-        public PregledDTO PretraziPoId(String idPregleda)
+        public Pregled PretraziPoId(String idPregleda)
         {
-            return pregledKonverter.PregledModelUDTO(preglediServis.PretraziPoId(idPregleda));
+            return preglediServis.PretraziPoId(idPregleda);
         }
 
-
-        public String PristupPregledu(String idTermina)
+        public Pregled PristupPregledu(String idTermina)
         {
-            return preglediServis.PristupPregledu(idTermina).IdPregleda;
+            return preglediServis.PristupPregledu(idTermina);
 
         }
 
@@ -46,19 +45,19 @@ namespace Bolnica.Kontroler
             return preglediServis.PretragaPoTerminu(idTermina);
         }
 
-        public void DodajUput(String idIzabranogPregleda, UputDTO noviUput)
+        public void DodajUput(String idIzabranogPregleda, Uput noviUput)
         {
-            preglediServis.DodajUput(idIzabranogPregleda, uputKonverter.UputDTOuModel(noviUput));
+            preglediServis.DodajUput(idIzabranogPregleda, noviUput);
         }
 
-        public void DodajRecept(String idPregleda, ReceptDTO novRecept)
+        public void DodajRecept(String idPregleda, Recept novRecept)
         {
-            preglediServis.DodajRecept(idPregleda, receptKonverter.ReceptDTOuModel(novRecept));
+            preglediServis.DodajRecept(idPregleda, novRecept);
         }
 
-        public void DodajAnamnezu(String idPregleda, AnamnezaDTO novaAnamneza)
+        public void DodajAnamnezu(String idPregleda, Anamneza novaAnamneza)
         {
-            preglediServis.DodajAnamnezu(idPregleda, anamnezaKonverter.AnamnezaSaLekaromUModel(novaAnamneza));
+            preglediServis.DodajAnamnezu(idPregleda, novaAnamneza);
         }
 
         public void UklanjanjeAnamneze(String idPregleda)
@@ -80,15 +79,5 @@ namespace Bolnica.Kontroler
                 obavljeniPregledi.Add(pregledKonverter.PregledModelUDTO(pregled));
             return obavljeniPregledi;
         }
-
-        public PregledDTO DobaviPregled(String idPregleda)
-        {
-            return pregledKonverter.OsnovniPodaciUDTO(preglediServis.PretraziPoId(idPregleda));
-        }
-        public bool ProveraPostojanjaAnamneze(String idPregleda)
-        {
-            return preglediServis.ProveraPostojanjaAnamneze(idPregleda);
-        }
-
     }
 }

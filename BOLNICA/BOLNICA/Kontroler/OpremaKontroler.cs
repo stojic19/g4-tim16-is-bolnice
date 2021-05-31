@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Bolnica.Konverter;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,17 @@ namespace Bolnica.Kontroler
     class OpremaKontroler
     {
         OpremaServis opremaServis = new OpremaServis();
+        ProstorKonverter prostorKonverter = new ProstorKonverter();
+        OpremaKonverter opremaKonverter = new OpremaKonverter();
 
-        public void DodajOpremu(Oprema o)
+        public void DodajOpremu(OpremaDTO o)
         {
-            opremaServis.DodajOpremu(o);
+            opremaServis.DodajOpremu(opremaKonverter.OpremaDTOUModel(o));
         }
 
-        public void IzmeniOpremu(Oprema novaOprema)
+        public void IzmeniOpremu(OpremaDTO novaOprema)
         {
-            opremaServis.IzmeniOpremu(novaOprema);
+            opremaServis.IzmeniOpremu(opremaKonverter.OpremaDTOUModel(novaOprema));
         }
 
         public void UkloniOpremu(String idOpreme)
@@ -26,24 +30,27 @@ namespace Bolnica.Kontroler
             opremaServis.UkloniOpremu(idOpreme);
         }
 
-        public Oprema PretraziPoId(String idOpreme)
+        public OpremaDTO PretraziPoId(String idOpreme)
         {
-            return opremaServis.PretraziPoId(idOpreme);
+            return opremaKonverter.OpremaModelUOpremaDTO(opremaServis.PretraziPoId(idOpreme));
         }
 
-        public List<Oprema> SvaOprema()
+        public List<OpremaDTO> SvaOprema()
         {
-            return opremaServis.SvaOprema();
+            List<OpremaDTO> oprema = new List<OpremaDTO>();
+            foreach (Oprema o in opremaServis.SvaOprema())
+                oprema.Add(opremaKonverter.OpremaModelUOpremaDTO(o));
+            return oprema;
         }
 
-        public void PremjestiKolicinuOpreme(Prostor prostorUKojiPrebacujemo, Oprema opremaKojuPrebacujemo, int kolicina)
+        public void PremjestiKolicinuOpreme(ProstorDTO prostorUKojiPrebacujemo, OpremaDTO opremaKojuPrebacujemo, int kolicina)
         {
-            opremaServis.PremjestiKolicinuOpreme(prostorUKojiPrebacujemo, opremaKojuPrebacujemo, kolicina);
+            opremaServis.PremjestiKolicinuOpreme(prostorKonverter.ProstorDTOUModel(prostorUKojiPrebacujemo), opremaKonverter.OpremaDTOUModel(opremaKojuPrebacujemo), kolicina);
         }
 
-        public bool ProvjeriKolicinuKojuPremjestamo(Oprema oprema, int kolicina)
+        public bool ProvjeriKolicinuKojuPremjestamo(OpremaDTO oprema, int kolicina)
         {
-            if (opremaServis.ProvjeriKolicinuKojuPremjestamo(oprema,kolicina))
+            if (opremaServis.ProvjeriKolicinuKojuPremjestamo(opremaKonverter.OpremaDTOUModel(oprema),kolicina))
             {
                 return true;
             }

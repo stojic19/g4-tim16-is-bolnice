@@ -175,7 +175,7 @@
                             <ListView.View>
                                 <GridView>
 
-                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  Lek.NazivLeka}" Width="203" />
+                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  PreporucenLek.NazivLeka}" Width="203" />
                                     <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="203" />
                                     <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="103"/>
 

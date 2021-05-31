@@ -89,7 +89,7 @@
                     <DataGrid.Columns>
 
                         <DataGridTextColumn Header="Datum pregleda" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="200*" />
-                        <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar}" Width="200*"/>
+                        <DataGridTextColumn Header="Lekar" Binding="{Binding ImeIPrezimeLekara}" Width="200*"/>
                     </DataGrid.Columns>
 
                 </DataGrid>
@@ -168,9 +168,9 @@
                   MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Header="Tip uputa" Binding="{Binding TipUputa}" Width="150*"/>
+                        <DataGridTextColumn Header="Tip uputa" Binding="{Binding TipUputa}" Width="90*"/>
                         <DataGridTextColumn Header="Datum izdavanja uputa" Binding="{Binding DatumIzdavanja , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
-                        <DataGridTextColumn Header="Lekar koji je izdao uput" Binding="{Binding Lekar}" Width="120*"/>
+                        <DataGridTextColumn Header="Lekar koji je izdao uput" Binding="{Binding ImePrezimeLekar}" Width="120*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 

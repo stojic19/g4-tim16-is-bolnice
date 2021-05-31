@@ -37,6 +37,12 @@ namespace Bolnica.Kontroler
             return lekKonverter.LekModelULekDTO(pronadjenLek);
         }
 
+        //BRISI
+        public Lek PretraziPoID2(String sifraLeka)
+        {
+            return lekoviServis.PretraziPoID(sifraLeka);
+        }
+
         public void IzmenaLeka(LekDTO noviPodaci, List<SastojakDTO> noviSastojci)
         {
             List<Sastojak> konvertovaniSastojci = new List<Sastojak>();

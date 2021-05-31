@@ -53,10 +53,10 @@ namespace Bolnica.Kontroler
             return zakazaniTerminiServis.DobaviZakazanTerminPoId(idTermina);
         }
 
-        public TerminDTO DobaviZakazanTerminDTO(String idTermina)
+        public TerminDTO DobaviZakazanTerminDTO(String idTermina, String lekar)
         {
             Termin t = zakazaniTerminiServis.DobaviZakazanTerminPoId(idTermina);
-            return terminKonverter.ZakazaniTerminModelUDTO(t, t.Pacijent.KorisnickoIme);
+            return terminKonverter.ZakazaniTerminModelUDTO(t, lekar);
         }
 
         public List<TerminDTO> PretraziPoLekaru(string korisnickoIme)
@@ -65,7 +65,7 @@ namespace Bolnica.Kontroler
 
             foreach (Termin termin in zakazaniTerminiServis.PretraziPoLekaru(korisnickoIme))
             {
-                terminiDTO.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
+                terminiDTO.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, korisnickoIme));
             }
             return terminiDTO;
 
