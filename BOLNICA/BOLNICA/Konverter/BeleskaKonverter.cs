@@ -13,7 +13,7 @@ namespace Bolnica.Konverter
         public BeleskaDTO BeleskaModelUBeleskaDTO(Beleska beleska)
         {
             AnamnezaKonverter anamnezaKonverter = new AnamnezaKonverter();
-            return new BeleskaDTO(beleska.Datum,beleska.Tekst,beleska.IdBeleske,anamnezaKonverter.AnamnezaModelUDTO(beleska.Anamneza));
+            return new BeleskaDTO(beleska.Datum,beleska.Tekst,beleska.Id,anamnezaKonverter.AnamnezaModelUDTO(beleska.Anamneza));
         }
 
         public Beleska BeleskaDTOUBeleskaModel(BeleskaDTO beleska)

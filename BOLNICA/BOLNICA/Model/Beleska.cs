@@ -11,7 +11,7 @@ namespace Bolnica.Model
     {
         private DateTime datum;
         private String tekst;
-        private String idBeleske;
+        private String id;
         private Anamneza anamneza;
 
         public DateTime Datum
@@ -24,10 +24,10 @@ namespace Bolnica.Model
             get { return tekst; }
             set { tekst = value; }
         }
-        public String IdBeleske
+        public String Id
         {
-            get { return idBeleske; }
-            set { idBeleske = value; }
+            get { return id; }
+            set { id = value; }
         }
         public Anamneza Anamneza
         {
@@ -39,7 +39,7 @@ namespace Bolnica.Model
         {
             this.datum = datum;
             this.tekst = tekst;
-            this.idBeleske = idBeleske;
+            this.id = idBeleske;
             this.anamneza = anamneza;
         }
 

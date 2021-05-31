@@ -20,7 +20,7 @@ namespace Bolnica.Servis
 
         public void IzmeniBelesku(Beleska beleska)
         {
-            beleskaRepozitorijum.ObrisiBelesku(beleska.IdBeleske);
+            beleskaRepozitorijum.ObrisiBelesku(beleska.Id);
             beleskaRepozitorijum.DodajObjekat(beleska);
         }
 
