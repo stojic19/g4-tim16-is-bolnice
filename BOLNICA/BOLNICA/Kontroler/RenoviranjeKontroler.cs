@@ -1,6 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Konverter;
-using Bolnica.Model;
+﻿using Bolnica.Model;
 using Bolnica.Servis;
 using System;
 using System.Collections.Generic;
@@ -13,18 +11,14 @@ namespace Bolnica.Kontroler
     class RenoviranjeKontroler
     {
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
-        RenoviranjeKonverter renoviranjeKonverter = new RenoviranjeKonverter();
 
-        public List<RenoviranjeDTO> SvaRenoviranja()
+        public List<Renoviranje> SvaRenoviranja()
         {
-            List<RenoviranjeDTO> renoviranje = new List<RenoviranjeDTO>();
-            foreach (Renoviranje r in renoviranjeServis.SvaRenoviranja())
-                renoviranje.Add(renoviranjeKonverter.RenoviranjeModelUDTO(r));
-            return renoviranje;
+            return renoviranjeServis.SvaRenoviranja();
         }
-        public void DodajZaRenoviranje(RenoviranjeDTO renoviranje)
+        public void DodajZaRenoviranje(Renoviranje renoviranje)
         {
-            renoviranjeServis.DodajZaRenoviranje(renoviranjeKonverter.RenoviranjeDTOUModel(renoviranje));
+            renoviranjeServis.DodajZaRenoviranje(renoviranje);
 
         }
 
@@ -33,12 +27,12 @@ namespace Bolnica.Kontroler
             renoviranjeServis.ProveriRenoviranje();
         }
 
-        public void UkloniRenoviranje(RenoviranjeDTO renoviranje)
+        public void UkloniRenoviranje(Renoviranje renoviranje)
         {
-            renoviranjeServis.UkloniRenoviranje(renoviranjeKonverter.RenoviranjeDTOUModel(renoviranje));
+            renoviranjeServis.UkloniRenoviranje(renoviranje);
         }
 
-        /*public bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
+        public bool provjeraDatuma(DateTime datumPocetka, DateTime datumKraja)
         {
             if (renoviranjeServis.provjeraDatuma(datumPocetka,datumKraja))
             {
@@ -55,6 +49,6 @@ namespace Bolnica.Kontroler
         public void PostaviDaSeNeRenovira(Renoviranje r)
         {
             renoviranjeServis.PostaviDaSeNeRenovira(r);
-        }*/
+        }
     }
 }

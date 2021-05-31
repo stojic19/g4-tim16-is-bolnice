@@ -1,14 +1,13 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Enumi;
-using Bolnica.Model.Rukovanja;
 using Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Forms;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.LekarFolder
@@ -16,19 +15,22 @@ namespace Bolnica.LekarFolder
     
     public partial class IzdavanjeUputa : UserControl
     {
-        //Dodato dok ne dodas kontroler za to
         ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        Pregled izabranPregled = null;
+        ProstoriServis prostoriServis = new ProstoriServis(); //menjaj ako Marko doda
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
+        PregledDTO izabranPregled = null;
         String idLekaraSpecijaliste = null;
-        Uput noviUput = null;
-        ProstoriServis prostoriServis = new ProstoriServis();
-        public static ObservableCollection<Prostor> slobodneSobe { get; set; } = new ObservableCollection<Prostor>();
+        UputDTO noviUput = null;
+        
+        public static ObservableCollection<Prostor> slobodneSobe { get; set; } = new ObservableCollection<Prostor>(); // menjaj!!!!!
+
         public IzdavanjeUputa(string idPregleda)
         {
             InitializeComponent();
-            izabranPregled = preglediKontroler.PretraziPoId(idPregleda);
+            izabranPregled = preglediKontroler.DobaviPregled(idPregleda);
 
             InicijalizacijaPoljaSpecijalisticki();
             InicijalizacijaPoljaStacionarno();
@@ -43,8 +45,8 @@ namespace Bolnica.LekarFolder
 
         private void InicijalizacijaPoljaSpecijalisticki()
         {
-            Pacijent p = izabranPregled.Termin.Pacijent;
-            Lekar l = izabranPregled.Termin.Lekar;
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            LekarDTO l = lekariKontroler.PretraziPoId(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             imePacijenta.Text = p.Ime;
             prezimePacijenta.Text = p.Prezime;
@@ -57,8 +59,8 @@ namespace Bolnica.LekarFolder
 
         private void InicijalizacijaPoljaStacionarno()
         {
-            Pacijent p = izabranPregled.Termin.Pacijent;
-            Lekar l = izabranPregled.Termin.Lekar;
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            LekarDTO l = lekariKontroler.PretraziPoId(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             imePacijentaStac.Text = p.Ime;
             prezimePacijentaStac.Text = p.Prezime;
@@ -71,7 +73,7 @@ namespace Bolnica.LekarFolder
 
         }
 
-        private void InicijalizacijaSobaStacionarno()
+        private void InicijalizacijaSobaStacionarno() //MENJAJ!
         {
             foreach(Prostor p in prostoriServis.SviProstori())
             {
@@ -84,7 +86,6 @@ namespace Bolnica.LekarFolder
 
         private void CuvanjeSpecijalistickog(object sender, RoutedEventArgs e)
         {
-
             DodavanjeNovogSpecijalistickog();
             if (noviUput != null)
             {
@@ -96,22 +97,28 @@ namespace Bolnica.LekarFolder
 
         private void DodavanjeNovogSpecijalistickog()
         {
-
-            if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
-            {
-                validacijaPolja.Visibility = Visibility.Visible;
-                return;
-
-            }
+            if (!ProveraPopunjenostiPolja()) return;
 
             String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
-            noviUput = new Uput(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, idLekaraSpecijaliste, nalazMisljenje.Text, imeprezime);
+            noviUput = new UputDTO(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, imeprezime, idLekaraSpecijaliste, this.nalazMisljenje.Text);
+            Console.WriteLine(this.nalazMisljenje.Text);
 
             zdravstvenKartoniKontroler.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
             preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);
             KartonLekar.Uputi.Add(noviUput);
         }
 
+        private Boolean ProveraPopunjenostiPolja()
+        {
+            if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
+            {
+                validacijaPolja.Visibility = Visibility.Visible;
+                return false;
+
+            }
+
+            return true;
+        }
 
         private void CuvanjeIZakazivanjeSpecijalistickog(object sender, RoutedEventArgs e)
         {
@@ -120,13 +127,13 @@ namespace Bolnica.LekarFolder
             if (noviUput != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput.IDLekaraSpecijaliste, izabranPregled.IdPregleda));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput.IdLekaraSpecijaliste, izabranPregled.IdPregleda));
             }
         }
 
         private void CuvanjeStacionarnog(object sender, RoutedEventArgs e)
         {
-            if (!ValidacijaStacionarnog()) return;
+            /*if (!ValidacijaStacionarnog()) return;
 
             String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             Console.WriteLine(imeprezime);
@@ -141,7 +148,7 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
-            }
+            }*/
 
         }
 
@@ -191,7 +198,7 @@ namespace Bolnica.LekarFolder
             if (String.IsNullOrEmpty(pretragaLekara.Text))
                 return true;
             else
-                return ((item as Lekar).Prezime.IndexOf(pretragaLekara.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as LekarDTO).Prezime.IndexOf(pretragaLekara.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void TabelaLekara_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -200,7 +207,7 @@ namespace Bolnica.LekarFolder
             if (TabelaLekara.SelectedItems.Count > 0)
             {
                 validacijaPolja.Visibility = Visibility.Hidden;
-                Lekar item = (Lekar)TabelaLekara.SelectedItems[0];
+                LekarDTO item = (LekarDTO)TabelaLekara.SelectedItems[0];
                 imeLekaraSpecijaliste.Text = item.Ime;
                 prezimeLekaraSpecijaliste.Text = item.Prezime;
                 pretragaLekara.Text = String.Empty;

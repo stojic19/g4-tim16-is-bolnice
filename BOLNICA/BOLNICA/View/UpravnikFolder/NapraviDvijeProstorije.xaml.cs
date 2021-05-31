@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Servis;
 using Bolnica.UpravnikFolder;
@@ -39,10 +38,9 @@ namespace Bolnica
             Prostor prostor1 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora1.Text, ProvjeriVrstuProstora1(), int.Parse(this.Sprat1.Text), float.Parse(this.Kvadratura1.Text), false);
             Prostor prostor2 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora2.Text, ProvjeriVrstuProstora2(), int.Parse(this.Sprat2.Text), float.Parse(this.Kvadratura2.Text), false);
 
-
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
-                NapraviDvaProstoraOdJednog(izabranaProstorija,prostor1,prostor2);
+                RenovirajProstor(izabranaProstorija,prostor1,prostor2);
 
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
                 UserControl usc = null;
@@ -52,10 +50,10 @@ namespace Bolnica
         }
 
 
-        private void NapraviDvaProstoraOdJednog(Prostor prostor,Prostor prostorKojiSeDodaje1,Prostor prostorKojiSeDodaje2)
+        private void RenovirajProstor(Prostor prostor,Prostor prostorKojiSeDodaje1,Prostor prostorKojiSeDodaje2)
         {
             Prostor izabranZaRenoviranje = prostor;
-            RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
+            Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
             renoviranje.ProstoriKojiSeBrisu.Add(izabranaProstorija);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje1);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje2);

@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
@@ -26,7 +25,7 @@ namespace Bolnica.UpravnikFolder
     /// </summary>
     public partial class PrikazRenoviranja : UserControl
     {
-        public static ObservableCollection<RenoviranjeDTO> Renoviranje { get; set; }
+        public static ObservableCollection<Renoviranje> Renoviranje { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
 
@@ -38,9 +37,9 @@ namespace Bolnica.UpravnikFolder
 
             this.DataContext = this;
 
-            Renoviranje = new ObservableCollection<RenoviranjeDTO>();
+            Renoviranje = new ObservableCollection<Renoviranje>();
 
-            foreach (RenoviranjeDTO r in renoviranjeKontroler.SvaRenoviranja())
+            foreach (Renoviranje r in renoviranjeKontroler.SvaRenoviranja())
             {
                 Renoviranje.Add(r);
             }
@@ -49,7 +48,7 @@ namespace Bolnica.UpravnikFolder
         private void ukloni_Click(object sender, RoutedEventArgs e)
         {
 
-            RenoviranjeDTO izabranZaBrisanje = (RenoviranjeDTO)dataGridRenoviranje.SelectedItem;
+            Renoviranje izabranZaBrisanje = (Renoviranje)dataGridRenoviranje.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {

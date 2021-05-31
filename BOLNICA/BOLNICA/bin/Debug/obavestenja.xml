@@ -760,4 +760,64 @@ vremenski interval između doza: dsah.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>b41c27b5-44e7-4241-9d75-c3eff3527184</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-05-31T03:27:21.416038+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>67743e38-57ea-48e2-a124-c19ec3e66828</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-06-01T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>72845109-a49d-46bc-ae40-df25f02079bb</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-06-02T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>4bdd8eae-040e-4d49-a5aa-3853f96cab4e</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-06-03T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>259592d4-9642-48e4-832a-5398fb9a5253</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-06-04T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>01e29a1e-b06b-4df1-8d7e-42f208c0ba2c</IdObavestenja>
+    <Naslov>Terapija</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 3,
+vremenski interval između doza: 8h.</Tekst>
+    <Datum>2021-06-05T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

@@ -21,7 +21,7 @@ namespace Bolnica.Repozitorijum
 
         public void IzmeniPregled(Pregled pregledZaIzmenu)
         {
-            ObrisiObjekat("//ArrayOfPregled/Pregled/Termin[IdTermina='" + pregledZaIzmenu.Termin.IdTermina + "']");
+            ObrisiObjekat("//ArrayOfPregled/Pregled[IdPregleda='" + pregledZaIzmenu.IdPregleda + "']");
             DodajObjekat(pregledZaIzmenu);
         }
 

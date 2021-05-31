@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
@@ -25,9 +24,9 @@ namespace Bolnica
 {
     public partial class UklanjanjeRenoviranja : Window
     {
-        RenoviranjeDTO izabranZaUklanjanje = null;
+        Renoviranje izabranZaUklanjanje = null;
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
-        public UklanjanjeRenoviranja(RenoviranjeDTO renoviranje)
+        public UklanjanjeRenoviranja(Renoviranje renoviranje)
         {
             InitializeComponent();
             izabranZaUklanjanje = renoviranje;

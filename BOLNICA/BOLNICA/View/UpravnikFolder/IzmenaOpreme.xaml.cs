@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ namespace Bolnica
             InitializeComponent();
 
             stari = id;
-            OpremaDTO o = opremaKontroler.PretraziPoId(id);
+            Oprema o = opremaKontroler.PretraziPoId(id);
 
             NazivOpreme.Text = o.NazivOpreme;
 
@@ -53,7 +52,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            OpremaDTO o = new OpremaDTO(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
+            Oprema o = new Oprema(stari, NazivOpreme.Text, ProvjeriVrstuOpreme(), int.Parse(Kolicina.Text));
             opremaKontroler.IzmeniOpremu(o);
            
             this.Close();

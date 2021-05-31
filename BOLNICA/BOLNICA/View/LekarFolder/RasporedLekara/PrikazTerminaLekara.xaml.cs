@@ -80,10 +80,10 @@ namespace Bolnica
 
             if (izabranTermin != null)
             {
-                Pregled noviPregled = preglediKontroler.PristupPregledu(izabranTermin.IdTermina);
+                String idNovogPregleda = preglediKontroler.PristupPregledu(izabranTermin.IdTermina);
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(noviPregled.IdPregleda, 0));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(idNovogPregleda, 0));
             }
         }
     }

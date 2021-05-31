@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
@@ -16,29 +17,28 @@ namespace Bolnica
 {
     public partial class DodavanjeRecepta : UserControl
     {
-        //Dodato dok ne dodas kontroler za to
         ZdravstvenKartoniKontroler zdravstveniKartoniKontroler = new ZdravstvenKartoniKontroler();
-        private PreglediKontroler preglediKontroler = new PreglediKontroler();
-        private LekoviKontroler lekoviKontroler = new LekoviKontroler();
-        Pregled izabranPregled = null;
+        PreglediKontroler preglediKontroler = new PreglediKontroler();
+        LekoviKontroler lekoviKontroler = new LekoviKontroler();
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        LekariKontroler lekariKontroler = new LekariKontroler();
+        PregledDTO izabranPregled = null;
         String sifraLeka = null;
-        public static ObservableCollection<Lek> Lekovi { get; set; } = new ObservableCollection<Lek>();
+        public static ObservableCollection<LekDTO> Lekovi { get; set; } = new ObservableCollection<LekDTO>();
 
         public DodavanjeRecepta(String idIzabranogPregleda)
         {
             InitializeComponent();
-            this.izabranPregled = preglediKontroler.PretraziPoId(idIzabranogPregleda);
+            this.izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
             inicijalizacijaPolja();
             inicijalizacijaTabeleLekova();
             podesavanjePretrageLekova();
-
-
         }
 
         private void inicijalizacijaPolja()
         {
-            Pacijent p = izabranPregled.Termin.Pacijent;
-            Lekar l = izabranPregled.Termin.Lekar;
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            LekarDTO l = lekariKontroler.PretraziPoId(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
@@ -54,21 +54,18 @@ namespace Bolnica
         {
             Lekovi.Clear();
 
-            foreach (Lek l in zdravstveniKartoniKontroler.DobaviLekoveBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
+            foreach (LekDTO l in zdravstveniKartoniKontroler.DobaviLekoveBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme))
             {
                 Lekovi.Add(l);
             }
         }
 
-
         private void IzdajRecept(object sender, RoutedEventArgs e)
         {
-
-
             if (!Validacija()) return;
 
-            Lek prepisanLek = lekoviKontroler.PretraziPoID2(sifraLeka);
-            Recept novRecept = new Recept(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
+            LekDTO prepisanLek = lekoviKontroler.PretraziPoID(sifraLeka);
+            ReceptDTO novRecept = new ReceptDTO(Guid.NewGuid().ToString(), DateTime.Now, prepisanLek);
 
             zdravstveniKartoniKontroler.DodajRecept(izabranPregled.Termin.Pacijent.KorisnickoIme, novRecept);
             preglediKontroler.DodajRecept(izabranPregled.IdPregleda, novRecept);
@@ -88,9 +85,10 @@ namespace Bolnica
 
             }
 
-            if (zdravstveniKartoniKontroler.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme,sifraLeka))
+            if (zdravstveniKartoniKontroler.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme, sifraLeka))
             {
                 labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
+                return false;
             }
 
             return true;
@@ -107,14 +105,15 @@ namespace Bolnica
 
         private void dataGridLekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Lek izabranLek = (Lek)dataGridLekovi.SelectedItem;
+            LekDTO izabranLek = (LekDTO)dataGridLekovi.SelectedItem;
 
             if (izabranLek != null)
             {
                 labelaValidacije.Visibility = Visibility.Hidden;
                 nazivLeka.Text = izabranLek.NazivLeka;
                 jacinaLeka.Text = izabranLek.Jacina;
-                sifraLeka = izabranLek.IDLeka;
+                sifraLeka = izabranLek.IdLeka;
+                poljeZaPreragu.Text = String.Empty;
             }
 
         }
@@ -136,7 +135,7 @@ namespace Bolnica
             if (String.IsNullOrEmpty(poljeZaPreragu.Text))
                 return true;
             else
-                return ((item as Lek).NazivLeka.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as LekDTO).NazivLeka.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void PovratakNaKarton()

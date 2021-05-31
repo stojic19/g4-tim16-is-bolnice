@@ -1,5 +1,4 @@
-﻿using Bolnica.DTO;
-using Bolnica.Kontroler;
+﻿using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,7 +21,7 @@ namespace Bolnica
     public partial class PrikazProstora : UserControl
     {
 
-        public static ObservableCollection<ProstorDTO> Prostori { get; set; }
+        public static ObservableCollection<Prostor> Prostori { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
         public PrikazProstora()
@@ -33,9 +32,9 @@ namespace Bolnica
 
             this.DataContext = this;
 
-            Prostori = new ObservableCollection<ProstorDTO>();
+            Prostori = new ObservableCollection<Prostor>();
 
-            foreach (ProstorDTO p in prostoriKontroler.SviProstori())
+            foreach (Prostor p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }

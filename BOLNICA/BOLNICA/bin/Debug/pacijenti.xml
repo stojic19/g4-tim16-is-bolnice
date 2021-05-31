@@ -363,6 +363,19 @@
             </Zamene>
           </Lek>
         </Recept>
+        <Recept>
+          <IDRecepta>8c7bb468-a449-4d18-b5e0-4ef30fb8ad4c</IDRecepta>
+          <Datum>2021-05-31T03:27:42.9530929+02:00</Datum>
+          <Lek>
+            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+            <NazivLeka>Aerius</NazivLeka>
+            <Jacina>15mg</Jacina>
+            <Kolicina>0</Kolicina>
+            <Sastojci />
+            <Verifikacija>false</Verifikacija>
+            <Zamene />
+          </Lek>
+        </Recept>
       </Recepti>
       <Anamneze>
         <Anamneza>
@@ -482,16 +495,55 @@
           <Dijagnoza>s</Dijagnoza>
           <Terapije />
         </Anamneza>
+        <Anamneza>
+          <IdAnamneze>06edb462-88b6-4d2b-8879-e935d35f35b9</IdAnamneze>
+          <IdLekara>MagdalenaReljin</IdLekara>
+          <ImeIPrezimeLekara>Magdalena Reljin</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-05-31T03:27:23.7365582+02:00</Datum>
+          <Dijagnoza>Nova anamenza</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>a54c5680-f6ee-482d-a3af-aeddaa2a63c2</IDTerapije>
+              <IDAnamneze>06edb462-88b6-4d2b-8879-e935d35f35b9</IDAnamneze>
+              <PocetakTerapije>2021-06-02T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-05T00:00:00</KrajTerapije>
+              <Kolicina>3</Kolicina>
+              <Satnica>8</Satnica>
+              <UputsvoKonzumiranja>sda</UputsvoKonzumiranja>
+              <PreporucenLek>
+                <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                <NazivLeka>Aerius</NazivLeka>
+                <Jacina>15mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Verifikacija>false</Verifikacija>
+                <Zamene />
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
       </Anamneze>
       <Uputi>
         <Uput>
-          <IDUputa>ec3cc1cf-bc6b-43ac-a2f5-03d532efacca</IDUputa>
-          <TipUputa>STACIONARNO</TipUputa>
-          <DatumIzdavanja>2021-05-17T20:40:01.686163+02:00</DatumIzdavanja>
-          <ImePrezimeLekar>Jelena Hrnjak</ImePrezimeLekar>
-          <NalazMisljenje>sda</NalazMisljenje>
-          <PocetakStacionarnog>2021-05-26T00:00:00</PocetakStacionarnog>
-          <KrajStacionarnog>2021-06-02T00:00:00</KrajStacionarnog>
+          <IDUputa>294b2c1a-a406-4c36-a93d-2774d2ab8a4d</IDUputa>
+          <TipUputa>SPECIJALISTA</TipUputa>
+          <DatumIzdavanja>2021-05-31T03:28:03.4168755+02:00</DatumIzdavanja>
+          <ImePrezimeLekar>Magdalena Reljin</ImePrezimeLekar>
+          <IDLekaraSpecijaliste>AleksaStojic</IDLekaraSpecijaliste>
+          <NalazMisljenje>Novi uput</NalazMisljenje>
+          <PocetakStacionarnog>0001-01-01T00:00:00</PocetakStacionarnog>
+          <KrajStacionarnog>0001-01-01T00:00:00</KrajStacionarnog>
+        </Uput>
+        <Uput>
+          <IDUputa>8c5a2373-0663-4444-8bb8-d6353e548a88</IDUputa>
+          <TipUputa>SPECIJALISTA</TipUputa>
+          <DatumIzdavanja>2021-05-31T03:33:03.7055347+02:00</DatumIzdavanja>
+          <ImePrezimeLekar>Magdalena Reljin</ImePrezimeLekar>
+          <IDLekaraSpecijaliste>KristinaStojic</IDLekaraSpecijaliste>
+          <NalazMisljenje>Molim pregled</NalazMisljenje>
+          <PocetakStacionarnog>0001-01-01T00:00:00</PocetakStacionarnog>
+          <KrajStacionarnog>0001-01-01T00:00:00</KrajStacionarnog>
         </Uput>
       </Uputi>
       <BracniStatus>ozenjenUdata</BracniStatus>

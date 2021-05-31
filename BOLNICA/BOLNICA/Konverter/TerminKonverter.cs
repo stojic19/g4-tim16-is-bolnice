@@ -10,13 +10,7 @@ namespace Bolnica.Konverter
 
         public TerminDTO ZakazaniTerminModelUDTO(Termin termin, String korisnickoIme)
         {
-            PacijentDTO pacijent = null;
-
-            if(termin.Pacijent != null)
-            {
-                pacijent = new PacijentDTO(termin.Pacijent.Ime, termin.Pacijent.Prezime, termin.Pacijent.Jmbg);
-            }
-            
+            PacijentDTO pacijent = new PacijentDTO(termin.Pacijent.Ime, termin.Pacijent.Prezime, termin.Pacijent.Jmbg, korisnickoIme);
             LekarDTO lekar = new LekarDTO(termin.Lekar.Ime + termin.Lekar.Prezime, termin.Lekar.KorisnickoIme, termin.Lekar.Specijalizacija);
             return new TerminDTO(termin.IdTermina, termin.Datum, termin.PocetnoVreme, lekar, termin.Trajanje.ToString(), null, termin.VrstaTermina.ToString(), korisnickoIme, termin.Trajanje, pacijent);
         }

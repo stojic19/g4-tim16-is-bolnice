@@ -1,8 +1,10 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Model;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,34 +22,29 @@ namespace Bolnica
         PreglediKontroler preglediKontroler = new PreglediKontroler();
         LekoviKontroler lekoviKontroler = new LekoviKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
-        Pregled izabranPregled = null;
+        NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+
+        List<TerapijaDTO> izabraneTerapije = new List<TerapijaDTO>();
+        PregledDTO izabranPregled = null;
         String idAnamneze = null;
         String sifraLeka = null;
-        public static ObservableCollection<Terapija> Terapije { get; set; }
+        public static ObservableCollection<TerapijaDTO> Terapije { get; set; } = new ObservableCollection<TerapijaDTO>();
         public NovaAnamneza(String IDIzabranog)
         {
             InitializeComponent();
-            this.izabranPregled = preglediKontroler.PretraziPoId(IDIzabranog);
+            this.izabranPregled = preglediKontroler.DobaviPregled(IDIzabranog);
             idAnamneze = Guid.NewGuid().ToString();
-
-            ZdravstveniKartoniServis.NovoPrivremeno(); //brisi
-
             inicijalizacijaPolja();
 
+            this.DataContext = this;
+            inicijalizacijaTabela();
+        }
+
+        private void inicijalizacijaTabela()
+        {
             this.TabelaLekova.ItemsSource = zdravstvenKartoniKontroler.DobaviLekoveBezAlergena(izabranPregled.Termin.Pacijent.KorisnickoIme);
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekova.ItemsSource);
             view.Filter = UserFilter;
-
-
-            this.DataContext = this;
-
-            Terapije = new ObservableCollection<Terapija>();
-
-            foreach (Terapija t in ZdravstveniKartoniServis.Privremeno) //brisi
-            {
-                Terapije.Add(t);
-            }
-
 
         }
 
@@ -55,8 +52,8 @@ namespace Bolnica
         {
             pocTer.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
             krajTer.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
-            Pacijent p = izabranPregled.Termin.Pacijent;
-            Lekar l = izabranPregled.Termin.Lekar;
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
+            LekarDTO l = lekariKontroler.PretraziPoId(izabranPregled.Termin.Lekar.KorisnickoIme);
 
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
@@ -71,7 +68,6 @@ namespace Bolnica
         {
             String imeiprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
-
             if (this.tekst.Text.Equals(""))
             {
                 validacijaDijagnoze.Content = "Niste popunili sva polja!";
@@ -80,21 +76,17 @@ namespace Bolnica
 
             }
 
-            Anamneza a = new Anamneza(idAnamneze, izabranPregled.Termin.Lekar.KorisnickoIme, imeiprezime, izabranPregled.Termin.Pacijent.KorisnickoIme, DateTime.Now, this.tekst.Text, ZdravstveniKartoniServis.Privremeno); //brisi
+            AnamnezaDTO a = new AnamnezaDTO(idAnamneze, imeiprezime, DateTime.Now, izabraneTerapije, tekst.Text, izabranPregled.Termin.Lekar.KorisnickoIme, izabranPregled.Termin.Pacijent.KorisnickoIme);
 
             zdravstvenKartoniKontroler.DodajAnamnezu(a);
             preglediKontroler.DodajAnamnezu(izabranPregled.IdPregleda, a);
             KartonLekar.Anamneze.Add(a);
-            ZdravstveniKartoniServis.NovoPrivremeno(); //brisi
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
         }
 
-        private void IzvestajAnamneza(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void IzvestajAnamneza(object sender, RoutedEventArgs e) { }
 
         private void Otkazivanje(object sender, RoutedEventArgs e)
         {
@@ -111,14 +103,12 @@ namespace Bolnica
         private void BrisanjeTerapije(object sender, RoutedEventArgs e)
         {
 
-            Terapija izabranZaBrisanje = (Terapija)TabelaTerapija.SelectedItem;
+            TerapijaDTO izabranZaBrisanje = (TerapijaDTO)TabelaTerapija.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
-                ZdravstveniKartoniServis.obrisiPrivremeno(izabranZaBrisanje); //TODO: ISPRAVI!!!!!
+                izabraneTerapije.Remove(izabranZaBrisanje);
                 Terapije.Remove(izabranZaBrisanje);
-
-
             }
             else
             {
@@ -133,20 +123,21 @@ namespace Bolnica
                 return;
             }
 
-            Lek preporucenLek = lekoviKontroler.PretraziPoID2(sifraLeka);
+            LekDTO izabranLek = lekoviKontroler.PretraziPoID(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
-            Terapija t = new Terapija(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, this.opisKonzumacije.Text, preporucenLek);
-            ZdravstveniKartoniServis.dodajPrivremeno(t); //brisi
+            TerapijaDTO t = new TerapijaDTO(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, 
+                   this.opisKonzumacije.Text, izabranLek);
+            izabraneTerapije.Add(t);
             Terapije.Add(t);
 
             //magdalena
             DateTime pocetni = DateTime.Now;
             DateTime krajnji = (DateTime)krajTer.SelectedDate;
             int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
-            String sadrzaj = "Terapija: " + t.PreporucenLek.NazivLeka + t.PreporucenLek.Jacina +
+            String sadrzaj = "Terapija: " + t.Lek.NazivLeka + t.Lek.Jacina +
                "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
 
-            
+
             Obavestenje o = new Obavestenje("Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
             obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
@@ -159,10 +150,9 @@ namespace Bolnica
                 String[] splits = form.Split(' ');
                 String[] brojevi = splits[0].Split('/');
 
-                //assigns year, month, day, hour, min, seconds
                 DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
 
-               
+
                 o = new Obavestenje("Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
                 obavestenjaKontroler.DodajObavestenjePacijentu(o);
 
@@ -183,7 +173,6 @@ namespace Bolnica
                 return false;
 
             }
-
             return true;
         }
 
@@ -197,7 +186,8 @@ namespace Bolnica
 
             }
 
-            if (!pocTer.SelectedDate.HasValue || !krajTer.SelectedDate.HasValue || DateTime.Now.CompareTo(pocTer.SelectedDate) > 0 || pocetak.CompareTo(krajTer.SelectedDate) > 0)
+            if (!pocTer.SelectedDate.HasValue || !krajTer.SelectedDate.HasValue || DateTime.Now.CompareTo(pocTer.SelectedDate) > 0 ||
+                    pocetak.CompareTo(krajTer.SelectedDate) > 0)
             {
                 validacija.Content = "Datumi nisu validni!";
                 validacija.Visibility = Visibility.Visible;
@@ -224,7 +214,7 @@ namespace Bolnica
             if (String.IsNullOrEmpty(poljeZaPreragu.Text))
                 return true;
             else
-                return ((item as Lek).NazivLeka.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as LekDTO).NazivLeka.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -236,9 +226,9 @@ namespace Bolnica
         {
             if (TabelaLekova.SelectedItems.Count > 0)
             {
-                Lek item = (Lek)TabelaLekova.SelectedItems[0];
+                LekDTO item = (LekDTO)TabelaLekova.SelectedItems[0];
                 imeLeka.Text = item.NazivLeka;
-                sifraLeka = item.IDLeka;
+                sifraLeka = item.IdLeka;
                 jacinaLeka.Text = item.Jacina;
             }
         }
