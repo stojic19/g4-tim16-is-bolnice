@@ -74,7 +74,7 @@ namespace Bolnica.Sekretar.Pregled
             //Otkazivanje
             if (dataGridTerminiPregleda.SelectedIndex != -1)
             {
-                String id = (((Termin)dataGridTerminiPregleda.SelectedItem).IdTermina);
+                String id = (((TerminDTO)dataGridTerminiPregleda.SelectedItem).IdTermina);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
