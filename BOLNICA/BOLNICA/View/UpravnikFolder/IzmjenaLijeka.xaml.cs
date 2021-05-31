@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -21,12 +23,13 @@ namespace Bolnica
     public partial class IzmjenaLijeka : Window
     {
         String stari = null;
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public IzmjenaLijeka(String id)
         {
             InitializeComponent();
 
             stari = id;
-            Lek lijek = ZahteviServis.pretraziLekPoId(id);
+            LekDTO lijek = zahtjeviKontroler.pretraziLekPoId(id);
 
             NazivLijeka.Text = lijek.NazivLeka;
             Jacina.Text = lijek.Jacina;
@@ -42,10 +45,9 @@ namespace Bolnica
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
 
-            Lek lijek = new Lek(stari, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), Proizvodjac.Text, new List<Sastojak>(), false);
+            LekDTO lijek = new LekDTO(stari, NazivLijeka.Text, Jacina.Text, int.Parse(Kolicina.Text), new List<SastojakDTO>(), Proizvodjac.Text);
 
-            ZahteviServis.IzmeniLek(lijek);
-            ZahteviServis.SerijalizacijaZahtjeva();
+            zahtjeviKontroler.IzmeniLek(lijek);
 
             this.Close();
         }

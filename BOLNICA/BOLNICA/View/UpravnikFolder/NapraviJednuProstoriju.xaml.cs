@@ -25,11 +25,11 @@ namespace Bolnica
 
     public partial class NapraviJednuProstoriju : UserControl
     {
-        private List<Prostor> ProstoriKojiSeBrisu = new List<Prostor>();
+        private List<ProstorDTO> ProstoriKojiSeBrisu = new List<ProstorDTO>();
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
 
-        public NapraviJednuProstoriju(List<Prostor> prostoriZaRenoviranje)
+        public NapraviJednuProstoriju(List<ProstorDTO> prostoriZaRenoviranje)
         {
             InitializeComponent();
             ProstoriKojiSeBrisu = prostoriZaRenoviranje;
@@ -46,7 +46,7 @@ namespace Bolnica
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Prostor prostor = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
+            ProstorDTO prostor = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
 
 
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndDate.SelectedDate))
@@ -61,9 +61,9 @@ namespace Bolnica
 
         }
 
-        private void RenovirajProstor(Prostor prostorKojiSePravi, List<Prostor> prostoriKojiSeBrisu)
+        private void RenovirajProstor(ProstorDTO prostorKojiSePravi, List<ProstorDTO> prostoriKojiSeBrisu)
         {
-            Prostor izabranZaRenoviranje = prostorKojiSePravi;
+            ProstorDTO izabranZaRenoviranje = prostorKojiSePravi;
             RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndDate.Text));
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[0]);
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[1]);

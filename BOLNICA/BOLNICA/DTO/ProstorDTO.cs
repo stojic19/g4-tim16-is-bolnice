@@ -15,7 +15,7 @@ namespace Bolnica.DTO
         private int sprat;
         private float kvadratura;
         private bool jeRenoviranje;
-        private List<Oprema> oprema;
+        private List<OpremaDTO> oprema;
         private int brojSlobodnihKreveta = 0;
 
         public String IdProstora
@@ -54,7 +54,7 @@ namespace Bolnica.DTO
             set { jeRenoviranje = value; }
         }
 
-        public List<Oprema> Oprema
+        public List<OpremaDTO> Oprema
         {
             get { return oprema; }
             set { oprema = value; }
@@ -76,7 +76,7 @@ namespace Bolnica.DTO
             this.sprat = sprat;
             this.kvadratura = kvadratura;
             this.jeRenoviranje = jeRenoviranje;
-            this.oprema = new List<Oprema>();
+            this.oprema = new List<OpremaDTO>();
         }
     }
 }

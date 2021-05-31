@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -20,16 +22,17 @@ namespace Bolnica
 {
     public partial class PrikazLijekova : UserControl
     {
-        public static ObservableCollection<Zahtjev> Zahtjevi { get; set; }
+        public static ObservableCollection<ZahtjevDTO> Zahtjevi { get; set; }
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public PrikazLijekova()
         {
             InitializeComponent();
 
             this.DataContext = this;
 
-            Zahtjevi = new ObservableCollection<Zahtjev>();
+            Zahtjevi = new ObservableCollection<ZahtjevDTO>();
 
-            foreach (Zahtjev z in ZahteviServis.SviZahtevi)
+            foreach (ZahtjevDTO z in zahtjeviKontroler.SviZahtjevi())
             {
                 Zahtjevi.Add(z);
 
@@ -81,7 +84,6 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ZahteviServis.SerijalizacijaZahtjeva();
         }
 
         private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)

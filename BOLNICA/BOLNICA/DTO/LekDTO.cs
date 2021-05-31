@@ -12,6 +12,9 @@ namespace Bolnica.DTO
         private String nazivLeka;
         private String jacina;
         private int kolicina;
+        private List<SastojakDTO> sastojci;
+        private String proizvodjac;
+        private Boolean verifikacija;
 
         public String IdLeka
         {
@@ -34,6 +37,23 @@ namespace Bolnica.DTO
             set { kolicina = value; }
         }
 
+        public List<SastojakDTO> Sastojci
+        {
+            get { return sastojci; }
+            set { sastojci = value; }
+        }
+
+        public String Proizvodjac
+        {
+            get { return proizvodjac; }
+            set { proizvodjac = value; }
+        }
+
+        public Boolean Verifikacija
+        {
+            get { return verifikacija; }
+            set { verifikacija = value; }
+        }
         public LekDTO(string idLeka, string nazivLeka, string jacina, int kolicina)
         {
             this.idLeka = idLeka;
@@ -48,6 +68,16 @@ namespace Bolnica.DTO
             this.nazivLeka = nazivLeka;
             this.jacina = jacina;
             this.kolicina = 0;
+        }
+
+        public LekDTO(string idLeka, string nazivLeka, string jacina,int kolicina, List<SastojakDTO> sastojci,string proizvodjac)
+        {
+            this.idLeka = idLeka;
+            this.nazivLeka = nazivLeka;
+            this.jacina = jacina;
+            this.kolicina = kolicina;
+            this.sastojci = sastojci;
+            this.proizvodjac = proizvodjac;
         }
 
         public LekDTO(string nazivLeka, string jacina, int kolicina)

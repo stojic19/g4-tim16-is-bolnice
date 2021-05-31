@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Bolnica
     public partial class UklanjanjeLijeka : Window
     {
         private string izabran = null;
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public UklanjanjeLijeka(String idLijeka)
         {
             InitializeComponent();
@@ -32,10 +34,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-
-            ZahteviServis.UklanjanjeLeka(izabran);
-            ZahteviServis.SerijalizacijaZahtjeva();
-              
+            zahtjeviKontroler.UklanjanjeLeka(izabran);             
             this.Close();
         }
     }

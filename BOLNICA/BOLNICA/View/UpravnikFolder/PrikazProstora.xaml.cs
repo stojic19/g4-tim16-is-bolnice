@@ -52,7 +52,7 @@ namespace Bolnica
         private void Izmjeni_Click(object sender, RoutedEventArgs e)
         {
 
-            Prostor izabranZaMenjanje = (Prostor)dataGridProstori.SelectedItem;
+            ProstorDTO izabranZaMenjanje = (ProstorDTO)dataGridProstori.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {
@@ -70,7 +70,7 @@ namespace Bolnica
         {
 
 
-            Prostor izabranZaBrisanje = (Prostor)dataGridProstori.SelectedItem;
+            ProstorDTO izabranZaBrisanje = (ProstorDTO)dataGridProstori.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {
@@ -88,7 +88,7 @@ namespace Bolnica
         {
 
 
-            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
+            ProstorDTO izabran = (ProstorDTO)dataGridProstori.SelectedItem;
 
             if (izabran != null)
             {
@@ -116,7 +116,7 @@ namespace Bolnica
 
         private void JedanUDva_Click(object sender, RoutedEventArgs e)
         {
-            Prostor izabran = (Prostor)dataGridProstori.SelectedItem;
+            ProstorDTO izabran = (ProstorDTO)dataGridProstori.SelectedItem;
 
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UserControl usc = null;
@@ -126,13 +126,13 @@ namespace Bolnica
 
         private void DvaUJedan_Click(object sender, RoutedEventArgs e)
         {
-            List<Prostor> prostoriZaRenoviranje = new List<Prostor>();
+            List<ProstorDTO> prostoriZaRenoviranje = new List<ProstorDTO>();
             if(dataGridProstori.SelectedItems.Count != 2)
             {
                 MessageBox.Show("Morate izabrati dva prostora!");
             }
 
-            foreach (Prostor p in dataGridProstori.SelectedItems)
+            foreach (ProstorDTO p in dataGridProstori.SelectedItems)
             {
                 prostoriZaRenoviranje.Add(p);
             }

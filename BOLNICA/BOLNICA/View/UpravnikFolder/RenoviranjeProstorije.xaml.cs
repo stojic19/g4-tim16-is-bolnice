@@ -47,7 +47,7 @@ namespace Bolnica
         {
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
             {
-                Prostor izabranZaRenoviranje = (Prostor)dataGridProstori.SelectedItem;
+                ProstorDTO izabranZaRenoviranje = (ProstorDTO)dataGridProstori.SelectedItem;
                 RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
                 renoviranjeKontroler.DodajZaRenoviranje(renoviranje);
                 renoviranjeKontroler.ProveriRenoviranje();

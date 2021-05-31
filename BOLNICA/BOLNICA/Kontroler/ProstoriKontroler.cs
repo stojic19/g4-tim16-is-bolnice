@@ -58,6 +58,12 @@ namespace Bolnica.Kontroler
             prostoriServis.PremjestiOpremuUDrugiProstor(prostorKonverter.ProstorDTOUModel(prostorUKojiPremjestamo), opremaKonverter.OpremaDTOUModel(oprema), kolicina);
         }
 
+        public Boolean ProvjeriValidnostNaziva(String nazivProstora)
+        {
+            if (prostoriServis.ProvjeriValidnostNaziva(nazivProstora))
+                return true;
+            return false;
+        }
         /*public void DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
         {
             prostoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, oprema, kolicina);

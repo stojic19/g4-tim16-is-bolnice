@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.LekarFolder.LekoviLekar;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
@@ -13,9 +14,10 @@ namespace Bolnica.LekarFolder
 {
     public partial class VerifikacijaLekova : UserControl
     {
-        public static ObservableCollection<Zahtjev> Zahtevi { get; set; } = new ObservableCollection<Zahtjev>();
-        public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
+        public static ObservableCollection<ZahtjevDTO> Zahtevi { get; set; } = new ObservableCollection<ZahtjevDTO>();
+        public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         String KorisnickoImeLekara = null;
 
         public VerifikacijaLekova(string korisnickoImeLekara)
@@ -36,7 +38,7 @@ namespace Bolnica.LekarFolder
         {
             Zahtevi.Clear();
 
-            foreach (Zahtjev z in ZahteviServis.SviZahtevi)
+            foreach (ZahtjevDTO z in zahtjeviKontroler.SviZahtjevi())
             {
                 Zahtevi.Add(z);
             }
@@ -59,7 +61,7 @@ namespace Bolnica.LekarFolder
         {
             Sastojci.Clear();
 
-            foreach (Sastojak s in ZahteviServis.pretraziLekPoId(idIzabranogLeka).Sastojci)
+            foreach (SastojakDTO s in zahtjeviKontroler.pretraziLekPoId(idIzabranogLeka).Sastojci)
             {
                 Sastojci.Add(s);
             }
@@ -100,13 +102,12 @@ namespace Bolnica.LekarFolder
 
             if (Validacija(izabranZahtev))
             {
-                if (ZahteviServis.OdobriZahtev(izabranZahtev.IdZahtjeva))
+                if (zahtjeviKontroler.OdobriZahtev(izabranZahtev.IdZahtjeva))
                 {
                     lekoviKontroler.DodajLek(izabranZahtev.Lijek);
                 }
 
                 inicijalizacijaTabeleZahteva();
-                ZahteviServis.SerijalizacijaZahtjeva();
 
             }
         }

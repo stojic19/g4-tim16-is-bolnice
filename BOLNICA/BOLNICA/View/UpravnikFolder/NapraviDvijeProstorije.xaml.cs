@@ -25,10 +25,10 @@ namespace Bolnica
 
     public partial class NapraviDvijeProstorije : UserControl
     {
-        private Prostor izabranaProstorija;
+        private ProstorDTO izabranaProstorija;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         RenoviranjeKontroler renoviranjeKontroler = new RenoviranjeKontroler();
-        public NapraviDvijeProstorije(Prostor izabran)
+        public NapraviDvijeProstorije(ProstorDTO izabran)
         {
             InitializeComponent();
             izabranaProstorija = izabran;
@@ -36,8 +36,8 @@ namespace Bolnica
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Prostor prostor1 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora1.Text, ProvjeriVrstuProstora1(), int.Parse(this.Sprat1.Text), float.Parse(this.Kvadratura1.Text), false);
-            Prostor prostor2 = new Prostor(Guid.NewGuid().ToString(), this.NazivProstora2.Text, ProvjeriVrstuProstora2(), int.Parse(this.Sprat2.Text), float.Parse(this.Kvadratura2.Text), false);
+            ProstorDTO prostor1 = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora1.Text, ProvjeriVrstuProstora1(), int.Parse(this.Sprat1.Text), float.Parse(this.Kvadratura1.Text), false);
+            ProstorDTO prostor2 = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora2.Text, ProvjeriVrstuProstora2(), int.Parse(this.Sprat2.Text), float.Parse(this.Kvadratura2.Text), false);
 
 
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndtDate.SelectedDate))
@@ -52,9 +52,9 @@ namespace Bolnica
         }
 
 
-        private void NapraviDvaProstoraOdJednog(Prostor prostor,Prostor prostorKojiSeDodaje1,Prostor prostorKojiSeDodaje2)
+        private void NapraviDvaProstoraOdJednog(ProstorDTO prostor,ProstorDTO prostorKojiSeDodaje1,ProstorDTO prostorKojiSeDodaje2)
         {
-            Prostor izabranZaRenoviranje = prostor;
+            ProstorDTO izabranZaRenoviranje = prostor;
             RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndtDate.Text));
             renoviranje.ProstoriKojiSeBrisu.Add(izabranaProstorija);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSeDodaje1);

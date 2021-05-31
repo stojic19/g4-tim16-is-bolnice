@@ -26,6 +26,7 @@ namespace Bolnica
     {
         private static UpravnikGlavniProzor instance = null;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public static UpravnikGlavniProzor getInstance()
         {
             if (instance == null)
@@ -75,7 +76,6 @@ namespace Bolnica
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ZahteviServis.SerijalizacijaZahtjeva();
         }
 
         private void krevet_Click(object sender, RoutedEventArgs e)

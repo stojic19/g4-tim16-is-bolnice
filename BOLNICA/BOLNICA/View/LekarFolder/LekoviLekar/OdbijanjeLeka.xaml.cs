@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
@@ -21,14 +23,15 @@ namespace Bolnica.LekarFolder.LekoviLekar
     public partial class OdbijanjeLeka : UserControl
     {
         String KorisnickoImeLekara = null;
-        Zahtjev izabranZahtev = null;
-        public static ObservableCollection<Sastojak> Sastojci { get; set; } = new ObservableCollection<Sastojak>();
+        ZahtjevDTO izabranZahtev = null;
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
 
         public OdbijanjeLeka(string idZahtjeva, string korisnickoImeLekara)
         {
             InitializeComponent();
             this.KorisnickoImeLekara = korisnickoImeLekara;
-            izabranZahtev = ZahteviServis.PretraziPoId(idZahtjeva);
+            izabranZahtev = zahtjeviKontroler.PretraziPoId(idZahtjeva);
             this.DataContext = this;
             inicijalizacijaPodataka();
             
@@ -36,11 +39,11 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
         private void inicijalizacijaPodataka()
         {
-            nazivLeka.Text = izabranZahtev.Lijek.NazivLeka;
-            jacinaLeka.Text = izabranZahtev.Lijek.Jacina;
+            nazivLeka.Text = izabranZahtev.Lek.NazivLeka;
+            jacinaLeka.Text = izabranZahtev.Lek.Jacina;
             Sastojci.Clear();
 
-            foreach(Sastojak s in izabranZahtev.Lijek.Sastojci)
+            foreach(SastojakDTO s in izabranZahtev.Lek.Sastojci)
             {
                 Sastojci.Add(s);
             }
@@ -60,8 +63,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             if (!ValidacijaUnosa()) return;
 
 
-            ZahteviServis.OdbijZahtev(izabranZahtev.IdZahtjeva, razlogOdbijanja.Text);
-            ZahteviServis.SerijalizacijaZahtjeva();
+            zahtjeviKontroler.OdbijZahtev(izabranZahtev.IDZahtjeva, razlogOdbijanja.Text);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
 

@@ -50,6 +50,19 @@ namespace Model
             return prostoriRepozitorijum.PretraziProstorPoId(idProstora);
         }
 
+        public Boolean ProvjeriValidnostNaziva(String nazivProstora)
+        {
+            foreach(Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
+            {
+                if (p.NazivProstora.Equals(nazivProstora))
+                {
+                    System.Windows.MessageBox.Show("Postoji prostor sa takvim nazivom!");
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void ProvjeriDaLiJeProstorRenoviran()
         {
             foreach (Renoviranje r in renoviranjeServis.SvaRenoviranja())

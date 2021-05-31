@@ -10,11 +10,11 @@ namespace Bolnica.DTO
     public class RenoviranjeDTO
     {
         private String idRenoviranja;
-        private Prostor prostor;
+        private ProstorDTO prostor;
         private DateTime pocetniDatum;
         private DateTime datumKraja;
-        private List<Prostor> prostoriKojiSeBrisu;
-        private List<Prostor> prostoriKojiSeDodaju;
+        private List<ProstorDTO> prostoriKojiSeBrisu;
+        private List<ProstorDTO> prostoriKojiSeDodaju;
 
         public String IdRenoviranja
         {
@@ -22,7 +22,7 @@ namespace Bolnica.DTO
             set { idRenoviranja = value; }
         }
 
-        public Prostor Prostor
+        public ProstorDTO Prostor
         {
             get { return prostor; }
             set { prostor = value; }
@@ -40,20 +40,20 @@ namespace Bolnica.DTO
             set { datumKraja = value; }
         }
 
-        public List<Prostor> ProstoriKojiSeBrisu
+        public List<ProstorDTO> ProstoriKojiSeBrisu
         {
             get { return prostoriKojiSeBrisu; }
             set { prostoriKojiSeBrisu = value; }
         }
 
-        public List<Prostor> ProstoriKojiSeDodaju
+        public List<ProstorDTO> ProstoriKojiSeDodaju
         {
             get { return prostoriKojiSeDodaju; }
             set { prostoriKojiSeDodaju = value; }
         }
         RenoviranjeDTO() { }
 
-        public RenoviranjeDTO(string idRenoviranja, Prostor prostor, DateTime pocetniDatum, DateTime datumKraja)
+        public RenoviranjeDTO(string idRenoviranja, ProstorDTO prostor, DateTime pocetniDatum, DateTime datumKraja)
         {
             this.idRenoviranja = idRenoviranja;
             this.prostor = prostor;

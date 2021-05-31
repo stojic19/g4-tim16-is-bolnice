@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Bolnica.DTO
 {
-    class ZahtevDTO
+    public class ZahtjevDTO
     {
-        private String idZahteva;
+        private String idZahtjeva;
         private LekDTO lek;
         private VrsteOdgovora odgovor;
         private String razlogOdbijanja;
         private DateTime datumSlanja;
 
-        public String IDZahteva
+        public String IDZahtjeva
         {
-            get { return idZahteva; }
-            set { idZahteva = value; }
+            get { return idZahtjeva; }
+            set { idZahtjeva = value; }
         }
 
         public LekDTO Lek
@@ -45,12 +45,20 @@ namespace Bolnica.DTO
             set { datumSlanja = value; }
         }
 
-        public ZahtevDTO(string idZahteva, LekDTO lek, VrsteOdgovora odgovor, string razlogOdbijanja, DateTime datumSlanja)
+        ZahtjevDTO() { }
+        public ZahtjevDTO(string idZahtjeva, LekDTO lek, VrsteOdgovora odgovor, string razlogOdbijanja, DateTime datumSlanja)
         {
-            this.idZahteva = idZahteva;
+            this.idZahtjeva = idZahtjeva;
             this.lek = lek;
             this.odgovor = odgovor;
             this.razlogOdbijanja = razlogOdbijanja;
+            this.datumSlanja = datumSlanja;
+        }
+
+        public ZahtjevDTO(string idZahtjeva, LekDTO lek, DateTime datumSlanja)
+        {
+            this.idZahtjeva = idZahtjeva;
+            this.lek = lek;
             this.datumSlanja = datumSlanja;
         }
     }

@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Bolnica
     {
 
 
-        public ObservableCollection<Oprema> oprema;
+        public ObservableCollection<OpremaDTO> oprema;
         public static string IdProstorije { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
 
@@ -32,8 +33,8 @@ namespace Bolnica
         {
             InitializeComponent();
             this.DataContext = this;
-            oprema = new ObservableCollection<Oprema>();
-            foreach(Oprema o in prostoriKontroler.PretraziProstorPoId(idProstorije).Oprema){
+            oprema = new ObservableCollection<OpremaDTO>();
+            foreach(OpremaDTO o in prostoriKontroler.PretraziProstorPoId(idProstorije).Oprema){
                 oprema.Add(o);
             }
             

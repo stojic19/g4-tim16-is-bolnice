@@ -37,12 +37,12 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-
-            ProstorDTO p = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
-            prostoriKontroler.DodajProstor(p);
-
-            this.Close();
-
+            if (prostoriKontroler.ProvjeriValidnostNaziva(this.NazivProstora.Text))
+            {
+                ProstorDTO p = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
+                prostoriKontroler.DodajProstor(p);
+                this.Close();
+            }
         }
 
         private VrsteProstora ProvjeriVrstuProstora()

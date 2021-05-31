@@ -42,7 +42,6 @@ namespace Bolnica
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić", DateTime.Now, Pol.muski, "1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
             Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
 
-            ZahteviServis.DeserijalizacijaZahtjeva();
             Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
             Lekari = lekariKontroler.DobaviSveLekareLogin();
             

@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Model;
 using System;
@@ -20,22 +22,23 @@ namespace Bolnica
 {
     public partial class DetaljiOLijeku : UserControl
     {
-        public static ObservableCollection<Sastojak> Sastojci { get; set; } 
+        public static ObservableCollection<SastojakDTO> Sastojci { get; set; } 
         String IDLeka = null;
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public DetaljiOLijeku(String id)
         {
             InitializeComponent();
 
             IDLeka = id;
-            Lek izabran = ZahteviServis.pretraziLekPoId(id);
+            LekDTO izabran = zahtjeviKontroler.pretraziLekPoId(id);
             textBoxNaziv.Text = izabran.NazivLeka;
             textBoxProizvodjac.Text = izabran.Proizvodjac;
             checkBox.IsChecked = izabran.Verifikacija;
 
             this.DataContext = this;
-            Sastojci = new ObservableCollection<Sastojak>();
+            Sastojci = new ObservableCollection<SastojakDTO>();
 
-            foreach (Sastojak s in izabran.Sastojci)
+            foreach (SastojakDTO s in izabran.Sastojci)
             {
                 Sastojci.Add(s);
             }
@@ -44,7 +47,6 @@ namespace Bolnica
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
-            ZahteviServis.SerijalizacijaZahtjeva();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new PrikazLijekova());
         }
@@ -52,7 +54,7 @@ namespace Bolnica
         private void Dodaj_Click(object sender, RoutedEventArgs e)
 
         {
-            if (ZahteviServis.PretraziPoIdLeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
+            if (zahtjeviKontroler.PretraziPoIdLijeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
                 DodavanjeSastojka dodavanje = new DodavanjeSastojka(IDLeka);
                 dodavanje.Show();
             }

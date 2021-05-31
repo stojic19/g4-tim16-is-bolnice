@@ -51,7 +51,7 @@ namespace Bolnica
         private void Izmjena_Click(object sender, RoutedEventArgs e)
         {
 
-            Oprema izabranZaMenjanje = (Oprema)dataGridOprema.SelectedItem;
+            OpremaDTO izabranZaMenjanje = (OpremaDTO)dataGridOprema.SelectedItem;
 
             if (izabranZaMenjanje != null)
             {
@@ -69,7 +69,7 @@ namespace Bolnica
         {
 
 
-            Oprema izabranZaBrisanje = (Oprema)dataGridOprema.SelectedItem;
+            OpremaDTO izabranZaBrisanje = (OpremaDTO)dataGridOprema.SelectedItem;
 
             if (izabranZaBrisanje != null)
             {

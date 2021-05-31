@@ -1,4 +1,6 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
+using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace Bolnica
     public partial class DodavanjeSastojka : Window
     {
         String IDLeka = null;
+        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public DodavanjeSastojka(String idLeka)
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace Bolnica
         {
             String nazivSastojka = this.nazivSastojka.Text;
 
-            foreach (Sastojak sastojak in ZahteviServis.pretraziLekPoId(IDLeka).Sastojci)
+            foreach (SastojakDTO sastojak in zahtjeviKontroler.pretraziLekPoId(IDLeka).Sastojci)
             {
                 if (sastojak.Naziv.Equals(this.nazivSastojka.Text))
                 {
@@ -48,12 +51,9 @@ namespace Bolnica
             }
 
             int kolicina = int.Parse(this.kolicina.Text);
+            SastojakDTO s = new SastojakDTO(nazivSastojka, kolicina);
 
-
-            Sastojak s = new Sastojak(nazivSastojka, kolicina);
-
-            ZahteviServis.DodajSastojak(s, IDLeka);
-            ZahteviServis.SerijalizacijaZahtjeva();
+            zahtjeviKontroler.DodajSastojak(s, IDLeka);
 
             this.Close();
 
