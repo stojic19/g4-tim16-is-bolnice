@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Servis;
 using Bolnica.UpravnikFolder;
@@ -63,7 +64,7 @@ namespace Bolnica
         private void RenovirajProstor(Prostor prostorKojiSePravi, List<Prostor> prostoriKojiSeBrisu)
         {
             Prostor izabranZaRenoviranje = prostorKojiSePravi;
-            Renoviranje renoviranje = new Renoviranje(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndDate.Text));
+            RenoviranjeDTO renoviranje = new RenoviranjeDTO(Guid.NewGuid().ToString(), izabranZaRenoviranje, DateTime.Parse(PickStartDate.Text), DateTime.Parse(PickEndDate.Text));
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[0]);
             renoviranje.ProstoriKojiSeBrisu.Add(prostoriKojiSeBrisu[1]);
             renoviranje.ProstoriKojiSeDodaju.Add(prostorKojiSePravi);     

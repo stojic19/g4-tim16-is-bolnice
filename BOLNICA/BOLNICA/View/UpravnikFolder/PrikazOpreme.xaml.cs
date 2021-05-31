@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.UpravnikFolder;
 using Model;
 using System;
@@ -23,7 +24,7 @@ namespace Bolnica
     public partial class PrikazOpreme : UserControl
     {
         OpremaKontroler opremaKontroler = new OpremaKontroler();
-        public static ObservableCollection<Oprema> Oprema { get; set; }
+        public static ObservableCollection<OpremaDTO> Oprema { get; set; }
 
         public PrikazOpreme()
         {
@@ -31,9 +32,9 @@ namespace Bolnica
 
             this.DataContext = this;
 
-            Oprema = new ObservableCollection<Oprema>();
+            Oprema = new ObservableCollection<OpremaDTO>();
 
-            foreach (Oprema o in opremaKontroler.SvaOprema())
+            foreach (OpremaDTO o in opremaKontroler.SvaOprema())
             {
                 Oprema.Add(o);
             }
@@ -94,9 +95,9 @@ namespace Bolnica
 
         private void SearchBox_KeyUp(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<Oprema> filtriranje = new ObservableCollection<Oprema>();
+            ObservableCollection<OpremaDTO> filtriranje = new ObservableCollection<OpremaDTO>();
 
-            foreach (Oprema o in Oprema)
+            foreach (OpremaDTO o in Oprema)
             {
                 if (o.IdOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
                     o.NazivOpreme.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||

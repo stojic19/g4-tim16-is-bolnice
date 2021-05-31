@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Model;
 using System;
@@ -28,7 +29,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            Prostor prostor = prostoriKontroler.PretraziProstorPoId(id);
+            ProstorDTO prostor = prostoriKontroler.PretraziProstorPoId(id);
             stari = id;
             NazivProstora.Text = prostor.NazivProstora;
   
@@ -57,7 +58,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Prostor p = new Prostor(stari, NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
+            ProstorDTO p = new ProstorDTO(stari, NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
             prostoriKontroler.IzmeniProstor(p);
 
             this.Close();

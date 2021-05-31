@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace Bolnica
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         OpremaKontroler opremaKontroler = new OpremaKontroler();
 
-        public static ObservableCollection<Prostor> Prostori { get; set; }
+        public static ObservableCollection<ProstorDTO> Prostori { get; set; }
 
         public PremjestanjeOpreme(string idOpreme, String idProstoraIzKojegPrebacujem)//korisnik unosi informacije
         {
@@ -39,9 +40,9 @@ namespace Bolnica
 
             this.DataContext = this;
 
-            Prostori = new ObservableCollection<Prostor>();
+            Prostori = new ObservableCollection<ProstorDTO>();
 
-            foreach (Prostor p in prostoriKontroler.SviProstori())
+            foreach (ProstorDTO p in prostoriKontroler.SviProstori())
             {
                 if (!p.IdProstora.Equals(idProstoraIzKojegPrebacujem))
                 {
@@ -58,10 +59,10 @@ namespace Bolnica
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Prostor prostorUKojiPremjestamo = (Prostor)dataGridProstori.SelectedItem;
+            ProstorDTO prostorUKojiPremjestamo = (ProstorDTO)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
-            Prostor prostorIzKojegPremjestamo = prostoriKontroler.PretraziProstorPoId(idProstoraIzKojegPrebacujem);
-            Oprema opremaKojuPremjestamo = opremaKontroler.PretraziPoId(idOpreme);
+            ProstorDTO prostorIzKojegPremjestamo = prostoriKontroler.PretraziProstorPoId(idProstoraIzKojegPrebacujem);
+            OpremaDTO opremaKojuPremjestamo = opremaKontroler.PretraziPoId(idOpreme);
 
             if (prostorUKojiPremjestamo == null)
             {

@@ -1,4 +1,5 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,8 @@ namespace Bolnica.UpravnikFolder
     /// </summary>
     public partial class PremjestanjeStatickeOpreme : System.Windows.Controls.UserControl
     {
-        public static ObservableCollection<Prostor> Prostori { get; set; }
-        public static ObservableCollection<Oprema> Oprema { get; set; }
+        public static ObservableCollection<ProstorDTO> Prostori { get; set; }
+        public static ObservableCollection<OpremaDTO> Oprema { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         OpremaKontroler opremaKontroler = new OpremaKontroler();
 
@@ -34,10 +35,10 @@ namespace Bolnica.UpravnikFolder
             InitializeComponent();
             this.DataContext = this;
 
-            Oprema = new ObservableCollection<Oprema>();
-            Prostori = new ObservableCollection<Prostor>();
+            Oprema = new ObservableCollection<OpremaDTO>();
+            Prostori = new ObservableCollection<ProstorDTO>();
 
-            foreach (Oprema o in opremaKontroler.SvaOprema())
+            foreach (OpremaDTO o in opremaKontroler.SvaOprema())
             {
                 if (o.VrstaOpreme == VrsteOpreme.staticka)
                 {
@@ -45,7 +46,7 @@ namespace Bolnica.UpravnikFolder
                 }
             }
 
-            foreach (Prostor p in prostoriKontroler.SviProstori())
+            foreach (ProstorDTO p in prostoriKontroler.SviProstori())
             {
                 Prostori.Add(p);
             }
@@ -53,8 +54,8 @@ namespace Bolnica.UpravnikFolder
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Prostor prostor = (Prostor)dataGridProstori.SelectedItem;
-            Oprema oprema = (Oprema)dataGridOprema.SelectedItem;
+            ProstorDTO prostor = (ProstorDTO)dataGridProstori.SelectedItem;
+            OpremaDTO oprema = (OpremaDTO)dataGridOprema.SelectedItem;
             int kolicina = Int32.Parse(this.kolicina.Text);
 
             if (DateTime.Today >= DateTime.Parse(DatumPremjestanja.Text))
