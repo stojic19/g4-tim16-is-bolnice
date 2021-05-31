@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bolnica.ViewModel.PacijentViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,16 @@ using System.Windows.Shapes;
 
 namespace Bolnica.View.PacijentFolder
 {
-    /// <summary>
-    /// Interaction logic for PomocAnkete.xaml
-    /// </summary>
+    
     public partial class PomocAnkete : UserControl
     {
+        private PomocViewModel pomocViewModel;
         public PomocAnkete()
         {
             InitializeComponent();
+            pomocViewModel = new PomocViewModel();
+            this.DataContext = pomocViewModel;
+            
         }
     }
 }

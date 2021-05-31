@@ -35,20 +35,20 @@
 
 
 
-        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-35.6,0" />
 
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4" Command="{Binding Path=VratiSeNaPocetnu}">
                 <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
 
 
             </Button>
 
-            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
+            <Button Grid.Column="1" Margin="91.6,31,0.4,0" Command="{Binding Path=PomocZakazivanje}" >
                 <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
 
             </Button>

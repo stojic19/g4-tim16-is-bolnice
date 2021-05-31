@@ -35,23 +35,25 @@
 
 
 
-        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,30,0.6,20" />
 
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4" Command="{Binding Path=VratiSeNaTerapiju}">
                 <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
 
 
             </Button>
 
-            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
-                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
+            <Button Grid.Column="1" Margin="95.4,31,0.2,0.2" Command="{Binding Path=PomocAnkete}">
+                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="49" Width="54" RenderTransformOrigin="0.218,0.426"  />
+
 
             </Button>
+
 
         </Grid>
 

@@ -21,7 +21,7 @@
             <TextBlock FontSize="15" Margin="10 0">na obavljene preglede i operacije u</TextBlock>
             <TextBlock FontSize="15" Margin="10 0">klinici Zdravo.</TextBlock>
             <TextBlock FontSize="15" >-Jednom u tri meseca imate mogućnost</TextBlock>
-            <TextBlock FontSize="15" Margin="10 0">da ocenite Kliniku Zdravo putem aplikacije.</TextBlock>
+            <TextBlock FontSize="15" Margin="10 0">da ocenite kliniku putem aplikacije.</TextBlock>
             <TextBlock FontSize="15" >-Izaberite anketu iz liste, popunite je i</TextBlock>
             <TextBlock FontSize="15" Margin="10 0">pomozite nam da unapredimo usluge!</TextBlock>
 
@@ -29,23 +29,21 @@
 
 
 
-        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="57,0,-49.6,0" />
+        <Image Source="/Slike/PacijentSlike/pomocpocetna.png" Height="138" Margin="53,150,-49.6,0" />
 
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="0,31,91.6,0.4">
+            <Button Grid.Column="0" Margin="0,31,91.6,0.4" Command="{Binding Path=PomocZdravstveniKarton}">
                 <Image Source="/Slike/PacijentSlike/prethodna.png" Height="49" Width="54"  />
 
 
             </Button>
 
-            <Button Grid.Column="1" Margin="91.6,31,0.4,0">
-                <Image Source="/Slike/PacijentSlike/sledeca.png" Height="51" Width="62" />
-
-            </Button>
+            
+            
 
         </Grid>
 

@@ -91,7 +91,7 @@ namespace Bolnica
         private void Pomoc_Click(object sender, RoutedEventArgs e)
         {
            naslovStrane.Content = "     Pomoć";
-            PromeniPrikaz(new PomocZakazivanje());
+            PromeniPrikaz(new Pomoc());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

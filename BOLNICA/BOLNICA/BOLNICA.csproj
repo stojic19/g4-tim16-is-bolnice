@@ -182,6 +182,7 @@
     <Compile Include="ViewModel\PacijentViewModel\KartonViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\KreirajPodsetnikViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PomeranjePregledaViewModel.cs" />
+    <Compile Include="ViewModel\PacijentViewModel\PomocViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PopuniAnketuViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiPomeranjeViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\PotvrdiZakazivanjeViewModel.cs" />
