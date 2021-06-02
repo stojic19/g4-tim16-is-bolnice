@@ -82,7 +82,7 @@
         <Button Margin="25 10" x:Name="informacije"  Background="#FF31577E" Height="30">
             <Run Foreground="AntiqueWhite" >DETALJI TERAPIJE</Run>
         </Button>
-        <Button Margin="25 10" x:Name="izvestaj"  Background="#FF31577E" Height="30">
+        <Button Margin="25 10" x:Name="izvestaj"  Background="#FF31577E" Height="30" Command="{Binding Path=Izvestaj}">
             <Run Foreground="AntiqueWhite">IZVEŠTAJ</Run>
         </Button>
     </StackPanel>

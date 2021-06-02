@@ -24,5 +24,7 @@ namespace Bolnica.Konverter
                terapija.KrajTerapije, terapija.Kolicina, terapija.Satnica, terapija.UputsvoKonzumiranja,
                lekKonverter.LekDTOUModel(terapija.Lek));
         }
+
+       
     }
 }

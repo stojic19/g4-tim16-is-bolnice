@@ -93,6 +93,23 @@ namespace Bolnica.Kontroler
 
             return uputiPacijenta;
         }
+        public int DobaviBrojLekovaZaDatum(DateTime datum, String korisnickoIme)
+        {
+            return zdravstveniKartoniServis.DobaviBrojLekovaZaDatum(datum,korisnickoIme);
+        }
 
+
+        public List<TerapijaDTO> DobaviSveTerapijeZaIzvestaj(List<DateTime> vremenskiInterval, String korisnickoIme)
+        {
+            List<TerapijaDTO> terapijeZaIzvestaj = new List<TerapijaDTO>();
+            foreach (Terapija terapija in zdravstveniKartoniServis.DobaviSveTerapijeIzvestaja(vremenskiInterval, korisnickoIme))
+            {
+                terapijeZaIzvestaj.Add(terapijaKonverter.TerapijaModelUDTO(terapija));
+            }
+
+            if (terapijeZaIzvestaj.Count == 0)
+                Console.WriteLine("sve je prazno kontroler");
+            return terapijeZaIzvestaj;
+        }
     }
 }

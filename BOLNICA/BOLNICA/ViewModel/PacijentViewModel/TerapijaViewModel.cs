@@ -1,5 +1,7 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Komande;
 using Bolnica.Kontroler;
+using Bolnica.View.PacijentFolder;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +20,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             this.korisnickoIme = korisnickoIme;
             UcitajKolekciju();
+            izvestaj = new RelayCommand(PrikaziIzvestaj);
         }
 
         private void UcitajKolekciju()
@@ -44,6 +47,17 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 korisnickoIme = value;
                 OnPropertyChanged();
             }
+        }
+
+        private RelayCommand izvestaj;
+        public RelayCommand Izvestaj
+        {
+            get { return izvestaj; }
+        }
+        public void PrikaziIzvestaj()
+        {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajTerapije(KorisnickoIme));
         }
 
     }

@@ -97,6 +97,7 @@ namespace Bolnica.Model
             return receptiPacijenta;
         }
 
+       
         public List<Uput> DobaviUputePacijenta(String idPacijenta)
         {
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
@@ -160,6 +161,40 @@ namespace Bolnica.Model
         {
             if (DateTime.Compare(DateTime.Now.Date, terapija.KrajTerapije) <= 0) return true;
             return false;
+        }
+
+
+        public int DobaviBrojLekovaZaDatum(DateTime datum, String korisnickoIme)
+        {
+            int brojLekova = 0;
+            foreach (Terapija terapija in DobaviSveTerapijePacijenta(korisnickoIme))
+            {
+                if (DateTime.Compare(terapija.PocetakTerapije, datum) <= 0 && DateTime.Compare(terapija.KrajTerapije, datum) >= 0)
+                {
+                    brojLekova++;
+                }
+            }
+            return brojLekova;
+        }
+
+
+        public List<Terapija> DobaviSveTerapijeIzvestaja(List<DateTime> vremenskiInterval,String korisnickoIme)
+        {
+            List<Terapija> sveTerapije = new List<Terapija>();
+            if (DobaviSveTerapijePacijenta(korisnickoIme).Count == 0)
+                Console.Write("SERVIS PRAZNOOOOOOOOOOOOOOOO");
+            foreach (Terapija terapija in DobaviSveTerapijePacijenta(korisnickoIme))
+            {
+                Console.WriteLine("pocetak terpije "+terapija.PocetakTerapije);
+                Console.WriteLine("pocetak int "+ vremenskiInterval[0].Date);
+                if (DateTime.Compare(vremenskiInterval[0].Date,terapija.PocetakTerapije) <= 0 && DateTime.Compare(vremenskiInterval[1],terapija.KrajTerapije) >= 0)
+                {
+                    sveTerapije.Add(terapija);
+                    
+                }
+            }
+
+            return sveTerapije;
         }
 
     }
