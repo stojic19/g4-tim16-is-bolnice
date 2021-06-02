@@ -18,7 +18,30 @@ namespace Bolnica.Kontroler
         LekariServis lekariServis = new LekariServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
 
-
+        public int DobaviBrojZakazanihTerminaNaDatum(DateTime datum)
+        {
+            int broj = 0;
+            foreach(TerminDTO termin in DobaviSveZakazaneTermine())
+            {
+                if(DateTime.Compare(termin.Datum.Date, datum.Date) == 0)
+                {
+                    broj += 1;
+                }
+            }
+            return broj;
+        }
+        public int DobaviBrojSlobodnihTerminaNaDatum(DateTime datum)
+        {
+            int broj = 0;
+            foreach (TerminDTO termin in DobaviSveSlobodneTermine())
+            {
+                if (DateTime.Compare(termin.Datum.Date, datum.Date) == 0)
+                {
+                    broj += 1;
+                }
+            }
+            return broj;
+        }
         public List<TerminDTO> DobaviSveSlobodneTermine()
         {
             List<TerminDTO> termini = new List<TerminDTO>();

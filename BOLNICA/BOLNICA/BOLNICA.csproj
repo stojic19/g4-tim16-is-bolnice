@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamicPDF.NETFramework40, Version=11.11.0.43757, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ceTe.DynamicPDF.CoreSuite.NET.11.11.0\lib\net40\DynamicPDF.NETFramework40.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -94,6 +97,7 @@
     <Compile Include="DTO\UputDTO.cs" />
     <Compile Include="DTO\ZahtjevDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
+    <Compile Include="Izvestaj\Sekretar\NedeljniIzvestaj.cs" />
     <Compile Include="Komande\RelayCommand.cs" />
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\AnketaKontroler.cs" />

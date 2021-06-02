@@ -4272,3 +4272,5 @@ C:\Users\computer\Desktop\sims posle kontrolne tacke\g4-tim16-is-bolnice\BOLNICA
 C:\Users\computer\Desktop\sims posle kontrolne tacke\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
 C:\Users\computer\Desktop\sims posle kontrolne tacke\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\sims posle kontrolne tacke\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\DynamicPDF.NETFramework40.dll
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\bin\Debug\DynamicPDF.NETFramework40.xml

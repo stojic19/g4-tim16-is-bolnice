@@ -17,6 +17,18 @@ namespace Bolnica.Kontroler
         TerminKonverter terminKonverter = new TerminKonverter();
         PacijentKonverter pacijentKonverter = new PacijentKonverter();
 
+        public int DobaviBrojZakazanihOperacijaNaDatum(DateTime datum)
+        {
+            int broj = 0;
+            foreach (TerminDTO termin in DobaviSveOperacije())
+            {
+                if (DateTime.Compare(termin.Datum.Date, datum.Date) == 0)
+                {
+                    broj += 1;
+                }
+            }
+            return broj;
+        }
         public List<TerminDTO> DobaviSveOperacije()
         {
             List<TerminDTO> termini = new List<TerminDTO>();

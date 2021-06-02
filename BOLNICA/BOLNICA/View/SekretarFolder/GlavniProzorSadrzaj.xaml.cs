@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Izvestaj.Sekretar;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
 using Model;
 using System;
@@ -23,6 +24,7 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class GlavniProzorSadrzaj : UserControl
     {
+        NedeljniIzvestaj izvestajSekretar = new NedeljniIzvestaj();
         public GlavniProzorSadrzaj()
         {
             InitializeComponent();
@@ -88,6 +90,10 @@ namespace Bolnica.SekretarFolder
 
             usc = new PrikazLekaraSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Izvestaj_Click(object sender, RoutedEventArgs e)
+        {
+            izvestajSekretar.StampajIzvestaj();
         }
     }
 }
