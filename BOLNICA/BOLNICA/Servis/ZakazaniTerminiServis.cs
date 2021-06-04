@@ -148,9 +148,20 @@ namespace Model
 
         public List<Termin> DobaviSveZakazaneTerminePacijenta(String pacijentKorisnickoIme)
         {
-            return zakazaniTerminiRepozitorijum.DobaviSveZakazaneTerminePacijenta(pacijentKorisnickoIme);
+            List<Termin> terminiPacijenta = new List<Termin>();
+            foreach (Termin termin in zakazaniTerminiRepozitorijum.DobaviSveZakazaneTerminePacijenta(pacijentKorisnickoIme))
+            {
+                if (TerminJeUBuducnosti(termin))
+                    terminiPacijenta.Add(termin);
+            }
+            return terminiPacijenta;
         }
-
+        private bool TerminJeUBuducnosti(Termin termin)
+        {
+            if (DateTime.Compare(DateTime.Now,termin.Datum) < 0)
+                return true;
+            return false;
+        }
         public void OtkaziPregledPacijent(Termin terminZaOtkazivanje)
         {
             naloziPacijenataServis.IzmeniStanjeNalogaPacijenta(terminZaOtkazivanje.Pacijent);

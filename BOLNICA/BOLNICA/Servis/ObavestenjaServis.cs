@@ -88,7 +88,7 @@ namespace Model
         public void DodajObavestenjeOPomerenomPregledu(Termin noviTermin, Termin stariTermin)
         {
             String TekstObavestenja = "Upravo ste pomerili pregled \nkod lekara " + stariTermin.Lekar.Ime + " " + stariTermin.Lekar.Prezime
-                + "\n" + stariTermin.Datum.ToString("dd/MM/yyyy") + " u " + stariTermin.PocetnoVreme + "h. \nNovi pregled je zakazan kod lekara \n"
+                + "\n" + stariTermin.Datum.ToString("dd/MM/yyyy") + " u " + stariTermin.PocetnoVreme + "h. \nNovi pregled je zakazan kod\nlekara "
                 + noviTermin.Lekar.Ime+" "+noviTermin.Lekar.Prezime+ "\n" + noviTermin.Datum.ToString("dd/MM/yyyy") + " u " + noviTermin.PocetnoVreme+" h.";
             DodajObavestenjePacijentu(new Obavestenje("Obaveštenje o pomerenom pregledu", TekstObavestenja, DateTime.Now, noviTermin.Pacijent.KorisnickoIme));
         }
