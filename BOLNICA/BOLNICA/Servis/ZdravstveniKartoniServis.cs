@@ -49,7 +49,7 @@ namespace Bolnica.Model
             naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
         }
 
-       
+
 
         public void DodajAnamnezu(Anamneza novaAnamneza)
         {
@@ -71,8 +71,8 @@ namespace Bolnica.Model
         public void IzmeniUput(String idPacijenta, Uput izmenjenUput)
         {
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
-            
-            foreach(Uput u in p.ZdravstveniKarton.Uputi)
+
+            foreach (Uput u in p.ZdravstveniKarton.Uputi)
             {
                 if (u.IDUputa.Equals(izmenjenUput.IDUputa))
                 {
@@ -97,7 +97,7 @@ namespace Bolnica.Model
             return receptiPacijenta;
         }
 
-       
+
         public List<Uput> DobaviUputePacijenta(String idPacijenta)
         {
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
@@ -167,30 +167,58 @@ namespace Bolnica.Model
         public int DobaviBrojLekovaZaDatum(DateTime datum, String korisnickoIme)
         {
             int brojLekova = 0;
+            List<DateTime> intervalTerapije = new List<DateTime>();
             foreach (Terapija terapija in DobaviSveTerapijePacijenta(korisnickoIme))
             {
-                if (DateTime.Compare(terapija.PocetakTerapije, datum) <= 0 && DateTime.Compare(terapija.KrajTerapije, datum) >= 0)
-                {
+                if (PogodnaTerapija(terapija, datum))
                     brojLekova++;
-                }
             }
             return brojLekova;
         }
 
+        private bool PogodnaTerapija(Terapija terapija,DateTime datum)
+        {
+            List<DateTime> intervalTerapije = new List<DateTime>();
+            intervalTerapije.Add(terapija.PocetakTerapije);
+            intervalTerapije.Add(terapija.KrajTerapije);
+            if (TerapijaPripadaDatumu(intervalTerapije, datum))
+                return true;
+            return false;
+        }
 
         public List<Terapija> DobaviSveTerapijeIzvestaja(List<DateTime> vremenskiInterval,String korisnickoIme)
         {
             List<Terapija> sveTerapije = new List<Terapija>();
+            List<DateTime> intervalTerapije = new List<DateTime>();
+           
             foreach (Terapija terapija in DobaviSveTerapijePacijenta(korisnickoIme))
             {
-                if (DateTime.Compare(vremenskiInterval[0].Date,terapija.PocetakTerapije) <= 0 && DateTime.Compare(vremenskiInterval[1],terapija.KrajTerapije) >= 0)
+                intervalTerapije.Add(terapija.PocetakTerapije);
+                intervalTerapije.Add(terapija.KrajTerapije);
+                if (TerapijaJeUIntervalu(vremenskiInterval,intervalTerapije))
                 {
                     sveTerapije.Add(terapija);
-                    
                 }
+                intervalTerapije.Clear();
             }
 
             return sveTerapije;
+        }
+        
+
+        public bool TerapijaJeUIntervalu(List<DateTime> vremenskiInterval,List<DateTime>intervalTerapije)
+        {
+            DateTime pocetakIntervala = vremenskiInterval[0];
+            DateTime krajIntervala = vremenskiInterval[1];
+            DateTime pocetakTerapije = intervalTerapije[0];
+            DateTime krajTerapije = intervalTerapije[1];
+            return !((krajIntervala < pocetakTerapije && pocetakIntervala < pocetakTerapije) ||
+                        (krajTerapije < pocetakIntervala && pocetakTerapije < pocetakIntervala));
+        }
+
+        public bool TerapijaPripadaDatumu(List<DateTime> intervalTerapije,DateTime datumZaPoredjenje)
+        {
+            return datumZaPoredjenje >= intervalTerapije[0] && datumZaPoredjenje <= intervalTerapije[1];
         }
 
     }

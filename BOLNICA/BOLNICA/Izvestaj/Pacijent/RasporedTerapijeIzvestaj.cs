@@ -81,7 +81,6 @@ namespace Bolnica.Izvestaj.Pacijent
             List<TerapijaDTO> sveTerapije = zdravstvenKartoniKontroler.DobaviSveTerapijeZaIzvestaj(interval, koricniskoIme);
             float[] sveKolicine = new float[sveTerapije.Count];
             String[] sviLekovi = new String[sveTerapije.Count];
-            Console.WriteLine("sve terapije vratilaaaaaa" + sveTerapije.Count);
             foreach (TerapijaDTO terapija in sveTerapije)
             {
                
@@ -115,7 +114,7 @@ namespace Bolnica.Izvestaj.Pacijent
             PlotArea plotArea22 = chart3.PlotAreas.Add(50, 50, 500, 300);
 
             // Create header titles and add it to the chart
-            Title title11 = new Title("Ukupna kolicina lekova u zadatom periodu");
+            Title title11 = new Title("Dnevna kolicina propisanih lekova");
             chart3.HeaderTitles.Add(title11);
 
             // Create a indexed stacked column series elements and add values to it
