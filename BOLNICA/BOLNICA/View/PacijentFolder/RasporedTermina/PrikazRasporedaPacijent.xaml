@@ -8,7 +8,7 @@
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista zakazanih termina</Label>
-        <ListBox Margin="20 0 20 0" SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+        <ListBox x:Name="sviTermini" Margin="20 0 20 0" SelectionMode="Single" Height="450" Width="300" ItemsSource="{Binding Path=ZakazaniTerminiPacijenta, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
  SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>

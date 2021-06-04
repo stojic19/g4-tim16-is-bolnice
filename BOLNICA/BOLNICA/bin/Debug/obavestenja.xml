@@ -1057,4 +1057,53 @@ Magdalena Reljin
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>180f39ba-a2bf-4197-8b77-ed01bb6d772c</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin
+biće održan 6/7/2021 12:00:00 AM u 08:30h. </Tekst>
+    <Datum>2021-06-05T08:30:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>e533caac-8a38-48a6-8847-b4967ee020d9</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Magdalena Reljin
+6/7/2021 12:00:00 AM u 08:30h. 
+Novi pregled je zakazan kod lekara 
+Magdalena Reljin
+6/9/2021 12:00:00 AM u 09:00 h.</Tekst>
+    <Datum>2021-06-04T23:49:27.5794352+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>3a76f422-9a7d-4221-bbdf-3b7b6d4cd727</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Magdalena Reljin
+6/9/2021 9:00:00 AM
+Novi pregled je zakazan kod lekara 
+Magdalena Reljin
+6/9/2021 7:30:00 AM.</Tekst>
+    <Datum>2021-06-04T23:54:02.5112876+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>4ccfdc40-950a-4d3b-b6f7-96a5cf3604e7</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Magdalena Reljin
+09/06/2021 u 07:30h. 
+Novi pregled je zakazan kod lekara 
+Magdalena Reljin
+09/06/2021 u 08:30 h.</Tekst>
+    <Datum>2021-06-04T23:58:17.6441476+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

@@ -2,6 +2,7 @@
 using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
 using Bolnica.ViewModel;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -21,26 +22,27 @@ namespace Bolnica
 {
     public partial class OtkazivanjeTerminaPacijent : Window
     {
-        private RasporedTerminaViewModel rasporedTerminaViewModel;
+        private PotvrdiOtkazivanjeViewModel potvrdiOtkazivanjeViewModel;
+        private String korisnickoIme;
         public OtkazivanjeTerminaPacijent(TerminDTO izabraniTermin)
         {
             InitializeComponent();
-            rasporedTerminaViewModel = new RasporedTerminaViewModel(izabraniTermin);
-            this.DataContext = rasporedTerminaViewModel;
+            korisnickoIme = izabraniTermin.IdPacijenta;
+            potvrdiOtkazivanjeViewModel = new PotvrdiOtkazivanjeViewModel(izabraniTermin);
+            this.DataContext = potvrdiOtkazivanjeViewModel;
             
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazRasporedaPacijent(korisnickoIme));
             this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           
             this.Close();
         }
-
-      
     }
 }

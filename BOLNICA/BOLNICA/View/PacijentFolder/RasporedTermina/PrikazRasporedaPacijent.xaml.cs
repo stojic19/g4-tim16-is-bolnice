@@ -28,9 +28,10 @@ namespace Bolnica
         {
             InitializeComponent();
             rasporedTerminaViewModel = new RasporedTerminaViewModel(korisnickoIme);
+            sviTermini.ItemsSource = rasporedTerminaViewModel.ZakazaniTerminiPacijenta;
             this.DataContext = rasporedTerminaViewModel;
         }
 
-       
+      
     }
 }

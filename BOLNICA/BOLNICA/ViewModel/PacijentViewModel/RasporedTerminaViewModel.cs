@@ -41,14 +41,13 @@ namespace Bolnica.ViewModel
         public RasporedTerminaViewModel(TerminDTO izabraniTermin)
         {
             selektovaniTermin = izabraniTermin;
-            this.potvrdiOtkazivanjeKomanda = new RelayCommand(Potvrdi);
             UcitajUKolekciju();
         }
 
         public void UcitajUKolekciju()
         {
             ZakazaniTerminiPacijenta = new ObservableCollection<TerminDTO>();
-            foreach (TerminDTO termin in terminKontroler.DobaviSveZakazaneTerminePacijenta(korisnickoIme))
+            foreach (TerminDTO termin in terminKontroler.DobaviSveZakazaneTerminePacijenta(korisnickoIme).OrderByDescending(user => user.Datum).ToList())
             {
                 ZakazaniTerminiPacijenta.Add(termin);
             }
@@ -124,20 +123,7 @@ namespace Bolnica.ViewModel
             return true;
         }
 
-        private RelayCommand potvrdiOtkazivanjeKomanda;
-
-        public RelayCommand PotvrdiOtkazivanjeKomanda
-        {
-            get { return potvrdiOtkazivanjeKomanda; }
-        }
-        public void Potvrdi()
-        {
-
-            terminKontroler.OtkaziPregledPacijent(SelektovaniTermin);
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazRasporedaPacijent(korisnickoIme));
-
-        }
+   
 
         private RelayCommand pomeriPregledKomanda;
 

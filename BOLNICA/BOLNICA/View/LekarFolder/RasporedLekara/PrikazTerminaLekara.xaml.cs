@@ -109,7 +109,6 @@ namespace Bolnica
         private void pretragaDatuma_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dataGridTermini.ItemsSource).Refresh();
-
         }
     }
 }
