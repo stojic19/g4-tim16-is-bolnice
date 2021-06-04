@@ -28,6 +28,7 @@ namespace Bolnica
         PregledDTO izabranPregled = null;
         String idAnamneze = null;
         String sifraLeka = null;
+        String korisnickoPacijenta = "";
         public static ObservableCollection<TerapijaDTO> Terapije { get; set; } = new ObservableCollection<TerapijaDTO>();
         public NovaAnamneza(String IDIzabranog)
         {
@@ -54,7 +55,7 @@ namespace Bolnica
             krajTer.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
             PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.Pacijent.KorisnickoIme);
             LekarDTO l = lekariKontroler.PretraziPoId(izabranPregled.Termin.Lekar.KorisnickoIme);
-
+            korisnickoPacijenta = p.KorisnickoIme;
             ime.Text = p.Ime;
             prezime.Text = p.Prezime;
             jmbg.Text = p.Jmbg;
@@ -131,34 +132,7 @@ namespace Bolnica
             Terapije.Add(t);
 
             //magdalena
-            DateTime pocetni = DateTime.Now;
-            DateTime krajnji = (DateTime)krajTer.SelectedDate;
-            int trajanje = (int)(krajnji - pocetni).TotalDays + 1;
-            String sadrzaj = "Terapija: " + t.Lek.NazivLeka + t.Lek.Jacina +
-               "\ndnevna količina: " + t.Kolicina + ",\nvremenski interval između doza: " + t.Satnica + "h.";
-
-
-            Obavestenje o = new Obavestenje("Terapija", sadrzaj, pocetni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-            obavestenjaKontroler.DodajObavestenjePacijentu(o);
-
-            DateTime datum;
-            for (int i = 1; i <= trajanje; i++)
-            {
-                datum = pocetni.AddDays(i);
-                String form = datum.ToString();
-
-                String[] splits = form.Split(' ');
-                String[] brojevi = splits[0].Split('/');
-
-                DateTime konacni = new DateTime(Int32.Parse(brojevi[2]), Int32.Parse(brojevi[0]), Int32.Parse(brojevi[1]), 8, 0, 0);
-
-
-                o = new Obavestenje("Terapija", sadrzaj, konacni, izabranPregled.Termin.Pacijent.KorisnickoIme);
-                obavestenjaKontroler.DodajObavestenjePacijentu(o);
-
-                //
-
-            }
+            obavestenjaKontroler.DodajObavestenjeOTerapiji(t, korisnickoPacijenta);
 
             PraznjenjePolja();
 

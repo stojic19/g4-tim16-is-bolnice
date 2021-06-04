@@ -1,4 +1,4 @@
-// File:    RukovanjeObavestenjimaSekratar.cs
+﻿// File:    RukovanjeObavestenjimaSekratar.cs
 // Author:  aleks
 // Created: Sunday, April 11, 2021 10:56:39
 // Purpose: Definition of Class RukovanjeObavestenjimaSekratar
@@ -77,6 +77,33 @@ namespace Model
                DateTime formatiranDatum = new DateTime(datumObavestenja.Year, datumObavestenja.Month, datumObavestenja.Day, podsetnik.Vreme.Hour, podsetnik.Vreme.Minute, 0);
                Obavestenje novoObavestenje = new Obavestenje(podsetnik.Naslov, podsetnik.Tekst, formatiranDatum, idPacijenta);
                DodajObavestenjePacijentu(novoObavestenje);
+            }
+        }
+        public void DodajObavestenjeOZakazanomPregledu(String idPacijenta, Termin termin)
+        {
+            String TekstObavestenja= "Termin pregleda kod lekara \n " + termin.Lekar.Ime+" "+termin.Lekar.Prezime
+                + "\nbiće održan " + termin.Datum.Date + " u " + termin.PocetnoVreme + "h. ";
+            DodajObavestenjePacijentu(new Obavestenje("Obaveštenje o zakazanom pregledu", TekstObavestenja, termin.Datum.AddDays(-2), idPacijenta));
+        }
+        public void DodajObavestenjeOPomerenomPregledu(Termin noviTermin, Termin stariTermin)
+        {
+            String TekstObavestenja = "Upravo ste pomerili pregled \nkod lekara " + stariTermin.Lekar.Ime + " " + stariTermin.Lekar.Prezime
+                + "\n" + stariTermin.Datum.Date + " u " + stariTermin.PocetnoVreme + "h. \nNovi pregled je zakazan kod lekara \n"
+                + noviTermin.Lekar.Ime+" "+noviTermin.Lekar.Prezime+ "\n" + noviTermin.Datum.Date+" u " + noviTermin.PocetnoVreme+" h.";
+            DodajObavestenjePacijentu(new Obavestenje("Obaveštenje o pomerenom pregledu", TekstObavestenja, DateTime.Now, noviTermin.Pacijent.KorisnickoIme));
+        }
+
+        public void DodajObavestenjeOTerapiji(Terapija terapija,String korisnickoIme)
+        {
+            int intervalObavestenja = (int)(terapija.KrajTerapije - terapija.PocetakTerapije).TotalDays + 1;
+            String sadrzaj = "Terapija: " + terapija.PreporucenLek.NazivLeka + terapija.PreporucenLek.Jacina +
+               "\ndnevna količina: " + terapija.Kolicina + ",\nvremenski interval između doza:\n " + terapija.Satnica + "h.";
+            for (int i = 0; i < intervalObavestenja; i++)
+            {
+                DateTime datumObavestenja = terapija.PocetakTerapije.AddDays(i);
+                DateTime formatiranDatum = new DateTime(datumObavestenja.Year, datumObavestenja.Month, datumObavestenja.Day, 8, 0, 0);
+                Obavestenje novoObavestenje = new Obavestenje("Terapija podsetnik", sadrzaj, formatiranDatum, korisnickoIme);
+                DodajObavestenjePacijentu(novoObavestenje);
             }
         }
 

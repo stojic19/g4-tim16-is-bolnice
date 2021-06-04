@@ -13,6 +13,7 @@ namespace Bolnica.Kontroler
     {
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
         ObavestenjeKonverter obavestenjeKonverter = new ObavestenjeKonverter();
+        TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
 
         public List<ObavestenjeDTO> DobaviSvaObavestenja()
         {
@@ -22,6 +23,26 @@ namespace Bolnica.Kontroler
                 obavestenja.Add(obavestenjeKonverter.ObavestenjeModelUDTO(obavestenje));
             }
             return obavestenja;
+        }
+
+        public List<ObavestenjeDTO> DobaviSvaObavestenjaPacijenta(String korisnickoIme)
+        {
+            List<ObavestenjeDTO> obavestenja = new List<ObavestenjeDTO>();
+            foreach (Obavestenje obavestenje in DobaviSvaObavestenjaOsobe(korisnickoIme))
+            {
+                obavestenja.Add(obavestenjeKonverter.ObavestenjeModelUDTO(obavestenje));
+            }
+            return PrikaziSamoObavestenjaUSadasnjosti(obavestenja);
+        }
+        private List<ObavestenjeDTO> PrikaziSamoObavestenjaUSadasnjosti(List<ObavestenjeDTO> obavestenja)
+        {
+            List<ObavestenjeDTO> obavestenjaUSadasnjosti = new List<ObavestenjeDTO>();
+            foreach(ObavestenjeDTO obavestenje in obavestenja)
+            {
+                if (DateTime.Compare(DateTime.Now, obavestenje.Datum) >= 0)
+                    obavestenjaUSadasnjosti.Add(obavestenje);
+            }
+            return obavestenjaUSadasnjosti;
         }
 
         public void DodajObavestenje(ObavestenjeDTO obavestenje)
@@ -59,6 +80,13 @@ namespace Bolnica.Kontroler
         public void DodajPodsetnikOAnamnezi(PodsetnikDTO podsetnik, String idPacijenta)
         {
             obavestenjaServis.DodajPodsetnikOAnamnezi(podsetnik, idPacijenta);
+        }
+       
+
+        public void DodajObavestenjeOTerapiji(TerapijaDTO terapijaZaUpis, String korisnickoIme)
+        {
+            Terapija terapija = terapijaKonverter.TerapijaDTOUModel(terapijaZaUpis);
+            obavestenjaServis.DodajObavestenjeOTerapiji(terapija, korisnickoIme);
         }
     }
 }

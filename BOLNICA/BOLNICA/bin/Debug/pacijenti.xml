@@ -629,6 +629,34 @@
             </Terapija>
           </Terapije>
         </Anamneza>
+        <Anamneza>
+          <IdAnamneze>53354cab-8c0e-4817-8383-8506976affc0</IdAnamneze>
+          <IdLekara>MagdalenaReljin</IdLekara>
+          <ImeIPrezimeLekara>Magdalena Reljin</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-06-04T22:18:08.2794501+02:00</Datum>
+          <Dijagnoza>Neka naamneza.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>ff1d70f9-57d3-4fa5-bac1-1a6ad0a06938</IDTerapije>
+              <IDAnamneze>53354cab-8c0e-4817-8383-8506976affc0</IDAnamneze>
+              <PocetakTerapije>2021-06-05T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-06T00:00:00</KrajTerapije>
+              <Kolicina>2</Kolicina>
+              <Satnica>12</Satnica>
+              <UputsvoKonzumiranja>Nakon leka popiti dosta vode.</UputsvoKonzumiranja>
+              <PreporucenLek>
+                <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+                <NazivLeka>Rapidol</NazivLeka>
+                <Jacina>500mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Verifikacija>false</Verifikacija>
+                <Zamene />
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
       </Anamneze>
       <Uputi>
         <Uput>
@@ -701,7 +729,7 @@
       </Uputi>
       <BracniStatus>ozenjenUdata</BracniStatus>
     </ZdravstveniKarton>
-    <ZloupotrebioSistem>3</ZloupotrebioSistem>
+    <ZloupotrebioSistem>4</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

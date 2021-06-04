@@ -168,6 +168,7 @@ namespace Model
             stariTermin.Prostor = null;
             ZameniTermine(stariTermin, noviTermin);
             naloziPacijenataServis.IzmeniStanjeNalogaPacijenta(noviTermin.Pacijent);
+            obavestenjaServis.DodajObavestenjeOPomerenomPregledu(noviTermin, stariTermin);
         }
 
         public void ZameniTermine(Termin stariTermin, Termin noviTermin)
@@ -233,6 +234,7 @@ namespace Model
             termin.Pacijent = naloziPacijenataServis.PretraziPoId(korisnickoImePacijenta);
             zakazaniTerminiRepozitorijum.DodajObjekat(termin);
             slobodniTerminiServis.UkloniSlobodanTermin(termin);
+            obavestenjaServis.DodajObavestenjeOZakazanomPregledu(korisnickoImePacijenta, termin);
         }
 
 

@@ -1008,4 +1008,53 @@ vremenski interval između doza: 24h.</Tekst>
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>8a268d57-dc4f-44d0-8161-b04ef7191d87</IdObavestenja>
+    <Naslov>Obaveštenje o terapiji</Naslov>
+    <Tekst>Terapija: Rapidol500mg
+dnevna količina: 2,
+vremenski interval između doza: 12h.</Tekst>
+    <Datum>2021-06-05T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>d521a101-aee1-4664-bdfc-5b076f926323</IdObavestenja>
+    <Naslov>Obaveštenje o terapiji</Naslov>
+    <Tekst>Terapija: Rapidol500mg
+dnevna količina: 2,
+vremenski interval između doza: 12h.</Tekst>
+    <Datum>2021-06-06T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>173ef7f8-6ee8-49f7-8eab-8e4f86e1988f</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara Magdalena Reljin biće održan 6/7/2021 12:00:00 AM u 08:30h. </Tekst>
+    <Datum>2021-06-04T22:21:34.284603+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>a8455b5d-ae2b-40d0-9178-b31d6f30a412</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled kod lekara Magdalena Reljin 6/7/2021 12:00:00 AM u 10:30h. Novi pregled je zakazan kod lekara Magdalena Reljin 6/8/2021 12:00:00 AM u 08:30 h.</Tekst>
+    <Datum>2021-06-04T22:22:34.1561832+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>5d798d4b-7180-4882-86ed-7f5abdee4889</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+ kod lekara Magdalena Reljin
+6/7/2021 12:00:00 AM u 08:30h. 
+ Novi pregled je zakazan kod lekara 
+Magdalena Reljin
+ 6/9/2021 12:00:00 AM u 08:30 h.</Tekst>
+    <Datum>2021-06-04T22:44:12.5712265+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

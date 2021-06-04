@@ -28,8 +28,8 @@ namespace Bolnica
             InitializeComponent();
             this.korisnickoIme = korisnickoIme;
             GlavniSadrzaj = this.MainPanel;
-            MainPanel.Children.Clear();
-            MainPanel.Children.Add(new PrikazObavestenjaPacijent(korisnickoIme));
+            PromeniPrikaz(new PrikazObavestenjaPacijent(korisnickoIme));
+            naslovStrane.Content = "          Obaveštenja";
         }
         
         public static Grid GetGlavniSadrzaj()

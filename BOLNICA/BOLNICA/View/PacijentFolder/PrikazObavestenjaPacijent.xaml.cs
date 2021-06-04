@@ -21,32 +21,16 @@ namespace Bolnica
 {
     public partial class PrikazObavestenjaPacijent : UserControl
     {
-        ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
-
-        public static ObservableCollection<ObavestenjeDTO> obavestenjaPacijenta { get; set; }
+        private ObavestenjaKontroler obavestenjaKontroler = new ObavestenjaKontroler();
+        public ObservableCollection<ObavestenjeDTO> obavestenjaPacijenta { get; set; }
         public PrikazObavestenjaPacijent(String korisnickoIme)
         {
             InitializeComponent();
             obavestenjaPacijenta = new ObservableCollection<ObavestenjeDTO>();
 
-            List<ObavestenjeDTO> datumi = obavestenjaKontroler.DobaviSvaObavestenja().OrderByDescending(user => user.Datum).ToList();
-
-            foreach (ObavestenjeDTO o in datumi)
+            foreach (ObavestenjeDTO obavestenje in obavestenjaKontroler.DobaviSvaObavestenjaPacijenta(korisnickoIme).OrderByDescending(user => user.Datum).ToList())
             {
-                if (o.IdPrimaoca.Equals(korisnickoIme))
-                {
-
-                    if (DateTime.Compare(o.Datum.Date, DateTime.Now) <= 0)
-                    {
-                        obavestenjaPacijenta.Add(o);
-                    }
-
-                }
-                else if (o.IdPrimaoca.Equals("svi"))
-                {
-                    obavestenjaPacijenta.Add(o);
-                }
-
+                obavestenjaPacijenta.Add(obavestenje);
             }
 
             obavestenjaPacijentaLista.ItemsSource = obavestenjaPacijenta;

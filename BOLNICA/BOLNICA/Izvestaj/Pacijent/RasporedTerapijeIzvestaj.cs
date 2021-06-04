@@ -220,7 +220,7 @@ namespace Bolnica.Izvestaj.Pacijent
             AutoGradient[] autoGradients = new AutoGradient[16];
             autoGradients[0] = (new AutoGradient(90f, CmykColor.Red, CmykColor.DeepPink));
             autoGradients[1] = (new AutoGradient(90f, CmykColor.Green, CmykColor.Lavender));
-            autoGradients[2] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.LightBlue));
+            autoGradients[2] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkMagenta));
             autoGradients[3] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Beige));
             autoGradients[4] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkTurquoise));
             autoGradients[5] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Chocolate));
