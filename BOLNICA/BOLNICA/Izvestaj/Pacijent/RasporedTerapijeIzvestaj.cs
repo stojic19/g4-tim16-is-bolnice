@@ -81,11 +81,14 @@ namespace Bolnica.Izvestaj.Pacijent
             List<TerapijaDTO> sveTerapije = zdravstvenKartoniKontroler.DobaviSveTerapijeZaIzvestaj(interval, koricniskoIme);
             float[] sveKolicine = new float[sveTerapije.Count];
             String[] sviLekovi = new String[sveTerapije.Count];
+            Console.WriteLine("sve terapije vratilaaaaaa" + sveTerapije.Count);
             foreach (TerapijaDTO terapija in sveTerapije)
             {
+               
                 float kolicina = float.Parse(terapija.Kolicina);
                 float satnica = float.Parse(terapija.Satnica);
-                pieSeries.Elements.Add(kolicina * satnica, terapija.Lek.NazivLeka);
+                float ukupnoDnevno = IzracunajUkupnuTerapiju(kolicina, satnica);
+                pieSeries.Elements.Add(ukupnoDnevno, terapija.Lek.NazivLeka);
                 
             }
 
@@ -94,7 +97,7 @@ namespace Bolnica.Izvestaj.Pacijent
                 pieSeries.Elements[i].Color = autoGradients[i];
                 float kolicina = float.Parse(sveTerapije[i].Kolicina);
                 float satnica = float.Parse(sveTerapije[i].Satnica);
-                sveKolicine[i] = kolicina * satnica;
+                sveKolicine[i] = IzracunajUkupnuTerapiju(kolicina,satnica);
                 sviLekovi[i] = sveTerapije[i].Lek.NazivLeka;
             }
             prvaStranica.Elements.Add(odnosKolicina);
@@ -203,7 +206,15 @@ namespace Bolnica.Izvestaj.Pacijent
             document.Draw(nazivIzvestaja);
         }
 
+        private float IzracunajUkupnuTerapiju(float kolicina,float satnica)
+        {
+            float suma = 0;
+            float granica = 24 / satnica;
+            for (float i = 0; i < granica; i++)
+                suma += kolicina;
 
+            return suma;
+        }
 
         private AutoGradient[] DobaviBojeGrafika()
         {

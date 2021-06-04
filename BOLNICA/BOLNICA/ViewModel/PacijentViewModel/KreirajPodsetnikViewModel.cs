@@ -20,6 +20,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public KreirajPodsetnikViewModel(String tekstObavestenja, PregledDTO pregled)
         {
             podsetnik.Tekst = tekstObavestenja;
+            podsetnik.Naslov = "";
             podsetnik.DatumOd = DateTime.Now.Date;
             podsetnik.DatumDo = DateTime.Now.AddDays(3).Date;
             podsetnik.Vreme = DateTime.Now;

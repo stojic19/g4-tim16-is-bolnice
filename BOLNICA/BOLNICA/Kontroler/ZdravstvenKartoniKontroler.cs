@@ -105,10 +105,9 @@ namespace Bolnica.Kontroler
             foreach (Terapija terapija in zdravstveniKartoniServis.DobaviSveTerapijeIzvestaja(vremenskiInterval, korisnickoIme))
             {
                 terapijeZaIzvestaj.Add(terapijaKonverter.TerapijaModelUDTO(terapija));
+                Console.WriteLine("usaaaaaaaaaaaaaaaaaaaaaaaaaao");
             }
-
-            if (terapijeZaIzvestaj.Count == 0)
-                Console.WriteLine("sve je prazno kontroler");
+              
             return terapijeZaIzvestaj;
         }
     }
