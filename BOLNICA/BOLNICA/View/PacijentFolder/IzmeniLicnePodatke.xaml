@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Bolnica.View.PacijentFolder.IzmeniLicnePodatke"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
+             mc:Ignorable="d" 
+              d:DesignHeight="400" d:DesignWidth="350">
+    <StackPanel  Margin="20 20">
+        <Grid Background="White" Margin="5 10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" >IME</Label>
+            <TextBox Height="30" FontSize="13" Padding="1 1" IsReadOnly="True" Grid.Row="1"  FontWeight="DemiBold" Text="{ Binding  Path=Ime}" ></TextBox>
+
+            <Label Grid.Row="3" >PREZIME</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1" IsReadOnly="True" Grid.Row="4"  FontWeight="DemiBold"  Name="brojKartona"  Text="{ Binding  Path=Prezime}"></TextBox>
+
+            <Label Grid.Row="6" >DATUM ROĐENJA</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1" IsReadOnly="True" Grid.Row="7" FontWeight="DemiBold"  Text="{ Binding  Path=DatumRodjenja, StringFormat={}{0:dd/MM/yyyy}}" >
+
+            </TextBox>
+            <Label Grid.Row="9" >KORISNIČKO IME</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1" IsReadOnly="True" Grid.Row="10"  FontWeight="DemiBold" Name="datumRodjenja" Text="{ Binding  Path=KorisnickoIme}" ></TextBox>
+
+            <Label Grid.Row="12" >ADRESA</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1"  Grid.Row="13" FontWeight="DemiBold" Name="adresa" Text="{ Binding  Path=AdresaStanovanja}"></TextBox>
+
+            <Label Grid.Row="15">EMAIL</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1" Grid.Row="16"  FontWeight="DemiBold" Name="telefon" Text="{ Binding  Path=Email}" ></TextBox>
+
+            <Label Grid.Row="18" >TELEFON</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1"  Grid.Row="19"  FontWeight="DemiBold"  Name="pol" Text="{ Binding  Path=KontaktTelefon}"></TextBox>
+
+
+        </Grid>
+        <Image Source="/Slike/PacijentSlike/Screenshot 2021-06-04 183716.png" Height="81" Margin="218,0,5.4,0" />
+        <Button   Height="30"  Margin="5 40" Background="#FF31577E" Click="Button_Click" >
+            <Run Foreground="AntiqueWhite">POTVRDI IZMENU</Run>
+        </Button>
+       
+
+    </StackPanel>
+</UserControl>

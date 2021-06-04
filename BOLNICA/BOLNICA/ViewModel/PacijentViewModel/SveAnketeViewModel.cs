@@ -80,6 +80,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void Oceni()
         {
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new OcenjivanjeBolnice(KorisnickoIme));
         }
     }
 }

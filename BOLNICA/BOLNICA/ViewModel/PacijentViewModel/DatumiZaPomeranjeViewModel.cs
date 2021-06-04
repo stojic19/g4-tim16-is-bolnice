@@ -22,7 +22,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             PodaciIzmene = podaci;
             stariTermin = izabraniTermin;
-            SelektovaniTermin = izabraniTermin;
             ProveriPrioritet();
             vratiSeKomanda = new RelayCommand(VratiSe);
             prikaziTermineKomanda = new RelayCommand(Prikazi);
@@ -74,10 +73,13 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 stariTermin = value;
             }
         }
+       
         private void ProveriPrioritet()
         {
+            if (PodaciIzmene.IzabraniLekar == null) return;
+
             String idLekara = PodaciIzmene.IzabraniLekar.KorisnickoIme;
-            List<TerminDTO> datumiZaZakazivanje = terminKontroler.DobaviSveSlobodneDatumeZaPomeranje(SelektovaniTermin, idLekara);
+            List<TerminDTO> datumiZaZakazivanje = terminKontroler.DobaviSveSlobodneDatumeZaPomeranje(StariTermin, idLekara);
             if (datumiZaZakazivanje.Count != 0)
             {
                 UcitajUKolekciju(datumiZaZakazivanje);
@@ -125,6 +127,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             if (SelektovaniTermin != null)
             {
+              
                 List<TerminDTO> terminiZaIzmenu = new List<TerminDTO>();
                 terminiZaIzmenu.Add(StariTermin);
                 terminiZaIzmenu.Add(SelektovaniTermin);

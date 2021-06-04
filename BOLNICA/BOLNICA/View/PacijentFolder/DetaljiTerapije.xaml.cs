@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica.DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,9 @@ using System.Windows.Shapes;
 
 namespace Bolnica.PacijentFolder
 {
-    /// <summary>
-    /// Interaction logic for DetaljiTerapije.xaml
-    /// </summary>
     public partial class DetaljiTerapije : Window
     {
-        public DetaljiTerapije(Terapija izabranaTerapija)
+        public DetaljiTerapije(TerapijaDTO izabranaTerapija)
         {
             InitializeComponent();
             DataContext = izabranaTerapija;

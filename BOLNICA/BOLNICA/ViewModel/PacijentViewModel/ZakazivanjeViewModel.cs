@@ -1,10 +1,12 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Komande;
 using Bolnica.Kontroler;
+using com.sun.org.apache.xerces.@internal.impl.xpath.regex;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Bolnica.ViewModel.PacijentViewModel
@@ -15,22 +17,68 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private LekariKontroler lekarKontroler = new LekariKontroler();
         private ZakazivanjePregledaDTO podaci;
         private String poruka;
+        private DateTime preporuceniDatumOd;
+        private DateTime preporuceniDatumDo;
 
         public ZakazivanjeViewModel(String korisnickoIme)
         {
             Podaci = new ZakazivanjePregledaDTO();
             Podaci.KorisnickoImePacijenta = korisnickoIme;
-            podaci.DatumOd = DateTime.Now.AddDays(1).Date;
-            podaci.DatumDo = DateTime.Now.AddDays(3).Date;
+            Podaci.DatumOd = DateTime.Now.AddDays(1);
+            Podaci.DatumDo = DateTime.Now.AddDays(3);
             UcitajUKolekciju();
             prikaziDatume = new RelayCommand(Prikazi);
         }
+
+
+
         private void UcitajUKolekciju()
         {
             SviLekari = new List<LekarDTO>();
             foreach (LekarDTO lekar in lekarKontroler.DobaviLekareOpstePrakse())
                 SviLekari.Add(lekar);
         }
+        private bool dostupno2=false;
+        public DateTime PreporuceniDatumOd
+        {
+            get { return preporuceniDatumOd; }
+            set
+            {
+                preporuceniDatumOd = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool dostupno = false;
+        public DateTime PreporuceniDatumDo
+        {
+            get { return preporuceniDatumDo; }
+            set
+            {
+                preporuceniDatumDo = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        public bool Dostupno
+        {
+            get { return dostupno; }
+            set
+            {
+                dostupno = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool Dostupno2
+        {
+            get { return dostupno2; }
+            set
+            {
+                dostupno2 = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public List<LekarDTO> SviLekari
         {
@@ -75,6 +123,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
             if (Validacija())
             {
+               
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazSlobodnihDatumaPacijent(Podaci));
             }
@@ -85,27 +134,25 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
         private bool Validacija()
         {
+            
+             DateTime? pocetak = Podaci.DatumOd;
+             DateTime? kraj = Podaci.DatumDo;
 
-            DateTime? pocetak = Podaci.DatumOd;
-            DateTime? kraj = Podaci.DatumDo;
-
-            Console.WriteLine("POCETAK"+ Podaci.DatumOd); 
-            Console.WriteLine("KRAJ"+ Podaci.DatumDo); 
-            if (Podaci.IzabraniLekar == null || Podaci.Prioritet == -1 || !pocetak.HasValue || !kraj.HasValue)
-            {
-                Poruka = "Popunite sva polja!";
-                return false;
-            }
-           else if (DateTime.Compare(Podaci.DatumOd.Date, DateTime.Now.Date) <= 0)
-            {
-                Poruka = "Izaberite datum u budućnosti!";
-                return false;
-            }
-            else if (DateTime.Compare(Podaci.DatumOd.Date, Podaci.DatumDo.Date) >= 0)
-            {
-                Poruka = "*Početni datum mora biti raniji od krajnjeg!";
-                return false;
-            }
+             if (Podaci.IzabraniLekar == null || Podaci.Prioritet == -1 || !pocetak.HasValue || !kraj.HasValue)
+             {
+                 Poruka = "Popunite sva polja!";
+                 return false;
+             }
+            else if (DateTime.Compare(Podaci.DatumOd.Date, DateTime.Now.Date) <= 0)
+             {
+                 Poruka = "Izaberite datum u budućnosti!";
+                 return false;
+             }
+             else if (DateTime.Compare(Podaci.DatumOd.Date, Podaci.DatumDo.Date) >= 0)
+             {
+                 Poruka = "*Početni datum mora biti raniji od krajnjeg!";
+                 return false;
+             }
 
             return true;
         }

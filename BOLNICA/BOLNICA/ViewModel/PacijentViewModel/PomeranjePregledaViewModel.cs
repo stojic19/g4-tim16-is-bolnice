@@ -90,15 +90,18 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void PrikaziDatume()
         {
-            if (IzabraniTermin != null)
-            {
+            
+
+          
+                if (PodaciIzmene.IzabraniLekar == null) {
+
+                    Poruka = "Izaberite lekara!";
+                    return;
+                }
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazDatumaZaPomeranjePrioritet(IzabraniTermin, PodaciIzmene));
-            }
-            else
-            {
-                Poruka = "Izaberite termin za pomeranje!";
-            }
+            
+          
         }
     }
 }

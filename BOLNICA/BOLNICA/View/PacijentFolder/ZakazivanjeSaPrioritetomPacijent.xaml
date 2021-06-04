@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:Bolnica"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="350">
@@ -15,9 +16,12 @@
         <ComboBox Name="lekarCombo" Height="25" Margin="5" ItemsSource="{Binding Path=SviLekari}" DisplayMemberPath="ImeIPrezime" SelectedValuePath="ImeIPrezime" SelectedItem="{Binding Path=Podaci.IzabraniLekar}" ></ComboBox>
         
         <Label>DATUM OD</Label>
-        <DatePicker Name="datumod" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumOd}" ></DatePicker>
+        <DatePicker  Height="25" Margin="5"   SelectedDate="{Binding Podaci.DatumOd}"  >
+            
+        </DatePicker>
+        
         <Label>DATUM DO</Label>
-        <DatePicker Name="datumdo" Height="25" Margin="5"  SelectedDate="{Binding Path=Podaci.DatumDo}"></DatePicker>
+        <DatePicker Height="25" Margin="5"  SelectedDate="{Binding Podaci.DatumDo}" ></DatePicker>
         <Label>PRIORITET</Label>
 
         <ComboBox Name="PrioritetCombo"  Margin="5,0,5.4,30" Height="25" SelectedIndex="{Binding Path=Podaci.Prioritet}">

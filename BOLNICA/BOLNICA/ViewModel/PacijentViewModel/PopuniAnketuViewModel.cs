@@ -120,6 +120,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
             pregledKontroler.PostaviOcenuPregledu(Pregled);
             AnketaDTO novaAnketa = new AnketaDTO(svaPitanja, DodatniKomentar);
             anketaKontroler.DodajAnketu(novaAnketa, Pregled.IdPregleda);
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa(KorisnickoIme));
 
         }
     }

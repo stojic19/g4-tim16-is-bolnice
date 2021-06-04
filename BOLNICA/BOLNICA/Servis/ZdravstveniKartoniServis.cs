@@ -181,12 +181,8 @@ namespace Bolnica.Model
         public List<Terapija> DobaviSveTerapijeIzvestaja(List<DateTime> vremenskiInterval,String korisnickoIme)
         {
             List<Terapija> sveTerapije = new List<Terapija>();
-            if (DobaviSveTerapijePacijenta(korisnickoIme).Count == 0)
-                Console.Write("SERVIS PRAZNOOOOOOOOOOOOOOOO");
             foreach (Terapija terapija in DobaviSveTerapijePacijenta(korisnickoIme))
             {
-                Console.WriteLine("pocetak terpije "+terapija.PocetakTerapije);
-                Console.WriteLine("pocetak int "+ vremenskiInterval[0].Date);
                 if (DateTime.Compare(vremenskiInterval[0].Date,terapija.PocetakTerapije) <= 0 && DateTime.Compare(vremenskiInterval[1],terapija.KrajTerapije) >= 0)
                 {
                     sveTerapije.Add(terapija);

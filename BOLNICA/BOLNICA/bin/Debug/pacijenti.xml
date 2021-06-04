@@ -701,7 +701,7 @@
       </Uputi>
       <BracniStatus>ozenjenUdata</BracniStatus>
     </ZdravstveniKarton>
-    <ZloupotrebioSistem>2</ZloupotrebioSistem>
+    <ZloupotrebioSistem>3</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

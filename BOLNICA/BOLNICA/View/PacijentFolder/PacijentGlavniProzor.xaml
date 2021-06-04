@@ -33,10 +33,6 @@
 
             </Grid.ColumnDefinitions>
 
-            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" Margin="13,5,13.2,5">
-                <Image Source="/Slike/PacijentSlike/strelica.png" />
-
-            </Button>
 
             <Label  Grid.Column="1" Grid.ColumnSpan="3"  Margin="70.8,10,9.2,10"  Name="naslovStrane" FontWeight="Thin" FontSize="15" FontStyle="Italic" Foreground="AntiqueWhite"></Label>
 
@@ -55,11 +51,13 @@
 
             <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="0.4,10,0,10" Grid.Column="5" Width="42" >
                 <StackPanel Width="150" Background="AliceBlue">
-                    <Button Content="Moj nalog"/>
+                    <Button Name="mojNalog" Content="Moj nalog" Click="mojNalog_Click"/>
+                    <Button Name="oceni" Content="Oceni Aplikaciju" Click="oceni_Click"/>
 
 
                     <Separator/>
-                    <Button Content="Odjavi se" />
+                    <Button Name="odjaviSe" Content="Odjavi se" Click="odjaviSe_Click" />
+                   
                 </StackPanel>
             </materialDesign:PopupBox>
 

@@ -101,7 +101,7 @@ namespace Bolnica.ViewModel
             }
             else
             {
-                Poruka = "*Morate izabrati termin!";
+                Poruka = "*Morate izabrati termin da biste otkazali!";
             }
 
         }

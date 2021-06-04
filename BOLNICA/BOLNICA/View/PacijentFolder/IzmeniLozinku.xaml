@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Bolnica.View.PacijentFolder.IzmeniLozinku"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.PacijentFolder"
+             mc:Ignorable="d" 
+               d:DesignHeight="400" d:DesignWidth="350">
+    <StackPanel  Margin="20 20">
+        <Grid Background="White" Margin="5 10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" >STARA LOZINKA</Label>
+            <TextBox Height="30" FontSize="13" Padding="1 1"  Grid.Row="1"  FontWeight="DemiBold" Text="{ Binding  Path=Ime}" ></TextBox>
+
+            <Label Grid.Row="3" >NOVA LOZINKA</Label>
+            <TextBox Height="30" FontSize="13"  Padding="1 1"  Grid.Row="4"  FontWeight="DemiBold"  Name="brojKartona"  Text="{ Binding  Path=Prezime}"></TextBox>
+
+
+        </Grid>
+        <Image Source="/Slike/PacijentSlike/Screenshot 2021-06-04 185810.png" Height="146" Margin="10,30,0,40" />
+
+        <Button   Height="30"  Margin="5 190" Background="#FF31577E" Click="Button_Click" >
+            <Run Foreground="AntiqueWhite">POTVRDI IZMENU</Run>
+        </Button>
+
+
+    </StackPanel>
+</UserControl>

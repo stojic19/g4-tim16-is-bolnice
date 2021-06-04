@@ -51,13 +51,13 @@
             <Label Grid.Row="1"  FontWeight="DemiBold" Name="jmbg" Content="{ Binding  Path=PacijentDTO.Jmbg, UpdateSourceTrigger=PropertyChanged}" ></Label>
             <Separator Grid.Row="2"></Separator>
             <Label Grid.Row="3" >BROJ KARTONA</Label>
-            <Label Grid.Row="4"  FontWeight="DemiBold"  Name="brojKartona" Content="{ Binding  Path=PacijentDTO.BrojKartona, UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Label Grid.Row="4"  FontWeight="DemiBold"  Name="brojKartona" >123</Label>
             <Separator Grid.Row="5"  ></Separator>
             <Label Grid.Row="6" >PREZIME (IME RODITELJA) IME</Label>
             <Label Grid.Row="7" FontWeight="DemiBold" >
                 <TextBlock>
                     <TextBlock.Text>
-                        <MultiBinding StringFormat="{}{0} () {1}">
+                        <MultiBinding StringFormat="{}{0} (Đorđe) {1}">
                             <Binding Path="PacijentDTO.Prezime" />
                             <Binding Path="PacijentDTO.Ime" />
                         </MultiBinding>
@@ -78,10 +78,10 @@
             <Label Grid.Row="19"  FontWeight="DemiBold"  Name="pol" Content="{ Binding  Path=PacijentDTO.Pol, UpdateSourceTrigger=PropertyChanged}"></Label>
             <Separator Grid.Row="20"></Separator>
             <Label Grid.Row="21" >BRAČNI STATUS</Label>
-            <Label Grid.Row="22"  FontWeight="DemiBold" Content="{ Binding  Path=PacijentDTO.BracniStatus, UpdateSourceTrigger=PropertyChanged}" ></Label>
+            <Label Grid.Row="22"  FontWeight="DemiBold"  >neudata</Label>
             <Separator Grid.Row="23"></Separator>
             <Label Grid.Row="24" >ZAPOSLENJE</Label>
-            <Label Grid.Row="25"  FontWeight="DemiBold" Name="zaposlenje" Content="{ Binding  Path=PacijentDTO.MestoZaposlenja, UpdateSourceTrigger=PropertyChanged}" ></Label>
+            <Label Grid.Row="25"  FontWeight="DemiBold" Name="zaposlenje" >student</Label>
             <Separator Grid.Row="26"></Separator>
         </Grid>
 

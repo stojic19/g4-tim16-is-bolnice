@@ -19,7 +19,7 @@
             <ComboBoxItem>datum</ComboBoxItem>
         </ComboBox>
 
-
+        <Label Margin="0"  Foreground="Red" Content="{Binding Path=Poruka}"></Label>
         <Button x:Name="nastavi" Background="#FF31577E" Height="25" Margin="0 20" Command="{Binding Path=PrikaziDatumeKomanda}">
             <Run Foreground="AntiqueWhite"  >NASTAVI</Run>
         </Button>
@@ -27,7 +27,7 @@
             <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
 
-        <Label Margin="22,5"  Foreground="Red" Content="{Binding Path=Poruka}"></Label>
+       
         <Grid Margin="00 50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>

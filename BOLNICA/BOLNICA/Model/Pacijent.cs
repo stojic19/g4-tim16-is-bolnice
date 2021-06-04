@@ -42,7 +42,6 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
-            DateTime? poslednjaZloupotreba = null;
         }
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
@@ -64,7 +63,6 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
-            DateTime? poslednjaZloupotreba = null;
         }
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
@@ -85,7 +83,6 @@ namespace Model
             this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
             ZloupotrebioSistem = 0;
             Blokiran = false;
-            DateTime? poslednjaZloupotreba = null;
         }
         public String DobaviPolTekst()
         {

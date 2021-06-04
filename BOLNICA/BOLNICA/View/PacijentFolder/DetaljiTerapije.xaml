@@ -28,10 +28,10 @@
 
 
                 <Label Grid.Column="0" Grid.Row="1">Lek:</Label>
-                <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Content="{ Binding  Path=PreporucenLek.NazivLeka, UpdateSourceTrigger=PropertyChanged}"></Label>
+                <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Content="{ Binding  Path=Lek.NazivLeka, UpdateSourceTrigger=PropertyChanged}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="2">Jačina:</Label>
-                <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" Content="{ Binding  Path=PreporucenLek.Jacina, UpdateSourceTrigger=PropertyChanged}"></Label>
+                <Label Grid.Column="1" Grid.Row="2" FontWeight="DemiBold" Content="{ Binding  Path=Lek.Jacina, UpdateSourceTrigger=PropertyChanged}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="3">Početak:</Label>
                 <Label Grid.Column="1" Grid.Row="3" FontWeight="DemiBold" Content="{Binding PocetakTerapije , StringFormat={}{0:dd/MM/yyyy}}"></Label>

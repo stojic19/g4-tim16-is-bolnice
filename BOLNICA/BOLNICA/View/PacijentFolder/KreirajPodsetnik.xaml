@@ -18,7 +18,7 @@
         <Label >TEKST</Label>
 
         <Border BorderBrush="SlateGray"  BorderThickness="2"    >
-            <TextBox Height="250" Text="{Binding Path=Podsetnik.Tekst}"></TextBox>
+            <TextBox Height="109" Text="{Binding Path=Podsetnik.Tekst}" Margin="0.4,0,-0.2,0"></TextBox>
         </Border>
 
         <Label>DATUM OD</Label>
@@ -36,6 +36,8 @@
         <Button Height="25" Margin="5" Background="#FF31577E" Command="{Binding Path=VratiSeKomanda}">
             <Run Foreground="AntiqueWhite">VRATI SE</Run>
         </Button>
+        <Image Source="/Slike/PacijentSlike/Screenshot 2021-06-04 183735.png" Height="138" Margin="67,0,75.4,0" />
+
     </StackPanel>
 
 </UserControl>

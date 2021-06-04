@@ -15,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace Bolnica
 {
     public partial class ZakazivanjeSaPrioritetomPacijent : UserControl
@@ -27,7 +26,6 @@ namespace Bolnica
             zakazivanjeViewModel = new ZakazivanjeViewModel(korisnickoIme);
             this.DataContext = zakazivanjeViewModel;
         }
-
 
     }
 }

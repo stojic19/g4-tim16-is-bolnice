@@ -8,7 +8,7 @@
              d:DesignHeight="700" d:DesignWidth="350">
     <StackPanel Background="White">
         <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista lekova</Label>
-        <ListBox x:Name="Lekovi" SelectionMode="Single" Height="450" Width="300"  >
+        <ListBox x:Name="Lekovi" SelectionMode="Single" Height="450" Width="300" SelectedItem="{Binding Path=IzabranaTerapija}" >
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -79,7 +79,7 @@
         </ListBox>
 
 
-        <Button Margin="25 10" x:Name="informacije"  Background="#FF31577E" Height="30">
+        <Button Margin="25 10" x:Name="informacije"  Background="#FF31577E" Height="30" Command="{Binding Path=DetaljiTerapije}">
             <Run Foreground="AntiqueWhite" >DETALJI TERAPIJE</Run>
         </Button>
         <Button Margin="25 10" x:Name="izvestaj"  Background="#FF31577E" Height="30" Command="{Binding Path=Izvestaj}">

@@ -19,10 +19,8 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-
     public partial class PacijentGlavniProzor : Window
     {
-       //NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private static Grid GlavniSadrzaj;
         private String korisnickoIme;
         public PacijentGlavniProzor(String korisnickoIme)
@@ -98,7 +96,23 @@ namespace Bolnica
         {
 
         }
-      
 
+        private void mojNalog_Click(object sender, RoutedEventArgs e)
+        {
+            naslovStrane.Content = "     Lični profil";
+            PromeniPrikaz(new LicniProfil(korisnickoIme));
+        }
+
+        private void odjaviSe_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void oceni_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

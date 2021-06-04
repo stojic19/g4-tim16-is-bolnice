@@ -101,9 +101,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void KreirajIzvestaj()
         {
-            DateTime? pocetak = DatumOd;
-            DateTime? kraj = DatumDo;
-
             if (Validacija())
             {
                 interval = new List<DateTime>();
@@ -111,12 +108,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 interval.Add(DatumDo);
                 nedeljniIzvestajTerapije.StampajIzvestaj(interval, KorisnickoIme);
                 PorukaNeuspeh = "";
-                Poruka = "Vaš izveštaj se nalazi u folderu IzveštajiPacijenta!";
+                Poruka = "*Vaš izveštaj se nalazi u folderu IzveštajiPacijenta!";
 
-            }
-            else
-            {
-                PorukaNeuspeh = "Popunite sva polja!";
             }
         }
 
@@ -125,9 +118,21 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
             DateTime? pocetak = DatumOd;
             DateTime? kraj = DatumDo;
-            if (!pocetak.HasValue || !kraj.HasValue)
-            {
+            Poruka = "";
 
+            if ( !pocetak.HasValue || !kraj.HasValue)
+            {
+                PorukaNeuspeh = "*Popunite sva polja!";
+                return false;
+            }
+            else if (DateTime.Compare(DatumOd.Date, DatumDo.Date) >= 0)
+            {
+                PorukaNeuspeh = "*Početni datum mora biti raniji od krajnjeg!";
+                return false;
+            }
+            else if (DateTime.Compare(DatumOd.AddDays(6).Date, DatumDo.Date)!=0 )
+            {
+                PorukaNeuspeh = "*Izaberite interval od 7 dana!";
                 return false;
             }
 

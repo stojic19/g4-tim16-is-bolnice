@@ -1,6 +1,7 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Komande;
 using Bolnica.Kontroler;
+using Bolnica.PacijentFolder;
 using Bolnica.View.PacijentFolder;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private ObservableCollection<TerapijaDTO> terapijePacijenta;
         private String korisnickoIme;
         private ZdravstvenKartoniKontroler zdravstveniKartonKontroler = new ZdravstvenKartoniKontroler();
+        private TerapijaDTO izabranaTerapija;
         public TerapijaViewModel(String korisnickoIme)
         {
             this.korisnickoIme = korisnickoIme;
             UcitajKolekciju();
             izvestaj = new RelayCommand(PrikaziIzvestaj);
+            detaljiTerapije = new RelayCommand(Detalji);
         }
 
         private void UcitajKolekciju()
@@ -48,7 +51,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 OnPropertyChanged();
             }
         }
-
+        public TerapijaDTO IzabranaTerapija
+        {
+            get { return izabranaTerapija; }
+            set
+            {
+                izabranaTerapija = value;
+                OnPropertyChanged();
+            }
+        }
         private RelayCommand izvestaj;
         public RelayCommand Izvestaj
         {
@@ -58,6 +69,17 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new IzvestajTerapije(KorisnickoIme));
+        }
+
+        private RelayCommand detaljiTerapije;
+        public RelayCommand DetaljiTerapije
+        {
+            get { return detaljiTerapije; }
+        }
+        public void Detalji()
+        {
+            DetaljiTerapije detaljiTerapije = new DetaljiTerapije(IzabranaTerapija);
+            detaljiTerapije.Show();
         }
 
     }

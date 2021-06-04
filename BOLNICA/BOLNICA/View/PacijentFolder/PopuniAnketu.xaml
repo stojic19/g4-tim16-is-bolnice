@@ -124,7 +124,7 @@
             </Grid>
             <Label Margin="10 0" FontSize="12" >Dodatni komentari, saveti i primedbe</Label>
             <TextBox x:Name="DodatniKomentar" Margin="10 0" Height="300" Text="{Binding Path=DodatniKomentar}"></TextBox>
-            <Button  Height="30"  Margin="5 10 10 30" Background="#FF31577E" Command="{Binding Path=PosaljiAnketu}" >
+            <Button  Height="30"  Margin="5 10 10 10" Background="#FF31577E" Command="{Binding Path=PosaljiAnketu}" >
                 <Run Foreground="AntiqueWhite">POŠALJI ANKETU</Run>
             </Button>
 

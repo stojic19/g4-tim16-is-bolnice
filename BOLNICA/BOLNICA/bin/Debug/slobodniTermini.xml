@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <IdTermina>a949cb7f-0c15-428a-b8c2-500887c14737</IdTermina>
@@ -2337,78 +2337,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>5d705bd3-959a-42cb-b3e0-8538049a1869</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>10:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-07T10:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>b2834750-6da2-4cad-91b1-bf732eeb0441</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>11:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-07T11:00:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>7ff7b9ba-1da0-4240-8d10-c395167bf21d</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>11:30</PocetnoVreme>
@@ -3417,42 +3345,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>cefd0a88-6f6e-4df8-901e-aa3cb9d2312f</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-09T09:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>b489a074-e6d4-431f-b1af-9b07ebdf1939</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>10:00</PocetnoVreme>
@@ -4169,6 +4061,42 @@
       <Lozinka>ajdemolimte</Lozinka>
       <Pol>zenski</Pol>
       <RadniDani />
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>nema</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>b2834750-6da2-4cad-91b1-bf732eeb0441</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>11:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-06-07T11:00:00</Datum>
+    <Lekar>
+      <Ime>Magdalena</Ime>
+      <Prezime>Reljin</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
+      <Jmbg>33313</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
+      <KontaktTelefon>0634</KontaktTelefon>
+      <Email>reljinn@lekar.com</Email>
+      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
+      <Lozinka>ajdemolimte</Lozinka>
+      <Pol>zenski</Pol>
+      <RadniDani>
+        <RadniDan>
+          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
+        </RadniDan>
+      </RadniDani>
       <Godisnji>
         <GodinaZaGodisnji>2021</GodinaZaGodisnji>
         <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
