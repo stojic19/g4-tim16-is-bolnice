@@ -225,13 +225,8 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="CuvanjeAnamneze"/>
-            <Button Content="Izveštaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="IzvestajAnamneza"/>
-            <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,5,10,5" Click="Otkazivanje"/>
-
-            <!--<Button Content="Celokupni izvestaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Button_Click_4"/>
-                    <Button Content="Izdavanje recepta" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Button_Click_3"/> -->
-
+            <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="Otkazivanje"/>
+            <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="CuvanjeAnamneze"/>
         </StackPanel>
 
     </Grid>

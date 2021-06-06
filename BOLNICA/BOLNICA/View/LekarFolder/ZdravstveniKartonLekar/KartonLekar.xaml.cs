@@ -140,5 +140,10 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzdavanjeUputa(izabranPregled.IdPregleda));
 
         }
+
+        private void IzvestajRecepata(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

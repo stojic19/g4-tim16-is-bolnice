@@ -5,15 +5,21 @@ namespace Model
 {
     public class Anamneza
     {
-        public String IdAnamneze { get; set; }
-        public String IdLekara { get; set; }
+        private String idAnamneze;
+        private String idLekara;
+        private String imeIPrezimeLekara;
+        private String idPacijenta;
+        private DateTime datum;
+        private String dijagnoza;
+        private List<Terapija> terapije = new List<Terapija>();
 
-        public String ImeIPrezimeLekara { get; set; }
-        public String IdPacijenta { get; set; }
-        public DateTime Datum { get; set; }
-
-        public String Dijagnoza { get; set; }
-        public List<Terapija> Terapije { get; set; } = new List<Terapija>();
+        public string IdAnamneze { get => idAnamneze; set => idAnamneze = value; }
+        public string IdLekara { get => idLekara; set => idLekara = value; }
+        public string ImeIPrezimeLekara { get => imeIPrezimeLekara; set => imeIPrezimeLekara = value; }
+        public string IdPacijenta { get => idPacijenta; set => idPacijenta = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
+        public string Dijagnoza { get => dijagnoza; set => dijagnoza = value; }
+        public List<Terapija> Terapije { get => terapije; set => terapije = value; }
 
         public Anamneza() { }
 

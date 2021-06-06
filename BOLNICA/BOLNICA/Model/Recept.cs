@@ -4,10 +4,13 @@ namespace Model
 {
     public class Recept
     {
-        public String IDRecepta { get; set; }
-        public DateTime Datum { get; set; }
-        public Lek Lek { get; set; }
+        private String iDRecepta;
+        private DateTime datum;
+        private Lek lek;
 
+        public string IDRecepta { get => iDRecepta; set => iDRecepta = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
+        public Lek Lek { get => lek; set => lek = value; }
 
         public Recept() { }
 

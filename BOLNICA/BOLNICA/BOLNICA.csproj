@@ -1273,6 +1273,24 @@
   <ItemGroup>
     <Resource Include="Slike\PacijentSlike\lupa3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\LekarSlike\Arrow-Down-icon.png" />
+    <Resource Include="Slike\LekarSlike\Half-Moon-icon.png" />
+    <Resource Include="Slike\LekarSlike\profile.png" />
+    <Resource Include="Slike\LekarSlike\Sun-icon.png" />
+    <Resource Include="Slike\LekarSlike\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\LekarSlike\heart.png" />
+    <Resource Include="Slike\LekarSlike\hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\LekarSlike\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\LekarSlike\night.png" />
+    <Resource Include="Slike\LekarSlike\sun.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

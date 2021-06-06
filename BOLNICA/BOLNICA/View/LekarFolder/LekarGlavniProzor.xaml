@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
-        Title="Zdravo korporacija" Height="570" Width="850" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Zdravo korporacija" Height="570" Width="850" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
@@ -32,7 +32,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
         <Style x:Key="MenuButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Margin" Value="5"/>
@@ -56,6 +55,7 @@
             </Setter>
         </Style>
     </Window.Resources>
+    
     <Grid Background="LightSkyBlue">
 
         <Grid.ColumnDefinitions>
@@ -84,36 +84,106 @@
 
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,75,0.2,0.2" Grid.RowSpan="2">
 
-            <Button Background="Transparent" Style="{StaticResource MenuButton}" Click="OtvaranjeMenija" Margin="5,0,-10,0">
-                <Image Grid.Column="0" Source="/Slike/LekarSlike/menu.png" Height="24" Width="24"/>
-            </Button>
+            <Grid>
 
-            <Button Background="Transparent" Click="PocetnaStrana" Style="{StaticResource MyButtonStyle}" Margin="20,3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="183"/>
+                    <ColumnDefinition Width="320*"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="123"/>
+                </Grid.ColumnDefinitions>
 
-                <StackPanel Orientation="Horizontal"   >
-                    <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
-                   VerticalAlignment="Center" Width="143" Height="30" Margin="0,0,-10,0"/>
-                    <Image Source="/Slike/LekarSlike/srce.png" Height="24" Width="24" HorizontalAlignment="Left" RenderTransformOrigin="-0.708,0.533"/>
-                </StackPanel>
-            </Button>
-            
+                <Button Background="Transparent" Click="OtvaranjeMenija"  Style="{StaticResource MenuButton}"  Grid.Column="0">
+                    <Image Grid.Column="0" Source="/Slike/LekarSlike/list.png" Height="24" Width="24"/>
+                </Button>
+
+                <Button Background="Transparent" Click="PocetnaStrana" Style="{StaticResource MyButtonStyle}" Grid.Column="1" HorizontalAlignment="Left">
+
+                    <StackPanel Orientation="Horizontal"   >
+                        <Label Grid.Column="1" FontSize="15" Content="Zdravo korporacija" HorizontalAlignment="Center" VerticalContentAlignment="Center" 
+                   VerticalAlignment="Center" Width="138" Height="30" FontWeight="DemiBold"/>
+                        <Image Source="/Slike/LekarSlike/hospital.png" Height="24" Width="24" HorizontalAlignment="Left" RenderTransformOrigin="-0.708,0.533"/>
+                    </StackPanel>
+                </Button>
+                <Button Background="Transparent" Click="OtvaranjeMojProfil" Style="{StaticResource MyButtonStyle}" Width="107" HorizontalAlignment="Right" Grid.Column="5">
+
+                    <StackPanel Orientation="Horizontal"   >
+                        <Image Source="/Slike/LekarSlike/profile.png" Height="24" Width="24" HorizontalAlignment="Left" RenderTransformOrigin="-0.708,0.533"/>
+                        <Label FontSize="15" Content="Moj nalog" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontWeight="DemiBold" 
+                   VerticalAlignment="Center" Width="84" Height="30"/>
+
+                    </StackPanel>
+
+                </Button>
+
+                <Rectangle Grid.Column="2" Width="313"/>
+
+                <Button Background="Transparent" Click="PrikazTema" Style="{StaticResource MyButtonStyle}" Width="70" HorizontalAlignment="Center" Grid.Column="3">
+
+                    <StackPanel Orientation="Horizontal" Width="48"   >
+                        <Image Name="ikonicaTeme" Source="/Slike/LekarSlike/sun.png"  Height="24" Width="24" RenderTransformOrigin="-0.708,0.533"/>
+                        <Image Source="/Slike/LekarSlike/Arrow-Down-icon.png"  Height="16" Width="16" RenderTransformOrigin="-0.708,0.533" Margin="5,0"/>
+                    </StackPanel>
+
+                </Button>
+
+                <Button Background="Transparent" Click="PrikazJezika" Style="{StaticResource MyButtonStyle}" Width="70" HorizontalAlignment="Center" Grid.Column="4">
+
+                    <StackPanel Orientation="Horizontal" Width="48"   >
+                        <Label Name="izabranJezik" FontSize="15" Content="SR" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="27" Height="30"/>
+                        <Image Source="/Slike/LekarSlike/Arrow-Down-icon.png"  Height="16" Width="16" RenderTransformOrigin="-0.708,0.533"/>
+                    </StackPanel>
+
+                </Button>
+
+            </Grid>
 
         </StackPanel>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.Row="2"  >
-        <Grid x:Name="GlavniProzor" MinHeight="380"/>
+            <Grid x:Name="GlavniProzor" MinHeight="380"/>
         </ScrollViewer>
-        
-        <Menu Grid.Row="2" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" Background="LightSkyBlue" Visibility="Hidden" VerticalContentAlignment="Center" >
+
+        <Menu Grid.Row="2" MouseLeave="menu_MouseLeave" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" Background="LightSkyBlue" Visibility="Hidden" VerticalContentAlignment="Center" >
             <MenuItem Header="Raspored" Height="50" Width="220" Click="PrikazRasporeda" FontSize="15"/>
             <MenuItem Header="Zakazivanje termina" Height="50" Width="220" FontSize="15" Click="ZakazivanjeTermina"/>
             <MenuItem Header="Evidencija utrošenog  materijala" Height="50" Width="220" FontSize="15" Click="UtrosenMaterijal"/>
             <MenuItem Header="Baza lekova" Height="50" Width="220" FontSize="15" Click="PrikazBaze"/>
             <MenuItem Header="Zahtevi za odobravanje lekova" Height="50" Width="220" FontSize="15" Click="VerifikacijaLekova"/>
             <MenuItem Header="Zahtevi za odsustvo" Height="50" Width="220" FontSize="15" Click="PrikazZahtevaOdsustva"/>
-            <MenuItem Header="Kreiranjezahtevaza odsustvo" Height="50" Width="220" FontSize="15" Click="MenuItem_Click_6"/>
+            <MenuItem Header="Kreiranjezahtevaza odsustvo" Height="50" Width="220" FontSize="15" Click="KreiranjeOdsustva"/>
         </Menu>
 
-       
+        <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="160" Background="WhiteSmoke"
+              BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="7,2" >
+            <MenuItem Header="Moj nalog" Height="50"  Click="PrikazProfila" FontSize="15"/>
+            <MenuItem Header="Obaveštenja" Height="50"  FontSize="15" Click="PrikazObavestenja"/>
+            <MenuItem Header="Izmena naloga" Height="50"  FontSize="15" Click="IzmenaNaloga"/>
+            <MenuItem Header="Promena lozinke" Height="50" FontSize="15" Click="PromenaLozinke"/>
+            <MenuItem Header="Odjava" Height="50" FontSize="15" Click="Odjava"/>
+        </Menu>
+
+        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="tema" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" Background="WhiteSmoke"
+              BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="210,2" >
+            <MenuItem Header="Svetla tema" Height="50"  Click="SvetlaTema" VerticalAlignment="Center" FontSize="15">
+                <MenuItem.Icon>
+                    <Image Source="/Slike/LekarSlike/sun.png"  Height="16" Width="16" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Tamna tema" Height="50"  Click="TamnaTema" VerticalAlignment="Center" FontSize="15">
+                <MenuItem.Icon>
+                    <Image Source="/Slike/LekarSlike/night.png"  Height="16" Width="16" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+
+        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="jezik" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" Background="WhiteSmoke"
+              BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="130,2" >
+            <MenuItem Header="Srpski - SR" Height="50"  Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15"/>
+            <MenuItem Header="English - EN" Height="50"  Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15"/>
+        </Menu>
+
     </Grid>
 </Window>

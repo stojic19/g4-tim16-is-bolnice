@@ -12,10 +12,10 @@ namespace Bolnica.Model
         private int preostaliBrojSlobodnihDana;
 
         public Godisnji() { }
-        public Godisnji(int godina,int brojSlobodnihDana)
+        public Godisnji(int godina, int brojSlobodnihDana)
         {
             GodinaZaGodisnji = godina;
-            PreostaliBrojSlobodnihDana = brojSlobodnihDana; 
+            PreostaliBrojSlobodnihDana = brojSlobodnihDana;
         }
         public void DodajSlobodneDane(int slobodniDani)
         {

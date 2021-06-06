@@ -10,15 +10,25 @@ namespace Bolnica.Model
 {
     public class Uput
     {
-        public String IDUputa { get; set; }
-        public TipoviUputa TipUputa { get; set; }
-        public DateTime DatumIzdavanja { get; set; }
-        public String ImePrezimeLekar { get; set; }
-        public String IDLekaraSpecijaliste { get; set; }
-        public String NalazMisljenje { get; set; }
-        public DateTime PocetakStacionarnog { get; set; }
-        public DateTime KrajStacionarnog { get; set; }
-        public Prostor Prostor { get; set; } = null;
+        private String iDUputa;
+        private TipoviUputa tipUputa;
+        private DateTime datumIzdavanja;
+        private String imePrezimeLekar;
+        private String iDLekaraSpecijaliste;
+        private String nalazMisljenje;
+        private DateTime pocetakStacionarnog;
+        private DateTime krajStacionarnog;
+        private Prostor prostor = null;
+
+        public string IDUputa { get => iDUputa; set => iDUputa = value; }
+        public TipoviUputa TipUputa { get => tipUputa; set => tipUputa = value; }
+        public DateTime DatumIzdavanja { get => datumIzdavanja; set => datumIzdavanja = value; }
+        public string ImePrezimeLekar { get => imePrezimeLekar; set => imePrezimeLekar = value; }
+        public string IDLekaraSpecijaliste { get => iDLekaraSpecijaliste; set => iDLekaraSpecijaliste = value; }
+        public string NalazMisljenje { get => nalazMisljenje; set => nalazMisljenje = value; }
+        public DateTime PocetakStacionarnog { get => pocetakStacionarnog; set => pocetakStacionarnog = value; }
+        public DateTime KrajStacionarnog { get => krajStacionarnog; set => krajStacionarnog = value; }
+        public Prostor Prostor { get => prostor; set => prostor = value; }
 
         public Uput() { }
         public Uput(string iDUputa, TipoviUputa tipUputa, DateTime datumIzdavanja, string iDLekaraSpecijaliste, string nalazMisljenje, string imeprezime)

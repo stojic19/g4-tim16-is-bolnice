@@ -7,14 +7,24 @@ namespace Model
 {
     public class Lek
     {
-        public String IDLeka { get; set; }
-        public String NazivLeka { get; set; }
-        public String Jacina { get; set; }
-        public int Kolicina { get; set; }
-        public String Proizvodjac { get; set; }
-        public List<Sastojak> Sastojci { get; set; } = new List<Sastojak>();
-        public bool Verifikacija { get; set; }
-        public List<Lek> Zamene { get; set; } = new List<Lek>();
+        private String iDLeka;
+        private String nazivLeka;
+        private String jacina;
+        private int kolicina;
+        private String proizvodjac;
+        private List<Sastojak> sastojci = new List<Sastojak>();
+        private List<Lek> zamene = new List<Lek>();
+        private bool verifikacija;
+
+        public string IDLeka { get => iDLeka; set => iDLeka = value; }
+        public string NazivLeka { get => nazivLeka; set => nazivLeka = value; }
+        public string Jacina { get => jacina; set => jacina = value; }
+        public int Kolicina { get => kolicina; set => kolicina = value; }
+        public string Proizvodjac { get => proizvodjac; set => proizvodjac = value; }
+        public List<Sastojak> Sastojci { get => sastojci; set => sastojci = value; }
+        public List<Lek> Zamene { get => zamene; set => zamene = value; }
+        public bool Verifikacija { get => verifikacija; set => verifikacija = value; }
+
         public Lek() { }
         public Lek(string iDLeka, string nazivLeka, string jacina)
         {

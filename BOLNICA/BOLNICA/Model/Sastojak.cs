@@ -9,8 +9,9 @@ namespace Bolnica.Model
     public class Sastojak
     {
 
-        public String Naziv { get; set; }
-        public double Kolicina { get; set; }
+        private String naziv;
+        private double kolicina;
+
 
         public Sastojak()
         {
@@ -21,5 +22,8 @@ namespace Bolnica.Model
             Naziv = naziv;
             Kolicina = kolicina;
         }
+
+        public string Naziv { get => naziv; set => naziv = value; }
+        public double Kolicina { get => kolicina; set => kolicina = value; }
     }
 }

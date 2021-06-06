@@ -66,7 +66,7 @@
                               SelectionMode="Single" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke" AutoGenerateColumns="False"
                               MinWidth="317" MinHeight="136" MaxHeight="136"  Width="317" Margin="0,10">
                         <DataGrid.Columns>
-                            
+
                             <DataGridTextColumn Header="Naziv" Binding="{Binding NazivLeka}" Width="150"/>
                             <DataGridTextColumn Header="Jačina" Binding="{Binding Jacina}" Width="150*"/>
 
@@ -76,7 +76,7 @@
 
                     <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                          Name="nazivLeka" FontWeight="Normal"/>
-                        <Label Content="Naziv leka" HorizontalAlignment="Center" FontWeight="Normal" />
+                    <Label Content="Naziv leka" HorizontalAlignment="Center" FontWeight="Normal" />
 
                     <TextBox Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                          Name="jacinaLeka" FontWeight="Normal"/>
@@ -122,7 +122,6 @@
         <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
 
             <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="IzdajRecept"/>
-            <Button Content="Izveštaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="IzvestajNovogRecepta"/>
             <Button Content="Odustani" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="10,20,10,20" Click="Odustajanje"/>
 
         </StackPanel>

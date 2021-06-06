@@ -36,11 +36,6 @@ namespace Bolnica.LekarFolder
             this.Close();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            
-        }
-
         public void PromenaPogleda(UserControl userControl)
         {
             GlavniProzor.Children.Clear();
@@ -92,7 +87,7 @@ namespace Bolnica.LekarFolder
 
         }
 
-        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        private void KreiranjeOdsustva(object sender, RoutedEventArgs e)
         {
 
         }
@@ -105,6 +100,88 @@ namespace Bolnica.LekarFolder
             }
             else { this.menu.Visibility = Visibility.Visible; }
 
+        }
+
+        private void menu_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.menu.Visibility = Visibility.Hidden;
+            this.mojProfil.Visibility = Visibility.Hidden;
+            this.tema.Visibility = Visibility.Hidden;
+            this.jezik.Visibility = Visibility.Hidden;
+        }
+
+        private void PrikazProfila(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrikazObavestenja(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IzmenaNaloga(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Odjava(object sender, RoutedEventArgs e)
+        {
+            Login prozorLogovanje = new Login();
+            prozorLogovanje.Show();
+            this.Close();
+        }
+
+        private void PromenaLozinke(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OtvaranjeMojProfil(object sender, RoutedEventArgs e)
+        {
+            if (this.mojProfil.Visibility == Visibility.Visible)
+            {
+                this.mojProfil.Visibility = Visibility.Hidden;
+            }
+            else { this.mojProfil.Visibility = Visibility.Visible; }
+        }
+
+        private void PrikazTema(object sender, RoutedEventArgs e)
+        {
+            if (this.tema.Visibility == Visibility.Visible)
+            {
+                this.tema.Visibility = Visibility.Hidden;
+            }
+            else { this.tema.Visibility = Visibility.Visible; }
+        }
+
+        private void SvetlaTema(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TamnaTema(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PromenaSrpski(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PromenaEngleski(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrikazJezika(object sender, RoutedEventArgs e)
+        {
+            if (this.jezik.Visibility == Visibility.Visible)
+            {
+                this.jezik.Visibility = Visibility.Hidden;
+            }
+            else { this.jezik.Visibility = Visibility.Visible; }
         }
     }
 }

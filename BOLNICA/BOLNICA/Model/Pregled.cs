@@ -10,14 +10,25 @@ namespace Bolnica.Model
 {
     public class Pregled : INotifyPropertyChanged
     {
-        public String IdPregleda { get; set; }
-        public Boolean Odrzan { get; set; } = false;
-        public Termin Termin { get; set; }
-        public Anamneza Anamneza { get; set; } = null;
-        public List<Recept> Recepti { get; set; } = new List<Recept>();
-        public List<Uput> Uputi { get; set; } = new List<Uput>();
-        public List<Alergeni> Alergeni { get; set; } = new List<Alergeni>();
-        public bool OcenjenPregled { get; set; }
+        private String idPregleda;
+        private Boolean odrzan = false;
+        private Termin termin;
+        private Anamneza anamneza = null;
+        private List<Recept> recepti = new List<Recept>();
+        private List<Uput> uputi = new List<Uput>();
+        private List<Alergeni> alergeni = new List<Alergeni>();
+        private bool ocenjenPregled;
+
+        public string IdPregleda { get => idPregleda; set => idPregleda = value; }
+        public bool Odrzan { get => odrzan; set => odrzan = value; }
+        public Termin Termin { get => termin; set => termin = value; }
+        public Anamneza Anamneza { get => anamneza; set => anamneza = value; }
+        public List<Recept> Recepti { get => recepti; set => recepti = value; }
+        public List<Uput> Uputi { get => uputi; set => uputi = value; }
+        public List<Alergeni> Alergeni { get => alergeni; set => alergeni = value; }
+        public bool OcenjenPregled { get => ocenjenPregled; set => ocenjenPregled = value; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Pregled() { }
 
@@ -26,13 +37,9 @@ namespace Bolnica.Model
             this.IdPregleda = idPregleda;
             this.Termin = termin;
             OcenjenPregled = false;
-            
+
         }
 
-        public Pregled(string idPregleda, Termin termin, Anamneza anamneza, List<Recept> recepti, bool ocenjenPregled) : this(idPregleda, termin)
-        {
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public Pregled(string idPregleda, Termin termin, Anamneza anamneza, List<Recept> recepti, bool ocenjenPregled) : this(idPregleda, termin) { }
     }
 }
