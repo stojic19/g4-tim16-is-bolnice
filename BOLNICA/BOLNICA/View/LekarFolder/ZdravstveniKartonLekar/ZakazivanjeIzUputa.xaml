@@ -24,8 +24,9 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Zakazivanje termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        
         <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="4" />
+        <Label Content="Zakazivanje termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
 
 

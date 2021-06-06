@@ -159,21 +159,21 @@
 
         <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="160" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="7,2" >
-            <MenuItem Header="Moj nalog" Height="50"  Click="PrikazProfila" FontSize="15"/>
-            <MenuItem Header="Obaveštenja" Height="50"  FontSize="15" Click="PrikazObavestenja"/>
-            <MenuItem Header="Izmena naloga" Height="50"  FontSize="15" Click="IzmenaNaloga"/>
-            <MenuItem Header="Promena lozinke" Height="50" FontSize="15" Click="PromenaLozinke"/>
-            <MenuItem Header="Odjava" Height="50" FontSize="15" Click="Odjava"/>
+            <MenuItem Header="Moj nalog" Height="50"  Width="150" Click="PrikazProfila" FontSize="15"/>
+            <MenuItem Header="Obaveštenja" Height="50"  Width="150" FontSize="15" Click="PrikazObavestenja"/>
+            <MenuItem Header="Izmena naloga" Height="50" Width="150" FontSize="15" Click="IzmenaNaloga"/>
+            <MenuItem Header="Promena lozinke" Height="50" Width="150" FontSize="15" Click="PromenaLozinke"/>
+            <MenuItem Header="Odjava" Height="50" Width="150" FontSize="15" Click="Odjava"/>
         </Menu>
 
         <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="tema" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="210,2" >
-            <MenuItem Header="Svetla tema" Height="50"  Click="SvetlaTema" VerticalAlignment="Center" FontSize="15">
+            <MenuItem Header="Svetla tema" Height="50" Width="120" Click="SvetlaTema" VerticalAlignment="Center" FontSize="15">
                 <MenuItem.Icon>
                     <Image Source="/Slike/LekarSlike/sun.png"  Height="16" Width="16" VerticalAlignment="Center"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Tamna tema" Height="50"  Click="TamnaTema" VerticalAlignment="Center" FontSize="15">
+            <MenuItem Header="Tamna tema" Height="50"  Width="120" Click="TamnaTema" VerticalAlignment="Center" FontSize="15">
                 <MenuItem.Icon>
                     <Image Source="/Slike/LekarSlike/night.png"  Height="16" Width="16" VerticalAlignment="Center"/>
                 </MenuItem.Icon>
@@ -182,8 +182,8 @@
 
         <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="jezik" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130"
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="130,2" >
-            <MenuItem Header="Srpski - SR" Height="50"  Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15"/>
-            <MenuItem Header="English - EN" Height="50"  Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15"/>
+            <MenuItem Header="Srpski - SR" Height="50" Width="120" Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15"/>
+            <MenuItem Header="English - EN" Height="50" Width="120" Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15"/>
         </Menu>
 
     </Grid>

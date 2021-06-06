@@ -1,8 +1,6 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
-using Bolnica.Model;
-using Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;

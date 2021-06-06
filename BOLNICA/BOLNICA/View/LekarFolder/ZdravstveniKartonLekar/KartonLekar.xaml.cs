@@ -2,13 +2,10 @@
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
-using Bolnica.Model;
-using Bolnica.Model.Enumi;
-using Bolnica.Model.Rukovanja;
-using Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Forms;
 using UserControl = System.Windows.Controls.UserControl;
 
@@ -36,6 +33,7 @@ namespace Bolnica
             this.DataContext = this;
 
             inicijalizacijaTabela();
+            InicijalizacijaPretraga();
 
         }
 
@@ -104,9 +102,20 @@ namespace Bolnica
 
         }
 
-        private void PrikazInformacijaAnamneza(object sender, RoutedEventArgs e)
+        private void DodavanjeUputa(object sender, RoutedEventArgs e)
+        {
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzdavanjeUputa(izabranPregled.IdPregleda));
+
+        }
+
+        private void IzvestajRecepata(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void PrikazInformacijaAnamneza(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
             AnamnezaDTO izabranaAnamneza = (AnamnezaDTO)TabelaAnamneza.SelectedItem;
 
             if (izabranaAnamneza != null)
@@ -116,8 +125,14 @@ namespace Bolnica
             }
         }
 
-        private void PrikazInformacijaUput(object sender, RoutedEventArgs e)
+        private void IzvestajAnamneza(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void InformacijeUput(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
             UputDTO izabranUput = (UputDTO)dataGridUputi.SelectedItem;
             if (izabranUput == null) return;
 
@@ -131,19 +146,66 @@ namespace Bolnica
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeStacionarno(izabranUput, izabranPregled.IdPregleda));
             }
-            else {}
+            else { }
         }
 
-        private void DodavanjeUputa(object sender, RoutedEventArgs e)
+        private void InicijalizacijaPretraga()
         {
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzdavanjeUputa(izabranPregled.IdPregleda));
+            this.dataGridRecepti.ItemsSource = Recepti;
+            CollectionView viewRecepti = (CollectionView)CollectionViewSource.GetDefaultView(dataGridRecepti.ItemsSource);
+            viewRecepti.Filter = FiltriranjeRecepata;
+
+
+            this.dataGridUputi.ItemsSource = Uputi;
+            CollectionView viewUputi = (CollectionView)CollectionViewSource.GetDefaultView(dataGridUputi.ItemsSource);
+            viewUputi.Filter = FiltriranjeUputa;
+
+
+            this.TabelaAnamneza.ItemsSource = Anamneze;
+            CollectionView viewAnamneze = (CollectionView)CollectionViewSource.GetDefaultView(TabelaAnamneza.ItemsSource);
+            viewAnamneze.Filter = FiltriranjeAnamneza;
+        }
+
+        private bool FiltriranjeRecepata(object item)
+        {
+            if (String.IsNullOrEmpty(pretragaRecepata.Text))
+                return true;
+            else
+                return ((item as ReceptDTO).Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(pretragaRecepata.Text, StringComparison.OrdinalIgnoreCase) >= 0);
 
         }
 
-        private void IzvestajRecepata(object sender, RoutedEventArgs e)
+        private bool FiltriranjeUputa(object item)
         {
+            if (String.IsNullOrEmpty(PretragaUputa.Text))
+                return true;
+            else
+                return ((item as UputDTO).DatumIzdavanja.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(PretragaUputa.Text, StringComparison.OrdinalIgnoreCase) >= 0);
 
+        }
+
+        private bool FiltriranjeAnamneza(object item)
+        {
+            if (String.IsNullOrEmpty(PretragaAnamneza.Text))
+                return true;
+            else
+                return ((item as AnamnezaDTO).Datum.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture).IndexOf(PretragaAnamneza.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+
+        }
+
+        private void PretragaAnamneza_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(TabelaAnamneza.ItemsSource).Refresh();
+        }
+
+        private void pretragaRecepata_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridRecepti.ItemsSource).Refresh();
+        }
+
+        private void PretragaUputa_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridUputi.ItemsSource).Refresh();
         }
     }
 }
