@@ -20,10 +20,12 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private String korisnickoIme;
         public IstorijaPregledaViewModel(String korisnickoIme)
         {
+            poljePretrage = DateTime.Now.Date;
             this.korisnickoIme = korisnickoIme;
             UcitajUKolekciju();
             izvestajPregleda = new RelayCommand(PrikaziIzvestaj);
             vratiSe = new RelayCommand(VratiSeNaIstoriju);
+            pretraga = new RelayCommand(Pretrazi);
         }
         public void UcitajUKolekciju()
         {
@@ -88,6 +90,53 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazKartona(korisnickoIme));
+        }
+
+        private DateTime poljePretrage;
+        public DateTime PoljePretrage
+        {
+            get { return poljePretrage; }
+            set
+            {
+                poljePretrage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private RelayCommand pretraga;
+
+        public RelayCommand Pretraga
+        {
+            get { return pretraga; }
+        }
+
+        public void Pretrazi()
+        {
+            Poruka = "";
+            List<PregledDTO> pretraga = PretragaTermina();
+            if (pretraga.Count != 0)
+            {
+                ObavljeniPregledi.Clear();
+                foreach (PregledDTO pregled in pretraga)
+                {
+                    if (DateTime.Compare(pregled.Datum.Date, PoljePretrage.Date) == 0)
+                        ObavljeniPregledi.Add(pregled);
+                }
+                return;
+            }
+            Poruka = "Ne postoje obavljeni termini za uneti datum!";
+
+        }
+
+        private List<PregledDTO> PretragaTermina()
+        {
+            List<PregledDTO> rezultatiPretrage = new List<PregledDTO>();
+            foreach (PregledDTO pregled in preglediKontroler.DobaviSveObavljenePregledePacijenta(korisnickoIme).OrderBy(user => user.Datum).ToList())
+            {
+                if (DateTime.Compare(pregled.Datum.Date, PoljePretrage.Date) == 0)
+                    rezultatiPretrage.Add(pregled);
+            }
+            return rezultatiPretrage;
         }
     }
 }

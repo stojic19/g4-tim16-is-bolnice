@@ -1106,4 +1106,54 @@ Magdalena Reljin
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>33fd54f4-df60-4b44-9059-1a0e852de82f</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 07/06/2021 u 07:30h. </Tekst>
+    <Datum>2021-06-05T07:30:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>c7a6a0b4-a75f-40cf-a476-46fb7450120a</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 09/06/2021 u 09:30h. </Tekst>
+    <Datum>2021-06-07T09:30:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>012ef374-f877-4324-9d65-0357214dbfb4</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 09/06/2021 u 10:00h. </Tekst>
+    <Datum>2021-06-07T10:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>77469153-9e56-47ba-8439-51536bae8f0f</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 09/06/2021 u 10:30h. </Tekst>
+    <Datum>2021-06-07T10:30:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>32b9583f-bfd6-49d0-8301-d21476f6871e</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 09/06/2021 u 09:00h. </Tekst>
+    <Datum>2021-06-07T09:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

@@ -7,7 +7,15 @@
              mc:Ignorable="d" 
                d:DesignHeight="600" d:DesignWidth="350" >
     <StackPanel Background="White">
-        <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista obaveljenih termina</Label>
+        <Label Margin="20 10 0 0"  FontSize="15" FontWeight="DemiBold">OBAVLJENI TERMINI</Label>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="53" Margin="0,0,0.4,0">
+            <Label  Content="      Pretrazi po datumu:" VerticalAlignment="Center" Width="133" />
+            <DatePicker SelectedDate="{Binding Path=PoljePretrage}" Margin="0,15,15,9.8" Width="143"></DatePicker>
+            <Button Width="28" RenderTransformOrigin="1.5,0.5" Command="{Binding Path=Pretraga}" Margin="0,15,0,9.8">
+                <Image Source="/Slike/PacijentSlike/lupa3.png" Height="26" Width="25" />
+
+            </Button>
+        </StackPanel>
         <ListBox x:Name="TerminiUProslosti" SelectionMode="Single" Height="436" Margin="25,0,25.4,0" SelectedItem="{Binding Path=SelektovaniTermin}">
 
             <ListBox.ItemTemplate>
@@ -17,7 +25,7 @@
 
                     <WrapPanel >
                         <Border BorderThickness="3" BorderBrush="#FF31577E">
-                            <StackPanel  Width="260"  >
+                            <StackPanel  Width="240"  >
 
 
                                 <Grid>

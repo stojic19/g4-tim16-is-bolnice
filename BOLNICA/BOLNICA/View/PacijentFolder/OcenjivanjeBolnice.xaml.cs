@@ -30,7 +30,7 @@ namespace Bolnica.PacijentFolder
         public OcenjivanjeBolnice(String korisnickoIme)
         {
             InitializeComponent();
-            korisnickoIme = this.korisnickoIme;
+            this.korisnickoIme = korisnickoIme;
         }
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)

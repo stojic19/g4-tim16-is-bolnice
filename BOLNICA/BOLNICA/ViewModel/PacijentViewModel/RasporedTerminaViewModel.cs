@@ -33,15 +33,18 @@ namespace Bolnica.ViewModel
         {
             this.korisnickoIme = korisnickoImePacijenta;
             UcitajUKolekciju();
+            PoljePretrage = DateTime.Now;
             otkaziPregledKomanda = new RelayCommand(OtkaziPregled);
             detaljiPregledaKomanda = new RelayCommand(PrikazDetalja);
             pomeriPregledKomanda = new RelayCommand(PomeriPregled);
+            pretraga = new RelayCommand(Pretrazi);
         }
 
         public RasporedTerminaViewModel(TerminDTO izabraniTermin)
         {
             selektovaniTermin = izabraniTermin;
             UcitajUKolekciju();
+           
         }
 
         public void UcitajUKolekciju()
@@ -50,6 +53,17 @@ namespace Bolnica.ViewModel
             foreach (TerminDTO termin in terminKontroler.DobaviSveZakazaneTerminePacijenta(korisnickoIme).OrderByDescending(user => user.Datum).ToList())
             {
                 ZakazaniTerminiPacijenta.Add(termin);
+            }
+        }
+
+        private DateTime poljePretrage;
+        public DateTime PoljePretrage
+        {
+            get { return poljePretrage; }
+            set
+            {
+                poljePretrage = value;
+                OnPropertyChanged();
             }
         }
 
@@ -179,8 +193,37 @@ namespace Bolnica.ViewModel
             }
         }
 
+        
+        private RelayCommand pretraga;
 
-    
+        public RelayCommand Pretraga
+        {
+            get { return pretraga; }
+        }
+        public void Pretrazi()
+        {
+            List<TerminDTO> pretraga = PretragaTermina();
+            if (pretraga.Count != 0) {
+                ZakazaniTerminiPacijenta.Clear();
+                foreach (TerminDTO termin in pretraga)
+                {
+                        ZakazaniTerminiPacijenta.Add(termin);
+                }
+                return;
+            }
+            Poruka = "Ne postoje zakazani termini za uneti datum!";
 
-}
+        }
+
+        private List<TerminDTO>  PretragaTermina()
+        {
+            List<TerminDTO> rezultatiPretrage = new List<TerminDTO>();
+            foreach (TerminDTO termin in terminKontroler.DobaviSveZakazaneTerminePacijenta(korisnickoIme).OrderBy(user => user.Datum).ToList())
+            {
+                if (DateTime.Compare(termin.Datum.Date, PoljePretrage.Date) == 0)
+                    rezultatiPretrage.Add(termin);
+            }
+            return rezultatiPretrage;
+        }
+    }
 }

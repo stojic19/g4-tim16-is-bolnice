@@ -30,7 +30,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public void UcitajUKolekciju()
         {
             ObavljeniPregledi = new ObservableCollection<PregledDTO>();
-            foreach (PregledDTO pregled in preglediKontroler.DobaviSveNeocenjenePregledePacijenta(KorisnickoIme))
+            foreach (PregledDTO pregled in preglediKontroler.DobaviSveNeocenjenePregledePacijenta(KorisnickoIme).OrderByDescending(user => user.Datum).ToList())
                 ObavljeniPregledi.Add(pregled);
 
         }

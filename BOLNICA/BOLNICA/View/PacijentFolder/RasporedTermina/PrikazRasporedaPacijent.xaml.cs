@@ -32,6 +32,5 @@ namespace Bolnica
             this.DataContext = rasporedTerminaViewModel;
         }
 
-      
     }
 }

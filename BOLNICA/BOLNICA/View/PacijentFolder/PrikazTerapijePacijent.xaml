@@ -7,8 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="350">
     <StackPanel Background="White">
-        <Label Margin="20 00" FontFamily="Times New Roman" FontSize="15">Lista lekova</Label>
-        <ListBox x:Name="Lekovi" SelectionMode="Single" Height="533" Width="300" SelectedItem="{Binding Path=IzabranaTerapija}" Margin="25,0,25.4,0" >
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="53" Margin="0,0,0.4,0">
+            <Label  Content="      Pretrazi po nazivu leka:" VerticalAlignment="Center" Width="150" Margin="0,14,0,14.8" />
+            <TextBox Text="{Binding TekstPretrage}" Margin="0,15,7,9.8" Width="133"></TextBox>
+            <Button Width="28" RenderTransformOrigin="1.5,0.5" Command="{Binding Path=Pretraga}" Margin="0,15,0,9.8">
+                <Image Source="/Slike/PacijentSlike/lupa3.png" Height="26" Width="28" />
+
+            </Button>
+        </StackPanel>
+        <ListBox x:Name="Lekovi" SelectionMode="Single" Height="497" SelectedItem="{Binding Path=IzabranaTerapija}" Margin="25,0,25.4,0" >
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -17,7 +24,7 @@
 
                     <WrapPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Border BorderThickness="3" BorderBrush="#FF31577E">
-                            <StackPanel  Width="260" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <StackPanel  Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
 
                                 <Grid>
@@ -77,12 +84,12 @@
 
 
         </ListBox>
-
+        <Label Margin="25 0 0 0" Foreground="Red" Content="{Binding Path=Poruka}"></Label>
 
         <Button Margin="25 10" x:Name="informacije"  Background="#FF31577E" Height="30" Command="{Binding Path=DetaljiTerapije}">
             <Run Foreground="AntiqueWhite" >DETALJI TERAPIJE</Run>
         </Button>
-        <Button Margin="25 10" x:Name="izvestaj"  Background="#FF31577E" Height="30" Command="{Binding Path=Izvestaj}">
+        <Button Margin="25 5" x:Name="izvestaj"  Background="#FF31577E" Height="30" Command="{Binding Path=Izvestaj}">
             <Run Foreground="AntiqueWhite">IZVEŠTAJ</Run>
         </Button>
     </StackPanel>

@@ -2121,42 +2121,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>771e5388-03c2-45cc-96b6-db00590c6b0e</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>07:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-07T07:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>3ed88d45-3933-4857-bbd1-9ef7966fd32c</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>08:00</PocetnoVreme>
@@ -3165,78 +3129,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>b489a074-e6d4-431f-b1af-9b07ebdf1939</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>10:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-09T10:00:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>c7d063f3-72e0-4462-8f32-ec8c83982359</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>10:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-09T10:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>d8f40091-af16-414b-a19e-bf7f863c89b9</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>11:00</PocetnoVreme>
@@ -3999,83 +3891,11 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>cefd0a88-6f6e-4df8-901e-aa3cb9d2312f</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-09T09:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>83cfe3c1-c31c-4b0f-9c05-b5f6fc34f16e</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>08:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
     <Datum>2021-06-07T08:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>94b2d41a-05fb-4d3d-a043-22027f111e2c</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>09:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-09T09:00:00</Datum>
     <Lekar>
       <Ime>Magdalena</Ime>
       <Prezime>Reljin</Prezime>
