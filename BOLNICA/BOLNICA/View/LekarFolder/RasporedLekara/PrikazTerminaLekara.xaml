@@ -46,13 +46,13 @@
 
 
         <Button Grid.Row="2" Grid.Column="0" Content="Zakazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="ZakaziTermin" Background="WhiteSmoke" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Click="ZakaziTermin" Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="1" Content="Izmena termina" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="IzmeniTermin" Background="WhiteSmoke" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Click="IzmeniTermin"  Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="2" Content="Otkazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="OtkaziTermin" Background="WhiteSmoke" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Click="OtkaziTermin" Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="3" Content="Karton pacijenta" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta" Background="WhiteSmoke" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta"  Height="27" Width="185"/>
 
 
     </Grid>

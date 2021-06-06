@@ -24,7 +24,7 @@
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
         <Label Content="Izmena zamenskih lekova" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Background="LightGray" Header="Osnovni podaci o leku">
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="Osnovni podaci o leku">
             <Grid >
 
                 <Grid.ColumnDefinitions>
@@ -59,10 +59,10 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Content="Obriši" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeZamenskog"/>
+            <Button Content="Obriši" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeZamenskog" Style ="{DynamicResource DugmadKarton}"/>
         </StackPanel>
 
-        <GroupBox Background="LightGray" Header="Dodavanje novog zamenskog leka"  Grid.Row="2" Grid.Column="1" Width="300" Margin="32,5,32,4.6">
+        <GroupBox Style ="{DynamicResource BelaPozadina}" Header="Dodavanje novog zamenskog leka"  Grid.Row="2" Grid.Column="1" Width="300" Margin="32,5,32,4.6">
             <Grid>
 
                 <Grid.ColumnDefinitions>
@@ -89,7 +89,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button Content="Dodaj" Width="90" HorizontalAlignment="Center" Margin="44,10,10,0.4" Background="WhiteSmoke" Click="DodavanjeZamenskog" Grid.Column="1"/>
+                <Button Content="Dodaj" Width="90" HorizontalAlignment="Center" Margin="44,10,10,0.4" Style ="{DynamicResource DugmadKarton}" Click="DodavanjeZamenskog" Grid.Column="1"/>
 
             </Grid>
         </GroupBox>

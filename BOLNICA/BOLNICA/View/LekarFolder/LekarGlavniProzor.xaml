@@ -55,8 +55,8 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
-    <Grid Background="LightSkyBlue">
+
+    <Grid Background= "{DynamicResource Pozadina}">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="557*" />
@@ -146,7 +146,8 @@
             <Grid x:Name="GlavniProzor" MinHeight="380"/>
         </ScrollViewer>
 
-        <Menu Grid.Row="2" MouseLeave="menu_MouseLeave" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" Background="LightSkyBlue" Visibility="Hidden" VerticalContentAlignment="Center" >
+        <Menu Grid.Row="2" MouseLeave="menu_MouseLeave" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" 
+              Visibility="Hidden" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1">
             <MenuItem Header="Raspored" Height="50" Width="220" Click="PrikazRasporeda" FontSize="15"/>
             <MenuItem Header="Zakazivanje termina" Height="50" Width="220" FontSize="15" Click="ZakazivanjeTermina"/>
             <MenuItem Header="Evidencija utrošenog  materijala" Height="50" Width="220" FontSize="15" Click="UtrosenMaterijal"/>
@@ -156,7 +157,7 @@
             <MenuItem Header="Kreiranjezahtevaza odsustvo" Height="50" Width="220" FontSize="15" Click="KreiranjeOdsustva"/>
         </Menu>
 
-        <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="160" Background="WhiteSmoke"
+        <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="160" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="7,2" >
             <MenuItem Header="Moj nalog" Height="50"  Click="PrikazProfila" FontSize="15"/>
             <MenuItem Header="Obaveštenja" Height="50"  FontSize="15" Click="PrikazObavestenja"/>
@@ -165,7 +166,7 @@
             <MenuItem Header="Odjava" Height="50" FontSize="15" Click="Odjava"/>
         </Menu>
 
-        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="tema" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" Background="WhiteSmoke"
+        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="tema" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="210,2" >
             <MenuItem Header="Svetla tema" Height="50"  Click="SvetlaTema" VerticalAlignment="Center" FontSize="15">
                 <MenuItem.Icon>
@@ -179,7 +180,7 @@
             </MenuItem>
         </Menu>
 
-        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="jezik" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" Background="WhiteSmoke"
+        <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="jezik" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130"
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="130,2" >
             <MenuItem Header="Srpski - SR" Height="50"  Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15"/>
             <MenuItem Header="English - EN" Height="50"  Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15"/>

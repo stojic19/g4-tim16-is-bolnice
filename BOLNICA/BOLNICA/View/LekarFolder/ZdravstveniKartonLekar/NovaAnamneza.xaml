@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        d:DesignHeight="380" d:DesignWidth="850">
+        d:DesignHeight="1380" d:DesignWidth="850">
 
     <Grid>
 
@@ -47,7 +47,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+            <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10">
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 
@@ -71,14 +71,14 @@
 
             </GroupBox>
 
-            <GroupBox Grid.Row="3" Header="Simptomi i dijagnoza" Width="564" Height="184" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
+            <GroupBox Grid.Row="3" Header="Simptomi i dijagnoza" Width="564" Height="184" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
                 <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
             </GroupBox>
 
-            <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="670"  Background="LightGray" FontWeight="Bold" FontSize="14">
+            <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="670"  Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
 
                 <Grid>
 
@@ -186,8 +186,8 @@
                         <Label Name="validacija" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                            <Button Height="30" Width="128" Content="Obriši" Margin="10,0"  Background="WhiteSmoke" Click="BrisanjeTerapije"/>
-                            <Button Height="30" Width="128" Content="Dodaj" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeTerapije"/>
+                            <Button Height="30" Width="128" Content="Obriši" Margin="10,0"  Background="WhiteSmoke" Click="BrisanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
+                            <Button Height="30" Width="128" Content="Dodaj" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
 
                         </StackPanel>
 
@@ -199,7 +199,7 @@
 
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
+            <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
 
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">

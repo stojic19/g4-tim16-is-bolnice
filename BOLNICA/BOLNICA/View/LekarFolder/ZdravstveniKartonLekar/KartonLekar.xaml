@@ -11,8 +11,8 @@
 
         <TabItem Header="Zdravstveni karton" FontStyle="Italic" IsSelected="True" FontSize="14">
 
-            <GroupBox Header="Lični podaci" FontWeight="Bold" BorderThickness="4" BorderBrush="DarkGray" MinHeight="295" MinWidth="449" Margin="0,15"
-                              HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <GroupBox Header="Lični podaci" FontWeight="Bold" BorderThickness="4"  MinHeight="295" MinWidth="449" Margin="0,15"
+                              HorizontalAlignment="Center" VerticalAlignment="Center" Style ="{DynamicResource PrikazPacijent}">
 
 
                 <Grid>
@@ -96,8 +96,8 @@
 
                 <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Margin="0,30,20,30">
 
-                    <Button Content="Nova anamneza" Margin="10" Height="30" Width="170" Click="DodavanjeAnamneze"/>
-                    <Button Content="Više informacija" Margin="10" Height="30" Width="170" Click="PrikazInformacijaAnamneza"/>
+                    <Button Content="Nova anamneza" Margin="10" Height="30" Width="170" Click="DodavanjeAnamneze" Style ="{DynamicResource DugmadKarton}"/>
+                    <Button Content="Više informacija" Margin="10" Height="30" Width="170" Click="PrikazInformacijaAnamneza" Style ="{DynamicResource DugmadKarton}"/>
 
                 </StackPanel>
 
@@ -141,9 +141,9 @@
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                    <Button  Content="Izveštaj recepata" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="IzvestajRecepata" Background="WhiteSmoke" Height="30" Width="135" Margin="10,0"/>
+                    <Button  Content="Izveštaj recepata" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="IzvestajRecepata" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
 
-                    <Button Content="Dodaj recept" Click="DodavanjeRecepta"  VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="WhiteSmoke" Height="30" Width="135" Margin="10,0"/>
+                    <Button Content="Dodaj recept" Click="DodavanjeRecepta"  VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
 
                 </StackPanel>
 
@@ -181,9 +181,9 @@
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right" >
                     <Button  Content="Više informacija" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="PrikazInformacijaUput"
-                             Background="WhiteSmoke" Height="30" Width="135" Margin="10,0"/>
+                             Background="WhiteSmoke" Height="30" Width="135" Margin="10,0" Style ="{DynamicResource DugmadKarton}"/>
                     <Button  Content="Dodaj uput" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="DodavanjeUputa"
-                             Background="WhiteSmoke" Height="30" Width="135" Margin="10,0"/>
+                             Background="WhiteSmoke" Height="30" Width="135" Margin="10,0" Style ="{DynamicResource DugmadKarton}"/>
                 </StackPanel>
 
 

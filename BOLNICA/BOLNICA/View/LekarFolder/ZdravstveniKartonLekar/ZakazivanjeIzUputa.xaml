@@ -93,10 +93,10 @@
         <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             <Button Content="Odustani"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Povratak" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
+                Click="Povratak" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
 
             <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="ZakaziTermin" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+                Click="ZakaziTermin"  Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
 
 
         </StackPanel>

@@ -24,7 +24,7 @@
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
         <Label Content="Odbijanje zahteva za lek" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Background="LightGray" Header="Osnovni podaci o leku">
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="Osnovni podaci o leku">
             <Grid >
 
                 <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Background="LightGray" Header="Razlog odbijanja leka"  Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
+        <GroupBox Style ="{DynamicResource BelaPozadina}" Header="Sastojci leka"  Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
 
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
@@ -60,7 +60,7 @@
 
         </GroupBox>
 
-        <GroupBox Background="LightGray" Header="Razlog odbijanja leka"  Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
+        <GroupBox Style ="{DynamicResource BelaPozadina}" Header="Razlog odbijanja leka"  Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Height="160" Width="300">
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
                 <TextBox Name="razlogOdbijanja" PreviewMouseDown="razlogOdbijanja_PreviewMouseDown" TextChanged="razlogOdbijanja_TextChanged" MinWidth="245" MinHeight="90" MaxHeight="90"  Width="245" TextWrapping="Wrap" Margin="22,5,21,0" Height="90"/>

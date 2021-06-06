@@ -40,7 +40,7 @@
                     </StackPanel>
                 </StackPanel>
 
-                <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+                <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10">
 
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 
@@ -66,7 +66,7 @@
 
 
 
-                <GroupBox Grid.Row="2" Header="Lekar koji upućuje na pregled" Width="564" Height="107" Background="LightGray" FontWeight="Bold" FontSize="14">
+                <GroupBox Grid.Row="2" Header="Lekar koji upućuje na pregled" Width="564" Height="107" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
 
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
@@ -86,7 +86,7 @@
 
                 </GroupBox>
 
-                <GroupBox Grid.Row="3" Header="Lekar kod kog se upućuje na pregled" Width="564" Height="250" Background="LightGray" FontWeight="Bold" FontSize="14">
+                <GroupBox Grid.Row="3" Header="Lekar kod kog se upućuje na pregled" Width="564" Height="250" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
@@ -130,7 +130,7 @@
 
                 </GroupBox>
 
-                <GroupBox Grid.Row="4" Header="Nalaz i mišljenje" Width="564" Height="180" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" >
+                <GroupBox Grid.Row="4" Header="Nalaz i mišljenje" Width="564" Height="180" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" >
 
                     <TextBox Name="nalazMisljenje" TextChanged="PromenaTeksta" PreviewMouseDown="KlikNaPolja" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 

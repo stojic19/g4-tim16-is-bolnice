@@ -30,7 +30,7 @@
             </StackPanel>
         </StackPanel>
 
-        <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10">
+        <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10">
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 
@@ -55,7 +55,7 @@
         </GroupBox>
 
 
-        <GroupBox Grid.Row="2" Header="Detalji o stacionarnom lečenju i nalaz" Width="564" Height="350" Background="LightGray" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
+        <GroupBox Grid.Row="2" Header="Detalji o stacionarnom lečenju i nalaz" Width="564" Height="350" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
             <Grid Margin="11">
 

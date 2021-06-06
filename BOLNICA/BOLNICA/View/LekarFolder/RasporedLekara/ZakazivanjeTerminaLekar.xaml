@@ -150,10 +150,10 @@
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
 
             <Button Content="Odustani"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Povratak" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
+                Click="Povratak" Style ="{DynamicResource DugmadKarton}" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
 
             <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Potvrda" Background="WhiteSmoke" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+                Click="Potvrda" Style ="{DynamicResource DugmadKarton}" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
 
 
         </StackPanel>

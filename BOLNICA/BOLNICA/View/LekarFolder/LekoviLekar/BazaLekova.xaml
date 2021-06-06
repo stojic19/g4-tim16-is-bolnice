@@ -27,11 +27,11 @@
 
         </StackPanel>
 
-        <Button Grid.Row="0" Grid.Column="2" Content="Verifikacija lekova" Margin="10,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="VerifikacijaLeka" Background="WhiteSmoke" Height="27" Width="185" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="Verifikacija lekova" Margin="10,0" VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center" Click="VerifikacijaLeka"  Height="27" Width="185" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
         <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="true" Grid.RowSpan="2" SelectedValue="{Binding Path=izabranLek}"
-                  SelectionMode="Single"  Background="WhiteSmoke" SelectionChanged="dataGridLekovi_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left"
+                  SelectionMode="Single"   SelectionChanged="dataGridLekovi_SelectionChanged" VerticalAlignment="Top" HorizontalAlignment="Left"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2"
                   MinWidth="470" MinHeight="250" Margin="17.5 , 13.5 , 0 ,13.5"  Width="530" Height="293">
             <DataGrid.Columns>
@@ -46,7 +46,7 @@
 
             <Label Content="Sastojci:" Margin="5,0"/>
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
-                  SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  SelectionMode="Single"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv sastojka" Binding="{Binding Naziv}" Width="85*"/>
@@ -57,7 +57,7 @@
 
             <Label Content="Zamenski lekovi:" Margin="5,0"/>
             <DataGrid x:Name="dataGridZamenski" ItemsSource="{Binding Zamenski}" IsReadOnly="true"
-                  SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  SelectionMode="Single"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
@@ -69,8 +69,8 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0">
-            <Button  Content="Izmena leka "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaLeka" Background="WhiteSmoke" Height="27" Width="100" Margin="0,0,10,0"/>
-            <Button  Content="Izmena zamena "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaZamena" Background="WhiteSmoke" Height="27" Width="100" Margin="10,0,0,0"/>
+            <Button  Content="Izmena leka "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaLeka"  Height="27" Width="100" Margin="0,0,10,0" />
+            <Button  Content="Izmena zamena "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaZamena"  Height="27" Width="100" Margin="10,0,0,0"/>
 
 
         </StackPanel>
