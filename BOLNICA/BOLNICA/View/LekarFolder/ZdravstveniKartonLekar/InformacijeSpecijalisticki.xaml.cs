@@ -17,6 +17,8 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         {
 
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             izabranUput = informacijeUput;
             izabranPregled = preglediKontroler.DobaviPregled(IDIzabranogPregleda);
 

@@ -29,6 +29,8 @@ namespace Bolnica
         public DodavanjeRecepta(String idIzabranogPregleda)
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             this.izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
             inicijalizacijaPolja();
             inicijalizacijaTabeleLekova();
@@ -142,8 +144,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
-            LekarGlavniProzor.postaviPrethodnu(this);
-
         }
 
     }

@@ -19,7 +19,8 @@ namespace Bolnica.LekarFolder.ZdravstveniKartonLekar
         public InformacijeStacionarno(UputDTO informacijeUput, string idIzabranogPregleda)
         {
             InitializeComponent();
-            InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             izabranUput = informacijeUput;
             izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
 

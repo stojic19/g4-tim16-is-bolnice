@@ -14,22 +14,19 @@ namespace Bolnica.LekarFolder
         private static Grid PocetniPogled;
         String KoriscnickoImeLekara = null;
         private static UserControl PrethodnaStanica;
+        private static UserControl TrenutnaStranica;
         public LekarGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
-            
             PocetniPogled = this.GlavniProzor;
             this.KoriscnickoImeLekara = korisnickoIme;
             PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
-            postaviPrethodnu(new PocetnaStranicaLekar(KoriscnickoImeLekara));
+            postaviPrethodnu();
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
             PromenaPogleda(PrethodnaStanica);
-            //Login prozorLogovanje = new Login();
-            //prozorLogovanje.Show();
-            //this.Close();
         }
 
         public void PromenaPogleda(UserControl userControl)
@@ -43,9 +40,14 @@ namespace Bolnica.LekarFolder
             return PocetniPogled;
         }
 
-        public static void postaviPrethodnu(UserControl prethodna)
+        public static void postaviPrethodnu()
         {
-            PrethodnaStanica = prethodna;
+            PrethodnaStanica = TrenutnaStranica;
+        }
+
+        public static void postaviTrenutnu(UserControl trenutna)
+        {
+            TrenutnaStranica = trenutna;
         }
 
         private void PocetnaStrana(object sender, RoutedEventArgs e)

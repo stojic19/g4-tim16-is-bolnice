@@ -29,7 +29,8 @@ namespace Bolnica
         {
             InitializeComponent();
             korisnik = lekar;
-
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             datum.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today));
 
             this.TabelaPacijenata.ItemsSource = naloziPacijenataKontroler.DobaviSveNaloge();
@@ -49,7 +50,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void Potvrda(object sender, RoutedEventArgs e)
@@ -71,7 +71,6 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 

@@ -23,6 +23,9 @@ namespace Bolnica.LekarFolder
         public PocetnaStranicaLekar(string koriscnickoImeLekara)
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
+            
             KorisnickoImeLekara = koriscnickoImeLekara;
             imePrezime.Content = lekariKontroler.ImeiPrezime(koriscnickoImeLekara) + "!";
         }
@@ -34,24 +37,20 @@ namespace Bolnica.LekarFolder
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void PrikazOdsustva(object sender, RoutedEventArgs e)
         {
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void EvidencijaUtrosenog(object sender, RoutedEventArgs e)
         {
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void PrikazLekova(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Bolnica
         public IzmenaZamenskihLekova(String idLeka, String idLekara)
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             izabranLek = lekoviKontroler.PretraziPoID(idLeka);
             KorisnickoImeLekara = idLekara;
             this.DataContext = this;
@@ -136,7 +138,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
@@ -144,7 +145,6 @@ namespace Bolnica
             lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IdLeka, noviZamenski);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
     }
 }

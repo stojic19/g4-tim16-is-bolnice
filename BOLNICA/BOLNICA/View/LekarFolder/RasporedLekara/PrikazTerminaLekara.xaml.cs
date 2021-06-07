@@ -19,7 +19,8 @@ namespace Bolnica
         public PrikazTerminaLekara(String korIme)
         {
             InitializeComponent();
-
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             korisnik = korIme;
             this.DataContext = this;
 
@@ -41,7 +42,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
-            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 
@@ -69,7 +69,6 @@ namespace Bolnica
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
-                LekarGlavniProzor.postaviPrethodnu(this);
 
             }
         }
@@ -103,7 +102,6 @@ namespace Bolnica
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(idNovogPregleda, 0));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 

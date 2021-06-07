@@ -24,6 +24,8 @@ namespace Bolnica
         public IzmenaTerminaLekar(String id, String lekar)
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             korisnik = lekar;
             izabran = id;
             TerminDTO t = terminKontroler.DobaviZakazanTerminDTO(izabran);
@@ -52,7 +54,6 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
 
@@ -132,7 +133,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
     }
 }

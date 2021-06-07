@@ -24,7 +24,8 @@ namespace Bolnica
         public KartonLekar(String idIzabranogPregleda, int indeksTaba)
         {
             InitializeComponent();
-
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             this.izabranPregled = preglediKontroler.DobaviPregled(idIzabranogPregleda);
             Tabovi.SelectedIndex = indeksTaba;
 
@@ -79,7 +80,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(izabranPregled.Termin.Lekar.KorisnickoIme));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
 
@@ -87,7 +87,6 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodavanjeRecepta(izabranPregled.IdPregleda));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
         private void DodavanjeAnamneze(object sender, RoutedEventArgs e) 
         {
@@ -100,14 +99,12 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NovaAnamneza(izabranPregled.IdPregleda));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void DodavanjeUputa(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzdavanjeUputa(izabranPregled.IdPregleda));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void IzvestajRecepata(object sender, RoutedEventArgs e)
@@ -123,7 +120,6 @@ namespace Bolnica
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 
@@ -142,13 +138,11 @@ namespace Bolnica
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeSpecijalisticki(izabranUput, izabranPregled.IdPregleda));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
             else if (izabranUput.TipUputa.Equals("Stacionarno lečenje"))
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeStacionarno(izabranUput, izabranPregled.IdPregleda));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
             else { }
         }

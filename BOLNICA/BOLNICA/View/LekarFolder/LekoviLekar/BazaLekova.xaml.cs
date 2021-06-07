@@ -23,6 +23,8 @@ namespace Bolnica.LekarFolder
         {
             InitializeComponent();
             KorisnickoImeLekara = korisnickoImeLekara;
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
 
             this.DataContext = this;
             Sastojci.Clear();
@@ -57,7 +59,6 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IdLeka, KorisnickoImeLekara));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 
@@ -65,7 +66,6 @@ namespace Bolnica.LekarFolder
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void dataGridLekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -120,7 +120,6 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IdLeka, KorisnickoImeLekara));
-                LekarGlavniProzor.postaviPrethodnu(this);
 
             }
         }

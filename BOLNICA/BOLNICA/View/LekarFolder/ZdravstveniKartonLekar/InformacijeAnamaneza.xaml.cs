@@ -23,6 +23,8 @@ namespace Bolnica
         {
 
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             this.izabranPregled = preglediKontroler.DobaviPregled(IDIzabranog);
             this.izabranaAnamneza = odabranaAnamneza;
 

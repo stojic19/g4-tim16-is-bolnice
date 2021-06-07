@@ -23,6 +23,8 @@ namespace Bolnica.LekarFolder
         public VerifikacijaLekova(string korisnickoImeLekara)
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
             KorisnickoImeLekara = korisnickoImeLekara;
             this.DataContext = this;
 
@@ -90,7 +92,6 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new OdbijanjeLeka(izabranZahtev.IDZahtjeva, KorisnickoImeLekara));
-                LekarGlavniProzor.postaviPrethodnu(this);
             }
 
         }
@@ -123,7 +124,6 @@ namespace Bolnica.LekarFolder
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
-            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void pretragaZahteva_PreviewMouseDown(object sender, MouseButtonEventArgs e)
