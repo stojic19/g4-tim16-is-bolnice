@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Bolnica"
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="850">
     <Grid Background="WhiteSmoke" Width="728" Height="345">
@@ -22,9 +22,9 @@
 
         <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
-        <Label Content="Izmena zamenskih lekova" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="{p:LocExtension IzmenaZamena}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="Osnovni podaci o leku">
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="{p:LocExtension InfoLek}">
             <Grid >
 
                 <Grid.ColumnDefinitions>
@@ -38,9 +38,9 @@
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="Naziv leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="{p:LocExtension NazivLeka}" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
                 <TextBox Grid.Row="0" Grid.Column="0" Name="nazivLeka" IsReadOnly="True" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
-                <Label Grid.Row="1" Grid.Column="1" Content="Jačina leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{p:LocExtension JacinaLeka}" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Name="jacinaLeka" IsReadOnly="True" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
               
 
@@ -49,20 +49,20 @@
 
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="10 , 5,5,5" VerticalAlignment="Top" HorizontalAlignment="Center">
 
-            <Label Content="Zamenski lekovi:" />
+            <Label Content="{p:LocExtension Zamenski}" />
             <DataGrid x:Name="dataGridZamenski" ItemsSource="{Binding Zamenski}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
-                    <DataGridTextColumn Header="Jacina leka" Binding="{Binding Jacina}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding NazivLeka}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Jacina}" Width="85*"/>
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Content="Obriši" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeZamenskog" Style ="{DynamicResource DugmadKarton}"/>
+            <Button Content="{p:LocExtension Obrisi}" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeZamenskog" />
         </StackPanel>
 
-        <GroupBox Style ="{DynamicResource BelaPozadina}" Header="Dodavanje novog zamenskog leka"  Grid.Row="2" Grid.Column="1" Width="300" Margin="32,5,32,4.6">
+        <GroupBox Style ="{DynamicResource BelaPozadina}" Header="{p:LocExtension DodajZamenski}"  Grid.Row="2" Grid.Column="1" Width="300" Margin="32,5,32,4.6">
             <Grid>
 
                 <Grid.ColumnDefinitions>
@@ -77,26 +77,26 @@
 
 
 
-                <Label Grid.Column="0" Content="Pretraga:" VerticalAlignment="Top" Margin="5,4,82,0" HorizontalAlignment="Center" Height="26" Width="57"/>
+                <Label Grid.Column="0" Content="{p:LocExtension Pretraga}" VerticalAlignment="Top" Margin="5,4,82,0" HorizontalAlignment="Center" Height="26" Width="57"/>
                 <TextBox Grid.Row="0" Grid.Column="0" Name="pretragaLekova" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="99" Margin="62,0,127,0.4" HorizontalAlignment="Center" Grid.ColumnSpan="2" TextChanged="pretragaLekova_TextChanged"/>
 
                 <DataGrid x:Name="dataGridSviLekovi" ItemsSource="{Binding SviLekovi}" IsReadOnly="true" Grid.ColumnSpan="2" 
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="80" MaxHeight="80" Margin="10,9.6" Grid.Row="1">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
-                        <DataGridTextColumn Header="Jacina leka" Binding="{Binding Jacina}" Width="85*"/>
+                        <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding NazivLeka}" Width="85*"/>
+                        <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Jacina}" Width="85*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button Content="Dodaj" Width="90" HorizontalAlignment="Center" Margin="44,10,10,0.4" Style ="{DynamicResource DugmadKarton}" Click="DodavanjeZamenskog" Grid.Column="1"/>
+                <Button Content="{p:LocExtension Dodaj}" Width="90" HorizontalAlignment="Center" Margin="44,10,10,0.4" Style ="{DynamicResource DugmadKarton}" Click="DodavanjeZamenskog" Grid.Column="1"/>
 
             </Grid>
         </GroupBox>
 
 
-        <Button Content="Odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
-        <Button Content="Sačuvaj izmene" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="CuvanjeIzmena"/>
+        <Button Content="{p:LocExtension Odustani}" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
+        <Button Content="{p:LocExtension Potvrdi}" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="CuvanjeIzmena"/>
 
     </Grid>
 </UserControl>

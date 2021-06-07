@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:nss="clr-namespace:Bolnica.Lokalizacija"
+        xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
         d:DesignHeight ="380" d:DesignWidth="850">
@@ -22,12 +22,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="{nss:LocExtension dobrodosli}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+        <Label Content="{p:LocExtension dobrodosli}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
         <Label Name="imePrezime" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="50" FontWeight="Bold"/>
-        <Button Content="Raspored pregleda i operacija" Grid.Column="0" Grid.Row="2" Height="50" Width="220" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,0" Click="PrikazRasporeda"/>
-        <Button Content="Zahtevi za odsustvo" Grid.Column="0" Grid.Row="3" Height="50" Width="220" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,0" Click="PrikazOdsustva"/>
-        <Button Content="Evidencija utrošenog materijala" Grid.Column="1" Grid.Row="2" Height="50" Width="220" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0" Click="EvidencijaUtrosenog"/>
-        <Button Content="Rad sa lekovima" Grid.Column="1" Grid.Row="3" Height="50" Width="220" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0" Click="PrikazLekova"/>
+        <Button Content="{p:LocExtension raspored}" Grid.Column="0" Grid.Row="2" Height="50" Width="230" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,0" Click="PrikazRasporeda"/>
+        <Button Content="{p:LocExtension Odsustvo}" Grid.Column="0" Grid.Row="3" Height="50" Width="230" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,0" Click="PrikazOdsustva"/>
+        <Button Content="{p:LocExtension UtrosenMaterijal}" Grid.Column="1" Grid.Row="2" Height="50" Width="230" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0" Click="EvidencijaUtrosenog"/>
+        <Button Content="{p:LocExtension baza}" Grid.Column="1" Grid.Row="3" Height="50" Width="230" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0" Click="PrikazLekova"/>
 
 
     </Grid>

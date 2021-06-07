@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Bolnica.LekarFolder.LekoviLekar"
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="850">
     <Grid Background="WhiteSmoke" Width="728" Height="345">
@@ -22,15 +22,17 @@
 
         <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
         <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
-        <Label Content="Izmena leka" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
+        <Label Content="{p:LocExtension IzmenaLeka}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
 
-        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="Osnovni podaci o leku">
+        <GroupBox Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Style ="{DynamicResource BelaPozadina}" Header="{p:LocExtension InfoLek}">
             <Grid >
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="12*"/>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="32*"/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="0*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
@@ -38,10 +40,10 @@
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="Naziv leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
-                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="0" Name="nazivLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
-                <Label Grid.Row="1" Grid.Column="1" Content="Jačina leka" VerticalAlignment="Top" Margin="5,0" HorizontalAlignment="Center"/>
-                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="1" Name="jacinaLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="10,0"/>
+                <Label Grid.Column="1" Content="{p:LocExtension NazivLeka}" VerticalAlignment="Top" Margin="40.6,35,39.4,0" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="1" Name="nazivLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="4.6,0,29.4,0.2" Grid.ColumnSpan="2"/>
+                <Label Grid.Column="3" Content="{p:LocExtension JacinaLeka}" VerticalAlignment="Top" Margin="65.6,35,65.4,0" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+                <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="3" Name="jacinaLeka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="120" Margin="9.6,0,10.4,0.2"/>
 
 
             </Grid>
@@ -49,22 +51,22 @@
 
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="10 , 5,5,5" VerticalAlignment="Top" HorizontalAlignment="Center">
 
-            <Label Content="Sastojci:" />
+            <Label Content="{p:LocExtension Sastojci}" />
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv sastojka" Binding="{Binding Naziv}" Width="85*"/>
-                    <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension NazivSastojka}"  Binding="{Binding Naziv}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension Kolicina}" Binding="{Binding Kolicina}" Width="85*"/>
 
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Content="Obriši" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeSastojka"/>
+            <Button Content="{p:LocExtension Obrisi}" Width="100" Height="22" Margin="10,10,10,5" HorizontalAlignment="Center" Click="BrisanjeSastojka"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" Margin="32,23,32,0">
-            <GroupBox Header="Dodavanje novog sastojka"   Height="110" Width="300" Style ="{DynamicResource BelaPozadina}" >
+            <GroupBox Header="{p:LocExtension DodavanjeSastojka}"   Height="110" Width="300" Style ="{DynamicResource BelaPozadina}" >
                 <Grid>
 
                     <Grid.ColumnDefinitions>
@@ -80,13 +82,13 @@
 
 
 
-                    <Label Grid.Row="1" Grid.Column="0" Content="Naziv" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="{p:LocExtension NazivSastojka}" VerticalAlignment="Top" Margin="10,0,0,0" HorizontalAlignment="Center"/>
                     <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="0" Name="nazivSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
-                    <Label Grid.Row="1" Grid.Column="1" Content="Kolicina" VerticalAlignment="Top" Margin="20,0,0,0" HorizontalAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" Content="{p:LocExtension Kolicina}" VerticalAlignment="Top" Margin="20,0,0,0" HorizontalAlignment="Center"/>
                     <TextBox TextChanged="PromenaTekstualnihPolja" PreviewMouseDown="KlikNaPolje" Grid.Row="0" Grid.Column="1" Name="kolicinaSastojka" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="20" Width="100" Margin="10,0,0,0" HorizontalAlignment="Center"/>
 
 
-                    <Button Grid.ColumnSpan="2" Grid.Row="2" Content="Dodaj" Width="100" Height="22" HorizontalAlignment="Center" Margin="10,0" Style ="{DynamicResource DugmadKarton}" Click="DodavanjeSastojka"/>
+                    <Button Grid.ColumnSpan="2" Grid.Row="2" Content="{p:LocExtension Dodaj}" Width="100" Height="22" HorizontalAlignment="Center" Margin="10,0" Style ="{DynamicResource DugmadKarton}" Click="DodavanjeSastojka"/>
 
                 </Grid>
             </GroupBox>
@@ -94,8 +96,8 @@
             <Label Name="validacijaPolja" Content="Niste popunili sva polja!" Foreground="Red" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="Hidden"/>
         </StackPanel>
 
-        <Button Content="Odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
-        <Button Content="Sačuvaj izmene" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="CuvanjeIzmena"/>
+        <Button Content="{p:LocExtension Odustani}" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" Click="Odustajanje"/>
+        <Button Content="{p:LocExtension Potvrdi}" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Click="CuvanjeIzmena"/>
 
     </Grid>
 </UserControl>

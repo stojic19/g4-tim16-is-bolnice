@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bolnica"
+        xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         mc:Ignorable="d"
         d:DesignHeight="380" d:DesignWidth="850" >
     <Grid>
@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Label  Content="Pretraga rasporeda po datumu:" VerticalAlignment="Center" />
+            <Label  Content="{p:LocExtension PretragaDatum}" VerticalAlignment="Center" />
             <TextBox  Height="25" Width="150" Margin="7,8,57.8,7" Name="pretragaDatuma" TextChanged="pretragaDatuma_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         </StackPanel>
 
@@ -31,27 +31,27 @@
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
                   MinWidth="800" MinHeight="260" Margin="17.5 , 10" Width="800">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Vrsta termina" Binding="{Binding TipTermina}" Width="90*"/>
-                <DataGridTextColumn Header="JMBG pacijenta" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
-                <DataGridTextColumn Header="Ime pacijenta" Binding="{Binding Pacijent.Ime}" Width="95*"/>
-                <DataGridTextColumn Header="Prezime pacijenta" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
-                <DataGridTextColumn Header="Datum" Binding="{Binding Datum, StringFormat={}{0:dd/MM/yyyy}}" Width="80*"/>
-                <DataGridTextColumn Header="Početak" Binding="{Binding Vreme}" Width="55*"/>
-                <DataGridTextColumn Header="Trajanje" Binding="{Binding Trajanje}" Width="55*"/>
-                <DataGridTextColumn Header="Prostorija" Binding="{Binding Prostor}" Width="65*"/>
+                <DataGridTextColumn Header="{p:LocExtension VrstaTermina}" Binding="{Binding TipTermina}" Width="90*"/>
+                <DataGridTextColumn Header="{p:LocExtension JmbgPacijenta}" Binding="{Binding Pacijent.Jmbg}" Width="95*"/>
+                <DataGridTextColumn Header="{p:LocExtension ImePacijenta}" Binding="{Binding Pacijent.Ime}" Width="95*"/>
+                <DataGridTextColumn Header="{p:LocExtension PrezimePacijenta}" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
+                <DataGridTextColumn Header="{p:LocExtension Datum}" Binding="{Binding Datum, StringFormat={}{0:dd/MM/yyyy}}" Width="80*"/>
+                <DataGridTextColumn Header="{p:LocExtension Pocetak}" Binding="{Binding Vreme}" Width="55*"/>
+                <DataGridTextColumn Header="{p:LocExtension Trajanje}" Binding="{Binding Trajanje}" Width="55*"/>
+                <DataGridTextColumn Header="{p:LocExtension Prostorija}" Binding="{Binding Prostor}" Width="65*"/>
 
             </DataGrid.Columns>
         </DataGrid>
 
 
 
-        <Button Grid.Row="2" Grid.Column="0" Content="Zakazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button Grid.Row="2" Grid.Column="0" Content="{p:LocExtension ZakaziTermin}" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="ZakaziTermin" Height="27" Width="185"/>
-        <Button  Grid.Row="2" Grid.Column="1" Content="Izmena termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="1" Content="{p:LocExtension IzmenaTermina}" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="IzmeniTermin"  Height="27" Width="185"/>
-        <Button  Grid.Row="2" Grid.Column="2" Content="Otkazivanje termina" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="2" Content="{p:LocExtension OtkaziTermin}" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="OtkaziTermin" Height="27" Width="185"/>
-        <Button  Grid.Row="2" Grid.Column="3" Content="Karton pacijenta" Margin="10,5" VerticalContentAlignment="Center" 
+        <Button  Grid.Row="2" Grid.Column="3" Content="{p:LocExtension Karton}" Margin="10,5" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta"  Height="27" Width="185"/>
 
 

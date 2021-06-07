@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bolnica"
+        xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         mc:Ignorable="d"
-        d:DesignHeight="1380" d:DesignWidth="850">
+        d:DesignHeight="1600" d:DesignWidth="850">
 
     <Grid>
 
@@ -35,7 +35,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <StackPanel Orientation="Vertical" >
-                    <Label Content="Datum:" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                    <Label Content="{p:LocExtension Datum}" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Margin="15,5,10,0"  />
                     <TextBox Name="datumPregleda"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
@@ -43,11 +43,11 @@
 
                 <StackPanel Orientation="Horizontal" Margin="210,5,10,5">
                     <Label Content="Zdravo korporacija" FontWeight="Bold" FontSize="27"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <Image Source="/Slike/LekarSlike/srce-vece.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Image Source="/Slike/LekarSlike/hospital.png" Width="48" Height="48"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
 
-            <GroupBox Grid.Row="1" Header="Pacijent" Width="564" Height="164" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10">
+            <GroupBox Grid.Row="1" Header="{p:LocExtension Pacijent}" Width="564" Height="164" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10">
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
 
@@ -55,30 +55,30 @@
 
                         <StackPanel Orientation="Vertical" Margin="5,5,15,5">
                             <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ime" FontWeight="Normal"/>
-                            <Label Content="Ime" HorizontalAlignment="Center" FontWeight="Normal" />
+                            <Label Content="{p:LocExtension Ime}" HorizontalAlignment="Center" FontWeight="Normal" />
 
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="15,5,5,5">
                             <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezime" FontWeight="Normal"/>
-                            <Label Content="Prezime" HorizontalAlignment="Center" FontWeight="Normal"/>
+                            <Label Content="{p:LocExtension Prezime}" HorizontalAlignment="Center" FontWeight="Normal"/>
                         </StackPanel>
 
                     </StackPanel>
 
                     <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbg" FontWeight="Normal"/>
-                    <Label Content="JMBG" HorizontalAlignment="Center" FontWeight="Normal" />
+                    <Label Content="{p:LocExtension JMBG}" HorizontalAlignment="Center" FontWeight="Normal" />
                 </StackPanel>
 
             </GroupBox>
 
-            <GroupBox Grid.Row="3" Header="Simptomi i dijagnoza" Width="564" Height="184" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
+            <GroupBox Grid.Row="3" Header="{p:LocExtension SimptomiDijagnoza}" Width="564" Height="184" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
                 <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
             </GroupBox>
 
-            <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="670"  Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
+            <GroupBox Grid.Row="4" Header="Lek" Width="547" Height="670"  Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="51,35.6,102,34.4">
 
                 <Grid>
 
@@ -98,7 +98,7 @@
 
 
                         <StackPanel Orientation="Horizontal" Margin="10,5" >
-                            <Label Content="Pretraga lekova:" FontWeight="Normal" />
+                            <Label Content="{p:LocExtension PretragaLeka}" FontWeight="Normal" />
                             <TextBox TextChanged="TextBox_TextChanged" Width="150" Height="27" Name="poljeZaPreragu" FontWeight="Normal" />
 
                         </StackPanel>
@@ -108,8 +108,8 @@
                             <ListView.View>
                                 <GridView>
 
-                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding NazivLeka}" Width="140" />
-                                    <GridViewColumn Header="Jačina" DisplayMemberBinding="{Binding Jacina}" Width="140"/>
+                                    <GridViewColumn Header="{p:LocExtension NazivLeka}" DisplayMemberBinding="{Binding NazivLeka}" Width="140" />
+                                    <GridViewColumn Header="{p:LocExtension JacinaLeka}" DisplayMemberBinding="{Binding Jacina}" Width="140"/>
 
                                 </GridView>
                             </ListView.View>
@@ -120,10 +120,10 @@
 
                         <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                          Name="imeLeka" FontWeight="Normal"/>
-                        <Label Content="Naziv leka" HorizontalAlignment="Center" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension NazivLeka}" HorizontalAlignment="Center" FontWeight="Normal" />
                         <TextBox Width="140" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"
                                              Name="jacinaLeka" FontWeight="Normal"/>
-                        <Label Content="Jačina leka" HorizontalAlignment="Center" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension JacinaLeka}" HorizontalAlignment="Center" FontWeight="Normal" />
 
                     </StackPanel>
 
@@ -134,12 +134,12 @@
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,25,5">
                                 <DatePicker SelectedDateChanged="PromenaDatuma" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocTer" FontWeight="Normal"/>
-                                <Label Content="Početak terapije" HorizontalAlignment="Center" FontWeight="Normal" />
+                                <Label Content="{p:LocExtension PocetakTerapije}" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="25,5,5,5">
                                 <DatePicker SelectedDateChanged="PromenaDatuma" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajTer" FontWeight="Normal"/>
-                                <Label Content="Kraj terapije" HorizontalAlignment="Center" FontWeight="Normal" />
+                                <Label Content="{p:LocExtension KrajTerapije}" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
                         </StackPanel>
@@ -148,16 +148,16 @@
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" >
 
                                 <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="dnevnaKol" FontWeight="Normal"/>
-                                <Label Content="Dnevna količina" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,15"/>
+                                <Label Content="{p:LocExtension Dnevno}" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,15"/>
 
 
                                 <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="satnica" FontWeight="Normal" />
-                                <Label Content="Na koliko sati" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,5" />
+                                <Label Content="{p:LocExtension Satnica}" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,5" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" Margin="52,0,0,1">
                                 <TextBox x:Name="opisKonzumacije" Height="100" Width="226"  VerticalAlignment="Top" FontWeight="Normal" TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja"/>
-                                <Label Content="Uputstvo za konzumiranja leka" HorizontalAlignment="Center" FontWeight="Normal"  />
+                                <Label Content="{p:LocExtension UputstvoLek}" HorizontalAlignment="Center" FontWeight="Normal"  />
                             </StackPanel>
                         </StackPanel>
 
@@ -175,9 +175,9 @@
                             <ListView.View>
                                 <GridView>
 
-                                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding  Lek.NazivLeka}" Width="203" />
-                                    <GridViewColumn Header="Dnevna količina" DisplayMemberBinding="{Binding Kolicina}" Width="203" />
-                                    <GridViewColumn Header="Satnica" DisplayMemberBinding="{Binding Satnica}" Width="103"/>
+                                    <GridViewColumn Header="{p:LocExtension NazivLeka}" DisplayMemberBinding="{Binding  Lek.NazivLeka}" Width="203" />
+                                    <GridViewColumn Header="{p:LocExtension Dnevno}" DisplayMemberBinding="{Binding Kolicina}" Width="203" />
+                                    <GridViewColumn Header="{p:LocExtension Satnica}" DisplayMemberBinding="{Binding Satnica}" Width="103"/>
 
                                 </GridView>
                             </ListView.View>
@@ -186,8 +186,8 @@
                         <Label Name="validacija" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                            <Button Height="30" Width="128" Content="Obriši" Margin="10,0"  Background="WhiteSmoke" Click="BrisanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
-                            <Button Height="30" Width="128" Content="Dodaj" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
+                            <Button Height="30" Width="128" Content="{p:LocExtension Obrisi}" Margin="10,0"  Background="WhiteSmoke" Click="BrisanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
+                            <Button Height="30" Width="128" Content="{p:LocExtension Dodaj}" Margin="10,0" Background="WhiteSmoke" Click="DodavanjeTerapije" Style ="{DynamicResource DugmadKarton}"/>
 
                         </StackPanel>
 
@@ -199,19 +199,19 @@
 
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Header="Lekar" Width="564" Height="107" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
+            <GroupBox Grid.Row="2" Header="{p:LocExtension Lekar}" Width="564" Height="107" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14">
 
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
                         <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
-                        <Label Content="Ime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension Ime}" HorizontalAlignment="Center" FontWeight="Normal" />
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
                         <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
-                        <Label Content="Prezime lekara" HorizontalAlignment="Center" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension Prezime}" HorizontalAlignment="Center" FontWeight="Normal" />
                     </StackPanel>
 
                 </StackPanel>
@@ -225,8 +225,8 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Button Content="Otkaži" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="Otkazivanje"/>
-            <Button Content="Sačuvaj" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="CuvanjeAnamneze"/>
+            <Button Content="{p:LocExtension Otkazi}" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="Otkazivanje"/>
+            <Button Content="{p:LocExtension Potvrdi}" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="CuvanjeAnamneze"/>
         </StackPanel>
 
     </Grid>

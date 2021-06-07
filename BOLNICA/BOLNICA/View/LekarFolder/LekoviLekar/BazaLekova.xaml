@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Bolnica.LekarFolder"
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="850">
     <Grid>
@@ -22,12 +22,12 @@
 
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="17.5,4">
 
-            <Label Content="Pretraga leka:"/>
+            <Label Content="{p:LocExtension PretragaLeka}"/>
             <TextBox Height="25" Width="150" Margin="10,0" Name="pretragaLeka" TextChanged="pretragaLeka_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
         </StackPanel>
 
-        <Button Grid.Row="0" Grid.Column="2" Content="Verifikacija lekova" Margin="10,0" VerticalContentAlignment="Center"
+        <Button Grid.Row="0" Grid.Column="2" Content="{p:LocExtension Verifikacija}" Margin="10,0" VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center" Click="VerifikacijaLeka"  Height="27" Width="185" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
         <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="true" Grid.RowSpan="2" SelectedValue="{Binding Path=izabranLek}"
@@ -35,33 +35,33 @@
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2"
                   MinWidth="470" MinHeight="250" Margin="17.5 , 13.5 , 0 ,13.5"  Width="530" Height="293">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
-                <DataGridTextColumn Header="Jacina leka" Binding="{Binding Jacina}" Width="85*"/>
-                <DataGridTextColumn Header="Kolicina na stanju" Binding="{Binding Kolicina}" Width="85*"/>
+                <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding NazivLeka}" Width="85*"/>
+                <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Jacina}" Width="85*"/>
+                <DataGridTextColumn Header="{p:LocExtension KolicinaStanje}" Binding="{Binding Kolicina}" Width="85*"/>
 
             </DataGrid.Columns>
         </DataGrid>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" Margin="0 , 13.5 , 17.5,13.5" VerticalAlignment="Top" HorizontalAlignment="Right">
 
-            <Label Content="Sastojci:" Margin="5,0"/>
+            <Label Content="{p:LocExtension Sastojci}" Margin="5,0"/>
             <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
                   SelectionMode="Single"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv sastojka" Binding="{Binding Naziv}" Width="85*"/>
-                    <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension NazivSastojka}" Binding="{Binding Naziv}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension Kolicina}" Binding="{Binding Kolicina}" Width="85*"/>
 
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Label Content="Zamenski lekovi:" Margin="5,0"/>
+            <Label Content="{p:LocExtension Zamenski}" Margin="5,0"/>
             <DataGrid x:Name="dataGridZamenski" ItemsSource="{Binding Zamenski}" IsReadOnly="true"
                   SelectionMode="Single"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                   AutoGenerateColumns="False" MinWidth="250" MinHeight="100" MaxHeight="100"  Width="250">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv leka" Binding="{Binding NazivLeka}" Width="85*"/>
-                    <DataGridTextColumn Header="Jacina leka" Binding="{Binding Jacina}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding NazivLeka}" Width="85*"/>
+                    <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Jacina}" Width="85*"/>
 
                 </DataGrid.Columns>
             </DataGrid>
@@ -69,8 +69,8 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0">
-            <Button  Content="Izmena leka "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaLeka"  Height="27" Width="100" Margin="0,0,10,0" />
-            <Button  Content="Izmena zamena "  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaZamena"  Height="27" Width="100" Margin="10,0,0,0"/>
+            <Button  Content="{p:LocExtension IzmenaLeka}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaLeka"  Height="27" Width="100" Margin="0,0,10,0" />
+            <Button  Content="{p:LocExtension IzmenaZamena}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="IzmenaZamena"  Height="27" Width="100" Margin="10,0,0,0"/>
 
 
         </StackPanel>

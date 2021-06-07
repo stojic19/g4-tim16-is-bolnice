@@ -117,13 +117,319 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Adresa" xml:space="preserve">
+    <value>Adresa stanovanja</value>
+  </data>
+  <data name="Alergeni" xml:space="preserve">
+    <value>Alergeni</value>
+  </data>
+  <data name="Anamneza" xml:space="preserve">
+    <value>Anamneza</value>
+  </data>
+  <data name="AnamnezaPodaci" xml:space="preserve">
+    <value>Podaci o anamnezi</value>
+  </data>
+  <data name="Anamneze" xml:space="preserve">
+    <value>Anamneze</value>
+  </data>
+  <data name="baza" xml:space="preserve">
+    <value>Baza lekova</value>
+  </data>
+  <data name="BrojTelefona" xml:space="preserve">
+    <value>Kontakt telefon</value>
+  </data>
+  <data name="Da" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="Datum" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="DatumIzdavanjaUputa" xml:space="preserve">
+    <value>Datum izdavanja uputa</value>
+  </data>
+  <data name="DatumKreiranja" xml:space="preserve">
+    <value>Datum kreiranja</value>
+  </data>
+  <data name="DatumPropisivanja" xml:space="preserve">
+    <value>Datum propisivanja leka</value>
+  </data>
+  <data name="DatumRodjenja" xml:space="preserve">
+    <value>Datum rođenja</value>
+  </data>
+  <data name="DetaljiLecenje" xml:space="preserve">
+    <value>Detalji o stacionarnom lečenju i nalaz</value>
+  </data>
+  <data name="Dnevno" xml:space="preserve">
+    <value>Dnevna količina</value>
+  </data>
   <data name="dobrodosli" xml:space="preserve">
     <value>Dobrodošli,</value>
+  </data>
+  <data name="Dodaj" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="DodajAlergen" xml:space="preserve">
+    <value>Dodaj alergen</value>
+  </data>
+  <data name="DodajAnamnezu" xml:space="preserve">
+    <value>Dodaj anamnezu</value>
+  </data>
+  <data name="DodajRecept" xml:space="preserve">
+    <value>Dodaj recept</value>
+  </data>
+  <data name="DodajUput" xml:space="preserve">
+    <value>Dodaj uput</value>
+  </data>
+  <data name="DodajZamenski" xml:space="preserve">
+    <value>Dodavanje novog zamenskog leka</value>
+  </data>
+  <data name="DodavanjeSastojka" xml:space="preserve">
+    <value>Dodavanje novog sastojka</value>
+  </data>
+  <data name="Ime" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="ImePacijenta" xml:space="preserve">
+    <value>Ime pacijenta</value>
+  </data>
+  <data name="InfoLek" xml:space="preserve">
+    <value>Osnovni podaci o leku</value>
+  </data>
+  <data name="IzmenaLeka" xml:space="preserve">
+    <value>Izmena leka</value>
+  </data>
+  <data name="IzmenaLozinke" xml:space="preserve">
+    <value>Promena lozinke</value>
+  </data>
+  <data name="IzmenaNaloga" xml:space="preserve">
+    <value>Izmena naloga</value>
+  </data>
+  <data name="IzmenaTermina" xml:space="preserve">
+    <value>Izmena terima</value>
+  </data>
+  <data name="IzmenaZamena" xml:space="preserve">
+    <value>Izmena zamenskih</value>
+  </data>
+  <data name="IzvestajAnamneza" xml:space="preserve">
+    <value>Izveštaj anameza</value>
+  </data>
+  <data name="IzvestajRecepata" xml:space="preserve">
+    <value>Izveštaj recepata</value>
+  </data>
+  <data name="JacinaLeka" xml:space="preserve">
+    <value>Jačina leka</value>
+  </data>
+  <data name="JMBG" xml:space="preserve">
+    <value>JMBG</value>
+  </data>
+  <data name="JmbgPacijenta" xml:space="preserve">
+    <value>JMBG pacijenta</value>
+  </data>
+  <data name="Karton" xml:space="preserve">
+    <value>Zdravstveni karton</value>
+  </data>
+  <data name="Kolicina" xml:space="preserve">
+    <value>Količina</value>
+  </data>
+  <data name="KolicinaStanje" xml:space="preserve">
+    <value>Količina na stanju</value>
+  </data>
+  <data name="KrajLecenja" xml:space="preserve">
+    <value>Kraj lečenja</value>
+  </data>
+  <data name="KrajTerapije" xml:space="preserve">
+    <value>Kraj terapije</value>
+  </data>
+  <data name="Laboratorija" xml:space="preserve">
+    <value>Laboratorija</value>
+  </data>
+  <data name="Lek" xml:space="preserve">
+    <value>Lek</value>
+  </data>
+  <data name="Lekar" xml:space="preserve">
+    <value>Lekar</value>
+  </data>
+  <data name="LekarKodKogSeUpucuje" xml:space="preserve">
+    <value>Lekar kod kog se upućuje</value>
+  </data>
+  <data name="LicniPodaci" xml:space="preserve">
+    <value>Lični podaci</value>
+  </data>
+  <data name="Lozinka" xml:space="preserve">
+    <value>Lozinka</value>
   </data>
   <data name="nalog" xml:space="preserve">
     <value>Moj nalog</value>
   </data>
+  <data name="NazivLeka" xml:space="preserve">
+    <value>Naziv leka</value>
+  </data>
+  <data name="NazivSastojka" xml:space="preserve">
+    <value>Naziv sastojka</value>
+  </data>
+  <data name="Ne" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="Obavestenja" xml:space="preserve">
+    <value>Obaveštenja</value>
+  </data>
+  <data name="Obrisi" xml:space="preserve">
+    <value>Obriši</value>
+  </data>
+  <data name="Odbij" xml:space="preserve">
+    <value>Obij zahtev</value>
+  </data>
+  <data name="OdbijanjeZahteva" xml:space="preserve">
+    <value>Odbijanje zahteva za lek</value>
+  </data>
+  <data name="Odgovor" xml:space="preserve">
+    <value>Odgovor</value>
+  </data>
+  <data name="Odjava" xml:space="preserve">
+    <value>Odjavi se</value>
+  </data>
+  <data name="Odobri" xml:space="preserve">
+    <value>Odobri zahtev</value>
+  </data>
+  <data name="Odsustvo" xml:space="preserve">
+    <value>Zahtevi za odsustvo</value>
+  </data>
+  <data name="Odustani" xml:space="preserve">
+    <value>Otkaži</value>
+  </data>
+  <data name="OtkaziTermin" xml:space="preserve">
+    <value>Otkaži termin</value>
+  </data>
+  <data name="Pacijent" xml:space="preserve">
+    <value>Pacijent</value>
+  </data>
+  <data name="Pocetak" xml:space="preserve">
+    <value>Početak</value>
+  </data>
+  <data name="PocetakLecenja" xml:space="preserve">
+    <value>Početak lečenja</value>
+  </data>
+  <data name="PocetakTerapije" xml:space="preserve">
+    <value>Početak terapije</value>
+  </data>
+  <data name="Pol" xml:space="preserve">
+    <value>Pol</value>
+  </data>
+  <data name="Potvrdi" xml:space="preserve">
+    <value>Potvrdi</value>
+  </data>
+  <data name="PotvrdiZakazi" xml:space="preserve">
+    <value>Potvrdi i zakaži</value>
+  </data>
+  <data name="Pretraga" xml:space="preserve">
+    <value>Pretraga:</value>
+  </data>
+  <data name="PretragaDatum" xml:space="preserve">
+    <value>Pretraga po datumu:</value>
+  </data>
+  <data name="PretragaLeka" xml:space="preserve">
+    <value>Pretraga lekova:</value>
+  </data>
+  <data name="PretragaLekari" xml:space="preserve">
+    <value>Pretraga lekara:</value>
+  </data>
+  <data name="PretragaPacijenti" xml:space="preserve">
+    <value>Pretraga pacijenata:</value>
+  </data>
+  <data name="Prezime" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="PrezimePacijenta" xml:space="preserve">
+    <value>Prezime pacijenta</value>
+  </data>
+  <data name="ProduziLecenje" xml:space="preserve">
+    <value>Produži lečenje</value>
+  </data>
+  <data name="Prostorija" xml:space="preserve">
+    <value>Prostorija</value>
+  </data>
   <data name="raspored" xml:space="preserve">
     <value>Raspored pregleda i operacija</value>
+  </data>
+  <data name="RasporedKratko" xml:space="preserve">
+    <value>Raspored</value>
+  </data>
+  <data name="RazlogOdbijanja" xml:space="preserve">
+    <value>Razlog odbijanja zahteva</value>
+  </data>
+  <data name="Recept" xml:space="preserve">
+    <value>Recept</value>
+  </data>
+  <data name="Sacuvaj" xml:space="preserve">
+    <value>Sačuvaj</value>
+  </data>
+  <data name="Sastojci" xml:space="preserve">
+    <value>Sastojci:</value>
+  </data>
+  <data name="SastojciLeka" xml:space="preserve">
+    <value>Sastojci leka</value>
+  </data>
+  <data name="Satnica" xml:space="preserve">
+    <value>Satnica</value>
+  </data>
+  <data name="SimptomiDijagnoza" xml:space="preserve">
+    <value>Simptomi i dijagnoza</value>
+  </data>
+  <data name="Soba" xml:space="preserve">
+    <value>Soba</value>
+  </data>
+  <data name="Specijalisticki" xml:space="preserve">
+    <value>Specijalistički pregled</value>
+  </data>
+  <data name="Stacionarno" xml:space="preserve">
+    <value>Stacionarno lečenje</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status naloga</value>
+  </data>
+  <data name="Svetla" xml:space="preserve">
+    <value>Svetla tema</value>
+  </data>
+  <data name="Tamna" xml:space="preserve">
+    <value>Tamna tema</value>
+  </data>
+  <data name="Terapija" xml:space="preserve">
+    <value>Terapija</value>
+  </data>
+  <data name="TipUputa" xml:space="preserve">
+    <value>Tip uputa</value>
+  </data>
+  <data name="Trajanje" xml:space="preserve">
+    <value>Trajanje</value>
+  </data>
+  <data name="Uputi" xml:space="preserve">
+    <value>Uputi</value>
+  </data>
+  <data name="UputstvoLek" xml:space="preserve">
+    <value>Uputstvo za konzumiranje leka</value>
+  </data>
+  <data name="UtrosenMaterijal" xml:space="preserve">
+    <value>Evidencija utrošenog materijala</value>
+  </data>
+  <data name="Verifikacija" xml:space="preserve">
+    <value>Verifikacija lekova</value>
+  </data>
+  <data name="VremePocetka" xml:space="preserve">
+    <value>Vreme početka</value>
+  </data>
+  <data name="VrstaTermina" xml:space="preserve">
+    <value>Vrsta termina</value>
+  </data>
+  <data name="ZahtevOdsustvo" xml:space="preserve">
+    <value>Kreiraj zahtev za odsustvo</value>
+  </data>
+  <data name="ZakaziTermin" xml:space="preserve">
+    <value>Zakaži termin</value>
+  </data>
+  <data name="Zakazivanje" xml:space="preserve">
+    <value>Zakazivanje termina</value>
+  </data>
+  <data name="Zamenski" xml:space="preserve">
+    <value>Zamenski lekovi:</value>
   </data>
 </root>

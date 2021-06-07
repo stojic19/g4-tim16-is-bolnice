@@ -317,6 +317,7 @@
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
     <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>
@@ -371,7 +372,6 @@
     <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml.cs">
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
     <Compile Include="View\PacijentFolder\DetaljiTerapije.xaml.cs">
       <DependentUpon>DetaljiTerapije.xaml</DependentUpon>
     </Compile>
@@ -698,8 +698,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\LekoviLekar\OdbijanjeLeka.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\LekoviLekar\VerifikacijaLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -730,12 +730,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.xaml">
       <Generator>MSBuild:Compile</Generator>

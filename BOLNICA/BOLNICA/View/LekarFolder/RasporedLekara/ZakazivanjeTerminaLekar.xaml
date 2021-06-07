@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bolnica"
+        xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         mc:Ignorable="d"
         d:DesignWidth="850" d:DesignHeight="380">
     <Grid Background="WhiteSmoke" Width="728" Height="350" Grid.Row="2">
@@ -21,7 +21,7 @@
 
         <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
         <Rectangle Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1"/>
-        <Label Content="Zakazivanje termina" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Content="{p:LocExtension Zakazivanje}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <Grid Grid.Row="1" Grid.Column="0">
 
@@ -38,7 +38,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right">
 
-                <Label Content="Pretraga pacijenata:" Height="30" Width="158" HorizontalContentAlignment="Right" VerticalAlignment="Center"/>
+                <Label Content="{p:LocExtension PretragaPacijenti}" Height="30" Width="158" HorizontalContentAlignment="Right" VerticalAlignment="Center"/>
                 <TextBox Name="pretragaPacijenata" TextChanged="pretragaPacijenata_TextChanged" Height="25" Width="158" VerticalAlignment="Center"/>
 
             </StackPanel>
@@ -48,9 +48,9 @@
                 <ListView.View>
                     <GridView>
 
-                        <GridViewColumn Header="JMBG" DisplayMemberBinding="{Binding Jmbg }" Width="115" />
-                        <GridViewColumn Header="Ime" DisplayMemberBinding="{Binding Ime}" Width="100" />
-                        <GridViewColumn Header="Prezime" DisplayMemberBinding="{Binding Prezime}" Width="100"/>
+                        <GridViewColumn Header="{p:LocExtension JMBG}" DisplayMemberBinding="{Binding Jmbg }" Width="115" />
+                        <GridViewColumn Header="{p:LocExtension Ime}" DisplayMemberBinding="{Binding Ime}" Width="100" />
+                        <GridViewColumn Header="{p:LocExtension Prezime}" DisplayMemberBinding="{Binding Prezime}" Width="100"/>
 
                     </GridView>
                 </ListView.View>
@@ -58,7 +58,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right">
 
-                <Label Content="Pretraga lekara:" Height="30" Width="158" HorizontalContentAlignment="Right" VerticalAlignment="Center"/>
+                <Label Content="{p:LocExtension PretragaLekari}" Height="30" Width="158" HorizontalContentAlignment="Right" VerticalAlignment="Center"/>
                 <TextBox Name="pretragaLekara" TextChanged="pretragaLekara_TextChanged" Height="25" Width="158" VerticalAlignment="Center"/>
 
             </StackPanel>
@@ -68,9 +68,9 @@
                 <ListView.View>
                     <GridView>
 
-                        <GridViewColumn Header="JMBG" DisplayMemberBinding="{Binding Jmbg}" Width="115" />
-                        <GridViewColumn Header="Ime" DisplayMemberBinding="{Binding Ime }" Width="100" />
-                        <GridViewColumn Header="Prezime" DisplayMemberBinding="{Binding Prezime }" Width="100"/>
+                        <GridViewColumn Header="{p:LocExtension JMBG}" DisplayMemberBinding="{Binding Jmbg}" Width="115" />
+                        <GridViewColumn Header="{p:LocExtension Ime}" DisplayMemberBinding="{Binding Ime }" Width="100" />
+                        <GridViewColumn Header="{p:LocExtension Prezime}" DisplayMemberBinding="{Binding Prezime }" Width="100"/>
 
                     </GridView>
                 </ListView.View>
@@ -96,18 +96,18 @@
             </Grid.RowDefinitions>
 
 
-            <Label Content="Lekar:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="{p:LocExtension Lekar}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                  Grid.Column="0" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" Grid.ColumnSpan="2"/>
 
             <TextBox IsReadOnly="True" Name="idLekara" Margin="9.6,1,0,1" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
-            <Label Content="Pacijent:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="{p:LocExtension Pacijent}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                      Grid.Column="0" Grid.Row="0"  Height="30" Width="150" Margin="0,1,10.4,1" Grid.ColumnSpan="2"/>
 
             <TextBox IsReadOnly="True" Name="idPacijenta" Grid.Row="0" Grid.Column="2" Margin="9.6,1,0,1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
 
-            <Label Content="Vrsta termina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="{p:LocExtension VrstaTermina}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2"  Height="30" Width="150" Margin="0,1,10.4,1" Grid.ColumnSpan="2"/>
 
             <ComboBox SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
@@ -124,12 +124,12 @@
                 <TextBox  Name="idProstorije" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="9.6,1,0,1" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
                 -->
 
-            <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="{p:LocExtension Datum}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" Grid.ColumnSpan="2"/>
 
             <DatePicker SelectedDateChanged="datum_SelectedDateChanged" Margin="9.6,1,0,1" Name="datum" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
-            <Label Content="Vreme početka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="{p:LocExtension VremePocetka}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="4"  Height="30" Width="150" Margin="0,1,10.4,1" Grid.ColumnSpan="2"/>
 
             <ComboBox ItemsSource="{Binding slobodniTermini}"  Name="pocVreme" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" 
@@ -149,11 +149,11 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-            <Button Content="Odustani"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Povratak" Style ="{DynamicResource DugmadKarton}" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
+            <Button Content="{p:LocExtension Odustani}"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Povratak"  Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0"/>
 
-            <Button Content="Potrvdi"    Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Potvrda" Style ="{DynamicResource DugmadKarton}" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
+            <Button Content="{p:LocExtension Potvrdi}"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Potvrda" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0"/>
 
 
         </StackPanel>

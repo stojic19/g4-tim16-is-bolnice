@@ -117,13 +117,319 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Adresa" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Alergeni" xml:space="preserve">
+    <value>Allergens</value>
+  </data>
+  <data name="Anamneza" xml:space="preserve">
+    <value>Anamnesis</value>
+  </data>
+  <data name="AnamnezaPodaci" xml:space="preserve">
+    <value>Anamnesis data</value>
+  </data>
+  <data name="Anamneze" xml:space="preserve">
+    <value>Anamnesis</value>
+  </data>
+  <data name="baza" xml:space="preserve">
+    <value>Medicine database</value>
+  </data>
+  <data name="BrojTelefona" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="Da" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Datum" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DatumIzdavanjaUputa" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DatumKreiranja" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="DatumPropisivanja" xml:space="preserve">
+    <value>Date of prescription</value>
+  </data>
+  <data name="DatumRodjenja" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+  <data name="DetaljiLecenje" xml:space="preserve">
+    <value>Details of inpatient treatment and jdgement</value>
+  </data>
+  <data name="Dnevno" xml:space="preserve">
+    <value>Daily dose </value>
+  </data>
   <data name="dobrodosli" xml:space="preserve">
     <value>Welcome,</value>
+  </data>
+  <data name="Dodaj" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="DodajAlergen" xml:space="preserve">
+    <value>New allergen</value>
+  </data>
+  <data name="DodajAnamnezu" xml:space="preserve">
+    <value>New anamnesis</value>
+  </data>
+  <data name="DodajRecept" xml:space="preserve">
+    <value>New prescription</value>
+  </data>
+  <data name="DodajUput" xml:space="preserve">
+    <value>New refferral</value>
+  </data>
+  <data name="DodajZamenski" xml:space="preserve">
+    <value>Adding a new replacement medicine</value>
+  </data>
+  <data name="DodavanjeSastojka" xml:space="preserve">
+    <value>Adding a new ingredient</value>
+  </data>
+  <data name="Ime" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="ImePacijenta" xml:space="preserve">
+    <value>Patient's name</value>
+  </data>
+  <data name="InfoLek" xml:space="preserve">
+    <value>Basic information about the medicine</value>
+  </data>
+  <data name="IzmenaLeka" xml:space="preserve">
+    <value>Edit medicine</value>
+  </data>
+  <data name="IzmenaLozinke" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="IzmenaNaloga" xml:space="preserve">
+    <value>Edit account</value>
+  </data>
+  <data name="IzmenaTermina" xml:space="preserve">
+    <value>Edit an appointment</value>
+  </data>
+  <data name="IzmenaZamena" xml:space="preserve">
+    <value>Edit replacements</value>
+  </data>
+  <data name="IzvestajAnamneza" xml:space="preserve">
+    <value>Anamnesis report</value>
+  </data>
+  <data name="IzvestajRecepata" xml:space="preserve">
+    <value>Prescriptions report</value>
+  </data>
+  <data name="JacinaLeka" xml:space="preserve">
+    <value>Medicine strength</value>
+  </data>
+  <data name="JMBG" xml:space="preserve">
+    <value>Personal ID</value>
+  </data>
+  <data name="JmbgPacijenta" xml:space="preserve">
+    <value>Patient's personal ID</value>
+  </data>
+  <data name="Karton" xml:space="preserve">
+    <value>Medical record</value>
+  </data>
+  <data name="Kolicina" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="KolicinaStanje" xml:space="preserve">
+    <value>Quantity in stock</value>
+  </data>
+  <data name="KrajLecenja" xml:space="preserve">
+    <value>End of inpatient treatment</value>
+  </data>
+  <data name="KrajTerapije" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="Laboratorija" xml:space="preserve">
+    <value>Laboratory</value>
+  </data>
+  <data name="Lek" xml:space="preserve">
+    <value>Medicine</value>
+  </data>
+  <data name="Lekar" xml:space="preserve">
+    <value>Doctor</value>
+  </data>
+  <data name="LekarKodKogSeUpucuje" xml:space="preserve">
+    <value>Recommended doctor</value>
+  </data>
+  <data name="LicniPodaci" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="Lozinka" xml:space="preserve">
+    <value>Password</value>
   </data>
   <data name="nalog" xml:space="preserve">
     <value>My account</value>
   </data>
+  <data name="NazivLeka" xml:space="preserve">
+    <value>Medicine name</value>
+  </data>
+  <data name="NazivSastojka" xml:space="preserve">
+    <value>Ingredient name</value>
+  </data>
+  <data name="Ne" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Obavestenja" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Obrisi" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Odbij" xml:space="preserve">
+    <value>Decline the request</value>
+  </data>
+  <data name="OdbijanjeZahteva" xml:space="preserve">
+    <value>Rejection of a request for a medicine</value>
+  </data>
+  <data name="Odgovor" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="Odjava" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="Odobri" xml:space="preserve">
+    <value>Approve the request</value>
+  </data>
+  <data name="Odsustvo" xml:space="preserve">
+    <value>Requests for absence</value>
+  </data>
+  <data name="Odustani" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="OtkaziTermin" xml:space="preserve">
+    <value>Cancel an appointment</value>
+  </data>
+  <data name="Pacijent" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="Pocetak" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="PocetakLecenja" xml:space="preserve">
+    <value>Beginning of inpatient treatment</value>
+  </data>
+  <data name="PocetakTerapije" xml:space="preserve">
+    <value>Start date</value>
+  </data>
+  <data name="Pol" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Potvrdi" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="PotvrdiZakazi" xml:space="preserve">
+    <value>Confirm and schedule</value>
+  </data>
+  <data name="Pretraga" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="PretragaDatum" xml:space="preserve">
+    <value>Search by date:</value>
+  </data>
+  <data name="PretragaLeka" xml:space="preserve">
+    <value>Medicine search:</value>
+  </data>
+  <data name="PretragaLekari" xml:space="preserve">
+    <value>Search doctors:</value>
+  </data>
+  <data name="PretragaPacijenti" xml:space="preserve">
+    <value>Search patiets:</value>
+  </data>
+  <data name="Prezime" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="PrezimePacijenta" xml:space="preserve">
+    <value>Patient's last name</value>
+  </data>
+  <data name="ProduziLecenje" xml:space="preserve">
+    <value>Extend treatment</value>
+  </data>
+  <data name="Prostorija" xml:space="preserve">
+    <value>Room</value>
+  </data>
   <data name="raspored" xml:space="preserve">
     <value>Schedule of examinations and operations</value>
+  </data>
+  <data name="RasporedKratko" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="RazlogOdbijanja" xml:space="preserve">
+    <value>The reason for refusing the request</value>
+  </data>
+  <data name="Recept" xml:space="preserve">
+    <value>Prescription</value>
+  </data>
+  <data name="Sacuvaj" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Sastojci" xml:space="preserve">
+    <value>Ingredients:</value>
+  </data>
+  <data name="SastojciLeka" xml:space="preserve">
+    <value>Medicine ingredients</value>
+  </data>
+  <data name="Satnica" xml:space="preserve">
+    <value>Hourly rate</value>
+  </data>
+  <data name="SimptomiDijagnoza" xml:space="preserve">
+    <value>Symptoms and diagnosis</value>
+  </data>
+  <data name="Soba" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Specijalisticki" xml:space="preserve">
+    <value>Specialist examination</value>
+  </data>
+  <data name="Stacionarno" xml:space="preserve">
+    <value>Inpatient treatment</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Account status</value>
+  </data>
+  <data name="Svetla" xml:space="preserve">
+    <value>Light theme</value>
+  </data>
+  <data name="Tamna" xml:space="preserve">
+    <value>Dark theme</value>
+  </data>
+  <data name="Terapija" xml:space="preserve">
+    <value>Therapy</value>
+  </data>
+  <data name="TipUputa" xml:space="preserve">
+    <value>Referral type</value>
+  </data>
+  <data name="Trajanje" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="Uputi" xml:space="preserve">
+    <value>Refferrals</value>
+  </data>
+  <data name="UputstvoLek" xml:space="preserve">
+    <value>Instructions for consumption</value>
+  </data>
+  <data name="UtrosenMaterijal" xml:space="preserve">
+    <value>Record spent supplies</value>
+  </data>
+  <data name="Verifikacija" xml:space="preserve">
+    <value>Medicine verification</value>
+  </data>
+  <data name="VremePocetka" xml:space="preserve">
+    <value>Start time</value>
+  </data>
+  <data name="VrstaTermina" xml:space="preserve">
+    <value>Appointment type</value>
+  </data>
+  <data name="ZahtevOdsustvo" xml:space="preserve">
+    <value>Create request for absence</value>
+  </data>
+  <data name="ZakaziTermin" xml:space="preserve">
+    <value>Make an appointment</value>
+  </data>
+  <data name="Zakazivanje" xml:space="preserve">
+    <value>Making an appointment</value>
+  </data>
+  <data name="Zamenski" xml:space="preserve">
+    <value>Replacement medicines:</value>
   </data>
 </root>

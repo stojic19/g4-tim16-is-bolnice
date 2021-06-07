@@ -36,7 +36,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             jacinaLeka.Text = izabranZahtev.Lek.Jacina;
             Sastojci.Clear();
 
-            foreach(SastojakDTO s in izabranZahtev.Lek.Sastojci)
+            foreach(SastojakDTO s in zahtjeviKontroler.DobaviSastojkeLeka(izabranZahtev.Lek.IdLeka))
             {
                 Sastojci.Add(s);
             }

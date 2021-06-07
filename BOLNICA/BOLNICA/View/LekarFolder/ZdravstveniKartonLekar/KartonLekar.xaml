@@ -3,15 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bolnica"
+        xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         mc:Ignorable="d"
         d:DesignHeight="380" d:DesignWidth="850">
 
     <TabControl x:Name="Tabovi" Height="345" Width="763" Margin="31,10,31,20" SelectedIndex="4" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-        <TabItem Header="Zdravstveni karton" FontStyle="Italic" IsSelected="True" FontSize="14">
+        <TabItem Header="{p:LocExtension Karton}" FontStyle="Italic" IsSelected="True" FontSize="14">
 
-            <GroupBox Header="Lični podaci" FontWeight="Bold" BorderThickness="4"  MinHeight="295" MinWidth="449" Margin="0,15"
+            <GroupBox Header="{p:LocExtension LicniPodaci}" FontWeight="Bold" BorderThickness="4"  MinHeight="295" MinWidth="449" Margin="0,15"
                               HorizontalAlignment="Center" VerticalAlignment="Center" Style ="{DynamicResource PrikazPacijent}">
 
 
@@ -33,37 +33,37 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                        <Label Content="Ime pacijenta:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension ImePacijenta}" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="ime" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                        <Label Content="Prezime pacijenta:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
-                        <TextBox Height="27" Width="167" IsReadOnly="True" Name="prezime" FontWeight="Normal"/>
+                        <Label Content="{p:LocExtension PrezimePacijenta}" Height="27" Width="145" FontSize="13" FontWeight="Normal" Margin="0,6,0,6.2" />
+                        <TextBox Height="27" Width="167" IsReadOnly="True" x:Name="prezime" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-                        <Label Content="JMBG:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension JMBG}" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="jmbg" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
-                        <Label Content="Datum rođenja:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension DatumRodjenja}" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="datum" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
-                        <Label Content="Kontakt telefon:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension BrojTelefona}" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="telefon" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
-                        <Label Content="Adresa stanovanja:" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension Adresa}" Height="27" Width="145" FontSize="13" FontWeight="Normal" />
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="adresa" FontWeight="Normal"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="0">
-                        <Label Content="Status naloga:" Height="27" Width="145" FontSize="13" FontWeight="Normal"/>
+                        <Label Content="{p:LocExtension Status}" Height="27" Width="145" FontSize="13" FontWeight="Normal"/>
                         <TextBox Height="27" Width="167" IsReadOnly="True" Name="status" FontWeight="Normal"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Vertical"  Grid.RowSpan="2" Grid.Column="1">
                         <TextBox Height="27" Width="48" Margin="7" IsReadOnly="True" Name="pol" FontWeight="Normal" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                        <Label Content="Pol:" Height="27" Width="48" FontSize="13" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" />
+                        <Label Content="{p:LocExtension Pol}" Height="27" Width="78" FontSize="13" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" Margin="10,0,9.6,0" />
                     </StackPanel>
                 </Grid>
 
@@ -71,7 +71,7 @@
 
         </TabItem>
 
-        <TabItem Header="Anamneza" FontStyle="Italic" FontSize="14" >
+        <TabItem Header="{p:LocExtension Anamneze}" FontStyle="Italic" FontSize="14" >
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -90,20 +90,20 @@
                   MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top"  MouseDoubleClick="PrikazInformacijaAnamneza">
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Header="Datum pregleda" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="200*" />
-                        <DataGridTextColumn Header="Lekar" Binding="{Binding Lekar}" Width="200*"/>
+                        <DataGridTextColumn Header="{p:LocExtension Datum}" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="200*" />
+                        <DataGridTextColumn Header="{p:LocExtension Lekar}" Binding="{Binding Lekar}" Width="200*"/>
                     </DataGrid.Columns>
 
                 </DataGrid>
 
                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,12,22,7.6" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Label  Content="Pretraga po datumu:" VerticalAlignment="Center" />
+                    <Label  Content="{p:LocExtension PretragaDatum}" VerticalAlignment="Center" />
                     <TextBox  Height="30" Width="150" Margin="10,0" Name="PretragaAnamneza" TextChanged="PretragaAnamneza_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right" >
-                    <Button Content="Izveštaj anamneza" Margin="10,0" Height="30" Width="170" Click="IzvestajAnamneza" Style ="{DynamicResource DugmadKarton}"/>
-                    <Button Content="Nova anamneza" Margin="10,0" Height="30" Width="170" Click="DodavanjeAnamneze" Style ="{DynamicResource DugmadKarton}"/>
+                    <Button Content="{p:LocExtension IzvestajAnamneza}" Margin="10,0" Height="30" Width="170" Click="IzvestajAnamneza" Style ="{DynamicResource DugmadKarton}"/>
+                    <Button Content="{p:LocExtension DodajAnamnezu}" Margin="10,0" Height="30" Width="170" Click="DodavanjeAnamneze" Style ="{DynamicResource DugmadKarton}"/>
                 </StackPanel>
 
 
@@ -113,11 +113,11 @@
 
         </TabItem>
 
-        <TabItem Header="Alergeni" FontStyle="Italic" FontSize="14">
+        <TabItem Header="{p:LocExtension Alergeni}" FontStyle="Italic" FontSize="14">
 
         </TabItem>
 
-        <TabItem Header="Recepti" FontStyle="Italic" FontSize="14" Height="24" VerticalAlignment="Top">
+        <TabItem Header="{p:LocExtension Recept}" FontStyle="Italic" FontSize="14" Height="24" VerticalAlignment="Top">
 
             <Grid>
 
@@ -138,22 +138,22 @@
                   MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Header="Datum prepisivanja leka" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
-                        <DataGridTextColumn Header="Naziv leka" Binding="{Binding Lek.NazivLeka}" Width="100*"/>
-                        <DataGridTextColumn Header="Jačina" Binding="{Binding Lek.Jacina}" Width="95*"/>
+                        <DataGridTextColumn Header="{p:LocExtension Datum}" Binding="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
+                        <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding Lek.NazivLeka}" Width="100*"/>
+                        <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Lek.Jacina}" Width="95*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,12,22,7.6" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Label  Content="Pretraga po datumu:" VerticalAlignment="Center" />
+                    <Label  Content="{p:LocExtension PretragaDatum}" VerticalAlignment="Center" />
                     <TextBox  Height="30" Width="150" Margin="10,0" Name="pretragaRecepata" TextChanged="pretragaRecepata_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                    <Button  Content="Izveštaj recepata" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="IzvestajRecepata" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
+                    <Button  Content="{p:LocExtension IzvestajRecepata}" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="IzvestajRecepata" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
 
-                    <Button Content="Dodaj recept" Click="DodavanjeRecepta"  VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
+                    <Button Content="{p:LocExtension DodajRecept}" Click="DodavanjeRecepta"  VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Style ="{DynamicResource DugmadKarton}" Height="30" Width="135" Margin="10,0"/>
 
                 </StackPanel>
 
@@ -162,7 +162,7 @@
 
         </TabItem>
 
-        <TabItem Header="Uputi" FontStyle="Italic" FontSize="14">
+        <TabItem Header="{p:LocExtension Uputi}" FontStyle="Italic" FontSize="14">
 
             <Grid>
 
@@ -183,20 +183,20 @@
                   MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
                     <DataGrid.Columns>
 
-                        <DataGridTextColumn Header="Tip uputa" Binding="{Binding TipUputa}" Width="120*"/>
-                        <DataGridTextColumn Header="Datum izdavanja uputa" Binding="{Binding DatumIzdavanja , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
-                        <DataGridTextColumn Header="Lekar koji je izdao uput" Binding="{Binding Lekar}" Width="120*"/>
+                        <DataGridTextColumn Header="{p:LocExtension TipUputa}" Binding="{Binding TipUputa}" Width="120*"/>
+                        <DataGridTextColumn Header="{p:LocExtension Datum}" Binding="{Binding DatumIzdavanja , StringFormat={}{0:dd/MM/yyyy}}" Width="120*"/>
+                        <DataGridTextColumn Header="{p:LocExtension Lekar}" Binding="{Binding Lekar}" Width="120*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,12,22,7.6" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Label  Content="Pretraga po datumu:" VerticalAlignment="Center" />
+                    <Label  Content="{p:LocExtension PretragaDatum}" VerticalAlignment="Center" />
                     <TextBox  Height="30" Width="150" Margin="10,0" Name="PretragaUputa" TextChanged="PretragaUputa_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right" >
 
-                    <Button  Content="Dodaj uput" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="DodavanjeUputa"
+                    <Button  Content="{p:LocExtension DodajUput}" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="DodavanjeUputa"
                               Height="30" Width="135" Margin="10,0" Style ="{DynamicResource DugmadKarton}"/>
                 </StackPanel>
 
