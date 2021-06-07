@@ -1,7 +1,6 @@
-﻿using Bolnica.Izvestaj.Sekretar;
-using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder.Operacija;
-using Model;
+using Bolnica.ViewModel.SekretarViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,30 +19,24 @@ using System.Windows.Shapes;
 namespace Bolnica.SekretarFolder
 {
     /// <summary>
-    /// Interaction logic for GlavniProzorSadrzaj.xaml
+    /// Interaction logic for PrikazPregledaSekretar.xaml
     /// </summary>
-    public partial class GlavniProzorSadrzaj : UserControl
+    public partial class NaplataUslugeSekretar : UserControl
     {
-        NedeljniIzvestaj izvestajSekretar = new NedeljniIzvestaj();
-        public GlavniProzorSadrzaj()
+        NaplataViewModel naplataViewModel;
+        public NaplataUslugeSekretar()
         {
             InitializeComponent();
+            naplataViewModel = new NaplataViewModel();
+            this.DataContext = naplataViewModel;
         }
-        private void Nalozi_Click(object sender, RoutedEventArgs e)
+
+        private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-
-        private void Obavestenja_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new ObavestenjaSekretar();
+            usc = new GlavniProzorSadrzaj();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Termini_Click(object sender, RoutedEventArgs e)
@@ -54,50 +47,30 @@ namespace Bolnica.SekretarFolder
             usc = new TerminiPregledaSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-        private void Operacija_Click(object sender, RoutedEventArgs e)
+
+        private void Nalozi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new PrikazNalogaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Obavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new ObavestenjaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Operacije_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new HitnaOperacijePregled();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-        private void Stacionarno_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        private void Transfer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Naplata_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new NaplataUslugeSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-        private void Nazad_Click(object sender, RoutedEventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-
-            var myWindow = Window.GetWindow(this);
-            myWindow.Close();
-        }
-
-        private void RasporedLekara_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazLekaraSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }
-        private void Izvestaj_Click(object sender, RoutedEventArgs e)
-        {
-            izvestajSekretar.StampajIzvestaj();
         }
     }
 }

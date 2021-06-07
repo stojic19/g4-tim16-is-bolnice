@@ -294,6 +294,8 @@
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\IzmenaNalogaViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\NaplataIzabraniPacijentViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\NaplataViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\PacijentViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\AlergeniViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeAlergenaViewModel.cs" />
@@ -403,6 +405,12 @@
     </Compile>
     <Compile Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml.cs">
       <DependentUpon>PomocZdravsteniKarton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml.cs">
+      <DependentUpon>NaplataUslugeIzabraniPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeSekretar.xaml.cs">
+      <DependentUpon>NaplataUslugeSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
@@ -763,6 +771,14 @@
     <Page Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml">
       <SubType>Designer</SubType>
@@ -1298,6 +1314,10 @@
   <ItemGroup>
     <Resource Include="Slike\LekarSlike\night.png" />
     <Resource Include="Slike\LekarSlike\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\SekretarFolder\StacionarnoLecenje\" />
+    <Folder Include="View\SekretarFolder\TransferPacijenata\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
