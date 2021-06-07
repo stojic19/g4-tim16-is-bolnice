@@ -295,6 +295,8 @@
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\IzmenaNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NaplataIzabraniPacijentViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\StacionarnoSmestanjeViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\StacionarnoViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NaplataViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\PacijentViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\AlergeniViewModel.cs" />
@@ -563,6 +565,12 @@
     </Compile>
     <Compile Include="View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.xaml.cs">
       <DependentUpon>PrikazLekaraSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml.cs">
+      <DependentUpon>StacionarnoLecenjeSmestanjeSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml.cs">
+      <DependentUpon>StacionarnoLecenjeSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpravnikFolder\DetaljiOLijeku.xaml.cs">
       <DependentUpon>DetaljiOLijeku.xaml</DependentUpon>
@@ -1016,6 +1024,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\UpravnikFolder\DetaljiOLijeku.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1316,7 +1332,6 @@
     <Resource Include="Slike\LekarSlike\sun.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\SekretarFolder\StacionarnoLecenje\" />
     <Folder Include="View\SekretarFolder\TransferPacijenata\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

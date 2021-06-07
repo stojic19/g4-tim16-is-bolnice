@@ -64,7 +64,11 @@ namespace Bolnica.SekretarFolder
         }
         private void Stacionarno_Click(object sender, RoutedEventArgs e)
         {
-            
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new StacionarnoLecenjeSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Transfer_Click(object sender, RoutedEventArgs e)
         {

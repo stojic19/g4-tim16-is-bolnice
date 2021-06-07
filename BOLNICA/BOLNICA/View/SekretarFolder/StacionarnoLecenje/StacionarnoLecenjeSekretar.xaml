@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="Bolnica.SekretarFolder.StacionarnoLecenjeSekretar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.SekretarFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <StackPanel  Height="738" Width="1024" VerticalAlignment="Bottom" Orientation="Horizontal" >
+        <Grid Background="Black" Width="80" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Background="Black" Click="Pocetna_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/pocetna.jpg" Height="57" />
+            </Button>
+            <Button Grid.Row="1" Background="Black" x:Name="Termini" Click="Termini_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/termini.jpg" />
+            </Button>
+            <Button Grid.Row="2"  Background="Black" x:Name="Operacije" Click="Operacije_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" />
+            </Button>
+            <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Click="Nalozi_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/nalozi.jpg" />
+            </Button>
+            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" Click="Obavestenja_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/obavestenja.jpg" />
+            </Button>
+            <Button Grid.Row="5" Background="Black" x:Name="Naplata">
+                <Image Source="/Slike/Sekretar/Ikonice/naplata.jpg" />
+            </Button>
+            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno">
+                <Image Source="/Slike/Sekretar/CIkonice/cStacionarno.jpg" />
+            </Button>
+            <Button Grid.Row="7" Background="Black" x:Name="Transfer">
+                <Image Source="/Slike/Sekretar/Ikonice/transfer.jpg" />
+            </Button>
+            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Pocetna_Click">
+                <Image Source="/Slike/Sekretar/Ikonice/nazad.jpg" />
+            </Button>
+            <Button Grid.Row="9" Background="Black" x:Name="Licna">
+                <Image Source="/Slike/Sekretar/Ikonice/licna.jpg" />
+            </Button>
+            <Button Grid.Row="10" Background="Black" x:Name="Nalog">
+                <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
+            </Button>
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+                <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
+            </Button>
+        </Grid>
+        <Grid x:Name="MainPanel" Width="942" Margin="0,0,0,-68" Background="#2b78e4" Height="738" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="770*"/>
+                <ColumnDefinition Width="205*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Stacionarno lečenje" FontSize="40" HorizontalAlignment="Left" Margin="290,26,0,0" VerticalAlignment="Top" Height="67" Width="399" FontWeight="Bold"/>
+
+            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-62,-80,53" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Pacijenti na stacionarnom lečenju:" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="317"/>
+            <DataGrid x:Name="dataGridNaStacionarnom" ItemsSource="{Binding Pacijenti}" SelectedItem="{Binding SelektovaniPacijent}" IsReadOnly="true"
+                  SelectionMode="Single" Grid.RowSpan="2" Margin="50,0,36,90" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id prostorije" Width="*"/>
+                    <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}" Width="*"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}"  Width="*"/>
+                    <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
+                    <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja }" Width="*"/>
+                    <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" Width="*"/>
+                    <DataGridTextColumn Header="Datum prijema" Width="*"/>
+                    <DataGridTextColumn Header="Na lečenju do" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="Red" Content="{Binding Path=Poruka}" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Margin="40,108,46,0"/>
+
+            <Button  Command="{Binding Path=SmestanjeKomanda}" Grid.Row="2" Content="Produži boravak" Margin="280,63,338,47" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button  Command="{Binding Path=TransferKomanda}" Grid.Row="2" Content="Zahtev za transfer"  Margin="420,63,197,47" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button Grid.Row="2" Content="Otpust pacijenta"  Margin="562,63,55,47" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+
+            <Border Margin="28,10,36,133" Grid.Row="3" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="-1.5,-269,-17,-17" Stretch="Fill" Height="291" VerticalAlignment="Top">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <Label Content="Pacijenti koje je potrebno smestiti na stacionarno lečenje:" FontSize="20" HorizontalAlignment="Left" Margin="40,137,0,0" VerticalAlignment="Top" Height="37" Width="517" Grid.Row="2" Grid.RowSpan="2"/>
+            <DataGrid x:Name="dataGridNaStacionarnom_Copy" ItemsSource="{Binding Pacijenti}" SelectedItem="{Binding SelektovaniPacijent}" IsReadOnly="true"
+                SelectionMode="Single" Grid.RowSpan="2" Margin="40,31,46,62" Background="WhiteSmoke"
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Korisničko ime" Binding="{Binding KorisnickoIme}" Width="*"/>
+                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}"  Width="*"/>
+                    <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="*"/>
+                    <DataGridTextColumn Header="Datum rođenja" Binding="{Binding DatumRodjenja}" Width="*"/>
+                    <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" Width="*"/>
+                    <DataGridTextColumn Header="Na lečenju od" Width="*"/>
+                    <DataGridTextColumn Header="Na lečenju do" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Command="{Binding Path=SmestanjeKomanda}"  Grid.Row="4" FontSize="10" Content="Smeštanje unutar ustanove"  Margin="358,90,259,19" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button Command="{Binding Path=TransferKomanda}" Grid.Row="4" Content="Zahtev za transfer" FontSize="10"  Margin="500,90,117,19" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
