@@ -90,7 +90,7 @@ namespace Bolnica
                 {
                     if (s.Lozinka.Equals(password.Password))
                     {
-                        GlavniProzorSekretar gps = GlavniProzorSekretar.getInstance();
+                        GlavniProzorSekretar gps = GlavniProzorSekretar.getInstance(s);
                         gps.Show();
                         this.Close();
                         founded = true;

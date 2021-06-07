@@ -20,7 +20,11 @@ namespace Bolnica
     public partial class GlavniProzorSekretar : Window
     {
         private static GlavniProzorSekretar instance = null;
-
+        private static Osoba Sekretar = new Osoba();
+        public Osoba getSekretar()
+        {
+            return Sekretar;
+        }
         public static GlavniProzorSekretar getInstance()
         {
             if (instance == null)
@@ -29,9 +33,27 @@ namespace Bolnica
             }
             return instance;
         }
-
+        public static GlavniProzorSekretar getInstance(Osoba sekretar)
+        {
+            if (instance == null)
+            {
+                instance = new GlavniProzorSekretar(sekretar);
+            }
+            return instance;
+        }
         public GlavniProzorSekretar()
         {
+            InitializeComponent();
+
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new GlavniProzorSadrzaj();
+            MainPanel.Children.Add(usc);
+        }
+        public GlavniProzorSekretar(Osoba sekretar)
+        {
+            Sekretar = sekretar;
             InitializeComponent();
 
             UserControl usc = null;

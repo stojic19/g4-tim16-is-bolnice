@@ -49,7 +49,7 @@
         </Button>
         <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="938,40,0,693" Width="29" FontSize="25" FontWeight="Bold">
             <StackPanel Width="260" Background="White">
-                <Button Content="Lična obaveštenja"/>
+                <Button Content="Lična obaveštenja" Click="LicnaObavestenja_Click"/>
                 <Button Content="Nalog"/>
                 <Button Content="Odjava"  Click="Nazad_Click"/>
                 <Separator/>

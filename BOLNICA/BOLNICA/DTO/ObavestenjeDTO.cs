@@ -42,5 +42,16 @@ namespace Bolnica.DTO
         {
             return IdPrimaoca.Split(' ');
         }
+        public bool DaLiJePrimalac(string idPrimaoca)
+        {
+            foreach(String primaoc in DobaviPrimaoce())
+            {
+                if (primaoc.Equals(idPrimaoca))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
