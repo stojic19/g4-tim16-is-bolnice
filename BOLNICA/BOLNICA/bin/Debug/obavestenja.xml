@@ -1156,4 +1156,24 @@ Magdalena Reljin
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>aaef43ac-6e3b-4bb9-ab20-015b4232fa77</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 07-06-2021 u 07:00h. </Tekst>
+    <Datum>2021-06-05T07:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>6402af5d-a72a-403e-a26d-e77958808da3</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>2d5bd6d2-9d2f-4bcf-9ea5-8150630c97e6</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 01-06-2021 u 07:00h. </Tekst>
+    <Datum>2021-05-30T07:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>6402af5d-a72a-403e-a26d-e77958808da3</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

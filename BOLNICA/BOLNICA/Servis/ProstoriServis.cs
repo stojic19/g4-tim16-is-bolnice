@@ -17,9 +17,48 @@ namespace Model
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
-
         //public static List<Oprema> oprema = new List<Oprema>();
 
+        public Prostor DodeliProstorZaTermin(DateTime datum)
+        {
+            List<Termin> termini = DobaviZakazaneTermineZaVreme(datum);
+            foreach (Prostor prostor in SviProstori())
+            {
+                if (prostor.VrstaProstora == VrsteProstora.soba)
+                {
+                    bool zauzet = false;
+                    Console.WriteLine(prostor.IdProstora);
+                    foreach (Termin terminZaProveru in termini)
+                    {
+                        Console.WriteLine(terminZaProveru.Prostor.IdProstora);
+                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
+                        {
+                            zauzet = true;
+                            break;
+                        }
+                    }
+                    if (!zauzet)
+                    {
+                        return prostor;
+                    }
+                }
+            }
+            Console.WriteLine("Nula");
+            return null;
+        }
+        private List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        {
+            List<Termin> termini = new List<Termin>();
+            foreach (Termin termin in terminiServis.DobaviSveZakazaneTermine())
+            {
+                if (DateTime.Compare(termin.Datum, datum) == 0)
+                {
+                    termini.Add(termin);
+                    Console.WriteLine("Nasao");
+                }
+            }
+            return termini;
+        }
 
         public void DodajProstor(Prostor p)
         {

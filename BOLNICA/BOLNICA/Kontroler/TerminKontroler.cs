@@ -17,6 +17,7 @@ namespace Bolnica.Kontroler
         private TerminKonverter terminKonverter = new TerminKonverter();
         LekariServis lekariServis = new LekariServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
+        ProstoriServis prostoriServis = new ProstoriServis();
 
         public int DobaviBrojZakazanihTerminaNaDatum(DateTime datum)
         {
@@ -86,6 +87,7 @@ namespace Bolnica.Kontroler
         public void ZakaziPregledPacijent(TerminDTO termin, String korisnickoImePacijenta)
         {
             Termin noviTermin = slobodniTerminiServis.PretraziPoId(termin.IdTermina);
+            noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(termin.Datum);
             zakazaniTerminiServis.ZakaziPregled(noviTermin, korisnickoImePacijenta);
         }
 
@@ -161,7 +163,7 @@ namespace Bolnica.Kontroler
             noviTermin.Lekar = lekariServis.PretraziPoId(termin.Lekar.KorisnickoIme);
             noviTermin.Pacijent = naloziPacijenataServis.PretraziPoId(termin.Pacijent.KorisnickoIme);
             noviTermin.Trajanje = termin.TrajanjeDouble;
-
+            noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(termin.Datum);
             return zakazaniTerminiServis.ZakaziTerminLekar(noviTermin);
         }
 
