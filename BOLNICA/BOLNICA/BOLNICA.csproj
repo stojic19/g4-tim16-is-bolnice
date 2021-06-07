@@ -1389,7 +1389,10 @@
     <Resource Include="Slike\LekarSlike\night.png" />
     <Resource Include="Slike\LekarSlike\sun.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Slike\Sekretar\cursor.png" />
+    <Resource Include="Slike\Sekretar\demo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

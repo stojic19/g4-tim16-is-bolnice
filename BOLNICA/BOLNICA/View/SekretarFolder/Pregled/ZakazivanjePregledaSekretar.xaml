@@ -76,7 +76,12 @@
                 <RowDefinition Height="80*"/>
                 <RowDefinition Height="80*"/>
             </Grid.RowDefinitions>
+
             <Label Content="Zakazivanje pregleda" FontSize="40" HorizontalAlignment="Left" Margin="231,5,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <Button Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,77" Grid.Column="1" Grid.RowSpan="2">
+                <Image Source="/Slike/Sekretar/demo.png" Height="57" />
+            </Button>
 
             <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-15,-88.5,-69" Stretch="Fill">
@@ -86,6 +91,7 @@
                     </Path.Data>
                 </Path>
             </Border>
+
             <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,175.5,-88.5,-227.5" Stretch="Fill">
                     <Path.Data>
@@ -94,6 +100,7 @@
                     </Path.Data>
                 </Path>
             </Border>
+
             <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="1.5,333,-90,-419" Stretch="Fill">
                     <Path.Data>
@@ -102,22 +109,7 @@
                     </Path.Data>
                 </Path>
             </Border>
-            <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
-                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,527,-88.5,-473" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-                    <Path.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Path.RenderTransform>
-                    <Path.Data>
-                        <RectangleGeometry
-                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
-                    </Path.Data>
-                </Path>
-            </Border>
+
             <Label Content="Odaberite pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,10,10,42" Height="30" Width="150"/>
 
@@ -155,7 +147,14 @@
                Grid.Column="0" Grid.Row="4" Margin="0,17,10,18" Height="30" Width="208"/>
 
             <DatePicker Name="datumKraj" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.2,0,19.6" Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
-
+            <Border Margin="28,30,98,10" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,10,-88.5,10" Stretch="Fill">
+                    <Path.Data>
+                        <RectangleGeometry
+                            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
             <Label Content="Prioritet pri zakazivanju:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="7" Margin="0,52,10,0" Height="30" Width="208"/>
 
@@ -175,6 +174,35 @@
             <Label Content="Odaberite period u kom želite da zakažete pregled:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                 Grid.Column="0" Grid.Row="3" Margin="0,27,615,25" Height="30" Width="280" Grid.ColumnSpan="2"/>
 
+            <Border Name="lblDemo" Margin="60,10,141,0">
+                <Label Name="lblDemo1" Background="Black" Foreground="White" Content="Demo je u toku!" Margin="10,20,0,20"/>
+            </Border>
+
+            <Border Name="lblPacijent" Margin="28,40,141,56" Grid.Row="1" Grid.RowSpan="2">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir pacijenta" Margin="10,20,0,20"/>
+            </Border>
+            <Image Name="cursor1" Source="/Slike/Sekretar/cursor.png" Margin="215,40,357,68" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+
+            <Border  Name="lblDatum" Margin="28,44,141,54" Grid.Row="3" Grid.RowSpan="2">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir datuma" Margin="10,20"/>
+            </Border>
+            <Image Name="cursor2" Source="/Slike/Sekretar/cursor.png" Margin="137,72,435,36" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2"/>
+            <Image Name="cursor3" Source="/Slike/Sekretar/cursor.png" Margin="137,26,435,0" Grid.Row="4" Grid.Column="1"/>
+
+            <Border  Name="lblLekar" Margin="28,10,105,0" Grid.Row="5">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir lekara" Margin="10,20,43,20"/>
+            </Border>
+            <Image Name="cursor4" Source="/Slike/Sekretar/cursor.png" Margin="172,55,400,53" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"/>
+
+            <Border  Name="lblPrioritet" Margin="28,30,141,62" Grid.Row="7" Grid.RowSpan="2">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir prioriteta" Margin="10,20,0,20"/>
+            </Border>
+            <Image x:Name="cursor5" Source="/Slike/Sekretar/cursor.png" Margin="143,54,429,54" Grid.Row="7" Grid.Column="1" Grid.RowSpan="2"/>
+
+            <Border  Name="lblPotvrdi" Margin="215,42,183,54" Grid.Row="7" Grid.RowSpan="2" Grid.Column="1">
+                <Label Background="Black" Foreground="White" Content="Nakon odabira parametara prisika se dugme potvrdi" Margin="10,20,-71,20"/>
+            </Border>
+            <Image x:Name="cursor6" Source="/Slike/Sekretar/cursor.png" Margin="243,42,329,-16" Grid.Row="8" Grid.Column="1"/>
         </Grid>
     </StackPanel>
 </UserControl>

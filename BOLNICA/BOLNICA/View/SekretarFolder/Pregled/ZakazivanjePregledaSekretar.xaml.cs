@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,7 +38,7 @@ namespace Bolnica.Sekretar.Pregled
         public ZakazivanjePregledaSekretar()
         {
             InitializeComponent();
-
+            ObicanMod();
             this.DataContext = this;
             SviPacijenti = new ObservableCollection<PacijentDTO>();
             SviLekari = new ObservableCollection<LekarDTO>();
@@ -51,7 +52,86 @@ namespace Bolnica.Sekretar.Pregled
                 SviLekari.Add(l);
             }
         }
+        private void ObicanMod()
+        {
+            lblDemo.Visibility = Visibility.Hidden;
+            lblDemo1.Visibility = Visibility.Hidden;
+            lblPacijent.Visibility = Visibility.Hidden;
+            cursor1.Visibility = Visibility.Hidden;
+            lblDatum.Visibility = Visibility.Hidden;
+            cursor2.Visibility = Visibility.Hidden;
+            cursor3.Visibility = Visibility.Hidden;
+            lblLekar.Visibility = Visibility.Hidden;
+            cursor4.Visibility = Visibility.Hidden;
+            lblPrioritet.Visibility = Visibility.Hidden;
+            cursor5.Visibility = Visibility.Hidden;
+            lblPotvrdi.Visibility = Visibility.Hidden;
+            cursor6.Visibility = Visibility.Hidden;
+        }
+        private void Demo_Click(object sender, RoutedEventArgs e)
+        {
+            Demo();
+        }
+        private async Task Demo()
+        {
+            lblDemo.Visibility = Visibility.Visible;
+            lblDemo1.Visibility = Visibility.Visible;
 
+            await Task.Delay(1500);
+
+            lblPacijent.Visibility = Visibility.Visible;
+            cursor1.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            dataGridPacijenti.SelectedIndex = 1; 
+            await Task.Delay(2000);
+            lblPacijent.Visibility = Visibility.Hidden;
+            cursor1.Visibility = Visibility.Hidden;
+
+            lblDatum.Visibility = Visibility.Visible;
+            cursor2.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            datumPocetak.SelectedDate = DateTime.Now;
+            await Task.Delay(1000);
+            cursor2.Visibility = Visibility.Hidden;
+
+            cursor3.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            datumKraj.SelectedDate = DateTime.Now.AddDays(10);
+            await Task.Delay(1000);
+            lblDatum.Visibility = Visibility.Hidden;
+            cursor3.Visibility = Visibility.Hidden;
+
+            lblLekar.Visibility = Visibility.Visible;
+            cursor4.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            dataGridLekari.SelectedIndex = 1;
+            await Task.Delay(2000);
+            lblLekar.Visibility = Visibility.Hidden;
+            cursor4.Visibility = Visibility.Hidden;
+
+            lblPrioritet.Visibility = Visibility.Visible;
+            cursor5.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            prioritet.SelectedIndex = 1;
+            await Task.Delay(2000);
+            lblPrioritet.Visibility = Visibility.Hidden;
+            cursor5.Visibility = Visibility.Hidden;
+
+            lblPotvrdi.Visibility = Visibility.Visible;
+            cursor6.Visibility = Visibility.Visible;
+            await Task.Delay(2000);
+            lblPotvrdi.Visibility = Visibility.Hidden;
+            cursor6.Visibility = Visibility.Hidden;
+
+            await Task.Delay(1000);
+            dataGridPacijenti.SelectedIndex = -1;
+            datumPocetak.SelectedDate = null;
+            datumKraj.SelectedDate = null;
+            dataGridLekari.SelectedIndex = -1;
+            prioritet.SelectedIndex = -1;
+
+            lblDemo.Visibility = Visibility.Hidden;
+        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { 
             if (!PodaciPravilnoUneti())

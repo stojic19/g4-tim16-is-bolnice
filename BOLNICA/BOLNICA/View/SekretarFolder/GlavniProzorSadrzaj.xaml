@@ -54,7 +54,6 @@
                 <Button Content="Odjava"  Click="Nazad_Click"/>
                 <Separator/>
                 <Button Content="Nedeljni izveštaj"  Click="Izvestaj_Click"/>
-                <Button Content="Demo"/>
                 <Button Content="Pomoć" Click="Pomoc_Click"/>
             </StackPanel>
         </materialDesign:PopupBox>
