@@ -75,7 +75,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new StacionarnoLecenjeSekretar();
+            usc = new NoviTransferPacijenataSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

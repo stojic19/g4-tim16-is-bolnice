@@ -72,7 +72,11 @@ namespace Bolnica.SekretarFolder
         }
         private void Transfer_Click(object sender, RoutedEventArgs e)
         {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
+            usc = new TransferPacijenataSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         private void Naplata_Click(object sender, RoutedEventArgs e)
         {
