@@ -1,9 +1,11 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Izvestaj.Lekar;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
 using System;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Forms;
@@ -16,6 +18,8 @@ namespace Bolnica
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         PreglediKontroler preglediKontroler = new PreglediKontroler();
         ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
+        ReceptiIzvestaj receptiIzvestaj = new ReceptiIzvestaj();
+        AnamnezeIzvestaj anamnezeIzvestaj = new AnamnezeIzvestaj();
         PregledDTO izabranPregled = null;
         public static ObservableCollection<ReceptDTO> Recepti { get; set; }
         public static ObservableCollection<AnamnezaDTO> Anamneze { get; set; }
@@ -88,7 +92,7 @@ namespace Bolnica
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodavanjeRecepta(izabranPregled.IdPregleda));
         }
-        private void DodavanjeAnamneze(object sender, RoutedEventArgs e) 
+        private void DodavanjeAnamneze(object sender, RoutedEventArgs e)
         {
             if (preglediKontroler.ProveraPostojanjaAnamneze(izabranPregled.IdPregleda))
             {
@@ -109,7 +113,27 @@ namespace Bolnica
 
         private void IzvestajRecepata(object sender, RoutedEventArgs e)
         {
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.IdPacijenta);
 
+            try
+            {
+                DataTable dtbl = receptiIzvestaj.MakeDataTable(izabranPregled.Termin);
+                String naslov = "Izveštaj recepata@@Pacijent " + p.Ime + " " + p.Prezime;
+                naslov = naslov.Replace("@", System.Environment.NewLine);
+                String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                String putanja = @"IzvestajiLekar\Recepti_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
+                receptiIzvestaj.ExportDataTableToPdf(dtbl, putanja, naslov);
+
+                if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj recepata", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(putanja);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Error Message");
+            }
         }
 
         private void PrikazInformacijaAnamneza(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -125,6 +149,26 @@ namespace Bolnica
 
         private void IzvestajAnamneza(object sender, RoutedEventArgs e)
         {
+            PacijentDTO p = naloziPacijenataKontroler.PretraziPoId(izabranPregled.Termin.IdPacijenta);
+
+            try
+            {
+                String naslov = "Izveštaj recepata@@Pacijent " + p.Ime + " " + p.Prezime;
+                naslov = naslov.Replace("@", System.Environment.NewLine);
+                String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                String putanja = @"IzvestajiLekar\Anamneze_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
+                anamnezeIzvestaj.ExportDataTableToPdf(izabranPregled.Termin, putanja, naslov);
+
+                if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj anamneza", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(putanja);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Error Message");
+            }
 
         }
 
@@ -205,5 +249,7 @@ namespace Bolnica
         {
             CollectionViewSource.GetDefaultView(dataGridUputi.ItemsSource).Refresh();
         }
+
+
     }
 }

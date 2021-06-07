@@ -124,6 +124,10 @@
     <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -190,6 +194,8 @@
     <Compile Include="DTO\UputDTO.cs" />
     <Compile Include="DTO\ZahtjevDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
+    <Compile Include="Izvestaj\Lekar\AnamnezeIzvestaj.cs" />
+    <Compile Include="Izvestaj\Lekar\ReceptiIzvestaj.cs" />
     <Compile Include="Izvestaj\Pacijent\RasporedTerapijeIzvestaj.cs" />
     <Compile Include="Izvestaj\Sekretar\NedeljniIzvestaj.cs" />
     <Compile Include="Komande\RelayCommand.cs" />
