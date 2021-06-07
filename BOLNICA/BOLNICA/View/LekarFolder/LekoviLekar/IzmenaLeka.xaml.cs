@@ -99,6 +99,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
@@ -112,6 +113,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
 
         }

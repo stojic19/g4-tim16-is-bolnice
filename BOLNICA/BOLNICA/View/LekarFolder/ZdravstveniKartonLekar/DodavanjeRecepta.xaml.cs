@@ -142,6 +142,7 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 3));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 

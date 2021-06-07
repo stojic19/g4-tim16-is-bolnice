@@ -5,6 +5,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Bolnica.LekarFolder
 {
@@ -12,19 +13,23 @@ namespace Bolnica.LekarFolder
     {
         private static Grid PocetniPogled;
         String KoriscnickoImeLekara = null;
+        private static UserControl PrethodnaStanica;
         public LekarGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
+            
             PocetniPogled = this.GlavniProzor;
             this.KoriscnickoImeLekara = korisnickoIme;
             PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
+            postaviPrethodnu(new PocetnaStranicaLekar(KoriscnickoImeLekara));
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
-            Login prozorLogovanje = new Login();
-            prozorLogovanje.Show();
-            this.Close();
+            PromenaPogleda(PrethodnaStanica);
+            //Login prozorLogovanje = new Login();
+            //prozorLogovanje.Show();
+            //this.Close();
         }
 
         public void PromenaPogleda(UserControl userControl)
@@ -36,6 +41,11 @@ namespace Bolnica.LekarFolder
         public static Grid DobaviProzorZaIzmenu()
         {
             return PocetniPogled;
+        }
+
+        public static void postaviPrethodnu(UserControl prethodna)
+        {
+            PrethodnaStanica = prethodna;
         }
 
         private void PocetnaStrana(object sender, RoutedEventArgs e)
@@ -71,6 +81,7 @@ namespace Bolnica.LekarFolder
         {
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new VerifikacijaLekova(KoriscnickoImeLekara));
+            
         }
 
         private void PrikazZahtevaOdsustva(object sender, RoutedEventArgs e)
@@ -150,13 +161,15 @@ namespace Bolnica.LekarFolder
         {
             var app = (App)Application.Current;
             app.ChangeTheme(new Uri("Teme/SvetlaTema.xaml", UriKind.Relative));
-            
+            ikonicaTeme.Source = new BitmapImage(new Uri(@"/Slike/LekarSlike/sun.png", UriKind.Relative));
+
         }
 
         private void TamnaTema(object sender, RoutedEventArgs e)
         {
             var app = (App)Application.Current;
             app.ChangeTheme(new Uri("Teme/TamnaTema.xaml", UriKind.Relative));
+            ikonicaTeme.Source = new BitmapImage(new Uri(@"/Slike/LekarSlike/night.png", UriKind.Relative));
 
         }
 

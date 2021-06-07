@@ -46,6 +46,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 
@@ -57,6 +58,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             zahtjeviKontroler.OdbijZahtev(izabranZahtev.IDZahtjeva, razlogOdbijanja.Text);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 

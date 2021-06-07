@@ -136,6 +136,7 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
@@ -143,6 +144,7 @@ namespace Bolnica
             lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IdLeka, noviZamenski);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
     }
 }

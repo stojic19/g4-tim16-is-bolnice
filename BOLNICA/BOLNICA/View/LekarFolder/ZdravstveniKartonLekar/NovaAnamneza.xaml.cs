@@ -85,6 +85,7 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void IzvestajAnamneza(object sender, RoutedEventArgs e) { }
@@ -93,12 +94,14 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 1));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void BrisanjeTerapije(object sender, RoutedEventArgs e)

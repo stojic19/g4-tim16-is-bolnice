@@ -41,6 +41,7 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 
@@ -68,6 +69,7 @@ namespace Bolnica
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
+                LekarGlavniProzor.postaviPrethodnu(this);
 
             }
         }
@@ -101,6 +103,7 @@ namespace Bolnica
 
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(idNovogPregleda, 0));
+                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 

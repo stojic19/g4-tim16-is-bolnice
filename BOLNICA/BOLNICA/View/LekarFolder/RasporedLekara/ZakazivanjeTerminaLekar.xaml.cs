@@ -49,6 +49,7 @@ namespace Bolnica
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void Potvrda(object sender, RoutedEventArgs e)
@@ -70,6 +71,7 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 

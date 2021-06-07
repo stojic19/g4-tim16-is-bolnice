@@ -111,6 +111,7 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeIzUputa(noviUput.IdLekaraSpecijaliste, izabranPregled.IdPregleda));
+                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 
@@ -138,6 +139,7 @@ namespace Bolnica.LekarFolder
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+                LekarGlavniProzor.postaviPrethodnu(this);
             }
         }
 
@@ -173,12 +175,14 @@ namespace Bolnica.LekarFolder
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void Povratak(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private void pretragaLekara_TextChanged(object sender, TextChangedEventArgs e)

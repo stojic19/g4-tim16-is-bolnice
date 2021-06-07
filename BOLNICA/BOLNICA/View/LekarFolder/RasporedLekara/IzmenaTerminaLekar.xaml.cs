@@ -41,12 +41,6 @@ namespace Bolnica
 
         }
 
-        private void Povratak(object sender, RoutedEventArgs e)
-        {
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
-        }
-
         private void PotvrdaIzmene(object sender, RoutedEventArgs e)
         {
             if (!ValidacijaDatuma() || !ValidacijaUnosaPolja()) return;
@@ -58,6 +52,7 @@ namespace Bolnica
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
 
@@ -133,5 +128,11 @@ namespace Bolnica
             }
         }
 
+        private void Odustani(object sender, RoutedEventArgs e)
+        {
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(korisnik));
+            LekarGlavniProzor.postaviPrethodnu(this);
+        }
     }
 }

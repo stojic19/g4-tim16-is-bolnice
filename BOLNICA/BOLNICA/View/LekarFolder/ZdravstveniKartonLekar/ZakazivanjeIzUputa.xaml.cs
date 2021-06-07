@@ -61,6 +61,7 @@ namespace Bolnica.LekarFolder
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
+            LekarGlavniProzor.postaviPrethodnu(this);
 
         }
 
@@ -82,7 +83,7 @@ namespace Bolnica.LekarFolder
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
-
+            LekarGlavniProzor.postaviPrethodnu(this);
         }
 
         private Double OdrediTrajanje()
