@@ -116,5 +116,21 @@ namespace Bolnica.SekretarFolder
             usc = new LicnaObavestenjaSekretar(GlavniProzorSekretar.getInstance().getSekretar().KorisnickoIme);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
+        private void MojNalog_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new MojNalogSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Pomoc_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new Pomoc();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
     }
 }

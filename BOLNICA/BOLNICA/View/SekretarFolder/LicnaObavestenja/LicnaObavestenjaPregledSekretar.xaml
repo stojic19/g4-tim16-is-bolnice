@@ -88,7 +88,7 @@
             <Label Content="ID obaveštenja:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="1" Margin="0,22,240,32" Height="30" Width="150"/>
 
-            <TextBox Text="{Binding Podaci.IdObavestenja}" AcceptsReturn="True" IsEnabled="False" Name="idObavestenja" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,22,0,32" Height="30" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+            <TextBox Text="{Binding Podaci.IdObavestenja}" AcceptsReturn="True" IsReadOnly="True" Name="idObavestenja" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,22,0,32" Height="30" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
 
             <Label Content="Datum:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,22,240,32" Height="30" Width="150"/>
@@ -99,12 +99,12 @@
             <Label Content="Naslov:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="3" Margin="0,20,240,70" Height="30" Width="150"/>
 
-            <TextBox Text="{Binding Podaci.Naslov}" AcceptsReturn="True" IsEnabled="False"  Name="naslov" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,20,0,70" Height="30" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+            <TextBox Text="{Binding Podaci.Naslov}" AcceptsReturn="True" IsReadOnly="True"  Name="naslov" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,20,0,70" Height="30" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
 
             <Label Content="Tekst:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="4" Margin="0,0,240,54" Height="30" Width="150"/>
 
-            <TextBox Text="{Binding Podaci.Tekst}" AcceptsReturn="True" IsEnabled="False" Name="tekst" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,0,0,81" Height="172" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <TextBox Text="{Binding Podaci.Tekst}" AcceptsReturn="True" IsReadOnly="True" Name="tekst" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="271,0,0,81" Height="172" Width="573" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
             <Button Content="Povratak" Grid.Column="0" Grid.Row="5"  Margin="0,107,419,32"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Command="{Binding Path=PovratakKomanda}" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>

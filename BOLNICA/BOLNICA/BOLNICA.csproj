@@ -302,6 +302,7 @@
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\IzmenaNalogaViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\MojNalogViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NaplataIzabraniPacijentViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\StacionarnoSmestanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NoviTransferViewModel.cs" />
@@ -423,6 +424,9 @@
     </Compile>
     <Compile Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.xaml.cs">
       <DependentUpon>LicnaObavestenjaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\MojNalogSekretar.xaml.cs">
+      <DependentUpon>MojNalogSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml.cs">
       <DependentUpon>NaplataUslugeIzabraniPacijent.xaml</DependentUpon>
@@ -546,6 +550,8 @@
     <Compile Include="View\SekretarFolder\Obavestenja\IzmenaObavestenja.xaml.cs" />
     <Compile Include="View\SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml.cs" />
     <Compile Include="View\SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml.cs" />
+    <Compile Include="View\SekretarFolder\Pomoc\LegendaSimbola.xaml.cs" />
+    <Compile Include="View\SekretarFolder\Pomoc\Pomoc.xaml.cs" />
     <Compile Include="View\SekretarFolder\Pregled\OtkazivanjePregledaSekretar.xaml.cs" />
     <Compile Include="View\SekretarFolder\Pregled\PomeranjePregledaSekretar.xaml.cs" />
     <Compile Include="View\SekretarFolder\Pregled\PomeranjePregledaTerminiSekretar.xaml.cs" />
@@ -810,6 +816,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\SekretarFolder\MojNalogSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -987,6 +997,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\Pomoc\LegendaSimbola.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SekretarFolder\Pomoc\Pomoc.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

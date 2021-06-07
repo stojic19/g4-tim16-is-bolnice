@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Bolnica.SekretarFolder.Pomoc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.SekretarFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <StackPanel  Height="738" Width="1024" VerticalAlignment="Bottom" Orientation="Horizontal" >
+        <Grid x:Name="MainPanel" Width="1026" Background="#2b78e4" Height="738" VerticalAlignment="Top">
+            <Border Margin="28,71,32,36">
+                <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Stretch="Fill" Margin="0,10,-22,10">
+                    <Path.Data>
+                        <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                    </Path.Data>
+                </Path>
+            </Border>
+            <TextBlock FontSize="14" TextWrapping="Wrap" Margin="90,93,32,56">-Termini pacijenata:<LineBreak/>
+Omogućava pregled termina po datumu, pacijentu, lekaru i ID-ju termina.<LineBreak/>
+Za svaki termin je omogućeno pomeranje i otkazivanje.<LineBreak/>
+Omogućeno je zakazivanje novog termina pri čemu se bira prioritet pri odabiru termina.<LineBreak/>
+-Hitna operacija:<LineBreak/>
+Omogućen pregled zakazanih hitnih operacija.<LineBreak/>
+Zakazane hitne operacije moguće je izmeniti i otkazati.<LineBreak/>
+Omogućeno je zakazivanje hitne operacije.<LineBreak/>
+-Nalozi pacijenata:<LineBreak/>
+Omogućena je pretraga i pregled naloga pacijenata.<LineBreak/>
+Postojeće naloge je potrebno izmeniti i ukloniti.<LineBreak/>
+Omogućeno je dodavanje novih naloga.<LineBreak/>
+-Obaveštenja:<LineBreak/>
+Omogućen je pregled i pretraga u arhivi obaveštenja.<LineBreak/>
+Postojeća obaveštenja je moguće izmeniti i obrisati.<LineBreak/>
+Omogućeno pisanje novih obaveštenja.<LineBreak/>
+-Naplaćivanje usluge:<LineBreak/>
+Omogućena pretraga pacijenata.<LineBreak/>
+Za odabranog pacijenta prikazuju se neplaćene usluge.<LineBreak/>
+-Stacionarno lečenje:<LineBreak/>
+Omogućen pregled pacijenata na stacionarnom lečenju, produžetak njihovog lečenja, otpuštanje i
+transfer u drugu ustanovu.<LineBreak/>
+Za pacijente koje je potrebno smestiti omogućeno smeštanje i transfer u drugu ustanovu.<LineBreak/>
+-Transfer pacijenata:<LineBreak/>
+Omogućeno odobravanje i odbijanje primljenih zahteva za transfer iz drugih ustanova.<LineBreak/>
+Omogućeno pisanje zahteva za transfer pacijenata u druge ustanove.<LineBreak/>
+-Lična obaveštenja:<LineBreak/>
+Omogućen pregled primljenjih obaveštenja.<LineBreak/>
+-Nalog:<LineBreak/>
+Omogućen pregled ličnih informacija, izmena informacija i lozinke.<LineBreak/>
+            -Odjava:<LineBreak/>
+Odjavom se vraća na prozor za logovanje.</TextBlock>
+            <Image Source="/Slike/Sekretar/Ikonice/termini.jpg" Margin="35,93,941,607" />
+            <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" Margin="35,165,941,531" />
+            <Image Source="/Slike/Sekretar/Ikonice/nalozi.jpg" Margin="35,222,941,447" />
+            <Image Source="/Slike/Sekretar/Ikonice/obavestenja.jpg" Margin="35,301,941,377" />
+            <Image Source="/Slike/Sekretar/Ikonice/naplata.jpg" Margin="35,373,941,296" />
+            <Image Source="/Slike/Sekretar/Ikonice/stacionarno.jpg" Margin="35,433,941,253" />
+            <Image Source="/Slike/Sekretar/Ikonice/transfer.jpg" Margin="35,480,941,176" />
+            <Image Source="/Slike/Sekretar/Ikonice/licna.jpg" Margin="35,537,941,136" />
+            <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" Margin="35,553,941,65" />
+            <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" Margin="35,635,941,65" />
+            <Label Content="Pomoć" FontSize="40" HorizontalAlignment="Left" Margin="411,4,0,0" VerticalAlignment="Top" Height="67" Width="148" FontWeight="Bold"/>
+            <Button Content="Povratak"  Margin="0,698,551,10"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Povratak_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Button Content="Legenda simbola"  Margin="0,698,430,10"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Legenda_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        </Grid>
+    </StackPanel>
+</UserControl>

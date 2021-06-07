@@ -4985,3 +4985,9 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\Sekre
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\TransferPacijenata\NoviTransferPacijenataSekretar.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\TransferPacijenata\TransferPacijenataSekretar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\MojNalogSekretar.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Pomoc\LegendaSimbola.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Pomoc\Pomoc.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\MojNalogSekretar.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Pomoc\LegendaSimbola.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\Pomoc\Pomoc.baml
