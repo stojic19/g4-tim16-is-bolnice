@@ -22,7 +22,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public TerapijaViewModel(String korisnickoIme)
         {
             this.korisnickoIme = korisnickoIme;
-            tekstPretrage = "Unesite ime leka";
+            tekstPretrage = "";
             UcitajKolekciju();
             izvestaj = new RelayCommand(PrikaziIzvestaj);
             detaljiTerapije = new RelayCommand(Detalji);

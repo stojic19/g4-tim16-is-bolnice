@@ -8,7 +8,7 @@
              d:DesignHeight="700" d:DesignWidth="350">
     <StackPanel Background="White">
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="53" Margin="0,0,0.4,0">
-            <Label  Content="      Pretrazi po nazivu leka:" VerticalAlignment="Center" Width="150" Margin="0,14,0,14.8" />
+            <Label  Content="      Pretraži po nazivu leka:" VerticalAlignment="Center" Width="150" Margin="0,14,0,14.8" />
             <TextBox Text="{Binding TekstPretrage}" Margin="0,15,7,9.8" Width="133"></TextBox>
             <Button Width="28" RenderTransformOrigin="1.5,0.5" Command="{Binding Path=Pretraga}" Margin="0,15,0,9.8">
                 <Image Source="/Slike/PacijentSlike/lupa3.png" Height="26" Width="28" />

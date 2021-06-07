@@ -9,7 +9,7 @@
     <StackPanel Background="White">
         <Label Margin="20 10 0 0"  FontSize="15" FontWeight="DemiBold">OBAVLJENI TERMINI</Label>
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2"  VerticalAlignment="Center" Height="53" Margin="0,0,0.4,0">
-            <Label  Content="      Pretrazi po datumu:" VerticalAlignment="Center" Width="133" />
+            <Label  Content="      Pretraži po datumu:" VerticalAlignment="Center" Width="133" />
             <DatePicker SelectedDate="{Binding Path=PoljePretrage}" Margin="0,15,15,9.8" Width="143"></DatePicker>
             <Button Width="28" RenderTransformOrigin="1.5,0.5" Command="{Binding Path=Pretraga}" Margin="0,15,0,9.8">
                 <Image Source="/Slike/PacijentSlike/lupa3.png" Height="26" Width="25" />

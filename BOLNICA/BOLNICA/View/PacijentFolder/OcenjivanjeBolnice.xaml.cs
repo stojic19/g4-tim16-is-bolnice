@@ -35,42 +35,9 @@ namespace Bolnica.PacijentFolder
 
         private void OceniBolnicu_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < pitanjaKontroler.DobaviPitanjaOBolnici().Count ; i++)
-            {
-
-                int indexCombo = i + 1;
-                postaviOcenuZaPitanje(((ComboBox)this.FindName("pitanje" + indexCombo)).SelectedIndex, i);
-
-            }
-         //   anketaKontroler.DodajAnketu(korisnickoIme,DateTime.Now,null,)
-           // AnketeRepozitorijum.DodajAnketu(new Anketa(PacijentGlavniProzor.ulogovani,DateTime.Now,null, AnketeRepozitorijum.pitanjaOBolnici,DodatniKomentar.Text));
-           // AnketeRepozitorijum.SerijalizacijaAnketa();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-          //  PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa());
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazAnketa(korisnickoIme));
 
-        }
-
-        private void postaviOcenuZaPitanje(int indexCombo, int indexPitanje)
-        {
-            switch (indexCombo)
-            {
-
-                case 0:
-                   // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.jedan;
-                    break;
-                case 1:
-                   // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.dva;
-                    break;                                                  
-                case 2:
-                   // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.tri;
-                    break;                                                
-                case 3:
-                   // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.cetiri;
-                    break;                                                  
-                case 4:
-                   // AnketeRepozitorijum.pitanjaOBolnici[indexPitanje].Ocena = OcenaPitanja.pet;
-                    break;
-            }
         }
     }
 }
