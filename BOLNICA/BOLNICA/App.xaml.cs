@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bolnica.Lokalizacija;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,10 +16,23 @@ namespace Bolnica
             get { return Resources.MergedDictionaries[0]; }
         }
 
-        public void ChangeTheme(Uri uri)
+        public void PromenaTeme(Uri uri)
         {
             ThemeDictionary.MergedDictionaries.Clear();
             ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = uri });
+        }
+
+        public void PromenaJezika(string currLang)
+        {
+            if (currLang.Equals("en-US"))
+            {
+                Prevod.Instance.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            }
+            else
+            {
+                Prevod.Instance.CurrentCulture = new System.Globalization.CultureInfo("sr-LATN");
+            }
+
         }
     }
 }

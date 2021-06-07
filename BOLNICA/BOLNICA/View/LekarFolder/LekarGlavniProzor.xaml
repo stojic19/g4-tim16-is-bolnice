@@ -131,7 +131,7 @@
 
                 <Button Background="Transparent" Click="PrikazJezika" Style="{StaticResource MyButtonStyle}" Width="70" HorizontalAlignment="Center" Grid.Column="4">
 
-                    <StackPanel Orientation="Horizontal" Width="48"   >
+                    <StackPanel Orientation="Horizontal">
                         <Label Name="izabranJezik" FontSize="15" Content="SR" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" Width="27" Height="30"/>
                         <Image Source="/Slike/LekarSlike/Arrow-Down-icon.png"  Height="16" Width="16" RenderTransformOrigin="-0.708,0.533"/>
                     </StackPanel>

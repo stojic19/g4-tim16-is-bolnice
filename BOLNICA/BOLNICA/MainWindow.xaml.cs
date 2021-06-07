@@ -22,13 +22,6 @@ namespace Bolnica
         public MainWindow()
         {
             InitializeComponent();
-            /*RukovanjeTerminima.PrivremenaInicijalizacijaLekara();
-            RukovanjeZdravstvenimKartonima.InicijalizacijaLekova();
-            RukovanjeTerminima.DeserijalizacijaTermina();
-            RukovanjeTerminima.DeserijalizacijaSlobodnihTermina();
-            RukovanjeProstorom.DeserijalizacijaProstora();
-            RukovanjeNalozimaPacijenata.Ucitaj();*/
-            //RukovanjeZdravstvenimKartonima.DeserijalizacijaRecepata();
             Login l = new Login();
             l.Show();
             this.Close();

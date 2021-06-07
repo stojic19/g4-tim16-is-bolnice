@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="dobrodosli" xml:space="preserve">
-    <value>Dobrodošli,</value>
+    <value>Welcome,</value>
   </data>
   <data name="nalog" xml:space="preserve">
-    <value>Moj nalog</value>
+    <value>My account</value>
   </data>
   <data name="raspored" xml:space="preserve">
-    <value>Raspored pregleda i operacija</value>
+    <value>Schedule of examinations and operations</value>
   </data>
 </root>

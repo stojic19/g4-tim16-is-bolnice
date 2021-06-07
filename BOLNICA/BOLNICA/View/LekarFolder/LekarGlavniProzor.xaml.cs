@@ -18,6 +18,8 @@ namespace Bolnica.LekarFolder
         public LekarGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
+            var app = (App)Application.Current;
+            app.PromenaJezika("sr-LATN");
             PocetniPogled = this.GlavniProzor;
             this.KoriscnickoImeLekara = korisnickoIme;
             PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
@@ -162,7 +164,7 @@ namespace Bolnica.LekarFolder
         private void SvetlaTema(object sender, RoutedEventArgs e)
         {
             var app = (App)Application.Current;
-            app.ChangeTheme(new Uri("Teme/SvetlaTema.xaml", UriKind.Relative));
+            app.PromenaTeme(new Uri("Teme/SvetlaTema.xaml", UriKind.Relative));
             ikonicaTeme.Source = new BitmapImage(new Uri(@"/Slike/LekarSlike/sun.png", UriKind.Relative));
 
         }
@@ -170,19 +172,23 @@ namespace Bolnica.LekarFolder
         private void TamnaTema(object sender, RoutedEventArgs e)
         {
             var app = (App)Application.Current;
-            app.ChangeTheme(new Uri("Teme/TamnaTema.xaml", UriKind.Relative));
+            app.PromenaTeme(new Uri("Teme/TamnaTema.xaml", UriKind.Relative));
             ikonicaTeme.Source = new BitmapImage(new Uri(@"/Slike/LekarSlike/night.png", UriKind.Relative));
 
         }
 
         private void PromenaSrpski(object sender, RoutedEventArgs e)
         {
-
+            var app = (App)Application.Current;
+            app.PromenaJezika("sr-LATN");
+            izabranJezik.Content = "SR";
         }
 
         private void PromenaEngleski(object sender, RoutedEventArgs e)
         {
-
+            var app = (App)Application.Current;
+            app.PromenaJezika("en-US");
+            izabranJezik.Content = "EN";
         }
 
         private void PrikazJezika(object sender, RoutedEventArgs e)

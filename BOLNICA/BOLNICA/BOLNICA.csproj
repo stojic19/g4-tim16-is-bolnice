@@ -238,6 +238,7 @@
     <Compile Include="Konverter\TerminKonverter.cs" />
     <Compile Include="Konverter\UputKonverter.cs" />
     <Compile Include="Konverter\ZahtjevKonverter.cs" />
+    <Compile Include="Lokalizacija\Prevod.cs" />
     <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
@@ -1212,6 +1213,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
