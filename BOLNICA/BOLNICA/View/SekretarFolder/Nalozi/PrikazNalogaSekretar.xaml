@@ -83,8 +83,13 @@
                 </Path>
             </Border>
             <Label Content="Evidencija pacijenata:" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="199"/>
+            <StackPanel Orientation="Horizontal" Margin="47,142,183,113.5" Grid.RowSpan="2">
+                <Label FontSize="20" Content="Pretraga pacijenata:" FontWeight="Normal"/>
+                <TextBox Text="{Binding TekstPretrage}" Width="208" Height="27" x:Name="poljeZaPreragu" FontWeight="Normal" Margin="0,6" />
+
+            </StackPanel>
             <DataGrid x:Name="dataGridNaloziPacijenata" ItemsSource="{Binding Pacijenti}" SelectedItem="{Binding SelektovaniPacijent}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="4" Margin="50,0,36,118" Background="WhiteSmoke"
+                  SelectionMode="Single" Grid.RowSpan="4" Margin="50,34.5,36,116.5" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="2" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Vrsta naloga" Binding="{Binding VrstaNaloga}" Width="1.1*"/>

@@ -30,6 +30,7 @@ namespace Bolnica
         {
             InitializeComponent();
             pacijentViewModel = new PacijentViewModel();
+            dataGridNaloziPacijenata.ItemsSource = pacijentViewModel.Pacijenti;
             this.DataContext = pacijentViewModel;
         }
 

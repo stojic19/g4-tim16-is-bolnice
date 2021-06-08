@@ -33,7 +33,7 @@ namespace Bolnica
         {
             InitializeComponent();
 
-            this.DataContext = this;
+            // this.DataContext = this;
             PopuniTabeluObavestenja();
         }
 
@@ -47,8 +47,21 @@ namespace Bolnica
                     SvaObavestenja.Add(o);
                 }
             }
+            this.dataGridObavestenjaSekretar.ItemsSource = SvaObavestenja;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridObavestenjaSekretar.ItemsSource);
+            view.Filter = FiltriranjeObavestenja;
         }
-
+        private bool FiltriranjeObavestenja(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPreragu.Text))
+                return true;
+            else
+                return ((item as ObavestenjeDTO).Naslov.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+        private void poljeZaPreragu_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridObavestenjaSekretar.ItemsSource).Refresh();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {    
             UserControl usc = null;

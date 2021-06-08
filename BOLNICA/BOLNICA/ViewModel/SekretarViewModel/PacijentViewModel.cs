@@ -18,7 +18,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private String poruka;
         private PacijentDTO selektovaniPacijent;
-  
+        private String tekstPretrage;
         public PacijentViewModel()
         {
             UcitajUKolekciju();
@@ -55,7 +55,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 OnPropertyChanged();
             }
         }
-
+        public String TekstPretrage
+        {
+            get { return tekstPretrage; }
+            set
+            {
+                tekstPretrage = value;
+                OnPropertyChanged();
+            }
+        }
         public string Poruka
         {
             get { return poruka; }

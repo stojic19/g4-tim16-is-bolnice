@@ -83,9 +83,14 @@
                 </Path>
             </Border>
             <Label Content="Arhiva obaveštenja:" FontSize="20" HorizontalAlignment="Left" Margin="48,80,0,0" VerticalAlignment="Top" Height="67" Width="247"/>
+            <StackPanel Orientation="Horizontal" Margin="48,113,182,143" Grid.RowSpan="2">
+                <Label FontSize="20" Content="Pretraga obavestenja:" FontWeight="Normal"/>
+                <TextBox TextChanged="poljeZaPreragu_TextChanged" Width="208" Height="27" Name="poljeZaPreragu" FontWeight="Normal" Margin="0,6" />
+
+            </StackPanel>
             <DataGrid x:Name="dataGridObavestenjaSekretar" ItemsSource="{Binding SvaObavestenja}" IsReadOnly="true"
-                  SelectionMode="Single" Grid.RowSpan="5" Margin="48,116,50,83" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+                  SelectionMode="Single" Grid.RowSpan="4" Margin="48,10,50,82.667" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="1" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID obaveštenja" Binding="{Binding IdObavestenja}" Width="2*"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="2*"/>
