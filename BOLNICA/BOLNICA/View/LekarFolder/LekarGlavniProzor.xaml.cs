@@ -12,17 +12,17 @@ namespace Bolnica.LekarFolder
     public partial class LekarGlavniProzor : Window
     {
         private static Grid PocetniPogled;
-        String KoriscnickoImeLekara = null;
         private static UserControl PrethodnaStanica;
         private static UserControl TrenutnaStranica;
+        private static String korisnickoImeLekara = null;
         public LekarGlavniProzor(String korisnickoIme)
         {
             InitializeComponent();
+            PostaviKorisnickoIme(korisnickoIme);
             var app = (App)Application.Current;
             app.PromenaJezika("sr-LATN");
             PocetniPogled = this.GlavniProzor;
-            this.KoriscnickoImeLekara = korisnickoIme;
-            PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
+            PromenaPogleda(new PocetnaStranicaLekar());
             postaviPrethodnu();
         }
 
@@ -52,22 +52,33 @@ namespace Bolnica.LekarFolder
             TrenutnaStranica = trenutna;
         }
 
+        public static void PostaviKorisnickoIme(String idLekara)
+        {
+            korisnickoImeLekara = null;
+            korisnickoImeLekara = idLekara;
+        }
+
+        public static String DobaviKorisnickoIme()
+        {
+            return korisnickoImeLekara;
+        }
+
         private void PocetnaStrana(object sender, RoutedEventArgs e)
         {
             this.menu.Visibility = Visibility.Hidden;
-            PromenaPogleda(new PocetnaStranicaLekar(KoriscnickoImeLekara));
+            PromenaPogleda(new PocetnaStranicaLekar());
         }
 
         private void PrikazRasporeda(object sender, RoutedEventArgs e)
         {
             this.menu.Visibility = Visibility.Hidden;
-            PromenaPogleda(new PrikazTerminaLekara(KoriscnickoImeLekara));
+            PromenaPogleda(new PrikazTerminaLekara());
         }
 
         private void ZakazivanjeTermina(object sender, RoutedEventArgs e)
         {
             this.menu.Visibility = Visibility.Hidden;
-            PromenaPogleda(new ZakazivanjeTerminaLekar(KoriscnickoImeLekara));
+            PromenaPogleda(new ZakazivanjeTerminaLekar());
         }
 
         private void UtrosenMaterijal(object sender, RoutedEventArgs e)
@@ -78,13 +89,13 @@ namespace Bolnica.LekarFolder
         private void PrikazBaze(object sender, RoutedEventArgs e)
         {
             this.menu.Visibility = Visibility.Hidden;
-            PromenaPogleda(new BazaLekova(KoriscnickoImeLekara));
+            PromenaPogleda(new BazaLekova());
         }
 
         private void VerifikacijaLekova(object sender, RoutedEventArgs e)
         {
             this.menu.Visibility = Visibility.Hidden;
-            PromenaPogleda(new VerifikacijaLekova(KoriscnickoImeLekara));
+            PromenaPogleda(new VerifikacijaLekova());
             
         }
 
@@ -118,7 +129,7 @@ namespace Bolnica.LekarFolder
 
         private void PrikazProfila(object sender, RoutedEventArgs e)
         {
-            PromenaPogleda(new NalogLekara(KoriscnickoImeLekara));
+            PromenaPogleda(new NalogLekara());
         }
 
         private void PrikazObavestenja(object sender, RoutedEventArgs e)
@@ -128,7 +139,7 @@ namespace Bolnica.LekarFolder
 
         private void IzmenaNaloga(object sender, RoutedEventArgs e)
         {
-            PromenaPogleda(new IzmenaNaloga(KoriscnickoImeLekara));
+            PromenaPogleda(new IzmenaNaloga());
         }
 
         private void Odjava(object sender, RoutedEventArgs e)
@@ -140,7 +151,7 @@ namespace Bolnica.LekarFolder
 
         private void PromenaLozinke(object sender, RoutedEventArgs e)
         {
-            PromenaPogleda(new PromenaLozinke(KoriscnickoImeLekara));
+            PromenaPogleda(new PromenaLozinke());
         }
 
         private void OtvaranjeMojProfil(object sender, RoutedEventArgs e)

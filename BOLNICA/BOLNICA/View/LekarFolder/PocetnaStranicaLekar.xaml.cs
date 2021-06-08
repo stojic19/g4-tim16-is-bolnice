@@ -18,16 +18,14 @@ namespace Bolnica.LekarFolder
 {
     public partial class PocetnaStranicaLekar : UserControl
     {
-        private String KorisnickoImeLekara = null;
         LekariKontroler lekariKontroler = new LekariKontroler();
-        public PocetnaStranicaLekar(string koriscnickoImeLekara)
+        public PocetnaStranicaLekar()
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             
-            KorisnickoImeLekara = koriscnickoImeLekara;
-            imePrezime.Content = lekariKontroler.ImeiPrezime(koriscnickoImeLekara) + "!";
+            imePrezime.Content = lekariKontroler.ImeiPrezime(LekarGlavniProzor.DobaviKorisnickoIme()) + "!";
         }
 
         
@@ -36,7 +34,7 @@ namespace Bolnica.LekarFolder
         {
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara());
         }
 
         private void PrikazOdsustva(object sender, RoutedEventArgs e)
@@ -50,7 +48,7 @@ namespace Bolnica.LekarFolder
         private void PrikazLekova(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
         }
     }
 }

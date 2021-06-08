@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <IdTermina>9eb0eb46-0ec5-453b-bd8a-59c773590c4a</IdTermina>
@@ -5696,6 +5696,132 @@
       </Godisnji>
       <Odsustva />
       <Specijalizacija>nema</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>4b1b0393-a8cb-4219-ba1a-e157663efffe</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>15:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-06-09T15:00:00</Datum>
+    <Prostor>
+      <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+      <IdProstora>OP1</IdProstora>
+      <NazivProstora>s1</NazivProstora>
+      <VrstaProstora>sala</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>40</Kvadratura>
+      <JeRenoviranje>false</JeRenoviranje>
+      <Oprema />
+    </Prostor>
+    <Pacijent>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+      <Jmbg>1901</Jmbg>
+      <AdresaStanovanja>NN</AdresaStanovanja>
+      <KontaktTelefon>062</KontaktTelefon>
+      <Email>asns</Email>
+      <KorisnickoIme>stojic19</KorisnickoIme>
+      <Lozinka>sekretar</Lozinka>
+      <Pol>muski</Pol>
+      <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
+      <VrstaNaloga>regularan</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>stojic19</IDPacijenta>
+        <Alergeni />
+        <Recepti />
+        <Anamneze />
+        <Uputi />
+        <BracniStatus>ozenjenUdata</BracniStatus>
+      </ZdravstveniKarton>
+      <ZloupotrebioSistem>0</ZloupotrebioSistem>
+      <Blokiran>false</Blokiran>
+    </Pacijent>
+    <Lekar>
+      <Ime>Aleksa</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
+      <Jmbg>421</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 123</AdresaStanovanja>
+      <KontaktTelefon>06332</KontaktTelefon>
+      <Email>leksa@lekar.com</Email>
+      <KorisnickoIme>AleksaStojic</KorisnickoIme>
+      <Lozinka>aleksastojic</Lozinka>
+      <Pol>muski</Pol>
+      <RadniDani>
+        <RadniDan>
+          <PocetakSmene>2021-06-22T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-22T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-23T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-23T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-09T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-09T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-10T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-10T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-11T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-11T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-14T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-14T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-15T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-15T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-16T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-16T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-17T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-17T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-18T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-18T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-21T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-24T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-24T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-25T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-25T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-28T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-28T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-29T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-29T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-30T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-30T23:00:00</KrajSmene>
+        </RadniDan>
+      </RadniDani>
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>neurohirurg</Specijalizacija>
       <Dostupnost>false</Dostupnost>
     </Lekar>
   </Termin>

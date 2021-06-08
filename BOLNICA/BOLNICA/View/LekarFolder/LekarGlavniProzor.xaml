@@ -71,12 +71,12 @@
             <RowDefinition Height="28"/>
         </Grid.RowDefinitions>
 
-        <Rectangle Grid.Row="0" Fill="#999999" Grid.ColumnSpan="2" Margin="0,0,0.2,0.2" />
+        <Rectangle Grid.Row="0" Fill="WhiteSmoke" Grid.ColumnSpan="2" Margin="0,0,0.2,0.2" />
         <Rectangle Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Grid.ColumnSpan="2" Margin="0,0,0.2,0.2"/>
-        <Rectangle Grid.Row="3" Fill="#999999" Grid.ColumnSpan="2" Margin="0,0.2,0.2,-0.2" />
+        <Rectangle Grid.Row="3" Fill="WhiteSmoke" Grid.ColumnSpan="2" Margin="0,0.2,0.2,-0.2" />
         <Rectangle Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Fill="Black" Height="1" Grid.ColumnSpan="2" Margin="0,0.2,0.2,0"/>
 
-        <Button  Grid.Row="0" Grid.Column="0" Margin="20,22,0,21.2" VerticalContentAlignment="Center"  Background="WhiteSmoke" BorderBrush="Transparent"
+        <Button  Grid.Row="0" Grid.Column="0" Margin="20,22,0,21.2" VerticalContentAlignment="Center"  Background="LightGray" BorderBrush="Black"
                 HorizontalContentAlignment="Left" HorizontalAlignment="Left" Click="Povratak" Width="32" Height="32" Style="{StaticResource MyButtonStyle}">
 
             <Image Source="/Slike/LekarSlike/Back.png"/>
@@ -85,7 +85,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,75,0.2,0.2" Grid.RowSpan="2">
 
-            <Grid>
+            <Grid >
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50"/>

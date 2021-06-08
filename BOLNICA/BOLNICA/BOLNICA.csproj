@@ -725,16 +725,16 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\NalogLekara\IzmenaNaloga.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\NalogLekara\NalogLekara.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\NalogLekara\PromenaLozinke.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\PocetnaStranicaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -753,16 +753,16 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml">
       <Generator>MSBuild:Compile</Generator>

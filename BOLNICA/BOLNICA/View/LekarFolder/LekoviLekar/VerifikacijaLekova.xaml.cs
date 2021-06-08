@@ -18,14 +18,12 @@ namespace Bolnica.LekarFolder
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
-        String KorisnickoImeLekara = null;
 
-        public VerifikacijaLekova(string korisnickoImeLekara)
+        public VerifikacijaLekova( )
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
-            KorisnickoImeLekara = korisnickoImeLekara;
             this.DataContext = this;
 
             inicijalizacijaTabeleZahteva();
@@ -91,7 +89,7 @@ namespace Bolnica.LekarFolder
             if (Validacija(izabranZahtev))
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new OdbijanjeLeka(izabranZahtev.IDZahtjeva, KorisnickoImeLekara));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new OdbijanjeLeka(izabranZahtev.IDZahtjeva));
             }
 
         }
@@ -123,7 +121,7 @@ namespace Bolnica.LekarFolder
         private void PrikazBazeLekova(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
         }
 
         private void pretragaZahteva_PreviewMouseDown(object sender, MouseButtonEventArgs e)

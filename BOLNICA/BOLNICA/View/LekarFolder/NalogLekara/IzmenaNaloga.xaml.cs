@@ -20,14 +20,12 @@ namespace Bolnica.View.LekarFolder.NalogLekara
 {
     public partial class IzmenaNaloga : UserControl
     {
-        String idLekara = null;
         LekariKontroler lekariKontroler = new LekariKontroler();
         LekarDTO lekar = null;
-        public IzmenaNaloga(String idLekara)
+        public IzmenaNaloga()
         {
             InitializeComponent();
-            this.idLekara = idLekara;
-            lekar = lekariKontroler.PretraziPoId(idLekara);
+            lekar = lekariKontroler.PretraziPoId(LekarGlavniProzor.DobaviKorisnickoIme());
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             inicijalizacijaPolja();
@@ -46,19 +44,19 @@ namespace Bolnica.View.LekarFolder.NalogLekara
         private void promenaLozinke_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PromenaLozinke(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PromenaLozinke());
         }
 
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara());
         }
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara());
         }
 
         private void korIme_PreviewMouseDown(object sender, MouseButtonEventArgs e)

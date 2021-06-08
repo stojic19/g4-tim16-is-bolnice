@@ -20,12 +20,10 @@ namespace Bolnica.View.LekarFolder.NalogLekara
 {
     public partial class NalogLekara : UserControl
     {
-        String idLekara = null;
         LekariKontroler lekariKontroler = new LekariKontroler();
-        public NalogLekara(String idLekara)
+        public NalogLekara()
         {
             InitializeComponent();
-            this.idLekara = idLekara;
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             inicijalizacijaPolja();
@@ -33,7 +31,7 @@ namespace Bolnica.View.LekarFolder.NalogLekara
 
         private void inicijalizacijaPolja()
         {
-            LekarDTO l = lekariKontroler.PretraziPoId(idLekara);
+            LekarDTO l = lekariKontroler.PretraziPoId(LekarGlavniProzor.DobaviKorisnickoIme());
 
             this.ime.Text = l.Ime;
             this.prezime.Text = l.Prezime;
@@ -49,7 +47,7 @@ namespace Bolnica.View.LekarFolder.NalogLekara
         private void izmeni_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaNaloga(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaNaloga());
         }
     }
 }

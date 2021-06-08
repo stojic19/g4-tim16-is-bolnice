@@ -20,6 +20,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
@@ -33,11 +34,9 @@
         <Label Content="{p:LocExtension VrstaTermina}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="2" Grid.Row="1"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
-        <ComboBox SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" 
+        <ComboBox ItemsSource="{Binding VrsteTermina}" SelectionChanged="vrTermina_SelectionChanged" Name="vrTermina" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="9.6,1,0,1">
 
-            <ComboBoxItem HorizontalAlignment="Left">Pregled</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Left">Operacija</ComboBoxItem>
 
         </ComboBox>
 
@@ -65,9 +64,9 @@
         <DatePicker SelectedDateChanged="datum_SelectedDateChanged" Margin="9.6,1,0,1" Name="datum" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
         <Label Content="{p:LocExtension VremePocetka}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="2" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
+               Grid.Column="2" Grid.Row="4"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
-        <ComboBox ItemsSource="{Binding slobodniTermini}"  Name="pocVreme" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" 
+        <ComboBox ItemsSource="{Binding slobodniTermini}"  Name="pocVreme" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" 
                   Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="9.6,1,0,1">
 
             <ComboBox.ItemTemplate>
@@ -75,6 +74,19 @@
                     <TextBlock Text="{Binding Vreme}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Content="{p:LocExtension BrojTermina}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="2" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
+
+        <ComboBox SelectionChanged="brojTermina_SelectionChanged" ItemsSource="{Binding BrojTermina}" Name="brojTermina" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="9.6,1,0,1" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+
+            <ComboBox.ToolTip>
+                <ToolTip DataContext="{Binding Path=PlacementTarget, RelativeSource={RelativeSource Self}}">
+                    <TextBlock Text="{p:LocExtension 30min}"/>
+                </ToolTip>
+            </ComboBox.ToolTip>
+
         </ComboBox>
 
 

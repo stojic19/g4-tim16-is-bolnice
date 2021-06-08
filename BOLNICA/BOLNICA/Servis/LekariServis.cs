@@ -77,6 +77,7 @@ namespace Bolnica.Servis
             return lekariOpstePrakse;
         }
 
+
         public String ImeiPrezime(String id)
         {
             foreach (Lekar l in SviLekari())

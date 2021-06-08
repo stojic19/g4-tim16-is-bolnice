@@ -13,17 +13,15 @@ namespace Bolnica.LekarFolder.LekoviLekar
 {
     public partial class OdbijanjeLeka : UserControl
     {
-        String KorisnickoImeLekara = null;
         ZahtjevDTO izabranZahtev = null;
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
 
-        public OdbijanjeLeka(string idZahtjeva, string korisnickoImeLekara)
+        public OdbijanjeLeka(string idZahtjeva)
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
-            this.KorisnickoImeLekara = korisnickoImeLekara;
             izabranZahtev = zahtjeviKontroler.PretraziPoId(idZahtjeva);
             this.DataContext = this;
             inicijalizacijaPodataka();
@@ -47,7 +45,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         private void Odustajanje(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova());
 
         }
 
@@ -58,7 +56,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
 
             zahtjeviKontroler.OdbijZahtev(izabranZahtev.IDZahtjeva, razlogOdbijanja.Text);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova());
 
         }
 

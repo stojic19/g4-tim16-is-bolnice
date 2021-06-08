@@ -59,9 +59,13 @@ namespace Bolnica.Kontroler
         public List<LekarDTO> DobaviSveLekareLogin()
         {
             List<LekarDTO> lekari = new List<LekarDTO>();
-            foreach (Lekar lekar in lekariServis.DobaviLekareOpstePrakse())
+            foreach (Lekar lekar in lekariServis.SviLekari())
                 lekari.Add(lekarKonverter.LekarModelUDTOLogin(lekar));
             return lekari;
+        }
+        public SpecijalizacijeLekara DobaviSpecijalizaciju(String idLekara)
+        {
+            return lekariServis.PretraziPoId(idLekara).Specijalizacija;
         }
     }
 }

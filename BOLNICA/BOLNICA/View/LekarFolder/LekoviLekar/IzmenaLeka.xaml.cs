@@ -18,13 +18,13 @@ namespace Bolnica.LekarFolder.LekoviLekar
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
 
-        public IzmenaLeka(String idIzabranogLeka, String korisnickoImeLekara)
+        public IzmenaLeka(String idIzabranogLeka )
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             izabranLek = lekoviKontroler.PretraziPoID(idIzabranogLeka);
-            KorisnickoIme = korisnickoImeLekara;
+            KorisnickoIme = LekarGlavniProzor.DobaviKorisnickoIme();
 
             this.DataContext = this;
             inicijalizacijaPolja();
@@ -100,7 +100,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
         private void Odustajanje(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
         }
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
@@ -113,7 +113,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             lekoviKontroler.IzmenaLeka(izabranLek, izmenjeniSastojci);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoIme));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
 
 
         }

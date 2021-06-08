@@ -15,26 +15,25 @@ namespace Bolnica
         TerminKontroler terminKontroler = new TerminKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         public static ObservableCollection<TerminDTO> Termini { get; set; }
-        public String korisnik = null;
         private DispatcherTimer dispatcherTimer;
 
-        public PrikazTerminaLekara(String korIme)
+        public PrikazTerminaLekara()
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
-            korisnik = korIme;
             this.DataContext = this;
 
             Termini = new ObservableCollection<TerminDTO>();
 
-            foreach (TerminDTO t in terminKontroler.PretraziPoLekaru(korIme))
+            foreach (TerminDTO t in terminKontroler.PretraziPoLekaru(LekarGlavniProzor.DobaviKorisnickoIme()))
             {
-                if (t.Datum.AddDays(7).Date.CompareTo(DateTime.Now) >= 0)
+                if (t.Datum.AddDays(5).Date.CompareTo(DateTime.Now) >= 0)
                 {
                     Termini.Add(t);
                 }
             }
+
 
             InicijalizacijaPretrage();
             PodesavanjeTajmera();
@@ -58,7 +57,7 @@ namespace Bolnica
         private void ZakaziTermin(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar(korisnik));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new ZakazivanjeTerminaLekar());
 
         }
 
@@ -85,7 +84,7 @@ namespace Bolnica
             if (izabranZaMenjanje != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina, korisnik));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(izabranZaMenjanje.IdTermina));
 
             }
         }
@@ -138,6 +137,11 @@ namespace Bolnica
         private void pretragaDatuma_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dataGridTermini.ItemsSource).Refresh();
+        }
+
+        private void dataGridTermini_Sorting(object sender, System.Windows.Controls.DataGridSortingEventArgs e)
+        {
+
         }
     }
 }

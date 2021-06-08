@@ -14,18 +14,16 @@ namespace Bolnica
     public partial class IzmenaZamenskihLekova : UserControl
     {
         LekDTO izabranLek = null;
-        String KorisnickoImeLekara = null;
         List<LekDTO> noviZamenski = new List<LekDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         public static ObservableCollection<LekDTO> Zamenski { get; set; } = new ObservableCollection<LekDTO>();
         public static ObservableCollection<LekDTO> SviLekovi { get; set; } = new ObservableCollection<LekDTO>();
-        public IzmenaZamenskihLekova(String idLeka, String idLekara)
+        public IzmenaZamenskihLekova(String idLeka)
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             izabranLek = lekoviKontroler.PretraziPoID(idLeka);
-            KorisnickoImeLekara = idLekara;
             this.DataContext = this;
             inicijalizacijaPolja();
             inicijalizacijaTabeleZamenskih();
@@ -137,14 +135,14 @@ namespace Bolnica
         private void Odustajanje(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
         }
 
         private void CuvanjeIzmena(object sender, RoutedEventArgs e)
         {
             lekoviKontroler.IzmenaZamenskihLekova(izabranLek.IdLeka, noviZamenski);
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new BazaLekova());
         }
     }
 }

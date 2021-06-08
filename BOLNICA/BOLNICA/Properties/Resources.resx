@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="30min" xml:space="preserve">
+    <value>Jedan termin je 30 minuta</value>
+  </data>
   <data name="Adresa" xml:space="preserve">
     <value>Adresa stanovanja</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="BrojTelefona" xml:space="preserve">
     <value>Kontakt telefon</value>
+  </data>
+  <data name="BrojTermina" xml:space="preserve">
+    <value>Broj termina</value>
   </data>
   <data name="Da" xml:space="preserve">
     <value>Da</value>
@@ -214,7 +220,7 @@
     <value>Izmena naloga</value>
   </data>
   <data name="IzmenaTermina" xml:space="preserve">
-    <value>Izmena terima</value>
+    <value>Izmena termina</value>
   </data>
   <data name="IzmenaZamena" xml:space="preserve">
     <value>Izmena zamenskih</value>

@@ -19,10 +19,10 @@ namespace Bolnica.LekarFolder
         public static ObservableCollection<LekDTO> Zamenski { get; set; } = new ObservableCollection<LekDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
 
-        public BazaLekova(String korisnickoImeLekara)
+        public BazaLekova()
         {
             InitializeComponent();
-            KorisnickoImeLekara = korisnickoImeLekara;
+            KorisnickoImeLekara = LekarGlavniProzor.DobaviKorisnickoIme();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
 
@@ -58,14 +58,14 @@ namespace Bolnica.LekarFolder
             if (izabranLek != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IdLeka, KorisnickoImeLekara));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaLeka(izabranLek.IdLeka));
             }
         }
 
         private void VerifikacijaLeka(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova(KorisnickoImeLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new VerifikacijaLekova());
         }
 
         private void dataGridLekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -119,7 +119,7 @@ namespace Bolnica.LekarFolder
             if (izabranLek != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IdLeka, KorisnickoImeLekara));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaZamenskihLekova(izabranLek.IdLeka));
 
             }
         }

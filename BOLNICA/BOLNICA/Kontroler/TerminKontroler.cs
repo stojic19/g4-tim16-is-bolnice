@@ -80,7 +80,7 @@ namespace Bolnica.Kontroler
             {
                 terminiDTO.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
             }
-            return terminiDTO;
+            return terminiDTO.OrderBy(user => user.Datum).ToList();
 
         }
 
@@ -164,7 +164,15 @@ namespace Bolnica.Kontroler
             noviTermin.Lekar = lekariServis.PretraziPoId(termin.Lekar.KorisnickoIme);
             noviTermin.Pacijent = naloziPacijenataServis.PretraziPoId(termin.Pacijent.KorisnickoIme);
             noviTermin.Trajanje = termin.TrajanjeDouble;
-            noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(termin.Datum);
+            if(noviTermin.VrstaTermina == VrsteTermina.operacija)
+            {
+                noviTermin.Prostor = prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum);
+            }
+            else
+            {
+                noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(noviTermin.Datum);
+            }
+            
             return zakazaniTerminiServis.ZakaziTerminLekar(noviTermin);
         }
 
@@ -172,6 +180,17 @@ namespace Bolnica.Kontroler
         {
             Termin stari = zakazaniTerminiServis.DobaviZakazanTerminPoId(stariTermin.IdTermina);
             Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
+            novi.Trajanje = noviTermin.TrajanjeDouble;
+
+            if (novi.VrstaTermina == VrsteTermina.operacija)
+            {
+                novi.Prostor = prostoriServis.DodeliProstorZaOperaciju(novi.Datum);
+            }
+            else
+            {
+                novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
+            }
+
             zakazaniTerminiServis.IzmeniTermin(stari, novi);
         }
         public List<TerminDTO> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String lekar)
@@ -191,12 +210,12 @@ namespace Bolnica.Kontroler
             return termini;
         }
 
-        public List<TerminDTO> DobaviSlobodneTermineLekara(TerminDTO terminZaPoredjenje, String izabranLekar)
+        public List<TerminDTO> DobaviSlobodneTermineLekara(TerminDTO terminZaPoredjenje, String izabranLekar, int brojTermina)
         {
             Termin podaci = terminKonverter.PodaciZaSlobodanTermin(terminZaPoredjenje);
             List<TerminDTO> slobodniTermini = new List<TerminDTO>();
 
-            foreach (Termin t in slobodniTerminiServis.DobaviSlobodneTermineLekara(podaci, izabranLekar))
+            foreach (Termin t in slobodniTerminiServis.DobaviSlobodneTermineLekara(podaci, izabranLekar, brojTermina))
             {
                 slobodniTermini.Add(terminKonverter.SlobodniTerminModelUDTO(t));
             }

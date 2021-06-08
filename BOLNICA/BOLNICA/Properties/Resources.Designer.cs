@@ -61,6 +61,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jedan termin je 30 minuta.
+        /// </summary>
+        internal static string _30min {
+            get {
+                return ResourceManager.GetString("30min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adresa stanovanja.
         /// </summary>
         internal static string Adresa {
@@ -120,6 +129,15 @@ namespace Bolnica.Properties {
         internal static string BrojTelefona {
             get {
                 return ResourceManager.GetString("BrojTelefona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj termina.
+        /// </summary>
+        internal static string BrojTermina {
+            get {
+                return ResourceManager.GetString("BrojTermina", resourceCulture);
             }
         }
         
@@ -349,7 +367,7 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Izmena terima.
+        ///   Looks up a localized string similar to Izmena termina.
         /// </summary>
         internal static string IzmenaTermina {
             get {

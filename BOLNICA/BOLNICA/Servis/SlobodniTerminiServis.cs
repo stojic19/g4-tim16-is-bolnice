@@ -251,9 +251,23 @@ namespace Bolnica.Servis
             return false;
         }
 
-        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar)
+        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar, int brojTermina)
         {
-            return slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
+            List<Termin> slobodniTermini = slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
+            List<Termin> krajnjiTermini = new List<Termin>();
+            brojTermina--;
+
+            for (int i = 0; i < slobodniTermini.Count(); i++)
+            {
+                if (i + brojTermina >= slobodniTermini.Count()) continue;
+
+                if (DateTime.Compare(slobodniTermini[i + brojTermina].Datum, slobodniTermini[i].Datum.AddMinutes(brojTermina * 30)) == 0)
+                {
+                    krajnjiTermini.Add(slobodniTermini[i]);
+                }
+            }
+
+            return krajnjiTermini;
         }
     }
 }

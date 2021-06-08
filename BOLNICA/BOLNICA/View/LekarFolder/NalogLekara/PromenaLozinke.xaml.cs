@@ -18,11 +18,9 @@ namespace Bolnica.View.LekarFolder.NalogLekara
 {
     public partial class PromenaLozinke : UserControl
     {
-        String idLekara = null;
-        public PromenaLozinke(String idLekara)
+        public PromenaLozinke( )
         {
             InitializeComponent();
-            this.idLekara = idLekara;
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
         }
@@ -30,13 +28,13 @@ namespace Bolnica.View.LekarFolder.NalogLekara
         private void odustani_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara());
         }
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara(idLekara));
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new NalogLekara());
         }
     }
 }

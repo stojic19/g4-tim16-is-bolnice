@@ -114,30 +114,17 @@ namespace Model
         public void IzmeniTermin(Termin stariTermin, Termin noviTermin)
         {
             noviTermin = KopirajPodatke(stariTermin, noviTermin);
-            stariTermin.Trajanje = 0;
+            stariTermin.Trajanje = 30;
             stariTermin.Pacijent = null;
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
             ZakaziTerminLekar(noviTermin);
         }
 
-        private Double OdrediTrajanje(VrsteTermina izabranaVrstaTermina)
-        {
-            if (izabranaVrstaTermina.Equals(VrsteTermina.operacija))
-            {
-                return 120;
-            }
-            else
-            {
-                return 30;
-            }
-        }
-
         public Termin KopirajPodatke(Termin stari, Termin novi)
         {
             novi.Lekar = stari.Lekar;
             novi.Pacijent = stari.Pacijent;
-            novi.Trajanje = OdrediTrajanje(novi.VrstaTermina);
             return novi;
         }
 

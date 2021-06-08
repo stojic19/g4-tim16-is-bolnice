@@ -28,16 +28,16 @@ namespace Bolnica.LekarFolder
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         TerminKontroler terminKontroler = new TerminKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
-        ProstoriServis prostoriServis = new ProstoriServis();
 
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private String idLekarSpecijalista = null;
         private DateTime izabranDatum;
         private String izabranaVrstaTermina = null;
         PregledDTO izabranPregled = null;
-        private String izabranaProstorija = null;
+        int izabranoTrajanje = 1;
         public static ObservableCollection<TerminDTO> slobodniTermini { get; set; } = new ObservableCollection<TerminDTO>();
-        
+        public ObservableCollection<int> BrojTermina { get; set; } = new ObservableCollection<int>();
+
 
         public ZakazivanjeIzUputa(String lekarSpecijalista, String idPregleda)
         {
@@ -49,6 +49,7 @@ namespace Bolnica.LekarFolder
             inicijalizacijaPolja();
             refresujPocetnoVreme();
             this.DataContext = this;
+            BrojTermina.Clear();
         }
 
         private void inicijalizacijaPolja()
@@ -75,7 +76,7 @@ namespace Bolnica.LekarFolder
 
             t.Lekar.KorisnickoIme = idLekarSpecijalista;
             t.Pacijent.KorisnickoIme = izabranPregled.Termin.Pacijent.KorisnickoIme;
-            t.TrajanjeDouble = OdrediTrajanje();
+            t.TrajanjeDouble = izabranoTrajanje * 30;
 
             if (terminKontroler.ZakaziTerminLekar(t) && izabranPregled.Termin.Lekar.KorisnickoIme.Equals(idLekarSpecijalista))
             {
@@ -86,22 +87,11 @@ namespace Bolnica.LekarFolder
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));
         }
 
-        private Double OdrediTrajanje()
-        {
-            if (izabranaVrstaTermina.Equals("Operacija"))
-            {
-                return 120;
-            }
-            else
-            {
-                return 30;
-            }
-        }
 
         private Boolean ValidacijaPodataka()
         {
 
-            if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1)
+            if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1 || brojTermina.SelectedIndex < 0)
             {
                 System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -112,13 +102,23 @@ namespace Bolnica.LekarFolder
 
         private void vrTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int maks = 0;
             if (vrTermina.SelectedIndex == 0)
             {
                 izabranaVrstaTermina = "Pregled";
+                maks = 4;
+
             }
             else if (vrTermina.SelectedIndex == 1)
             {
+                maks = 11;
                 izabranaVrstaTermina = "Operacija";
+            }
+
+            BrojTermina.Clear();
+            for (int i = 1; i < maks; i++)
+            {
+                BrojTermina.Add(i);
             }
 
             refresujPocetnoVreme();
@@ -138,15 +138,23 @@ namespace Bolnica.LekarFolder
         private void refresujPocetnoVreme()
         {
             slobodniTermini.Clear();
-            if (izabranaVrstaTermina == null) return;
+            if (izabranaVrstaTermina == null || brojTermina.SelectedIndex < 0) return;
 
             TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, null, izabranaVrstaTermina);
 
-            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista))
+            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista, izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
                 Console.WriteLine(t.Vreme);
             }
+        }
+
+        private void brojTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (brojTermina.SelectedIndex < 0) return;
+
+            izabranoTrajanje = (int)brojTermina.SelectedItem;
+            refresujPocetnoVreme();
         }
 
     }
