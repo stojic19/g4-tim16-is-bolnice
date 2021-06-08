@@ -24,8 +24,8 @@
             <Jacina>15mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
           </PreporucenLek>
         </Terapija>
         <Terapija>
@@ -42,8 +42,8 @@
             <Jacina>400mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
           </PreporucenLek>
         </Terapija>
         <Terapija>
@@ -60,8 +60,39 @@
             <Jacina>500mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
+          </PreporucenLek>
+        </Terapija>
+      </Terapije>
+    </Anamneza>
+  </Beleska>
+  <Beleska>
+    <Datum>2021-06-08T17:57:20.499011+02:00</Datum>
+    <Tekst>asfasfszf</Tekst>
+    <Id>4f0ab6ba-4f05-4519-aa24-0558a49352d9</Id>
+    <Anamneza>
+      <IdAnamneze>d4056f9c-d9b7-4e27-80d6-e81811b04cc6</IdAnamneze>
+      <IdPacijenta>magdalena</IdPacijenta>
+      <Datum>0001-01-01T00:00:00</Datum>
+      <Dijagnoza>aaaaaaaaaaaaaaaaaaaaaaa</Dijagnoza>
+      <Terapije>
+        <Terapija>
+          <IDTerapije>be259b7a-897e-4ec6-9a1e-915d9a34baf0</IDTerapije>
+          <IDAnamneze>d4056f9c-d9b7-4e27-80d6-e81811b04cc6</IDAnamneze>
+          <PocetakTerapije>2021-05-25T00:00:00</PocetakTerapije>
+          <KrajTerapije>2021-05-26T00:00:00</KrajTerapije>
+          <Kolicina>2</Kolicina>
+          <Satnica>12</Satnica>
+          <UputsvoKonzumiranja>svsdvsdv</UputsvoKonzumiranja>
+          <PreporucenLek>
+            <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+            <NazivLeka>Aerius</NazivLeka>
+            <Jacina>10mg</Jacina>
+            <Kolicina>0</Kolicina>
+            <Sastojci />
+            <Zamene />
+            <Verifikacija>false</Verifikacija>
           </PreporucenLek>
         </Terapija>
       </Terapije>

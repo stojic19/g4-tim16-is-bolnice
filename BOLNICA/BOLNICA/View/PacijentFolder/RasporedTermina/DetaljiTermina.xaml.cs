@@ -21,7 +21,7 @@ namespace Bolnica.PacijentFolder
         public DetaljiTermina(TerminDTO izabraniTermin)
         {
             InitializeComponent();
-            DataContext = izabraniTermin;
+            this.DataContext = izabraniTermin;
         }
 
         private void uRedu_Click(object sender, RoutedEventArgs e)

@@ -101,6 +101,7 @@ namespace Bolnica.Kontroler
         {
             Termin stari = zakazaniTerminiServis.DobaviZakazanTerminPoId(stariTermin.IdTermina);
             Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
+            novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
             zakazaniTerminiServis.PomeriPregledPacijent(stari, novi);
         }
 

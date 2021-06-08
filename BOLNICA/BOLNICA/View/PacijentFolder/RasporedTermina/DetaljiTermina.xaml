@@ -25,8 +25,6 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.Row="0">ID termina:</Label>
-                <Label Grid.Column="1" Grid.Row="0" FontWeight="DemiBold" Content="{Binding IdTermina}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="1">Datum:</Label>
                 <Label Grid.Column="1" Grid.Row="1" FontWeight="DemiBold" Content="{Binding Datum , StringFormat={}{0:dd/MM/yyyy}}"></Label>
@@ -41,7 +39,7 @@
                 <Label Grid.Column="1" Grid.Row="4" FontWeight="DemiBold" Content="{Binding TipTermina}"></Label>
 
                 <Label Grid.Column="0" Grid.Row="5">Prostor:</Label>
-                <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" Content="{Binding Prostor.IdProstora}"></Label>
+                <Label Grid.Column="1" Grid.Row="5" FontWeight="DemiBold" Content="{Binding Prostor}"></Label>
 
             </Grid>
             <Separator></Separator>

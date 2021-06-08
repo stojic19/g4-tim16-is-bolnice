@@ -213,7 +213,7 @@ namespace Bolnica.Servis
         {
             List<Termin> datumiUIntervalu = NadjiTermineUIntervalu(interval[0], interval[1]);
             List<Termin> terminiKodIzabranogLekara = PretraziPoLekaruUIntervalu(datumiUIntervalu, lekar);
-            return terminiKodIzabranogLekara;
+            return ObrisiDatumeIzProslosti(terminiKodIzabranogLekara);
         }
 
         public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin, String idLekara)

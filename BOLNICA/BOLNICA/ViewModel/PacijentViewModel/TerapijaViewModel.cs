@@ -100,8 +100,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void Detalji()
         {
-            DetaljiTerapije detaljiTerapije = new DetaljiTerapije(IzabranaTerapija);
-            detaljiTerapije.Show();
+            if (IzabranaTerapija != null)
+            {
+                DetaljiTerapije detaljiTerapije = new DetaljiTerapije(IzabranaTerapija);
+                detaljiTerapije.Show();
+            }
+            else
+            {
+                Poruka = "Izaberite terapiju!";
+            }
         }
 
 

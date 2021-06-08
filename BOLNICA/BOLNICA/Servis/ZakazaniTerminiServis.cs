@@ -248,7 +248,5 @@ namespace Model
             obavestenjaServis.DodajObavestenjeOZakazanomPregledu(korisnickoImePacijenta, termin);
         }
 
-
-       
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Bolnica.DTO;
+using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,11 @@ namespace Bolnica.PacijentFolder
 {
     public partial class DetaljiTerapije : Window
     {
+
         public DetaljiTerapije(TerapijaDTO izabranaTerapija)
         {
             InitializeComponent();
-            DataContext = izabranaTerapija;
+            this.DataContext = izabranaTerapija;
         }
 
         private void uRedu_Click(object sender, RoutedEventArgs e)

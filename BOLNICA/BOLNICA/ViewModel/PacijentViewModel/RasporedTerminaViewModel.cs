@@ -95,6 +95,11 @@ namespace Bolnica.ViewModel
             {
                 if (Validacija())
                 {
+                    if (!SelektovaniTermin.Lekar.Specijalizacija.ToString().Equals("nema"))
+                    {
+                        Poruka = "Možete otkazivati termine samo kod opšte prakse";
+                        return;
+                    }
                     if (!naloziPacijenataKontroler.NalogJeBlokiran(korisnickoIme))
                     {
 
@@ -151,6 +156,11 @@ namespace Bolnica.ViewModel
             {
                 if (Validacija())
                 {
+                    if (!SelektovaniTermin.Lekar.Specijalizacija.ToString().Equals("nema"))
+                    {
+                        Poruka = "Možete pomerati termine samo kod opšte prakse";
+                        return;
+                    }
                     if (!naloziPacijenataKontroler.NalogJeBlokiran(korisnickoIme))
                     {
                         PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
