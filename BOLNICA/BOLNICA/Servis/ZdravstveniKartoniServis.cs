@@ -121,6 +121,18 @@ namespace Bolnica.Model
             }
             return anamnezePacijenta;
         }
+        
+        public List<Alergeni> DobaviAlergenePacijenta(String idPacijenta)
+        {
+            Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
+            List<Alergeni> alergeniPacijenta = new List<Alergeni>();
+
+            foreach (Alergeni a in p.ZdravstveniKarton.Alergeni)
+            {
+                alergeniPacijenta.Add(a);
+            }
+            return alergeniPacijenta;
+        }
 
         public List<Terapija> DobaviSveTerapijePacijenta(String idPacijenta)
         {

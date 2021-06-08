@@ -15,6 +15,7 @@ namespace Bolnica.Kontroler
         UputKonverter uputiKonverter = new UputKonverter();
         LekKonverter lekoviKonverter = new LekKonverter();
         TerapijaKonverter terapijaKonverter = new TerapijaKonverter();
+        AlergeniKonverter alergeniKonverter = new AlergeniKonverter();
 
         public List<LekDTO> DobaviLekoveBezAlergena(String idIzabranogPacijenta)
         {
@@ -80,6 +81,18 @@ namespace Bolnica.Kontroler
             }
 
             return anamnezePacijenta;
+        }
+
+        public List<AlergenDTO> DobaviAlergenePacijenta(String idPacijenta)
+        {
+            List<AlergenDTO> alergeni = new List<AlergenDTO>();
+
+            foreach (Alergeni a in zdravstveniKartoniServis.DobaviAlergenePacijenta(idPacijenta))
+            {
+                alergeni.Add(alergeniKonverter.AlergenModelUAlergenDTO(a));
+            }
+
+            return alergeni;
         }
 
         public List<UputDTO> DobaviUputePacijenta(String idPacijenta)

@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Bolnica.View.LekarFolder.ZdravstveniKartonLekar.DodajAlergen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.LekarFolder.ZdravstveniKartonLekar"
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="850">
+    <Grid Background="WhiteSmoke" Width="728" Height="345">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="280*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
+        <Label Content="{p:LocExtension DodajAlergen}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Content="{p:LocExtension NazivLeka}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="0" Name="nazivLeka" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                     Height="20" Width="120" IsReadOnly="True"/>
+            <Label Grid.Column="0" Content="{p:LocExtension JacinaLeka}" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Grid.Row="3"/>
+            <TextBox Grid.Row="4" Grid.Column="0" Name="jacinaLeka" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                     Height="20" Width="120"  IsReadOnly="True"/>
+
+            <Label Grid.Column="0" Content="{p:LocExtension VremeReakcije}" VerticalAlignment="Bottom"  HorizontalAlignment="Center" Grid.Row="5"/>
+            <TextBox TextChanged="vremeReakcije_TextChanged" PreviewMouseDown="vremeReakcije_PreviewMouseDown" Grid.Row="6" Grid.Column="0" Name="vremeReakcije" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                     Height="20" Width="120" />
+
+
+
+            <StackPanel Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Height="150" Width="300">
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
+                    <Label Content="{p:LocExtension PretragaLeka}" FontWeight="Normal"/>
+                    <TextBox TextChanged="poljeZaPreragu_TextChanged" Width="150" Height="27" Name="poljeZaPreragu" FontWeight="Normal" />
+
+                </StackPanel>
+
+                <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="true"  SelectionChanged="dataGridLekovi_SelectionChanged" 
+                              SelectionMode="Single" Background="WhiteSmoke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  AutoGenerateColumns="False" MinWidth="290" MinHeight="100" MaxHeight="100"  Width="250" Height="58">
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding NazivLeka}" Width="100*"/>
+                        <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Jacina}" Width="100*"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+ 
+            <StackPanel Grid.Row="4" Grid.Column="1" Grid.RowSpan="4" Orientation="Vertical"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="300" Margin="0,0,0,5">
+
+                <Label Content="{p:LocExtension OpisReakcije}" HorizontalContentAlignment="Left" />
+                <TextBox Name="opisReakcije" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" 
+                         MinWidth="290" MinHeight="100" MaxHeight="65"  Width="247" Height="58"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Button Content="{p:LocExtension Odustani}" Name="odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" Grid.Column="0" Click="odustani_Click" />
+        <Button Content="{p:LocExtension Potvrdi}" Name="Potvrdi" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="2" Grid.Column="1" Click="Potvrdi_Click"/>
+
+    </Grid>
+</UserControl>

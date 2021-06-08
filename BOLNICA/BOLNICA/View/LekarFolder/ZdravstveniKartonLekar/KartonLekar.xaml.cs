@@ -3,6 +3,7 @@ using Bolnica.Izvestaj.Lekar;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
+using Bolnica.View.LekarFolder.ZdravstveniKartonLekar;
 using System;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -24,6 +25,8 @@ namespace Bolnica
         public static ObservableCollection<ReceptDTO> Recepti { get; set; }
         public static ObservableCollection<AnamnezaDTO> Anamneze { get; set; }
         public static ObservableCollection<UputDTO> Uputi { get; set; }
+
+        public static ObservableCollection<AlergenDTO> Alergeni { get; set; }
 
         public KartonLekar(String idIzabranogPregleda, int indeksTaba)
         {
@@ -61,6 +64,12 @@ namespace Bolnica
             foreach (UputDTO u in zdravstvenKartoniKontroler.DobaviUputePacijenta(idPacijenta))
             {
                 Uputi.Add(u);
+            }
+
+            Alergeni = new ObservableCollection<AlergenDTO>();
+            foreach (AlergenDTO a in zdravstvenKartoniKontroler.DobaviAlergenePacijenta(idPacijenta))
+            {
+                Alergeni.Add(a);
             }
 
         }
@@ -206,6 +215,10 @@ namespace Bolnica
             this.TabelaAnamneza.ItemsSource = Anamneze;
             CollectionView viewAnamneze = (CollectionView)CollectionViewSource.GetDefaultView(TabelaAnamneza.ItemsSource);
             viewAnamneze.Filter = FiltriranjeAnamneza;
+
+            this.dataGridAlergeni.ItemsSource = Alergeni;
+            CollectionView viewAlergeni = (CollectionView)CollectionViewSource.GetDefaultView(dataGridAlergeni.ItemsSource);
+            viewAlergeni.Filter = FiltriranjeAlergena;
         }
 
         private bool FiltriranjeRecepata(object item)
@@ -235,6 +248,15 @@ namespace Bolnica
 
         }
 
+        private bool FiltriranjeAlergena(object item)
+        {
+            if (String.IsNullOrEmpty(pretragaAlergena.Text))
+                return true;
+            else
+                return ((item as AlergenDTO).Lek.NazivLeka.IndexOf(pretragaAlergena.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+
+        }
+
         private void PretragaAnamneza_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(TabelaAnamneza.ItemsSource).Refresh();
@@ -250,6 +272,27 @@ namespace Bolnica
             CollectionViewSource.GetDefaultView(dataGridUputi.ItemsSource).Refresh();
         }
 
+        private void pretragaAlergena_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridAlergeni.ItemsSource).Refresh();
+        }
+
+        private void DodajAlergen(object sender, RoutedEventArgs e)
+        {
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+            LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new DodajAlergen(izabranPregled.IdPregleda));
+        }
+
+        private void InformacijeAlergeni(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            AlergenDTO izabranAlergen = (AlergenDTO)dataGridAlergeni.SelectedItem;
+
+            if (izabranAlergen != null)
+            {
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAlergeni(izabranAlergen, izabranPregled.IdPregleda));
+            }
+        }
 
     }
 }

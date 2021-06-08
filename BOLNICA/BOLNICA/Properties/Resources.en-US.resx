@@ -192,8 +192,14 @@
   <data name="ImePacijenta" xml:space="preserve">
     <value>Patient's name</value>
   </data>
+  <data name="InfoAlergen" xml:space="preserve">
+    <value>Informations about allergen</value>
+  </data>
   <data name="InfoLek" xml:space="preserve">
     <value>Basic information about the medicine</value>
+  </data>
+  <data name="IzmenaAlergen" xml:space="preserve">
+    <value>Edit allergen</value>
   </data>
   <data name="IzmenaLeka" xml:space="preserve">
     <value>Edit medicine</value>
@@ -296,6 +302,9 @@
   </data>
   <data name="Odustani" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="OpisReakcije" xml:space="preserve">
+    <value>Description of the reaction</value>
   </data>
   <data name="OtkaziTermin" xml:space="preserve">
     <value>Cancel an appointment</value>
@@ -416,6 +425,9 @@
   </data>
   <data name="VremePocetka" xml:space="preserve">
     <value>Start time</value>
+  </data>
+  <data name="VremeReakcije" xml:space="preserve">
+    <value>Time for the reaction</value>
   </data>
   <data name="VrstaTermina" xml:space="preserve">
     <value>Appointment type</value>

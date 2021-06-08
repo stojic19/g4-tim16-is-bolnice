@@ -115,6 +115,43 @@
 
         <TabItem Header="{p:LocExtension Alergeni}" FontStyle="Italic" FontSize="14">
 
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*"/>
+                    <ColumnDefinition Width="239*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="285*"/>
+
+                </Grid.RowDefinitions>
+
+                <DataGrid x:Name="dataGridAlergeni" ItemsSource="{Binding Alergeni}" IsReadOnly="true"
+                  SelectionMode="Single"  Background="WhiteSmoke" MouseDoubleClick="InformacijeAlergeni"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1"
+                  MinWidth="650" MinHeight="240"  Width="690" Height="240" Margin="29,5.4,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                    <DataGrid.Columns>
+                        
+                        <DataGridTextColumn Header="{p:LocExtension NazivLeka}" Binding="{Binding Lek.NazivLeka}" Width="120*"/>
+                        <DataGridTextColumn Header="{p:LocExtension JacinaLeka}" Binding="{Binding Lek.Jacina}" Width="120*"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,12,22,7.6" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Label  Content="{p:LocExtension PretragaLeka}" VerticalAlignment="Center" />
+                    <TextBox  Height="30" Width="150" Margin="10,0" Name="pretragaAlergena" TextChanged="pretragaAlergena_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="0,12,22,7.6" VerticalAlignment="Center" HorizontalAlignment="Right" >
+
+                    <Button  Content="{p:LocExtension DodajAlergen}" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="DodajAlergen"
+                              Height="30" Width="135" Margin="10,0" Style ="{DynamicResource DugmadKarton}"/>
+                </StackPanel>
+            </Grid>
+            
         </TabItem>
 
         <TabItem Header="{p:LocExtension Recept}" FontStyle="Italic" FontSize="14" Height="24" VerticalAlignment="Top">
@@ -199,9 +236,6 @@
                     <Button  Content="{p:LocExtension DodajUput}" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Click="DodavanjeUputa"
                               Height="30" Width="135" Margin="10,0" Style ="{DynamicResource DugmadKarton}"/>
                 </StackPanel>
-
-
-
             </Grid>
 
         </TabItem>

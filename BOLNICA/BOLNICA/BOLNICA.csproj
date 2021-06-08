@@ -348,8 +348,14 @@
     <Compile Include="View\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.xaml.cs">
+      <DependentUpon>DodajAlergen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.xaml.cs">
+      <DependentUpon>InformacijeAlergeni.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml.cs">
       <DependentUpon>InformacijeAnamaneza.xaml</DependentUpon>
@@ -721,9 +727,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml">
       <Generator>MSBuild:Compile</Generator>

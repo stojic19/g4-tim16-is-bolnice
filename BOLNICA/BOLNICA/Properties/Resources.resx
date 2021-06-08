@@ -192,8 +192,14 @@
   <data name="ImePacijenta" xml:space="preserve">
     <value>Ime pacijenta</value>
   </data>
+  <data name="InfoAlergen" xml:space="preserve">
+    <value>Informacije o alergenu</value>
+  </data>
   <data name="InfoLek" xml:space="preserve">
     <value>Osnovni podaci o leku</value>
+  </data>
+  <data name="IzmenaAlergen" xml:space="preserve">
+    <value>IzmenaAlergena</value>
   </data>
   <data name="IzmenaLeka" xml:space="preserve">
     <value>Izmena leka</value>
@@ -296,6 +302,9 @@
   </data>
   <data name="Odustani" xml:space="preserve">
     <value>Otkaži</value>
+  </data>
+  <data name="OpisReakcije" xml:space="preserve">
+    <value>Opis reakcije</value>
   </data>
   <data name="OtkaziTermin" xml:space="preserve">
     <value>Otkaži termin</value>
@@ -416,6 +425,9 @@
   </data>
   <data name="VremePocetka" xml:space="preserve">
     <value>Vreme početka</value>
+  </data>
+  <data name="VremeReakcije" xml:space="preserve">
+    <value>Vreme nakon kog se pojavila reakcija</value>
   </data>
   <data name="VrstaTermina" xml:space="preserve">
     <value>Vrsta termina</value>

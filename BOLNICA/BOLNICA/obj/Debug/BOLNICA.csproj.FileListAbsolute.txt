@@ -5086,3 +5086,7 @@ C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\Upravn
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeRenoviranja.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.Properties.Resources.en-US.resources
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\en-US\Bolnica.resources.dll
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.baml
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.g.cs
+D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.baml
