@@ -3,14 +3,9 @@ using Bolnica.Komande;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace Bolnica.ViewModel.LekarViewModel
@@ -22,6 +17,17 @@ namespace Bolnica.ViewModel.LekarViewModel
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private DispatcherTimer dispatcherTimer;
         private ObservableCollection<TerminDTO> termini;
+
+        public LekarRasporedViewModel()
+        {
+            InicijalizacijaTabele();
+            PodesavanjeTajmera();
+            InicijalizacijaPretrage();
+            otkaziTerminKomanda = new RelayCommand(OtkaziTermin);
+            zakaziTerminKomanda = new RelayCommand(ZakaziTermin);
+            izmeniTerminKomanda = new RelayCommand(IzmeniTermin);
+            prikazKartonaKomanda = new RelayCommand(PrikazKartona);
+        }
 
         public ObservableCollection<TerminDTO> Termini
         {
@@ -56,17 +62,6 @@ namespace Bolnica.ViewModel.LekarViewModel
                 izabranTermin = value;
                 OnPropertyChanged();
             }
-        }
-
-        public LekarRasporedViewModel()
-        {
-            InicijalizacijaTabele();
-            PodesavanjeTajmera();
-            InicijalizacijaPretrage();
-            otkaziTerminKomanda = new RelayCommand(OtkaziTermin);
-            zakaziTerminKomanda = new RelayCommand(ZakaziTermin);
-            izmeniTerminKomanda = new RelayCommand(IzmeniTermin);
-            prikazKartonaKomanda = new RelayCommand(PrikazKartona);
         }
 
         public void InicijalizacijaTabele()
