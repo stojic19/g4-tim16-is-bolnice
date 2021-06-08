@@ -336,6 +336,15 @@
     <Compile Include="View\LekarFolder\LekoviLekar\VerifikacijaLekova.xaml.cs">
       <DependentUpon>VerifikacijaLekova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LekarFolder\NalogLekara\IzmenaNaloga.xaml.cs">
+      <DependentUpon>IzmenaNaloga.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LekarFolder\NalogLekara\NalogLekara.xaml.cs">
+      <DependentUpon>NalogLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LekarFolder\NalogLekara\PromenaLozinke.xaml.cs">
+      <DependentUpon>PromenaLozinke.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LekarFolder\PocetnaStranicaLekar.xaml.cs">
       <DependentUpon>PocetnaStranicaLekar.xaml</DependentUpon>
     </Compile>
@@ -710,6 +719,18 @@
     <Page Include="View\LekarFolder\LekoviLekar\VerifikacijaLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LekarFolder\NalogLekara\IzmenaNaloga.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LekarFolder\NalogLekara\NalogLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LekarFolder\NalogLekara\PromenaLozinke.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LekarFolder\PocetnaStranicaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>

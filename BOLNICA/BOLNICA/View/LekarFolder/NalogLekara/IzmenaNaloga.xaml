@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Bolnica.View.LekarFolder.NalogLekara.IzmenaNaloga"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="850">
+    <Grid Background="WhiteSmoke" Width="728" Height="345">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
+        <Label Content="{p:LocExtension IzmenaNaloga}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
+
+
+        <Label Grid.Column="0" Grid.Row="1" Content="{p:LocExtension KorisnickoIme}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="2" Content="{p:LocExtension Ime}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="3" Content="{p:LocExtension Prezime}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="4" Content="{p:LocExtension Email}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="5" Content="{p:LocExtension BrojTelefona}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="6" Content="{p:LocExtension Adresa}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Label Grid.Column="0" Grid.Row="7" Content="{p:LocExtension Lozinka}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+
+        <TextBox Grid.Column="1" Grid.Row="1" Name="korIme" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="korIme_PreviewMouseDown" LostKeyboardFocus="korIme_LostKeyboardFocus"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="ime" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="ime_PreviewMouseDown" LostKeyboardFocus="ime_LostKeyboardFocus"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Name="prezime" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="prezime_PreviewMouseDown" LostKeyboardFocus="prezime_LostKeyboardFocus"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Name="email" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="email_PreviewMouseDown" LostKeyboardFocus="email_LostKeyboardFocus"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Name="telefon" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="telefon_PreviewMouseDown" LostKeyboardFocus="telefon_LostKeyboardFocus"/>
+        <TextBox Grid.Column="1" Grid.Row="6" Name="adresa" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" PreviewMouseDown="adresa_PreviewMouseDown" LostKeyboardFocus="adresa_LostKeyboardFocus"/>
+        <Button Grid.Column="1" Grid.Row="7" Content="{p:LocExtension PromenaLozinke}" Name="promenaLozinke" VerticalAlignment="Center" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Height="20" Width="150" Click="promenaLozinke_Click"/>
+
+        <Button Content="{p:LocExtension Odustani}" Name="odustani" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,20,0" Grid.Row="9" Grid.Column="0" Click="odustani_Click"/>
+        <Button Content="{p:LocExtension Potvrdi}" Name="potvrdi" Width="150" Height="22" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="9" Grid.Column="1" Click="potvrdi_Click"/>
+
+    </Grid>
+</UserControl>

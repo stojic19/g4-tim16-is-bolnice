@@ -26,6 +26,8 @@
             <TextBox  Height="25" Width="150" Margin="7,8,57.8,7" Name="pretragaDatuma" TextChanged="pretragaDatuma_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         </StackPanel>
 
+        <Label Name="obavestenje" Visibility="Hidden" Background="White" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3" Margin="23,0" Height="25" Foreground="Black"/>
+
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
                   SelectionMode="Single"  Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"

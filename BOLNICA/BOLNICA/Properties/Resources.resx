@@ -186,6 +186,9 @@
   <data name="DodavanjeSastojka" xml:space="preserve">
     <value>Dodavanje novog sastojka</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
   <data name="Ime" xml:space="preserve">
     <value>Ime</value>
   </data>
@@ -240,6 +243,9 @@
   <data name="KolicinaStanje" xml:space="preserve">
     <value>Količina na stanju</value>
   </data>
+  <data name="KorisnickoIme" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
   <data name="KrajLecenja" xml:space="preserve">
     <value>Kraj lečenja</value>
   </data>
@@ -275,6 +281,9 @@
   </data>
   <data name="Ne" xml:space="preserve">
     <value>Ne</value>
+  </data>
+  <data name="NovaLozinka" xml:space="preserve">
+    <value>Nova lozinka</value>
   </data>
   <data name="Obavestenja" xml:space="preserve">
     <value>Obaveštenja</value>
@@ -324,6 +333,9 @@
   <data name="Pol" xml:space="preserve">
     <value>Pol</value>
   </data>
+  <data name="PonoviLozinku" xml:space="preserve">
+    <value>Ponovite lozniku</value>
+  </data>
   <data name="Potvrdi" xml:space="preserve">
     <value>Potvrdi</value>
   </data>
@@ -353,6 +365,9 @@
   </data>
   <data name="ProduziLecenje" xml:space="preserve">
     <value>Produži lečenje</value>
+  </data>
+  <data name="PromenaLozinke" xml:space="preserve">
+    <value>Promeni lozinku</value>
   </data>
   <data name="Prostorija" xml:space="preserve">
     <value>Prostorija</value>
@@ -390,8 +405,14 @@
   <data name="Specijalisticki" xml:space="preserve">
     <value>Specijalistički pregled</value>
   </data>
+  <data name="Specijalizacija" xml:space="preserve">
+    <value>Specijalizacija</value>
+  </data>
   <data name="Stacionarno" xml:space="preserve">
     <value>Stacionarno lečenje</value>
+  </data>
+  <data name="StaraLozinka" xml:space="preserve">
+    <value>Stara lozinka</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status naloga</value>

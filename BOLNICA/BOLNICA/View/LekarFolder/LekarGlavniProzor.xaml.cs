@@ -1,6 +1,6 @@
 ﻿using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
-
+using Bolnica.View.LekarFolder.NalogLekara;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -118,7 +118,7 @@ namespace Bolnica.LekarFolder
 
         private void PrikazProfila(object sender, RoutedEventArgs e)
         {
-
+            PromenaPogleda(new NalogLekara(KoriscnickoImeLekara));
         }
 
         private void PrikazObavestenja(object sender, RoutedEventArgs e)
@@ -128,7 +128,7 @@ namespace Bolnica.LekarFolder
 
         private void IzmenaNaloga(object sender, RoutedEventArgs e)
         {
-
+            PromenaPogleda(new IzmenaNaloga(KoriscnickoImeLekara));
         }
 
         private void Odjava(object sender, RoutedEventArgs e)
@@ -140,7 +140,7 @@ namespace Bolnica.LekarFolder
 
         private void PromenaLozinke(object sender, RoutedEventArgs e)
         {
-
+            PromenaPogleda(new PromenaLozinke(KoriscnickoImeLekara));
         }
 
         private void OtvaranjeMojProfil(object sender, RoutedEventArgs e)

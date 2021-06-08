@@ -5,6 +5,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Threading;
 
 namespace Bolnica
 {
@@ -15,6 +16,7 @@ namespace Bolnica
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         public static ObservableCollection<TerminDTO> Termini { get; set; }
         public String korisnik = null;
+        private DispatcherTimer dispatcherTimer;
 
         public PrikazTerminaLekara(String korIme)
         {
@@ -35,7 +37,22 @@ namespace Bolnica
             }
 
             InicijalizacijaPretrage();
+            PodesavanjeTajmera();
 
+        }
+
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+        }
+
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            obavestenje.Visibility = Visibility.Collapsed;
+            dispatcherTimer.IsEnabled = false;
         }
 
         private void ZakaziTermin(object sender, RoutedEventArgs e)
@@ -80,16 +97,29 @@ namespace Bolnica
 
             if (izabranZaBrisanje != null)
             {
+                if (System.Windows.MessageBox.Show("Da li ste sigurni da želite da otkažete termin?", "Otkazivanje termina", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                {
+                    return;
+                }
+
                 preglediKontroler.UklanjanjePregleda(izabranZaBrisanje.IdTermina);
                 if (terminKontroler.OtkaziTerminLekar(izabranZaBrisanje.IdTermina))
                 {
                     Termini.Remove(izabranZaBrisanje);
+                    podesiObavestenje("Termin uspešno otkazan!");
                 }
             }
             else
             {
                 MessageBox.Show("Izaberite termin koji želite da otkažete!");
             }
+        }
+
+        public void podesiObavestenje(String poruka)
+        {
+            obavestenje.Content = poruka;
+            obavestenje.Visibility = Visibility.Visible;
+            dispatcherTimer.Start();
         }
 
         private void PrikazKartonaPacijenta(object sender, RoutedEventArgs e)

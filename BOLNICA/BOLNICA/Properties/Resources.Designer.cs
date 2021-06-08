@@ -268,6 +268,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ime.
         /// </summary>
         internal static string Ime {
@@ -430,6 +439,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Korisničko ime.
+        /// </summary>
+        internal static string KorisnickoIme {
+            get {
+                return ResourceManager.GetString("KorisnickoIme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kraj lečenja.
         /// </summary>
         internal static string KrajLecenja {
@@ -534,6 +552,15 @@ namespace Bolnica.Properties {
         internal static string Ne {
             get {
                 return ResourceManager.GetString("Ne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nova lozinka.
+        /// </summary>
+        internal static string NovaLozinka {
+            get {
+                return ResourceManager.GetString("NovaLozinka", resourceCulture);
             }
         }
         
@@ -682,6 +709,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ponovite lozniku.
+        /// </summary>
+        internal static string PonoviLozinku {
+            get {
+                return ResourceManager.GetString("PonoviLozinku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Potvrdi.
         /// </summary>
         internal static string Potvrdi {
@@ -768,6 +804,15 @@ namespace Bolnica.Properties {
         internal static string ProduziLecenje {
             get {
                 return ResourceManager.GetString("ProduziLecenje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promeni lozinku.
+        /// </summary>
+        internal static string PromenaLozinke {
+            get {
+                return ResourceManager.GetString("PromenaLozinke", resourceCulture);
             }
         }
         
@@ -880,11 +925,29 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specijalizacija.
+        /// </summary>
+        internal static string Specijalizacija {
+            get {
+                return ResourceManager.GetString("Specijalizacija", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stacionarno lečenje.
         /// </summary>
         internal static string Stacionarno {
             get {
                 return ResourceManager.GetString("Stacionarno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stara lozinka.
+        /// </summary>
+        internal static string StaraLozinka {
+            get {
+                return ResourceManager.GetString("StaraLozinka", resourceCulture);
             }
         }
         
