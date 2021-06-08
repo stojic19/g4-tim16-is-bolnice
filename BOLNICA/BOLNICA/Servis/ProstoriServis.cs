@@ -24,13 +24,11 @@ namespace Model
             List<Termin> termini = DobaviZakazaneTermineZaVreme(datum);
             foreach (Prostor prostor in SviProstori())
             {
-                if (prostor.VrstaProstora == VrsteProstora.soba)
+                if (prostor.VrstaProstora == VrsteProstora.ordinacija)
                 {
                     bool zauzet = false;
-                    Console.WriteLine(prostor.IdProstora);
                     foreach (Termin terminZaProveru in termini)
                     {
-                        Console.WriteLine(terminZaProveru.Prostor.IdProstora);
                         if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
                         {
                             zauzet = true;
@@ -43,7 +41,30 @@ namespace Model
                     }
                 }
             }
-            Console.WriteLine("Nula");
+            return null;
+        }
+        public Prostor DodeliProstorZaOperaciju(DateTime datum)
+        {
+            List<Termin> termini = DobaviZakazaneTermineZaVreme(datum);
+            foreach (Prostor prostor in SviProstori())
+            {
+                if (prostor.VrstaProstora == VrsteProstora.sala)
+                {
+                    bool zauzet = false;
+                    foreach (Termin terminZaProveru in termini)
+                    {
+                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
+                        {
+                            zauzet = true;
+                            break;
+                        }
+                    }
+                    if (!zauzet)
+                    {
+                        return prostor;
+                    }
+                }
+            }
             return null;
         }
         private List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
@@ -54,7 +75,6 @@ namespace Model
                 if (DateTime.Compare(termin.Datum, datum) == 0)
                 {
                     termini.Add(termin);
-                    Console.WriteLine("Nasao");
                 }
             }
             return termini;

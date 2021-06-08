@@ -16,12 +16,25 @@ namespace Bolnica.Servis
         SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
         LekariServis lekariServis = new LekariServis();
 
+        public void ObrisiStareSlobodneTermine()
+        {
+            List<Termin> termini = slobodniTerminiRepozitorijum.DobaviSveObjekte();
+            foreach(Termin termin in termini)
+            {
+                if(DateTime.Compare(termin.Datum, DateTime.Now)<0)
+                {
+                    UkloniSlobodanTermin(termin);
+                }
+            }
+        }
         public List<Termin> DobaviSveSlobodneTermine()
         {
+            ObrisiStareSlobodneTermine();
             return slobodniTerminiRepozitorijum.DobaviSveObjekte();
         }
         public List<Termin> DobaviSlobodneTermineZaLekara(string idLekara)
         {
+            ObrisiStareSlobodneTermine();
             return slobodniTerminiRepozitorijum.DobaviSlobodneTerminePoIdLekara(idLekara);
         }
 
@@ -36,6 +49,7 @@ namespace Bolnica.Servis
 
         public List<Termin> DobaviSveSlobodneTermineZaOperacije()
         {
+            ObrisiStareSlobodneTermine();
             List<Termin> termini = new List<Termin>();
             foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
             {

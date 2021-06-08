@@ -44,6 +44,7 @@ namespace Bolnica.SekretarFolder
             this.dataGridLekari.ItemsSource = Lekari;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekari.ItemsSource);
             view.Filter = FiltriranjeLekara;
+            lekariKontroler.ObrisiStareRadneDane();
         }
         private bool FiltriranjeLekara(object item)
         {

@@ -11,7 +11,72 @@
     <KorisnickoIme>MarkoAndjelic</KorisnickoIme>
     <Lozinka>markoandjelic</Lozinka>
     <Pol>muski</Pol>
-    <RadniDani />
+    <RadniDani>
+      <RadniDan>
+        <PocetakSmene>2021-06-09T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-09T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-10T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-10T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-14T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-15T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-15T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-16T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-16T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-17T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-17T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-18T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-18T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-21T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-21T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-22T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-23T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-24T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-25T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-28T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-29T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-30T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-30T15:00:00</KrajSmene>
+      </RadniDan>
+    </RadniDani>
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>
       <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
@@ -33,16 +98,68 @@
     <Pol>muski</Pol>
     <RadniDani>
       <RadniDan>
-        <PocetakSmene>2021-06-01T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-01T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
         <PocetakSmene>2021-06-22T15:00:00</PocetakSmene>
         <KrajSmene>2021-06-22T23:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
         <PocetakSmene>2021-06-23T15:00:00</PocetakSmene>
         <KrajSmene>2021-06-23T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-09T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-09T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-10T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-10T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-11T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-11T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-14T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-14T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-15T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-15T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-16T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-16T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-17T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-17T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-18T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-18T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-21T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-24T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-24T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-25T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-25T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-28T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-28T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-29T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-29T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-30T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-30T23:00:00</KrajSmene>
       </RadniDan>
     </RadniDani>
     <Godisnji>
@@ -77,6 +194,58 @@
         <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
         <KrajSmene>2021-06-21T23:00:00</KrajSmene>
       </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-09T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-09T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-10T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-10T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-14T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-15T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-15T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-16T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-16T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-22T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-23T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-24T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-25T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-28T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-29T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-30T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-30T15:00:00</KrajSmene>
+      </RadniDan>
     </RadniDani>
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>
@@ -99,26 +268,6 @@
     <Pol>zenski</Pol>
     <RadniDani>
       <RadniDan>
-        <PocetakSmene>2021-06-02T15:00:00</PocetakSmene>
-        <KrajSmene>2021-06-02T23:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-01T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-01T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-04T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-04T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <PocetakSmene>2021-06-07T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-07T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
         <PocetakSmene>2021-06-08T07:00:00</PocetakSmene>
         <KrajSmene>2021-06-08T15:00:00</KrajSmene>
       </RadniDan>
@@ -133,6 +282,58 @@
       <RadniDan>
         <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
         <KrajSmene>2021-06-29T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-10T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-10T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-11T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-11T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-14T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-14T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-15T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-15T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-16T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-16T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-17T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-17T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-18T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-18T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-21T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-22T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-22T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-23T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-23T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-24T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-24T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-25T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-25T23:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-30T15:00:00</PocetakSmene>
+        <KrajSmene>2021-06-30T23:00:00</KrajSmene>
       </RadniDan>
     </RadniDani>
     <Godisnji>
@@ -174,6 +375,58 @@
       <RadniDan>
         <PocetakSmene>2021-07-02T07:00:00</PocetakSmene>
         <KrajSmene>2021-07-02T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-09T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-09T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-10T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-10T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-14T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-17T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-17T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-18T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-18T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-21T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-21T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-22T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-23T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-24T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-25T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-28T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
+        <KrajSmene>2021-06-29T15:00:00</KrajSmene>
       </RadniDan>
     </RadniDani>
     <Godisnji>

@@ -135,6 +135,35 @@
             <Button Content="Kreiranje guest naloga" Grid.Column="1" Grid.Row="2"  Margin="0,118,408,108"  Width="157" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click2" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.RowSpan="2"/>
 
+            <Border x:Name="lblDemo" Margin="46,10,150,0">
+                <Label x:Name="lblDemo1" Background="Black" Foreground="White" Content="Demo je u toku!" Margin="10,20,0,27"/>
+            </Border>
+            <Button x:Name="btnDemo" Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,12" Grid.Column="1">
+                <Image Source="/Slike/Sekretar/demo.png" Height="57" />
+            </Button>
+            <Button x:Name="btnStop" Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,10" Grid.Column="1">
+                <Image Source="/Slike/Sekretar/stop.png" Height="57" />
+            </Button>
+            <Border x:Name="lblPacijent" Margin="28,40,141,40" Grid.Row="1">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir pacijenta" Margin="10,20,0,20"/>
+            </Border>
+            <Image x:Name="cursor1" Source="/Slike/Sekretar/cursor.png" Margin="214,67,358,25" Grid.Row="1" Grid.Column="1"/>
+            <Border x:Name="lblGost" Margin="10,101,584,94" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <Label Background="Black" Foreground="White" Content="U slučaju da pacijent ne poseduje nalog, kreira se guest nalog" Margin="10,20,0,20"/>
+            </Border>
+            <Border  x:Name="lblOblast" Margin="20,24,150,24" Grid.Row="3">
+                <Label Background="Black" Foreground="White" Content="Vrši se odabir specijalizacje lekara" Margin="10,20,-53,20"/>
+            </Border>
+            <Image x:Name="cursor2" Source="/Slike/Sekretar/cursor.png" Margin="175,132,397,66" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+            <Image x:Name="cursor3" Source="/Slike/Sekretar/cursor.png" Margin="137,57,435,13" Grid.Row="3" Grid.Column="1"/>
+            <Border  x:Name="lblTrajanje" Margin="28,22,105,26" Grid.Row="4">
+                <Label Background="Black" Foreground="White" Content="Unosi se trajanje operacije" Margin="10,20,21,20"/>
+            </Border>
+            <Image x:Name="cursor4" Source="/Slike/Sekretar/cursor.png" Margin="137,50,435,108" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2"/>
+            <Border  x:Name="lblPotvrdi" Margin="293,103,98,54" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1">
+                <Label Background="Black" Foreground="White" Content="Nakon odabira parametara prisika se dugme potvrdi" Margin="10,20,-71,20"/>
+            </Border>
+            <Image x:Name="cursor5" Source="/Slike/Sekretar/cursor.png" Margin="246,10,326,16" Grid.Row="5" Grid.Column="1"/>
         </Grid>
     </StackPanel>
 </UserControl>

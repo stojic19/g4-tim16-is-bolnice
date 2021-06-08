@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,14 +32,35 @@ namespace Bolnica.SekretarFolder.Operacija
     {
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
         public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
+        CancellationTokenSource cts;
         public HitnaOperacijaZakazivanje()
         {
             InitializeComponent();
-
+            ObicanMod();
             this.DataContext = this;
             PopuniTabeluPacijenata();
         }
+        private void ObicanMod()
+        {
+            btnDemo.Visibility = Visibility.Visible;
+            btnStop.Visibility = Visibility.Hidden;
+            lblDemo.Visibility = Visibility.Hidden;
+            lblPacijent.Visibility = Visibility.Hidden;
+            cursor1.Visibility = Visibility.Hidden;
+            lblGost.Visibility = Visibility.Hidden;
+            cursor2.Visibility = Visibility.Hidden;
+            cursor3.Visibility = Visibility.Hidden;
+            lblOblast.Visibility = Visibility.Hidden;
+            cursor4.Visibility = Visibility.Hidden;
+            lblTrajanje.Visibility = Visibility.Hidden;
+            cursor5.Visibility = Visibility.Hidden;
+            lblPotvrdi.Visibility = Visibility.Hidden;
 
+            dataGridPacijenti.SelectedIndex = -1;
+            cbOblast.SelectedIndex = -1;
+            tbTrajanje.Text = "";
+            
+        }
         private void PopuniTabeluPacijenata()
         {
             SviPacijenti = new ObservableCollection<PacijentDTO>();
@@ -61,6 +83,196 @@ namespace Bolnica.SekretarFolder.Operacija
         private void poljeZaPreraguPacijenata_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(dataGridPacijenti.ItemsSource).Refresh();
+        }
+        private async Task DemoAsync(CancellationToken token)
+        {
+            for (int i = 0; ; i++)
+            {
+                token.ThrowIfCancellationRequested();
+                await Demo();
+            }
+        }
+        private async void Demo_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnStop.Visibility == Visibility.Visible)
+            {
+                btnStop.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btnStop.Visibility = Visibility.Visible;
+            }
+            if (cts == null)
+            {
+                cts = new CancellationTokenSource();
+                try
+                {
+                    await DemoAsync(cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                }
+                finally
+                {
+                    cts = null;
+                }
+            }
+            else
+            {
+                cts.Cancel();
+                cts = null;
+            }
+        }
+        private async Task Demo()
+        {
+            btnDemo.Visibility = Visibility.Hidden;
+            btnStop.Visibility = Visibility.Visible;
+            lblDemo.Visibility = Visibility.Visible;
+
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1500);
+            if (Provera())
+            {
+                return;
+            }
+            lblPacijent.Visibility = Visibility.Visible;
+            cursor1.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
+            dataGridPacijenti.SelectedIndex = 1;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
+            lblPacijent.Visibility = Visibility.Hidden;
+            cursor1.Visibility = Visibility.Hidden;
+
+            lblGost.Visibility = Visibility.Visible;
+            cursor2.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(3000);
+            if (Provera())
+            {
+                return;
+            }
+            lblGost.Visibility = Visibility.Hidden;
+            cursor2.Visibility = Visibility.Hidden;
+
+            lblOblast.Visibility = Visibility.Visible;
+            cursor3.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
+            cbOblast.SelectedIndex = 1;
+            await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
+            lblOblast.Visibility = Visibility.Hidden;
+            cursor3.Visibility = Visibility.Hidden;
+
+            lblTrajanje.Visibility = Visibility.Visible;
+            cursor4.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
+            tbTrajanje.Text = "1";
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(500);
+            if (Provera())
+            {
+                return;
+            }
+            tbTrajanje.Text = "10";
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(500);
+            if (Provera())
+            {
+                return;
+            }
+            tbTrajanje.Text = "100";
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1500);
+            if (Provera())
+            {
+                return;
+            }
+            lblTrajanje.Visibility = Visibility.Hidden;
+            cursor4.Visibility = Visibility.Hidden;
+
+            lblPotvrdi.Visibility = Visibility.Visible;
+            cursor5.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
+            lblPotvrdi.Visibility = Visibility.Hidden;
+            cursor5.Visibility = Visibility.Hidden;
+            if (Provera())
+            {
+                return;
+            }
+            await Task.Delay(1000);
+
+            dataGridPacijenti.SelectedIndex = -1;
+            cbOblast.SelectedIndex = -1;
+            tbTrajanje.Text = "";
+
+            lblDemo.Visibility = Visibility.Hidden;
+        }
+        private bool Provera()
+        {
+            if (cts == null)
+            {
+                ObicanMod();
+                return true;
+            }
+            return false;
         }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {

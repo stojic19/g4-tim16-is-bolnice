@@ -1916,7 +1916,6 @@ C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarF
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.g.cs
-C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocAnkete.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocGlavniMeni.g.cs
@@ -2020,7 +2019,6 @@ C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarF
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.baml
-C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocAnkete.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocGlavniMeni.baml
@@ -5040,7 +5038,6 @@ C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\Pacije
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLozinku.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzvestajTerapije.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.g.cs
-C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\LicniProfil.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaPregledSekretar.g.cs
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.g.cs
@@ -5065,7 +5062,6 @@ C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\Pacije
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLozinku.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzvestajTerapije.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.baml
-C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\LicniProfil.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaPregledSekretar.baml
 C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.baml
@@ -5853,3 +5849,7 @@ C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\De
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.baml

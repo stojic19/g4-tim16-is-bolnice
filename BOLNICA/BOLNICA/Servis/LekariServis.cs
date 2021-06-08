@@ -13,6 +13,22 @@ namespace Bolnica.Servis
     {
         LekariRepozitorijum lekariRepozitorijum = new LekariRepozitorijum();
 
+        public void ObrisiStareRadneDane()
+        {
+            List<Lekar> lekari = lekariRepozitorijum.DobaviSveObjekte();
+            foreach(Lekar lekar in lekari)
+            {
+                List<RadniDan> radniDani = lekar.RadniDani;
+                foreach(RadniDan radniDan in radniDani)
+                {
+                    if(DateTime.Compare(radniDan.PocetakSmene,DateTime.Now.AddDays(-1))<0)
+                    {
+                        lekar.UkloniRadniDan(radniDan);
+                    }
+                }
+                IzmeniLekara(lekar);
+            }
+        }
         public Lekar PretraziPoId(String idLekara)
         {
             return lekariRepozitorijum.PretraziPoId("//ArrayOfLekar/Lekar[KorisnickoIme='" + idLekara + "']");

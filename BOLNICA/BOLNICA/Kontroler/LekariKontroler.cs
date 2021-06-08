@@ -15,6 +15,10 @@ namespace Bolnica.Kontroler
         LekariServis lekariServis = new LekariServis();
         LekarKonverter lekarKonverter = new LekarKonverter();
 
+        public void ObrisiStareRadneDane()
+        {
+            lekariServis.ObrisiStareRadneDane();
+        }
         public List<LekarDTO> DobaviSveLekare()
         {
             List<LekarDTO> sviLekari = new List<LekarDTO>();

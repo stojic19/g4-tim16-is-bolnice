@@ -31,6 +31,9 @@ namespace Bolnica.Sekretar.Pregled
         private static TerminDTO termin;
         public PomeranjePregledaSekretar(TerminDTO t)
         {
+            datumPocetak.DisplayDateStart = DateTime.Today;
+            datumKraj.DisplayDateStart = DateTime.Today;
+
             InitializeComponent();
             termin = t;
         }

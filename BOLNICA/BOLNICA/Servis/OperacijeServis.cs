@@ -21,6 +21,7 @@ namespace Bolnica.Model
         LekariServis lekariServis = new LekariServis();
         PacijentKonverter pacijentKonverter = new PacijentKonverter();
         TerminKonverter terminKonverter = new TerminKonverter();
+        ProstoriServis prostoriServis = new ProstoriServis();
 
         public List<Termin> DobaviSveOperacije()
         {
@@ -436,7 +437,7 @@ namespace Bolnica.Model
         {
             Pacijent pacijent = pacijentKonverter.PacijentDTOUModel(pacijentDTO);
             Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
-            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, trajanje, noviTermin.Datum, new Prostor(), pacijent, lekar);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, trajanje, noviTermin.Datum, prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum), pacijent, lekar);
             PomeriTerminUSledeciSlobodan(termin, brojDana);
             termin.Pacijent = pacijent;
             bool povratnaVrednost = ZakazivanjeHitneOperacije(noviTermin, trajanje);
@@ -474,7 +475,7 @@ namespace Bolnica.Model
         {
             Pacijent pacijent = naloziPacijenataServis.PretraziPoId(noviTermin.IdPacijenta);
             Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
-            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, new Prostor(), pacijent, lekar);
+            Termin termin = new Termin(noviTermin.IdTermina, VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum), pacijent, lekar);
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
             string trenutnoVreme;

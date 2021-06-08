@@ -44,6 +44,9 @@ namespace Bolnica.Sekretar.Pregled
             SviPacijenti = new ObservableCollection<PacijentDTO>();
             SviLekari = new ObservableCollection<LekarDTO>();
 
+            datumPocetak.DisplayDateStart = DateTime.Today;
+            datumKraj.DisplayDateStart = DateTime.Today;
+
             foreach (PacijentDTO p in naloziPacijenataKontroler.DobaviSveNaloge())
             {
                 SviPacijenti.Add(p);
@@ -103,29 +106,6 @@ namespace Bolnica.Sekretar.Pregled
             datumKraj.SelectedDate = null;
             dataGridLekari.SelectedIndex = -1;
             prioritet.SelectedIndex = -1;
-        }
-        private async void ScreenTap(object sender, System.Windows.Input.InputGesture e)
-        {
-            if (cts == null)
-            {
-                cts = new CancellationTokenSource();
-                try
-                {
-                    await DemoAsync(cts.Token);
-                }
-                catch (OperationCanceledException)
-                {
-                }
-                finally
-                {
-                    cts = null;
-                }
-            }
-            else
-            {
-                cts.Cancel();
-                cts = null;
-            }
         }
 
         private async Task DemoAsync(CancellationToken token)
