@@ -29,7 +29,7 @@ namespace Bolnica
             this.korisnickoIme = korisnickoIme;
             GlavniSadrzaj = this.MainPanel;
             PromeniPrikaz(new PrikazObavestenjaPacijent(korisnickoIme));
-            naslovStrane.Content = "          Obaveštenja";
+            naslovStrane.Content = "Zdravo Klinika - Obaveštenja";
         }
         
         public static Grid GetGlavniSadrzaj()
@@ -53,53 +53,53 @@ namespace Bolnica
         private void obavestenja_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazObavestenjaPacijent(korisnickoIme));
-            naslovStrane.Content = "          Obaveštenja";
+            naslovStrane.Content = "Zdravo Klinika -   Obaveštenja";
         }
 
         private void Zakazi_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new ZakazivanjeSaPrioritetomPacijent(korisnickoIme));
-            naslovStrane.Content = "    Zakaži pregled";
+            naslovStrane.Content = "Zdravo Klinika -   Zakaži pregled";
         }
 
         private void Raspored_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazRasporedaPacijent(korisnickoIme));
-            naslovStrane.Content = "          Raspored";
+            naslovStrane.Content = "Zdravo Klinika -   Raspored";
         }
 
         private void Terapija_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazTerapijePacijent(korisnickoIme));
-            naslovStrane.Content = "          Terapija";
+            naslovStrane.Content = "Zdravo Klinika -   Terapija";
         }
 
         private void Karton_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazKartona(korisnickoIme));
-            naslovStrane.Content = "Zdravstveni karton";
+            naslovStrane.Content = "Zdravo Klinika -   Zdravstveni karton";
         }
 
         private void Ankete_Click(object sender, RoutedEventArgs e)
         {
             PromeniPrikaz(new PrikazAnketa(korisnickoIme));
-            naslovStrane.Content = "          Ankete";
+            naslovStrane.Content = "Zdravo Klinika -   Ankete";
         }
 
         private void Pomoc_Click(object sender, RoutedEventArgs e)
         {
-           naslovStrane.Content = "     Pomoć";
+           naslovStrane.Content = "Zdravo Klinika -   Pomoć";
             PromeniPrikaz(new Pomoc());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+           
         }
 
         private void mojNalog_Click(object sender, RoutedEventArgs e)
         {
-            naslovStrane.Content = "     Lični profil";
+            naslovStrane.Content = "Zdravo Klinika -   Moj nalog";
             PromeniPrikaz(new LicniProfil(korisnickoIme));
         }
 
@@ -112,7 +112,8 @@ namespace Bolnica
 
         private void oceni_Click(object sender, RoutedEventArgs e)
         {
-
+            naslovStrane.Content = "Zdravo Klinika -   Oceni aplikaciju";
+            PromeniPrikaz(new OceniAplikaciju(korisnickoIme));
         }
     }
 }

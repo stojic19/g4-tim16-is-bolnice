@@ -34,7 +34,7 @@
             </Grid.ColumnDefinitions>
 
 
-            <Label  Grid.Column="1" Grid.ColumnSpan="3"  Margin="70.8,10,9.2,10"  Name="naslovStrane" FontWeight="Thin" FontSize="15" FontStyle="Italic" Foreground="AntiqueWhite"></Label>
+            <Label Grid.ColumnSpan="4"  Margin="10,10,9.2,10"  Name="naslovStrane" FontWeight="Thin" FontSize="15" FontStyle="Italic" Foreground="AntiqueWhite"/>
 
             <Button Grid.Column="4" Background="#FF31577E" Name="obavestenja" Click="obavestenja_Click" Margin="6.8,10,7.6,10">
                 <Image Source="/Slike/PacijentSlike/obavestenja3.png" Height="44" Width="42" RenderTransformOrigin="0.5,0.5" >
@@ -52,12 +52,12 @@
             <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="0.4,10,0,10" Grid.Column="5" Width="42" >
                 <StackPanel Width="150" Background="AliceBlue">
                     <Button Name="mojNalog" Content="Moj nalog" Click="mojNalog_Click"/>
-                    <Button Name="oceni" Content="Oceni Aplikaciju" Click="oceni_Click"/>
+                    <Button Name="oceni" Content="Oceni " Click="oceni_Click"/>
 
 
                     <Separator/>
                     <Button Name="odjaviSe" Content="Odjavi se" Click="odjaviSe_Click" />
-                   
+
                 </StackPanel>
             </materialDesign:PopupBox>
 
