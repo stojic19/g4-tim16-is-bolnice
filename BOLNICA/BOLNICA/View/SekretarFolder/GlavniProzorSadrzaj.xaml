@@ -58,5 +58,7 @@
             </StackPanel>
         </materialDesign:PopupBox>
         <Label Content="Zdravo klinika" FontSize="40" HorizontalAlignment="Left" Margin="370,168,0,0" VerticalAlignment="Top" Height="58" Width="285" FontWeight="Bold"/>
+        <Label Name="lblGotov" FontSize="25" Content="Izveštaj je završen" Background="white" HorizontalAlignment="Left" Margin="744,92,0,0" VerticalAlignment="Top" Width="255" Height="50"/>
+        <Image Name="check" Source="/Slike/Sekretar/check.png" Margin="938,92,25,626"/>
     </Grid>
 </UserControl>

@@ -29,6 +29,8 @@ namespace Bolnica.SekretarFolder
         public GlavniProzorSadrzaj()
         {
             InitializeComponent();
+            lblGotov.Visibility = Visibility.Hidden;
+            check.Visibility = Visibility.Hidden;
         }
         private void Nalozi_Click(object sender, RoutedEventArgs e)
         {
@@ -107,7 +109,17 @@ namespace Bolnica.SekretarFolder
         private void Izvestaj_Click(object sender, RoutedEventArgs e)
         {
             izvestajSekretar.StampajIzvestaj();
+            Potvrda();
         }
+        private async Task Potvrda()
+        {
+            lblGotov.Visibility = Visibility.Visible;
+            check.Visibility = Visibility.Visible;
+            await Task.Delay(4000);
+            lblGotov.Visibility = Visibility.Hidden;
+            check.Visibility = Visibility.Hidden;
+        }
+          
         private void LicnaObavestenja_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
