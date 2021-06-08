@@ -85,11 +85,15 @@
             </Border>
             <Label Content="Dodavanje alergena:" FontSize="20" HorizontalAlignment="Left" Margin="59,12,0,0" VerticalAlignment="Top" Height="37" Width="186" Grid.Row="1"/>
 
-            <Label Content="Odaberite lek:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="1" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
+
+            <StackPanel Orientation="Horizontal" Margin="73,32,555,21" Grid.Row="1" Grid.ColumnSpan="2">
+                <Label FontSize="12" Content="Pretraga lekova:" FontWeight="Normal" Margin="0,18,0,0"/>
+                <TextBox Text="{Binding TekstPretrage, UpdateSourceTrigger=PropertyChanged}" Width="159" x:Name="poljeZaPreragu" FontWeight="Normal" Margin="0,18,0,14" />
+
+            </StackPanel>
 
             <DataGrid x:Name="dataGridLekSekretar" ItemsSource="{Binding Lekovi}" SelectedItem="{Binding SelektovaniLek}" IsReadOnly="true"
-                  SelectionMode="Single"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Margin="20,40,120,20" Background="WhiteSmoke"
+                  SelectionMode="Single"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Margin="20,49,120,20" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID Leka" Binding="{Binding IdLeka}" Width="2*"/>

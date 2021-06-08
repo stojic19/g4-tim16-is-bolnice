@@ -41,8 +41,21 @@ namespace Bolnica.SekretarFolder
             {
                 Lekari.Add(lekar);
             }
+            this.dataGridLekari.ItemsSource = Lekari;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekari.ItemsSource);
+            view.Filter = FiltriranjeLekara;
         }
-
+        private bool FiltriranjeLekara(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPreragu.Text))
+                return true;
+            else
+                return ((item as LekarDTO).Prezime.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+        private void poljeZaPreragu_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridLekari.ItemsSource).Refresh();
+        }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

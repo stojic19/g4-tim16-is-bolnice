@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Bolnica.ViewModel.PacijentViewModel
 {
@@ -19,6 +20,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private LekDTO selektovaniLek;
         private String poruka;
         private AlergenDTO podaci;
+        private String tekstPretrage;
 
         public DodavanjeAlergenaViewModel(String korisnickoImePacijenta)
         {
@@ -36,6 +38,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
             {
                 Lekovi.Add(lek);
             }
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(Lekovi);
+            view.Filter = FiltriranjeLekova;
+        }
+        private bool FiltriranjeLekova(object item)
+        {
+            if (String.IsNullOrEmpty(tekstPretrage))
+                return true;
+            else
+                return ((item as LekDTO).NazivLeka.IndexOf(tekstPretrage, StringComparison.OrdinalIgnoreCase) >= 0);
         }
         public ObservableCollection<LekDTO> Lekovi
         {
@@ -63,6 +74,20 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 podaci = value;
                 OnPropertyChanged();
             }
+        }
+        public String TekstPretrage
+        {
+            get { return tekstPretrage; }
+            set
+            {
+                tekstPretrage = value;
+                OnPropertyChanged(() => this.tekstPretrage);
+            }
+        }
+
+        private void OnPropertyChanged(Func<object> p)
+        {
+            CollectionViewSource.GetDefaultView(Lekovi).Refresh();
         }
         public string Poruka
         {

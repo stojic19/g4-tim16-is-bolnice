@@ -47,10 +47,38 @@ namespace Bolnica.Sekretar.Pregled
             {
                 SviPacijenti.Add(p);
             }
+            this.dataGridPacijenti.ItemsSource = SviPacijenti;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridPacijenti.ItemsSource);
+            view.Filter = FiltriranjePacijenata;
             foreach (LekarDTO l in lekariKontroler.DobaviSveLekare())
             {
                 SviLekari.Add(l);
             }
+            this.dataGridLekari.ItemsSource = SviLekari;
+            view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridLekari.ItemsSource);
+            view.Filter = FiltriranjeLekara;
+        }
+        private bool FiltriranjeLekara(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPreragu.Text))
+                return true;
+            else
+                return ((item as LekarDTO).Prezime.IndexOf(poljeZaPreragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+        private void poljeZaPreraguLekara_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridLekari.ItemsSource).Refresh();
+        }
+        private bool FiltriranjePacijenata(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPretragu.Text))
+                return true;
+            else
+                return ((item as PacijentDTO).Prezime.IndexOf(poljeZaPretragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+        private void poljeZaPreraguPacijenata_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridPacijenti.ItemsSource).Refresh();
         }
         private void ObicanMod()
         {
