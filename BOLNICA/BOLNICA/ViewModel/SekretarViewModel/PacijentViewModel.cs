@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Bolnica.ViewModel.PacijentViewModel
 {
@@ -22,6 +23,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public PacijentViewModel()
         {
             UcitajUKolekciju();
+            TekstPretrage = "";
             dodajNalogKomanda = new RelayCommand(DodajNalog);
             izmeniNalogKomanda = new RelayCommand(IzmeniNalog);
             ukloniNalogKomanda = new RelayCommand(UkloniNalog);
@@ -36,6 +38,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
             {
                 Pacijenti.Add(pacijentDTO);
             }
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(Pacijenti);
+            view.Filter = FiltriranjePacijenata;
+        }
+        private bool FiltriranjePacijenata(object item)
+        {
+            if (String.IsNullOrEmpty(tekstPretrage))
+                return true;
+            else
+                return ((item as PacijentDTO).Prezime.IndexOf(tekstPretrage, StringComparison.OrdinalIgnoreCase) >= 0);
         }
         public PacijentDTO SelektovaniPacijent
         {
@@ -60,10 +71,16 @@ namespace Bolnica.ViewModel.PacijentViewModel
             get { return tekstPretrage; }
             set
             {
-                tekstPretrage = value;
-                OnPropertyChanged();
+                    tekstPretrage = value;
+                    OnPropertyChanged(() => this.tekstPretrage);
             }
         }
+
+        private void OnPropertyChanged(Func<object> p)
+        {
+            CollectionViewSource.GetDefaultView(Pacijenti).Refresh();
+        }
+
         public string Poruka
         {
             get { return poruka; }

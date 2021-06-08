@@ -5516,3 +5516,15 @@ C:\Users\computer\Desktop\sims ASDA UPRAVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\o
 C:\Users\computer\Desktop\sims ASDA UPRAVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
 C:\Users\computer\Desktop\sims ASDA UPRAVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\sims ASDA UPRAVO\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\IzmenaNaloga.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\NalogLekara.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\PromenaLozinke.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.g.cs
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\IzmenaNaloga.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\NalogLekara.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\NalogLekara\PromenaLozinke.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.baml
+C:\Users\aleks\Desktop\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.baml
