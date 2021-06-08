@@ -3,6 +3,7 @@ using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Bolnica.SekretarFolder.Operacija;
+using Bolnica.View.SekretarFolder.LicnaObavestenja;
 using Bolnica.ViewModel.PacijentViewModel;
 using Model;
 using System;
@@ -34,61 +35,7 @@ namespace Bolnica
             InitializeComponent();
             alergeniViewModel = new AlergeniViewModel(idPacijenta);
             this.DataContext = alergeniViewModel;
-        }/*
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Dodavanje alergena
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new DodavanjeAlergena(izabran);
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //Izmena alergena
-            if (dataGridAlergeniPacijenta.SelectedIndex != -1)
-            {
-                String id = (((Alergeni)dataGridAlergeniPacijenta.SelectedItem).IdAlergena);
-
-                UserControl usc = null;
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-                usc = new IzmenaAlergena(izabran, id);
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-            {
-                MessageBox.Show("Izaberite alergene za izmenu!");
-            }
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            //Uklanjanje Alergena
-            if (dataGridAlergeniPacijenta.SelectedIndex != -1)
-            {
-                String id = (((Alergeni)dataGridAlergeniPacijenta.SelectedItem).IdAlergena);
-
-                UserControl usc = null;
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-                usc = new UklanjanjeAlergena(izabran, id);
-                GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-            }
-            else
-                MessageBox.Show("Izaberite alergene za uklanjanje!");
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
-
-            usc = new PrikazNalogaSekretar();
-            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
-        }*/
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
@@ -127,6 +74,46 @@ namespace Bolnica
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
             usc = new ObavestenjaSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Stacionarno_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new StacionarnoLecenjeSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Transfer_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TransferPacijenataSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Naplata_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new NaplataUslugeSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void LicnaObavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new LicnaObavestenjaSekretar(GlavniProzorSekretar.getInstance().getSekretar().KorisnickoIme);
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void MojNalog_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new MojNalogSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

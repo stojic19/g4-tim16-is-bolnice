@@ -37,13 +37,13 @@
             <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" >
                 <Image Source="/Slike/Sekretar/Ikonice/obavestenja.jpg" />
             </Button>
-            <Button Grid.Row="5" Background="Black" x:Name="Naplata">
+            <Button Grid.Row="5" Background="Black" x:Name="Naplata" Click="Naplata_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/naplata.jpg" />
             </Button>
-            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno">
+            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno" Click="Stacionarno_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/stacionarno.jpg" />
             </Button>
-            <Button Grid.Row="7" Background="Black" x:Name="Transfer">
+            <Button Grid.Row="7" Background="Black" x:Name="Transfer" Click="Transfer_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/transfer.jpg" />
             </Button>
             <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Pocetna_Click">
@@ -52,7 +52,7 @@
             <Button Grid.Row="9" Background="Black" x:Name="Licna">
                 <Image Source="/Slike/Sekretar/CIkonice/cLicna.jpg" />
             </Button>
-            <Button Grid.Row="10" Background="Black" x:Name="Nalog">
+            <Button Grid.Row="10" Background="Black" x:Name="Nalog" Click="MojNalog_Click">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
             <Button Grid.Row="11" Background="Black" x:Name="Odjava" Click="Odjava_Click">

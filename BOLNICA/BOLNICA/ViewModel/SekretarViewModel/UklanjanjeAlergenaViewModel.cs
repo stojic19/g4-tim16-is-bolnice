@@ -19,7 +19,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
         public UklanjanjeAlergenaViewModel(String korisnickoImePacijenta, string idAlergena)
         {
-            this.korisnickoIme = korisnickoImePacijenta;
+            this.KorisnickoIme = korisnickoImePacijenta;
             this.idAlergena = idAlergena;
             potvrdiKomanda = new RelayCommand(Potvrdi);
             odustaniKomanda = new RelayCommand(Odustani);
@@ -33,12 +33,12 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void Potvrdi()
         {
-            alergeniKontroler.UkloniAlergen(korisnickoIme, idAlergena);
+            alergeniKontroler.UkloniAlergen(KorisnickoIme, idAlergena);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new AlergeniSekretar(korisnickoIme);
+            usc = new AlergeniSekretar(KorisnickoIme);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         
@@ -48,12 +48,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             get { return odustaniKomanda; }
         }
+
+        public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
+
         public void Odustani()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
-            usc = new AlergeniSekretar(korisnickoIme);
+            usc = new AlergeniSekretar(KorisnickoIme);
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }

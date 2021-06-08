@@ -2,6 +2,7 @@
 using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Sekretar.Pregled;
+using Bolnica.View.SekretarFolder.LicnaObavestenja;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -46,8 +47,21 @@ namespace Bolnica.SekretarFolder.Operacija
             {
                 SviPacijenti.Add(p);
             }
+            this.dataGridPacijenti.ItemsSource = SviPacijenti;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dataGridPacijenti.ItemsSource);
+            view.Filter = FiltriranjePacijenata;
         }
-
+        private bool FiltriranjePacijenata(object item)
+        {
+            if (String.IsNullOrEmpty(poljeZaPretragu.Text))
+                return true;
+            else
+                return ((item as PacijentDTO).Prezime.IndexOf(poljeZaPretragu.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+        private void poljeZaPreraguPacijenata_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridPacijenti.ItemsSource).Refresh();
+        }
         private void Pocetna_Click(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;
@@ -192,6 +206,46 @@ namespace Bolnica.SekretarFolder.Operacija
 
             var myWindow = Window.GetWindow(this);
             myWindow.Close();
+        }
+        private void Stacionarno_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new StacionarnoLecenjeSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Transfer_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new TransferPacijenataSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void Naplata_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new NaplataUslugeSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void LicnaObavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new LicnaObavestenjaSekretar(GlavniProzorSekretar.getInstance().getSekretar().KorisnickoIme);
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
+        }
+        private void MojNalog_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
+
+            usc = new MojNalogSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }
