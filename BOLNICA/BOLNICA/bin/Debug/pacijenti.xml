@@ -46,7 +46,6 @@
                 <Kolicina>4</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene>
               <Lek>
                 <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -68,10 +67,11 @@
                     <Kolicina>2</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
             </Zamene>
+            <Verifikacija>true</Verifikacija>
           </Lek>
           <OpisReakcije>1212</OpisReakcije>
           <VremeZaPojavu>1212</VremeZaPojavu>
@@ -147,8 +147,8 @@
                 <Kolicina>2</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene />
+            <Verifikacija>true</Verifikacija>
           </Lek>
           <OpisReakcije>Otekla</OpisReakcije>
           <VremeZaPojavu>20min</VremeZaPojavu>
@@ -170,7 +170,6 @@
                 <Kolicina>3221</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene>
               <Lek>
                 <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -192,10 +191,11 @@
                     <Kolicina>2</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
             </Zamene>
+            <Verifikacija>true</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -217,7 +217,6 @@
                 <Kolicina>231</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene>
               <Lek>
                 <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -239,10 +238,11 @@
                     <Kolicina>2</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
             </Zamene>
+            <Verifikacija>true</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -276,7 +276,6 @@
                 <Kolicina>4</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene>
               <Lek>
                 <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -298,10 +297,11 @@
                     <Kolicina>2</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
             </Zamene>
+            <Verifikacija>true</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -323,7 +323,6 @@
                 <Kolicina>231</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene>
               <Lek>
                 <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -345,8 +344,8 @@
                     <Kolicina>2</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
               <Lek>
                 <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
@@ -360,10 +359,11 @@
                     <Kolicina>3</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </Lek>
             </Zamene>
+            <Verifikacija>true</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -375,8 +375,8 @@
             <Jacina>15mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -388,8 +388,8 @@
             <Jacina>500mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -401,8 +401,8 @@
             <Jacina>500mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
           </Lek>
         </Recept>
         <Recept>
@@ -414,8 +414,21 @@
             <Jacina>500mg</Jacina>
             <Kolicina>0</Kolicina>
             <Sastojci />
-            <Verifikacija>false</Verifikacija>
             <Zamene />
+            <Verifikacija>false</Verifikacija>
+          </Lek>
+        </Recept>
+        <Recept>
+          <IDRecepta>8716ed9e-d199-40d7-b13c-789d0e845a2d</IDRecepta>
+          <Datum>2021-06-08T18:41:21.6067765+02:00</Datum>
+          <Lek>
+            <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+            <NazivLeka>Rapidol</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>0</Kolicina>
+            <Sastojci />
+            <Zamene />
+            <Verifikacija>false</Verifikacija>
           </Lek>
         </Recept>
       </Recepti>
@@ -464,7 +477,6 @@
                     <Kolicina>4</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene>
                   <Lek>
                     <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -486,10 +498,11 @@
                         <Kolicina>2</Kolicina>
                       </Sastojak>
                     </Sastojci>
-                    <Verifikacija>true</Verifikacija>
                     <Zamene />
+                    <Verifikacija>true</Verifikacija>
                   </Lek>
                 </Zamene>
+                <Verifikacija>true</Verifikacija>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -522,8 +535,8 @@
                     <Kolicina>3</Kolicina>
                   </Sastojak>
                 </Sastojci>
-                <Verifikacija>true</Verifikacija>
                 <Zamene />
+                <Verifikacija>true</Verifikacija>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -559,8 +572,8 @@
                 <Jacina>500mg</Jacina>
                 <Kolicina>0</Kolicina>
                 <Sastojci />
-                <Verifikacija>false</Verifikacija>
                 <Zamene />
+                <Verifikacija>false</Verifikacija>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -587,8 +600,8 @@
                 <Jacina>15mg</Jacina>
                 <Kolicina>0</Kolicina>
                 <Sastojci />
-                <Verifikacija>false</Verifikacija>
                 <Zamene />
+                <Verifikacija>false</Verifikacija>
               </PreporucenLek>
             </Terapija>
             <Terapija>
@@ -605,15 +618,15 @@
                 <Jacina>400mg</Jacina>
                 <Kolicina>0</Kolicina>
                 <Sastojci />
-                <Verifikacija>false</Verifikacija>
                 <Zamene />
+                <Verifikacija>false</Verifikacija>
               </PreporucenLek>
             </Terapija>
             <Terapija>
               <IDTerapije>818976bd-6d30-4d9b-b4a9-600a76f98594</IDTerapije>
               <IDAnamneze>9532c876-eb14-4f6f-9601-94689467b992</IDAnamneze>
               <PocetakTerapije>2021-06-07T00:00:00</PocetakTerapije>
-              <KrajTerapije>2021-06-08T00:00:00</KrajTerapije>
+              <KrajTerapije>2021-06-15T00:00:00</KrajTerapije>
               <Kolicina>1</Kolicina>
               <Satnica>24</Satnica>
               <UputsvoKonzumiranja />
@@ -623,8 +636,54 @@
                 <Jacina>500mg</Jacina>
                 <Kolicina>0</Kolicina>
                 <Sastojci />
-                <Verifikacija>false</Verifikacija>
                 <Zamene />
+                <Verifikacija>false</Verifikacija>
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
+        <Anamneza>
+          <IdAnamneze>0363d838-03a8-4a5c-be2d-ae291bcfc1b3</IdAnamneze>
+          <IdLekara>MagdalenaReljin</IdLekara>
+          <ImeIPrezimeLekara>Magdalena Reljin</ImeIPrezimeLekara>
+          <IdPacijenta>magdalena</IdPacijenta>
+          <Datum>2021-06-08T18:39:49.0584003+02:00</Datum>
+          <Dijagnoza>Alergija. Glavobolja.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>9c0f4d36-a814-44f5-ad7c-c6d37fbe47a7</IDTerapije>
+              <IDAnamneze>0363d838-03a8-4a5c-be2d-ae291bcfc1b3</IDAnamneze>
+              <PocetakTerapije>2021-06-09T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-14T00:00:00</KrajTerapije>
+              <Kolicina>1</Kolicina>
+              <Satnica>8</Satnica>
+              <UputsvoKonzumiranja>Nakon leka popiti puno vode.</UputsvoKonzumiranja>
+              <PreporucenLek>
+                <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                <NazivLeka>Aerius</NazivLeka>
+                <Jacina>15mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Zamene />
+                <Verifikacija>false</Verifikacija>
+              </PreporucenLek>
+            </Terapija>
+            <Terapija>
+              <IDTerapije>547333b7-d5d7-49a8-ac2e-fa693598d5a5</IDTerapije>
+              <IDAnamneze>0363d838-03a8-4a5c-be2d-ae291bcfc1b3</IDAnamneze>
+              <PocetakTerapije>2021-06-09T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-11T00:00:00</KrajTerapije>
+              <Kolicina>2</Kolicina>
+              <Satnica>8</Satnica>
+              <UputsvoKonzumiranja />
+              <PreporucenLek>
+                <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+                <NazivLeka>Brufen</NazivLeka>
+                <Jacina>400mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Zamene />
+                <Verifikacija>false</Verifikacija>
               </PreporucenLek>
             </Terapija>
           </Terapije>
@@ -701,7 +760,7 @@
       </Uputi>
       <BracniStatus>ozenjenUdata</BracniStatus>
     </ZdravstveniKarton>
-    <ZloupotrebioSistem>4</ZloupotrebioSistem>
+    <ZloupotrebioSistem>5</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

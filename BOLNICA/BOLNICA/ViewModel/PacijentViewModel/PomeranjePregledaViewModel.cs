@@ -90,8 +90,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void PrikaziDatume()
         {
-            
-
           
                 if (PodaciIzmene.IzabraniLekar == null) {
 

@@ -21,7 +21,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public DatumiZaPomeranjeViewModel(TerminDTO izabraniTermin, ZakazivanjePregledaDTO podaci)
         {
             PodaciIzmene = podaci;
-            stariTermin = izabraniTermin;
+            StariTermin = izabraniTermin;
             ProveriPrioritet();
             vratiSeKomanda = new RelayCommand(VratiSe);
             prikaziTermineKomanda = new RelayCommand(Prikazi);
@@ -113,8 +113,9 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
         private List<TerminDTO> UcitajDatumePrioritetVreme()
         {
-            DateTime pocetakIntervala = SelektovaniTermin.Datum.AddDays(-2);
-            DateTime krajIntervala = SelektovaniTermin.Datum.AddDays(2);
+         
+            DateTime pocetakIntervala = StariTermin.Datum.AddDays(-2);
+            DateTime krajIntervala = StariTermin.Datum.AddDays(2);
             return terminKontroler.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
         }
         private RelayCommand prikaziTermineKomanda;
@@ -126,8 +127,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public void Prikazi()
         {
             if (SelektovaniTermin != null)
-            {
-              
+            { 
                 List<TerminDTO> terminiZaIzmenu = new List<TerminDTO>();
                 terminiZaIzmenu.Add(StariTermin);
                 terminiZaIzmenu.Add(SelektovaniTermin);
@@ -150,7 +150,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         public void VratiSe()
         {
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PomeranjeSaPrioritetom(SelektovaniTermin));
+            PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PomeranjeSaPrioritetom(StariTermin));
         }
     }
 }

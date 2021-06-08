@@ -5602,12 +5602,10 @@ C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\De
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.g.cs
-C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLicnePodatke.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLozinku.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzvestajTerapije.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.g.cs
-C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\LicniProfil.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.g.cs
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.g.cs
@@ -5737,12 +5735,10 @@ C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\De
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.baml
-C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLicnePodatke.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzmeniLozinku.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\IzvestajTerapije.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.baml
-C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\LicniProfil.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.baml
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.baml
@@ -5853,3 +5849,7 @@ C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\De
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.csproj.CopyComplete
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
+C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.g.cs
+C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.g.cs
+C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.baml
+C:\Users\computer\Desktop\sims hci kt\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.baml

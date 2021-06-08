@@ -119,7 +119,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
                 ObavljeniPregledi.Clear();
                 foreach (PregledDTO pregled in pretraga)
                 {
-                    if (DateTime.Compare(pregled.Datum.Date, PoljePretrage.Date) == 0)
                         ObavljeniPregledi.Add(pregled);
                 }
                 return;
@@ -131,9 +130,9 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private List<PregledDTO> PretragaTermina()
         {
             List<PregledDTO> rezultatiPretrage = new List<PregledDTO>();
-            foreach (PregledDTO pregled in preglediKontroler.DobaviSveObavljenePregledePacijenta(korisnickoIme).OrderBy(user => user.Datum).ToList())
+            foreach (PregledDTO pregled in (preglediKontroler.DobaviSveObavljenePregledePacijenta(korisnickoIme)).OrderBy(user => user.Datum).ToList())
             {
-                if (DateTime.Compare(pregled.Datum.Date, PoljePretrage.Date) == 0)
+                if (DateTime.Compare(pregled.Termin.Datum.Date, PoljePretrage.Date) == 0)
                     rezultatiPretrage.Add(pregled);
             }
             return rezultatiPretrage;

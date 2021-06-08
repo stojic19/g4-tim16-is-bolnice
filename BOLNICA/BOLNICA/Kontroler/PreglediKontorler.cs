@@ -49,7 +49,11 @@ namespace Bolnica.Kontroler
         {
             List<PregledDTO> obavljeniPregledi = new List<PregledDTO>();
             foreach (Pregled pregled in preglediServis.DobaviSveObavljenePregledePacijenta(korisnickoIme))
+            
                 obavljeniPregledi.Add(pregledKonverter.PregledModelUDTO(pregled));
+           
+            
+
             return obavljeniPregledi;
         }
 

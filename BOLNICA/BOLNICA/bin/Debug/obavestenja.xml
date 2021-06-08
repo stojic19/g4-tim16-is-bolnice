@@ -1176,4 +1176,161 @@ Magdalena Reljin
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>6402af5d-a72a-403e-a26d-e77958808da3</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>c8dc510c-d3ae-4885-a03d-c545bd507f29</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Magdalena Reljin 
+ biće održan 29/06/2021 u 09:00h. </Tekst>
+    <Datum>2021-06-27T09:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>3ac6cb05-b2e9-47e2-9157-15ff8fb21b60</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Magdalena Reljin
+29/06/2021 u 09:00h. 
+Novi pregled je zakazan kod
+lekara Magdalena Reljin
+29/06/2021 u 10:00 h.</Tekst>
+    <Datum>2021-06-08T18:13:34.0262923+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>c7403238-37b5-41f4-a55c-f1da8b81bce0</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Magdalena Reljin
+29/06/2021 u 10:00h. 
+Novi pregled je zakazan kod
+lekara Magdalena Reljin
+29/06/2021 u 09:30 h.</Tekst>
+    <Datum>2021-06-08T18:37:38.1855757+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>4557cddb-3c05-4267-bedd-359e67508c61</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-09T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>484ea7c6-a21b-4201-a01b-fb3137ec2c17</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-10T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>e5f6bc1f-6039-46d7-9afe-a3dac4b50664</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-11T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>1a6fde6e-e95c-48c4-a4df-ce7888cceedc</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-12T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>1e6d1636-87d6-46d1-8713-485ebb7a96c8</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-13T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>c6ca8023-d066-4db6-a52b-5e84a7995ad0</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Aerius15mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-14T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>bc7ac514-a019-44a3-9e58-322ca889d652</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Brufen400mg
+dnevna količina: 2,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-09T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>3bee1152-4d14-49bf-bb6c-53e2cad4d57b</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Brufen400mg
+dnevna količina: 2,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-10T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>46c8597f-2f9b-43c6-b042-b270a0e3102f</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Brufen400mg
+dnevna količina: 2,
+vremenski interval između doza:
+ 8h.</Tekst>
+    <Datum>2021-06-11T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>5f6dea47-4616-4539-9b6f-d88e9a546425</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Rapidol500mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 12h.</Tekst>
+    <Datum>2021-06-14T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>71b24260-5802-4731-9c4c-00b873d7dd41</IdObavestenja>
+    <Naslov>Podsetnik o terapiji</Naslov>
+    <Tekst>Terapija: Rapidol500mg
+dnevna količina: 1,
+vremenski interval između doza:
+ 12h.</Tekst>
+    <Datum>2021-06-15T08:00:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

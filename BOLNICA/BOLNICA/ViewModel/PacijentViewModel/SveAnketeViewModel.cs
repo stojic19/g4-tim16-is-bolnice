@@ -31,8 +31,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
         {
             ObavljeniPregledi = new ObservableCollection<PregledDTO>();
             foreach (PregledDTO pregled in preglediKontroler.DobaviSveNeocenjenePregledePacijenta(KorisnickoIme).OrderByDescending(user => user.Datum).ToList())
+            {
+                if(ProveraDatuma(pregled.Termin.Datum))
                 ObavljeniPregledi.Add(pregled);
-
+            }
+        }
+        private bool ProveraDatuma(DateTime datumPregleda)
+        {
+            if (DateTime.Compare(DateTime.Now.Date, datumPregleda.Date) >= 0) return true;
+            return false;
         }
         public ObservableCollection<PregledDTO> ObavljeniPregledi
         {

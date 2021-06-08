@@ -388,7 +388,7 @@
     <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml.cs">
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\DetaljiTerapije.xaml.cs">
+    <Compile Include="View\PacijentFolder\RasporedTermina\DetaljiTerapije.xaml.cs">
       <DependentUpon>DetaljiTerapije.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
@@ -409,7 +409,7 @@
     <Compile Include="View\PacijentFolder\KreirajBelesku.xaml.cs">
       <DependentUpon>KreirajBelesku.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\KreirajPodsetnik.xaml.cs">
+    <Compile Include="View\PacijentFolder\RasporedTermina\KreirajPodsetnik.xaml.cs">
       <DependentUpon>KreirajPodsetnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PacijentFolder\LicniProfil.xaml.cs">
@@ -792,7 +792,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PacijentFolder\DetaljiTerapije.xaml">
+    <Page Include="View\PacijentFolder\RasporedTermina\DetaljiTerapije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -812,7 +812,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\KreirajPodsetnik.xaml">
+    <Page Include="View\PacijentFolder\RasporedTermina\KreirajPodsetnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

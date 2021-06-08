@@ -132,7 +132,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
                 TerminiZaIzmenu.Add(SelektovaniTermin);
                 PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
-                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PotvrdiPomeranjePacijent(terminiZaIzmenu, Podaci));
+                PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PotvrdiPomeranjePacijent(TerminiZaIzmenu, Podaci));
 
             }
             else
