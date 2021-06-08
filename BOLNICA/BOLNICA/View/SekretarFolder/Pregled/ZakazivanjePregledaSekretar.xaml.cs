@@ -34,7 +34,7 @@ namespace Bolnica.Sekretar.Pregled
         TerminKontroler terminKontroler = new TerminKontroler();
         public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
         public static ObservableCollection<LekarDTO> SviLekari { get; set; }
-
+        CancellationTokenSource cts;
         public ZakazivanjePregledaSekretar()
         {
             InitializeComponent();
@@ -54,8 +54,9 @@ namespace Bolnica.Sekretar.Pregled
         }
         private void ObicanMod()
         {
+            btnDemo.Visibility = Visibility.Visible;
+            btnStop.Visibility = Visibility.Hidden;
             lblDemo.Visibility = Visibility.Hidden;
-            lblDemo1.Visibility = Visibility.Hidden;
             lblPacijent.Visibility = Visibility.Hidden;
             cursor1.Visibility = Visibility.Hidden;
             lblDatum.Visibility = Visibility.Hidden;
@@ -67,63 +68,224 @@ namespace Bolnica.Sekretar.Pregled
             cursor5.Visibility = Visibility.Hidden;
             lblPotvrdi.Visibility = Visibility.Hidden;
             cursor6.Visibility = Visibility.Hidden;
+
+            dataGridPacijenti.SelectedIndex = -1;
+            datumPocetak.SelectedDate = null;
+            datumKraj.SelectedDate = null;
+            dataGridLekari.SelectedIndex = -1;
+            prioritet.SelectedIndex = -1;
         }
-        private void Demo_Click(object sender, RoutedEventArgs e)
+        private async void ScreenTap(object sender, System.Windows.Input.InputGesture e)
         {
-            Demo();
+            if (cts == null)
+            {
+                cts = new CancellationTokenSource();
+                try
+                {
+                    await DemoAsync(cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                }
+                finally
+                {
+                    cts = null;
+                }
+            }
+            else
+            {
+                cts.Cancel();
+                cts = null;
+            }
+        }
+
+        private async Task DemoAsync(CancellationToken token)
+        {
+            for (int i = 0; ; i++)
+            {
+                token.ThrowIfCancellationRequested();
+                await Demo();
+            }
+        }
+        private async void Demo_Click(object sender, RoutedEventArgs e)
+        {
+            if(btnStop.Visibility == Visibility.Visible)
+            {
+                btnStop.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btnStop.Visibility = Visibility.Visible;
+            }
+            if (cts == null)
+            {
+                cts = new CancellationTokenSource();
+                try
+                {
+                    await DemoAsync(cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                }
+                finally
+                {
+                    cts = null;
+                }
+            }
+            else
+            {
+                cts.Cancel();
+                cts = null;
+            }
         }
         private async Task Demo()
         {
+            btnDemo.Visibility = Visibility.Hidden;
+            btnStop.Visibility = Visibility.Visible;
             lblDemo.Visibility = Visibility.Visible;
-            lblDemo1.Visibility = Visibility.Visible;
 
+            if(Provera())
+            {
+                return;
+            }
             await Task.Delay(1500);
-
+            if (Provera())
+            {
+                return;
+            }
             lblPacijent.Visibility = Visibility.Visible;
             cursor1.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
-            dataGridPacijenti.SelectedIndex = 1; 
+            if (Provera())
+            {
+                return;
+            }
+            dataGridPacijenti.SelectedIndex = 1;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
             lblPacijent.Visibility = Visibility.Hidden;
             cursor1.Visibility = Visibility.Hidden;
-
+            
             lblDatum.Visibility = Visibility.Visible;
             cursor2.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             datumPocetak.SelectedDate = DateTime.Now;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             cursor2.Visibility = Visibility.Hidden;
-
+            
             cursor3.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             datumKraj.SelectedDate = DateTime.Now.AddDays(10);
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             lblDatum.Visibility = Visibility.Hidden;
             cursor3.Visibility = Visibility.Hidden;
 
             lblLekar.Visibility = Visibility.Visible;
             cursor4.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             dataGridLekari.SelectedIndex = 1;
             await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
             lblLekar.Visibility = Visibility.Hidden;
             cursor4.Visibility = Visibility.Hidden;
 
             lblPrioritet.Visibility = Visibility.Visible;
             cursor5.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+            if (Provera())
+            {
+                return;
+            }
             prioritet.SelectedIndex = 1;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
             lblPrioritet.Visibility = Visibility.Hidden;
             cursor5.Visibility = Visibility.Hidden;
 
             lblPotvrdi.Visibility = Visibility.Visible;
             cursor6.Visibility = Visibility.Visible;
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(2000);
+            if (Provera())
+            {
+                return;
+            }
             lblPotvrdi.Visibility = Visibility.Hidden;
             cursor6.Visibility = Visibility.Hidden;
-
+            if (Provera())
+            {
+                return;
+            }
             await Task.Delay(1000);
+
             dataGridPacijenti.SelectedIndex = -1;
             datumPocetak.SelectedDate = null;
             datumKraj.SelectedDate = null;
@@ -131,6 +293,15 @@ namespace Bolnica.Sekretar.Pregled
             prioritet.SelectedIndex = -1;
 
             lblDemo.Visibility = Visibility.Hidden;
+        }
+        private bool Provera()
+        {
+            if(cts==null)
+            {
+                ObicanMod();
+                return true;
+            }
+            return false;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { 

@@ -79,10 +79,12 @@
 
             <Label Content="Zakazivanje pregleda" FontSize="40" HorizontalAlignment="Left" Margin="231,5,0,0" VerticalAlignment="Top" Height="67" Width="528" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
-            <Button Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,77" Grid.Column="1" Grid.RowSpan="2">
+            <Button Name="btnDemo" Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,77" Grid.Column="1" Grid.RowSpan="2">
                 <Image Source="/Slike/Sekretar/demo.png" Height="57" />
             </Button>
-
+            <Button Name="btnStop" Grid.Row="0" Background="#2b78e4" Click="Demo_Click" Margin="509,5,20,77" Grid.Column="1" Grid.RowSpan="2">
+                <Image Source="/Slike/Sekretar/stop.png" Height="57" />
+            </Button>
             <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
                 <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-15,-88.5,-69" Stretch="Fill">
                     <Path.Data>
@@ -181,7 +183,7 @@
             <Border Name="lblPacijent" Margin="28,40,141,56" Grid.Row="1" Grid.RowSpan="2">
                 <Label Background="Black" Foreground="White" Content="Vrši se odabir pacijenta" Margin="10,20,0,20"/>
             </Border>
-            <Image Name="cursor1" Source="/Slike/Sekretar/cursor.png" Margin="215,40,357,68" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+            <Image Name="cursor1" Source="/Slike/Sekretar/cursor.png" Margin="215,52,357,56" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
 
             <Border  Name="lblDatum" Margin="28,44,141,54" Grid.Row="3" Grid.RowSpan="2">
                 <Label Background="Black" Foreground="White" Content="Vrši se odabir datuma" Margin="10,20"/>
@@ -192,7 +194,7 @@
             <Border  Name="lblLekar" Margin="28,10,105,0" Grid.Row="5">
                 <Label Background="Black" Foreground="White" Content="Vrši se odabir lekara" Margin="10,20,43,20"/>
             </Border>
-            <Image Name="cursor4" Source="/Slike/Sekretar/cursor.png" Margin="172,55,400,53" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"/>
+            <Image Name="cursor4" Source="/Slike/Sekretar/cursor.png" Margin="175,68,397,40" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"/>
 
             <Border  Name="lblPrioritet" Margin="28,30,141,62" Grid.Row="7" Grid.RowSpan="2">
                 <Label Background="Black" Foreground="White" Content="Vrši se odabir prioriteta" Margin="10,20,0,20"/>
