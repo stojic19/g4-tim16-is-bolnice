@@ -42,17 +42,16 @@
 
             </Grid.ColumnDefinitions>
 
-            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" >
+            <Button Background="#FF31577E" Grid.Column="0" Name="strelica" Click="strelica_Click" ToolTipService.ToolTip="Odjavi se" ToolTipService.Placement="Mouse">
                 <Image Source="/Slike/UpravnikSlike/odjava.png" Height="25" Width="19" />
 
             </Button>
 
-            <Button Background="#FF31577E" Grid.Column="1" Name="krevet" Click="krevet_Click" >
+            <Button Background="#FF31577E" Grid.Column="1" Name="krevet" Click="krevet_Click" ToolTipService.ToolTip="Premjestanje staticke opreme" ToolTipService.Placement="Mouse" >
                 <Image Source="/Slike/UpravnikSlike/krevet.png" />
-
             </Button>
 
-            <Button Background="#FF31577E" Grid.Column="2" Name="renoviranje" Click="renoviranje_Click_1">
+            <Button Background="#FF31577E" Grid.Column="2" Name="renoviranje" Click="renoviranje_Click_1" ToolTipService.ToolTip="Renoviraj prostoriju" ToolTipService.Placement="Mouse">
                 <Image Source="/Slike/UpravnikSlike/renovation.png" />
 
             </Button>
@@ -79,7 +78,7 @@
                 <Button Grid.Row="0" Grid.Column="0"  Content="Prostorije" FontSize="15" Margin="0,0,0.4,0.2" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Prostorije_Click"  Background="#FF31577E"/>
 
-                <Button Content="Oprema" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
+                <Button Content=" Oprema&#xa;(magacin)" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" FontSize="15" Click="Oprema_Click"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
 
                 <Button Content="Lijekovi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRenoviranje xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Renoviranje>
     <ProstoriKojiSeBrisu />
@@ -16,5 +16,22 @@
     </Prostor>
     <PocetniDatum>2021-06-18T00:00:00</PocetniDatum>
     <DatumKraja>2021-06-21T00:00:00</DatumKraja>
+  </Renoviranje>
+  <Renoviranje>
+    <ProstoriKojiSeBrisu />
+    <ProstoriKojiSeDodaju />
+    <IdRenoviranja>4e83c40f-7c0b-4a97-865f-4003efb37a44</IdRenoviranja>
+    <Prostor>
+      <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+      <IdProstora>243ab344-e2d2-450d-94da-a66d741bd12e</IdProstora>
+      <NazivProstora>s3</NazivProstora>
+      <VrstaProstora>soba</VrstaProstora>
+      <Sprat>2</Sprat>
+      <Kvadratura>55</Kvadratura>
+      <JeRenoviranje>false</JeRenoviranje>
+      <Oprema />
+    </Prostor>
+    <PocetniDatum>2021-06-18T00:00:00</PocetniDatum>
+    <DatumKraja>2021-06-22T00:00:00</DatumKraja>
   </Renoviranje>
 </ArrayOfRenoviranje>

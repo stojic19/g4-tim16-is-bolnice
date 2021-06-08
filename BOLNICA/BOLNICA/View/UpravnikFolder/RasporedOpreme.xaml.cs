@@ -23,8 +23,6 @@ namespace Bolnica
     /// </summary>
     public partial class RasporedOpreme : UserControl
     {
-
-
         public static ObservableCollection<OpremaDTO> Oprema { get; set; }
         public static string IdProstorije { get; set; }
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
@@ -37,15 +35,13 @@ namespace Bolnica
             foreach(OpremaDTO o in prostoriKontroler.PretraziProstorPoId(idProstorije).Oprema){
                 Oprema.Add(o);
             }
-            
+           
             dataGridRasporedOpreme.ItemsSource = Oprema;
             IdProstorije = idProstorije;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
-
         {
-
             DodajOpremuProstoru dodavanje = new DodajOpremuProstoru(IdProstorije);
             dodavanje.Show();
         }
@@ -63,14 +59,10 @@ namespace Bolnica
             {
                 MessageBox.Show("Izaberite opremu koji želite da prebacite!");
             }
-
-
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
-
         {
-
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UserControl usc = null;
             usc = new PrikazProstora();

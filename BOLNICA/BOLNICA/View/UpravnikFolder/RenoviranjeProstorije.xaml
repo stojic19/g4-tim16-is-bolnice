@@ -8,8 +8,8 @@
              d:DesignHeight="385" d:DesignWidth="675">
     <StackPanel Background="White" Margin="0,0,0,0.4">
         <Grid Background="LightBlue" Height="390">
-            <Button x:Name="button" Click="Ok_Click" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" RenderTransformOrigin="2.986,15.753" Margin="203,323,0,0" Height="31"/>
-            <Button x:Name="button1" Click="Cancel_Click" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" RenderTransformOrigin="2.986,15.753" Margin="374,323,0,0" Height="31"/>
+            <Button x:Name="button" Click="Ok_Click" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" RenderTransformOrigin="2.986,15.753" Margin="203,332,0,0" Height="22"/>
+            <Button x:Name="button1" Click="Cancel_Click" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" RenderTransformOrigin="2.986,15.753" Margin="374,332,0,0" Height="22"/>
             <Label x:Name="label1" Content="Do:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.653,3.68" Margin="432,262,0,0"/>
             <Label x:Name="label" Content="Od:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="5.648,4.077" Margin="83,264,0,0"/>
             <Label x:Name="label2" Content="Izaberite prostor i datum od kad do kad ce se prostorija renovirati ! " HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.653,3.68" Margin="162,24,0,0" Width="376"/>

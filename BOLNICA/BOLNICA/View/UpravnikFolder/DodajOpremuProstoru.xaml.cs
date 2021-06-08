@@ -19,7 +19,6 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-
     public partial class DodajOpremuProstoru : Window
     {
         public static ObservableCollection<OpremaDTO> Oprema { get; set; }
@@ -29,11 +28,9 @@ namespace Bolnica
 
         public DodajOpremuProstoru(string idProstora)
         {
-            /*InitializeComponent();
-            oprema = opremaKontroler.SvaOprema();
-            this.DataContext = this;*/
             InitializeComponent();
 
+            this.DataContext = this;
             IdProstora = idProstora;
             Oprema = new ObservableCollection<OpremaDTO>();
 
@@ -41,15 +38,12 @@ namespace Bolnica
             {
                 Oprema.Add(o);
             }
-
-            this.DataContext = this;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

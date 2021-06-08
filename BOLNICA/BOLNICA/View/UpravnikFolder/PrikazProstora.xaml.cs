@@ -117,30 +117,50 @@ namespace Bolnica
         private void JedanUDva_Click(object sender, RoutedEventArgs e)
         {
             ProstorDTO izabran = (ProstorDTO)dataGridProstori.SelectedItem;
-
-            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-            UserControl usc = null;
-            usc = new NapraviDvijeProstorije(izabran);
-            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            if (dataGridProstori.SelectedItems.Count == 1)
+            {
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new NapraviDvijeProstorije(izabran);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            }
+            MessageBox.Show("Morate izabrati jedan prostor!");
         }
 
         private void DvaUJedan_Click(object sender, RoutedEventArgs e)
         {
             List<ProstorDTO> prostoriZaRenoviranje = new List<ProstorDTO>();
-            if(dataGridProstori.SelectedItems.Count != 2)
+            if (dataGridProstori.SelectedItems.Count == 2)
             {
-                MessageBox.Show("Morate izabrati dva prostora!");
+                foreach (ProstorDTO p in dataGridProstori.SelectedItems)
+                {
+                    prostoriZaRenoviranje.Add(p);
+                }
+
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new NapraviJednuProstoriju(prostoriZaRenoviranje);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
             }
 
-            foreach (ProstorDTO p in dataGridProstori.SelectedItems)
+            MessageBox.Show("Morate izabrati dva prostora! (Drzite CTRL kako biste izabrali drugi prostor)");
+        }
+
+        private void SearchBox_KeyUp(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<ProstorDTO> filtriranje = new ObservableCollection<ProstorDTO>();
+
+            foreach (ProstorDTO p in Prostori)
             {
-                prostoriZaRenoviranje.Add(p);
+                if (p.NazivProstora.StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
+                    p.VrstaProstora.ToString().StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase) ||
+                    p.Sprat.ToString().StartsWith(SearchBox.Text, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    filtriranje.Add(p);
+                }
             }
 
-            UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-            UserControl usc = null;
-            usc = new NapraviJednuProstoriju(prostoriZaRenoviranje);
-            UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            dataGridProstori.ItemsSource = filtriranje;
         }
     }
 }

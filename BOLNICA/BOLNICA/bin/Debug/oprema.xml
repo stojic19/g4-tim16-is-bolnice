@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOprema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Oprema>
     <IdOpreme>s8</IdOpreme>
@@ -11,5 +11,41 @@
     <NazivOpreme>vata</NazivOpreme>
     <VrstaOpreme>dinamicka</VrstaOpreme>
     <Kolicina>200</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>326e6ed5-472d-44d1-87b3-d1a51358075c</IdOpreme>
+    <NazivOpreme>igla</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>200</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>db7160b9-4756-439a-bea9-23d9d7180207</IdOpreme>
+    <NazivOpreme>krevet</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>20</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>05ab267c-5a5d-457f-b8d8-e2211e55e33f</IdOpreme>
+    <NazivOpreme>komoda</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>30</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>69c45bb2-b0f2-4859-abfa-8a5fa76f86a6</IdOpreme>
+    <NazivOpreme>klima</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>5</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>86092f34-9be0-40ee-94af-8738b18d42cd</IdOpreme>
+    <NazivOpreme>gaza</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>150</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>bb02adce-551f-4e97-ae06-83dbbb83242d</IdOpreme>
+    <NazivOpreme>konac</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>300</Kolicina>
   </Oprema>
 </ArrayOfOprema>

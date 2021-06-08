@@ -64,6 +64,7 @@ namespace Bolnica.Kontroler
                 return true;
             return false;
         }
+
         /*public void DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
         {
             prostoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, oprema, kolicina);

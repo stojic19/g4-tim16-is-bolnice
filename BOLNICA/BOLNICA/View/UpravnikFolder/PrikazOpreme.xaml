@@ -43,7 +43,7 @@
 
             <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Margin="20,31.2,340,43.4"   Grid.Row="3" Height="23" />
 
-            <Button Grid.Row="3" Content="Premjestanje staticke opreme" Margin="453,11.2,22.2,54.4" VerticalContentAlignment="Center" 
+            <Button Grid.Row="3" Content="Premjestanje staticke opreme" Margin="453,22.2,22.2,43.4" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center" Click="Premjestanje_Click" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
 
         </Grid>
