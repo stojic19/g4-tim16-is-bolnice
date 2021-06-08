@@ -9797,46 +9797,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>7abaf300-1a1a-4400-b7e0-3aa16611729c</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>07:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-10T07:00:00</Datum>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-17T15:00:00</PocetakSmene>
-          <KrajSmene>2021-06-17T23:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-18T15:00:00</PocetakSmene>
-          <KrajSmene>2021-06-18T23:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
-          <KrajSmene>2021-06-21T23:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>1b4ad868-1e7c-4616-bd10-63e5c1f31746</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>07:30</PocetnoVreme>

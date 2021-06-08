@@ -68,10 +68,7 @@ namespace Bolnica
             t.TrajanjeDouble = izabranoTrajanje*30;
             Console.WriteLine(izabranoTrajanje);
 
-            if (terminKontroler.ZakaziTerminLekar(t) && t.Lekar.KorisnickoIme.Equals(LekarGlavniProzor.DobaviKorisnickoIme()))
-            {
-                PrikazTerminaLekara.Termini.Add(t);
-            }
+            terminKontroler.ZakaziTerminLekar(t);//dodaj poruku uspesno odradjeno
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara());

@@ -78,10 +78,7 @@ namespace Bolnica.LekarFolder
             t.Pacijent.KorisnickoIme = izabranPregled.Termin.Pacijent.KorisnickoIme;
             t.TrajanjeDouble = izabranoTrajanje * 30;
 
-            if (terminKontroler.ZakaziTerminLekar(t) && izabranPregled.Termin.Lekar.KorisnickoIme.Equals(idLekarSpecijalista))
-            {
-                PrikazTerminaLekara.Termini.Add(t);
-            }
+            terminKontroler.ZakaziTerminLekar(t);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(izabranPregled.IdPregleda, 4));

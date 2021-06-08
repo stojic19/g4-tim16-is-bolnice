@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Bolnica.Lokalizacija"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         d:DesignHeight="380" d:DesignWidth="850" >
     <Grid>
@@ -23,13 +24,13 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="23,0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Label  Content="{p:LocExtension PretragaDatum}" VerticalAlignment="Center" />
-            <TextBox  Height="25" Width="150" Margin="7,8,57.8,7" Name="pretragaDatuma" TextChanged="pretragaDatuma_TextChanged" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox  Height="25" Width="150" Margin="7,8,57.8,7" Text="{Binding Path=PoljePretraga,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         </StackPanel>
 
-        <Label Name="obavestenje" Visibility="Hidden" Background="White" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3" Margin="23,0" Height="25" Foreground="Black"/>
+        <Label Content="{Binding Path=Poruka}" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3" Margin="23,0" Height="25" Foreground="Black"/>
 
-        <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="true"
-                  SelectionMode="Single"  Background="WhiteSmoke"
+        <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Path=Termini}" IsReadOnly="true"
+                  SelectionMode="Single"  Background="WhiteSmoke" SelectedItem="{Binding Path=IzabranTermin}"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.Row="1" Grid.ColumnSpan="4"
                   MinWidth="800" MinHeight="260" Margin="17.5 , 10" Width="800">
             <DataGrid.Columns>
@@ -45,16 +46,14 @@
             </DataGrid.Columns>
         </DataGrid>
 
-
-
         <Button Grid.Row="2" Grid.Column="0" Content="{p:LocExtension ZakaziTermin}" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="ZakaziTermin" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=ZakaziTerminKomanda}" Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="1" Content="{p:LocExtension IzmenaTermina}" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="IzmeniTermin"  Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=IzmeniTerminKomanda}"  Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="2" Content="{p:LocExtension OtkaziTermin}" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="OtkaziTermin" Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=OtkaziTerminKomanda}" Height="27" Width="185"/>
         <Button  Grid.Row="2" Grid.Column="3" Content="{p:LocExtension Karton}" Margin="10,5" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="PrikazKartonaPacijenta"  Height="27" Width="185"/>
+                HorizontalContentAlignment="Center" Height="27" Width="185" Command="{Binding Path=PrikazKartonaKomanda}"/>
 
 
     </Grid>

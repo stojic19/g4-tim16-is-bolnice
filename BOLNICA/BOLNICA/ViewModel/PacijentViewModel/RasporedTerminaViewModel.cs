@@ -80,7 +80,7 @@ namespace Bolnica.ViewModel
         public string Poruka
         {
             get { return poruka; }
-            set { poruka = value; OnPropertyChanged("Poruka"); }
+            set { poruka = value; OnPropertyChanged(); }
         }
 
         private RelayCommand otkaziPregledKomanda;
