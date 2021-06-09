@@ -1,5 +1,6 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Konverter;
+using Bolnica.Model;
 using Bolnica.Servis;
 using Model;
 using System;
@@ -18,7 +19,7 @@ namespace Bolnica.Kontroler
         LekariServis lekariServis = new LekariServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         ProstoriServis prostoriServis = new ProstoriServis();
-
+        PreglediKontroler preglediKontroler = new PreglediKontroler();
         public int DobaviBrojZakazanihTerminaNaDatum(DateTime datum)
         {
             int broj = 0;
@@ -220,6 +221,13 @@ namespace Bolnica.Kontroler
                 slobodniTermini.Add(terminKonverter.SlobodniTerminModelUDTO(t));
             }
             return slobodniTermini;
+        }
+
+        public bool ProveriZaOtkazivanje(String izabranTermin)
+        {
+            Termin t = zakazaniTerminiServis.DobaviZakazanTerminPoId(izabranTermin);
+            if (DateTime.Compare(t.Datum, DateTime.Now) <= 0) return false;
+            return true;
         }
     }
 }

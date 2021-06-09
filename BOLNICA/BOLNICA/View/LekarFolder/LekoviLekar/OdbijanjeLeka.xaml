@@ -64,7 +64,7 @@
 
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
                 <TextBox Name="razlogOdbijanja" PreviewMouseDown="razlogOdbijanja_PreviewMouseDown" TextChanged="razlogOdbijanja_TextChanged" MinWidth="245" MinHeight="90" MaxHeight="90"  Width="245" TextWrapping="Wrap" Margin="22,5,21,0" Height="90"/>
-                <Label Content="Niste popunili razlog odbijanja leka!" HorizontalAlignment="Center" Foreground="Red" Margin="44,0" VerticalAlignment="Bottom" Name="validacijaOdbijanja" Visibility="Hidden"/>
+                <Label Content="{p:LocExtension Nevalidno}" HorizontalAlignment="Center" Foreground="Red" Margin="44,0" VerticalAlignment="Bottom" Name="validacijaOdbijanja" Visibility="Hidden"/>
             </StackPanel>
 
         </GroupBox>

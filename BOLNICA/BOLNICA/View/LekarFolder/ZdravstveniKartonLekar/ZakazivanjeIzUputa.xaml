@@ -54,12 +54,10 @@
 
         <TextBox Margin="9.6,1,0,1" IsReadOnly="True" Name="lekar" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
 
+        <Label Grid.Row="4" Grid.Column="0" Name="popunjenostPolja" Visibility="Hidden" Grid.ColumnSpan="2" Content="{p:LocExtension Nepopunjeno}" Foreground="Red" HorizontalAlignment="Center"  VerticalAlignment="Center" FontWeight="DemiBold"/>
 
-        <!--<Label Content="JMBG pacijenta:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3"  Height="30" Width="150" Margin="0,1,10.4,1" />
 
-        <TextBox Margin="9.6,1,0,1" IsReadOnly="True" Name="jmbgPacijenta" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="30" Width="155" Background="WhiteSmoke"  VerticalContentAlignment="Center"  />
-        -->
+      
 
         <Label Content="{p:LocExtension Datum}" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="2" Grid.Row="2"  Height="30" Width="150" Margin="0,1,10.4,1" />

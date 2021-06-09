@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace Bolnica.LekarFolder
 {
@@ -18,6 +19,7 @@ namespace Bolnica.LekarFolder
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        private DispatcherTimer dispatcherTimer;
 
         public VerifikacijaLekova( )
         {
@@ -31,7 +33,20 @@ namespace Bolnica.LekarFolder
             this.dataGridZahtevi.ItemsSource = Zahtevi;
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(dataGridZahtevi.ItemsSource);
             view2.Filter = FiltriranjeZahteva;
+            PodesavanjeTajmera();
+        }
 
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            vecPostojiOdgovor.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
         }
 
         private void inicijalizacijaTabeleZahteva()
@@ -69,7 +84,6 @@ namespace Bolnica.LekarFolder
 
         private void pretragaZahteva_TextChanged(object sender, TextChangedEventArgs e)
         {
-            vecPostojiOdgovor.Visibility = Visibility.Hidden;
             CollectionViewSource.GetDefaultView(dataGridZahtevi.ItemsSource).Refresh();
         }
 
@@ -115,6 +129,7 @@ namespace Bolnica.LekarFolder
             if (izabranZahtev != null && izabranZahtev.Odgovor == Model.Enumi.VrsteOdgovora.Čekanje) return true;
 
             vecPostojiOdgovor.Visibility = Visibility.Visible;
+            dispatcherTimer.Start();
             return false;
         }
 

@@ -150,6 +150,9 @@
   <data name="Datum" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="DatumiNevalid" xml:space="preserve">
+    <value>Dates are invalid!</value>
+  </data>
   <data name="DatumIzdavanjaUputa" xml:space="preserve">
     <value>Date</value>
   </data>
@@ -288,6 +291,15 @@
   <data name="Ne" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="NemaLeka" xml:space="preserve">
+    <value>You have not selected a medicine!</value>
+  </data>
+  <data name="Nepopunjeno" xml:space="preserve">
+    <value>Not all fields are filled!</value>
+  </data>
+  <data name="Nevalidno" xml:space="preserve">
+    <value>Fields are invalid! Check the entries.</value>
+  </data>
   <data name="NovaLozinka" xml:space="preserve">
     <value>New password</value>
   </data>
@@ -306,6 +318,9 @@
   <data name="Odgovor" xml:space="preserve">
     <value>Answer</value>
   </data>
+  <data name="OdgovorenZahtev" xml:space="preserve">
+    <value>The request already has an answer!</value>
+  </data>
   <data name="Odjava" xml:space="preserve">
     <value>Log out</value>
   </data>
@@ -323,6 +338,9 @@
   </data>
   <data name="OtkaziTermin" xml:space="preserve">
     <value>Cancel an appointment</value>
+  </data>
+  <data name="pacAlergican" xml:space="preserve">
+    <value>The patient is allergic to </value>
   </data>
   <data name="Pacijent" xml:space="preserve">
     <value>Patient</value>
@@ -432,11 +450,17 @@
   <data name="Terapija" xml:space="preserve">
     <value>Therapy</value>
   </data>
+  <data name="TerapijaOtkaz" xml:space="preserve">
+    <value>Choose the therapy you want to cancel!</value>
+  </data>
   <data name="TipUputa" xml:space="preserve">
     <value>Referral type</value>
   </data>
   <data name="Trajanje" xml:space="preserve">
     <value>Duration</value>
+  </data>
+  <data name="umg" xml:space="preserve">
+    <value>in milligrams (have to be numbers!)</value>
   </data>
   <data name="Uputi" xml:space="preserve">
     <value>Refferrals</value>

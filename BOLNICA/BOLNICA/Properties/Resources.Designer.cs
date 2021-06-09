@@ -160,6 +160,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Datumi nisu validni!.
+        /// </summary>
+        internal static string DatumiNevalid {
+            get {
+                return ResourceManager.GetString("DatumiNevalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Datum izdavanja uputa.
         /// </summary>
         internal static string DatumIzdavanjaUputa {
@@ -574,6 +583,33 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Niste odabrali lek!.
+        /// </summary>
+        internal static string NemaLeka {
+            get {
+                return ResourceManager.GetString("NemaLeka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nisu popunjena sva polja!.
+        /// </summary>
+        internal static string Nepopunjeno {
+            get {
+                return ResourceManager.GetString("Nepopunjeno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polja nisu validna! Proverite podatke!.
+        /// </summary>
+        internal static string Nevalidno {
+            get {
+                return ResourceManager.GetString("Nevalidno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nova lozinka.
         /// </summary>
         internal static string NovaLozinka {
@@ -628,6 +664,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zahtev već ima odgovor!.
+        /// </summary>
+        internal static string OdgovorenZahtev {
+            get {
+                return ResourceManager.GetString("OdgovorenZahtev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Odjavi se.
         /// </summary>
         internal static string Odjava {
@@ -678,6 +723,15 @@ namespace Bolnica.Properties {
         internal static string OtkaziTermin {
             get {
                 return ResourceManager.GetString("OtkaziTermin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pacijent je alergičan na .
+        /// </summary>
+        internal static string pacAlergican {
+            get {
+                return ResourceManager.GetString("pacAlergican", resourceCulture);
             }
         }
         
@@ -1006,6 +1060,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Izaberite terapiju koju želite da otkažete!.
+        /// </summary>
+        internal static string TerapijaOtkaz {
+            get {
+                return ResourceManager.GetString("TerapijaOtkaz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tip uputa.
         /// </summary>
         internal static string TipUputa {
@@ -1020,6 +1083,15 @@ namespace Bolnica.Properties {
         internal static string Trajanje {
             get {
                 return ResourceManager.GetString("Trajanje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to u miligramima (mora da bude broj!).
+        /// </summary>
+        internal static string umg {
+            get {
+                return ResourceManager.GetString("umg", resourceCulture);
             }
         }
         

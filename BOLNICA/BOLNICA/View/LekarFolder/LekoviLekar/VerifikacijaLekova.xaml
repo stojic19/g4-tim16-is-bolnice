@@ -57,7 +57,7 @@
             </DataGrid>
         </StackPanel>
 
-        <Label Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="Ovaj zahtev već ima odgovor!" FontSize="13" Foreground="Red" Margin="17.5,60" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="vecPostojiOdgovor" Visibility="Hidden"/>
+        <Label Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="{p:LocExtension OdgovorenZahtev}" FontSize="13" Foreground="Red" Margin="17.5,60" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="vecPostojiOdgovor" Visibility="Hidden" FontWeight="Bold"/>
 
         <StackPanel Orientation="Horizontal"  Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" Grid.ColumnSpan="3">
             <Button  Content="{p:LocExtension Odbij}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Odbijanje" Height="27" Width="185" Margin="20,0"/>

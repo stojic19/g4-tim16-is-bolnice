@@ -80,12 +80,12 @@ namespace Bolnica.ViewModel.LekarViewModel
         {
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
         }
 
         public void podesiObavestenje(String poruka)
         {
-            Poruka = "Termin uspešno otkazan!";
+            Poruka = poruka;
             dispatcherTimer.Start();
         }
 
@@ -110,6 +110,10 @@ namespace Bolnica.ViewModel.LekarViewModel
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new KartonLekar(IdNovogPregleda, 0));
             }
+            else
+            {
+                podesiObavestenje("Izaberite termin!");
+            }
         }
 
         private RelayCommand zakaziTerminKomanda;
@@ -126,7 +130,7 @@ namespace Bolnica.ViewModel.LekarViewModel
 
         private RelayCommand izmeniTerminKomanda;
 
-        public RelayCommand IzmenaTerminKomanda
+        public RelayCommand IzmeniTerminKomanda
         {
             get { return izmeniTerminKomanda; }
         }
@@ -138,6 +142,10 @@ namespace Bolnica.ViewModel.LekarViewModel
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new IzmenaTerminaLekar(IzabranTermin.IdTermina));
 
             }
+            else
+            {
+                podesiObavestenje("Izaberite datum za pomeranje!");
+            }
         }
 
         private RelayCommand otkaziTerminKomanda;
@@ -148,9 +156,9 @@ namespace Bolnica.ViewModel.LekarViewModel
         }
         public void OtkaziTermin()
         {
-            if (IzabranTermin != null)
+            if (IzabranTermin != null && terminKontroler.ProveriZaOtkazivanje(izabranTermin.IdTermina))
             {
-                if (System.Windows.MessageBox.Show("Da li ste sigurni da želite da otkažete termin?", "Otkazivanje termina", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                if (System.Windows.MessageBox.Show("Da li ste sigurni da želite da otkažete termin?", Properties.Resources.OtkaziTermin, MessageBoxButton.YesNo) == MessageBoxResult.No)
                 {
                     return;
                 }
@@ -162,9 +170,12 @@ namespace Bolnica.ViewModel.LekarViewModel
                     podesiObavestenje("Termin uspešno otkazan!");
                 }
             }
-            else
+            else if(IzabranTermin == null)
             {
-                MessageBox.Show("Izaberite termin koji želite da otkažete!");
+                podesiObavestenje("Izaberite datum za otkazivanje!");
+            }else if (!terminKontroler.ProveriZaOtkazivanje(izabranTermin.IdTermina))
+            {
+                podesiObavestenje("Termin je prošao!");
             }
         }
 

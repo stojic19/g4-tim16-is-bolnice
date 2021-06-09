@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Threading;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.LekarFolder
@@ -20,6 +21,7 @@ namespace Bolnica.LekarFolder
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        private DispatcherTimer dispatcherTimer;
 
         PregledDTO izabranPregled = null;
         String idLekaraSpecijaliste = null;
@@ -40,8 +42,22 @@ namespace Bolnica.LekarFolder
             this.TabelaLekara.ItemsSource = lekariKontroler.DobaviSpecijaliste();
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
-
+            PodesavanjeTajmera();
             this.DataContext = this;
+        }
+
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            validacijaPolja.Visibility = Visibility.Hidden;
+            validacijaStac.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
         }
 
         private void InicijalizacijaPoljaSpecijalisticki()
@@ -98,6 +114,7 @@ namespace Bolnica.LekarFolder
             if (this.nalazMisljenje.Text.Equals("") || this.imeLekaraSpecijaliste.Text.Equals("") || this.prezimeLekaraSpecijaliste.Text.Equals(""))
             {
                 validacijaPolja.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }
@@ -147,8 +164,9 @@ namespace Bolnica.LekarFolder
         {
             if (this.nalazStac.Text.Equals("") || !pocetakStacionarnog.SelectedDate.HasValue || !krajStacionarnog.SelectedDate.HasValue || soba.SelectedItem == null)
             {
-                validacijaStac.Content = "Niste popunili sva polja!";
+                validacijaStac.Content = Properties.Resources.Nepopunjeno;
                 validacijaStac.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
             }
 
@@ -163,8 +181,9 @@ namespace Bolnica.LekarFolder
 
             if (pocetakLecenja.CompareTo(krajStacionarnog.SelectedDate) > 0)
             {
-                validacijaStac.Content = "Datumi nisu validni!";
+                validacijaStac.Content = Properties.Resources.DatumiNevalid;
                 validacijaStac.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
             }
 
@@ -187,6 +206,18 @@ namespace Bolnica.LekarFolder
         {
             validacijaPolja.Visibility = Visibility.Hidden;
             CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource).Refresh();
+
+            if (imeLekara.Text.Equals(string.Empty))
+            {
+                imeLekara.BorderBrush = System.Windows.Media.Brushes.Red;
+                prezimeLekara.BorderBrush = System.Windows.Media.Brushes.Red;
+
+            }
+            else
+            {
+                imeLekara.BorderBrush = System.Windows.Media.Brushes.Black;
+                prezimeLekara.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
         }
 
         private bool UserFilterLekar(object item)
@@ -212,30 +243,67 @@ namespace Bolnica.LekarFolder
             }
         }
 
-        private void KlikNaPolja(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            validacijaPolja.Visibility = Visibility.Hidden;
-            validacijaStac.Visibility = Visibility.Hidden;
-        }
-
-        private void PromenaTeksta(object sender, TextChangedEventArgs e)
-        {
-            validacijaPolja.Visibility = Visibility.Hidden;
-            validacijaStac.Visibility = Visibility.Hidden;
-        }
 
         private void soba_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if(soba.SelectedIndex < 0)
+            {
+                soba.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                soba.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
         }
 
         private void promenaDatuma(object sender, SelectionChangedEventArgs e)
         {
-            if (!pocetakStacionarnog.SelectedDate.HasValue || !krajStacionarnog.SelectedDate.HasValue) return;
+            DateTime pocetakLecenja = (DateTime)pocetakStacionarnog.SelectedDate;
+
+            if (!pocetakStacionarnog.SelectedDate.HasValue || !krajStacionarnog.SelectedDate.HasValue)
+            {
+                pocetakStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
+                krajStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
+                return;
+            }else if(pocetakLecenja.CompareTo(krajStacionarnog.SelectedDate) > 0)
+            {
+                pocetakStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
+                krajStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
+                return;
+            }
+
+
+            pocetakStacionarnog.BorderBrush = System.Windows.Media.Brushes.Black;
+            krajStacionarnog.BorderBrush = System.Windows.Media.Brushes.Black;
 
             foreach (ProstorDTO p in prostoriKontroler.DobaviSveSlobodneSobe((DateTime)krajStacionarnog.SelectedDate))
             {
                 slobodneSobe.Add(p);
+            }
+        }
+
+        private void nalazMisljenje_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (nalazMisljenje.Text.Equals(string.Empty))
+            {
+                nalazMisljenje.BorderBrush = System.Windows.Media.Brushes.Red;
+
+            }
+            else
+            {
+                nalazMisljenje.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void nalazStac_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (nalazStac.Text.Equals(string.Empty))
+            {
+                nalazStac.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                nalazStac.BorderBrush = System.Windows.Media.Brushes.Black;
             }
         }
     }

@@ -75,6 +75,15 @@ namespace Bolnica.LekarFolder.LekoviLekar
         private void razlogOdbijanja_TextChanged(object sender, TextChangedEventArgs e)
         {
             validacijaOdbijanja.Visibility = Visibility.Hidden;
+
+            if (razlogOdbijanja.Text.Equals(String.Empty))
+            {
+                razlogOdbijanja.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                razlogOdbijanja.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
         }
 
         private void razlogOdbijanja_PreviewMouseDown(object sender, MouseButtonEventArgs e)

@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
@@ -29,6 +30,7 @@ namespace Bolnica
         String idAnamneze = null;
         String sifraLeka = null;
         String korisnickoPacijenta = "";
+        private DispatcherTimer dispatcherTimer;
         public static ObservableCollection<TerapijaDTO> Terapije { get; set; } = new ObservableCollection<TerapijaDTO>();
         public NovaAnamneza(String IDIzabranog)
         {
@@ -41,6 +43,20 @@ namespace Bolnica
 
             this.DataContext = this;
             inicijalizacijaTabela();
+        }
+
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            validacija.Visibility = Visibility.Hidden;
+            validacijaDijagnoze.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
         }
 
         private void inicijalizacijaTabela()
@@ -73,8 +89,9 @@ namespace Bolnica
 
             if (this.tekst.Text.Equals(""))
             {
-                validacijaDijagnoze.Content = "Niste popunili sva polja!";
+                validacijaDijagnoze.Content = Properties.Resources.Nepopunjeno;
                 validacijaDijagnoze.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return;
 
             }
@@ -115,7 +132,9 @@ namespace Bolnica
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Izaberite terapiju koju želite da otkažete!");
+                validacija.Content = Properties.Resources.TerapijaOtkaz;
+                validacija.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
             }
         }
 
@@ -144,8 +163,9 @@ namespace Bolnica
         {
             if (this.imeLeka.Text.Equals("") || this.jacinaLeka.Text.Equals("") || satnica.Text.Equals("") || dnevnaKol.Text.Equals(""))
             {
-                validacija.Content = "Niste popunili sva polja!";
+                validacija.Content = Properties.Resources.Nepopunjeno;
                 validacija.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }
@@ -165,7 +185,7 @@ namespace Bolnica
             if (!pocTer.SelectedDate.HasValue || !krajTer.SelectedDate.HasValue || DateTime.Now.CompareTo(pocTer.SelectedDate) > 0 ||
                     pocetak.CompareTo(krajTer.SelectedDate) > 0)
             {
-                validacija.Content = "Datumi nisu validni!";
+                validacija.Content = Properties.Resources.DatumiNevalid;
                 validacija.Visibility = Visibility.Visible;
                 return false;
             }
@@ -206,25 +226,86 @@ namespace Bolnica
                 imeLeka.Text = item.NazivLeka;
                 sifraLeka = item.IdLeka;
                 jacinaLeka.Text = item.Jacina;
+
+                imeLeka.BorderBrush = System.Windows.Media.Brushes.Black;
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Black;
             }
-        }
-
-        private void PromenaPolja(object sender, TextChangedEventArgs e)
-        {
-            validacijaDijagnoze.Visibility = Visibility.Hidden;
-            validacija.Visibility = Visibility.Hidden;
-        }
-
-        private void KlikPolja(object sender, MouseButtonEventArgs e)
-        {
-            validacijaDijagnoze.Visibility = Visibility.Hidden;
-            validacija.Visibility = Visibility.Hidden;
+            else
+            {
+                imeLeka.BorderBrush = System.Windows.Media.Brushes.Red;
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
         }
 
         private void PromenaDatuma(object sender, SelectionChangedEventArgs e)
         {
-            validacijaDijagnoze.Visibility = Visibility.Hidden;
-            validacija.Visibility = Visibility.Hidden;
+             DateTime pocetak = DateTime.Now;
+
+            if (pocTer.SelectedDate.HasValue)
+            {
+                pocetak = (DateTime)pocTer.SelectedDate;
+
+            }
+
+            if (pocetak.CompareTo(krajTer.SelectedDate) > 0)
+            {
+                pocTer.BorderBrush = System.Windows.Media.Brushes.Red;
+                krajTer.BorderBrush = System.Windows.Media.Brushes.Red;
+
+            }
+            else
+            {
+                pocTer.BorderBrush = System.Windows.Media.Brushes.Black;
+                krajTer.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void tekst_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (tekst.Text.Equals(string.Empty))
+            {
+                tekst.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                tekst.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void dnevnaKol_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (dnevnaKol.Text.Equals(string.Empty))
+            {
+                dnevnaKol.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                dnevnaKol.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void satnica_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (satnica.Text.Equals(string.Empty))
+            {
+                satnica.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                satnica.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void opisKonzumacije_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (opisKonzumacije.Text.Equals(string.Empty))
+            {
+                opisKonzumacije.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                opisKonzumacije.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
         }
     }
 }

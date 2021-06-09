@@ -93,7 +93,7 @@
 
                     <Label Content="{p:LocExtension JacinaLeka}" HorizontalAlignment="Center" FontWeight="Normal" />
 
-                    <Label Name="labelaValidacije" Content="Niste odabrali lek!" VerticalContentAlignment="Top" Foreground="Red" FontSize="13" Visibility="Hidden" HorizontalAlignment="Center"/>
+                    <Label Name="labelaValidacije" Content="{p:LocExtension NemaLeka}" VerticalContentAlignment="Top" Foreground="Red" FontSize="13" Visibility="Hidden" HorizontalAlignment="Center"/>
 
 
                 </StackPanel>

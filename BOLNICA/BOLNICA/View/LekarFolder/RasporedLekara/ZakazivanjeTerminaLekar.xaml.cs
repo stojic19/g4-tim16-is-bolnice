@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace Bolnica
 {
@@ -23,7 +24,7 @@ namespace Bolnica
         String izabranPacijent = null;
         String izabranaVrstaTermina = null;
         int izabranoTrajanje = 1;
-
+        private DispatcherTimer dispatcherTimer;
         public static ObservableCollection<TerminDTO> slobodniTermini { get; set; } = new ObservableCollection<TerminDTO>();
         public ObservableCollection<String> VrsteTermina { get; set; } = new ObservableCollection<String>();
         public ObservableCollection<int> BrojTermina { get; set; } = new ObservableCollection<int>();
@@ -43,7 +44,7 @@ namespace Bolnica
             CollectionView view2 = (CollectionView)CollectionViewSource.GetDefaultView(TabelaLekara.ItemsSource);
             view2.Filter = UserFilterLekar;
 
-
+            PodesavanjeTajmera();
             this.DataContext = this;
             VrsteTermina.Clear();
             BrojTermina.Clear();
@@ -68,19 +69,32 @@ namespace Bolnica
             t.TrajanjeDouble = izabranoTrajanje*30;
             Console.WriteLine(izabranoTrajanje);
 
-            terminKontroler.ZakaziTerminLekar(t);//dodaj poruku uspesno odradjeno
+            terminKontroler.ZakaziTerminLekar(t);
 
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
             LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new PrikazTerminaLekara());
 
         }
 
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            popunjenost.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
+        }
 
         private Boolean ProveraPopunjenostiPolja()
         {
             if (!datum.SelectedDate.HasValue || pocVreme.SelectedIndex == -1 || brojTermina.SelectedIndex == -1  || idPacijenta.Text.Equals("") )
             {
-                System.Windows.Forms.MessageBox.Show("Niste popunili sva polja!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                popunjenost.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }
@@ -94,6 +108,11 @@ namespace Bolnica
                 PacijentDTO item = (PacijentDTO)TabelaPacijenata.SelectedItems[0];
                 idPacijenta.Text = item.Ime + " " + item.Prezime;
                 izabranPacijent = item.KorisnickoIme;
+                idPacijenta.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+            else
+            {
+                idPacijenta.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
         }
@@ -113,8 +132,12 @@ namespace Bolnica
                 {
                     VrsteTermina.Add("Operacija");
                 }
-
+                idLekara.BorderBrush = System.Windows.Media.Brushes.Black;
                 refresujPocetnoVreme();
+            }
+            else
+            {
+                idLekara.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
         }
@@ -127,6 +150,11 @@ namespace Bolnica
             {
                 izabranDatum = datum.Value;
                 refresujPocetnoVreme();
+                this.datum.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+            else
+            {
+                this.datum.BorderBrush = System.Windows.Media.Brushes.Red;
             }
         }
 
@@ -137,12 +165,18 @@ namespace Bolnica
             {
                 izabranaVrstaTermina = "Pregled";
                 maks = 4;
-                
+                vrTermina.BorderBrush = System.Windows.Media.Brushes.Black;
+
             }
             else if (vrTermina.SelectedIndex == 1)
             {
                 maks = 11;
                 izabranaVrstaTermina = "Operacija";
+                vrTermina.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+            else
+            {
+                vrTermina.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
             BrojTermina.Clear();
@@ -172,8 +206,13 @@ namespace Bolnica
 
         private void brojTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (brojTermina.SelectedIndex < 0) return;
+            if (brojTermina.SelectedIndex < 0)
+            {
+                brojTermina.BorderBrush = System.Windows.Media.Brushes.Red;
+                return;
+            }
 
+            brojTermina.BorderBrush = System.Windows.Media.Brushes.Black;
             izabranoTrajanje = (int)brojTermina.SelectedItem;
             refresujPocetnoVreme();
         }

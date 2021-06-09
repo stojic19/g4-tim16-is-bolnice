@@ -73,7 +73,7 @@
 
             <GroupBox Grid.Row="3" Header="{p:LocExtension SimptomiDijagnoza}" Width="564" Height="184" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
-                <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
+                <TextBox TextChanged="tekst_TextChanged" Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
             </GroupBox>
@@ -133,12 +133,12 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,25,5">
-                                <DatePicker SelectedDateChanged="PromenaDatuma" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocTer" FontWeight="Normal"/>
+                                <DatePicker SelectedDateChanged="PromenaDatuma" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="pocTer" FontWeight="Normal"/>
                                 <Label Content="{p:LocExtension PocetakTerapije}" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="25,5,5,5">
-                                <DatePicker SelectedDateChanged="PromenaDatuma" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajTer" FontWeight="Normal"/>
+                                <DatePicker SelectedDateChanged="PromenaDatuma"  Width="226" Height="27" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Name="krajTer" FontWeight="Normal"/>
                                 <Label Content="{p:LocExtension KrajTerapije}" HorizontalAlignment="Center" FontWeight="Normal" />
                             </StackPanel>
 
@@ -147,16 +147,16 @@
                         <StackPanel Orientation="Horizontal" Margin="15">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" >
 
-                                <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="dnevnaKol" FontWeight="Normal"/>
+                                <TextBox TextChanged="dnevnaKol_TextChanged" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="dnevnaKol" FontWeight="Normal"/>
                                 <Label Content="{p:LocExtension Dnevno}" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,15"/>
 
 
-                                <TextBox TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="satnica" FontWeight="Normal" />
+                                <TextBox TextChanged="satnica_TextChanged" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="satnica" FontWeight="Normal" />
                                 <Label Content="{p:LocExtension Satnica}" HorizontalAlignment="Center" FontWeight="Normal" Margin="5,0,25,5" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" Margin="52,0,0,1">
-                                <TextBox x:Name="opisKonzumacije" Height="100" Width="226"  VerticalAlignment="Top" FontWeight="Normal" TextChanged="PromenaPolja" PreviewMouseDown="KlikPolja"/>
+                                <TextBox x:Name="opisKonzumacije" Height="100" Width="226"  VerticalAlignment="Top" FontWeight="Normal" TextChanged="opisKonzumacije_TextChanged"/>
                                 <Label Content="{p:LocExtension UputstvoLek}" HorizontalAlignment="Center" FontWeight="Normal"  />
                             </StackPanel>
                         </StackPanel>

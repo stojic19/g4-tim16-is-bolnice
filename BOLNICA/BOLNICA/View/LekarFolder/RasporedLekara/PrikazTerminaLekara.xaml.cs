@@ -1,6 +1,7 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
+using Bolnica.Lokalizacija;
 using Bolnica.ViewModel.LekarViewModel;
 using System;
 using System.Collections.ObjectModel;

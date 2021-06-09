@@ -24,8 +24,8 @@
         <Kolicina>3</Kolicina>
       </Sastojak>
     </Sastojci>
-    <Verifikacija>true</Verifikacija>
     <Zamene />
+    <Verifikacija>true</Verifikacija>
   </Lek>
   <Lek>
     <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
@@ -42,7 +42,6 @@
         <Kolicina>312</Kolicina>
       </Sastojak>
     </Sastojci>
-    <Verifikacija>false</Verifikacija>
     <Zamene>
       <Lek>
         <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
@@ -51,8 +50,8 @@
         <Kolicina>321</Kolicina>
         <Proizvodjac>ars</Proizvodjac>
         <Sastojci />
-        <Verifikacija>true</Verifikacija>
         <Zamene />
+        <Verifikacija>true</Verifikacija>
       </Lek>
       <Lek>
         <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
@@ -70,7 +69,6 @@
             <Kolicina>231</Kolicina>
           </Sastojak>
         </Sastojci>
-        <Verifikacija>true</Verifikacija>
         <Zamene>
           <Lek>
             <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -92,8 +90,8 @@
                 <Kolicina>2</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene />
+            <Verifikacija>true</Verifikacija>
           </Lek>
           <Lek>
             <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
@@ -107,70 +105,14 @@
                 <Kolicina>3</Kolicina>
               </Sastojak>
             </Sastojci>
-            <Verifikacija>true</Verifikacija>
             <Zamene />
+            <Verifikacija>true</Verifikacija>
           </Lek>
         </Zamene>
+        <Verifikacija>true</Verifikacija>
       </Lek>
     </Zamene>
-  </Lek>
-  <Lek>
-    <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
-    <NazivLeka>Buscopan</NazivLeka>
-    <Jacina>500mg</Jacina>
-    <Kolicina>200</Kolicina>
-    <Proizvodjac>Biofarm</Proizvodjac>
-    <Sastojci>
-      <Sastojak>
-        <Naziv>s341</Naziv>
-        <Kolicina>3</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s312</Naziv>
-        <Kolicina>231</Kolicina>
-      </Sastojak>
-    </Sastojci>
-    <Verifikacija>true</Verifikacija>
-    <Zamene>
-      <Lek>
-        <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
-        <NazivLeka>Roaccutane</NazivLeka>
-        <Jacina>20mg</Jacina>
-        <Kolicina>432</Kolicina>
-        <Proizvodjac>Biofarm</Proizvodjac>
-        <Sastojci>
-          <Sastojak>
-            <Naziv>s4</Naziv>
-            <Kolicina>4</Kolicina>
-          </Sastojak>
-          <Sastojak>
-            <Naziv>s5</Naziv>
-            <Kolicina>5</Kolicina>
-          </Sastojak>
-          <Sastojak>
-            <Naziv>s8</Naziv>
-            <Kolicina>2</Kolicina>
-          </Sastojak>
-        </Sastojci>
-        <Verifikacija>true</Verifikacija>
-        <Zamene />
-      </Lek>
-      <Lek>
-        <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
-        <NazivLeka>Aerius</NazivLeka>
-        <Jacina>10mg</Jacina>
-        <Kolicina>3212</Kolicina>
-        <Proizvodjac>Brufesa</Proizvodjac>
-        <Sastojci>
-          <Sastojak>
-            <Naziv>s42</Naziv>
-            <Kolicina>3</Kolicina>
-          </Sastojak>
-        </Sastojci>
-        <Verifikacija>true</Verifikacija>
-        <Zamene />
-      </Lek>
-    </Zamene>
+    <Verifikacija>false</Verifikacija>
   </Lek>
   <Lek>
     <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
@@ -179,7 +121,6 @@
     <Kolicina>321</Kolicina>
     <Proizvodjac>ars</Proizvodjac>
     <Sastojci />
-    <Verifikacija>true</Verifikacija>
     <Zamene>
       <Lek>
         <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -205,10 +146,11 @@
             <Kolicina>3</Kolicina>
           </Sastojak>
         </Sastojci>
-        <Verifikacija>true</Verifikacija>
         <Zamene />
+        <Verifikacija>true</Verifikacija>
       </Lek>
     </Zamene>
+    <Verifikacija>true</Verifikacija>
   </Lek>
   <Lek>
     <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
@@ -233,7 +175,6 @@
         <Kolicina>4</Kolicina>
       </Sastojak>
     </Sastojci>
-    <Verifikacija>false</Verifikacija>
     <Zamene>
       <Lek>
         <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
@@ -241,9 +182,68 @@
         <Jacina>500mg</Jacina>
         <Kolicina>0</Kolicina>
         <Sastojci />
-        <Verifikacija>false</Verifikacija>
         <Zamene />
+        <Verifikacija>false</Verifikacija>
       </Lek>
     </Zamene>
+    <Verifikacija>false</Verifikacija>
+  </Lek>
+  <Lek>
+    <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>
+    <NazivLeka>Buscopan</NazivLeka>
+    <Jacina>250mg</Jacina>
+    <Kolicina>200</Kolicina>
+    <Proizvodjac>Biofarm</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>s341</Naziv>
+        <Kolicina>3</Kolicina>
+      </Sastojak>
+      <Sastojak>
+        <Naziv>s312</Naziv>
+        <Kolicina>231</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Zamene>
+      <Lek>
+        <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+        <NazivLeka>Roaccutane</NazivLeka>
+        <Jacina>20mg</Jacina>
+        <Kolicina>432</Kolicina>
+        <Proizvodjac>Biofarm</Proizvodjac>
+        <Sastojci>
+          <Sastojak>
+            <Naziv>s4</Naziv>
+            <Kolicina>4</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s5</Naziv>
+            <Kolicina>5</Kolicina>
+          </Sastojak>
+          <Sastojak>
+            <Naziv>s8</Naziv>
+            <Kolicina>2</Kolicina>
+          </Sastojak>
+        </Sastojci>
+        <Zamene />
+        <Verifikacija>true</Verifikacija>
+      </Lek>
+      <Lek>
+        <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+        <NazivLeka>Aerius</NazivLeka>
+        <Jacina>10mg</Jacina>
+        <Kolicina>3212</Kolicina>
+        <Proizvodjac>Brufesa</Proizvodjac>
+        <Sastojci>
+          <Sastojak>
+            <Naziv>s42</Naziv>
+            <Kolicina>3</Kolicina>
+          </Sastojak>
+        </Sastojci>
+        <Zamene />
+        <Verifikacija>true</Verifikacija>
+      </Lek>
+    </Zamene>
+    <Verifikacija>true</Verifikacija>
   </Lek>
 </ArrayOfLek>

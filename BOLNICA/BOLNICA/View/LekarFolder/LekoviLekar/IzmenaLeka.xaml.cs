@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace Bolnica.LekarFolder.LekoviLekar
 {
@@ -16,16 +17,17 @@ namespace Bolnica.LekarFolder.LekoviLekar
         List<SastojakDTO> izmenjeniSastojci = new List<SastojakDTO>();
         String KorisnickoIme = null;
         private LekoviKontroler lekoviKontroler = new LekoviKontroler();
+        private DispatcherTimer dispatcherTimer;
         public static ObservableCollection<SastojakDTO> Sastojci { get; set; } = new ObservableCollection<SastojakDTO>();
 
-        public IzmenaLeka(String idIzabranogLeka )
+        public IzmenaLeka(String idIzabranogLeka)
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
             LekarGlavniProzor.postaviTrenutnu(this);
             izabranLek = lekoviKontroler.PretraziPoID(idIzabranogLeka);
             KorisnickoIme = LekarGlavniProzor.DobaviKorisnickoIme();
-
+            PodesavanjeTajmera();
             this.DataContext = this;
             inicijalizacijaPolja();
 
@@ -79,7 +81,6 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             if (nazivSastojka.Text.Equals("") || kolicinaSastojka.Text.Equals(""))
             {
-                validacijaPolja.Content = "Niste popunili sva polja!";
                 validacijaPolja.Visibility = Visibility.Visible;
                 return false;
 
@@ -88,8 +89,8 @@ namespace Bolnica.LekarFolder.LekoviLekar
             if (!Double.TryParse(kolicinaSastojka.Text, out Double broj))
             {
                 kolicinaSastojka.Text = String.Empty;
-                validacijaPolja.Content = "Količina mora biti broj!";
                 validacijaPolja.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
 
                 return false;
             }
@@ -122,8 +123,8 @@ namespace Bolnica.LekarFolder.LekoviLekar
         {
             if (nazivLeka.Text.Equals("") || jacinaLeka.Text.Equals(""))
             {
-                validacijaPolja.Content = "Niste popunili sva polja!";
                 validacijaPolja.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }
@@ -131,14 +132,73 @@ namespace Bolnica.LekarFolder.LekoviLekar
             return true;
         }
 
-        private void PromenaTekstualnihPolja(object sender, TextChangedEventArgs e)
+
+        private void PodesavanjeTajmera()
         {
-            validacijaPolja.Visibility = Visibility.Hidden;
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
         }
 
-        private void KlikNaPolje(object sender, MouseButtonEventArgs e)
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             validacijaPolja.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
+        }
+
+        private void nazivLeka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (nazivLeka.Text.Equals(String.Empty))
+            {
+                nazivLeka.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                nazivLeka.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void jacinaLeka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (jacinaLeka.Text.Equals(""))
+            {
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+        }
+
+        private void nazivSastojka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (nazivSastojka.Text.Equals(String.Empty) && !kolicinaSastojka.Text.Equals(String.Empty))
+            {
+                nazivSastojka.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                nazivSastojka.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+
+        }
+
+        private void kolicinaSastojka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((kolicinaSastojka.Text.Equals(String.Empty) && !nazivSastojka.Text.Equals(String.Empty)) || !Double.TryParse(kolicinaSastojka.Text, out Double broj))
+            {
+                kolicinaSastojka.BorderBrush = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                kolicinaSastojka.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+
+        }
+
+        private void Label_ToolTipOpening(object sender, ToolTipEventArgs e)
+        {
+
         }
     }
 }

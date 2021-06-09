@@ -755,7 +755,21 @@
           <VremeZaPojavu>1212</VremeZaPojavu>
         </Alergeni>
       </Alergeni>
-      <Recepti />
+      <Recepti>
+        <Recept>
+          <IDRecepta>d0dd5575-8d70-4c2f-be53-d300d216c906</IDRecepta>
+          <Datum>2021-06-09T06:07:16.2711779+02:00</Datum>
+          <Lek>
+            <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+            <NazivLeka>Rapidol</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>0</Kolicina>
+            <Sastojci />
+            <Zamene />
+            <Verifikacija>false</Verifikacija>
+          </Lek>
+        </Recept>
+      </Recepti>
       <Anamneze>
         <Anamneza>
           <IdAnamneze>c1fcede6-8832-4ea2-a9c6-647d7c7fdd8c</IdAnamneze>

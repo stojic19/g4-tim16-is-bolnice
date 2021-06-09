@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Forms;
+using System.Windows.Threading;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica
@@ -24,6 +25,7 @@ namespace Bolnica
         LekariKontroler lekariKontroler = new LekariKontroler();
         PregledDTO izabranPregled = null;
         String sifraLeka = null;
+        private DispatcherTimer dispatcherTimer;
         public static ObservableCollection<LekDTO> Lekovi { get; set; } = new ObservableCollection<LekDTO>();
 
         public DodavanjeRecepta(String idIzabranogPregleda)
@@ -35,6 +37,20 @@ namespace Bolnica
             inicijalizacijaPolja();
             inicijalizacijaTabeleLekova();
             podesavanjePretrageLekova();
+            PodesavanjeTajmera();
+        }
+
+        private void PodesavanjeTajmera()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            labelaValidacije.Visibility = Visibility.Hidden;
+            dispatcherTimer.IsEnabled = false;
         }
 
         private void inicijalizacijaPolja()
@@ -81,15 +97,18 @@ namespace Bolnica
         {
             if (this.nazivLeka.Text.Equals("") || this.jacinaLeka.Text.Equals(""))
             {
-                labelaValidacije.Content = "Niste odabrali lek!";
+                labelaValidacije.Content = Properties.Resources.NemaLeka;
                 labelaValidacije.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }
 
             if (zdravstveniKartoniKontroler.ProveraAlergicnosti(izabranPregled.Termin.Pacijent.KorisnickoIme, sifraLeka))
             {
-                labelaValidacije.Content = "Pacijent je alergičan na " + this.nazivLeka.Text + "!";
+                labelaValidacije.Content = Properties.Resources.pacAlergican + " " + this.nazivLeka.Text + "!";
+                labelaValidacije.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
             }
 
@@ -97,7 +116,6 @@ namespace Bolnica
 
         }
 
-        private void IzvestajNovogRecepta(object sender, RoutedEventArgs e) { }
 
         private void Odustajanje(object sender, RoutedEventArgs e)
         {
@@ -116,6 +134,13 @@ namespace Bolnica
                 jacinaLeka.Text = izabranLek.Jacina;
                 sifraLeka = izabranLek.IdLeka;
                 poljeZaPreragu.Text = String.Empty;
+                nazivLeka.BorderBrush = System.Windows.Media.Brushes.Black;
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Black;
+            }
+            else
+            {
+                nazivLeka.BorderBrush = System.Windows.Media.Brushes.Red;
+                jacinaLeka.BorderBrush = System.Windows.Media.Brushes.Red;
             }
 
         }
