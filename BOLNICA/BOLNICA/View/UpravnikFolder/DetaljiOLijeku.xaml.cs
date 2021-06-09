@@ -32,9 +32,7 @@ namespace Bolnica
 
             IDLeka = id;
             LekDTO izabran = zahtjeviKontroler.pretraziLekPoId(id);
-            textBoxNaziv.Text = izabran.NazivLeka;
-            textBoxProizvodjac.Text = izabran.Proizvodjac;
-            checkBox.IsChecked = izabran.Verifikacija;
+            Naziv.Text = izabran.NazivLeka;
 
             this.DataContext = this;
             Sastojci = new ObservableCollection<SastojakDTO>();
@@ -50,16 +48,6 @@ namespace Bolnica
         {
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new PrikazLijekova());
-        }
-
-        private void Dodaj_Click(object sender, RoutedEventArgs e)
-
-        {
-            if (zahtjeviKontroler.PretraziPoIdLijeka(IDLeka).Odgovor == Model.Enumi.VrsteOdgovora.Čekanje){
-                DodavanjeSastojka dodavanje = new DodavanjeSastojka(IDLeka);
-                dodavanje.Show();
-            }
-
         }
 
         private void dataGridSastojci_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -31,6 +31,10 @@ namespace Bolnica.Kontroler
             lekoviServis.DodajLek(lekKonverter.LekDTOUModel(noviLek));
         }
 
+        public void UkloniLijek(String idLijeka)
+        {
+            lekoviServis.UkloniLijek(idLijeka);
+        }
         public LekDTO PretraziPoID(String sifraLeka)
         {
             Lek pronadjenLek = lekoviServis.PretraziPoID(sifraLeka);

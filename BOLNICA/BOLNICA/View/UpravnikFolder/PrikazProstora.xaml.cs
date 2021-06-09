@@ -68,8 +68,6 @@ namespace Bolnica
 
         private void Ukloni_Click(object sender, RoutedEventArgs e)
         {
-
-
             ProstorDTO izabranZaBrisanje = (ProstorDTO)dataGridProstori.SelectedItem;
 
             if (izabranZaBrisanje != null)
@@ -86,8 +84,6 @@ namespace Bolnica
 
         private void RasporedOpreme_Click(object sender, RoutedEventArgs e)
         {
-
-
             ProstorDTO izabran = (ProstorDTO)dataGridProstori.SelectedItem;
 
             if (izabran != null)

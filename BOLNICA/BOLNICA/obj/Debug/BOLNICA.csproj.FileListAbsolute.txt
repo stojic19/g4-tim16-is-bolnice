@@ -5861,3 +5861,5 @@ C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmjenaZahtjeva.baml
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazZahtjeva.baml
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeZahtjeva.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeLijeka.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeLijeka.baml

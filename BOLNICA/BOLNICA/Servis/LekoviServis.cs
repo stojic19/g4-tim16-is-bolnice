@@ -20,6 +20,11 @@ namespace Bolnica.Model.Rukovanja
             lekoviRepozitorijum.DodajObjekat(noviLek);
         }
 
+        public void UkloniLijek(String idLijeka)
+        {
+            lekoviRepozitorijum.ObrisiObjekat("//ArrayOfLek/Lek[IDLeka='" + idLijeka + "']");
+        }
+
         public Lek PretraziPoID(String sifraLeka)
         {
             return lekoviRepozitorijum.PretraziLekPoId(sifraLeka);

@@ -40,5 +40,54 @@ namespace Bolnica
 
         }
 
+        private void IzmjeniKolicinu_Click(object sender, RoutedEventArgs e)
+        {
+           /* LekDTO izabran = (LekDTO)dataGridLijekovi.SelectedItem;
+
+            if (izabran != null)
+            {
+
+                IzmjenaKolicineLijeka izmjena = new IzmjenaKolicineLijeka(izabran.IdLeka);
+                izmjena.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite lijek ciju kolicinu zelite da promjenite!");
+            }*/
+        }
+
+        private void UkloniLijek_Click(object sender, RoutedEventArgs e)
+        {
+            LekDTO izabranZaBrisanje = (LekDTO)dataGridLijekovi.SelectedItem;
+
+            if (izabranZaBrisanje != null)
+            {
+
+                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.IdLeka);
+                uklanjanje.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite lijek koji želite da uklonite!");
+            }
+        }
+
+        private void Sastojci_Click(object sender, RoutedEventArgs e)
+        {
+            LekDTO izabran = (LekDTO)dataGridLijekovi.SelectedItem;
+
+            if (izabran != null)
+            {
+
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
+                UserControl usc = null;
+                usc = new DetaljiOLijeku(izabran.IdLeka);
+                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(usc);
+            }
+            else
+            {
+                MessageBox.Show("Izaberite lijek cije sastojke zelite da vidite!");
+            }
+        }
     }
 }

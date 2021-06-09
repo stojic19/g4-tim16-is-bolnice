@@ -684,6 +684,9 @@
     <Compile Include="View\UpravnikFolder\RenoviranjeProstorije.xaml.cs">
       <DependentUpon>RenoviranjeProstorije.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UpravnikFolder\UklanjanjeLijeka.xaml.cs">
+      <DependentUpon>UklanjanjeLijeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UpravnikFolder\UklanjanjeOpreme.xaml.cs">
       <DependentUpon>UklanjanjeOpreme.xaml</DependentUpon>
     </Compile>
@@ -1218,6 +1221,10 @@
     <Page Include="View\UpravnikFolder\RenoviranjeProstorije.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UpravnikFolder\UklanjanjeLijeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UpravnikFolder\UklanjanjeOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
