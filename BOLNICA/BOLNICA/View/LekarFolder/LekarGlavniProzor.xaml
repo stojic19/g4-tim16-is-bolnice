@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:Bolnica.Lokalizacija"
         xmlns:local="clr-namespace:Bolnica.LekarFolder"
         mc:Ignorable="d"
-        Title="Zdravo korporacija" Height="570" Width="850" WindowStartupLocation="CenterScreen">
+        Title="Zdravo korporacija" Height="570" Width="850" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
 
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
@@ -149,11 +149,11 @@
 
         <Menu Grid.Row="2" MouseLeave="menu_MouseLeave" Name="menu" HorizontalAlignment="Left" Height="690" VerticalAlignment="Top" Width="230" 
               Visibility="Hidden" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1">
-            <MenuItem Header="{p:LocExtension RasporedKratko}" Height="50" Width="220" Click="PrikazRasporeda" FontSize="15"/>
-            <MenuItem Header="{p:LocExtension ZakaziTermin}" Height="50" Width="220" FontSize="15" Click="ZakazivanjeTermina"/>
+            <MenuItem Header="{p:LocExtension RasporedKratko}" Height="50" Width="220" Click="PrikazRasporeda" FontSize="15" InputGestureText="Ctrl+1"/>
+            <MenuItem Header="{p:LocExtension ZakaziTermin}" Height="50" Width="220" FontSize="15" Click="ZakazivanjeTermina" InputGestureText="Ctrl+2"/>
             <MenuItem Header="{p:LocExtension UtrosenMaterijal}" Height="50" Width="220" FontSize="15" Click="UtrosenMaterijal"/>
-            <MenuItem Header="{p:LocExtension baza}" Height="50" Width="220" FontSize="15" Click="PrikazBaze"/>
-            <MenuItem Header="{p:LocExtension Verifikacija}" Height="50" Width="220" FontSize="15" Click="VerifikacijaLekova"/>
+            <MenuItem Header="{p:LocExtension baza}" Height="50" Width="220" FontSize="15" Click="PrikazBaze" InputGestureText="Ctrl+4"/>
+            <MenuItem Header="{p:LocExtension Verifikacija}" Height="50" Width="220" FontSize="15" Click="VerifikacijaLekova" InputGestureText="Ctrl+5"/>
             <MenuItem Header="{p:LocExtension Odsustvo}" Height="50" Width="220" FontSize="15" Click="PrikazZahtevaOdsustva"/>
             <MenuItem Header="{p:LocExtension ZahtevOdsustvo}" Height="50" Width="220" FontSize="15" Click="KreiranjeOdsustva"/>
         </Menu>
@@ -169,12 +169,12 @@
 
         <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="tema" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="210,2" >
-            <MenuItem Header="{p:LocExtension Svetla}" Height="50" Width="120" Click="SvetlaTema" VerticalAlignment="Center" FontSize="15">
+            <MenuItem Header="{p:LocExtension Svetla}" Height="50" Width="120" Click="SvetlaTema" VerticalAlignment="Center" FontSize="15" InputGestureText="Ctrl+L">
                 <MenuItem.Icon>
                     <Image Source="/Slike/LekarSlike/sun.png"  Height="16" Width="16" VerticalAlignment="Center"/>
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="{p:LocExtension Tamna}" Height="50"  Width="120" Click="TamnaTema" VerticalAlignment="Center" FontSize="15">
+            <MenuItem Header="{p:LocExtension Tamna}" Height="50"  Width="120" Click="TamnaTema" VerticalAlignment="Center" FontSize="15" InputGestureText="Ctrl+D">
                 <MenuItem.Icon>
                     <Image Source="/Slike/LekarSlike/night.png"  Height="16" Width="16" VerticalAlignment="Center"/>
                 </MenuItem.Icon>
@@ -183,8 +183,8 @@
 
         <Menu Grid.Row="2" Grid.ColumnSpan="2" MouseLeave="menu_MouseLeave" Name="jezik" HorizontalAlignment="Right" Height="100" VerticalAlignment="Top" Width="130"
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="130,2" >
-            <MenuItem Header="Srpski - SR" Height="50" Width="120" Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15"/>
-            <MenuItem Header="English - EN" Height="50" Width="120" Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15"/>
+            <MenuItem Header="Srpski - SR" Height="50" Width="120" Click="PromenaSrpski" VerticalAlignment="Center" FontSize="15" InputGestureText="Ctrl+S"/>
+            <MenuItem Header="English - EN" Height="50" Width="120" Click="PromenaEngleski" VerticalAlignment="Center" FontSize="15" InputGestureText="Ctrl+E"/>
         </Menu>
 
     </Grid>

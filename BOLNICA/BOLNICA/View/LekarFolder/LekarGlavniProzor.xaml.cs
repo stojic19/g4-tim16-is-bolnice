@@ -96,7 +96,7 @@ namespace Bolnica.LekarFolder
         {
             this.menu.Visibility = Visibility.Hidden;
             PromenaPogleda(new VerifikacijaLekova());
-            
+
         }
 
         private void PrikazZahtevaOdsustva(object sender, RoutedEventArgs e)
@@ -209,6 +209,50 @@ namespace Bolnica.LekarFolder
                 this.jezik.Visibility = Visibility.Hidden;
             }
             else { this.jezik.Visibility = Visibility.Visible; }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.M && Keyboard.IsKeyDown(Key.LeftCtrl))
+            {
+                menu.Visibility = Visibility.Visible;
+            }
+            else if (e.Key == Key.X && Keyboard.IsKeyDown(Key.LeftCtrl)) {
+                Odjava(sender, e);
+            }
+            else if (e.Key == Key.L && Keyboard.IsKeyDown(Key.LeftCtrl)){
+                SvetlaTema(sender, e);
+            }
+            else if (e.Key == Key.D && Keyboard.IsKeyDown(Key.LeftCtrl))
+            {
+                TamnaTema(sender, e);
+            }
+            else if (e.Key == Key.S && Keyboard.IsKeyDown(Key.LeftCtrl)){
+                PromenaSrpski(sender, e);
+            }
+            else if (e.Key == Key.E && Keyboard.IsKeyDown(Key.LeftCtrl)){
+                PromenaEngleski(sender, e);
+            }
+
+            if (menu.Visibility == Visibility.Visible)
+            {
+                if (e.Key == Key.D1 && Keyboard.IsKeyDown(Key.LeftCtrl))
+                {
+                    PrikazRasporeda(sender, e);
+                }
+                else if (e.Key == Key.D2 && Keyboard.IsKeyDown(Key.LeftCtrl))
+                {
+                    ZakazivanjeTermina(sender, e);
+                }
+                else if (e.Key == Key.D4 && Keyboard.IsKeyDown(Key.LeftCtrl))
+                {
+                    PrikazBaze(sender, e);
+                }
+                else if (e.Key == Key.D5 && Keyboard.IsKeyDown(Key.LeftCtrl))
+                {
+                    VerifikacijaLekova(sender, e);
+                }
+            }
         }
     }
 }
