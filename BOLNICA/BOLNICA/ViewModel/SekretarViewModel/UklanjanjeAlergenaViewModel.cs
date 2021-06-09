@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Bolnica.ViewModel.PacijentViewModel
+namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class UklanjanjeAlergenaViewModel : ViewModel
+    public class UklanjanjeAlergenaViewModel : SekretarViewModel
     {
         private String korisnickoIme;
         private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();

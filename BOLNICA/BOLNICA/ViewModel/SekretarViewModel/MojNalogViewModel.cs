@@ -14,7 +14,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class MojNalogViewModel : ViewModel
+    public class MojNalogViewModel : SekretarViewModel
     {
         private Osoba podaci;
         public MojNalogViewModel()

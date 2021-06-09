@@ -22,40 +22,40 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Background="Black" Click="Pocetna_Click">
+            <Button Grid.Row="0" Background="Black" Command="{Binding Path=PocetnaKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/pocetna.jpg" Height="57" />
             </Button>
-            <Button Grid.Row="1" Background="Black" x:Name="Termini" Click="Termini_Click">
+            <Button Grid.Row="1" Background="Black" x:Name="Termini" Command="{Binding Path=PreglediKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/termini.jpg" />
             </Button>
-            <Button Grid.Row="2"  Background="Black" x:Name="Operacije" Click="Operacije_Click">
+            <Button Grid.Row="2"  Background="Black" x:Name="Operacije" Command="{Binding Path=OperacijeKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/operacije.jpg" />
             </Button>
-            <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Click="Nalozi_Click">
+            <Button Grid.Row="3" Background="Black" x:Name="Nalozi" Command="{Binding Path=NaloziKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/nalozi.jpg" />
             </Button>
-            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" Click="Obavestenja_Click">
+            <Button Grid.Row="4" Background="Black" x:Name="Obavestenja" Command="{Binding Path=ObavestenjaKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/obavestenja.jpg" />
             </Button>
-            <Button Grid.Row="5" Background="Black" x:Name="Naplata" Click="Naplata_Click">
+            <Button Grid.Row="5" Background="Black" x:Name="Naplata" Command="{Binding Path=NaplataKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/naplata.jpg" />
             </Button>
-            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno" Click="Stacionarno_Click">
+            <Button Grid.Row="6" Background="Black" x:Name="Stacionarno" Command="{Binding Path=StacionarnoKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/stacionarno.jpg" />
             </Button>
             <Button Grid.Row="7" Background="Black" x:Name="Transfer">
                 <Image Source="/Slike/Sekretar/CIkonice/cTransfer.jpg" />
             </Button>
-            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Click="Pocetna_Click">
+            <Button Grid.Row="8" Background="Black" x:Name="Nazad" Command="{Binding Path=PocetnaKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/nazad.jpg" />
             </Button>
-            <Button Grid.Row="9" Background="Black" x:Name="Licna" Click="LicnaObavestenja_Click">
+            <Button Grid.Row="9" Background="Black" x:Name="Licna" Command="{Binding Path=LicnaObavestenjaKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/licna.jpg" />
             </Button>
-            <Button Grid.Row="10" Background="Black" x:Name="Nalog" Click="MojNalog_Click">
+            <Button Grid.Row="10" Background="Black" x:Name="Nalog" Command="{Binding Path=NalogKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/nalog.jpg" />
             </Button>
-            <Button Grid.Row="11" Background="Black" x:Name="Odjava">
+            <Button Grid.Row="11" Background="Black" x:Name="Odjava" Command="{Binding Path=OdjavaKomanda}">
                 <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
             </Button>
         </Grid>

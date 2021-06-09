@@ -13,7 +13,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class LicnaObavestenjaViewModel : ViewModel
+    public class LicnaObavestenjaViewModel : SekretarViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<ObavestenjeDTO> obavestenja;

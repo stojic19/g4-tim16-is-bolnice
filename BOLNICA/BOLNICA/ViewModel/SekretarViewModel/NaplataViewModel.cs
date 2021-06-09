@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class NaplataViewModel : ViewModel
+    public class NaplataViewModel : SekretarViewModel
     {
         private ObservableCollection<PacijentDTO> pacijenti;
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();

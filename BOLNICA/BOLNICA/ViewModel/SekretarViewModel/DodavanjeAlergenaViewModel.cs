@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Bolnica.ViewModel.PacijentViewModel
+namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class DodavanjeAlergenaViewModel : ViewModel
+    public class DodavanjeAlergenaViewModel : SekretarViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<LekDTO> lekovi;

@@ -106,10 +106,10 @@ namespace Bolnica.SekretarFolder
             usc = new PrikazLekaraSekretar();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
-        private void Izvestaj_Click(object sender, RoutedEventArgs e)
+        private async void Izvestaj_Click(object sender, RoutedEventArgs e)
         {
             izvestajSekretar.StampajIzvestaj();
-            Potvrda();
+            await Potvrda();
         }
         private async Task Potvrda()
         {

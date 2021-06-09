@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class StacionarnoSmestanjeViewModel : ViewModel
+    public class StacionarnoSmestanjeViewModel : SekretarViewModel
     {
         private ObservableCollection<ProstorDTO> prostorije;
         private ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
@@ -22,7 +22,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         {
             UcitajUKolekciju();
             potvrdiKomanda = new RelayCommand(Potvrdi);
-            transferKomanda = new RelayCommand(Transfer);
+            transferZahtevKomanda = new RelayCommand(transferZahtev);
         }
 
         private void UcitajUKolekciju()
@@ -64,13 +64,13 @@ namespace Bolnica.ViewModel.SekretarViewModel
            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
-        private RelayCommand transferKomanda;
+        private RelayCommand transferZahtevKomanda;
 
-        public RelayCommand TransferKomanda
+        public RelayCommand TransferZahtevKomanda
         {
-            get { return transferKomanda; }
+            get { return transferZahtevKomanda; }
         }
-        public void Transfer()
+        public void transferZahtev()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

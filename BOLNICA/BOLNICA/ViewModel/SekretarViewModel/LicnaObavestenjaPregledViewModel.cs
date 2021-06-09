@@ -13,7 +13,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class LicnaObavestenjaPregledViewModel : ViewModel
+    public class LicnaObavestenjaPregledViewModel : SekretarViewModel
     {
         private ObavestenjaKontroler obavestenjaKontroler= new ObavestenjaKontroler();
         private ObavestenjeDTO podaci;

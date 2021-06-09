@@ -309,6 +309,7 @@
     <Compile Include="ViewModel\SekretarViewModel\IzmenaNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\MojNalogViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NaplataIzabraniPacijentViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\SekretarViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\StacionarnoSmestanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NoviTransferViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\TransferViewModel.cs" />

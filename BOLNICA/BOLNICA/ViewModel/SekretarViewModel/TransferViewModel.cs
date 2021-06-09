@@ -12,13 +12,13 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class TransferViewModel : ViewModel
+    public class TransferViewModel : SekretarViewModel
     {
         private String poruka;
   
         public TransferViewModel()
         {
-            transferKomanda = new RelayCommand(Transfer);
+            transferZahtevKomanda = new RelayCommand(TransferZahtev);
         }
 
         public string Poruka
@@ -27,13 +27,13 @@ namespace Bolnica.ViewModel.SekretarViewModel
             set { poruka = value; OnPropertyChanged("Poruka"); }
         }
 
-        private RelayCommand transferKomanda;
+        private RelayCommand transferZahtevKomanda;
 
-        public RelayCommand TransferKomanda
+        public RelayCommand TransferZahtevKomanda
         {
-            get { return transferKomanda; }
+            get { return transferZahtevKomanda; }
         }
-        public void Transfer()
+        public void TransferZahtev()
         {
                  UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Bolnica.ViewModel.PacijentViewModel
+namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class DodavanjeNalogaViewModel : ViewModel
+    public class DodavanjeNalogaViewModel : SekretarViewModel
     {
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private String poruka;

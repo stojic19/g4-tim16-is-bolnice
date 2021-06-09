@@ -62,10 +62,17 @@ namespace Bolnica
             usc = new GlavniProzorSadrzaj();
             MainPanel.Children.Add(usc);
         }
+        public void Odjava()
+        {
+            Login login = new Login();
+            login.Show();
+
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
-            // NaloziPacijenataServis.Sacuvaj();
         }
     }
 }

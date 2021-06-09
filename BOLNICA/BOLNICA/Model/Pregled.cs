@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    public class Pregled : INotifyPropertyChanged
+    public class Pregled // : INotifyPropertyChanged
     {
         private String idPregleda;
         private Boolean odrzan = false;
@@ -28,7 +28,7 @@ namespace Bolnica.Model
         public List<Alergeni> Alergeni { get => alergeni; set => alergeni = value; }
         public bool OcenjenPregled { get => ocenjenPregled; set => ocenjenPregled = value; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        // public event PropertyChangedEventHandler PropertyChanged;
 
         public Pregled() { }
 

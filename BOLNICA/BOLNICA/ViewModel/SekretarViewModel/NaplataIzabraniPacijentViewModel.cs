@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class NaplataIzabraniPacijentViewModel : ViewModel
+    public class NaplataIzabraniPacijentViewModel : SekretarViewModel
     {
         private String poruka;
         private String korisnickoIme;

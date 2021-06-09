@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Bolnica.ViewModel.PacijentViewModel
+namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class PacijentViewModel : ViewModel
+    public class PacijentViewModel : SekretarViewModel
     {
         private ObservableCollection<PacijentDTO> pacijenti;
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
