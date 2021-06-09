@@ -26,7 +26,7 @@
             <StackPanel Orientation="Vertical" >
                 <Label Content="{p:LocExtension Datum}" Height="24" Width="66" FontSize="11" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Margin="15,5,10,0"  />
-                <TextBox Name="datumPregleda"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
+                <TextBox Text="{Binding Path=Datum}"  Height="27" Width="160" Margin="15,0,10,5" HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center" FontWeight="Normal" IsReadOnly="True"/>
             </StackPanel>
 
@@ -43,18 +43,18 @@
                 <StackPanel Orientation="Horizontal">
 
                     <StackPanel Orientation="Vertical" Margin="5,5,15,5">
-                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ime" FontWeight="Normal"/>
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=ImePacijenta}" FontWeight="Normal"/>
                         <Label Content="{p:LocExtension Ime}" HorizontalAlignment="Center" FontWeight="Normal" />
 
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="15,5,5,5">
-                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezime" FontWeight="Normal"/>
+                        <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=PrezimePacijenta}" FontWeight="Normal"/>
                         <Label Content="{p:LocExtension Prezime}" HorizontalAlignment="Center" FontWeight="Normal"/>
                     </StackPanel>
 
                 </StackPanel>
 
-                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="jmbg" FontWeight="Normal"/>
+                <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=JmbgPacijenta}" FontWeight="Normal"/>
                 <Label Content="{p:LocExtension JMBG}" HorizontalAlignment="Center" FontWeight="Normal" />
             </StackPanel>
 
@@ -62,7 +62,7 @@
 
         <GroupBox Grid.Row="3" Header="{p:LocExtension SimptomiDijagnoza}" Width="564" Height="184" Style ="{DynamicResource BelaPozadina}" FontWeight="Bold" FontSize="14" Margin="10" Name="Simptomi">
 
-            <TextBox Name="tekst" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
+            <TextBox Text="{Binding Path=Tekst}" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="479" Height="124" Margin="36,17,37,17.4" TextWrapping="Wrap"/>
 
 
         </GroupBox>
@@ -91,12 +91,12 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="11">
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5,5,15,5">
-                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="imeLekara" FontWeight="Normal"/>
+                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=ImeLekara}" FontWeight="Normal"/>
                     <Label Content="{p:LocExtension Ime}" HorizontalAlignment="Center" FontWeight="Normal" />
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="15,5,5,5">
-                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="prezimeLekara" FontWeight="Normal"/>
+                    <TextBox IsReadOnly="True" Width="226" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=PrezimeLekara}" FontWeight="Normal"/>
                     <Label Content="{p:LocExtension Prezime}" HorizontalAlignment="Center" FontWeight="Normal" />
                 </StackPanel>
 

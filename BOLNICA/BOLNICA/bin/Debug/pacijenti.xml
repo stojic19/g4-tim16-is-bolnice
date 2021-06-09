@@ -1,91 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pacijent>
-    <Ime>Milenko</Ime>
-    <Prezime>Milenkic</Prezime>
-    <DatumRodjenja>2021-05-08T15:49:43.0114386+02:00</DatumRodjenja>
-    <Jmbg>19011901</Jmbg>
-    <AdresaStanovanja />
-    <KontaktTelefon />
-    <Email />
-    <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
-    <Lozinka />
-    <Pol>muski</Pol>
-    <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
-    <VrstaNaloga>gost</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
-      <Alergeni>
-        <Alergeni>
-          <IdAlergena>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IdAlergena>
-          <Lek>
-            <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
-            <NazivLeka>Brufen</NazivLeka>
-            <Jacina>500mg</Jacina>
-            <Kolicina>3232</Kolicina>
-            <Proizvodjac>Biofarm</Proizvodjac>
-            <Sastojci>
-              <Sastojak>
-                <Naziv>s1</Naziv>
-                <Kolicina>100</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s2</Naziv>
-                <Kolicina>200</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s3</Naziv>
-                <Kolicina>300</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s7</Naziv>
-                <Kolicina>2</Kolicina>
-              </Sastojak>
-              <Sastojak>
-                <Naziv>s33</Naziv>
-                <Kolicina>4</Kolicina>
-              </Sastojak>
-            </Sastojci>
-            <Zamene>
-              <Lek>
-                <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
-                <NazivLeka>Roaccutane</NazivLeka>
-                <Jacina>20mg</Jacina>
-                <Kolicina>432</Kolicina>
-                <Proizvodjac>Biofarm</Proizvodjac>
-                <Sastojci>
-                  <Sastojak>
-                    <Naziv>s4</Naziv>
-                    <Kolicina>4</Kolicina>
-                  </Sastojak>
-                  <Sastojak>
-                    <Naziv>s5</Naziv>
-                    <Kolicina>5</Kolicina>
-                  </Sastojak>
-                  <Sastojak>
-                    <Naziv>s8</Naziv>
-                    <Kolicina>2</Kolicina>
-                  </Sastojak>
-                </Sastojci>
-                <Zamene />
-                <Verifikacija>true</Verifikacija>
-              </Lek>
-            </Zamene>
-            <Verifikacija>true</Verifikacija>
-          </Lek>
-          <OpisReakcije>1212</OpisReakcije>
-          <VremeZaPojavu>1212</VremeZaPojavu>
-        </Alergeni>
-      </Alergeni>
-      <Recepti />
-      <Anamneze />
-      <Uputi />
-      <BracniStatus>ozenjenUdata</BracniStatus>
-    </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
-    <Blokiran>false</Blokiran>
-  </Pacijent>
-  <Pacijent>
     <Ime>Aleksa</Ime>
     <Prezime>Stojic</Prezime>
     <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
@@ -761,6 +676,120 @@
       <BracniStatus>ozenjenUdata</BracniStatus>
     </ZdravstveniKarton>
     <ZloupotrebioSistem>5</ZloupotrebioSistem>
+    <Blokiran>false</Blokiran>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Milenko</Ime>
+    <Prezime>Milenkic</Prezime>
+    <DatumRodjenja>2021-05-08T15:49:43.0114386+02:00</DatumRodjenja>
+    <Jmbg>19011901</Jmbg>
+    <AdresaStanovanja />
+    <KontaktTelefon />
+    <Email />
+    <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
+    <Lozinka />
+    <Pol>muski</Pol>
+    <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
+    <VrstaNaloga>gost</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IdAlergena>
+          <Lek>
+            <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+            <NazivLeka>Brufen</NazivLeka>
+            <Jacina>500mg</Jacina>
+            <Kolicina>3232</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s1</Naziv>
+                <Kolicina>100</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s2</Naziv>
+                <Kolicina>200</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s3</Naziv>
+                <Kolicina>300</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s7</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s33</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Zamene>
+              <Lek>
+                <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                <NazivLeka>Roaccutane</NazivLeka>
+                <Jacina>20mg</Jacina>
+                <Kolicina>432</Kolicina>
+                <Proizvodjac>Biofarm</Proizvodjac>
+                <Sastojci>
+                  <Sastojak>
+                    <Naziv>s4</Naziv>
+                    <Kolicina>4</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s5</Naziv>
+                    <Kolicina>5</Kolicina>
+                  </Sastojak>
+                  <Sastojak>
+                    <Naziv>s8</Naziv>
+                    <Kolicina>2</Kolicina>
+                  </Sastojak>
+                </Sastojci>
+                <Zamene />
+                <Verifikacija>true</Verifikacija>
+              </Lek>
+            </Zamene>
+            <Verifikacija>true</Verifikacija>
+          </Lek>
+          <OpisReakcije>1212</OpisReakcije>
+          <VremeZaPojavu>1212</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
+      <Recepti />
+      <Anamneze>
+        <Anamneza>
+          <IdAnamneze>c1fcede6-8832-4ea2-a9c6-647d7c7fdd8c</IdAnamneze>
+          <IdLekara>JelenaHrnjak</IdLekara>
+          <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+          <IdPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IdPacijenta>
+          <Datum>2021-06-09T02:53:57.6499561+02:00</Datum>
+          <Dijagnoza>Pacijent se žali na slabost.</Dijagnoza>
+          <Terapije>
+            <Terapija>
+              <IDTerapije>fe00aa0c-da05-4e78-b2d1-238409e3bb50</IDTerapije>
+              <IDAnamneze>c1fcede6-8832-4ea2-a9c6-647d7c7fdd8c</IDAnamneze>
+              <PocetakTerapije>2021-06-10T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-25T00:00:00</KrajTerapije>
+              <Kolicina>3</Kolicina>
+              <Satnica>8</Satnica>
+              <UputsvoKonzumiranja>Pij posle obroka</UputsvoKonzumiranja>
+              <PreporucenLek>
+                <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                <NazivLeka>Aerius</NazivLeka>
+                <Jacina>15mg</Jacina>
+                <Kolicina>0</Kolicina>
+                <Sastojci />
+                <Zamene />
+                <Verifikacija>false</Verifikacija>
+              </PreporucenLek>
+            </Terapija>
+          </Terapije>
+        </Anamneza>
+      </Anamneze>
+      <Uputi />
+      <BracniStatus>ozenjenUdata</BracniStatus>
+    </ZdravstveniKarton>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
     <Blokiran>false</Blokiran>
   </Pacijent>
 </ArrayOfPacijent>

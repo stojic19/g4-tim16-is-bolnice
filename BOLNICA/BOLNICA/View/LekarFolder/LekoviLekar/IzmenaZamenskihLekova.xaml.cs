@@ -65,7 +65,7 @@ namespace Bolnica
         private Boolean DaLiJeVecZamenski(String idLeka)
         {
 
-            foreach (LekDTO l in lekoviKontroler.DobaviZameneLeka(idLeka))
+            foreach (LekDTO l in lekoviKontroler.DobaviZameneLeka(izabranLek.IdLeka))
             {
                 if (l.IdLeka.Equals(idLeka))
                 {

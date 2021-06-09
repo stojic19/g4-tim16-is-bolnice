@@ -152,7 +152,7 @@ namespace Bolnica
             if (izabranaAnamneza != null)
             {
                 LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Clear();
-                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAnamaneza(izabranaAnamneza, izabranPregled.IdPregleda));
+                LekarGlavniProzor.DobaviProzorZaIzmenu().Children.Add(new InformacijeAnamaneza(izabranaAnamneza));
             }
         }
 

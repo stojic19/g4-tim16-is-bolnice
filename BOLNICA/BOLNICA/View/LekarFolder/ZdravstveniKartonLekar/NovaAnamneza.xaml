@@ -225,7 +225,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <Button Content="{p:LocExtension Otkazi}" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="Otkazivanje"/>
+            <Button Content="{p:LocExtension Odustani}" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="Otkazivanje"/>
             <Button Content="{p:LocExtension Potvrdi}" Height="30" Width="135" MaxHeight="30" MaxWidth="135" Margin="15,5" Click="CuvanjeAnamneze"/>
         </StackPanel>
 

@@ -279,6 +279,7 @@
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="Servis\ZahtjeviServis.cs" />
     <Compile Include="ViewModel\LekarViewModel\BazaLekovaViewModel.cs" />
+    <Compile Include="ViewModel\LekarViewModel\InformacijeAnamnezaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\LekarRasporedViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\AlergeniPacijentaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\BeleskaViewModel.cs" />
