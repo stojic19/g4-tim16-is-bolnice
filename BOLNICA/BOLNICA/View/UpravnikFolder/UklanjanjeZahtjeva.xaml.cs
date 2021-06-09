@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 
 namespace Bolnica
 {
-    public partial class UklanjanjeLijeka : Window
+    public partial class UklanjanjeZahtjeva : Window
     {
         private string izabran = null;
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
-        public UklanjanjeLijeka(String idLijeka)
+        public UklanjanjeZahtjeva(String idZahtjeva)
         {
             InitializeComponent();
-            izabran = idLijeka;
+            izabran = idZahtjeva;
         }
 
         private void Odustani_Click(object sender, RoutedEventArgs e)
@@ -34,7 +34,7 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            zahtjeviKontroler.UklanjanjeLeka(izabran);             
+            zahtjeviKontroler.UkloniZahtjev(izabran);             
             this.Close();
         }
     }

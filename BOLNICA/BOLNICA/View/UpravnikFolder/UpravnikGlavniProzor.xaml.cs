@@ -96,6 +96,15 @@ namespace Bolnica
             MainPanel.Children.Add(usc);
         }
 
+        private void Zahtjevi_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new PrikazZahtjeva();
+            MainPanel.Children.Add(usc);
+        }
+
         private void renoviranje_Click_1(object sender, RoutedEventArgs e)
         {
             UserControl usc = null;

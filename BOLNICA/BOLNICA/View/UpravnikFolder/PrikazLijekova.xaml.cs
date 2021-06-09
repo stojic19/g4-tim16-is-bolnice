@@ -22,84 +22,23 @@ namespace Bolnica
 {
     public partial class PrikazLijekova : UserControl
     {
-        public static ObservableCollection<ZahtjevDTO> Zahtjevi { get; set; }
-        ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        public static ObservableCollection<LekDTO> Lijekovi { get; set; }
+        LekoviKontroler lijekoviKontroler = new LekoviKontroler();
         public PrikazLijekova()
         {
             InitializeComponent();
 
             this.DataContext = this;
 
-            Zahtjevi = new ObservableCollection<ZahtjevDTO>();
+            Lijekovi = new ObservableCollection<LekDTO>();
 
-            foreach (ZahtjevDTO z in zahtjeviKontroler.SviZahtjevi())
+            foreach (LekDTO l in lijekoviKontroler.DobaviSveLekove())
             {
-                Zahtjevi.Add(z);
+                Lijekovi.Add(l);
 
             }
 
         }
 
-        private void Dodavanje_Click(object sender, RoutedEventArgs e)
-        {
-
-            DodavanjeLijeka dodavanje = new DodavanjeLijeka();
-            dodavanje.Show();
-
-        }
-
-        private void Izmjena_Click(object sender, RoutedEventArgs e)
-        {
-
-            ZahtjevDTO izabranZaMenjanje = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
-
-            if (izabranZaMenjanje != null)
-            {
-
-                IzmjenaLijeka izmjena = new IzmjenaLijeka(izabranZaMenjanje.Lek.IdLeka);
-                izmjena.Show();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite lijek koji želite da izmenite!");
-            }
-        }
-
-        private void Uklanjanje_Click(object sender, RoutedEventArgs e)
-        {
-            ZahtjevDTO izabranZaBrisanje = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
-
-            if (izabranZaBrisanje != null)
-            {
-
-                UklanjanjeLijeka uklanjanje = new UklanjanjeLijeka(izabranZaBrisanje.Lek.IdLeka);
-                uklanjanje.Show();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite lijek koji želite da uklonite!");
-            }
-        }
-
-        private void dataGridLijekovi_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Detalji_Click(object sender, RoutedEventArgs e)
-        {
-            ZahtjevDTO izabran = (ZahtjevDTO)dataGridLijekovi.SelectedItem;
-
-            if (izabran != null)
-            {
-
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
-                UpravnikGlavniProzor.getInstance().MainPanel.Children.Add(new DetaljiOLijeku(izabran.Lek.IdLeka));
-            }
-            else
-            {
-                MessageBox.Show("Izaberite lijek cije detalje zelite da vidite!");
-            }
-        }
     }
 }

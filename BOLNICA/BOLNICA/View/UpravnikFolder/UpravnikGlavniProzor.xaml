@@ -88,7 +88,7 @@
                 HorizontalContentAlignment="Center" Click="Renoviranje_Click" Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3" Grid.RowSpan="2"/>
 
                 <Button Content="Zahtjevi" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Grid.RowSpan="2"/>
+                HorizontalContentAlignment="Center" Click="Zahtjevi_Click" Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" Grid.RowSpan="2"/>
 
                 <Button Content="Radnici" FontSize="15" Margin="0,0.2,0,0" VerticalContentAlignment="Center" 
                 HorizontalContentAlignment="Center"  Background="#FF31577E" Height="64" VerticalAlignment="Top" Grid.Column="0" Grid.Row="5" Grid.RowSpan="2"/>

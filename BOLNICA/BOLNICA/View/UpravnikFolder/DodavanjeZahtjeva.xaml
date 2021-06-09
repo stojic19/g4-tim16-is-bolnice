@@ -1,0 +1,78 @@
+﻿<Window x:Class="Bolnica.DodavanjeZahtjeva"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="Dodavanje lijeka na verfikaciju" Height="463.167" Width="499.384" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue" Margin="0,0,0,-2.4" HorizontalAlignment="Left" Width="489">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="60*"/>-->
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+
+
+
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Content="Naziv lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="0" Margin="0,22,63.4,20.8" Height="30" Width="150"/>
+
+        <TextBox Name="nazivLijeka" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="193,22,0,20.8" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+        <Label Content="Jacina lijeka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Margin="0,57,63.4,58.6" Height="30" Width="150" Grid.RowSpan="2"/>
+        <TextBox Name="jacina" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="193,57,0,58.6" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+        <Label Content="Proizvodjac:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="1" Margin="0,19.2,63.4,23.6" Height="30" Width="150"/>
+
+        <TextBox Name="proizvodjac" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="193,19.2,0,23.6" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+
+
+
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,53.8,24.4,23"  Width="100" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="26.6,53.8,0,23"  Width="87" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                Click="Potvrdi_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Label Content="Sastojci:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            Grid.Column="0" Grid.Row="1" Margin="0,49.2,63.4,66.4" Height="30" Width="150" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dataGridSastojci" ItemsSource="{Binding Sastojci}" IsReadOnly="true"
+            SelectionMode="Single" Margin="193,56.2,65,0.4" Background="WhiteSmoke"
+            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Naziv sastojka" Binding="{Binding Naziv}" Width="67*"/>
+                <DataGridTextColumn Header=" Kolicina" Binding="{Binding Kolicina}" Width="80*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Naziv sastojka:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            Grid.Column="0" Grid.Row="2" Margin="0,72.4,63.4,43.2" Height="30" Width="150" Grid.RowSpan="2"/>
+
+        <TextBox Name="nazivSastojka" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="193,80.8,0,52.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+
+        <Label Content="Kolicina:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            Grid.Column="0" Grid.Row="3" Margin="0,29.6,63.4,13.2" Height="30" Width="150"/>
+        <TextBox x:Name="kolicinaSastojka" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="193,34.2,0,17.4" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+        <Button x:Name="DodajSastojak" Click="DodajSastojak_Click" Content="Dodaj sastojak" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Grid.Column="1" Margin="108.2,5.2,0,0" Grid.Row="3"/>
+        <Button x:Name="UkloniSastojak" Click="UkloniSastojak_Click" Content="Ukloni sastojak" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Grid.Column="1" Margin="108.2,39.2,0,0" Grid.Row="3" />
+
+
+
+
+    </Grid>
+</Window>

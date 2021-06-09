@@ -52,14 +52,21 @@ namespace Bolnica.Kontroler
             zahtjeviServis.DodajZahtjev(zahtjevKonverter.ZahtjevDTOUModel(zahtjev));
         }
 
-        public void IzmeniLek(LekDTO noviPodaci)
+        public void IzmeniZahtjev(LekDTO noviPodaci)
         {
-            zahtjeviServis.IzmeniLek(lekKonverter.LekSaKolicinomModel(noviPodaci));
+            zahtjeviServis.IzmeniZahtjev(lekKonverter.LekSaKolicinomModel(noviPodaci));
         }
 
-        public void UklanjanjeLeka(String idLeka)
+        public Boolean ProvjeriValidnostNaziva(String nazivLijeka)
         {
-            zahtjeviServis.UklanjanjeLeka(idLeka);
+            if (zahtjeviServis.ProvjeriValidnostNaziva(nazivLijeka))
+                return true;
+            return false;
+        }
+
+        public void UkloniZahtjev(String idZahtjeva)
+        {
+            zahtjeviServis.UkloniZahtjev(idZahtjeva);
         }
 
         public void DodajSastojak(SastojakDTO sastojak, String idLeka)

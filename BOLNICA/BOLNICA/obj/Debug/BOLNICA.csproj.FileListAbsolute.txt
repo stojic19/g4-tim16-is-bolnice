@@ -2358,7 +2358,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.g.cs
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocAnkete.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocGlavniMeni.g.cs
@@ -2423,13 +2422,11 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DetaljiOLijeku.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodajOpremuProstoru.g.cs
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeLijeka.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeProstora.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeSastojka.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmenaOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmenaProstora.g.cs
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmjenaLijeka.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PremjestanjeOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PremjestanjeStatickeOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazLijekova.g.cs
@@ -2438,7 +2435,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazRenoviranja.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\RasporedOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\RenoviranjeProstorije.g.cs
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeLijeka.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeOpreme.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeProstora.g.cs
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UpravnikGlavniProzor.g.cs
@@ -2460,7 +2456,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.baml
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\DetaljiTerapije.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\Pomoc.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocAnkete.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\Pomoc\PomocGlavniMeni.baml
@@ -2525,13 +2520,11 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DetaljiOLijeku.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodajOpremuProstoru.baml
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeLijeka.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeProstora.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeSastojka.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmenaOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmenaProstora.baml
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmjenaLijeka.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PremjestanjeOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PremjestanjeStatickeOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazLijekova.baml
@@ -2540,7 +2533,6 @@ C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazRenoviranja.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\RasporedOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\RenoviranjeProstorije.baml
-C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeLijeka.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeOpreme.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeProstora.baml
 C:\Users\Korisnik\Desktop\SIMS Projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UpravnikGlavniProzor.baml
@@ -3761,10 +3753,8 @@ C:\Users\computer\Desktop\Sims trenutno\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\
 C:\Users\computer\Desktop\Sims trenutno\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.exe
 C:\Users\computer\Desktop\Sims trenutno\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\Bolnica.pdb
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.g.cs
-C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.g.cs
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeRenoviranja.g.cs
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.baml
-C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajPodsetnik.baml
 C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeRenoviranja.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\KreirajBelesku.g.cs
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeRenoviranja.g.cs
@@ -5857,3 +5847,17 @@ C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\V
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.baml
 C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeZahtjeva.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmjenaZahtjeva.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazZahtjeva.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeZahtjeva.g.cs
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\DetaljiTerapije.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\RasporedTermina\KreirajPodsetnik.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\PacijentFolder\OceniAplikaciju.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\DodavanjeZahtjeva.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\IzmjenaZahtjeva.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\PrikazZahtjeva.baml
+C:\Users\Korisnik\Desktop\SIMS projekat\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikFolder\UklanjanjeZahtjeva.baml

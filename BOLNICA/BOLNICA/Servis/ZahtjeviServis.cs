@@ -37,9 +37,9 @@ namespace Bolnica.Model.Rukovanja
             return null;
         }
 
-        public  Boolean OdobriZahtev(String idZahteva)
+        public Boolean OdobriZahtev(String idZahteva)
         {
-            foreach(Zahtjev z in zahtjeviRepozitorijum.DobaviSveObjekte())
+            foreach (Zahtjev z in zahtjeviRepozitorijum.DobaviSveObjekte())
             {
                 if (z.IdZahtjeva.Equals(idZahteva))
                 {
@@ -69,7 +69,7 @@ namespace Bolnica.Model.Rukovanja
             zahtjeviRepozitorijum.DodajObjekat(zahtjev);
         }
 
-        public void IzmeniLek(Lek noviPodaci)
+        public void IzmeniZahtjev(Lek noviPodaci)
         {
             Zahtjev z = PretraziPoIdLijeka(noviPodaci.IDLeka);
             z.Lijek.NazivLeka = noviPodaci.NazivLeka;
@@ -80,9 +80,9 @@ namespace Bolnica.Model.Rukovanja
             zahtjeviRepozitorijum.IzmenaZahtjeva(z);
         }
 
-        public void UklanjanjeLeka(String idLeka)
+        public void UkloniZahtjev(String idZahtjeva)
         {
-            zahtjeviRepozitorijum.ObrisiObjekat(idLeka);
+            zahtjeviRepozitorijum.ObrisiObjekat(idZahtjeva);
         }
 
         public void DodajSastojak(Sastojak sastojak, String idLeka)
@@ -97,6 +97,19 @@ namespace Bolnica.Model.Rukovanja
                 }
             }
 
+        }
+
+        public Boolean ProvjeriValidnostNaziva(String nazivLijeka)
+        {
+            foreach (Zahtjev z in zahtjeviRepozitorijum.DobaviSveObjekte())
+            {
+                if (z.Lijek.NazivLeka.Equals(nazivLijeka))
+                {
+                    System.Windows.MessageBox.Show("Postoji vec kreiran zahtjev sa tim nazivom lijeka!");
+                    return false;
+                }
+            }
+            return true;
         }
 
         public Lek pretraziLekPoId(String idLeka)
