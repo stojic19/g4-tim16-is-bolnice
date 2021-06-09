@@ -40,15 +40,15 @@ namespace Bolnica
             IdProstorije = idProstorije;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void DodajOpremu_Click(object sender, RoutedEventArgs e)
         {
             DodajOpremuProstoru dodavanje = new DodajOpremuProstoru(IdProstorije);
             dodavanje.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void PremjestiOpremu_Click(object sender, RoutedEventArgs e)
         {
-            Oprema izabranZaPrebacivanje = (Oprema)dataGridRasporedOpreme.SelectedItem;
+            OpremaDTO izabranZaPrebacivanje = (OpremaDTO)dataGridRasporedOpreme.SelectedItem;
 
             if (izabranZaPrebacivanje != null)
             {
@@ -61,7 +61,7 @@ namespace Bolnica
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Nazad_Click(object sender, RoutedEventArgs e)
         {
             UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
             UserControl usc = null;

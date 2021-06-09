@@ -14,7 +14,7 @@ namespace Bolnica.Konverter
 
         public Recept ReceptDTOuModel(ReceptDTO recept)
         {
-            return new Recept(recept.IdRecepta, recept.Datum, lekKonverter.LekDTOUModel(recept.Lek));
+            return new Recept(recept.IdRecepta, recept.Datum, lekKonverter.LekDTOULekModel(recept.Lek));
         }
     }
 }

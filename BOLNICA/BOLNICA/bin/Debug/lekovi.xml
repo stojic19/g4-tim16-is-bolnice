@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lek>
     <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -151,42 +151,6 @@
       </Lek>
     </Zamene>
     <Verifikacija>true</Verifikacija>
-  </Lek>
-  <Lek>
-    <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
-    <NazivLeka>Brufen</NazivLeka>
-    <Jacina>400mg</Jacina>
-    <Kolicina>312</Kolicina>
-    <Sastojci>
-      <Sastojak>
-        <Naziv>s1</Naziv>
-        <Kolicina>100</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s2</Naziv>
-        <Kolicina>200</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s3</Naziv>
-        <Kolicina>300</Kolicina>
-      </Sastojak>
-      <Sastojak>
-        <Naziv>s33</Naziv>
-        <Kolicina>4</Kolicina>
-      </Sastojak>
-    </Sastojci>
-    <Zamene>
-      <Lek>
-        <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
-        <NazivLeka>Rapidol</NazivLeka>
-        <Jacina>500mg</Jacina>
-        <Kolicina>0</Kolicina>
-        <Sastojci />
-        <Zamene />
-        <Verifikacija>false</Verifikacija>
-      </Lek>
-    </Zamene>
-    <Verifikacija>false</Verifikacija>
   </Lek>
   <Lek>
     <IDLeka>65fea6fd-ab2c-48a0-a0eb-1ad37143faa0</IDLeka>

@@ -20,17 +20,15 @@ namespace Model
         
         public Prostor() { }
 
-        public Prostor(String idProstora,String nazivProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura, bool jeRenoviranje)
+        public Prostor(String idProstora,String nazivProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura, List<Oprema> oprema,bool jeRenoviranje)
         {
             IdProstora = idProstora;
             NazivProstora = nazivProstora;
             VrstaProstora = vrstaProstora;
             Sprat = sprat;
             Kvadratura = kvadratura;
-            Oprema = new List<Oprema>();
-           
-            JeRenoviranje = jeRenoviranje;
-           
+            Oprema = oprema;          
+            JeRenoviranje = jeRenoviranje;         
         }
 
 

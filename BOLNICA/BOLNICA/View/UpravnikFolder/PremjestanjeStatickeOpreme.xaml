@@ -13,8 +13,8 @@
         <Label x:Name="lblOpreme_Copy" Content="Izaberi kolicinu opreme:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378,244,0,0"/>
         <Label x:Name="lblOpreme_Copy1" Content="Izaberi datum premjestanja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,244,0,0"/>
 
-        <Button x:Name="btnPotvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="190,332,0,0" Click="Potvrdi_Click" Height="32"/>
-        <Button x:Name="btnOdustani" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Margin="378,332,0,0" Click="Odustani_Click" Height="32"/>
+        <Button x:Name="btnPotvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="190,332,0,0" Click="Potvrdi_Click" Height="25"/>
+        <Button x:Name="btnOdustani" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Margin="378,332,0,0" Click="Odustani_Click" Height="25"/>
 
         <DatePicker Name="DatumPremjestanja" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,270,0,0"/>
         <TextBox x:Name="kolicina" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="88" Margin="378,270,0,0"/>

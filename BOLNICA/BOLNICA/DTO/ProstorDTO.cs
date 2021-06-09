@@ -68,15 +68,15 @@ namespace Bolnica.DTO
 
         ProstorDTO() { }
 
-        public ProstorDTO(string idProstora, string nazivProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura,bool jeRenoviranje) 
+        public ProstorDTO(string idProstora, string nazivProstora, VrsteProstora vrstaProstora, int sprat, float kvadratura,List<OpremaDTO> oprema,bool jeRenoviranje) 
         {
             this.idProstora = idProstora;
             this.nazivProstora = nazivProstora;
             this.vrstaProstora = vrstaProstora;
             this.sprat = sprat;
             this.kvadratura = kvadratura;
+            this.oprema = oprema;
             this.jeRenoviranje = jeRenoviranje;
-            this.oprema = new List<OpremaDTO>();
         }
     }
 }

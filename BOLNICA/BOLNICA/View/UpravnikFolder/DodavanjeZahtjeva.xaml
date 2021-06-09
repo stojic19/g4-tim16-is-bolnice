@@ -42,10 +42,10 @@
 
 
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,53.8,24.4,23"  Width="100" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,53.8,24.4,23"  Width="100" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="26.6,53.8,0,23"  Width="87" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="26.6,53.8,0,23"  Width="87" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Potvrdi_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <Label Content="Sastojci:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
             Grid.Column="0" Grid.Row="1" Margin="0,49.2,63.4,66.4" Height="30" Width="150" Grid.RowSpan="2"/>

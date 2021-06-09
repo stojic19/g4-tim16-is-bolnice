@@ -77,12 +77,12 @@
                 Grid.Column="1" Grid.Row="3" Margin="0,24,186.2,10" Height="30" Width="150"/>
             <TextBox AcceptsReturn="True" x:Name="Kvadratura2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347.8,32,0,10" Height="22" Width="136" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" />
 
-            <Button x:Name="button" Click="button_Click" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="235.8,26,0,0" Grid.Row="5"/>
+            <Button x:Name="button" Click="button_Click" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="235.8,26,0,0" Height="25" Grid.Row="5"/>
             <Label x:Name="label" Content="Pocetak renoviranja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,28,0,0" Grid.Row="4" Width="118"/>
             <DatePicker Name="PickStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="159,28,0,0" Grid.Row="4" Width="136"/>
             <Label x:Name="label1" Content="Kraj renoviranja:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="235.8,26,0,0" Grid.Row="4"/>
             <DatePicker Name="PickEndtDate" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="347.8,26,0,0" Grid.Row="4" Width="136"/>
-            <Button x:Name="odustani" Click="odustani_Click" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="60.8,26,0,0" Grid.Row="5"/>
+            <Button x:Name="odustani" Height="25" Click="odustani_Click" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="60.8,26,0,0" Grid.Row="5"/>
 
 
         </Grid>

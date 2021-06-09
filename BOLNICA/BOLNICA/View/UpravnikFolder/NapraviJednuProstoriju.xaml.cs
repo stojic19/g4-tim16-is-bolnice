@@ -47,7 +47,7 @@ namespace Bolnica
 
         private void potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            ProstorDTO prostor = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), false);
+            ProstorDTO prostor = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.Sprat.Text), float.Parse(this.Kvadratura.Text), new List<OpremaDTO>(), false);
 
 
             if (!prostoriKontroler.ProvjeriZakazaneTermine((DateTime)PickStartDate.SelectedDate, (DateTime)PickEndDate.SelectedDate))

@@ -76,7 +76,7 @@ namespace Bolnica.Kontroler
 
         public LekDTO pretraziLekPoId(String idLeka)
         {
-            return lekKonverter.LekModelULekDTO(zahtjeviServis.pretraziLekPoId(idLeka));
+            return lekKonverter.LekModelUDTO(zahtjeviServis.pretraziLekPoId(idLeka));
         }
 
         public List<SastojakDTO> DobaviSastojkeLeka(String idLeka)

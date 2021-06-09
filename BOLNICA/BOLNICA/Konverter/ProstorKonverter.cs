@@ -10,13 +10,20 @@ namespace Bolnica.Konverter
 {
     public class ProstorKonverter
     {
+        OpremaKonverter opremaKonverter = new OpremaKonverter();
         public ProstorDTO ProstorModelUProstorDTO(Prostor prostor )
         {
-            return new ProstorDTO(prostor.IdProstora, prostor.NazivProstora, prostor.VrstaProstora, prostor.Sprat, prostor.Kvadratura,false);
+            List<OpremaDTO> oprema = new List<OpremaDTO>();
+            foreach (Oprema o in prostor.Oprema)
+                oprema.Add(opremaKonverter.OpremaModelUOpremaDTO(o));
+            return new ProstorDTO(prostor.IdProstora, prostor.NazivProstora, prostor.VrstaProstora, prostor.Sprat, prostor.Kvadratura,oprema,false);
         }
         public Prostor ProstorDTOUModel(ProstorDTO prostor)
         {
-            return new Prostor(prostor.IdProstora, prostor.NazivProstora, prostor.VrstaProstora,prostor.Sprat, prostor.Kvadratura, false);
+            List<Oprema> oprema = new List<Oprema>();
+            foreach (OpremaDTO o in prostor.Oprema)
+                oprema.Add(opremaKonverter.OpremaDTOUModel(o));
+            return new Prostor(prostor.IdProstora, prostor.NazivProstora, prostor.VrstaProstora,prostor.Sprat, prostor.Kvadratura,oprema, false);
         }
 
     }

@@ -39,7 +39,7 @@ namespace Bolnica
         {
             if (prostoriKontroler.ProvjeriValidnostNaziva(this.NazivProstora.Text))
             {
-                ProstorDTO p = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), false);
+                ProstorDTO p = new ProstorDTO(Guid.NewGuid().ToString(), this.NazivProstora.Text, ProvjeriVrstuProstora(), int.Parse(this.sprat.Text), float.Parse(this.kvadratura.Text), new List<OpremaDTO>(), false);
                 prostoriKontroler.DodajProstor(p);
                 this.Close();
             }

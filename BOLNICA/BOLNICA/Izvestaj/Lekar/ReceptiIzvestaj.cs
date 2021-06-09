@@ -97,8 +97,6 @@ namespace Bolnica.Izvestaj.Lekar
                         r.Lek.NazivLeka, r.Lek.Jacina });
 
             }
-
-
             return tabela;
         }
 

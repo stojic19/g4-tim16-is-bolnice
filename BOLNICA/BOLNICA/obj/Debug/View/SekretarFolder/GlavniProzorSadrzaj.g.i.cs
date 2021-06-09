@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using Bolnica.SekretarFolder;
+using MaterialDesignThemes.MahApps;
 using MaterialDesignThemes.Wpf;
 using MaterialDesignThemes.Wpf.Converters;
 using MaterialDesignThemes.Wpf.Transitions;

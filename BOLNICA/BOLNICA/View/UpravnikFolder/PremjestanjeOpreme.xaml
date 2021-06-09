@@ -42,11 +42,11 @@
                   SelectionMode="Single" Grid.RowSpan="2" Margin="20,20,9.8,45.2" Background="WhiteSmoke"
                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID Prostora" Binding="{Binding IdProstora}" Width="67*"/>
-                    <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="80*"/>
+                    <DataGridTextColumn Header="Naziv prostora" Binding="{Binding NazivProstora}" Width="90*"/>
+                    <DataGridTextColumn Header="Vrsta prostora" Binding="{Binding VrstaProstora}" Width="95*"/>
                     <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="95*"/>
                     <DataGridTextColumn Header="Kvadratura" Binding="{Binding Kvadratura}" Width="95*"/>
-                    <DataGridTextColumn Header="Broj Kreveta" Binding="{Binding BrojKreveta}" Width="105*"/>
+
 
 
 
@@ -65,10 +65,10 @@
         <Label Grid.ColumnSpan="2" Content="Da li ste sigurni da želite da premjestite opremu u drugu prostoriju?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="82,0,77.8,54.8" Grid.Row="3" Height="60" Width="389" Grid.RowSpan="2"/>
 
         <Button Content="Odustani" Grid.Column="0" Grid.Row="4"  Margin="0,25,391.2,19.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
+                Click="Odustani_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.ColumnSpan="2"/>
 
         <Button Content="Potrvdi" Grid.Column="1" Grid.Row="4"  Margin="162.6,25,0,19.4"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                Click="Potvrdi_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
     </Grid>
 </Window>

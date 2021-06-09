@@ -41,10 +41,10 @@
         <TextBox Name="kolicina" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20.4,19.8,0,19" Height="30" Width="155" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
 
 
-        <Button Content="Odustani" Grid.Column="0" Grid.Row="3"  Margin="0,23.8,0,23"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Odustani" Grid.Column="0" Grid.Row="3"  Margin="0,23.8,0,23"  Width="100" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
-        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="3"  Margin="75,23.8,0,23"  Width="100" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+        <Button Content="Potrvdi" Grid.Column="1" Grid.Row="3"  Margin="75,23.8,0,23"  Width="100" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                 Click="Button_Click_1" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
 

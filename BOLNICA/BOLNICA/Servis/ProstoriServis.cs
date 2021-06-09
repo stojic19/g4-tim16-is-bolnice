@@ -154,7 +154,7 @@ namespace Model
         {
             foreach (Oprema o in prostorIzKojegPremjestamo.Oprema)
             {
-                if (o.Equals(oprema))
+                if (o.NazivOpreme.Equals(oprema.NazivOpreme))
                 {
                     o.Kolicina -= kolicina;
                 }

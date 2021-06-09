@@ -7,12 +7,6 @@
     <Kolicina>3</Kolicina>
   </Oprema>
   <Oprema>
-    <IdOpreme>283d71a7-b2ff-470f-aad7-80204e414abd</IdOpreme>
-    <NazivOpreme>vata</NazivOpreme>
-    <VrstaOpreme>dinamicka</VrstaOpreme>
-    <Kolicina>200</Kolicina>
-  </Oprema>
-  <Oprema>
     <IdOpreme>326e6ed5-472d-44d1-87b3-d1a51358075c</IdOpreme>
     <NazivOpreme>igla</NazivOpreme>
     <VrstaOpreme>dinamicka</VrstaOpreme>
@@ -46,6 +40,12 @@
     <IdOpreme>bb02adce-551f-4e97-ae06-83dbbb83242d</IdOpreme>
     <NazivOpreme>konac</NazivOpreme>
     <VrstaOpreme>dinamicka</VrstaOpreme>
-    <Kolicina>300</Kolicina>
+    <Kolicina>290</Kolicina>
+  </Oprema>
+  <Oprema>
+    <IdOpreme>283d71a7-b2ff-470f-aad7-80204e414abd</IdOpreme>
+    <NazivOpreme>vata</NazivOpreme>
+    <VrstaOpreme>dinamicka</VrstaOpreme>
+    <Kolicina>195</Kolicina>
   </Oprema>
 </ArrayOfOprema>

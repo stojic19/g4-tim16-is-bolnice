@@ -22,7 +22,7 @@ namespace Bolnica.Konverter
             LekKonverter lekKonverter = new LekKonverter();
             return new Terapija(terapija.IdTerapije, terapija.IdAnamneze, terapija.PocetakTerapije,
                terapija.KrajTerapije, terapija.Kolicina, terapija.Satnica, terapija.UputsvoKonzumiranja,
-               lekKonverter.LekDTOUModel(terapija.Lek));
+               lekKonverter.LekDTOULekModel(terapija.Lek));
         }
 
        

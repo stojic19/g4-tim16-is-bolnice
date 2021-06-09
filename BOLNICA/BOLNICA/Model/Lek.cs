@@ -50,12 +50,15 @@ namespace Model
             Sastojci = sastojci;
             Verifikacija = verifikacija;
         }
-        public Lek(string iDLeka, string nazivLeka, string jacina, List<Sastojak> sastojci)
+        public Lek(string iDLeka, string nazivLeka, string jacina, int kolicina, List<Sastojak> sastojci, string proizvodjac)
         {
             IDLeka = iDLeka;
             NazivLeka = nazivLeka;
             Jacina = jacina;
+            Kolicina = kolicina;
             Sastojci = sastojci;
+            Proizvodjac = proizvodjac;
+
         }
     }
 }

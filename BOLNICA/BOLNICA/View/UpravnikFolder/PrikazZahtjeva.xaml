@@ -36,8 +36,8 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="DodajZahtjev" Click="DodajZahtjev_Click" Content="Dodaj zahtjev" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="20,42.2,0,0" Grid.Row="3" Height="25"/>
-            <Button x:Name="IzmijeniZahtjev" Click="IzmijeniZahtjev_Click" Content="Izmjeni zahtjev" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="182,42.2,0,0" Grid.Row="3" Height="25"/>
-            <Button x:Name="UkloniZahtjev" Click="UkloniZahtjev_Click" Content="Ukloni zahtjev" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="351,42.2,0,0" Grid.Row="3" Height="25"/>
+            <Button x:Name="IzmijeniZahtjev" Click="IzmijeniZahtjev_Click" Content="Izmjeni zahtjev" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="162,42.2,0,0" Grid.Row="3" Height="25"/>
+            <Button x:Name="UkloniZahtjev" Click="UkloniZahtjev_Click" Content="Ukloni zahtjev" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="301,42.2,0,0" Grid.Row="3" Height="25"/>
 
 
         </Grid>

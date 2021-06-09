@@ -14,8 +14,8 @@
           <Kolicina>3221</Kolicina>
         </Sastojak>
       </Sastojci>
-      <Verifikacija>true</Verifikacija>
       <Zamene />
+      <Verifikacija>true</Verifikacija>
     </Lijek>
     <Odgovor>Odobren</Odgovor>
     <DatumSlanja>2021-05-09T03:21:17.4734127+02:00</DatumSlanja>
@@ -34,8 +34,8 @@
           <Kolicina>231</Kolicina>
         </Sastojak>
       </Sastojci>
-      <Verifikacija>false</Verifikacija>
       <Zamene />
+      <Verifikacija>false</Verifikacija>
     </Lijek>
     <Odgovor>Odbijen</Odgovor>
     <RazlogOdbijanja>Ne svidja mi se sastav. Cao!</RazlogOdbijanja>
@@ -50,8 +50,8 @@
       <Kolicina>3212</Kolicina>
       <Proizvodjac>Brufesa</Proizvodjac>
       <Sastojci />
-      <Verifikacija>true</Verifikacija>
       <Zamene />
+      <Verifikacija>true</Verifikacija>
     </Lijek>
     <Odgovor>Odobren</Odgovor>
     <DatumSlanja>2021-05-09T04:38:37.2611789+02:00</DatumSlanja>
@@ -74,8 +74,8 @@
           <Kolicina>424</Kolicina>
         </Sastojak>
       </Sastojci>
-      <Verifikacija>false</Verifikacija>
       <Zamene />
+      <Verifikacija>false</Verifikacija>
     </Lijek>
     <Odgovor>Odbijen</Odgovor>
     <RazlogOdbijanja>Zato sto je los lek</RazlogOdbijanja>
@@ -90,8 +90,8 @@
       <Kolicina>321</Kolicina>
       <Proizvodjac>ars</Proizvodjac>
       <Sastojci />
-      <Verifikacija>true</Verifikacija>
       <Zamene />
+      <Verifikacija>true</Verifikacija>
     </Lijek>
     <Odgovor>Odobren</Odgovor>
     <DatumSlanja>2021-05-12T22:57:48.4499651+02:00</DatumSlanja>
@@ -105,11 +105,31 @@
       <Kolicina>2132</Kolicina>
       <Proizvodjac>Parisol</Proizvodjac>
       <Sastojci />
-      <Verifikacija>false</Verifikacija>
       <Zamene />
+      <Verifikacija>false</Verifikacija>
     </Lijek>
     <Odgovor>Odbijen</Odgovor>
     <RazlogOdbijanja>Ne svidja mi se</RazlogOdbijanja>
     <DatumSlanja>2021-05-24T21:58:09.3851625+02:00</DatumSlanja>
+  </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>6ef17eab-a919-48be-a2f0-d3ef1e33f4db</IdZahtjeva>
+    <Lijek>
+      <IDLeka>6bcf9586-d1d3-41ab-9c41-84cd13c083e8</IDLeka>
+      <NazivLeka>Fenobarbiton</NazivLeka>
+      <Jacina>500mg</Jacina>
+      <Kolicina>0</Kolicina>
+      <Proizvodjac>Galenik</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>krastavac </Naziv>
+          <Kolicina>2</Kolicina>
+        </Sastojak>
+      </Sastojci>
+      <Zamene />
+      <Verifikacija>false</Verifikacija>
+    </Lijek>
+    <Odgovor>Čekanje</Odgovor>
+    <DatumSlanja>2021-06-09T21:07:27.4153366+02:00</DatumSlanja>
   </Zahtjev>
 </ArrayOfZahtjev>

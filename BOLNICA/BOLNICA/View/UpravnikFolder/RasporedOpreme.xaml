@@ -30,12 +30,12 @@
                     <DataGridTextColumn Header=" Kolicina" Binding="{Binding Kolicina}" Width="90"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Column="1" Grid.Row="2" Content="Dodaj opremu" Margin="35,25.4,20.2,0" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_1" Background="WhiteSmoke" Height="33" VerticalAlignment="Top"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Premjesti opremu" Margin="35,76.4,20.2,86.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_2" Background="WhiteSmoke" Grid.RowSpan="2"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="Dodaj opremu" Margin="35,73.4,20.2,0" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Click="DodajOpremu_Click" Background="WhiteSmoke" Height="25" VerticalAlignment="Top"/>
+            <Button Grid.Column="1" Grid.Row="3" Content="Premjesti opremu" Margin="35,10,20.2,63.4" VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" Height="25" Click="PremjestiOpremu_Click" Background="WhiteSmoke"/>
             <Button Grid.Column="1" Grid.Row="3" Content="Nazad" Margin="35,0,20.2,31.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Button_Click_3" Background="WhiteSmoke" Height="33" VerticalAlignment="Bottom"/>
+                HorizontalContentAlignment="Center" Click="Nazad_Click" Background="WhiteSmoke" Height="25" VerticalAlignment="Bottom"/>
             <Image x:Name="image" Source="/Slike/UpravnikSlike/slusalice.png" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="89" RenderTransformOrigin="6.066,1.468" Grid.Column="1" Margin="94,43,0,0" Grid.RowSpan="2"/>
 
         </Grid>

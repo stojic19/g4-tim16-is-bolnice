@@ -36,8 +36,6 @@ namespace Bolnica
             InitializeComponent();
             this.idOpreme = idOpreme;
             this.idProstoraIzKojegPrebacujem = idProstoraIzKojegPrebacujem;
-
-
             this.DataContext = this;
 
             Prostori = new ObservableCollection<ProstorDTO>();
@@ -52,12 +50,12 @@ namespace Bolnica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Odustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             ProstorDTO prostorUKojiPremjestamo = (ProstorDTO)dataGridProstori.SelectedItem;
             int kolicina = Int32.Parse(Kolicina.Text);
@@ -79,7 +77,7 @@ namespace Bolnica
                 opremaKontroler.ProvjeriKolicinuKojuPremjestamo(opremaKojuPremjestamo, kolicina);
             }
 
-            // Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
+            ///Oprema opremaKojuPremjestamo = RukovanjeProstorom.PretraziOpremuUProstoru(prostorIzKojegPremjestamo, opremaPomocna);
             prostoriKontroler.OduzmiKolicinuOpreme(prostorIzKojegPremjestamo, opremaKojuPremjestamo, kolicina);
             prostoriKontroler.PremjestiOpremu(prostorUKojiPremjestamo, opremaKojuPremjestamo, kolicina);
 
