@@ -32,7 +32,7 @@ namespace Bolnica.Kontroler
         public List<TerminDTO> DobaviSveOperacije()
         {
             List<TerminDTO> termini = new List<TerminDTO>();
-            foreach(Termin termin in operacijeServis.DobaviSveOperacije())
+            foreach(Termin termin in operacijeServis.DobaviSve())
             {
                 termini.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
             }
@@ -65,7 +65,7 @@ namespace Bolnica.Kontroler
 
         public void ZakazivanjeHitneOperacije(TerminDTO terminZaZakazivanje, int trajanjeOperacije)
         {
-            operacijeServis.ZakazivanjeHitneOperacije(terminZaZakazivanje, trajanjeOperacije);
+            operacijeServis.ZakazivanjeOperacije(terminZaZakazivanje, trajanjeOperacije);
         }
 
         public Dictionary<TerminDTO, int> HitnaOperacijaTerminiZaPomeranje(SpecijalizacijeLekara oblastLekara, int trajanjeOperacije)
@@ -73,9 +73,9 @@ namespace Bolnica.Kontroler
             return operacijeServis.HitnaOperacijaTerminiZaPomeranje(oblastLekara, trajanjeOperacije);
         }
 
-        public bool PomeriOperacijuIZakaziNovu(TerminDTO terminZaOperaciju, int brojDanaZaPomeranje, PacijentDTO odabraniPacijent, int trajanjeOperacije)
+        public bool PomeriOperacijuIZakaziNovu(KeyValuePair<TerminDTO, int> termin)
         {
-            return operacijeServis.PomeriOperacijuIZakaziNovu(terminZaOperaciju, brojDanaZaPomeranje, odabraniPacijent, trajanjeOperacije);
+            return operacijeServis.PomeriOperacijuIZakaziNovu(termin);
         }
 
         public bool OtkazivanjeOperacije(TerminDTO terminZaOtkazivanje)

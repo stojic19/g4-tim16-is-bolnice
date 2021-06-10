@@ -7,7 +7,7 @@ namespace Bolnica.Konverter
     public class TerminKonverter
     {
         LekarKonverter lekarKonverter = new LekarKonverter();
-
+        ProstoriServis prostoriServis = new ProstoriServis();
         public TerminDTO ZakazaniTerminModelUDTO(Termin termin, String korisnickoIme)
         {
             PacijentDTO pacijent = new PacijentDTO(termin.Pacijent.Ime, termin.Pacijent.Prezime, termin.Pacijent.Jmbg, korisnickoIme);
@@ -32,7 +32,7 @@ namespace Bolnica.Konverter
         public VrsteTermina getVrstaTermina(String vrstaTermina)
         {
 
-            if (vrstaTermina.Equals("Operacija"))
+            if (vrstaTermina.Equals("operacija"))
             {
                 return VrsteTermina.operacija;
             }
@@ -49,7 +49,8 @@ namespace Bolnica.Konverter
         public Termin ZakazaniTerminDTOUModel(TerminDTO termin)
         {
             PacijentKonverter pacijentKonverter = new PacijentKonverter();
-            return new Termin(termin.IdTermina, termin.Datum, termin.Vreme, lekarKonverter.LekarDTOUModel(termin.Lekar), termin.Trajanje, termin.Prostor, termin.TipTermina, termin.IdPacijenta, Double.Parse(termin.Trajanje), pacijentKonverter.PacijentDTOUModel(termin.Pacijent));
+
+            return new Termin(termin.IdTermina, getVrstaTermina(termin.TipTermina), termin.Vreme, double.Parse(termin.Trajanje), termin.Datum, prostoriServis.PretraziPoId(termin.Prostor),pacijentKonverter.PacijentDTOUModel(termin.Pacijent), lekarKonverter.LekarDTOUModel(termin.Lekar));
         }
 
     }

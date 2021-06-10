@@ -72,15 +72,6 @@ namespace Bolnica.Servis
         {
             return slobodniTerminiRepozitorijum.PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
         }
-
-        public void DodajSlobodanTerminZaOperaciju(Termin ostatak)
-        {
-            slobodniTerminiRepozitorijum.DodajObjekat(ostatak);
-        }
-        public void DodajSlobodanTerminZaPregled(Termin slobodanTermin)
-        {
-            slobodniTerminiRepozitorijum.DodajObjekat(slobodanTermin);
-        }
         public List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> termini = new List<Termin>();

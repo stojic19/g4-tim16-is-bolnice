@@ -106,7 +106,9 @@ namespace Bolnica.SekretarFolder.Operacija
                 return;
             }
             KeyValuePair<TerminDTO, int> termin = (KeyValuePair<TerminDTO, int>)terminiZaPomeranjeLista.SelectedItem;
-            if (!hitnaOperacijaKontroler.PomeriOperacijuIZakaziNovu(termin.Key, termin.Value, pacijent, TrajanjeOperacije))
+            termin.Key.Pacijent = pacijent;
+            termin.Key.TrajanjeDouble = TrajanjeOperacije;
+            if (!hitnaOperacijaKontroler.PomeriOperacijuIZakaziNovu(termin))
             {
                 System.Windows.Forms.MessageBox.Show("Neuspešno pomeranje!", "Odaberite drugi termin", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

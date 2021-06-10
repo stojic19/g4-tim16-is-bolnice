@@ -29,14 +29,14 @@ namespace Model
         {
             Termin termin = DobaviZakazanTerminPoId(terminZaOtkazivanje);
             termin.Pacijent = null;
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(termin);
+            slobodniTerminiServis.Dodaj(termin);
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje);
         }
 
         public Boolean OtkaziTerminLekar(string idTermina)
         {
             Termin terminZaBrisanje = DobaviZakazanTerminPoId(idTermina);
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaBrisanje);
+            slobodniTerminiServis.Dodaj(terminZaBrisanje);
             return zakazaniTerminiRepozitorijum.OtkaziTerminLekar(idTermina);
         }
 
@@ -59,7 +59,7 @@ namespace Model
             stariTermin.Trajanje = 30;
             stariTermin.Pacijent = null;
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
+            slobodniTerminiServis.Dodaj(stariTermin);
             ZakaziTerminLekar(noviTermin);
         }
 
@@ -97,7 +97,7 @@ namespace Model
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(terminZaOtkazivanje.IdTermina);
             terminZaOtkazivanje.Pacijent = null;
             terminZaOtkazivanje.Prostor = null;
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(terminZaOtkazivanje);
+            slobodniTerminiServis.Dodaj(terminZaOtkazivanje);
         }
 
 
@@ -113,7 +113,7 @@ namespace Model
 
         public void ZameniTermine(Termin stariTermin, Termin noviTermin)
         {
-            slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
+            slobodniTerminiServis.Dodaj(stariTermin);
             zakazaniTerminiRepozitorijum.DodajObjekat(noviTermin);
             slobodniTerminiServis.Ukloni(noviTermin);
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
