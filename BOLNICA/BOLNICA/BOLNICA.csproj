@@ -243,6 +243,7 @@
     <Compile Include="Izvestaj\Lekar\ReceptiIzvestaj.cs" />
     <Compile Include="Izvestaj\Pacijent\RasporedTerapijeIzvestaj.cs" />
     <Compile Include="Izvestaj\Sekretar\NedeljniIzvestaj.cs" />
+    <Compile Include="Izvestaj\Upravnik\LijekIzvjestaj.cs" />
     <Compile Include="Komande\RelayCommand.cs" />
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\AnketaKontroler.cs" />
@@ -1509,7 +1510,7 @@
     <Resource Include="Slike\PacijentSlike\Screenshot 2021-06-07 163801.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Izvestaj\Upravnik\" />
+    <Resource Include="Slike\UpravnikSlike\pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

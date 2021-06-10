@@ -56,6 +56,11 @@
 
             </Button>
 
+            <Button Background="#FF31577E" Grid.Column="8" Name="Pdf" Click="Pdf_Click"  ToolTipService.ToolTip="Pdf izvjestaj" ToolTipService.Placement="Mouse">
+                <Image Source="/Slike/UpravnikSlike/pdf.png" />
+
+            </Button>
+
         </Grid>
 
         <StackPanel  Height="385" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,-0.4,0" >

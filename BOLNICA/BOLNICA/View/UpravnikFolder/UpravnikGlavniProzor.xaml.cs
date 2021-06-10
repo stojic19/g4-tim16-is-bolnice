@@ -1,10 +1,12 @@
-﻿using Bolnica.Kontroler;
+﻿using Bolnica.Izvestaj.Upravnik;
+using Bolnica.Kontroler;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.UpravnikFolder;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,7 @@ namespace Bolnica
         private static UpravnikGlavniProzor instance = null;
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        LijekIzvjestaj lijekIzvjestaj = new LijekIzvjestaj();
         public static UpravnikGlavniProzor getInstance()
         {
             if (instance == null)
@@ -112,6 +115,29 @@ namespace Bolnica
 
             usc = new RenoviranjeProstorije();
             MainPanel.Children.Add(usc);
+        }
+
+        private void Pdf_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataTable dtbl = lijekIzvjestaj.MakeDataTable();
+                String naslov = "Izvestaj lijekova";
+                String datum = DateTime.Now.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                String putanja = @"IzvjestajiUpravnik\IzvjestajLijek_" + datum + ".pdf";
+                lijekIzvjestaj.ExportDataTableToPdf(dtbl, putanja, naslov);
+
+                if (System.Windows.MessageBox.Show("Izvjestaj izgenerisan! Pogledati ga?", "Izvestaj lijekova", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(putanja);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Error Message");
+            }
+
         }
     }
 }
