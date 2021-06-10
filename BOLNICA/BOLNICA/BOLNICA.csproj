@@ -218,6 +218,7 @@
     <Compile Include="DTO\AnamnezaDTO.cs" />
     <Compile Include="DTO\AnketaDTO.cs" />
     <Compile Include="DTO\BeleskaDTO.cs" />
+    <Compile Include="DTO\FeedbackDTO.cs" />
     <Compile Include="DTO\KartonPacijentaDTO.cs" />
     <Compile Include="DTO\LekarDTO.cs" />
     <Compile Include="DTO\LekDTO.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="Kontroler\AlergeniKontroler.cs" />
     <Compile Include="Kontroler\AnketaKontroler.cs" />
     <Compile Include="Kontroler\BeleskaKontroler.cs" />
+    <Compile Include="Kontroler\FeedbackKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
     <Compile Include="Kontroler\OdsustvoKontroler.cs" />
@@ -271,6 +273,7 @@
     <Compile Include="Konverter\KartonKonverter.cs" />
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
+    <Compile Include="Konverter\FeedbackKonverter.cs" />
     <Compile Include="Konverter\ObavestenjeKonverter.cs" />
     <Compile Include="Konverter\OdsustvoKonverter.cs" />
     <Compile Include="Konverter\OpremaKonverter.cs" />
@@ -325,6 +328,7 @@
     <Compile Include="Repozitorijum\ZahtjeviRepozitorijum.cs" />
     <Compile Include="Servis\AlergeniServis.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
+    <Compile Include="Servis\FeedbackServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />
     <Compile Include="Servis\OdsustvoLekaraServis.cs" />
     <Compile Include="Servis\PitanjaServis.cs" />
@@ -358,6 +362,7 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\DodavanjeFeedbackaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaPregledViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeNalogaViewModel.cs" />
@@ -503,6 +508,9 @@
     </Compile>
     <Compile Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.xaml.cs">
       <DependentUpon>LicnaObavestenjaSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SekretarFolder\FeedbackSekretar.xaml.cs">
+      <DependentUpon>FeedbackSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SekretarFolder\MojNalogSekretar.xaml.cs">
       <DependentUpon>MojNalogSekretar.xaml</DependentUpon>
@@ -924,6 +932,10 @@
     <Page Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SekretarFolder\FeedbackSekretar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SekretarFolder\MojNalogSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>

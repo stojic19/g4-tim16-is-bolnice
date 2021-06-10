@@ -1,4 +1,5 @@
-﻿using Bolnica.Servis;
+﻿using Bolnica.Konverter;
+using Bolnica.Servis;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -11,30 +12,35 @@ namespace Bolnica.Kontroler
     class FeedbackKontroler
     {
         FeedbackServis feedbackServis = new FeedbackServis();
-
-        public List<Feedback> DobaviSve()
+        FeedbackKonverter feedbackKonverter = new FeedbackKonverter();
+        public List<FeedbackDTO> DobaviSve()
         {
-            return feedbackServis.DobaviSve();
+            List<FeedbackDTO> feedbacks = new List<FeedbackDTO>();
+            foreach(Feedback feedback in feedbackServis.DobaviSve())
+            {
+                feedbacks.Add(feedbackKonverter.FeedbackModelUDTO(feedback));
+            }
+            return feedbacks;
         }
 
-        public void Dodaj(Feedback feedback)
+        public void Dodaj(FeedbackDTO feedback)
         {
-            feedbackServis.Dodaj(feedback);
+            feedbackServis.Dodaj(feedbackKonverter.FeedbackDTOUModel(feedback));
         }
 
-        public void Izmeni(Feedback feedback)
+        public void Izmeni(FeedbackDTO feedback)
         {
-            feedbackServis.Izmeni(feedback);
+            feedbackServis.Izmeni(feedbackKonverter.FeedbackDTOUModel(feedback));
         }
 
-        public Feedback PretraziPoId(string id)
+        public FeedbackDTO PretraziPoId(string id)
         {
-            return feedbackServis.PretraziPoId(id);
+            return feedbackKonverter.FeedbackModelUDTO(feedbackServis.PretraziPoId(id));
         }
 
-        public void Ukloni(Feedback feedback)
+        public void Ukloni(FeedbackDTO feedback)
         {
-            feedbackServis.Ukloni(feedback);
+            feedbackServis.Ukloni(feedbackKonverter.FeedbackDTOUModel(feedback));
         }
     }
 }

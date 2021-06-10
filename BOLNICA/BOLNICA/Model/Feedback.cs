@@ -7,8 +7,8 @@ using System;
 
 namespace Model
 {
-   public class Feedback
-   {
+    public class Feedback
+    {
         private string idFeedbacka;
         private string idOsobe;
         private TipGreske tipGreske;
@@ -27,3 +27,4 @@ namespace Model
         public TipGreske TipGreske { get => tipGreske; set => tipGreske = value; }
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
     }
+}

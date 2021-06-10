@@ -7,12 +7,16 @@ using System;
 
 namespace Model
 {
-   public class FeedbackDTO
-   {
+    public class FeedbackDTO
+    {
         private string idFeedbacka;
         private string idOsobe;
         private TipGreske tipGreske;
         private string tekstFeedbacka;
+
+        public FeedbackDTO()
+        {
+        }
 
         public FeedbackDTO(string idFeedbacka, string idOsobe, TipGreske tipGreske, string tekstFeedbacka)
         {
@@ -27,3 +31,4 @@ namespace Model
         public TipGreske TipGreske { get => tipGreske; set => tipGreske = value; }
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
     }
+}
