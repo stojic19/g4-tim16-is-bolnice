@@ -101,7 +101,7 @@ namespace Model
         public Boolean ZakaziTerminLekar(Termin termin)
         {
             zakazaniTerminiRepozitorijum.DodajObjekat(termin);
-            slobodniTerminiServis.UkloniSlobodanTermin(termin);
+            slobodniTerminiServis.Ukloni(termin);
             return zakazaniTerminiRepozitorijum.DaLiPostojiTermin(termin);
 
         }
@@ -173,7 +173,7 @@ namespace Model
         {
             slobodniTerminiServis.DodajSlobodanTerminZaPregled(stariTermin);
             zakazaniTerminiRepozitorijum.DodajObjekat(noviTermin);
-            slobodniTerminiServis.UkloniSlobodanTermin(noviTermin);
+            slobodniTerminiServis.Ukloni(noviTermin);
             zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
         }
 
@@ -231,7 +231,7 @@ namespace Model
         {
             termin.Pacijent = naloziPacijenataServis.PretraziPoId(korisnickoImePacijenta);
             zakazaniTerminiRepozitorijum.DodajObjekat(termin);
-            slobodniTerminiServis.UkloniSlobodanTermin(termin);
+            slobodniTerminiServis.Ukloni(termin);
             obavestenjaServis.DodajObavestenjeOZakazanomPregledu(korisnickoImePacijenta, termin);
         }
 

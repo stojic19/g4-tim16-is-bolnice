@@ -47,7 +47,7 @@ namespace Bolnica.Kontroler
         public List<TerminDTO> DobaviSveSlobodneTermine()
         {
             List<TerminDTO> termini = new List<TerminDTO>();
-            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermine())
+            foreach (Termin termin in slobodniTerminiServis.DobaviSve())
                 termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
             return termini;
         }

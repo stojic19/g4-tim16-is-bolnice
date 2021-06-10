@@ -115,7 +115,7 @@ namespace Bolnica.Model
                 }
             }
             foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
-                slobodniTerminiServis.UkloniSlobodanTermin(termin);
+                slobodniTerminiServis.Ukloni(termin);
 
             foreach (Termin termin in pomocni)
                 slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
@@ -230,7 +230,7 @@ namespace Bolnica.Model
                 }
             }
             foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
-                slobodniTerminiServis.UkloniSlobodanTermin(termin);
+                slobodniTerminiServis.Ukloni(termin);
 
             foreach (Termin termin in pomocni)
                 slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
@@ -511,7 +511,7 @@ namespace Bolnica.Model
             {
                 if (t.IdTermina.Equals(termin.IdTermina))
                 {
-                    slobodniTerminiServis.UkloniSlobodanTermin(termin);
+                    slobodniTerminiServis.Ukloni(termin);
                     break;
                 }
             }

@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Interfejsi.Sekretar;
+using Bolnica.Model;
 using Bolnica.Repozitorijum;
 using Bolnica.Repozitorijum.Interfejsi;
 using Model;
@@ -11,10 +12,31 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Servis
 {
-    public class SlobodniTerminiServis
+    public class SlobodniTerminiServis : CRUDInterfejs<Termin>
     {
         SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
         LekariServis lekariServis = new LekariServis();
+
+        public List<Termin> DobaviSve()
+        {
+            ObrisiStareSlobodneTermine();
+            return slobodniTerminiRepozitorijum.DobaviSveObjekte();
+        }
+
+        public void Ukloni(Termin termin)
+        {
+            slobodniTerminiRepozitorijum.ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
+        }
+
+        public void Dodaj(Termin termin)
+        {
+            slobodniTerminiRepozitorijum.DodajObjekat(termin);
+        }
+
+        public void Izmeni(string stariId, Termin termin)
+        {
+            slobodniTerminiRepozitorijum.IzmeniTermin(termin);
+        }
 
         public void ObrisiStareSlobodneTermine()
         {
@@ -23,14 +45,9 @@ namespace Bolnica.Servis
             {
                 if(DateTime.Compare(termin.Datum, DateTime.Now)<0)
                 {
-                    UkloniSlobodanTermin(termin);
+                    Ukloni(termin);
                 }
             }
-        }
-        public List<Termin> DobaviSveSlobodneTermine()
-        {
-            ObrisiStareSlobodneTermine();
-            return slobodniTerminiRepozitorijum.DobaviSveObjekte();
         }
         public List<Termin> DobaviSlobodneTermineZaLekara(string idLekara)
         {
@@ -43,7 +60,7 @@ namespace Bolnica.Servis
             List<Termin> termini = DobaviSlobodneTermineZaLekaraNaRadniDan(idLekara, radniDan);
             foreach (Termin termin in termini)
             {
-                UkloniSlobodanTermin(termin);
+                Ukloni(termin);
             }
         }
 
@@ -58,15 +75,6 @@ namespace Bolnica.Servis
             }
             return termini;
         }
-
-        private void DodajSlobodanTermin(Termin termin)
-        {
-            slobodniTerminiRepozitorijum.DodajObjekat(termin);
-        }
-        public void UkloniSlobodanTermin(Termin termin)
-        {
-            slobodniTerminiRepozitorijum.ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
-        }
         public Termin PretraziPoId(String idTermina)
         {
             return slobodniTerminiRepozitorijum.PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
@@ -76,7 +84,7 @@ namespace Bolnica.Servis
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             for (DateTime datum = radniDan.PocetakSmene; DateTime.Compare(datum, radniDan.KrajSmene) < 0; datum = datum.AddMinutes(30))
             {
-                DodajSlobodanTermin(new Termin(VrsteTermina.pregled, datum.ToString("HH:mm"), 30, datum, lekar));
+                Dodaj(new Termin(VrsteTermina.pregled, datum.ToString("HH:mm"), 30, datum, lekar));
             }
         }
 
@@ -88,7 +96,7 @@ namespace Bolnica.Servis
             {
                 termin.Datum = termin.Datum.AddMinutes(novaSmena);
                 termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
-                slobodniTerminiRepozitorijum.IzmeniTermin(termin);
+                Izmeni(termin.IdTermina, termin);
             }
         }
 
@@ -114,7 +122,7 @@ namespace Bolnica.Servis
         public void DodajSlobodneTermineZaSpecijalistu(string idLekara, RadniDan radniDan)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            DodajSlobodanTermin(new Termin(VrsteTermina.operacija, radniDan.PocetakSmene.ToString("HH:mm"), 240, radniDan.PocetakSmene, lekar));
+            Dodaj(new Termin(VrsteTermina.operacija, radniDan.PocetakSmene.ToString("HH:mm"), 240, radniDan.PocetakSmene, lekar));
         }
 
         public void DodajSlobodanTerminZaOperaciju(Termin ostatak)
