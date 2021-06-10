@@ -144,5 +144,10 @@ namespace Bolnica.SekretarFolder
             usc = new Pomoc();
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
+
+        private void Feedback_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

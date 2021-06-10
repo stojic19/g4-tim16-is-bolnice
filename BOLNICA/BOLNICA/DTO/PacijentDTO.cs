@@ -78,6 +78,7 @@ namespace Bolnica.DTO
 
         public PacijentDTO()
         {
+            this.IdOsobe = Guid.NewGuid().ToString();
             this.Ime = "";
             this.Prezime = "";
             this.Jmbg = "";

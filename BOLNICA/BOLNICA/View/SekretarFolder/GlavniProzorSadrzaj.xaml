@@ -55,6 +55,7 @@
                 <Separator/>
                 <Button Content="Nedeljni izveštaj"  Click="Izvestaj_Click"/>
                 <Button Content="Pomoć" Click="Pomoc_Click"/>
+                <Button Content="Feedback" Click="Feedback_Click"/>
             </StackPanel>
         </materialDesign:PopupBox>
         <Label Content="Zdravo klinika" FontSize="40" HorizontalAlignment="Left" Margin="370,168,0,0" VerticalAlignment="Top" Height="58" Width="285" FontWeight="Bold"/>

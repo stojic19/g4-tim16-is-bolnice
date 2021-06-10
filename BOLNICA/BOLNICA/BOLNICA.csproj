@@ -290,13 +290,17 @@
     <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
+    <Compile Include="Model\Enumi\TipGreske.cs" />
+    <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\Godisnji.cs" />
     <Compile Include="Model\Odsustvo.cs" />
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\FeedbackRepozitorijum.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\AnketeRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\BeleskaRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\FeedbackRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\GlavniRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\OpremaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\PitanjaRepozitorijumInterfejs.cs" />
