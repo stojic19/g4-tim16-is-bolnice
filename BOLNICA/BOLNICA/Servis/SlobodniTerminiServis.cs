@@ -72,20 +72,6 @@ namespace Bolnica.Servis
         {
             return slobodniTerminiRepozitorijum.PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
         }
-        public void DodajSlobodneTermineZaOpstuPraksu(String idLekara, RadniDan radniDan)
-        {
-            Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            for (DateTime datum = radniDan.PocetakSmene; DateTime.Compare(datum, radniDan.KrajSmene) < 0; datum = datum.AddMinutes(30))
-            {
-                Dodaj(new Termin(VrsteTermina.pregled, datum.ToString("HH:mm"), 30, datum, lekar));
-            }
-        }
-
-        public void DodajSlobodneTermineZaSpecijalistu(string idLekara, RadniDan radniDan)
-        {
-            Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            Dodaj(new Termin(VrsteTermina.operacija, radniDan.PocetakSmene.ToString("HH:mm"), 240, radniDan.PocetakSmene, lekar));
-        }
 
         public void DodajSlobodanTerminZaOperaciju(Termin ostatak)
         {

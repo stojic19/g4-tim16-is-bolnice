@@ -531,6 +531,16 @@
         <PocetakSmene>2021-07-16T07:00:00</PocetakSmene>
         <KrajSmene>2021-07-16T15:00:00</KrajSmene>
       </RadniDan>
+      <RadniDan>
+        <IdRadnogDana>e68c4926-0140-4e8d-9e1f-c1617451751b</IdRadnogDana>
+        <PocetakSmene>2021-07-26T07:00:00</PocetakSmene>
+        <KrajSmene>2021-07-26T15:00:00</KrajSmene>
+      </RadniDan>
+      <RadniDan>
+        <IdRadnogDana>1cbe5c6a-3d63-41da-bc73-25d7c3807379</IdRadnogDana>
+        <PocetakSmene>2021-07-27T07:00:00</PocetakSmene>
+        <KrajSmene>2021-07-27T15:00:00</KrajSmene>
+      </RadniDan>
     </RadniDani>
     <Godisnji>
       <GodinaZaGodisnji>2021</GodinaZaGodisnji>

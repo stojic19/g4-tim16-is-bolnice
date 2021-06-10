@@ -25,12 +25,23 @@ namespace Bolnica.Servis
 
         public List<RadniDan> DobaviSve()
         {
-            throw new NotImplementedException();
+            return lekariServis.DobaviRadneDanePoIdLekara(idLekara);
         }
 
-        public void Dodaj(RadniDan objekat)
+        public void Dodaj(RadniDan radniDan)
         {
-            throw new NotImplementedException();
+            Lekar lekar = lekariServis.PretraziPoId(idLekara);
+            if (lekar.JeSpecijalista())
+            {
+                slobodniTerminiServis.Dodaj(new Termin(VrsteTermina.operacija, radniDan.PocetakSmene.ToString("HH:mm"), 480, radniDan.PocetakSmene, lekar));
+            }
+            else
+            {
+                for (DateTime datum = radniDan.PocetakSmene; DateTime.Compare(datum, radniDan.KrajSmene) < 0; datum = datum.AddMinutes(30))
+                {
+                    slobodniTerminiServis.Dodaj(new Termin(VrsteTermina.pregled, datum.ToString("HH:mm"), 30, datum, lekar));
+                }
+            }
         }
 
         public void Izmeni(string stariId, RadniDan radniDanNovi)

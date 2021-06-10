@@ -28,7 +28,7 @@ namespace Bolnica.Servis
         public List<RadniDanDTO> DobaviSve()
         {
             List<RadniDanDTO> radniDani = new List<RadniDanDTO>();
-            foreach (RadniDan radniDan in lekariServis.DobaviRadneDanePoIdLekara(idLekara))
+            foreach (RadniDan radniDan in smenaServis.DobaviSve())
             {
                 radniDani.Add(radniDanKonverter.RadniDanModelUDTO(radniDan));
             }
@@ -56,14 +56,15 @@ namespace Bolnica.Servis
         public void Dodaj(RadniDanDTO radniDan)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            if (lekar.Specijalizacija == SpecijalizacijeLekara.nema)
+            for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
             {
-                DodajRadneDaneOpstaPraksa(radniDan);
+                if (lekar.DaLiJeDostupanNaProsledjenDatum(datum.Date) && DaLiJeDatumRadniDan(datum))
+                {
+                    lekar.DodajRadniDan(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
+                    smenaServis.Dodaj(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
+                }
             }
-            else
-            {
-                DodajRadneDaneSpecijalista(radniDan);
-            }
+            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
         }
 
         public void Izmeni(string stariId, RadniDanDTO radniDan)
@@ -79,37 +80,9 @@ namespace Bolnica.Servis
         {
             lekariServis.ProveriDaLiTrebaDodatiDaneZaGodisnji();
         }
-        private void DodajRadneDaneOpstaPraksa(RadniDanDTO radniDan)
-        {
-            Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
-            {
-                if (lekar.DaLiJeDostupanNaProsledjenDatum(datum.Date) && DaLiJeDatumRadniDan(datum))
-                {
-                    lekar.DodajRadniDan(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
-                    slobodniTerminiServis.DodajSlobodneTermineZaOpstuPraksu(lekar.KorisnickoIme, KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
-                }
-            }
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
-        }
-
         public bool DaLiJeMogucePromenitiSmenu(RadniDan radniDanZaPromenuSmene)
         {
             return DateTime.Compare(radniDanZaPromenuSmene.PocetakSmene.Date, DateTime.Now.Date) > 0;
-        }
-
-        private void DodajRadneDaneSpecijalista(RadniDanDTO radniDan)
-        {
-            Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            for (DateTime datum = radniDan.PocetakSmene.Date; DateTime.Compare(datum.Date, radniDan.KrajSmene.Date) <= 0; datum = datum.AddDays(1))
-            {
-                if (lekar.DaLiJeDostupanNaProsledjenDatum(datum.Date) && DaLiJeDatumRadniDan(datum))
-                {
-                    lekar.DodajRadniDan(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
-                    slobodniTerminiServis.DodajSlobodneTermineZaSpecijalistu(lekar.KorisnickoIme, KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
-                }
-            }
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
         }
         private bool DaLiJeDatumRadniDan(DateTime datum)
         {
