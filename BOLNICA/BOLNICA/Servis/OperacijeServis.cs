@@ -33,204 +33,96 @@ namespace Bolnica.Model
             return radniDanNovi.PocetakSmene.TimeOfDay.TotalMinutes - radniDanStari.PocetakSmene.TimeOfDay.TotalMinutes;
         }
         
-        public void OsveziSlobodneTermine(int trenutniSat, int trenutniMinut)
+        public void OsveziSlobodneTermine()
         {
-            string[] vreme;
-            int pocetniSatTermina, pocetniMinutTermina, trajanje;
-            List<Termin> pomocni = new List<Termin>();
-            foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
+            List<Termin> termini = slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije();
+            foreach (Termin termin in termini)
             {
-                Termin termin = t;
-                vreme = termin.PocetnoVreme.Split(':');
-                pocetniSatTermina = Convert.ToInt32(vreme[0]);
-                pocetniMinutTermina = Convert.ToInt32(vreme[1]);
-                if (DaLiJeTerminPreDanasnjegDana(t))
+                if (DaLiJeTerminPreDanasnjegDana(termin))
                 {
-                    continue;
+                    slobodniTerminiServis.Ukloni(termin);
                 }
-                else if (DaLiJeTerminPoceoRanijeDanas(trenutniSat, trenutniMinut, pocetniSatTermina, pocetniMinutTermina, t))
+                else if (DaLiJeTerminPoceoRanijeDanas(termin))
                 {
-                    trajanje = 0;
-                    IzracunajKrajnjiDatumTermina(ref pocetniSatTermina, ref pocetniMinutTermina, ref termin);
-                    if(TerminSeZavrsio(trenutniSat, trenutniMinut, pocetniSatTermina, pocetniMinutTermina))
+                    if(TerminSeZavrsio(termin))
                     {
-                        continue;
+                        slobodniTerminiServis.Ukloni(termin);
                     }
-                    NovoPocetnoVremeTermina(trenutniSat, trenutniMinut, ref termin);
-                    PreostaloVremeTermina(trenutniSat, trenutniMinut, vreme, trajanje,ref termin);
-                    pomocni.Add(termin);
-                }
-                else
-                {
-                    pomocni.Add(termin);
+                    else
+                    {
+                        slobodniTerminiServis.Izmeni(termin.IdTermina, NovoPocetnoVremeITrajanjeTermina(termin));
+                    }
                 }
             }
-            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
-                slobodniTerminiServis.Ukloni(termin);
-
-            foreach (Termin termin in pomocni)
-                slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
-
         }
 
-        private bool TerminSeZavrsio(int trenutniSat,int trenutniMinut,int pocetniSatTermina,int pocetniMinutTermina)
+        private bool TerminSeZavrsio(Termin termin)
         {
-            if (pocetniSatTermina < trenutniSat)
-            {
-                return true;
-            }
-            else if (pocetniSatTermina == trenutniSat && pocetniMinutTermina < trenutniMinut)
-            {
-                return true;
-            }
-            return false;
+            return DateTime.Compare(termin.Datum.AddMinutes(termin.Trajanje), DateTime.Now) <= 0;
         }
 
-        private void PreostaloVremeTermina(int trenutniSat, int trenutniMinut, string[] vreme, int trajanje,ref Termin termin)
+        private Termin NovoPocetnoVremeITrajanjeTermina(Termin termin)
         {
-            if (Convert.ToInt32(vreme[0]) > trenutniSat)
-            {
-                trajanje += (trenutniSat - (Convert.ToInt32(vreme[0]) - 24)) * 60;
-            }
-            else
-            {
-                trajanje += (trenutniSat - Convert.ToInt32(vreme[0])) * 60;
-            }
-            trajanje += trenutniMinut - Convert.ToInt32(vreme[1]);
-            termin.Trajanje -= trajanje;
+            TimeSpan preostaloVremeTermina = termin.Datum.AddMinutes(termin.Trajanje) - DateTime.Now;
+            return new Termin(termin.IdTermina,VrsteTermina.operacija, DateTime.Now.ToString("HH:mm"), (int)preostaloVremeTermina.TotalMinutes, DateTime.Now, new Prostor(),new Pacijent(),termin.Lekar);
         }
 
-        private void NovoPocetnoVremeTermina(int trenutniSat, int trenutniMinut,ref Termin termin)
+        private bool DaLiJeTerminPoceoRanijeDanas(Termin termin)
         {
-            if (trenutniMinut >= 0 && trenutniMinut <= 9)
-            {
-                termin.PocetnoVreme = trenutniSat + ":0" + trenutniMinut;
-            }
-            else
-            {
-                termin.PocetnoVreme = trenutniSat + ":" + trenutniMinut;
-            }
+            return DateTime.Compare(termin.Datum, DateTime.Now) < 0;
         }
 
-        private void IzracunajKrajnjiDatumTermina(ref int pocetniSatTermina, ref int pocetniMinutTermina,ref Termin termin)
+        private bool DaLiJeTerminPreDanasnjegDana(Termin termin)
         {
-            pocetniSatTermina += (int)termin.Trajanje / 60;
-            pocetniMinutTermina += (int)termin.Trajanje % 60;
-            if (pocetniMinutTermina >= 60)
-            {
-                pocetniSatTermina++;
-                pocetniMinutTermina -= 60;
-            }
-            if (pocetniSatTermina >= 24)
-            {
-                pocetniSatTermina -= 24;
-                termin.Datum = DateTime.Now;
-            }
-        }
-
-        private bool DaLiJeTerminPoceoRanijeDanas(int Sat, int Minut, int sat, int minut, Termin t)
-        {
-            return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) == 0 && (sat < Sat || (sat == Sat && minut < Minut));
-        }
-
-        private bool DaLiJeTerminPreDanasnjegDana(Termin t)
-        {
-            return DateTime.Compare(t.Datum.Date, DateTime.Now.Date) < 0;
+            return DateTime.Compare(termin.Datum.Date, DateTime.Now.Date.AddDays(-1)) < 0;
         }
 
         public void ProveriTermineZaSpajanje()
         {
-            String[] vreme;
-            OsveziSlobodneTermine(Convert.ToInt32(DateTime.Now.ToString("HH")), Convert.ToInt32(DateTime.Now.ToString("mm")));
-            List<Termin> pomocni = new List<Termin>();
-            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
+            OsveziSlobodneTermine();
+            List<Termin> termini = slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije();
+            foreach (Termin termin in termini)
             {
-                int sat, minut;
-                string krajTermina = "";
-                vreme = termin.PocetnoVreme.Split(':');
-                sat = Convert.ToInt32(vreme[0]);
-                minut = Convert.ToInt32(vreme[1]);
-                IzracunajKrajTermina(ref sat, ref minut, (int)termin.Trajanje, ref krajTermina);
-                if (KrajTerminaSutra(Convert.ToInt32(vreme[0]), sat))   //Kraj termina je sutradan
+                DateTime krajTermina = DobaviKrajTermina(termin);
+                foreach (Termin terminZaUporedjivanje in termini)
                 {
-                    pomocni.Add(termin);
-                    foreach (Termin termin1 in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
+                    if (TerminiSeNastavljaju(krajTermina, terminZaUporedjivanje) && TerminiPripadajuIstomLekaru(termin, terminZaUporedjivanje))
                     {
-                        if (TerminiSeNastavljaju(termin, krajTermina, termin1))
-                        {
-                            pomocni.Remove(termin);
-                            termin.Trajanje += termin1.Trajanje;
-                            pomocni.Add(termin);
-                            break;
-                        }
-                    }
-                }
-                else                                //Kraj termina je isti dan
-                {
-                    pomocni.Add(termin);
-                    foreach (Termin termin1 in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
-                    {
-                        if (TerminiSeNastavljajuIstiDan(termin, krajTermina, termin1))
-                        {
-                            pomocni.Remove(termin);
-                            termin.Trajanje += termin1.Trajanje;
-                            pomocni.Add(termin);
-                            break;
-                        }
+                        slobodniTerminiServis.Ukloni(terminZaUporedjivanje);
+                        slobodniTerminiServis.Izmeni(termin.IdTermina, SpojiTermine(termin, terminZaUporedjivanje));
+                        break;
                     }
                 }
             }
-            foreach (Termin termin in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
-                slobodniTerminiServis.Ukloni(termin);
-
-            foreach (Termin termin in pomocni)
-                slobodniTerminiServis.DodajSlobodanTerminZaOperaciju(termin);
         }
 
-        private bool TerminiSeNastavljajuIstiDan(Termin termin, string krajTermina, Termin termin1)
+        private static bool TerminiPripadajuIstomLekaru(Termin termin, Termin terminZaUporedjivanje)
         {
-            return !termin1.IdTermina.Equals(termin.IdTermina) && termin1.PocetnoVreme.Equals(krajTermina) && DateTime.Compare(termin1.Datum.Date, termin.Datum.Date) == 0;
+            return termin.Lekar.KorisnickoIme.Equals(terminZaUporedjivanje.Lekar.KorisnickoIme);
         }
 
-        private bool TerminiSeNastavljaju(Termin termin, string krajTermina, Termin termin1)
+        private bool TerminiSeNastavljaju(DateTime krajTermina, Termin terminZaUporedjivanje)
         {
-            return !termin1.IdTermina.Equals(termin.IdTermina) && termin1.PocetnoVreme.Equals(krajTermina) && DateTime.Compare(termin1.Datum.Date, termin.Datum.AddDays(1).Date) == 0;
+            return DateTime.Compare(krajTermina, terminZaUporedjivanje.Datum) == 0;
         }
 
-        private bool KrajTerminaSutra(int Sat, int sat)
+        private Termin SpojiTermine(Termin termin, Termin terminZaUporedjivanje)
         {
-            return Sat > sat;
+            return new Termin(termin.IdTermina, termin.VrstaTermina, termin.PocetnoVreme, termin.Trajanje + terminZaUporedjivanje.Trajanje, termin.Datum, termin.Prostor, termin.Pacijent, termin.Lekar);
         }
 
-        private void IzracunajKrajTermina(ref int sat,ref int minut, int trajanje,ref string krajTermina)
+        private DateTime DobaviKrajTermina(Termin termin)
         {
-            sat += trajanje/60;
-            minut += trajanje % 60;
-            if(minut>=60)
-            {
-                minut -= 60;
-                sat++;
-            }
-            if(sat>=24)
-            {
-                sat -= 24;
-            }
-            if (minut >= 0 && minut <= 9)
-            {
-                krajTermina = sat + ":0" + minut;
-            }
-            else
-            {
-                krajTermina = sat + ":" + minut;
-            }
+            return termin.Datum.AddMinutes(termin.Trajanje);
         }
+
         public List<Termin> HitnaOperacijaSlobodniTermini(SpecijalizacijeLekara oblastLekara, int trajanje)
         {
             List<Termin> pomocna = new List<Termin>();
             List<String> vreme = new List<string>();
             int sat = Convert.ToInt32(DateTime.Now.ToString("HH"));
             int minut = Convert.ToInt32(DateTime.Now.ToString("mm"));
-            OsveziSlobodneTermine(sat, minut);
+            OsveziSlobodneTermine();
 
             vreme = DobaviPocetkeTermina(ref sat, ref minut);
             foreach (Termin t in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
