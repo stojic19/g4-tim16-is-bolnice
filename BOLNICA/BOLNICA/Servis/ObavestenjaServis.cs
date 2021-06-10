@@ -5,6 +5,7 @@
 
 using Bolnica;
 using Bolnica.DTO;
+using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Repozitorijum;
 using System;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-   public class ObavestenjaServis
+   public class ObavestenjaServis : CRUDInterfejs<Obavestenje>
    {
         ObavestenjaRepozitorijum obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
 
-      public void DodajObavestenje(Obavestenje obavestenje)
+      public void Dodaj(Obavestenje obavestenje)
       {
             obavestenjaRepozitorijum.DodajObjekat(obavestenje);
         }
@@ -26,7 +27,7 @@ namespace Model
         {
             obavestenjaRepozitorijum.DodajObjekat(obavestenje);
 
-            if (SvaObavestenja().Contains(obavestenje))
+            if (DobaviSve().Contains(obavestenje))
             {
                 return obavestenje;
             }
@@ -36,7 +37,7 @@ namespace Model
             }
         }
 
-        public void IzmeniObavestenje(Obavestenje obavestenje)
+        public void Izmeni(string stariId, Obavestenje obavestenje)
         {
             Obavestenje obavestenjeAzurirano = obavestenjaRepozitorijum.PretraziObavestenjaPoId(obavestenje.IdObavestenja);
 
@@ -47,19 +48,17 @@ namespace Model
             obavestenjaRepozitorijum.IzmeniObavestenje(obavestenjeAzurirano);
         }
 
-        public void UkolniObavestenje(String idObavestenja)
+        public void Ukloni(Obavestenje obavestenje)
         {
-            Obavestenje obavestenje = obavestenjaRepozitorijum.PretraziObavestenjaPoId(idObavestenja);
-
-            obavestenjaRepozitorijum.ObrisiObjekat("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + idObavestenja + "']");
+            obavestenjaRepozitorijum.ObrisiObjekat("//ArrayOfObavestenje/Obavestenje[IdObavestenja='" + obavestenje.IdObavestenja + "']");
         }
 
-        public Obavestenje PretraziObavestenjaPoId(String idObavestenja)
+        public Obavestenje PretraziPoId(String idObavestenja)
         {
             return obavestenjaRepozitorijum.PretraziObavestenjaPoId(idObavestenja);
         }
       
-        public List<Obavestenje> SvaObavestenja()
+        public List<Obavestenje> DobaviSve()
         {
             return obavestenjaRepozitorijum.DobaviSveObjekte();
         }

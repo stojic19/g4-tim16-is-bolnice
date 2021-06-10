@@ -15,13 +15,14 @@ namespace Bolnica.ViewModel.SekretarViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<AlergeniPrikazDTO> alergeniPacijenta;
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
+        private AlergeniKontroler alergeniKontroler;
         private AlergeniPrikazDTO selektovaniAlergen;
         private String poruka;
   
         public AlergeniViewModel(String korisnickoImePacijenta)
         {
             this.korisnickoIme = korisnickoImePacijenta;
+            alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
             UcitajUKolekciju();
             dodajAlergenKomanda = new RelayCommand(DodajAlergen);
             izmeniAlergenKomanda = new RelayCommand(IzmeniAlergen);
@@ -32,7 +33,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         public void UcitajUKolekciju()
         {
             AlergeniPacijenta = new ObservableCollection<AlergeniPrikazDTO>();
-            foreach (AlergeniPrikazDTO alergeniPrikazDTO in alergeniKontroler.DobaviAlergenePoIdPacijenta(korisnickoIme))
+            foreach (AlergeniPrikazDTO alergeniPrikazDTO in alergeniKontroler.DobaviAlergene())
             {
                 AlergeniPacijenta.Add(alergeniPrikazDTO);
             }

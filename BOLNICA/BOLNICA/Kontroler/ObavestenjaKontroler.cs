@@ -18,7 +18,7 @@ namespace Bolnica.Kontroler
         public List<ObavestenjeDTO> DobaviSvaObavestenja()
         {
             List<ObavestenjeDTO> obavestenja = new List<ObavestenjeDTO>();
-            foreach(Obavestenje obavestenje in obavestenjaServis.SvaObavestenja())
+            foreach(Obavestenje obavestenje in obavestenjaServis.DobaviSve())
             {
                 obavestenja.Add(obavestenjeKonverter.ObavestenjeModelUDTO(obavestenje));
             }
@@ -47,7 +47,7 @@ namespace Bolnica.Kontroler
 
         public void DodajObavestenje(ObavestenjeDTO obavestenje)
         {
-            obavestenjaServis.DodajObavestenje(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
+            obavestenjaServis.Dodaj(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
         }
 
         public void DodajObavestenjePacijentu(Obavestenje obavestenje)
@@ -57,12 +57,12 @@ namespace Bolnica.Kontroler
 
         public ObavestenjeDTO PretraziPoId(string idObavestenja)
         {
-            return obavestenjeKonverter.ObavestenjeModelUDTO(obavestenjaServis.PretraziObavestenjaPoId(idObavestenja));
+            return obavestenjeKonverter.ObavestenjeModelUDTO(obavestenjaServis.PretraziPoId(idObavestenja));
         }
 
         public void UkolniObavestenje(string izabranoZaUklanjanje)
         {
-            obavestenjaServis.UkolniObavestenje(izabranoZaUklanjanje);
+            obavestenjaServis.Ukloni(obavestenjaServis.PretraziPoId(izabranoZaUklanjanje));
         }
 
         public string[] DobaviPrimaoceZaObavestenje(string izabranoObavestenje)
@@ -71,7 +71,7 @@ namespace Bolnica.Kontroler
         }
         public void IzmeniObavestenje(ObavestenjeDTO obavestenje)
         {
-            obavestenjaServis.IzmeniObavestenje(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
+            obavestenjaServis.Izmeni(obavestenje.IdObavestenja, obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
         }
         public List<Obavestenje> DobaviSvaObavestenjaOsobe(String IdOsobe)
         {

@@ -17,14 +17,14 @@ namespace Bolnica.Kontroler
         public List<PacijentDTO> DobaviSveNaloge()
         {
             List<PacijentDTO> pacijenti = new List<PacijentDTO>();
-            foreach (Pacijent pacijent in naloziPacijenataServis.SviNalozi())
+            foreach (Pacijent pacijent in naloziPacijenataServis.DobaviSve())
                 pacijenti.Add(pacijentKonverter.PacijentModelUDTO(pacijent));
             return pacijenti;
         }
 
         public void DodajNalog(PacijentDTO pacijentZaDodavanje)
         {
-            naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
+            naloziPacijenataServis.Dodaj(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
         public Pacijent PretraziPoIdNeDTO(string idPacijenta) //BRISI
@@ -39,12 +39,12 @@ namespace Bolnica.Kontroler
 
         public void IzmeniNalog(string stariIdPacijenta, PacijentDTO pacijentZaIzmenu)
         {
-            naloziPacijenataServis.IzmeniNalog(stariIdPacijenta, pacijentKonverter.PacijentDTOUModel(pacijentZaIzmenu));
+            naloziPacijenataServis.Izmeni(stariIdPacijenta, pacijentKonverter.PacijentDTOUModel(pacijentZaIzmenu));
         }
 
         public void UkolniNalog(string pacijentZaUklanjanje)
         {
-            naloziPacijenataServis.UkolniNalog(pacijentZaUklanjanje);
+            naloziPacijenataServis.Ukloni(naloziPacijenataServis.PretraziPoId(pacijentZaUklanjanje));
         }
 
         public bool NalogJeBlokiran(String korisnickoIme)

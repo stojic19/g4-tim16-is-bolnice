@@ -40,13 +40,13 @@ namespace Bolnica.Kontroler
         }
         public void DodajGuestNalog(PacijentDTO pacijentZaDodavanje)
         {
-            naloziPacijenataServis.DodajNalog(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
+            naloziPacijenataServis.Dodaj(pacijentKonverter.PacijentDTOUModel(pacijentZaDodavanje));
         }
 
         public List<PacijentDTO> DobaviSveNaloge()
         {
             List<PacijentDTO> pacijenti = new List<PacijentDTO>();
-            foreach (Pacijent pacijent in naloziPacijenataServis.SviNalozi())
+            foreach (Pacijent pacijent in naloziPacijenataServis.DobaviSve())
             {
                 pacijenti.Add(pacijentKonverter.PacijentModelUDTO(pacijent));
             }

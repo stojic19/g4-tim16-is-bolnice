@@ -16,7 +16,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<LekDTO> lekovi;
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
+        private AlergeniKontroler alergeniKontroler;
         private LekDTO selektovaniLek;
         private String poruka;
         private AlergenDTO podaci;
@@ -25,6 +25,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         public DodavanjeAlergenaViewModel(String korisnickoImePacijenta)
         {
             Podaci = new AlergenDTO();
+            alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
             this.korisnickoIme = korisnickoImePacijenta;
             UcitajUKolekciju();
             potvrdiKomanda = new RelayCommand(Potvrdi);
@@ -106,7 +107,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             if (IspravniUnetiPodaci())
             {
                 Podaci.IdAlergena = selektovaniLek.IdLeka;
-                alergeniKontroler.DodajAlergen(korisnickoIme, Podaci);
+                alergeniKontroler.DodajAlergen(Podaci);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -122,7 +123,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
                 Poruka = "*Izaberite lek!";
                 return false;
             }
-            if (alergeniKontroler.DaLiLekVecPostojiUAlergenimaPacijenta(korisnickoIme, selektovaniLek.IdLeka))
+            if (alergeniKontroler.DaLiLekVecPostojiUAlergenimaPacijenta(selektovaniLek.IdLeka))
             {
                 Poruka = "Izabrani lek već postoji u alergenima!";
                 return false;

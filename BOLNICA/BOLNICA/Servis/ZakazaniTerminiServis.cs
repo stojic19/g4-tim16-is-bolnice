@@ -29,7 +29,7 @@ namespace Model
                 if (DateTime.Compare(DateTime.Now, termin.Datum) < 0)
                 {
                     zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(termin.IdTermina);
-                    obavestenjaServis.DodajObavestenje(ObavestenjeOOtkazivanjuPregleda(termin));
+                    obavestenjaServis.Dodaj(ObavestenjeOOtkazivanjuPregleda(termin));
                 }
             }
         }
@@ -48,7 +48,7 @@ namespace Model
                 termin.Datum = termin.Datum.AddMinutes(novaSmena);
                 termin.PocetnoVreme = termin.Datum.ToString("H:mm");
                 zakazaniTerminiRepozitorijum.IzmeniTermin(termin);
-                obavestenjaServis.DodajObavestenje(ObavestenjeOPromeniSmene(termin));
+                obavestenjaServis.Dodaj(ObavestenjeOPromeniSmene(termin));
             }
         }
         private Obavestenje ObavestenjeOPromeniSmene(Termin termin)

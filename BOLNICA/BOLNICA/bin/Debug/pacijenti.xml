@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPacijent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Pacijent>
-    <Ime>Aleksa</Ime>
-    <Prezime>Stojic</Prezime>
-    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
-    <Jmbg>1901</Jmbg>
-    <AdresaStanovanja>NN</AdresaStanovanja>
-    <KontaktTelefon>062</KontaktTelefon>
-    <Email>asns</Email>
-    <KorisnickoIme>stojic19</KorisnickoIme>
-    <Lozinka>sekretar</Lozinka>
-    <Pol>muski</Pol>
-    <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
-    <VrstaNaloga>regularan</VrstaNaloga>
-    <ZdravstveniKarton>
-      <IDPacijenta>stojic19</IDPacijenta>
-      <Alergeni />
-      <Recepti />
-      <Anamneze />
-      <Uputi />
-      <BracniStatus>ozenjenUdata</BracniStatus>
-    </ZdravstveniKarton>
-    <ZloupotrebioSistem>0</ZloupotrebioSistem>
-    <Blokiran>false</Blokiran>
-  </Pacijent>
-  <Pacijent>
     <Ime>Magdalena</Ime>
     <Prezime>Reljin</Prezime>
     <DatumRodjenja>2019-12-11T00:00:00</DatumRodjenja>
@@ -800,6 +776,63 @@
           </Terapije>
         </Anamneza>
       </Anamneze>
+      <Uputi />
+      <BracniStatus>ozenjenUdata</BracniStatus>
+    </ZdravstveniKarton>
+    <ZloupotrebioSistem>0</ZloupotrebioSistem>
+    <Blokiran>false</Blokiran>
+  </Pacijent>
+  <Pacijent>
+    <Ime>Aleksa</Ime>
+    <Prezime>Stojic</Prezime>
+    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+    <Jmbg>1901</Jmbg>
+    <AdresaStanovanja>NN</AdresaStanovanja>
+    <KontaktTelefon>062</KontaktTelefon>
+    <Email>asns</Email>
+    <KorisnickoIme>stojic19</KorisnickoIme>
+    <Lozinka>sekretar</Lozinka>
+    <Pol>muski</Pol>
+    <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
+    <VrstaNaloga>regularan</VrstaNaloga>
+    <ZdravstveniKarton>
+      <IDPacijenta>stojic19</IDPacijenta>
+      <Alergeni>
+        <Alergeni>
+          <IdAlergena>44eb6252-f8cd-41be-8dba-f6e03c79c571</IdAlergena>
+          <Lek>
+            <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+            <NazivLeka>Roaccutane</NazivLeka>
+            <Jacina>10mg</Jacina>
+            <Kolicina>432</Kolicina>
+            <Proizvodjac>Biofarm</Proizvodjac>
+            <Sastojci>
+              <Sastojak>
+                <Naziv>s4</Naziv>
+                <Kolicina>4</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s5</Naziv>
+                <Kolicina>5</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s8</Naziv>
+                <Kolicina>2</Kolicina>
+              </Sastojak>
+              <Sastojak>
+                <Naziv>s3</Naziv>
+                <Kolicina>3</Kolicina>
+              </Sastojak>
+            </Sastojci>
+            <Zamene />
+            <Verifikacija>true</Verifikacija>
+          </Lek>
+          <OpisReakcije>Opis</OpisReakcije>
+          <VremeZaPojavu>Vreme</VremeZaPojavu>
+        </Alergeni>
+      </Alergeni>
+      <Recepti />
+      <Anamneze />
       <Uputi />
       <BracniStatus>ozenjenUdata</BracniStatus>
     </ZdravstveniKarton>

@@ -14,11 +14,12 @@ namespace Bolnica.ViewModel.SekretarViewModel
     public class UklanjanjeAlergenaViewModel : SekretarViewModel
     {
         private String korisnickoIme;
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
+        private AlergeniKontroler alergeniKontroler;
         private String idAlergena;
 
         public UklanjanjeAlergenaViewModel(String korisnickoImePacijenta, string idAlergena)
         {
+            alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
             this.KorisnickoIme = korisnickoImePacijenta;
             this.idAlergena = idAlergena;
             potvrdiKomanda = new RelayCommand(Potvrdi);
@@ -33,7 +34,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         }
         public void Potvrdi()
         {
-            alergeniKontroler.UkloniAlergen(KorisnickoIme, idAlergena);
+            alergeniKontroler.UkloniAlergen(idAlergena);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

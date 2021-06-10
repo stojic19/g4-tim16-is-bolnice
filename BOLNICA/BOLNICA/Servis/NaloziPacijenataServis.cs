@@ -1,5 +1,6 @@
 
 using Bolnica;
+using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using System;
@@ -7,16 +8,15 @@ using System.Collections.Generic;
 
 namespace Model
 {
-    public class NaloziPacijenataServis
+    public class NaloziPacijenataServis : CRUDInterfejs<Pacijent>
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
-        private LekoviServis lekoviServis = new LekoviServis();
-        public void DodajNalog(Pacijent pacijentZaDodavanje)
+        public void Dodaj(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
         }
 
-        public void IzmeniNalog(String stariId, Pacijent pacijentZaIZmenu)
+        public void Izmeni(String stariId, Pacijent pacijentZaIZmenu)
         {
             Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
 
@@ -40,67 +40,19 @@ namespace Model
             naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentZaIZmenu);
         }
 
-        public void UkolniNalog(String idNalogaZaUklanjanje)
+        public void Ukloni(Pacijent pacijent)
         {
-            Pacijent pacijentZaUklanjanje = PretraziPoId(idNalogaZaUklanjanje);
-            naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNalogaZaUklanjanje + "']");
+            naloziPacijenataRepozitorijum.ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + pacijent.KorisnickoIme + "']");
         }
 
-        public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idPacijenta, string idLeka)
-        {
-            foreach (Alergeni alergeni in DobaviAlergenePoIdPacijenta(idPacijenta))
-            {
-                if (alergeni.IdAlergena.Equals(idLeka))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public Alergeni DobaviAlergenPacijentaPoId(String idPacijenta, String idAlergena)
-        {
-            foreach (Alergeni alergen in DobaviAlergenePoIdPacijenta(idPacijenta))
-            {
-                if (alergen.IdAlergena.Equals(idAlergena))
-                {
-                    return alergen;
-                }
-            }
-            return null;
-        }
+        
         public Pacijent PretraziPoId(String idNaloga)
         {
             return naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idNaloga + "']");
         }
-        public List<Pacijent> SviNalozi()
+        public List<Pacijent> DobaviSve()
         {
             return naloziPacijenataRepozitorijum.DobaviSveObjekte();
-        }
-        public List<Alergeni> DobaviAlergenePoIdPacijenta(String idPacijenta)
-        {
-            return naloziPacijenataRepozitorijum.DobaviAlergenePacijenta(idPacijenta);
-        }
-        public Boolean UkloniAlergen(String idPacijenta, Alergeni alergen)
-        {
-            Pacijent pacijent = PretraziPoId(idPacijenta);
-            pacijent.UkloniAlergen(alergen);
-            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
-            return true;
-        }
-        public Boolean IzmeniAlergen(String idPacijenta, Alergeni alergen)
-        {
-            Pacijent pacijent = PretraziPoId(idPacijenta);
-            pacijent.IzmeniAlergen(alergen);
-            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
-            return true;
-        }
-        public Boolean DodajAlergen(String idPacijenta, Alergeni alergen)
-        {
-            alergen.Lek = lekoviServis.PretraziPoID(alergen.IdAlergena);
-            Pacijent pacijent = PretraziPoId(idPacijenta);
-            pacijent.DodajAlergen(alergen);
-            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
-            return true;
         }
 
         public void IzmeniStanjeNalogaPacijenta(Pacijent pacijent)
@@ -146,7 +98,7 @@ namespace Model
 
         public bool DaLiJeKorisnickoImeJedinstveno(String korisnickoIme)
         {
-            foreach (Pacijent pacijentZaProveru in SviNalozi())
+            foreach (Pacijent pacijentZaProveru in DobaviSve())
             {
                 if (pacijentZaProveru.KorisnickoIme.Equals(korisnickoIme))
                 {
@@ -157,7 +109,7 @@ namespace Model
         }
         public bool DaLiJeJmbgJedinstven(String jmbg)
         {
-            foreach (Pacijent pacijentZaProveru in SviNalozi())
+            foreach (Pacijent pacijentZaProveru in DobaviSve())
             {
                 if (pacijentZaProveru.Jmbg.Equals(jmbg))
                 {

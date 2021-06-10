@@ -35,7 +35,7 @@ namespace Bolnica.Model
                 if (DateTime.Compare(DateTime.Now, termin.Datum) < 0)
                 {
                     operacijeRepozitorijum.UkloniOperaciju(termin);
-                    obavestenjaServis.DodajObavestenje(ObavestenjeOOtkazivanjuOperacije(termin));
+                    obavestenjaServis.Dodaj(ObavestenjeOOtkazivanjuOperacije(termin));
                 }
             }
         }
@@ -52,7 +52,7 @@ namespace Bolnica.Model
                 termin.Datum = termin.Datum.AddMinutes(novaSmena);
                 termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
                 operacijeRepozitorijum.IzmeniTermin(termin);
-                obavestenjaServis.DodajObavestenje(ObavestenjeOPromeniSmene(termin));
+                obavestenjaServis.Dodaj(ObavestenjeOPromeniSmene(termin));
             }
         }
 

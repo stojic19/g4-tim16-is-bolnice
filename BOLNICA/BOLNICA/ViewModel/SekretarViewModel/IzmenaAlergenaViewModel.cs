@@ -14,13 +14,14 @@ namespace Bolnica.ViewModel.SekretarViewModel
     public class IzmenaAlergenaViewModel : SekretarViewModel
     {
         private String korisnickoIme;
-        private AlergeniKontroler alergeniKontroler = new AlergeniKontroler();
+        private AlergeniKontroler alergeniKontroler;
         private String poruka;
         private AlergenDTO podaci;
 
         public IzmenaAlergenaViewModel(String korisnickoImePacijenta, string idAlergena)
         {
-            Podaci = alergeniKontroler.DobaviAlergenPacijentaPoId(korisnickoImePacijenta, idAlergena);
+            alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
+            Podaci = alergeniKontroler.DobaviAlergenPacijentaPoId(idAlergena);
             this.korisnickoIme = korisnickoImePacijenta;
             potvrdiKomanda = new RelayCommand(Potvrdi);
             odustaniKomanda = new RelayCommand(Odustani);
@@ -51,7 +52,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         {
             if (IspravniUnetiPodaci())
             {
-                alergeniKontroler.IzmeniAlergen(korisnickoIme, Podaci);
+                alergeniKontroler.IzmeniAlergen(Podaci);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
