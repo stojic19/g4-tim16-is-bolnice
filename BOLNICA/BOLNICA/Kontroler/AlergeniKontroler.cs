@@ -53,7 +53,7 @@ namespace Bolnica.Kontroler
 
         public void IzmeniAlergen(AlergenDTO alergenZaIzmenu)
         {
-            alergeniServis.Izmeni(alergenZaIzmenu.IdAlergena, alergeniKonverter.AlergenDTOUModel(alergenZaIzmenu));
+            alergeniServis.Izmeni(alergeniKonverter.AlergenDTOUModel(alergenZaIzmenu));
         }
 
         public bool DaLiLekVecPostojiUAlergenimaPacijenta(string idLeka)

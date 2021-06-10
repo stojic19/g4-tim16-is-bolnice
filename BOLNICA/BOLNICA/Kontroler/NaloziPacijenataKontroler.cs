@@ -37,9 +37,9 @@ namespace Bolnica.Kontroler
             return pacijentKonverter.PacijentModelUDTO(naloziPacijenataServis.PretraziPoId(idPacijenta));
         }
 
-        public void IzmeniNalog(string stariIdPacijenta, PacijentDTO pacijentZaIzmenu)
+        public void IzmeniNalog(PacijentDTO pacijentZaIzmenu)
         {
-            naloziPacijenataServis.Izmeni(stariIdPacijenta, pacijentKonverter.PacijentDTOUModel(pacijentZaIzmenu));
+            naloziPacijenataServis.Izmeni(pacijentKonverter.PacijentDTOUModel(pacijentZaIzmenu));
         }
 
         public void UkolniNalog(string pacijentZaUklanjanje)

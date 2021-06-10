@@ -28,6 +28,7 @@ namespace Model
         public Pacijent(string ime, string prezime, string jmbg, Pol pol)
         {
             string korisnickoIme = generisiID();
+            this.IdOsobe = generisiID();
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;
@@ -46,6 +47,7 @@ namespace Model
 
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
+            this.IdOsobe = generisiID();
             if (korisnickoIme.Length == 0)
                 this.KorisnickoIme = generisiID();
             else
@@ -66,6 +68,7 @@ namespace Model
         }
         public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
+            this.IdOsobe = generisiID();
             if (korisnickoIme.Length == 0)
                 this.KorisnickoIme = generisiID();
             else
@@ -104,7 +107,7 @@ namespace Model
             }
             return "Regularan";
         }
-        public static string generisiID()
+        private string generisiID()
         {
             return Guid.NewGuid().ToString();
         }

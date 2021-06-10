@@ -46,7 +46,7 @@ namespace Bolnica.Model
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
             p.ZdravstveniKarton.Recepti.Add(novRecept);
 
-            naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
+            naloziPacijenataServis.Izmeni(p);
         }
 
 
@@ -56,7 +56,7 @@ namespace Bolnica.Model
             Pacijent p = naloziPacijenataServis.PretraziPoId(novaAnamneza.IdPacijenta);
             p.ZdravstveniKarton.Anamneze.Add(novaAnamneza);
 
-            naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
+            naloziPacijenataServis.Izmeni(p);
 
         }
 
@@ -65,7 +65,7 @@ namespace Bolnica.Model
             Pacijent p = naloziPacijenataServis.PretraziPoId(idPacijenta);
             p.ZdravstveniKarton.Uputi.Add(noviUput);
 
-            naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
+            naloziPacijenataServis.Izmeni(p);
         }
 
         public void IzmeniUput(String idPacijenta, Uput izmenjenUput)
@@ -82,7 +82,7 @@ namespace Bolnica.Model
             }
             p.ZdravstveniKarton.Uputi.Add(izmenjenUput);
 
-            naloziPacijenataServis.IzmeniPacijentaSaKorisnickim(p.KorisnickoIme, p);
+            naloziPacijenataServis.Izmeni(p);
         }
 
         public List<Recept> DobaviReceptePacijenta(String idPacijenta)

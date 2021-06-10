@@ -26,14 +26,14 @@ namespace Bolnica.Servis
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.DodajSlobodneDane(odsustvo);
-            lekariServis.Izmeni(lekar.KorisnickoIme,lekar);
+            lekariServis.Izmeni(lekar);
         }
 
-        public void Izmeni(string stariId, Odsustvo novoOdsustvo)
+        public void Izmeni(Odsustvo novoOdsustvo)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            lekar.IzmeniSlobodneDane(stariId, novoOdsustvo);
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
+            lekar.IzmeniSlobodneDane(novoOdsustvo.IdOdsustva, novoOdsustvo);
+            lekariServis.Izmeni(lekar);
         }
 
         public Odsustvo PretraziPoId(string id)
@@ -50,7 +50,7 @@ namespace Bolnica.Servis
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.UkloniSlobodneDane(odsustvo.IdOdsustva);
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
+            lekariServis.Izmeni(lekar);
         }
 
         public bool DaLiJeMogucGodisnjiUZadatomPeriodu(Odsustvo odsustvo)

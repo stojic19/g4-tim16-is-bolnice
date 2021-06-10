@@ -22,8 +22,9 @@ namespace Bolnica.DTO
         public int VrstaNalogaInt { get => vrstaNalogaInt; set => vrstaNalogaInt = value; }
         public KartonPacijentaDTO Karton { get => karton; set => karton = value; }
 
-        public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka, bool blokiran)
+        public PacijentDTO(string idOsobe, string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga, string lozinka, bool blokiran)
         {
+            this.IdOsobe = idOsobe;
             this.Ime = ime;
             this.Prezime = prezime;
             this.DatumRodjenja = datum;
@@ -40,8 +41,9 @@ namespace Bolnica.DTO
             this.VrstaNalogaInt = (int)vrstaNaloga;
             this.polString = PolToString(pol);
         }
-        public PacijentDTO(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
+        public PacijentDTO(string idOsobe,string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
         {
+            this.IdOsobe = idOsobe;
             this.Ime = ime;
             this.Prezime = prezime;
             this.DatumRodjenja = datum;

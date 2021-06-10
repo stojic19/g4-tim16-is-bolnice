@@ -100,7 +100,7 @@ namespace Bolnica.SekretarFolder
             }
             if(odsustvoKontroler.DaLiJeMogucGodisnjiUZadatomPeriodu(new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
             {
-                odsustvoKontroler.IzmeniSlobodneDane(odsustvoZaIzmenu, new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value));
+                odsustvoKontroler.IzmeniSlobodneDane(new OdsustvoDTO(odsustvoZaIzmenu.IdOdsustva,dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

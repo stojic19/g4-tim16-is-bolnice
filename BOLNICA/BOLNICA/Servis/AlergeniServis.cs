@@ -31,7 +31,7 @@ namespace Bolnica.Servis
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }
 
-        public void Izmeni(string stariId, Alergeni noviAlergen)
+        public void Izmeni(Alergeni noviAlergen)
         {
             pacijent.IzmeniAlergen(noviAlergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);

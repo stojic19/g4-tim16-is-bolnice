@@ -22,14 +22,8 @@ namespace Bolnica.Repozitorijum
 
         public void IzmeniPacijenta(Pacijent pacijent)
         {
-            ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + pacijent.KorisnickoIme + "']");
+            ObrisiObjekat("//ArrayOfPacijent/Pacijent[IdOsobe='" + pacijent.IdOsobe + "']");
             DodajObjekat(pacijent);
-        }
-
-        public void IzmeniPacijentaSaKorisnickim(string stariId, Pacijent pacijentKojiSeMenja)
-        {
-            ObrisiObjekat("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + stariId + "']");
-            DodajObjekat(pacijentKojiSeMenja);
         }
     }
 }

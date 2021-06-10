@@ -4,8 +4,9 @@ using System.ComponentModel;
 
 namespace Model
 {
-    public class Osoba : INotifyPropertyChanged
+    public class Osoba
     {
+        private string idOsobe;
         private string ime;
         private string prezime;
         private DateTime datumRodjenja;
@@ -17,6 +18,7 @@ namespace Model
         private string lozinka;
         private Pol pol;
 
+        public String IdOsobe { get => idOsobe; set => idOsobe = value; }
         public String Ime { get => ime; set => ime = value; }
         public String Prezime { get => prezime; set => prezime = value; }
         public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
@@ -32,6 +34,7 @@ namespace Model
 
         public Osoba(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
         {
+            this.IdOsobe = generisiID();
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;
@@ -46,13 +49,9 @@ namespace Model
 
         public Osoba() { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
+        private string generisiID()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
+            return Guid.NewGuid().ToString();
         }
     }
 }

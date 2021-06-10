@@ -9,6 +9,7 @@ namespace Bolnica.DTO
 {
     public class OsobaDTO
     {
+        private string idOsobe;
         private String ime;
         private String prezime;
         private DateTime datumRodjenja;
@@ -20,6 +21,7 @@ namespace Bolnica.DTO
         private String lozinka;
         private Pol pol;
 
+        public String IdOsobe { get => idOsobe; set => idOsobe = value; }
         public String Ime { get => ime; set => ime = value; }
         public String Prezime { get => prezime; set => prezime = value; }
         public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }

@@ -29,7 +29,7 @@ namespace Bolnica.Servis
             lekariRepozitorijum.DodajObjekat(lekar);
         }
 
-        public void Izmeni(string stariId, Lekar lekar)
+        public void Izmeni(Lekar lekar)
         {
             lekariRepozitorijum.IzmeniLekara(lekar);
         }
@@ -47,7 +47,7 @@ namespace Bolnica.Servis
                         lekar.UkloniRadniDan(radniDan);
                     }
                 }
-                Izmeni(lekar.KorisnickoIme, lekar);
+                Izmeni( lekar);
             }
         }
         public Lekar PretraziPoId(String idLekara)

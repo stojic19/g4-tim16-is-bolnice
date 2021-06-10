@@ -49,7 +49,7 @@ namespace Bolnica.Servis
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.UkloniRadniDan(radniDanKonverter.RadniDanDTOUModel(radniDan));
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
+            lekariServis.Izmeni(lekar);
             smenaServis.Ukloni(radniDanKonverter.RadniDanDTOUModel(radniDan));
         }
 
@@ -60,19 +60,19 @@ namespace Bolnica.Servis
             {
                 if (lekar.DaLiJeDostupanNaProsledjenDatum(datum.Date) && DaLiJeDatumRadniDan(datum))
                 {
-                    lekar.DodajRadniDan(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
-                    smenaServis.Dodaj(KonstruisiRadniDanNaOsnovuParametara(datum, radniDan.Smena));
+                    lekar.DodajRadniDan(KonstruisiRadniDanNaOsnovuParametara(radniDan.IdRadnogDana, datum, radniDan.Smena));
+                    smenaServis.Dodaj(KonstruisiRadniDanNaOsnovuParametara(radniDan.IdRadnogDana, datum, radniDan.Smena));
                 }
             }
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
+            lekariServis.Izmeni(lekar);
         }
 
-        public void Izmeni(string stariId, RadniDanDTO radniDan)
+        public void Izmeni(RadniDanDTO radniDan)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            lekar.IzmeniRadniDan(radniDanKonverter.RadniDanDTOUModel(radniDan), KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
-            lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
-            smenaServis.Izmeni(stariId, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
+            lekar.IzmeniRadniDan(KonstruisiRadniDanNaOsnovuParametara(radniDan.IdRadnogDana, radniDan.PocetakSmene.Date, radniDan.Smena));
+            lekariServis.Izmeni(lekar);
+            smenaServis.Izmeni(KonstruisiRadniDanNaOsnovuParametara(radniDan.IdRadnogDana,radniDan.PocetakSmene.Date, radniDan.Smena));
             
         }
 
@@ -89,12 +89,12 @@ namespace Bolnica.Servis
             return datum.DayOfWeek != DayOfWeek.Saturday && datum.DayOfWeek != DayOfWeek.Sunday;
         }
 
-        private RadniDan KonstruisiRadniDanNaOsnovuParametara(DateTime datum, string smena)
+        private RadniDan KonstruisiRadniDanNaOsnovuParametara(String idRadnogDana, DateTime datum, string smena)
         {
             DateTime pocetakSmene, krajSmene;
             pocetakSmene = datum.Date + DobaviPocetakSmene(smena);
             krajSmene = pocetakSmene.AddHours(8);
-            return new RadniDan(pocetakSmene, krajSmene);
+            return new RadniDan(idRadnogDana, pocetakSmene, krajSmene);
         }
 
         public bool DaLiJeMoguceRaditiUZadatomPeriodu(RadniDan radniDan)

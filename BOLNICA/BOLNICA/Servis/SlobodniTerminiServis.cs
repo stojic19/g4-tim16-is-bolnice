@@ -33,7 +33,7 @@ namespace Bolnica.Servis
             slobodniTerminiRepozitorijum.DodajObjekat(termin);
         }
 
-        public void Izmeni(string stariId, Termin termin)
+        public void Izmeni(Termin termin)
         {
             slobodniTerminiRepozitorijum.IzmeniTermin(termin);
         }

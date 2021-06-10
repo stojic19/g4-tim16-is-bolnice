@@ -44,10 +44,10 @@ namespace Bolnica.Servis
             }
         }
 
-        public void Izmeni(string stariId, RadniDan radniDanNovi)
+        public void Izmeni(RadniDan radniDanNovi)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
-            RadniDan radniDanStari = lekar.DobaviRadniDanPoId(stariId);
+            RadniDan radniDanStari = lekar.DobaviRadniDanPoId(radniDanNovi.IdRadnogDana);
             double novaSmena = DobaviNovuSmenu(radniDanStari, radniDanNovi);
             PromeniVremeSlobodnihTermina(radniDanStari, radniDanNovi);
             if (lekar.JeSpecijalista())
@@ -126,7 +126,7 @@ namespace Bolnica.Servis
             {
                 termin.Datum = termin.Datum.AddMinutes(novaSmena);
                 termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
-                slobodniTerminiServis.Izmeni(termin.IdTermina, termin);
+                slobodniTerminiServis.Izmeni(termin);
             }
         }
         private List<Termin> DobaviSlobodneTermineZaLekaraNaRadniDan(RadniDan radniDanStari)

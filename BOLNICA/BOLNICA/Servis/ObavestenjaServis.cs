@@ -37,7 +37,7 @@ namespace Model
             }
         }
 
-        public void Izmeni(string stariId, Obavestenje obavestenje)
+        public void Izmeni(Obavestenje obavestenje)
         {
             Obavestenje obavestenjeAzurirano = obavestenjaRepozitorijum.PretraziObavestenjaPoId(obavestenje.IdObavestenja);
 

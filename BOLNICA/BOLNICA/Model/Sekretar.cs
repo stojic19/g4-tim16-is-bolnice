@@ -10,6 +10,7 @@ namespace Model
         Sekretar() { }
         public Sekretar(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
         {
+            this.IdOsobe = Guid.NewGuid().ToString();
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;

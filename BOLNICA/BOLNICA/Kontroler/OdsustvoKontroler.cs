@@ -26,9 +26,9 @@ namespace Bolnica.Kontroler
         {
             odsustvoLekaraServis.Ukloni(odsustvoKonverter.OdsustvoDTOUModel(odsustvo));
         }
-        public void IzmeniSlobodneDane(OdsustvoDTO staroOdsustvo, OdsustvoDTO novoOdsustvo)
+        public void IzmeniSlobodneDane(OdsustvoDTO novoOdsustvo)
         {
-            odsustvoLekaraServis.Izmeni(staroOdsustvo.IdOdsustva, odsustvoKonverter.OdsustvoDTOUModel(novoOdsustvo));
+            odsustvoLekaraServis.Izmeni(odsustvoKonverter.OdsustvoDTOUModel(novoOdsustvo));
         }
         public bool DaLiJeMogucGodisnjiUZadatomPeriodu(OdsustvoDTO odsustvo)
         {

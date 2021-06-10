@@ -11,33 +11,15 @@ namespace Model
     public class NaloziPacijenataServis : CRUDInterfejs<Pacijent>
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
+
         public void Dodaj(Pacijent pacijentZaDodavanje)
         {
             naloziPacijenataRepozitorijum.DodajObjekat(pacijentZaDodavanje);
         }
 
-        public void Izmeni(String stariId, Pacijent pacijentZaIZmenu)
-        {
-            Pacijent pacijentKojiSeMenja = PretraziPoId(stariId);
-
-            pacijentKojiSeMenja.KorisnickoIme = pacijentZaIZmenu.KorisnickoIme;
-            pacijentKojiSeMenja.Ime = pacijentZaIZmenu.Ime;
-            pacijentKojiSeMenja.Prezime = pacijentZaIZmenu.Prezime;
-            pacijentKojiSeMenja.DatumRodjenja = pacijentZaIZmenu.DatumRodjenja;
-            pacijentKojiSeMenja.Pol = pacijentZaIZmenu.Pol;
-            pacijentKojiSeMenja.Jmbg = pacijentZaIZmenu.Jmbg;
-            pacijentKojiSeMenja.AdresaStanovanja = pacijentZaIZmenu.AdresaStanovanja;
-            pacijentKojiSeMenja.KontaktTelefon = pacijentZaIZmenu.KontaktTelefon;
-            pacijentKojiSeMenja.Email = pacijentZaIZmenu.Email;
-            pacijentKojiSeMenja.VrstaNaloga = pacijentZaIZmenu.VrstaNaloga;
-            pacijentKojiSeMenja.ZdravstveniKarton.IDPacijenta = pacijentZaIZmenu.KorisnickoIme;
-
-            naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentKojiSeMenja);
-        }
-
-        public void IzmeniPacijentaSaKorisnickim(String stariId, Pacijent pacijentZaIZmenu)
-        {
-            naloziPacijenataRepozitorijum.IzmeniPacijentaSaKorisnickim(stariId, pacijentZaIZmenu);
+        public void Izmeni(Pacijent pacijentZaIZmenu)
+        {     
+            naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentZaIZmenu);
         }
 
         public void Ukloni(Pacijent pacijent)

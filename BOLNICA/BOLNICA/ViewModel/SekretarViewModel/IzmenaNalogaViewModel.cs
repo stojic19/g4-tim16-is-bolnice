@@ -56,7 +56,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         {
             if (IspravniUnetiPodaci())
             {
-                naloziPacijenataKontroler.IzmeniNalog(korisnickoIme, Podaci);
+                naloziPacijenataKontroler.IzmeniNalog(Podaci);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

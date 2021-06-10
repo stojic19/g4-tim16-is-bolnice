@@ -16,6 +16,6 @@ namespace Bolnica.Interfejsi.Sekretar
 
         void Dodaj(T objekat);
 
-        void Izmeni(string stariId, T noviObjekat);
+        void Izmeni(T noviObjekat);
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLekar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lekar>
+    <IdOsobe>843da1ed-436a-42d5-89e6-17c401a1c1d7</IdOsobe>
     <Ime>Marko</Ime>
     <Prezime>Andjelic</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
@@ -97,6 +98,7 @@
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
+    <IdOsobe>bc8770f7-db22-48d9-b4b3-ffeca6eff679</IdOsobe>
     <Ime>Aleksa</Ime>
     <Prezime>Stojic</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.6341871+02:00</DatumRodjenja>
@@ -193,6 +195,7 @@
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
+    <IdOsobe>cd5ab0e3-bf30-4038-a059-74a2cd1f8c4a</IdOsobe>
     <Ime>Jelena</Ime>
     <Prezime>Hrnjak</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
@@ -289,6 +292,7 @@
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
+    <IdOsobe>50b81002-4dae-4faf-b56e-7ad7c99411ed</IdOsobe>
     <Ime>Magdalena</Ime>
     <Prezime>Reljin</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
@@ -385,6 +389,7 @@
     <Dostupnost>false</Dostupnost>
   </Lekar>
   <Lekar>
+    <IdOsobe>bc8957dd-f903-4c19-bcdb-92098a734c89</IdOsobe>
     <Ime>Kristina</Ime>
     <Prezime>Stojic</Prezime>
     <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
@@ -522,24 +527,9 @@
         <KrajSmene>2021-07-14T23:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
-        <IdRadnogDana>32a4cc70-0543-40e4-81ae-3be7a8926a79</IdRadnogDana>
-        <PocetakSmene>2021-07-15T15:00:00</PocetakSmene>
-        <KrajSmene>2021-07-15T23:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>cbfeb83f-59ca-4e63-a3c1-ec3d37eb952e</IdRadnogDana>
-        <PocetakSmene>2021-07-16T07:00:00</PocetakSmene>
-        <KrajSmene>2021-07-16T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>e68c4926-0140-4e8d-9e1f-c1617451751b</IdRadnogDana>
-        <PocetakSmene>2021-07-26T07:00:00</PocetakSmene>
-        <KrajSmene>2021-07-26T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>1cbe5c6a-3d63-41da-bc73-25d7c3807379</IdRadnogDana>
-        <PocetakSmene>2021-07-27T07:00:00</PocetakSmene>
-        <KrajSmene>2021-07-27T15:00:00</KrajSmene>
+        <IdRadnogDana>42cdb5cd-7207-4cb6-b536-42996e538811</IdRadnogDana>
+        <PocetakSmene>2021-07-15T07:00:00</PocetakSmene>
+        <KrajSmene>2021-07-15T15:00:00</KrajSmene>
       </RadniDan>
     </RadniDani>
     <Godisnji>

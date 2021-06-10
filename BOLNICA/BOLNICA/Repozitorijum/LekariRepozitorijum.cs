@@ -16,7 +16,7 @@ namespace Bolnica.Repozitorijum
         }
         public void IzmeniLekara(Lekar lekar)
         {
-            ObrisiObjekat("//ArrayOfLekar/Lekar[KorisnickoIme='" + lekar.KorisnickoIme + "']");
+            ObrisiObjekat("//ArrayOfLekar/Lekar[IdOsobe='" + lekar.IdOsobe + "']");
             DodajObjekat(lekar);
         }
     }

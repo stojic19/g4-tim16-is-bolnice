@@ -24,6 +24,7 @@ namespace Model
 
         public Lekar(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka, SpecijalizacijeLekara specijalizacija)
         {
+            this.IdOsobe = Guid.NewGuid().ToString();
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;
@@ -94,17 +95,17 @@ namespace Model
         public void DodajRadniDan(RadniDan radniDan)
         {
             List<RadniDan> novaLista = RadniDani;
-            novaLista.Add(radniDan);
+            novaLista.Add(new RadniDan(radniDan.PocetakSmene,radniDan.KrajSmene));
             RadniDani = novaLista;
         }
-        public void IzmeniRadniDan(RadniDan stariRadniDan, RadniDan noviRadniDan)
+        public void IzmeniRadniDan(RadniDan NoviRadniDan)
         {
             foreach (RadniDan radniDan in RadniDani)
             {
-                if (DateTime.Compare(radniDan.PocetakSmene, stariRadniDan.PocetakSmene) == 0)
+                if (radniDan.IdRadnogDana.Equals(NoviRadniDan.IdRadnogDana))
                 {
-                    radniDan.PocetakSmene = noviRadniDan.PocetakSmene;
-                    radniDan.KrajSmene = noviRadniDan.KrajSmene;
+                    radniDan.PocetakSmene = NoviRadniDan.PocetakSmene;
+                    radniDan.KrajSmene = NoviRadniDan.KrajSmene;
                     break;
                 }
             }
@@ -130,7 +131,7 @@ namespace Model
         }
         public void DodajSlobodneDane(Odsustvo odsustvo)
         {
-            Odsustva.Add(odsustvo);
+            Odsustva.Add(new Odsustvo(odsustvo.PocetakOdsustva,odsustvo.KrajOdsustva));
             OduzmiOdSlobodnihDana(odsustvo);
         }
         private void OduzmiOdSlobodnihDana(Odsustvo odsustvo)

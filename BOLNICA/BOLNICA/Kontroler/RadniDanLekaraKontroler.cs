@@ -28,9 +28,9 @@ namespace Bolnica.Kontroler
         {
             rasporedLekaraServis.Ukloni(radniDan);
         }
-        public void PromeniSmenu(String idRadnogDana, RadniDanDTO radniDan)
+        public void PromeniSmenu(RadniDanDTO radniDan)
         {
-            rasporedLekaraServis.Izmeni(idRadnogDana, radniDan);
+            rasporedLekaraServis.Izmeni(radniDan);
         }
         public void DodajRadneDane(RadniDanDTO radniDan)
         {

@@ -43,7 +43,7 @@ namespace Bolnica.Model
             operacijeRepozitorijum.DodajObjekat(termin);
         }
 
-        public void Izmeni(string stariId, Termin termin)
+        public void Izmeni(Termin termin)
         {
             operacijeRepozitorijum.IzmeniTermin(termin);
         }
@@ -65,7 +65,7 @@ namespace Bolnica.Model
                     }
                     else
                     {
-                        slobodniTerminiServis.Izmeni(termin.IdTermina, NovoPocetnoVremeITrajanjeTermina(termin));
+                        slobodniTerminiServis.Izmeni(NovoPocetnoVremeITrajanjeTermina(termin));
                     }
                 }
             }
@@ -104,7 +104,7 @@ namespace Bolnica.Model
                     if (TerminiSeNastavljaju(krajTermina, terminZaUporedjivanje) && TerminiPripadajuIstomLekaru(termin, terminZaUporedjivanje))
                     {
                         slobodniTerminiServis.Ukloni(terminZaUporedjivanje);
-                        slobodniTerminiServis.Izmeni(termin.IdTermina, SpojiTermine(termin, terminZaUporedjivanje));
+                        slobodniTerminiServis.Izmeni(SpojiTermine(termin, terminZaUporedjivanje));
                         break;
                     }
                 }

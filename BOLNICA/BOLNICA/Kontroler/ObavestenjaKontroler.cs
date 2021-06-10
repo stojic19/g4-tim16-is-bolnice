@@ -71,7 +71,7 @@ namespace Bolnica.Kontroler
         }
         public void IzmeniObavestenje(ObavestenjeDTO obavestenje)
         {
-            obavestenjaServis.Izmeni(obavestenje.IdObavestenja, obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
+            obavestenjaServis.Izmeni(obavestenjeKonverter.ObavestenjeDTOUModel(obavestenje));
         }
         public List<Obavestenje> DobaviSvaObavestenjaOsobe(String IdOsobe)
         {
