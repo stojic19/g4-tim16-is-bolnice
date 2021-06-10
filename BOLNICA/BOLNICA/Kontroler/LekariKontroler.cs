@@ -23,7 +23,7 @@ namespace Bolnica.Kontroler
         {
             List<LekarDTO> sviLekari = new List<LekarDTO>();
 
-            foreach (Lekar lekar in lekariServis.SviLekari())
+            foreach (Lekar lekar in lekariServis.DobaviSve())
             {
                 sviLekari.Add(lekarKonverter.LekarZaZakazivanjeUDTO(lekar));
             }
@@ -59,7 +59,7 @@ namespace Bolnica.Kontroler
         public List<LekarDTO> DobaviSveLekareLogin()
         {
             List<LekarDTO> lekari = new List<LekarDTO>();
-            foreach (Lekar lekar in lekariServis.SviLekari())
+            foreach (Lekar lekar in lekariServis.DobaviSve())
                 lekari.Add(lekarKonverter.LekarModelUDTOLogin(lekar));
             return lekari;
         }

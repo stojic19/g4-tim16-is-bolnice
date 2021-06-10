@@ -251,10 +251,11 @@
     <Compile Include="Kontroler\BeleskaKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
+    <Compile Include="Kontroler\OdsustvoKontroler.cs" />
     <Compile Include="Kontroler\OpremaKontroler.cs" />
     <Compile Include="Kontroler\PitanjaKontroler.cs" />
     <Compile Include="Kontroler\ProstoriKontroler.cs" />
-    <Compile Include="Kontroler\RasporedLekaraKontroler.cs" />
+    <Compile Include="Kontroler\RadniDanLekaraKontroler.cs" />
     <Compile Include="Kontroler\LekoviKontroler.cs" />
     <Compile Include="Kontroler\NaloziPacijenataKontroler.cs" />
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
@@ -321,8 +322,9 @@
     <Compile Include="Servis\AlergeniServis.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />
+    <Compile Include="Servis\OdsustvoLekaraServis.cs" />
     <Compile Include="Servis\PitanjaServis.cs" />
-    <Compile Include="Servis\RasporedLekaraServis.cs" />
+    <Compile Include="Servis\RadniDaniLekaraServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="Servis\ZahtjeviServis.cs" />

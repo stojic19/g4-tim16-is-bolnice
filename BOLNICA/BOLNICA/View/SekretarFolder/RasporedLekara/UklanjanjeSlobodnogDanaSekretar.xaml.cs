@@ -24,13 +24,14 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class UklanjanjeSlobodnogDanaSekretar : UserControl
     {
-        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+        OdsustvoKontroler odsustvoKontroler;
 
         private string idIzabranogLekara;
         private OdsustvoDTO OdsustvoZaUklanjanje;
 
         public UklanjanjeSlobodnogDanaSekretar(String idLekara, OdsustvoDTO odsustvo)
         {
+            odsustvoKontroler = new OdsustvoKontroler(idLekara);
             InitializeComponent();
 
             idIzabranogLekara = idLekara;
@@ -90,7 +91,7 @@ namespace Bolnica.SekretarFolder
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            rasporedLekaraKontroler.UkloniSlobodneDane(idIzabranogLekara, OdsustvoZaUklanjanje);
+            odsustvoKontroler.UkloniSlobodneDane(OdsustvoZaUklanjanje);
 
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

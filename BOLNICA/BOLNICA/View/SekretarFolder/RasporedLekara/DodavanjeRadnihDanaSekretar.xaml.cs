@@ -26,10 +26,11 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class DodavanjeRadnihDanaSekretar : UserControl
     {
-        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+        RadniDanLekaraKontroler rasporedLekaraKontroler;
         private String IdIzabranogLekara;
         public DodavanjeRadnihDanaSekretar(String idIzabranogLekara)
         {
+            rasporedLekaraKontroler = new RadniDanLekaraKontroler(idIzabranogLekara);
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
             InicijalizujDatume();
@@ -98,9 +99,9 @@ namespace Bolnica.SekretarFolder
             {
                 return;
             }
-            if (rasporedLekaraKontroler.DaLiJeMoguceRaditiUZadatomPeriodu(IdIzabranogLekara, new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
+            if (rasporedLekaraKontroler.DaLiJeMoguceRaditiUZadatomPeriodu(new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value, cbSmena.Text)))
             {
-                rasporedLekaraKontroler.DodajRadneDane(IdIzabranogLekara, new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value), cbSmena.Text);
+                rasporedLekaraKontroler.DodajRadneDane(new RadniDanDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value, cbSmena.Text));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -140,21 +140,22 @@ namespace Model
         {
             return datum.DayOfWeek != DayOfWeek.Saturday && datum.DayOfWeek != DayOfWeek.Sunday;
         }
-        public void IzmeniSlobodneDane(Odsustvo staroOdsustvo, Odsustvo novoOdsustvo)
+        public void IzmeniSlobodneDane(String idOdsustva, Odsustvo novoOdsustvo)
         {
-            UkloniSlobodneDane(staroOdsustvo);
+            UkloniSlobodneDane(idOdsustva);
             DodajSlobodneDane(novoOdsustvo);
         }
-        public void UkloniSlobodneDane(Odsustvo odsustvoZaUklanjanje)
+        public void UkloniSlobodneDane(String idOdsustva)
         {
-            List<Odsustvo> novaLista = new List<Odsustvo>();
             foreach (Odsustvo odsustvo in Odsustva)
             {
-                if (!(DateTime.Compare(odsustvo.PocetakOdsustva.Date, odsustvoZaUklanjanje.PocetakOdsustva.Date) == 0))
-                    novaLista.Add(odsustvo);
-            }
-            Odsustva = novaLista;
-            DodajSlobodnimDanima(odsustvoZaUklanjanje);
+                if (odsustvo.IdOdsustva.Equals(idOdsustva))
+                {
+                    DodajSlobodnimDanima(odsustvo);
+                    Odsustva.Remove(odsustvo);
+                    break;
+                }       
+            }   
         }
 
         private void DodajSlobodnimDanima(Odsustvo odsustvo)

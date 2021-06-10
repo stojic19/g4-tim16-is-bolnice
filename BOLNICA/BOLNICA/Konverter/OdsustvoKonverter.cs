@@ -13,11 +13,11 @@ namespace Bolnica.Konverter
     {
         public OdsustvoDTO OdsustvoModelUDTO(Odsustvo odsustvo)
         {
-            return new OdsustvoDTO(odsustvo.PocetakOdsustva, odsustvo.KrajOdsustva);
+            return new OdsustvoDTO(odsustvo.IdOdsustva, odsustvo.PocetakOdsustva, odsustvo.KrajOdsustva);
         }
         public Odsustvo OdsustvoDTOUModel(OdsustvoDTO odsustvo)
         {
-            return new Odsustvo(odsustvo.PocetakOdsustva, odsustvo.KrajOdsustva);
+            return new Odsustvo(odsustvo.IdOdsustva, odsustvo.PocetakOdsustva, odsustvo.KrajOdsustva);
         }
     }
 }

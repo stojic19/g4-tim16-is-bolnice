@@ -13,11 +13,11 @@ namespace Bolnica.Konverter
     {
         public RadniDanDTO RadniDanModelUDTO(RadniDan radniDan)
         {
-            return new RadniDanDTO(radniDan.PocetakSmene, radniDan.KrajSmene);
+            return new RadniDanDTO(radniDan.IdRadnogDana, radniDan.PocetakSmene, radniDan.KrajSmene, "");
         }
         public RadniDan RadniDanDTOUModel(RadniDanDTO radniDan)
         {
-            return new RadniDan(radniDan.PocetakSmene, radniDan.KrajSmene);
+            return new RadniDan(radniDan.IdRadnogDana, radniDan.PocetakSmene, radniDan.KrajSmene);
         }
     }
 }

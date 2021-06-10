@@ -9,16 +9,34 @@ namespace Bolnica.Model
 {
     public class RadniDan : INotifyPropertyChanged
     {
+        private String idRadnogDana;
         private DateTime pocetakSmene;
         private DateTime krajSmene;
 
         public RadniDan() { }
         public RadniDan(DateTime pocetakSmene, DateTime krajSmene)
         {
+            this.IdRadnogDana = Guid.NewGuid().ToString();
             this.PocetakSmene = pocetakSmene;
             this.KrajSmene = krajSmene;
         }
-
+        public RadniDan(String idRadnogDana, DateTime pocetakSmene, DateTime krajSmene)
+        {
+            this.IdRadnogDana = idRadnogDana;
+            this.PocetakSmene = pocetakSmene;
+            this.KrajSmene = krajSmene;
+        }
+        public String  IdRadnogDana
+        {
+            get
+            {
+                return idRadnogDana;
+            }
+            set
+            {
+                idRadnogDana = value;
+            }
+        }
         public DateTime PocetakSmene
         {
             get

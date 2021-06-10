@@ -26,12 +26,13 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PromenaSmeneSekretar : UserControl
     {
-        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+        RadniDanLekaraKontroler rasporedLekaraKontroler;
 
         private String IdIzabranogLekara;
         private RadniDanDTO radniDanZaPromenuSmene;
         public PromenaSmeneSekretar(String idIzabranogLekara, RadniDanDTO radniDan)
         {
+            rasporedLekaraKontroler = new RadniDanLekaraKontroler(idIzabranogLekara);
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
             radniDanZaPromenuSmene = radniDan;
@@ -95,7 +96,7 @@ namespace Bolnica.SekretarFolder
         {
             if (rasporedLekaraKontroler.DaLiJeMogucePromenitiSmenu(radniDanZaPromenuSmene))
             {
-                rasporedLekaraKontroler.PromeniSmenu(IdIzabranogLekara, radniDanZaPromenuSmene, cbSmena.Text);
+                rasporedLekaraKontroler.PromeniSmenu(new RadniDanDTO(radniDanZaPromenuSmene.PocetakSmene,radniDanZaPromenuSmene.KrajSmene, cbSmena.Text));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

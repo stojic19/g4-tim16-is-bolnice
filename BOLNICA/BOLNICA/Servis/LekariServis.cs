@@ -1,4 +1,5 @@
-﻿using Bolnica.Model;
+﻿using Bolnica.Interfejsi.Sekretar;
+using Bolnica.Model;
 using Bolnica.Repozitorijum;
 using Model;
 using System;
@@ -9,9 +10,29 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Servis
 {
-    class LekariServis
+    class LekariServis : CRUDInterfejs<Lekar>
     {
         LekariRepozitorijum lekariRepozitorijum = new LekariRepozitorijum();
+
+        public List<Lekar> DobaviSve()
+        {
+            return lekariRepozitorijum.DobaviSveObjekte();
+        }
+
+        public void Ukloni(Lekar lekar)
+        {
+            lekariRepozitorijum.ObrisiObjekat("//ArrayOfLekar/Lekar[KorisnickoIme='" + lekar.KorisnickoIme + "']");
+        }
+
+        public void Dodaj(Lekar lekar)
+        {
+            lekariRepozitorijum.DodajObjekat(lekar);
+        }
+
+        public void Izmeni(string stariId, Lekar lekar)
+        {
+            lekariRepozitorijum.IzmeniLekara(lekar);
+        }
 
         public void ObrisiStareRadneDane()
         {
@@ -26,20 +47,12 @@ namespace Bolnica.Servis
                         lekar.UkloniRadniDan(radniDan);
                     }
                 }
-                IzmeniLekara(lekar);
+                Izmeni(lekar.KorisnickoIme, lekar);
             }
         }
         public Lekar PretraziPoId(String idLekara)
         {
             return lekariRepozitorijum.PretraziPoId("//ArrayOfLekar/Lekar[KorisnickoIme='" + idLekara + "']");
-        }
-        public List<Lekar> SviLekari()
-        {
-            return lekariRepozitorijum.DobaviSveObjekte();
-        }
-        public void IzmeniLekara(Lekar lekar)
-        {
-            lekariRepozitorijum.IzmeniLekara(lekar);
         }
         public List<RadniDan> DobaviRadneDanePoIdLekara(string idLekara)
         {
@@ -48,7 +61,7 @@ namespace Bolnica.Servis
 
         public void ProveriDaLiTrebaDodatiDaneZaGodisnji()
         {
-            List<Lekar> lekari = SviLekari();
+            List<Lekar> lekari = DobaviSve();
             foreach(Lekar lekar in lekari)
             {
                   lekar.ProveriSlobodneDaneZaAzuriranje();
@@ -62,7 +75,7 @@ namespace Bolnica.Servis
         public List<Lekar> DobaviSpecijaliste()
         {
             List<Lekar> specijaliste = new List<Lekar>();
-            foreach (Lekar l in SviLekari())
+            foreach (Lekar l in DobaviSve())
             {
                 if (l.Specijalizacija != SpecijalizacijeLekara.nema) specijaliste.Add(l);
             }
@@ -72,7 +85,7 @@ namespace Bolnica.Servis
         public List<Lekar> DobaviLekareOpstePrakse()
         {
             List<Lekar> lekariOpstePrakse = new List<Lekar>();
-            foreach (Lekar l in SviLekari())
+            foreach (Lekar l in DobaviSve())
                 if (l.Specijalizacija == SpecijalizacijeLekara.nema) lekariOpstePrakse.Add(l);
             return lekariOpstePrakse;
         }
@@ -80,7 +93,7 @@ namespace Bolnica.Servis
 
         public String ImeiPrezime(String id)
         {
-            foreach (Lekar l in SviLekari())
+            foreach (Lekar l in DobaviSve())
             {
 
                 if (l.KorisnickoIme.Equals(id))

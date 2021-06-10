@@ -26,12 +26,13 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PromenaTrajanjaOdmora : UserControl
     {
-        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+        OdsustvoKontroler odsustvoKontroler;
 
         private String IdIzabranogLekara;
         private OdsustvoDTO odsustvoZaIzmenu;
         public PromenaTrajanjaOdmora(String idIzabranogLekara, OdsustvoDTO odsustvo)
         {
+            odsustvoKontroler = new OdsustvoKontroler(idIzabranogLekara);
             InitializeComponent();
             IdIzabranogLekara = idIzabranogLekara;
             odsustvoZaIzmenu = odsustvo;
@@ -97,9 +98,9 @@ namespace Bolnica.SekretarFolder
             {
                 return;
             }
-            if(rasporedLekaraKontroler.DaLiJeMogucGodisnjiUZadatomPeriodu(IdIzabranogLekara, new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
+            if(odsustvoKontroler.DaLiJeMogucGodisnjiUZadatomPeriodu(new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value)))
             {
-                rasporedLekaraKontroler.IzmeniSlobodneDane(IdIzabranogLekara, odsustvoZaIzmenu, new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value));
+                odsustvoKontroler.IzmeniSlobodneDane(odsustvoZaIzmenu, new OdsustvoDTO(dpPocetniDatum.SelectedDate.Value, dpKrajnjiDatum.SelectedDate.Value));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

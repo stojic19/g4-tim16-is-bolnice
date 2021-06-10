@@ -26,7 +26,8 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class PrikazRasporedaLekaraSekretar : UserControl
     {
-        RasporedLekaraKontroler rasporedLekaraKontroler = new RasporedLekaraKontroler();
+        OdsustvoKontroler odsustvoKontroler;
+        RadniDanLekaraKontroler radniDanLekaraKontroler;
 
         public static ObservableCollection<RadniDanDTO> RadniDani { get; set; }
 
@@ -35,6 +36,8 @@ namespace Bolnica.SekretarFolder
         private string idIzabranogLekara;
         public PrikazRasporedaLekaraSekretar(String idLekara)
         {
+            radniDanLekaraKontroler = new RadniDanLekaraKontroler(idLekara);
+            odsustvoKontroler = new OdsustvoKontroler(idLekara);
             InitializeComponent();
 
             idIzabranogLekara = idLekara;
@@ -44,11 +47,11 @@ namespace Bolnica.SekretarFolder
             RadniDani = new ObservableCollection<RadniDanDTO>();
             Odsustva = new ObservableCollection<OdsustvoDTO>();
 
-            foreach(RadniDanDTO radniDan in rasporedLekaraKontroler.DobaviRadneDanePoIdLekara(idIzabranogLekara))
+            foreach(RadniDanDTO radniDan in radniDanLekaraKontroler.DobaviRadneDane())
             {
                 RadniDani.Add(radniDan);
             }
-            foreach(OdsustvoDTO odsustvo in rasporedLekaraKontroler.DobaviOdsustvoPoIdLekara(idIzabranogLekara))
+            foreach(OdsustvoDTO odsustvo in odsustvoKontroler.DobaviOdsustvo())
             {
                 Odsustva.Add(odsustvo);
             }
