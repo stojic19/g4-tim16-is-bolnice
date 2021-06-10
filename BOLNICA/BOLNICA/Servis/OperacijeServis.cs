@@ -27,61 +27,12 @@ namespace Bolnica.Model
         {
             return operacijeRepozitorijum.DobaviSveObjekte();
         }
-        public void UkloniRadniDan(string idLekara, RadniDan radniDan)
-        {
-            List<Termin> termini = DobaviOperacijeZaLekaraNaRadniDan(idLekara, radniDan);
-            foreach (Termin termin in termini)
-            {
-                if (DateTime.Compare(DateTime.Now, termin.Datum) < 0)
-                {
-                    operacijeRepozitorijum.UkloniOperaciju(termin);
-                    obavestenjaServis.Dodaj(ObavestenjeOOtkazivanjuOperacije(termin));
-                }
-            }
-        }
-        private Obavestenje ObavestenjeOOtkazivanjuOperacije(Termin termin)
-        {
-            return new Obavestenje("Otkazivanje operacije " + termin.IdTermina, "Operacije za dan " + termin.Datum.Date + " je otkazana.", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme);
-        }
-        public void PromeniSmenu(string idLekara, RadniDan radniDanStari, RadniDan radniDanNovi)
-        {
-            List<Termin> termini = DobaviOperacijeZaLekaraNaRadniDan(idLekara, radniDanStari);
-            double novaSmena = DobaviNovuSmenu(radniDanStari, radniDanNovi);
-            foreach (Termin termin in termini)
-            {
-                termin.Datum = termin.Datum.AddMinutes(novaSmena);
-                termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
-                operacijeRepozitorijum.IzmeniTermin(termin);
-                obavestenjaServis.Dodaj(ObavestenjeOPromeniSmene(termin));
-            }
-        }
-
-        private Obavestenje ObavestenjeOPromeniSmene(Termin termin)
-        {
-            return new Obavestenje("Pomeranje operacije " + termin.IdTermina, "Operacija za dan " + termin.Datum.Date + " je pomerena na " + termin.Datum.ToString("H:mm") + ".", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme);
-        }
 
         private double DobaviNovuSmenu(RadniDan radniDanStari, RadniDan radniDanNovi)
         {
             return radniDanNovi.PocetakSmene.TimeOfDay.TotalMinutes - radniDanStari.PocetakSmene.TimeOfDay.TotalMinutes;
         }
-        private List<Termin> DobaviOperacijeZaLekaraNaRadniDan(string idLekara, RadniDan radniDanStari)
-        {
-            List<Termin> termini = DobaviOperacijeZaLekara(idLekara);
-            List<Termin> novaLista = new List<Termin>();
-            foreach (Termin termin in termini)
-            {
-                if (DateTime.Compare(termin.Datum, radniDanStari.PocetakSmene) >= 0 && DateTime.Compare(termin.Datum, radniDanStari.KrajSmene) < 0)
-                {
-                    novaLista.Add(termin);
-                }
-            }
-            return novaLista;
-        }
-        public List<Termin> DobaviOperacijeZaLekara(string idLekara)
-        {
-            return operacijeRepozitorijum.DobaviOperacijePoIdLekara(idLekara);
-        }
+        
         public void OsveziSlobodneTermine(int trenutniSat, int trenutniMinut)
         {
             string[] vreme;

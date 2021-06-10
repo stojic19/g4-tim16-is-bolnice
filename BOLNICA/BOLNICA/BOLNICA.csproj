@@ -327,6 +327,7 @@
     <Compile Include="Servis\RadniDaniLekaraServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
+    <Compile Include="Servis\SmenaServis.cs" />
     <Compile Include="Servis\ZahtjeviServis.cs" />
     <Compile Include="ViewModel\LekarViewModel\BazaLekovaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\InformacijeAnamnezaViewModel.cs" />

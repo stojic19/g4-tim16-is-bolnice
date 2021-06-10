@@ -55,14 +55,7 @@ namespace Bolnica.Servis
             return slobodniTerminiRepozitorijum.DobaviSlobodneTerminePoIdLekara(idLekara);
         }
 
-        public void UkloniRadniDan(string idLekara, RadniDan radniDan)
-        {
-            List<Termin> termini = DobaviSlobodneTermineZaLekaraNaRadniDan(idLekara, radniDan);
-            foreach (Termin termin in termini)
-            {
-                Ukloni(termin);
-            }
-        }
+        
 
         public List<Termin> DobaviSveSlobodneTermineZaOperacije()
         {
@@ -88,37 +81,6 @@ namespace Bolnica.Servis
             }
         }
 
-        public void PromeniSmenu(string idLekara, RadniDan radniDanStari, RadniDan radniDanNovi)
-        {
-            List<Termin> termini = DobaviSlobodneTermineZaLekaraNaRadniDan(idLekara, radniDanStari);
-            double novaSmena = DobaviNovuSmenu(radniDanStari, radniDanNovi);
-            foreach (Termin termin in termini)
-            {
-                termin.Datum = termin.Datum.AddMinutes(novaSmena);
-                termin.PocetnoVreme = termin.Datum.ToString("HH:mm");
-                Izmeni(termin.IdTermina, termin);
-            }
-        }
-
-        private double DobaviNovuSmenu(RadniDan radniDanStari, RadniDan radniDanNovi)
-        {
-            return radniDanNovi.PocetakSmene.TimeOfDay.TotalMinutes - radniDanStari.PocetakSmene.TimeOfDay.TotalMinutes;
-        }
-
-        private List<Termin> DobaviSlobodneTermineZaLekaraNaRadniDan(string idLekara, RadniDan radniDanStari)
-        {
-            List<Termin> termini = DobaviSlobodneTermineZaLekara(idLekara);
-            List<Termin> novaLista = new List<Termin>();
-            foreach (Termin termin in termini)
-            {
-                if (DateTime.Compare(termin.Datum, radniDanStari.PocetakSmene) >= 0 && DateTime.Compare(termin.Datum, radniDanStari.KrajSmene) < 0)
-                {
-                    novaLista.Add(termin);
-                }
-            }
-            return novaLista;
-        }
-
         public void DodajSlobodneTermineZaSpecijalistu(string idLekara, RadniDan radniDan)
         {
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
@@ -133,8 +95,6 @@ namespace Bolnica.Servis
         {
             slobodniTerminiRepozitorijum.DodajObjekat(slobodanTermin);
         }
-
-
         public List<Termin> NadjiVremeTermina(Termin izabraniTermin)
         {
             List<Termin> termini = new List<Termin>();

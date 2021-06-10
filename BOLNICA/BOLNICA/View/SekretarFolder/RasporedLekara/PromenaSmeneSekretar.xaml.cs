@@ -96,7 +96,7 @@ namespace Bolnica.SekretarFolder
         {
             if (rasporedLekaraKontroler.DaLiJeMogucePromenitiSmenu(radniDanZaPromenuSmene))
             {
-                rasporedLekaraKontroler.PromeniSmenu(new RadniDanDTO(radniDanZaPromenuSmene.PocetakSmene,radniDanZaPromenuSmene.KrajSmene, cbSmena.Text));
+                rasporedLekaraKontroler.PromeniSmenu(radniDanZaPromenuSmene.IdRadnogDana, new RadniDanDTO(radniDanZaPromenuSmene.PocetakSmene,radniDanZaPromenuSmene.KrajSmene, cbSmena.Text));
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

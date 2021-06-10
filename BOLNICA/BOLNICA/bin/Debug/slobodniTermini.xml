@@ -11098,134 +11098,6 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>79ae256f-d5c9-4c18-893c-974bc34469e4</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>17:30</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-10T17:30:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T15:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T23:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-01T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-01T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-04T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-04T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-07T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-07T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-08T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-08T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-09T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-09T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-28T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-29T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>b56beb84-d55a-441e-998f-e9bfd1b5c3d0</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>18:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-10T18:00:00</Datum>
-    <Lekar>
-      <Ime>Magdalena</Ime>
-      <Prezime>Reljin</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>33313</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 353</AdresaStanovanja>
-      <KontaktTelefon>0634</KontaktTelefon>
-      <Email>reljinn@lekar.com</Email>
-      <KorisnickoIme>MagdalenaReljin</KorisnickoIme>
-      <Lozinka>ajdemolimte</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-02T15:00:00</PocetakSmene>
-          <KrajSmene>2021-06-02T23:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-03T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-03T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-01T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-01T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-04T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-04T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-07T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-07T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-08T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-08T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-09T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-09T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-28T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-29T15:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
     <IdTermina>4d1e8768-1131-4c6e-ad07-bbfde29446a9</IdTermina>
     <VrstaTermina>pregled</VrstaTermina>
     <PocetnoVreme>18:30</PocetnoVreme>
@@ -25170,11 +25042,107 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>7d963841-fbc2-4393-8a2a-3621af71c588</IdTermina>
+    <IdTermina>8de2b44c-34cc-47d0-826e-37490e3bcf29</IdTermina>
     <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>23:00</PocetnoVreme>
+    <PocetnoVreme>15:00</PocetnoVreme>
     <Trajanje>240</Trajanje>
-    <Datum>2021-07-14T23:00:00</Datum>
+    <Datum>2021-07-09T15:00:00</Datum>
+    <Lekar>
+      <Ime>Kristina</Ime>
+      <Prezime>Stojic</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
+      <Jmbg>43121</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 54</AdresaStanovanja>
+      <KontaktTelefon>0634313</KontaktTelefon>
+      <Email>kristojic@lekar.com</Email>
+      <KorisnickoIme>KristinaStojic</KorisnickoIme>
+      <Lozinka>kristinastojic</Lozinka>
+      <Pol>zenski</Pol>
+      <RadniDani>
+        <RadniDan>
+          <PocetakSmene>2021-06-15T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-15T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-16T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-16T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-30T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-30T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-07-01T07:00:00</PocetakSmene>
+          <KrajSmene>2021-07-01T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-07-02T07:00:00</PocetakSmene>
+          <KrajSmene>2021-07-02T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-10T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-10T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-11T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-14T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-17T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-17T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-18T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-18T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-21T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-21T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-22T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-23T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-24T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-25T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-28T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-29T15:00:00</KrajSmene>
+        </RadniDan>
+      </RadniDani>
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>internista</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>b052056f-e403-43ca-9b60-0a0d456489c6</IdTermina>
+    <VrstaTermina>operacija</VrstaTermina>
+    <PocetnoVreme>15:00</PocetnoVreme>
+    <Trajanje>240</Trajanje>
+    <Datum>2021-07-15T15:00:00</Datum>
     <Lekar>
       <Ime>Kristina</Ime>
       <Prezime>Stojic</Prezime>
@@ -25286,11 +25254,11 @@
     </Lekar>
   </Termin>
   <Termin>
-    <IdTermina>b052056f-e403-43ca-9b60-0a0d456489c6</IdTermina>
+    <IdTermina>7d963841-fbc2-4393-8a2a-3621af71c588</IdTermina>
     <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>23:00</PocetnoVreme>
+    <PocetnoVreme>15:00</PocetnoVreme>
     <Trajanje>240</Trajanje>
-    <Datum>2021-07-15T23:00:00</Datum>
+    <Datum>2021-07-14T15:00:00</Datum>
     <Lekar>
       <Ime>Kristina</Ime>
       <Prezime>Stojic</Prezime>
@@ -25404,9 +25372,9 @@
   <Termin>
     <IdTermina>ab4274b4-600c-40a7-b752-cd0986d2df80</IdTermina>
     <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>23:00</PocetnoVreme>
+    <PocetnoVreme>15:00</PocetnoVreme>
     <Trajanje>240</Trajanje>
-    <Datum>2021-07-16T23:00:00</Datum>
+    <Datum>2021-07-16T15:00:00</Datum>
     <Lekar>
       <Ime>Kristina</Ime>
       <Prezime>Stojic</Prezime>
@@ -25506,102 +25474,6 @@
         <RadniDan>
           <PocetakSmene>2021-07-09T23:00:00</PocetakSmene>
           <KrajSmene>2021-07-10T07:00:00</KrajSmene>
-        </RadniDan>
-      </RadniDani>
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>internista</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>8de2b44c-34cc-47d0-826e-37490e3bcf29</IdTermina>
-    <VrstaTermina>operacija</VrstaTermina>
-    <PocetnoVreme>15:00</PocetnoVreme>
-    <Trajanje>240</Trajanje>
-    <Datum>2021-07-09T15:00:00</Datum>
-    <Lekar>
-      <Ime>Kristina</Ime>
-      <Prezime>Stojic</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>43121</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 54</AdresaStanovanja>
-      <KontaktTelefon>0634313</KontaktTelefon>
-      <Email>kristojic@lekar.com</Email>
-      <KorisnickoIme>KristinaStojic</KorisnickoIme>
-      <Lozinka>kristinastojic</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani>
-        <RadniDan>
-          <PocetakSmene>2021-06-15T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-15T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-16T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-16T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-30T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-30T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-07-01T07:00:00</PocetakSmene>
-          <KrajSmene>2021-07-01T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-07-02T07:00:00</PocetakSmene>
-          <KrajSmene>2021-07-02T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-10T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-10T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-11T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-14T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-17T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-17T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-18T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-18T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-21T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-21T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-22T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-23T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-24T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-25T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-28T15:00:00</KrajSmene>
-        </RadniDan>
-        <RadniDan>
-          <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
-          <KrajSmene>2021-06-29T15:00:00</KrajSmene>
         </RadniDan>
       </RadniDani>
       <Godisnji>

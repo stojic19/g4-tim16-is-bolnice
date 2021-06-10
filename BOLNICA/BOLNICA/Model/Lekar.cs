@@ -78,6 +78,15 @@ namespace Model
             this.dostupnost = dostupnost;
         }
 
+        public RadniDan DobaviRadniDanPoId(String idRadnogDana)
+        {
+            foreach(RadniDan radniDan in RadniDani)
+            {
+                if (radniDan.IdRadnogDana.Equals(idRadnogDana))
+                    return radniDan;
+            }
+            return null;
+        }
         public List<RadniDan> DobaviRadneDane()
         {
             return RadniDani;

@@ -14,8 +14,8 @@ namespace Bolnica.Servis
     class RadniDaniLekaraServis : CRUDInterfejs<RadniDanDTO>
     {
         LekariServis lekariServis = new LekariServis();
+        SmenaServis smenaServis;
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        ZakazaniTerminiServis zakazaniTerminiServis = new ZakazaniTerminiServis();
         OperacijeServis operacijeServis = new OperacijeServis();
         RadniDanKonverter radniDanKonverter = new RadniDanKonverter();
         String idLekara;
@@ -23,6 +23,7 @@ namespace Bolnica.Servis
         public RadniDaniLekaraServis(String idLekara)
         {
             this.idLekara = idLekara;
+            smenaServis = new SmenaServis(idLekara);
         }
         public List<RadniDanDTO> DobaviSve()
         {
@@ -49,15 +50,7 @@ namespace Bolnica.Servis
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.UkloniRadniDan(radniDanKonverter.RadniDanDTOUModel(radniDan));
             lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
-            slobodniTerminiServis.UkloniRadniDan(lekar.KorisnickoIme,radniDanKonverter.RadniDanDTOUModel(radniDan));
-            if (lekar.JeSpecijalista())
-            {
-                operacijeServis.UkloniRadniDan(lekar.KorisnickoIme, radniDanKonverter.RadniDanDTOUModel(radniDan));
-            }
-            else
-            {
-                zakazaniTerminiServis.UkloniRadniDan(lekar.KorisnickoIme, radniDanKonverter.RadniDanDTOUModel(radniDan));
-            }
+            smenaServis.Ukloni(radniDanKonverter.RadniDanDTOUModel(radniDan));
         }
 
         public void Dodaj(RadniDanDTO radniDan)
@@ -78,15 +71,8 @@ namespace Bolnica.Servis
             Lekar lekar = lekariServis.PretraziPoId(idLekara);
             lekar.IzmeniRadniDan(radniDanKonverter.RadniDanDTOUModel(radniDan), KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
             lekariServis.Izmeni(lekar.KorisnickoIme, lekar);
-            slobodniTerminiServis.PromeniSmenu(lekar.KorisnickoIme, radniDanKonverter.RadniDanDTOUModel(radniDan), KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
-            if (lekar.JeSpecijalista())
-            {
-                operacijeServis.PromeniSmenu(lekar.KorisnickoIme, radniDanKonverter.RadniDanDTOUModel(radniDan), KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
-            }
-            else
-            {
-                zakazaniTerminiServis.PromeniSmenu(lekar.KorisnickoIme, radniDanKonverter.RadniDanDTOUModel(radniDan), KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
-            }
+            smenaServis.Izmeni(stariId, KonstruisiRadniDanNaOsnovuParametara(radniDan.PocetakSmene.Date, radniDan.Smena));
+            
         }
 
         public void ProveriDaLiTrebaDodatiDaneZaGodisnji()

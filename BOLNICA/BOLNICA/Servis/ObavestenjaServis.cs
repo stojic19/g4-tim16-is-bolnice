@@ -67,6 +67,22 @@ namespace Model
             return obavestenjaRepozitorijum.DobaviSvaObavestenjaOsobe(IdOsobe);
         }
 
+        public void DodajObavestenjeOOtkazivanjuOperacije(Termin termin)
+        {
+            Dodaj(new Obavestenje("Otkazivanje operacije " + termin.IdTermina, "Operacije za dan " + termin.Datum.Date + " je otkazana.", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme));
+        }
+        public void DodajObavestenjeOOtkazivanjuPregleda(Termin termin)
+        {
+            Dodaj(new Obavestenje("Otkazivanje termina " + termin.IdTermina, "Termin za dan " + termin.Datum.Date + " je otkazan.", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme));
+        }
+        public void DodajObavestenjeOPromeniTerminaOperacije(Termin termin)
+        {
+            Dodaj(new Obavestenje("Pomeranje operacije " + termin.IdTermina, "Operacija za dan " + termin.Datum.Date + " je pomerena na " + termin.Datum.ToString("H:mm") + ".", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme));
+        }
+        public void DodajObavestenjeOPromeniTerminaPregleda(Termin termin)
+        {
+            Dodaj(new Obavestenje("Pomeranje termina " + termin.IdTermina, "Termin za dan " + termin.Datum.Date + " je pomeren na " + termin.Datum.ToString("H:mm") + ".", DateTime.Now, termin.Pacijent.KorisnickoIme + " " + termin.Lekar.KorisnickoIme));
+        }
         public void DodajPodsetnikOAnamnezi(PodsetnikDTO podsetnik, String idPacijenta)
         {
             int intervalObavestenja = (int)(podsetnik.DatumDo - podsetnik.DatumOd).TotalDays + 1;
