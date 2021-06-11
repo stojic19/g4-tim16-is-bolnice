@@ -1,0 +1,134 @@
+﻿<Window x:Class="Bolnica.PacijentGlavniProzor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Bolnica"
+        mc:Ignorable="d"
+        Title="PacijentGlavniProzor" Height="750" Width="430" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <StackPanel  >
+        <Grid Height="50"  Background="#FF31577E">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="71*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="70*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="110*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="54*">
+
+                </ColumnDefinition>
+                <ColumnDefinition Width="46*">
+
+                </ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+
+            <Label Grid.ColumnSpan="4"  Margin="10,10,9.2,10"  Name="naslovStrane" FontWeight="Thin" FontSize="15" FontStyle="Italic" Foreground="AntiqueWhite"/>
+
+            <Button Grid.Column="4" Background="#FF31577E" Name="obavestenja" Click="Obavestenja_Click" Margin="6.8,10,7.6,10">
+                <Image Source="/Slike/PacijentSlike/obavestenja3.png" Height="44" Width="42" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-1.504"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Button>
+
+            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="0.4,10,0,10" Grid.Column="5" Width="42" >
+                <StackPanel Width="150" Background="AliceBlue">
+                    <Button Name="mojNalog" Content="Moj nalog" Click="MojNalog_Click"/>
+                    <Button Name="oceni" Content="Prijavi problem" Click="Oceni_Click"/>
+
+
+                    <Separator/>
+                    <Button Name="odjaviSe" Content="Odjavi se" Click="OdjaviSe_Click" />
+
+                </StackPanel>
+            </materialDesign:PopupBox>
+
+
+        </Grid>
+
+        <StackPanel  Height="700" VerticalAlignment="Bottom" Orientation="Horizontal" >
+            <Grid Background="#FF31577E" Height="700" Width="80">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="White" Margin="0 0 1 0">
+                    <Image Source="/Slike/PacijentSlike/bolnica3.png" />
+
+                </Grid>
+
+                <Button Grid.Row="1" Background="#FF31577E" x:Name="Zakazi" Click="Zakazi_Click">
+
+                    <Image Source="/Slike/PacijentSlike/zakazivanje.png" />
+
+
+                </Button>
+
+
+
+                <Button Grid.Row="2"  Background="#FF31577E" x:Name="Raspored" Click="Raspored_Click">
+                    <Image Source="/Slike/PacijentSlike/slika1.png" />
+
+
+                </Button>
+                <Button Grid.Row="3" Background="#FF31577E" x:Name="Terapija" Click="Terapija_Click">
+
+                    <Image Source="/Slike/PacijentSlike/Terapija.png" />
+
+                </Button>
+                <Button Grid.Row="4" Background="#FF31577E" x:Name="Karton" Click="Karton_Click" >
+                    <Image Source="/Slike/PacijentSlike/karton.png" />
+
+
+
+                </Button>
+
+                <Button Grid.Row="5" Background="#FF31577E" x:Name="Ankete" Click="Ankete_Click">
+
+                    <Image Source="/Slike/PacijentSlike/ankete.png" />
+
+
+                </Button>
+
+
+                <Button Grid.Row="6" Background="#FF31577E" x:Name="Pomoc" Click="Pomoc_Click">
+
+                    <Image Source="/Slike/PacijentSlike/pomoc.png" />
+
+
+
+                </Button>
+
+            </Grid>
+
+
+            <Grid x:Name="MainPanel" Width="344" Margin="0,0,0,27"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

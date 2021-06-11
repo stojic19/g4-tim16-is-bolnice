@@ -22,4 +22,26 @@
       <string>Moj nalog</string>
     </FunkcionalnostiNaKojeSeOdnosi>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>bb842e84-c254-49d6-a814-74e802378fa1</IdFeedbacka>
+    <IdOsobe>magdalena</IdOsobe>
+    <TekstFeedbacka>Ne radi.</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Lični profil</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+  </Feedback>
+  <Feedback>
+    <IdFeedbacka>c15eda4b-674a-4ae6-84e8-7fcc836696f4</IdFeedbacka>
+    <IdOsobe>magdalena</IdOsobe>
+    <TekstFeedbacka>Nije dovoljno precizna.</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Pomoć</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+  </Feedback>
 </ArrayOfFeedback>

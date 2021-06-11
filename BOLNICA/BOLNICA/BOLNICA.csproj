@@ -390,76 +390,76 @@
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
-    <Compile Include="View\LekarFolder\LekarGlavniProzor.xaml.cs">
+    <Compile Include="View\LekarView\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\LekoviLekar\BazaLekova.xaml.cs">
+    <Compile Include="View\LekarView\LekoviLekar\BazaLekova.xaml.cs">
       <DependentUpon>BazaLekova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\LekoviLekar\IzmenaLeka.xaml.cs">
+    <Compile Include="View\LekarView\LekoviLekar\IzmenaLeka.xaml.cs">
       <DependentUpon>IzmenaLeka.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.xaml.cs">
+    <Compile Include="View\LekarView\LekoviLekar\IzmenaZamenskihLekova.xaml.cs">
       <DependentUpon>IzmenaZamenskihLekova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\LekoviLekar\OdbijanjeLeka.xaml.cs">
+    <Compile Include="View\LekarView\LekoviLekar\OdbijanjeLeka.xaml.cs">
       <DependentUpon>OdbijanjeLeka.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\LekoviLekar\VerifikacijaLekova.xaml.cs">
+    <Compile Include="View\LekarView\LekoviLekar\VerifikacijaLekova.xaml.cs">
       <DependentUpon>VerifikacijaLekova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\NalogLekara\IzmenaNaloga.xaml.cs">
+    <Compile Include="View\LekarView\NalogLekara\IzmenaNaloga.xaml.cs">
       <DependentUpon>IzmenaNaloga.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\NalogLekara\NalogLekara.xaml.cs">
+    <Compile Include="View\LekarView\NalogLekara\NalogLekara.xaml.cs">
       <DependentUpon>NalogLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\NalogLekara\PromenaLozinke.xaml.cs">
+    <Compile Include="View\LekarView\NalogLekara\PromenaLozinke.xaml.cs">
       <DependentUpon>PromenaLozinke.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\PocetnaStranicaLekar.xaml.cs">
+    <Compile Include="View\LekarView\PocetnaStranicaLekar.xaml.cs">
       <DependentUpon>PocetnaStranicaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\RasporedLekara\IzmenaTerminaLekar.xaml.cs">
+    <Compile Include="View\LekarView\RasporedLekara\IzmenaTerminaLekar.xaml.cs">
       <DependentUpon>IzmenaTerminaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\RasporedLekara\PrikazTerminaLekara.xaml.cs">
+    <Compile Include="View\LekarView\RasporedLekara\PrikazTerminaLekara.xaml.cs">
       <DependentUpon>PrikazTerminaLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.xaml.cs">
+    <Compile Include="View\LekarView\RasporedLekara\ZakazivanjeTerminaLekar.xaml.cs">
       <DependentUpon>ZakazivanjeTerminaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\DodajAlergen.xaml.cs">
       <DependentUpon>DodajAlergen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\DodavanjeRecepta.xaml.cs">
       <DependentUpon>DodavanjeRecepta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\InformacijeAlergeni.xaml.cs">
       <DependentUpon>InformacijeAlergeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml.cs">
       <DependentUpon>InformacijeAnamaneza.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml.cs">
       <DependentUpon>InformacijeSpecijalisticki.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\InformacijeStacionarno.xaml.cs">
       <DependentUpon>InformacijeStacionarno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\IzdavanjeUputa.xaml.cs">
       <DependentUpon>IzdavanjeUputa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\KartonLekar.xaml.cs">
       <DependentUpon>KartonLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\NovaAnamneza.xaml.cs">
       <DependentUpon>NovaAnamneza.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml.cs">
+    <Compile Include="View\LekarView\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml.cs">
       <DependentUpon>ZakazivanjeIzUputa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\RasporedTermina\DetaljiTerapije.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\DetaljiTerapije.xaml.cs">
       <DependentUpon>DetaljiTerapije.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repozitorijum\AnketeRepozitorijum.cs" />
@@ -468,67 +468,67 @@
     <Compile Include="Repozitorijum\ObavestenjaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\PreglediRepozitorijum.cs" />
     <Compile Include="Repozitorijum\ZakazaniTerminiRepozitorijum.cs" />
-    <Compile Include="View\PacijentFolder\IzmeniLicnePodatke.xaml.cs">
+    <Compile Include="View\PacijentView\LicniNalog\IzmeniLicnePodatke.xaml.cs">
       <DependentUpon>IzmeniLicnePodatke.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\IzmeniLozinku.xaml.cs">
+    <Compile Include="View\PacijentView\LicniNalog\IzmeniLozinku.xaml.cs">
       <DependentUpon>IzmeniLozinku.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\IzvestajTerapije.xaml.cs">
+    <Compile Include="View\PacijentView\Terapije\IzvestajTerapije.xaml.cs">
       <DependentUpon>IzvestajTerapije.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\KreirajBelesku.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\KreirajBelesku.xaml.cs">
       <DependentUpon>KreirajBelesku.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\RasporedTermina\KreirajPodsetnik.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\KreirajPodsetnik.xaml.cs">
       <DependentUpon>KreirajPodsetnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\LicniProfil.xaml.cs">
+    <Compile Include="View\PacijentView\LicniNalog\LicniProfil.xaml.cs">
       <DependentUpon>LicniProfil.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\OceniAplikaciju.xaml.cs">
+    <Compile Include="View\PacijentView\Feedback\OceniAplikaciju.xaml.cs">
       <DependentUpon>OceniAplikaciju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\Pomoc.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocAnkete.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocAnkete.xaml.cs">
       <DependentUpon>PomocAnkete.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocGlavniMeni.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocGlavniMeni.xaml.cs">
       <DependentUpon>PomocGlavniMeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocIzmenaIOtkazivanje.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocIzmenaIOtkazivanje.xaml.cs">
       <DependentUpon>PomocIzmenaIOtkazivanje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocTerapija.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocTerapija.xaml.cs">
       <DependentUpon>PomocTerapija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocZakazivanje.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocZakazivanje.xaml.cs">
       <DependentUpon>PomocZakazivanje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml.cs">
+    <Compile Include="View\PacijentView\Pomoc\PomocZdravsteniKarton.xaml.cs">
       <DependentUpon>PomocZdravsteniKarton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaPregledSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\LicnaObavestenja\LicnaObavestenjaPregledSekretar.xaml.cs">
       <DependentUpon>LicnaObavestenjaPregledSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\LicnaObavestenja\LicnaObavestenjaSekretar.xaml.cs">
       <DependentUpon>LicnaObavestenjaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\FeedbackSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\FeedbackSekretar.xaml.cs">
       <DependentUpon>FeedbackSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\MojNalogSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\MojNalogSekretar.xaml.cs">
       <DependentUpon>MojNalogSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml.cs">
+    <Compile Include="View\SekretarView\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml.cs">
       <DependentUpon>NaplataUslugeIzabraniPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\NaplataUsluge\NaplataUslugeSekretar.xaml.cs">
       <DependentUpon>NaplataUslugeSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
+    <Compile Include="View\SekretarView\Operacija\HitnaOperacijaGuestNalog.xaml.cs">
       <DependentUpon>HitnaOperacijaGuestNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
@@ -556,47 +556,47 @@
     <Compile Include="Model\Zahtjev.cs" />
     <Compile Include="Model\ZdravstveniKarton.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.DistinctBy.cs" />
-    <Compile Include="View\PacijentFolder\RasporedTermina\DetaljiTermina.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\DetaljiTermina.xaml.cs">
       <DependentUpon>DetaljiTermina.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\IstorijaPregleda.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\IstorijaPregleda.xaml.cs">
       <DependentUpon>IstorijaPregleda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\IzvestajSaPregleda.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\IzvestajSaPregleda.xaml.cs">
       <DependentUpon>IzvestajSaPregleda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\OcenjivanjeBolnice.xaml.cs">
+    <Compile Include="View\PacijentView\Ankete\OcenjivanjeBolnice.xaml.cs">
       <DependentUpon>OcenjivanjeBolnice.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PomeranjeSaPrioritetom.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PomeranjeSaPrioritetom.xaml.cs">
       <DependentUpon>PomeranjeSaPrioritetom.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PopuniAnketu.xaml.cs">
+    <Compile Include="View\PacijentView\Ankete\PopuniAnketu.xaml.cs">
       <DependentUpon>PopuniAnketu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazAlergenaPacijenta.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\PrikazAlergenaPacijenta.xaml.cs">
       <DependentUpon>PrikazAlergenaPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazAnketa.xaml.cs">
+    <Compile Include="View\PacijentView\Ankete\PrikazAnketa.xaml.cs">
       <DependentUpon>PrikazAnketa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazKartona.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\PrikazKartona.xaml.cs">
       <DependentUpon>PrikazKartona.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PrikazDatumaZaPomeranjePrioritet.xaml.cs">
       <DependentUpon>PrikazDatumaZaPomeranjePrioritet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazTerapijePacijent.xaml.cs">
+    <Compile Include="View\PacijentView\Karton\PrikazTerapijePacijent.xaml.cs">
       <DependentUpon>PrikazTerapijePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\Alergeni\AlergeniSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Alergeni\DodavanjeAlergena.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Alergeni\IzmenaAlergena.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Alergeni\UklanjanjeAlergena.xaml.cs" />
-    <Compile Include="View\SekretarFolder\GlavniProzorSadrzaj.xaml.cs">
+    <Compile Include="View\SekretarView\Alergeni\AlergeniSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Alergeni\DodavanjeAlergena.xaml.cs" />
+    <Compile Include="View\SekretarView\Alergeni\IzmenaAlergena.xaml.cs" />
+    <Compile Include="View\SekretarView\Alergeni\UklanjanjeAlergena.xaml.cs" />
+    <Compile Include="View\SekretarView\GlavniProzorSadrzaj.xaml.cs">
       <DependentUpon>GlavniProzorSadrzaj.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\GlavniProzorSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\GlavniProzorSekretar.xaml.cs">
       <DependentUpon>GlavniProzorSekretar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Alergeni.cs" />
@@ -605,171 +605,171 @@
     <Compile Include="Model\Obavestenje.cs" />
     <Compile Include="Model\Enumi\Pol.cs" />
     <Compile Include="Servis\ObavestenjaServis.cs" />
-    <Compile Include="View\PacijentFolder\RasporedTermina\OtkazivanjeTerminaPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\OtkazivanjeTerminaPacijent.xaml.cs">
       <DependentUpon>OtkazivanjeTerminaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PacijentGlavniProzor.xaml.cs">
+    <Compile Include="View\PacijentView\PacijentGlavniProzor.xaml.cs">
       <DependentUpon>PacijentGlavniProzor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PotvrdiPomeranjePacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PotvrdiPomeranjePacijent.xaml.cs">
       <DependentUpon>PotvrdiPomeranjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PotvrdiZakazivanjePacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PotvrdiZakazivanjePacijent.xaml.cs">
       <DependentUpon>PotvrdiZakazivanjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazObavestenjaPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\LicniNalog\PrikazObavestenjaPacijent.xaml.cs">
       <DependentUpon>PrikazObavestenjaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\RasporedTermina\PrikazRasporedaPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PrikazRasporedaPacijent.xaml.cs">
       <DependentUpon>PrikazRasporedaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazSlobodnihDatumaPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PrikazSlobodnihDatumaPacijent.xaml.cs">
       <DependentUpon>PrikazSlobodnihDatumaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazVremenaTerminaPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PrikazVremenaTerminaPacijent.xaml.cs">
       <DependentUpon>PrikazVremenaTerminaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\PrikazVremenaZaPomeranjePacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\PrikazVremenaZaPomeranjePacijent.xaml.cs">
       <DependentUpon>PrikazVremenaZaPomeranjePacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaOtkazivanje.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaPomeranje.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijaZakazivanje.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Operacija\HitnaOperacijePregled.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Nalozi\DodavanjeNalogaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Nalozi\IzmenaNalogaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Nalozi\PrikazNalogaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Obavestenja\DodavanjeObavestenja.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Obavestenja\IzmenaObavestenja.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pomoc\LegendaSimbola.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pomoc\Pomoc.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\OtkazivanjePregledaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\PomeranjePregledaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\PomeranjePregledaTerminiSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\TerminiPregledaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\ZakazivanjePregledaSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs" />
-    <Compile Include="View\SekretarFolder\PrikazPregledaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\Operacija\HitnaOperacijaOtkazivanje.xaml.cs" />
+    <Compile Include="View\SekretarView\Operacija\HitnaOperacijaPomeranje.xaml.cs" />
+    <Compile Include="View\SekretarView\Operacija\HitnaOperacijaZakazivanje.xaml.cs" />
+    <Compile Include="View\SekretarView\Operacija\HitnaOperacijePregled.xaml.cs" />
+    <Compile Include="View\SekretarView\Nalozi\DodavanjeNalogaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Nalozi\IzmenaNalogaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Nalozi\PrikazNalogaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Nalozi\UklanjanjeNalogaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Obavestenja\DodavanjeObavestenja.xaml.cs" />
+    <Compile Include="View\SekretarView\Obavestenja\IzmenaObavestenja.xaml.cs" />
+    <Compile Include="View\SekretarView\Obavestenja\ObavestenjaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Obavestenja\UklanjanjeObavestenja.xaml.cs" />
+    <Compile Include="View\SekretarView\Pomoc\LegendaSimbola.xaml.cs" />
+    <Compile Include="View\SekretarView\Pomoc\Pomoc.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\OtkazivanjePregledaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\PomeranjePregledaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\PomeranjePregledaTerminiSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\TerminiPregledaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\ZakazivanjePregledaSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\Pregled\ZakazivanjePregledaTerminiSekretar.xaml.cs" />
+    <Compile Include="View\SekretarView\PrikazPregledaSekretar.xaml.cs">
       <DependentUpon>PrikazPregledaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
+    <Compile Include="View\PacijentView\RasporedTermina\ZakazivanjeSaPrioritetomPacijent.xaml.cs">
       <DependentUpon>ZakazivanjeSaPrioritetomPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\PromenaTrajanjaOdmora.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\PromenaTrajanjaOdmora.xaml.cs">
       <DependentUpon>PromenaTrajanjaOdmora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\PromenaSmeneSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\PromenaSmeneSekretar.xaml.cs">
       <DependentUpon>PromenaSmeneSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml.cs">
       <DependentUpon>DodavanjeSlobodnihDanaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml.cs">
       <DependentUpon>DodavanjeRadnihDanaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml.cs">
       <DependentUpon>UklanjanjeSlobodnogDanaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml.cs">
       <DependentUpon>UklanjanjeRadnogDanaSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml.cs">
       <DependentUpon>PrikazRasporedaLekaraSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\RasporedLekara\PrikazLekaraSekretar.xaml.cs">
       <DependentUpon>PrikazLekaraSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml.cs">
       <DependentUpon>StacionarnoLecenjeSmestanjeSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml.cs">
       <DependentUpon>StacionarnoLecenjeSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\TransferPacijenata\NoviTransferPacijenataSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\TransferPacijenata\NoviTransferPacijenataSekretar.xaml.cs">
       <DependentUpon>NoviTransferPacijenataSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SekretarFolder\TransferPacijenata\TransferPacijenataSekretar.xaml.cs">
+    <Compile Include="View\SekretarView\TransferPacijenata\TransferPacijenataSekretar.xaml.cs">
       <DependentUpon>TransferPacijenataSekretar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DetaljiOLijeku.xaml.cs">
+    <Compile Include="View\UpravnikView\DetaljiOLijeku.xaml.cs">
       <DependentUpon>DetaljiOLijeku.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DodajOpremuProstoru.xaml.cs">
+    <Compile Include="View\UpravnikView\DodajOpremuProstoru.xaml.cs">
       <DependentUpon>DodajOpremuProstoru.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DodavanjeOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\DodavanjeOpreme.xaml.cs">
       <DependentUpon>DodavanjeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DodavanjeProstora.xaml.cs">
+    <Compile Include="View\UpravnikView\DodavanjeProstora.xaml.cs">
       <DependentUpon>DodavanjeProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DodavanjeSastojka.xaml.cs">
+    <Compile Include="View\UpravnikView\DodavanjeSastojka.xaml.cs">
       <DependentUpon>DodavanjeSastojka.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\DodavanjeZahtjeva.xaml.cs">
+    <Compile Include="View\UpravnikView\DodavanjeZahtjeva.xaml.cs">
       <DependentUpon>DodavanjeZahtjeva.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\IzmenaOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\IzmenaOpreme.xaml.cs">
       <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\IzmenaProstora.xaml.cs">
+    <Compile Include="View\UpravnikView\IzmenaProstora.xaml.cs">
       <DependentUpon>IzmenaProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\IzmjenaZahtjeva.xaml.cs">
+    <Compile Include="View\UpravnikView\IzmjenaZahtjeva.xaml.cs">
       <DependentUpon>IzmjenaZahtjeva.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\NapraviDvijeProstorije.xaml.cs">
+    <Compile Include="View\UpravnikView\NapraviDvijeProstorije.xaml.cs">
       <DependentUpon>NapraviDvijeProstorije.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\NapraviJednuProstoriju.xaml.cs">
+    <Compile Include="View\UpravnikView\NapraviJednuProstoriju.xaml.cs">
       <DependentUpon>NapraviJednuProstoriju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PremjestanjeOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\PremjestanjeOpreme.xaml.cs">
       <DependentUpon>PremjestanjeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PremjestanjeStatickeOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\PremjestanjeStatickeOpreme.xaml.cs">
       <DependentUpon>PremjestanjeStatickeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PrikazLijekova.xaml.cs">
+    <Compile Include="View\UpravnikView\PrikazLijekova.xaml.cs">
       <DependentUpon>PrikazLijekova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PrikazOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\PrikazOpreme.xaml.cs">
       <DependentUpon>PrikazOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PrikazProstora.xaml.cs">
+    <Compile Include="View\UpravnikView\PrikazProstora.xaml.cs">
       <DependentUpon>PrikazProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PrikazRenoviranja.xaml.cs">
+    <Compile Include="View\UpravnikView\PrikazRenoviranja.xaml.cs">
       <DependentUpon>PrikazRenoviranja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\PrikazZahtjeva.xaml.cs">
+    <Compile Include="View\UpravnikView\PrikazZahtjeva.xaml.cs">
       <DependentUpon>PrikazZahtjeva.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\RasporedOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\RasporedOpreme.xaml.cs">
       <DependentUpon>RasporedOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\RenoviranjeProstorije.xaml.cs">
+    <Compile Include="View\UpravnikView\RenoviranjeProstorije.xaml.cs">
       <DependentUpon>RenoviranjeProstorije.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UklanjanjeLijeka.xaml.cs">
+    <Compile Include="View\UpravnikView\UklanjanjeLijeka.xaml.cs">
       <DependentUpon>UklanjanjeLijeka.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UklanjanjeOpreme.xaml.cs">
+    <Compile Include="View\UpravnikView\UklanjanjeOpreme.xaml.cs">
       <DependentUpon>UklanjanjeOpreme.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UklanjanjeProstora.xaml.cs">
+    <Compile Include="View\UpravnikView\UklanjanjeProstora.xaml.cs">
       <DependentUpon>UklanjanjeProstora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UklanjanjeRenoviranja.xaml.cs">
+    <Compile Include="View\UpravnikView\UklanjanjeRenoviranja.xaml.cs">
       <DependentUpon>UklanjanjeRenoviranja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UklanjanjeZahtjeva.xaml.cs">
+    <Compile Include="View\UpravnikView\UklanjanjeZahtjeva.xaml.cs">
       <DependentUpon>UklanjanjeZahtjeva.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UpravnikFolder\UpravnikGlavniProzor.xaml.cs">
+    <Compile Include="View\UpravnikView\UpravnikGlavniProzor.xaml.cs">
       <DependentUpon>UpravnikGlavniProzor.xaml</DependentUpon>
     </Compile>
     <Page Include="Teme\SvetlaTema.xaml">
@@ -780,183 +780,183 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LekarFolder\LekarGlavniProzor.xaml">
+    <Page Include="View\LekarView\LekarGlavniProzor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\LekoviLekar\BazaLekova.xaml">
+    <Page Include="View\LekarView\LekoviLekar\BazaLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\LekoviLekar\IzmenaLeka.xaml">
+    <Page Include="View\LekarView\LekoviLekar\IzmenaLeka.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\LekoviLekar\IzmenaZamenskihLekova.xaml">
+    <Page Include="View\LekarView\LekoviLekar\IzmenaZamenskihLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\LekoviLekar\OdbijanjeLeka.xaml">
+    <Page Include="View\LekarView\LekoviLekar\OdbijanjeLeka.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\LekoviLekar\VerifikacijaLekova.xaml">
+    <Page Include="View\LekarView\LekoviLekar\VerifikacijaLekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\NalogLekara\IzmenaNaloga.xaml">
+    <Page Include="View\LekarView\NalogLekara\IzmenaNaloga.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\NalogLekara\NalogLekara.xaml">
+    <Page Include="View\LekarView\NalogLekara\NalogLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\NalogLekara\PromenaLozinke.xaml">
+    <Page Include="View\LekarView\NalogLekara\PromenaLozinke.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\PocetnaStranicaLekar.xaml">
+    <Page Include="View\LekarView\PocetnaStranicaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\RasporedLekara\IzmenaTerminaLekar.xaml">
+    <Page Include="View\LekarView\RasporedLekara\IzmenaTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\RasporedLekara\PrikazTerminaLekara.xaml">
+    <Page Include="View\LekarView\RasporedLekara\PrikazTerminaLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\RasporedLekara\ZakazivanjeTerminaLekar.xaml">
+    <Page Include="View\LekarView\RasporedLekara\ZakazivanjeTerminaLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodajAlergen.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\DodajAlergen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\DodavanjeRecepta.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\DodavanjeRecepta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAlergeni.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\InformacijeAlergeni.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\InformacijeAnamaneza.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\InformacijeSpecijalisticki.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\InformacijeStacionarno.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\InformacijeStacionarno.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\IzdavanjeUputa.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\IzdavanjeUputa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\KartonLekar.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\KartonLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\NovaAnamneza.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\NovaAnamneza.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LekarFolder\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml">
+    <Page Include="View\LekarView\ZdravstveniKartonLekar\ZakazivanjeIzUputa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PacijentFolder\RasporedTermina\DetaljiTerapije.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\DetaljiTerapije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\IzmeniLicnePodatke.xaml">
+    <Page Include="View\PacijentView\LicniNalog\IzmeniLicnePodatke.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\IzmeniLozinku.xaml">
+    <Page Include="View\PacijentView\LicniNalog\IzmeniLozinku.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\IzvestajTerapije.xaml">
+    <Page Include="View\PacijentView\Terapije\IzvestajTerapije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\KreirajBelesku.xaml">
+    <Page Include="View\PacijentView\Karton\KreirajBelesku.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\RasporedTermina\KreirajPodsetnik.xaml">
+    <Page Include="View\PacijentView\Karton\KreirajPodsetnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\LicniProfil.xaml">
+    <Page Include="View\PacijentView\LicniNalog\LicniProfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\OceniAplikaciju.xaml">
+    <Page Include="View\PacijentView\Feedback\OceniAplikaciju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\Pomoc.xaml">
+    <Page Include="View\PacijentView\Pomoc\Pomoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocAnkete.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocAnkete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocGlavniMeni.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocGlavniMeni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocIzmenaIOtkazivanje.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocIzmenaIOtkazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocTerapija.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocTerapija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocZakazivanje.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocZakazivanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\Pomoc\PomocZdravsteniKarton.xaml">
+    <Page Include="View\PacijentView\Pomoc\PomocZdravsteniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaPregledSekretar.xaml">
+    <Page Include="View\SekretarView\LicnaObavestenja\LicnaObavestenjaPregledSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\LicnaObavestenja\LicnaObavestenjaSekretar.xaml">
+    <Page Include="View\SekretarView\LicnaObavestenja\LicnaObavestenjaSekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SekretarFolder\FeedbackSekretar.xaml">
+    <Page Include="View\SekretarView\FeedbackSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\MojNalogSekretar.xaml">
+    <Page Include="View\SekretarView\MojNalogSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml">
+    <Page Include="View\SekretarView\NaplataUsluge\NaplataUslugeIzabraniPacijent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\NaplataUsluge\NaplataUslugeSekretar.xaml">
+    <Page Include="View\SekretarView\NaplataUsluge\NaplataUslugeSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Operacija\HitnaOperacijaGuestNalog.xaml">
+    <Page Include="View\SekretarView\Operacija\HitnaOperacijaGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -964,71 +964,71 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PacijentFolder\RasporedTermina\DetaljiTermina.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\DetaljiTermina.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\IstorijaPregleda.xaml">
+    <Page Include="View\PacijentView\Karton\IstorijaPregleda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\IzvestajSaPregleda.xaml">
+    <Page Include="View\PacijentView\Karton\IzvestajSaPregleda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\OcenjivanjeBolnice.xaml">
+    <Page Include="View\PacijentView\Ankete\OcenjivanjeBolnice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PomeranjeSaPrioritetom.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PomeranjeSaPrioritetom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PopuniAnketu.xaml">
+    <Page Include="View\PacijentView\Ankete\PopuniAnketu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazAlergenaPacijenta.xaml">
+    <Page Include="View\PacijentView\Karton\PrikazAlergenaPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazAnketa.xaml">
+    <Page Include="View\PacijentView\Ankete\PrikazAnketa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazKartona.xaml">
+    <Page Include="View\PacijentView\Karton\PrikazKartona.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazDatumaZaPomeranjePrioritet.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PrikazDatumaZaPomeranjePrioritet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazTerapijePacijent.xaml">
+    <Page Include="View\PacijentView\Karton\PrikazTerapijePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SekretarFolder\Alergeni\AlergeniSekretar.xaml">
+    <Page Include="View\SekretarView\Alergeni\AlergeniSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Alergeni\DodavanjeAlergena.xaml">
+    <Page Include="View\SekretarView\Alergeni\DodavanjeAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Alergeni\IzmenaAlergena.xaml">
+    <Page Include="View\SekretarView\Alergeni\IzmenaAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Alergeni\UklanjanjeAlergena.xaml">
+    <Page Include="View\SekretarView\Alergeni\UklanjanjeAlergena.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\GlavniProzorSadrzaj.xaml">
+    <Page Include="View\SekretarView\GlavniProzorSadrzaj.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\GlavniProzorSekretar.xaml">
+    <Page Include="View\SekretarView\GlavniProzorSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1044,279 +1044,279 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\PacijentFolder\RasporedTermina\OtkazivanjeTerminaPacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\OtkazivanjeTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PacijentGlavniProzor.xaml">
+    <Page Include="View\PacijentView\PacijentGlavniProzor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PotvrdiPomeranjePacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PotvrdiPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PotvrdiZakazivanjePacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PotvrdiZakazivanjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazObavestenjaPacijent.xaml">
+    <Page Include="View\PacijentView\LicniNalog\PrikazObavestenjaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\RasporedTermina\PrikazRasporedaPacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PrikazRasporedaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazSlobodnihDatumaPacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PrikazSlobodnihDatumaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazVremenaTerminaPacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PrikazVremenaTerminaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PacijentFolder\PrikazVremenaZaPomeranjePacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\PrikazVremenaZaPomeranjePacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SekretarFolder\Operacija\HitnaOperacijaOtkazivanje.xaml">
+    <Page Include="View\SekretarView\Operacija\HitnaOperacijaOtkazivanje.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Operacija\HitnaOperacijaPomeranje.xaml">
+    <Page Include="View\SekretarView\Operacija\HitnaOperacijaPomeranje.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Operacija\HitnaOperacijaZakazivanje.xaml">
+    <Page Include="View\SekretarView\Operacija\HitnaOperacijaZakazivanje.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Operacija\HitnaOperacijePregled.xaml">
+    <Page Include="View\SekretarView\Operacija\HitnaOperacijePregled.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Nalozi\DodavanjeNalogaSekretar.xaml">
+    <Page Include="View\SekretarView\Nalozi\DodavanjeNalogaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Nalozi\IzmenaNalogaSekretar.xaml">
+    <Page Include="View\SekretarView\Nalozi\IzmenaNalogaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Nalozi\PrikazNalogaSekretar.xaml">
+    <Page Include="View\SekretarView\Nalozi\PrikazNalogaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Nalozi\UklanjanjeNalogaSekretar.xaml">
+    <Page Include="View\SekretarView\Nalozi\UklanjanjeNalogaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Obavestenja\DodavanjeObavestenja.xaml">
+    <Page Include="View\SekretarView\Obavestenja\DodavanjeObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Obavestenja\IzmenaObavestenja.xaml">
+    <Page Include="View\SekretarView\Obavestenja\IzmenaObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Obavestenja\ObavestenjaSekretar.xaml">
+    <Page Include="View\SekretarView\Obavestenja\ObavestenjaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Obavestenja\UklanjanjeObavestenja.xaml">
+    <Page Include="View\SekretarView\Obavestenja\UklanjanjeObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pomoc\LegendaSimbola.xaml">
+    <Page Include="View\SekretarView\Pomoc\LegendaSimbola.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pomoc\Pomoc.xaml">
+    <Page Include="View\SekretarView\Pomoc\Pomoc.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\OtkazivanjePregledaSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\OtkazivanjePregledaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\PomeranjePregledaSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\PomeranjePregledaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\PomeranjePregledaTerminiSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\PomeranjePregledaTerminiSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\TerminiPregledaSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\TerminiPregledaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\ZakazivanjePregledaSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\ZakazivanjePregledaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\Pregled\ZakazivanjePregledaTerminiSekretar.xaml">
+    <Page Include="View\SekretarView\Pregled\ZakazivanjePregledaTerminiSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\PrikazPregledaSekretar.xaml">
+    <Page Include="View\SekretarView\PrikazPregledaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PacijentFolder\ZakazivanjeSaPrioritetomPacijent.xaml">
+    <Page Include="View\PacijentView\RasporedTermina\ZakazivanjeSaPrioritetomPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\PromenaTrajanjaOdmora.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\PromenaTrajanjaOdmora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\PromenaSmeneSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\PromenaSmeneSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\DodavanjeSlobodnihDanaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\DodavanjeRadnihDanaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\UklanjanjeSlobodnogDanaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\UklanjanjeRadnogDanaSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\PrikazRasporedaLekaraSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\RasporedLekara\PrikazLekaraSekretar.xaml">
+    <Page Include="View\SekretarView\RasporedLekara\PrikazLekaraSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml">
+    <Page Include="View\SekretarView\StacionarnoLecenje\StacionarnoLecenjeSmestanjeSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml">
+    <Page Include="View\SekretarView\StacionarnoLecenje\StacionarnoLecenjeSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\TransferPacijenata\NoviTransferPacijenataSekretar.xaml">
+    <Page Include="View\SekretarView\TransferPacijenata\NoviTransferPacijenataSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SekretarFolder\TransferPacijenata\TransferPacijenataSekretar.xaml">
+    <Page Include="View\SekretarView\TransferPacijenata\TransferPacijenataSekretar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DetaljiOLijeku.xaml">
+    <Page Include="View\UpravnikView\DetaljiOLijeku.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DodajOpremuProstoru.xaml">
+    <Page Include="View\UpravnikView\DodajOpremuProstoru.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DodavanjeOpreme.xaml">
+    <Page Include="View\UpravnikView\DodavanjeOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DodavanjeProstora.xaml">
+    <Page Include="View\UpravnikView\DodavanjeProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DodavanjeSastojka.xaml">
+    <Page Include="View\UpravnikView\DodavanjeSastojka.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\DodavanjeZahtjeva.xaml">
+    <Page Include="View\UpravnikView\DodavanjeZahtjeva.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\IzmenaOpreme.xaml">
+    <Page Include="View\UpravnikView\IzmenaOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\IzmenaProstora.xaml">
+    <Page Include="View\UpravnikView\IzmenaProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\IzmjenaZahtjeva.xaml">
+    <Page Include="View\UpravnikView\IzmjenaZahtjeva.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\NapraviDvijeProstorije.xaml">
+    <Page Include="View\UpravnikView\NapraviDvijeProstorije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\NapraviJednuProstoriju.xaml">
+    <Page Include="View\UpravnikView\NapraviJednuProstoriju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\PremjestanjeOpreme.xaml">
+    <Page Include="View\UpravnikView\PremjestanjeOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\PremjestanjeStatickeOpreme.xaml">
+    <Page Include="View\UpravnikView\PremjestanjeStatickeOpreme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\PrikazLijekova.xaml">
+    <Page Include="View\UpravnikView\PrikazLijekova.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\PrikazOpreme.xaml">
+    <Page Include="View\UpravnikView\PrikazOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\PrikazProstora.xaml">
+    <Page Include="View\UpravnikView\PrikazProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\PrikazRenoviranja.xaml">
+    <Page Include="View\UpravnikView\PrikazRenoviranja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\PrikazZahtjeva.xaml">
+    <Page Include="View\UpravnikView\PrikazZahtjeva.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\RasporedOpreme.xaml">
+    <Page Include="View\UpravnikView\RasporedOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\RenoviranjeProstorije.xaml">
+    <Page Include="View\UpravnikView\RenoviranjeProstorije.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\UklanjanjeLijeka.xaml">
+    <Page Include="View\UpravnikView\UklanjanjeLijeka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\UklanjanjeOpreme.xaml">
+    <Page Include="View\UpravnikView\UklanjanjeOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\UklanjanjeProstora.xaml">
+    <Page Include="View\UpravnikView\UklanjanjeProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\UklanjanjeRenoviranja.xaml">
+    <Page Include="View\UpravnikView\UklanjanjeRenoviranja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UpravnikFolder\UklanjanjeZahtjeva.xaml">
+    <Page Include="View\UpravnikView\UklanjanjeZahtjeva.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UpravnikFolder\UpravnikGlavniProzor.xaml">
+    <Page Include="View\UpravnikView\UpravnikGlavniProzor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
