@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSekretar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sekretar>
+    <IdOsobe>b8b38fc5-6e37-444e-a47f-bdf51ecb9735</IdOsobe>
+    <Ime>Aleksa</Ime>
+    <Prezime>Stojić</Prezime>
+    <DatumRodjenja>1999-01-19T00:00:00</DatumRodjenja>
+    <Jmbg>1901</Jmbg>
+    <AdresaStanovanja>Adresa Adresić 22</AdresaStanovanja>
+    <KontaktTelefon>062</KontaktTelefon>
+    <Email>aleksa@sekretar.com</Email>
+    <KorisnickoIme>aleksa222</KorisnickoIme>
+    <Lozinka>aleksa222</Lozinka>
+    <Pol>muski</Pol>
+  </Sekretar>
+</ArrayOfSekretar>

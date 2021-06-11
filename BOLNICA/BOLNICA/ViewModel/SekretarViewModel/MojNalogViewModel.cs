@@ -16,13 +16,13 @@ namespace Bolnica.ViewModel.SekretarViewModel
 {
     public class MojNalogViewModel : SekretarViewModel
     {
-        private Osoba podaci;
+        private SekretarDTO podaci;
         public MojNalogViewModel()
         {
             Podaci = GlavniProzorSekretar.getInstance().getSekretar();
             povratakKomanda = new RelayCommand(Povratak);
         }
-        public Osoba Podaci
+        public SekretarDTO Podaci
         {
             get { return podaci; }
             set

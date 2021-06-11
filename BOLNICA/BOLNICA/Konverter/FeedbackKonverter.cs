@@ -12,11 +12,25 @@ namespace Bolnica.Konverter
     {
         public FeedbackDTO FeedbackModelUDTO(Feedback feedback)
         {
-            return new FeedbackDTO(feedback.IdFeedbacka, feedback.IdOsobe, feedback.TipGreske, feedback.TekstFeedbacka);
+            List<string> tipovi = new List<string>();
+            if(feedback.TipFunkcionalnosti.Count() > 0)
+            foreach (TipFunkcije tipFunkcije in feedback.TipFunkcionalnosti)
+            {
+                tipovi.Add(tipFunkcije.ToString());
+            }
+            return new FeedbackDTO(feedback.IdFeedbacka, feedback.IdOsobe, null, null, feedback.TekstFeedbacka);
         }
         public Feedback FeedbackDTOUModel(FeedbackDTO feedback)
         {
-            return new Feedback(feedback.IdFeedbacka, feedback.IdOsobe, feedback.TipGreske, feedback.TekstFeedbacka);
+            List<TipFunkcije> tipovi = new List<TipFunkcije>();
+            if(feedback.TipFunkcionalnosti != null)
+            { 
+                Enum.TryParse(feedback.TipFunkcionalnosti.ToLower(), out TipFunkcije tipFunkcije);
+                tipovi.Add(tipFunkcije);
+            }
+            List<string> funkcije = new List<string>();
+            funkcije.Add(feedback.FunkcionalnostiNaKojeSeOdnosi);
+            return new Feedback(feedback.IdFeedbacka, feedback.IdOsobe, tipovi, funkcije, feedback.TekstFeedbacka);
         }
     }
 }

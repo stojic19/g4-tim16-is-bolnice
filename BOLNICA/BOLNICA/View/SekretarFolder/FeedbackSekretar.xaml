@@ -85,22 +85,25 @@
             </Border>
             <Label Content="Dodavanje feedback-a:" FontSize="20" HorizontalAlignment="Left" Margin="52,21,0,0" VerticalAlignment="Top" Height="37" Width="216" Grid.Row="1"/>
 
-            <Label Content="Tip greške:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+            <Label Content="Tip funkcionalnosti:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="2" Margin="0,19.4,19.6,19.4" Height="30" Width="150"/>
 
-            <ListBox ItemsSource="{Binding Tipovi}" x:Name="lbTip" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="83" Margin="20,10,0,0" VerticalAlignment="Top" Width="353" FontFamily="Verdana" FontSize="14" SelectionMode="Extended"/>
+            <ComboBox ItemsSource="{Binding Tipovi}" SelectedItem="{Binding Podaci.TipFunkcionalnosti}" x:Name="lbTip" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="20,37,0,0" VerticalAlignment="Top" Width="353" FontFamily="Verdana" FontSize="14"/>
 
 
-            <Label Content="Funkcionalnost gde se greška nalazi:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
-               Grid.Column="0" Grid.Row="3" Margin="0,14,20,14" Height="30" Width="205"/>
+            <Label Content="Funkcionalnost na koju se odnosi komentar:" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
+               Grid.Column="0" Grid.Row="3" Margin="0,36,20,37" Height="30" Width="241"/>
 
-            <ListBox ItemsSource="{Binding Funkcionalnosti}" x:Name="lbMesto" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="83" Margin="20,10,0,0" VerticalAlignment="Top" Width="353" FontFamily="Verdana" FontSize="14" SelectionMode="Extended"/>
+            <ComboBox ItemsSource="{Binding Funkcionalnosti}" SelectedItem="{Binding Podaci.FunkcionalnostiNaKojeSeOdnosi}" x:Name="lbMesto" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="20,36,0,0" VerticalAlignment="Top" Width="353" FontFamily="Verdana" FontSize="14"/>
 
 
             <Label Content="Opis/komentar (*obavezno polje):" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" 
                Grid.Column="0" Grid.Row="4" Margin="0,35,20,139" Height="30" Width="205"/>
 
             <TextBox Text="{Binding Podaci.TekstFeedbacka}" AcceptsReturn="True" Name="prezime" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,35,0,10" Height="159" Width="353" Background="WhiteSmoke" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+            <Label VerticalAlignment="Top" FontSize="15" Foreground="Red" Content="{Binding Path=Poruka}" Margin="98,0" Grid.Row="5" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2"/>
+
 
             <Button Content="Potvrdi"  Margin="0,29,351,58"  Width="100" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
             Command="{Binding PotvrdiKomanda}" Background="WhiteSmoke" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="5" Grid.Column="1"/>

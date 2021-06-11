@@ -87,6 +87,26 @@ namespace Model
             ZloupotrebioSistem = 0;
             Blokiran = false;
         }
+
+        public Pacijent(string idOsobe, string korisnickoIme, string ime, string prezime, DateTime datumRodjenja, Pol pol, string jmbg, string adresaStanovanja, string kontaktTelefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
+        {
+            if (idOsobe != null)
+                IdOsobe = idOsobe;
+            else
+                IdOsobe = generisiID();
+            KorisnickoIme = korisnickoIme;
+            Ime = ime;
+            Prezime = prezime;
+            DatumRodjenja = datumRodjenja;
+            Pol = pol;
+            Jmbg = jmbg;
+            AdresaStanovanja = adresaStanovanja;
+            KontaktTelefon = kontaktTelefon;
+            Email = email;
+            this.vrstaNaloga = vrstaNaloga;
+            Lozinka = lozinka;
+        }
+
         public String DobaviPolTekst()
         {
 

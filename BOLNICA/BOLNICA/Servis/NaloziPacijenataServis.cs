@@ -18,7 +18,7 @@ namespace Model
         }
 
         public void Izmeni(Pacijent pacijentZaIZmenu)
-        {     
+        {
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijentZaIZmenu);
         }
 

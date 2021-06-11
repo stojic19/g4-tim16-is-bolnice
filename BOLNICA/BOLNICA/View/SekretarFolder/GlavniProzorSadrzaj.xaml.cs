@@ -147,7 +147,11 @@ namespace Bolnica.SekretarFolder
 
         private void Feedback_Click(object sender, RoutedEventArgs e)
         {
+            UserControl usc = null;
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 
+            usc = new FeedbackSekretar();
+            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
     }
 }

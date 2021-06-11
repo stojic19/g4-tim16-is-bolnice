@@ -1,20 +1,20 @@
-
-using Bolnica;
-using Model;
+﻿using Model;
 using System;
-using System.ComponentModel;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Bolnica.Model
+namespace Bolnica.DTO
 {
-   public class Sekretar : Osoba
-   {
-        Sekretar() { }
-        public Sekretar(string idOsobe, string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
+    public class SekretarDTO : OsobaDTO
+    {
+        public SekretarDTO(string idOSobe, string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, string lozinka)
         {
-            if (idOsobe == null)
+            if (idOSobe == null)
                 this.IdOsobe = Guid.NewGuid().ToString();
             else
-                this.IdOsobe = idOsobe;
+                this.IdOsobe = idOSobe;
             this.KorisnickoIme = korisnickoIme;
             this.Ime = ime;
             this.Prezime = prezime;

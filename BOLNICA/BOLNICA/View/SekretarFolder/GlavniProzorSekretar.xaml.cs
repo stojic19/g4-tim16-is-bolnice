@@ -1,4 +1,5 @@
-﻿using Bolnica.Sekretar.Pregled;
+﻿using Bolnica.DTO;
+using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Model;
 using System;
@@ -20,8 +21,8 @@ namespace Bolnica
     public partial class GlavniProzorSekretar : Window
     {
         private static GlavniProzorSekretar instance = null;
-        private static Osoba Sekretar = new Osoba();
-        public Osoba getSekretar()
+        private static SekretarDTO Sekretar;
+        public SekretarDTO getSekretar()
         {
             return Sekretar;
         }
@@ -33,7 +34,7 @@ namespace Bolnica
             }
             return instance;
         }
-        public static GlavniProzorSekretar getInstance(Osoba sekretar)
+        public static GlavniProzorSekretar getInstance(SekretarDTO sekretar)
         {
             if (instance == null)
             {
@@ -51,7 +52,7 @@ namespace Bolnica
             usc = new GlavniProzorSadrzaj();
             MainPanel.Children.Add(usc);
         }
-        public GlavniProzorSekretar(Osoba sekretar)
+        public GlavniProzorSekretar(SekretarDTO sekretar)
         {
             Sekretar = sekretar;
             InitializeComponent();

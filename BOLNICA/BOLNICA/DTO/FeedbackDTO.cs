@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Feedback
 
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -11,24 +12,31 @@ namespace Model
     {
         private string idFeedbacka;
         private string idOsobe;
-        private TipGreske tipGreske;
+        private string tipFunkcionalnosti;
+        private string funkcionalnostiNaKojeSeOdnosi;
         private string tekstFeedbacka;
 
         public FeedbackDTO()
         {
+            tekstFeedbacka = "";
+            tipFunkcionalnosti = "";
+            funkcionalnostiNaKojeSeOdnosi = "";
         }
 
-        public FeedbackDTO(string idFeedbacka, string idOsobe, TipGreske tipGreske, string tekstFeedbacka)
+        public FeedbackDTO(string idFeedbacka, string idOsobe, string tipFunkcionalnosti, string funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka)
         {
             this.IdFeedbacka = idFeedbacka;
             this.IdOsobe = idOsobe;
-            this.TipGreske = tipGreske;
+            this.TipFunkcionalnosti = tipFunkcionalnosti;
+            this.FunkcionalnostiNaKojeSeOdnosi = funkcionalnostiNaKojeSeOdnosi;
             this.TekstFeedbacka = tekstFeedbacka;
         }
 
         public string IdFeedbacka { get => idFeedbacka; set => idFeedbacka = value; }
         public string IdOsobe { get => idOsobe; set => idOsobe = value; }
-        public TipGreske TipGreske { get => tipGreske; set => tipGreske = value; }
+
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
+        public string TipFunkcionalnosti { get => tipFunkcionalnosti; set => tipFunkcionalnosti = value; }
+        public string FunkcionalnostiNaKojeSeOdnosi { get => funkcionalnostiNaKojeSeOdnosi; set => funkcionalnostiNaKojeSeOdnosi = value; }
     }
 }

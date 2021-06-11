@@ -17,7 +17,7 @@ namespace Bolnica.Konverter
         }
         public Pacijent PacijentDTOUModel(PacijentDTO pacijent)
         {
-            return new Pacijent(pacijent.KorisnickoIme, pacijent.Ime, pacijent.Prezime, pacijent.DatumRodjenja, pacijent.Pol, pacijent.Jmbg, pacijent.AdresaStanovanja, pacijent.KontaktTelefon, pacijent.Email,
+            return new Pacijent(pacijent.IdOsobe, pacijent.KorisnickoIme, pacijent.Ime, pacijent.Prezime, pacijent.DatumRodjenja, pacijent.Pol, pacijent.Jmbg, pacijent.AdresaStanovanja, pacijent.KontaktTelefon, pacijent.Email,
                 pacijent.VrstaNaloga, pacijent.Lozinka);
         }
 

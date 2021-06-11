@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFeedback xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Feedback>
+    <IdFeedbacka>8917ade3-cd57-4e79-b662-a365725f8481</IdFeedbacka>
+    <IdOsobe>b8b38fc5-6e37-444e-a47f-bdf51ecb9735</IdOsobe>
+    <TekstFeedbacka>Slaba preglednost</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Pregledi</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+  </Feedback>
+  <Feedback>
+    <IdFeedbacka>5b95ea57-a601-420a-8c37-2daf1f274abb</IdFeedbacka>
+    <IdOsobe>b8b38fc5-6e37-444e-a47f-bdf51ecb9735</IdOsobe>
+    <TekstFeedbacka>Uneti izmenu inofrmacija</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Moj nalog</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+  </Feedback>
+</ArrayOfFeedback>

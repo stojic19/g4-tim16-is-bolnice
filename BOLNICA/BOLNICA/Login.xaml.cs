@@ -25,25 +25,23 @@ namespace Bolnica
     public partial class Login : Window
     {
         List<Upravnik> Upravnici = new List<Upravnik>();
-        //List<Sekretar> Sekretari = new List<Sekretar>();
-        List<Osoba> Sekretari = new List<Osoba>();
+        List<SekretarDTO> Sekretari = new List<SekretarDTO>();
         List<PacijentDTO> Pacijenti = new List<PacijentDTO>();
         List<LekarDTO> Lekari = new List<LekarDTO>();
       
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
-        HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
+        SekretarKontroler sekretarKontroler = new SekretarKontroler();
 
-        ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         public Login()
         {
             InitializeComponent();
 
             Upravnici.Add(new Upravnik("marko111", "Marko", "Anđelić", DateTime.Now, Pol.muski, "1111", "Adresa Adresić 11", "061", "marko@upravnik.com", "marko111"));
-            Sekretari.Add(new Osoba("aleksa222", "Aleksa", "Stojić", DateTime.Now, Pol.muski, "2222", "Adresa Adresić 22", "062", "aleksa@sekretar.com", "aleksa222"));
 
             Pacijenti = naloziPacijenataKontroler.DobaviSveNaloge();
             Lekari = lekariKontroler.DobaviSveLekareLogin();
+            Sekretari = sekretarKontroler.DobaviSve();
             
             password.PasswordChar = '*';
             password.MaxLength = 14;
@@ -84,7 +82,7 @@ namespace Bolnica
                     }
                 }
             }
-            foreach (Osoba s in Sekretari)
+            foreach (SekretarDTO s in Sekretari)
             {
                 if (s.KorisnickoIme.Equals(username.Text))
                 {

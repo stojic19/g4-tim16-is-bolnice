@@ -24,12 +24,12 @@ namespace Bolnica.SekretarFolder
     /// </summary>
     public partial class FeedbackSekretar : UserControl
     {
-        MojNalogViewModel mojNalogViewModel;
+        DodavanjeFeedbackaViewModel feedbackSekretar;
         public FeedbackSekretar()
         {
             InitializeComponent();
-            mojNalogViewModel = new MojNalogViewModel();
-            this.DataContext = mojNalogViewModel;
+            feedbackSekretar = new DodavanjeFeedbackaViewModel();
+            this.DataContext = feedbackSekretar;
         }
     }
 }

@@ -4,12 +4,15 @@
 // Purpose: Definition of Enum TipGreske
 
 using System;
+using System.ComponentModel;
 
 namespace Model
 {
-   public enum TipGreske
+   public enum TipFunkcije
    {
-      interfejs,
-      funkcija
+        [Description("Interfejs")]
+        interfejs,
+        [Description("Funkcija")]
+        funkcija
    }
 }

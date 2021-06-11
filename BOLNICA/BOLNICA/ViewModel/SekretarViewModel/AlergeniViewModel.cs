@@ -1,6 +1,7 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Komande;
 using Bolnica.Kontroler;
+using Bolnica.ViewModel.SekretarViewModel.AbstractKlase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,22 +12,21 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class AlergeniViewModel : SekretarViewModel
+    public class AlergeniViewModel : CRUDViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<AlergeniPrikazDTO> alergeniPacijenta;
         private AlergeniKontroler alergeniKontroler;
         private AlergeniPrikazDTO selektovaniAlergen;
-        private String poruka;
   
         public AlergeniViewModel(String korisnickoImePacijenta)
         {
             this.korisnickoIme = korisnickoImePacijenta;
             alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
             UcitajUKolekciju();
-            dodajAlergenKomanda = new RelayCommand(DodajAlergen);
-            izmeniAlergenKomanda = new RelayCommand(IzmeniAlergen);
-            ukloniAlergenKomanda = new RelayCommand(UkloniAlergen);
+            DodajKomanda = new RelayCommand(Dodaj);
+            IzmeniKomanda = new RelayCommand(Izmeni);
+            UkloniKomanda = new RelayCommand(Ukloni);
             nazadKomanda = new RelayCommand(Nazad);
         }
 
@@ -57,19 +57,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             }
         }
 
-        public string Poruka
-        {
-            get { return poruka; }
-            set { poruka = value; OnPropertyChanged("Poruka"); }
-        }
-
-        private RelayCommand ukloniAlergenKomanda;
-
-        public RelayCommand UkloniAlergenKomanda
-        {
-            get { return ukloniAlergenKomanda; }
-        }
-        public void UkloniAlergen()
+        public override void Ukloni()
         {
             if (selektovaniAlergen != null)
             {
@@ -85,14 +73,8 @@ namespace Bolnica.ViewModel.SekretarViewModel
             }
 
         }
-
-        private RelayCommand izmeniAlergenKomanda;
-
-        public RelayCommand IzmeniAlergenKomanda
-        {
-            get { return izmeniAlergenKomanda; }
-        }
-        public void IzmeniAlergen()
+        
+        public override void Izmeni()
         {
             if (selektovaniAlergen != null)
             {
@@ -108,14 +90,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             }
         }
 
-
-        private RelayCommand dodajAlergenKomanda;
-
-        public RelayCommand DodajAlergenKomanda
-        {
-            get { return dodajAlergenKomanda; }
-        }
-        public void DodajAlergen()
+        public override void Dodaj()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

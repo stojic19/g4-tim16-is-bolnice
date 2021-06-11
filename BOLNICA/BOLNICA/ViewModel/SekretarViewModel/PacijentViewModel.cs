@@ -2,6 +2,7 @@
 using Bolnica.Komande;
 using Bolnica.Kontroler;
 using Bolnica.SekretarFolder;
+using Bolnica.ViewModel.SekretarViewModel.AbstractKlase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,20 +14,19 @@ using System.Windows.Data;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class PacijentViewModel : SekretarViewModel
+    public class PacijentViewModel : CRUDViewModel
     {
         private ObservableCollection<PacijentDTO> pacijenti;
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        private String poruka;
         private PacijentDTO selektovaniPacijent;
         private String tekstPretrage;
         public PacijentViewModel()
         {
             UcitajUKolekciju();
             TekstPretrage = "";
-            dodajNalogKomanda = new RelayCommand(DodajNalog);
-            izmeniNalogKomanda = new RelayCommand(IzmeniNalog);
-            ukloniNalogKomanda = new RelayCommand(UkloniNalog);
+            DodajKomanda = new RelayCommand(Dodaj);
+            IzmeniKomanda = new RelayCommand(Izmeni);
+            UkloniKomanda = new RelayCommand(Ukloni);
             azurirajAlergeneKomanda = new RelayCommand(AzurirajAlergene);
             odblokirajNalogKomanda = new RelayCommand(OdblokirajNalog);
         }
@@ -81,19 +81,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             CollectionViewSource.GetDefaultView(Pacijenti).Refresh();
         }
 
-        public string Poruka
-        {
-            get { return poruka; }
-            set { poruka = value; OnPropertyChanged("Poruka"); }
-        }
-
-        private RelayCommand ukloniNalogKomanda;
-
-        public RelayCommand UkloniNalogKomanda
-        {
-            get { return ukloniNalogKomanda; }
-        }
-        public void UkloniNalog()
+        public override void Ukloni()
         {
             if (selektovaniPacijent != null)
             {
@@ -110,13 +98,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
 
         }
 
-        private RelayCommand izmeniNalogKomanda;
-
-        public RelayCommand IzmeniNalogKomanda
-        {
-            get { return izmeniNalogKomanda; }
-        }
-        public void IzmeniNalog()
+        public override void Izmeni()
         {
             if (selektovaniPacijent != null)
             {
@@ -132,14 +114,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             }
         }
 
-
-        private RelayCommand dodajNalogKomanda;
-
-        public RelayCommand DodajNalogKomanda
-        {
-            get { return dodajNalogKomanda; }
-        }
-        public void DodajNalog()
+        public override void Dodaj()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

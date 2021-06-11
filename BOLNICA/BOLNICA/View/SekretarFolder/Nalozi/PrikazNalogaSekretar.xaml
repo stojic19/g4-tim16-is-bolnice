@@ -106,9 +106,9 @@
             </DataGrid>
             <Label HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="Red" Content="{Binding Path=Poruka}" Grid.Row="4" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Margin="50,34,36,0"/>
 
-            <Button  Command="{Binding Path=DodajNalogKomanda}" Grid.Row="4" Content="Dodavanje naloga" Margin="150,69,468,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
-            <Button  Command="{Binding Path=IzmeniNalogKomanda}" Grid.Row="4" Content="Izmena naloga"  Margin="290,69,327,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
-            <Button  Command="{Binding Path=UkloniNalogKomanda}" Grid.Row="4" Content="Uklanjanje naloga"  Margin="577,69,40,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button  Command="{Binding Path=DodajKomanda}" Grid.Row="4" Content="Dodavanje naloga" Margin="150,69,468,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button  Command="{Binding Path=IzmeniKomanda}" Grid.Row="4" Content="Izmena naloga"  Margin="290,69,327,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+            <Button  Command="{Binding Path=UkloniKomanda}" Grid.Row="4" Content="Uklanjanje naloga"  Margin="577,69,40,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
             <Button  Command="{Binding Path=AzurirajAlergeneKomanda}" Grid.Row="4" Content="Ažuriranje alergena"  Margin="434,69,183,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
             <Button Command="{Binding Path=OdblokirajNalogKomanda}" Grid.Row="4" Content="Odblokiraj nalog"  Margin="717,69,98,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke" Grid.ColumnSpan="2"/>
         </Grid>

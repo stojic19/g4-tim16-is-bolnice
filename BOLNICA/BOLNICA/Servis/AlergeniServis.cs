@@ -39,7 +39,14 @@ namespace Bolnica.Servis
 
         public Alergeni PretraziPoId(string id)
         {
-            throw new NotImplementedException();
+            foreach(Alergeni alergen in pacijent.DobaviAlergene())
+            {
+                if(alergen.IdAlergena.Equals(id))
+                {
+                    return alergen;
+                }
+            }
+            return null;
         }
 
         public void Ukloni(Alergeni alergen)

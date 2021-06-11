@@ -235,6 +235,7 @@
     <Compile Include="DTO\ReceptDTO.cs" />
     <Compile Include="DTO\RenoviranjeDTO.cs" />
     <Compile Include="DTO\SastojakDTO.cs" />
+    <Compile Include="DTO\SekretarDTO.cs" />
     <Compile Include="DTO\TerapijaDTO.cs" />
     <Compile Include="DTO\TerminDTO.cs" />
     <Compile Include="DTO\UputDTO.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="Kontroler\ObavestenjaKontroler.cs" />
     <Compile Include="Kontroler\PreglediKontorler.cs" />
     <Compile Include="Kontroler\RenoviranjeKontroler.cs" />
+    <Compile Include="Kontroler\SekretarKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZahtjeviKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
@@ -274,6 +276,7 @@
     <Compile Include="Konverter\LekarKonverter.cs" />
     <Compile Include="Konverter\LekKonverter.cs" />
     <Compile Include="Konverter\FeedbackKonverter.cs" />
+    <Compile Include="Konverter\SekretarKonverter.cs" />
     <Compile Include="Konverter\ObavestenjeKonverter.cs" />
     <Compile Include="Konverter\OdsustvoKonverter.cs" />
     <Compile Include="Konverter\OpremaKonverter.cs" />
@@ -293,12 +296,13 @@
     <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
-    <Compile Include="Model\Enumi\TipGreske.cs" />
+    <Compile Include="Model\Enumi\TipFunkcije.cs" />
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\Godisnji.cs" />
     <Compile Include="Model\Odsustvo.cs" />
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\SekretariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\FeedbackRepozitorijum.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\AnketeRepozitorijumInterfejs.cs" />
@@ -309,6 +313,7 @@
     <Compile Include="Repozitorijum\Interfejsi\PitanjaRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\ProstoriRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\RenoviranjeRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\SekretariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\SlobodniTerminiRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekariRepozitorijumInterfejs.cs" />
     <Compile Include="Repozitorijum\Interfejsi\LekoviRepozitorijumInterfejs.cs" />
@@ -334,6 +339,7 @@
     <Compile Include="Servis\PitanjaServis.cs" />
     <Compile Include="Servis\RadniDaniLekaraServis.cs" />
     <Compile Include="Servis\RenoviranjeServis.cs" />
+    <Compile Include="Servis\SekretariServis.cs" />
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="Servis\SmenaServis.cs" />
     <Compile Include="Servis\ZahtjeviServis.cs" />
@@ -362,6 +368,7 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaPomeranjaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\AbstractKlase\CRUDViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeFeedbackaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaPregledViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaViewModel.cs" />
@@ -369,7 +376,7 @@
     <Compile Include="ViewModel\SekretarViewModel\IzmenaNalogaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\MojNalogViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NaplataIzabraniPacijentViewModel.cs" />
-    <Compile Include="ViewModel\SekretarViewModel\SekretarViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\AbstractKlase\SekretarViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\StacionarnoSmestanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\NoviTransferViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\TransferViewModel.cs" />
