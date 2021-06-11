@@ -82,6 +82,7 @@ namespace Bolnica.LekarFolder.LekoviLekar
             if (nazivSastojka.Text.Equals("") || kolicinaSastojka.Text.Equals(""))
             {
                 validacijaPolja.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
                 return false;
 
             }

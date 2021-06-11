@@ -13,7 +13,7 @@ namespace Bolnica.Konverter
         LekKonverter lekKonverter = new LekKonverter();
         public ZahtjevDTO ZahtjevModelUDTO(Zahtjev zahtjev)
         {
-            return new ZahtjevDTO(zahtjev.IdZahtjeva , lekKonverter.LekModelUDTO(zahtjev.Lijek), zahtjev.Odgovor, zahtjev.RazlogOdbijanja, zahtjev.DatumSlanja);
+            return new ZahtjevDTO(zahtjev.IdZahtjeva, lekKonverter.LekSaKolicinomDTO(zahtjev.Lijek), zahtjev.Odgovor, zahtjev.RazlogOdbijanja, zahtjev.DatumSlanja);
         }
         public Zahtjev ZahtjevDTOUModel(ZahtjevDTO zahtjev)
         {

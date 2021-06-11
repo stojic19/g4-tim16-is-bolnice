@@ -43,6 +43,7 @@ namespace Bolnica
 
             this.DataContext = this;
             inicijalizacijaTabela();
+            PodesavanjeTajmera();
         }
 
         private void PodesavanjeTajmera()
@@ -147,7 +148,7 @@ namespace Bolnica
 
             LekDTO izabranLek = lekoviKontroler.PretraziPoID(sifraLeka);
             String idTerapije = Guid.NewGuid().ToString();
-            TerapijaDTO t = new TerapijaDTO(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text, 
+            TerapijaDTO t = new TerapijaDTO(idTerapije, idAnamneze, (DateTime)pocTer.SelectedDate, (DateTime)krajTer.SelectedDate, this.dnevnaKol.Text, this.satnica.Text,
                    this.opisKonzumacije.Text, izabranLek);
             izabraneTerapije.Add(t);
             Terapije.Add(t);
@@ -239,7 +240,7 @@ namespace Bolnica
 
         private void PromenaDatuma(object sender, SelectionChangedEventArgs e)
         {
-             DateTime pocetak = DateTime.Now;
+            DateTime pocetak = DateTime.Now;
 
             if (pocTer.SelectedDate.HasValue)
             {

@@ -135,7 +135,8 @@ namespace Bolnica.LekarFolder
 
         private void CuvanjeStacionarnog(object sender, RoutedEventArgs e)
         {
-            if (!ValidacijaDatumaStacionarno() || !ProveraPopunjenostiPoljaStac()) return;
+            if (!ProveraPopunjenostiPoljaStac()) return;
+            if (!ValidacijaDatumaStacionarno()) return;
 
             String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
 
@@ -175,6 +176,9 @@ namespace Bolnica.LekarFolder
 
         private Boolean ValidacijaDatumaStacionarno()
         {
+            if (!pocetakStacionarnog.SelectedDate.HasValue) return false;
+            if (!krajStacionarnog.SelectedDate.HasValue) return false;
+
 
             DateTime pocetakLecenja = (DateTime)pocetakStacionarnog.SelectedDate;
             DateTime krajLecenja = (DateTime)krajStacionarnog.SelectedDate;
@@ -246,7 +250,7 @@ namespace Bolnica.LekarFolder
 
         private void soba_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(soba.SelectedIndex < 0)
+            if (soba.SelectedIndex < 0)
             {
                 soba.BorderBrush = System.Windows.Media.Brushes.Red;
             }
@@ -258,6 +262,9 @@ namespace Bolnica.LekarFolder
 
         private void promenaDatuma(object sender, SelectionChangedEventArgs e)
         {
+            if (!pocetakStacionarnog.SelectedDate.HasValue) return;
+            if (!krajStacionarnog.SelectedDate.HasValue) return;
+
             DateTime pocetakLecenja = (DateTime)pocetakStacionarnog.SelectedDate;
 
             if (!pocetakStacionarnog.SelectedDate.HasValue || !krajStacionarnog.SelectedDate.HasValue)
@@ -265,7 +272,8 @@ namespace Bolnica.LekarFolder
                 pocetakStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
                 krajStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
                 return;
-            }else if(pocetakLecenja.CompareTo(krajStacionarnog.SelectedDate) > 0)
+            }
+            else if (pocetakLecenja.CompareTo(krajStacionarnog.SelectedDate) > 0)
             {
                 pocetakStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;
                 krajStacionarnog.BorderBrush = System.Windows.Media.Brushes.Red;

@@ -23,7 +23,7 @@
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="17.5,4">
 
             <Label Content="{p:LocExtension PretragaLeka}"/>
-            <TextBox Height="25" Width="150" Margin="10,0"  Text="{Binding Path=PoljePretraga,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox Height="25" Width="150" Margin="10,0" Text="{Binding Path=PoljePretraga,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
         </StackPanel>
 
@@ -74,6 +74,6 @@
 
 
         </StackPanel>
-        
+
     </Grid>
 </UserControl>

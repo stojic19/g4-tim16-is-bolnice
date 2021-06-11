@@ -45,6 +45,7 @@ namespace Bolnica.Model.Rukovanja
                 {
                     z.Odgovor = Enumi.VrsteOdgovora.Odobren;
                     z.Lijek.Verifikacija = true;
+                    zahtjeviRepozitorijum.IzmenaZahtjeva(z);
                     return true;
                 }
             }

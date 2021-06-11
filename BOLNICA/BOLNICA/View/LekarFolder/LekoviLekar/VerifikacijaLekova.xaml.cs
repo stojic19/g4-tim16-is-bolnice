@@ -21,7 +21,7 @@ namespace Bolnica.LekarFolder
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
         private DispatcherTimer dispatcherTimer;
 
-        public VerifikacijaLekova( )
+        public VerifikacijaLekova()
         {
             InitializeComponent();
             LekarGlavniProzor.postaviPrethodnu();
@@ -120,7 +120,6 @@ namespace Bolnica.LekarFolder
                 }
 
                 inicijalizacijaTabeleZahteva();
-
             }
         }
 

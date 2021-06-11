@@ -127,9 +127,30 @@
         </Sastojak>
       </Sastojci>
       <Zamene />
+      <Verifikacija>true</Verifikacija>
+    </Lijek>
+    <Odgovor>Odobren</Odgovor>
+    <DatumSlanja>2021-06-09T21:07:27.4153366+02:00</DatumSlanja>
+  </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>9ffe6243-52b6-4549-ae61-9bbb7c3b73a5</IdZahtjeva>
+    <Lijek>
+      <IDLeka>27b47d7e-60ce-4e70-b2bd-2f56ec491e28</IDLeka>
+      <NazivLeka>Varfinol</NazivLeka>
+      <Jacina>100mg</Jacina>
+      <Kolicina>0</Kolicina>
+      <Proizvodjac>Sarson</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>s1</Naziv>
+          <Kolicina>12</Kolicina>
+        </Sastojak>
+      </Sastojci>
+      <Zamene />
       <Verifikacija>false</Verifikacija>
     </Lijek>
-    <Odgovor>Čekanje</Odgovor>
-    <DatumSlanja>2021-06-09T21:07:27.4153366+02:00</DatumSlanja>
+    <Odgovor>Odbijen</Odgovor>
+    <RazlogOdbijanja>Sastojak se ne uklapa</RazlogOdbijanja>
+    <DatumSlanja>2021-06-11T16:07:26.392963+02:00</DatumSlanja>
   </Zahtjev>
 </ArrayOfZahtjev>

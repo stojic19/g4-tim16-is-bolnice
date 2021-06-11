@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lek>
     <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
@@ -209,5 +209,14 @@
       </Lek>
     </Zamene>
     <Verifikacija>true</Verifikacija>
+  </Lek>
+  <Lek>
+    <IDLeka>6bcf9586-d1d3-41ab-9c41-84cd13c083e8</IDLeka>
+    <NazivLeka>Fenobarbiton</NazivLeka>
+    <Jacina>500mg</Jacina>
+    <Kolicina>0</Kolicina>
+    <Sastojci />
+    <Zamene />
+    <Verifikacija>false</Verifikacija>
   </Lek>
 </ArrayOfLek>
