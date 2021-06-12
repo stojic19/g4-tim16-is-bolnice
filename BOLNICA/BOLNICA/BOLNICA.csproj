@@ -333,8 +333,10 @@
     <Compile Include="Repozitorijum\ZahtjeviRepozitorijum.cs" />
     <Compile Include="Servis\AlergeniServis.cs" />
     <Compile Include="Servis\BeleskaServis.cs" />
+    <Compile Include="Servis\DatumTerminaServis.cs" />
     <Compile Include="Servis\FeedbackServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />
+    <Compile Include="Servis\LekarTerminaServis.cs" />
     <Compile Include="Servis\OdsustvoLekaraServis.cs" />
     <Compile Include="Servis\PitanjaServis.cs" />
     <Compile Include="Servis\RadniDaniLekaraServis.cs" />

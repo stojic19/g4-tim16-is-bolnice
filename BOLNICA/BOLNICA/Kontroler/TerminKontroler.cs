@@ -20,30 +20,8 @@ namespace Bolnica.Kontroler
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         ProstoriServis prostoriServis = new ProstoriServis();
         PreglediKontroler preglediKontroler = new PreglediKontroler();
-        public int DobaviBrojZakazanihTerminaNaDatum(DateTime datum)
-        {
-            int broj = 0;
-            foreach(TerminDTO termin in DobaviSveZakazaneTermine())
-            {
-                if(DateTime.Compare(termin.Datum.Date, datum.Date) == 0)
-                {
-                    broj += 1;
-                }
-            }
-            return broj;
-        }
-        public int DobaviBrojSlobodnihTerminaNaDatum(DateTime datum)
-        {
-            int broj = 0;
-            foreach (TerminDTO termin in DobaviSveSlobodneTermine())
-            {
-                if (DateTime.Compare(termin.Datum.Date, datum.Date) == 0)
-                {
-                    broj += 1;
-                }
-            }
-            return broj;
-        }
+        DatumTerminaServis datumTerminaServis = new DatumTerminaServis();
+        LekarTerminaServis lekarTerminaServis = new LekarTerminaServis();
         public List<TerminDTO> DobaviSveSlobodneTermine()
         {
             List<TerminDTO> termini = new List<TerminDTO>();
@@ -77,7 +55,7 @@ namespace Bolnica.Kontroler
         {
             List<TerminDTO> terminiDTO = new List<TerminDTO>();
 
-            foreach (Termin termin in zakazaniTerminiServis.PretraziPoLekaru(korisnickoIme))
+            foreach (Termin termin in zakazaniTerminiServis.DobaviZakazaneTermineLekara(korisnickoIme))
             {
                 terminiDTO.Add(terminKonverter.ZakazaniTerminModelUDTO(termin, termin.Pacijent.KorisnickoIme));
             }
@@ -114,7 +92,7 @@ namespace Bolnica.Kontroler
         public List<TerminDTO> PretraziPoLekaruUIntervalu(List<Termin> terminiUIntervalu, String korisnickoImeLekara)
         {
             List<TerminDTO> termini = new List<TerminDTO>();
-            foreach (Termin termin in slobodniTerminiServis.PretraziPoLekaruUIntervalu(terminiUIntervalu, korisnickoImeLekara))
+            foreach (Termin termin in lekarTerminaServis.PretraziTerminePoLekaru(terminiUIntervalu, korisnickoImeLekara))
                 termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
             return termini;
         }
@@ -128,16 +106,13 @@ namespace Bolnica.Kontroler
             return termini;
         }
 
-
+        public bool ProveriMogucnostPomeranjaTermina(TerminDTO terminZaPomeranje)
+        {
+            return datumTerminaServis.ProveriMogucnostPomeranjaTermina(terminKonverter.ZakazaniTerminDTOUModel(terminZaPomeranje));
+        }
         public List<Termin> NadjiTermineUIntervaluSekretar(DateTime pocetakIntervala, DateTime krajIntervala)
         {
             return slobodniTerminiServis.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
-        }
-
-
-        public bool ProveriMogucnostPomeranjaDatum(DateTime datumPregleda)
-        {
-            return zakazaniTerminiServis.ProveriMogucnostPomeranjaDatum(datumPregleda);
         }
 
         public Boolean OtkaziTerminLekar(string idTermina)
@@ -145,16 +120,11 @@ namespace Bolnica.Kontroler
             return zakazaniTerminiServis.OtkaziTerminLekar(idTermina);
         }
 
-        public bool ProveriMogucnostPomeranjaVreme(String vreme)
-        {
-            return zakazaniTerminiServis.ProveriMogucnostPomeranjaVreme(vreme);
-        }
-
         public List<TerminDTO> NadjiVremeTermina(TerminDTO izabraniTermin)
         {
             List<TerminDTO> vremenaTermina = new List<TerminDTO>();
             Termin terminIzabrani = slobodniTerminiServis.PretraziPoId(izabraniTermin.IdTermina);
-            foreach (Termin termin in slobodniTerminiServis.NadjiVremeTermina(terminIzabrani))
+            foreach (Termin termin in slobodniTerminiServis.NadjiZeljeniTermin(terminIzabrani))
                 vremenaTermina.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
             return vremenaTermina;
         }
@@ -225,9 +195,8 @@ namespace Bolnica.Kontroler
 
         public bool ProveriZaOtkazivanje(String izabranTermin)
         {
-            Termin t = zakazaniTerminiServis.DobaviZakazanTerminPoId(izabranTermin);
-            if (DateTime.Compare(t.Datum, DateTime.Now) <= 0) return false;
-            return true;
+            Termin termin = zakazaniTerminiServis.DobaviZakazanTerminPoId(izabranTermin);
+            return datumTerminaServis.ProveriZaOtkazivanje(termin.Datum);
         }
     }
 }

@@ -37,6 +37,11 @@ namespace Bolnica.Repozitorijum
         {
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
         }
+        
+        public Termin PretraziSlobodnePoId(String idTermina)
+        {
+            return PretraziPoId("//ArrayOfTermin/Termin[IdTermina='" + idTermina + "']");
+        }
 
         public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar)
         {

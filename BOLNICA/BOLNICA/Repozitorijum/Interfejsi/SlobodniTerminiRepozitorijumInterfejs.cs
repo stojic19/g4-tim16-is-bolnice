@@ -18,5 +18,7 @@ namespace Bolnica.Repozitorijum.Interfejsi
 
         List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar);
 
+        Termin PretraziSlobodnePoId(String idTermina);
+
     }
 }

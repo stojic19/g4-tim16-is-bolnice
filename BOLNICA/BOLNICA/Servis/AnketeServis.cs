@@ -43,7 +43,7 @@ namespace Bolnica.Model.Rukovanja
 
         }
 
-        public static List<Anketa> SortirajPoDatumuRastuce(List<Anketa> nesortiraneAnkete)
+        public List<Anketa> SortirajPoDatumuRastuce(List<Anketa> nesortiraneAnkete)
         {
             return nesortiraneAnkete.OrderByDescending(user => user.OcenioBolnicu).ToList();
         }

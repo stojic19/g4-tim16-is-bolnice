@@ -128,18 +128,11 @@ namespace Bolnica.ViewModel
 
         private bool Validacija()
         {
-            if (DateTime.Compare(SelektovaniTermin.Datum.Date, DateTime.Now.Date) < 0)
+            if (terminKontroler.ProveriMogucnostPomeranjaTermina(SelektovaniTermin))
             {
-                return false;
+                return true;
             }
-            else if (DateTime.Compare(SelektovaniTermin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0)
-            {
-                if (!terminKontroler.ProveriMogucnostPomeranjaVreme(SelektovaniTermin.Vreme))
-                {
-                    return false;
-                }
-            }
-            return true;
+            return false;
         }
 
    
