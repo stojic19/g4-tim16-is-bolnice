@@ -2,6 +2,7 @@
 using Bolnica.Komande;
 using Bolnica.Kontroler;
 using Bolnica.SekretarFolder;
+using Bolnica.ViewModel.SekretarViewModel.AbstractKlase;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,9 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class DodavanjeFeedbackaViewModel : SekretarViewModel
+    public class DodavanjeFeedbackaViewModel : PotvrdiOdustaniViewModel
     {
         private FeedbackKontroler feedbackKontroler = new FeedbackKontroler();
-        private String poruka;
         private FeedbackDTO podaci;
         private List<String> tipovi;
         private List<String> funkcionalnosti;
@@ -28,8 +28,8 @@ namespace Bolnica.ViewModel.SekretarViewModel
             Podaci.IdOsobe = GlavniProzorSekretar.getInstance().getSekretar().IdOsobe;
             UcitajTipove();
             UcitajFunkcionalnosti();
-            potvrdiKomanda = new RelayCommand(Potvrdi);
-            odustaniKomanda = new RelayCommand(Odustani);
+            PotvrdiKomanda = new RelayCommand(Potvrdi);
+            OdustaniKomanda = new RelayCommand(Odustani);
         }
 
         private void UcitajTipove()
@@ -87,19 +87,8 @@ namespace Bolnica.ViewModel.SekretarViewModel
                 OnPropertyChanged();
             }
         }
-        public string Poruka
-        {
-            get { return poruka; }
-            set { poruka = value; OnPropertyChanged("Poruka"); }
-        }
 
-        private RelayCommand potvrdiKomanda;
-
-        public RelayCommand PotvrdiKomanda
-        {
-            get { return potvrdiKomanda; }
-        }
-        public void Potvrdi()
+        public override void Potvrdi()
         {
             if (IspravniUnetiPodaci())
             {
@@ -121,13 +110,8 @@ namespace Bolnica.ViewModel.SekretarViewModel
             }
             return true;
         }
-        private RelayCommand odustaniKomanda;
 
-        public RelayCommand OdustaniKomanda
-        {
-            get { return odustaniKomanda; }
-        }
-        public void Odustani()
+        public override void Odustani()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

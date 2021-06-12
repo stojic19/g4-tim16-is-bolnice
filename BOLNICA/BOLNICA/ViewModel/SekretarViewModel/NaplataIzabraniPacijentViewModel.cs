@@ -2,6 +2,7 @@
 using Bolnica.Komande;
 using Bolnica.Kontroler;
 using Bolnica.SekretarFolder;
+using Bolnica.ViewModel.SekretarViewModel.AbstractKlase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,17 +13,16 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class NaplataIzabraniPacijentViewModel : SekretarViewModel
+    public class NaplataIzabraniPacijentViewModel : PotvrdiOdustaniViewModel
     {
-        private String poruka;
         private String korisnickoIme;
         private ObservableCollection<PregledDTO> pregledi;
         public NaplataIzabraniPacijentViewModel(String korisnickoIme)
         {
             Pregledi = new ObservableCollection<PregledDTO>();
             this.korisnickoIme = korisnickoIme;
-            odustaniKomanda = new RelayCommand(Odustani);
-            potvrdiKomanda = new RelayCommand(Potvrdi);
+            OdustaniKomanda = new RelayCommand(Odustani);
+            PotvrdiKomanda = new RelayCommand(Potvrdi);
         }
         public ObservableCollection<PregledDTO> Pregledi
         {
@@ -33,19 +33,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
                 OnPropertyChanged();
             }
         }
-        public string Poruka
-        {
-            get { return poruka; }
-            set { poruka = value; OnPropertyChanged("Poruka"); }
-        }
-
-        private RelayCommand odustaniKomanda;
-
-        public RelayCommand OdustaniKomanda
-        {
-            get { return odustaniKomanda; }
-        }
-        public void Odustani()
+        public override void Odustani()
         {
            UserControl usc = null;
            GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
@@ -54,13 +42,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
            GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
 
-        private RelayCommand potvrdiKomanda;
-
-        public RelayCommand PotvrdiKomanda
-        {
-            get { return potvrdiKomanda; }
-        }
-        public void Potvrdi()
+        public override void Potvrdi()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

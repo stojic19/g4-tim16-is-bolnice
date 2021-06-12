@@ -14,18 +14,20 @@ namespace Bolnica.Servis
     {
         private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
         private LekoviServis lekoviServis = new LekoviServis();
-        private Pacijent pacijent;
+        private string idPacijenta;
         public AlergeniServis(String idPacijenta)
         {
-            this.pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
+            this.idPacijenta = idPacijenta;
         }
         public List<Alergeni> DobaviSve()
         {
+            Pacijent pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
             return naloziPacijenataRepozitorijum.DobaviAlergenePacijenta(pacijent.KorisnickoIme);
         }
 
         public void Dodaj(Alergeni alergen)
         {
+            Pacijent pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
             alergen.Lek = lekoviServis.PretraziPoID(alergen.IdAlergena);
             pacijent.DodajAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
@@ -33,13 +35,15 @@ namespace Bolnica.Servis
 
         public void Izmeni(Alergeni noviAlergen)
         {
+            Pacijent pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
             pacijent.IzmeniAlergen(noviAlergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }
 
         public Alergeni PretraziPoId(string id)
         {
-            foreach(Alergeni alergen in pacijent.DobaviAlergene())
+            Pacijent pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
+            foreach (Alergeni alergen in pacijent.DobaviAlergene())
             {
                 if(alergen.IdAlergena.Equals(id))
                 {
@@ -51,6 +55,7 @@ namespace Bolnica.Servis
 
         public void Ukloni(Alergeni alergen)
         {
+            Pacijent pacijent = naloziPacijenataRepozitorijum.PretraziPoId("//ArrayOfPacijent/Pacijent[KorisnickoIme='" + idPacijenta + "']");
             pacijent.UkloniAlergen(alergen);
             naloziPacijenataRepozitorijum.IzmeniPacijenta(pacijent);
         }

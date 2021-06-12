@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Bolnica.View.AdminView.PregledFeedbacka"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.AdminView"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid x:Name="MainPanel" Background="Black" Height="738" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="770*"/>
+            <ColumnDefinition Width="205*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="Black" x:Name="Odjava" Command="{Binding Path=OdjavaKomanda}" Margin="0,0,723,57">
+            <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
+        </Button>
+        
+        <Label Foreground="Cyan" Content="Pregled feedback-a" FontSize="40" HorizontalAlignment="Left" Margin="305,26,0,0" VerticalAlignment="Top" Height="67" Width="380" FontWeight="Bold"/>
+
+        <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-62,-80,-254.667" Stretch="Fill">
+                <Path.Data>
+                    <RectangleGeometry
+            Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
+                </Path.Data>
+            </Path>
+        </Border>
+        <Label Content="" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="199"/>
+        <StackPanel Orientation="Horizontal" Margin="47,142,183,113.5" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dataGridFeedback" ItemsSource="{Binding Feedbacks}" SelectedItem="{Binding SelektovaniFeedback}" IsReadOnly="true"
+                  SelectionMode="Single" Grid.RowSpan="5" Margin="50,122,36,116" Background="WhiteSmoke"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id feedback-a" Binding="{Binding IdFeedbacka}" Width="*"/>
+                <DataGridTextColumn Header="Id osobe" Binding="{Binding IdOsobe}" Width="*"/>
+                <DataGridTextColumn Header="Datum"  Width="*"/>
+                <DataGridTextColumn Header="Tip funkcionalnosti" Binding="{Binding TipFunkcionalnosti}" Width="*"/>
+                <DataGridTextColumn Header="Mesto funkcionalnosti" Binding="{Binding FunkcionalnostiNaKojeSeOdnosi}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="Red" Content="{Binding Path=Poruka}" Grid.Row="4" RenderTransformOrigin="0.5,0.5" Height="30" Grid.ColumnSpan="2" Margin="50,34,36,0"/>
+
+        <Button  Command="{Binding Path=PregledKomanda}" Grid.Row="4" Content="Pregled"  Margin="290,69,327,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+        <Button  Command="{Binding Path=UkloniKomanda}" Grid.Row="4" Content="Ukloni"  Margin="577,69,40,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
+    </Grid>
+</UserControl>

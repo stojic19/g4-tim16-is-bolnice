@@ -343,6 +343,9 @@
     <Compile Include="Servis\SlobodniTerminiServis.cs" />
     <Compile Include="Servis\SmenaServis.cs" />
     <Compile Include="Servis\ZahtjeviServis.cs" />
+    <Compile Include="ViewModel\AdminViewModel\DetaljiFeedbackaViewModel.cs" />
+    <Compile Include="ViewModel\AdminViewModel\AdminFeedbackViewModel.cs" />
+    <Compile Include="ViewModel\AdminViewModel\UklanjanjeFeedbackaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\BazaLekovaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\InformacijeAnamnezaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\LekarRasporedViewModel.cs" />
@@ -369,6 +372,7 @@
     <Compile Include="ViewModel\PacijentViewModel\VremenaViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\ZakazivanjeViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\AbstractKlase\CRUDViewModel.cs" />
+    <Compile Include="ViewModel\SekretarViewModel\AbstractKlase\PotvrdiOdustaniViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeFeedbackaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaPregledViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\LicnaObavestenjaViewModel.cs" />
@@ -390,6 +394,18 @@
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeNalogaViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
+    <Compile Include="View\AdminView\GlavniProzorAdmin.xaml.cs">
+      <DependentUpon>GlavniProzorAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\DetaljiFeedbackaAdmin.xaml.cs">
+      <DependentUpon>DetaljiFeedbackaAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\PregledFeedbacka.xaml.cs">
+      <DependentUpon>PregledFeedbacka.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\UklanjanjeFeedbacka.xaml.cs">
+      <DependentUpon>UklanjanjeFeedbacka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LekarView\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
     </Compile>
@@ -777,6 +793,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Teme\TamnaTema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminView\GlavniProzorAdmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AdminView\DetaljiFeedbackaAdmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AdminView\PregledFeedbacka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminView\UklanjanjeFeedbacka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

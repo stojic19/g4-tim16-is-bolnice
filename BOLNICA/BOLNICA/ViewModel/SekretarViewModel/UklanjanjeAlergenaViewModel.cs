@@ -1,6 +1,7 @@
 ﻿using Bolnica.DTO;
 using Bolnica.Komande;
 using Bolnica.Kontroler;
+using Bolnica.ViewModel.SekretarViewModel.AbstractKlase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +12,7 @@ using System.Windows.Controls;
 
 namespace Bolnica.ViewModel.SekretarViewModel
 {
-    public class UklanjanjeAlergenaViewModel : SekretarViewModel
+    public class UklanjanjeAlergenaViewModel : PotvrdiOdustaniViewModel
     {
         private String korisnickoIme;
         private AlergeniKontroler alergeniKontroler;
@@ -22,17 +23,11 @@ namespace Bolnica.ViewModel.SekretarViewModel
             alergeniKontroler = new AlergeniKontroler(korisnickoImePacijenta);
             this.KorisnickoIme = korisnickoImePacijenta;
             this.idAlergena = idAlergena;
-            potvrdiKomanda = new RelayCommand(Potvrdi);
-            odustaniKomanda = new RelayCommand(Odustani);
+            PotvrdiKomanda = new RelayCommand(Potvrdi);
+            OdustaniKomanda = new RelayCommand(Odustani);
         }
 
-        private RelayCommand potvrdiKomanda;
-
-        public RelayCommand PotvrdiKomanda
-        {
-            get { return potvrdiKomanda; }
-        }
-        public void Potvrdi()
+        public override void Potvrdi()
         {
             alergeniKontroler.UkloniAlergen(idAlergena);
 
@@ -43,16 +38,9 @@ namespace Bolnica.ViewModel.SekretarViewModel
             GlavniProzorSekretar.getInstance().MainPanel.Children.Add(usc);
         }
         
-        private RelayCommand odustaniKomanda;
-
-        public RelayCommand OdustaniKomanda
-        {
-            get { return odustaniKomanda; }
-        }
-
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
 
-        public void Odustani()
+        public override void Odustani()
         {
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

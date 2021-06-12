@@ -4,6 +4,7 @@ using Bolnica.LekarFolder;
 using Bolnica.Model;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.View.AdminView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -49,20 +50,31 @@ namespace Bolnica
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             bool founded = false;
-            if (username.Text.Equals(""))
+            if (username.Text.Equals("admin") && password.Password.Equals("admin"))
             {
-                System.Windows.Forms.MessageBox.Show("Morate uneti korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GlavniProzorAdmin gpa = GlavniProzorAdmin.getInstance();
+                gpa.Show();
+                this.Close();
+                founded = true;
                 return;
             }
-            if (password.Password.Equals(""))
+            else
             {
-                System.Windows.Forms.MessageBox.Show("Morate uneti lozinku!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (password.Password.Length < 8)
-            {
-                System.Windows.Forms.MessageBox.Show("Uneta lozinka mora biti dugačka bar 8 karaktera!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (username.Text.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Morate uneti korisničko ime!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (password.Password.Equals(""))
+                {
+                    System.Windows.Forms.MessageBox.Show("Morate uneti lozinku!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (password.Password.Length < 8)
+                {
+                    System.Windows.Forms.MessageBox.Show("Uneta lozinka mora biti dugačka bar 8 karaktera!", "Proverite podatke", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             foreach (Upravnik u in Upravnici)
             {
