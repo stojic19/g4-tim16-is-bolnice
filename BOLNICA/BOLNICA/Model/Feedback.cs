@@ -15,15 +15,16 @@ namespace Model
         private List<TipFunkcije> tipFunkcionalnosti;
         private List<string> funkcionalnostiNaKojeSeOdnosi;
         private string tekstFeedbacka;
-
+        private DateTime datum;
         public Feedback() { }
-        public Feedback(string idFeedbacka, string idOsobe, List<TipFunkcije> tipFunkcionalnosti, List<string> funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka)
+        public Feedback(string idFeedbacka, string idOsobe, List<TipFunkcije> tipFunkcionalnosti, List<string> funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka, DateTime datum)
         {
             this.IdFeedbacka = idFeedbacka;
             this.IdOsobe = idOsobe;
             this.TipFunkcionalnosti = tipFunkcionalnosti;
             this.TekstFeedbacka = tekstFeedbacka;
             this.FunkcionalnostiNaKojeSeOdnosi = funkcionalnostiNaKojeSeOdnosi;
+            this.Datum = datum;
         }
 
         public string IdFeedbacka { get => idFeedbacka; set => idFeedbacka = value; }
@@ -31,5 +32,6 @@ namespace Model
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
         public List<TipFunkcije> TipFunkcionalnosti { get => tipFunkcionalnosti; set => tipFunkcionalnosti = value; }
         public List<string> FunkcionalnostiNaKojeSeOdnosi { get => funkcionalnostiNaKojeSeOdnosi; set => funkcionalnostiNaKojeSeOdnosi = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
     }
 }

@@ -92,6 +92,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         {
             if (IspravniUnetiPodaci())
             {
+                podaci.Datum = DateTime.Now;
                 feedbackKontroler.Dodaj(podaci);
 
                 UserControl usc = null;

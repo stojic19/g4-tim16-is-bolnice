@@ -41,7 +41,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id feedback-a" Binding="{Binding IdFeedbacka}" Width="*"/>
                 <DataGridTextColumn Header="Id osobe" Binding="{Binding IdOsobe}" Width="*"/>
-                <DataGridTextColumn Header="Datum"  Width="*"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"  Width="*"/>
                 <DataGridTextColumn Header="Tip funkcionalnosti" Binding="{Binding TipFunkcionalnosti}" Width="*"/>
                 <DataGridTextColumn Header="Mesto funkcionalnosti" Binding="{Binding FunkcionalnostiNaKojeSeOdnosi}" Width="*"/>
             </DataGrid.Columns>

@@ -15,7 +15,7 @@ namespace Model
         private string tipFunkcionalnosti;
         private string funkcionalnostiNaKojeSeOdnosi;
         private string tekstFeedbacka;
-
+        private DateTime datum;
         public FeedbackDTO()
         {
             tekstFeedbacka = "";
@@ -23,13 +23,14 @@ namespace Model
             funkcionalnostiNaKojeSeOdnosi = "";
         }
 
-        public FeedbackDTO(string idFeedbacka, string idOsobe, string tipFunkcionalnosti, string funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka)
+        public FeedbackDTO(string idFeedbacka, string idOsobe, string tipFunkcionalnosti, string funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka, DateTime datum)
         {
             this.IdFeedbacka = idFeedbacka;
             this.IdOsobe = idOsobe;
             this.TipFunkcionalnosti = tipFunkcionalnosti;
             this.FunkcionalnostiNaKojeSeOdnosi = funkcionalnostiNaKojeSeOdnosi;
             this.TekstFeedbacka = tekstFeedbacka;
+            this.Datum = datum;
         }
 
         public string IdFeedbacka { get => idFeedbacka; set => idFeedbacka = value; }
@@ -38,5 +39,6 @@ namespace Model
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
         public string TipFunkcionalnosti { get => tipFunkcionalnosti; set => tipFunkcionalnosti = value; }
         public string FunkcionalnostiNaKojeSeOdnosi { get => funkcionalnostiNaKojeSeOdnosi; set => funkcionalnostiNaKojeSeOdnosi = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
     }
 }
