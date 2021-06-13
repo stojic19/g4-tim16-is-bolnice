@@ -406,6 +406,7 @@
     <Compile Include="ViewModel\SekretarViewModel\IzmenaAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeNalogaViewModel.cs" />
+    <Compile Include="ViewModel\UpravnikViewModel\PrikazOpremeViewModel.cs" />
     <Compile Include="ViewModel\UpravnikViewModel\UpravnikFeedbackViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Model\Enumi\VrsteOdgovora.cs" />

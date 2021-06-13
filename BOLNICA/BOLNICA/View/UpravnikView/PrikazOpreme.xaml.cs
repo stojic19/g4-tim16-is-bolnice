@@ -1,4 +1,32 @@
-﻿using Bolnica.DTO;
+﻿using Bolnica.Model;
+using Bolnica.ViewModel.UpravnikViewModel;
+using Model;
+using System;
+using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+
+namespace Bolnica
+{
+    public partial class PrikazOpreme : UserControl
+    {
+        private PrikazOpremeViewModel prikazOpremeViewModel;
+
+        public PrikazOpreme()
+        {
+            InitializeComponent();
+            prikazOpremeViewModel = new PrikazOpremeViewModel();
+            this.DataContext = prikazOpremeViewModel;
+        }
+
+    }
+}
+
+
+
+
+/*using Bolnica.DTO;
 using Bolnica.Kontroler;
 using Bolnica.UpravnikFolder;
 using Model;
@@ -111,3 +139,4 @@ namespace Bolnica
         }
     }
 }
+*/

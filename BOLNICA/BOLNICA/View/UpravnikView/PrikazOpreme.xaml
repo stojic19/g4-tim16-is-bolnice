@@ -23,7 +23,7 @@
 
             <DataGrid x:Name="dataGridOprema" ItemsSource="{Binding Oprema}" IsReadOnly="true"
                   SelectionMode="Single" Grid.RowSpan="4" Margin="20,20,95.6,97.4" Background="WhiteSmoke"
-                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoGenerateColumns="False">
+                  HorizontalContentAlignment="Center" SelectedItem="{Binding Path=IzabranaOprema}" VerticalContentAlignment="Center" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header=" ID opreme" Binding="{Binding IdOpreme}" Width="67*"/>
                     <DataGridTextColumn Header=" Naziv opreme" Binding="{Binding NazivOpreme}" Width="80*"/>
@@ -33,18 +33,18 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Button Grid.Column="1" Grid.Row="0" Content="Dodavanje opreme" Margin="0,33,22.2,32.6" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Dodavanje_Click" Background="WhiteSmoke" Height="25"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=DodajOpremuKomanda}"  Background="WhiteSmoke" Height="25"/>
             <Button Grid.Column="1" Grid.Row="1" Content="Izmjena opreme" Margin="0,33.4,20.2,32.2" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Izmjena_Click" Background="WhiteSmoke" Height="25"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=IzmijeniOpremuKomanda}"  Background="WhiteSmoke" Height="25"/>
             <Button Grid.Column="1" Grid.Row="2" Content="Uklanjanje opreme" Margin="0,32.8,22.2,32.8" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Uklanjanje_Click" Background="WhiteSmoke" Height="25"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=UkloniOpremuKomanda}"  Background="WhiteSmoke" Height="25"/>
 
-            <Label Content="Pretrazi/filtriraj po (id,naziv,vrsta):" FontSize="10" HorizontalAlignment="Left" Margin="20,5.2,0,0" VerticalAlignment="Top" Height="26" Width="466" FontWeight="Bold" Grid.Row="3"/>
+            <!--    <Label Content="Pretrazi/filtriraj po (id,naziv,vrsta):" FontSize="10" HorizontalAlignment="Left" Margin="20,5.2,0,0" VerticalAlignment="Top" Height="26" Width="466" FontWeight="Bold" Grid.Row="3"/>
 
-            <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Margin="20,31.2,340,43.4"   Grid.Row="3" Height="23" />
+               <TextBox x:Name="SearchBox" KeyUp="SearchBox_KeyUp" Margin="20,31.2,340,43.4"   Grid.Row="3" Height="23" /> -->
 
             <Button Grid.Row="3" Content="Premjestanje staticke opreme" Margin="453,22.2,22.2,43.4" VerticalContentAlignment="Center" 
-                HorizontalContentAlignment="Center" Click="Premjestanje_Click" Height="25" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
+                HorizontalContentAlignment="Center" Command="{Binding Path=PremjestiStatickuOpremuKomanda}" Height="25" Background="WhiteSmoke" Grid.ColumnSpan="2"/>
 
         </Grid>
 

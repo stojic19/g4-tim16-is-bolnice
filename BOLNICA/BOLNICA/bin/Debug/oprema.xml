@@ -48,4 +48,10 @@
     <VrstaOpreme>dinamicka</VrstaOpreme>
     <Kolicina>195</Kolicina>
   </Oprema>
+  <Oprema>
+    <IdOpreme>37b3de2d-19dc-4267-a6d8-9ac1ec0d6940</IdOpreme>
+    <NazivOpreme>stalak za infuziju</NazivOpreme>
+    <VrstaOpreme>staticka</VrstaOpreme>
+    <Kolicina>33</Kolicina>
+  </Oprema>
 </ArrayOfOprema>
