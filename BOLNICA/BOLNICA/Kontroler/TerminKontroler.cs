@@ -97,10 +97,11 @@ namespace Bolnica.Kontroler
             return termini;
         }
 
-        public List<TerminDTO> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
+        public List<TerminDTO> NadjiTermineUIntervalu(List<DateTime> interval)
         {
             List<TerminDTO> termini = new List<TerminDTO>();
-            List<Termin> terminiUIntervalu = slobodniTerminiServis.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
+            List<Termin> sviTermini = slobodniTerminiServis.DobaviSve();
+            List<Termin> terminiUIntervalu = datumTerminaServis.NadjiTermineUIntervalu(interval,sviTermini);
             foreach (Termin termin in terminiUIntervalu)
                 termini.Add(terminKonverter.SlobodniTerminModelUDTO(termin));
             return termini;

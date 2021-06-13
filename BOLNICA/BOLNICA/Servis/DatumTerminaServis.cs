@@ -138,15 +138,17 @@ namespace Bolnica.Servis
                     DatumPregledaJeRanijiOdKrajaIntervala(termin, interval[1]))
                     terminiUIntervalu.Add(termin);
             }
-            return terminiUIntervalu;
+            return ObrisiDatumeTerminaIzProslosti(SortTerminaPoDatumu(terminiUIntervalu));
         }
 
-        public List<DateTime> PodesiIntervalPomeranja(DateTime datumTermina)
+        public List<DateTime> PodesiIntervalPomeranjaTermina(DateTime datumTermina)
         {
             List<DateTime> intervalPomeranja = new List<DateTime>();
             intervalPomeranja.Add(datumTermina.AddDays(-2));
             intervalPomeranja.Add(datumTermina.AddDays(2));
             return intervalPomeranja;
         }
+
+      
     }
 }

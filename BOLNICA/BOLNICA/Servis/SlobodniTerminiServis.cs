@@ -44,7 +44,7 @@ namespace Bolnica.Servis
             List<Termin> termini = slobodniTerminiRepozitorijum.DobaviSveObjekte();
             foreach(Termin termin in termini)
             {
-                if(DateTime.Compare(termin.Datum, DateTime.Now)<0) Ukloni(termin);
+                if(!datumServis.TerminJeUBuducnosti(termin.Datum)) Ukloni(termin);
             }
         }
         public List<Termin> DobaviSlobodneTermineZaLekara(string idLekara)
@@ -70,7 +70,7 @@ namespace Bolnica.Servis
         public List<Termin> NadjiZeljeniTermin(Termin izabraniTermin)
         {
             List<Termin> termini = new List<Termin>();
-            foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
+            foreach (Termin termin in DobaviSve())
             {
                 if (datumServis.DatumiTerminaSuIsti(termin, izabraniTermin) &&
                  lekarTerminaServis.LekariTerminaSuIsti(termin, izabraniTermin))
@@ -78,7 +78,30 @@ namespace Bolnica.Servis
             }
             return datumServis.SortTerminaPoPocetnomVremenu(termini);
         }
-        public List<Termin> NadjiTermineUIntervalu(DateTime pocetakIntervala, DateTime krajIntervala)
+       
+        public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin, String idLekara)
+        {
+            List<DateTime> intervalPomeranja = datumServis.PodesiIntervalPomeranjaTermina(termin.Datum);
+            List<Termin> datumiUIntervalu = datumServis.NadjiTermineUIntervalu(intervalPomeranja,DobaviSve());
+            List<Termin> sviSlobodniDatumi = lekarTerminaServis.PretraziTerminePoLekaru(datumiUIntervalu, idLekara);
+            return sviSlobodniDatumi; 
+        }
+
+        public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime> intervalZakazivanja, String idLekara)
+        {
+            List<Termin> sviTermini = DobaviSve();
+            List<Termin> terminiIntervala = datumServis.NadjiTermineUIntervalu(intervalZakazivanja, sviTermini);
+            List<Termin> terminiIzabranogLekara = lekarTerminaServis.PretraziTerminePoLekaru(terminiIntervala, idLekara);
+            return terminiIzabranogLekara;
+        }
+        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar, int brojTermina)
+        {
+            List<Termin> slobodniTermini = slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
+            List<Termin> krajnjiTermini = lekarTerminaServis.DobaviSlobodneTermineLekara(slobodniTermini, brojTermina);
+            return krajnjiTermini;
+        }
+
+        public List<Termin> NadjiTermineUIntervaluSekretar(DateTime pocetakIntervala, DateTime krajIntervala)
         {
             List<Termin> terminiUIntervalu = new List<Termin>();
             foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
@@ -88,26 +111,6 @@ namespace Bolnica.Servis
                     terminiUIntervalu.Add(termin);
             }
             return terminiUIntervalu;
-        }
-        public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime> interval, String idLekara)
-        {
-            List<Termin> terminiIntervala = NadjiTermineUIntervalu(interval[0], interval[1]);
-            List<Termin> terminiIzabranogLekara = lekarTerminaServis.PretraziTerminePoLekaru(terminiIntervala, idLekara);
-            List<Termin> jedinstveniTerminiLekara = datumServis.UkloniDupleDatumeTermina(terminiIzabranogLekara);
-            return datumServis.ObrisiDatumeTerminaIzProslosti(datumServis.SortTerminaPoDatumu(jedinstveniTerminiLekara));
-        }
-
-        public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin, String idLekara)
-        {
-            List<Termin> datumiUIntervalu = NadjiTermineUIntervalu(termin.Datum.AddDays(-2), termin.Datum.AddDays(2));
-            List<Termin> sviSlobodniDatumi = lekarTerminaServis.PretraziTerminePoLekaru(datumiUIntervalu, idLekara);
-            return datumServis.ObrisiDatumeTerminaIzProslosti(sviSlobodniDatumi); 
-        }
-        public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar, int brojTermina)
-        {
-            List<Termin> slobodniTermini = slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
-            List<Termin> krajnjiTermini = lekarTerminaServis.DobaviSlobodneTermineLekara(slobodniTermini, brojTermina);
-            return krajnjiTermini;
         }
     }
 }
