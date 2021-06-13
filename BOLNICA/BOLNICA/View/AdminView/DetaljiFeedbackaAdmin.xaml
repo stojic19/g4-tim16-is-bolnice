@@ -8,25 +8,24 @@
              d:DesignHeight="768" d:DesignWidth="1024">
     <Grid x:Name="MainPanel" Background="Black" Height="738" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="770*"/>
-            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="400*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Background="Black" x:Name="Odjava" Command="{Binding Path=OdjavaKomanda}" Margin="0,0,723,57">
             <Image Source="/Slike/Sekretar/Ikonice/odjava.jpg" />
         </Button>
+        <Label Foreground="Cyan" Content="Detalji" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Height="67" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
-        <Label Foreground="Cyan" Content="Detalji" FontSize="40" HorizontalAlignment="Center" Margin="409,26,62,0" VerticalAlignment="Top" Height="67" Width="338" FontWeight="Bold"/>
-
-        <Border Margin="28,10,98,138" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
-            <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Margin="0,-62,-80,-254.667" Stretch="Fill">
+        <Border  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <Path Stroke="Black" StrokeThickness="1" Fill="Cyan" Stretch="Fill" Margin="0,-74.4,0,-127.2">
                 <Path.Data>
                     <RectangleGeometry
             Rect="20,20,150,50" RadiusX="3" RadiusY="3" />
@@ -34,7 +33,20 @@
             </Path>
         </Border>
         <Label Content="" FontSize="20" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top" Height="37" Width="199"/>
-              
+
+        <Label Content="Datum:" Grid.Row="0" VerticalAlignment="Bottom" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="20,0"/>
+        <TextBox Grid.Row="1" Width="250" HorizontalAlignment="Center" Margin="20,0" Grid.ColumnSpan="2" IsReadOnly="True" Text="{Binding Path=Podaci.Datum}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Orientation="Vertical" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <Label Content="Opis/komentar:" Grid.Row="1" FontSize="20" HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Width="400" Height="200" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" IsReadOnly="True"
+                     Text="{Binding Path=Podaci.TekstFeedbacka}" TextWrapping="Wrap"/>
+            <Button Content="Povratak" Margin="0,50" Width="200" FontSize="20" Command="{Binding Path=NazadKomanda}"/>
+
+        </StackPanel>
+
+
         <Button  Command="{Binding Path=NazadKomanda}" Grid.Row="4" Content="Nazad"  Margin="409,69,208,40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Background="WhiteSmoke"/>
     </Grid>
 </UserControl>

@@ -23,4 +23,12 @@
     <FunkcionalnostiNaKojeSeOdnosi>Pregledi</FunkcionalnostiNaKojeSeOdnosi>
     <Datum>2021-06-13T17:37:12.9109024+02:00</Datum>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>382b6a88-e294-4185-b31f-b74bde16c5ba</IdFeedbacka>
+    <IdOsobe>cd5ab0e3-bf30-4038-a059-74a2cd1f8c4a</IdOsobe>
+    <TekstFeedbacka>Vrh</TekstFeedbacka>
+    <TipFunkcionalnosti>interfejs</TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>Dodavanje anamneze</FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>2021-06-13T19:48:58.8131817+02:00</Datum>
+  </Feedback>
 </ArrayOfFeedback>

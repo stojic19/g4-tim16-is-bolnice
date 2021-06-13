@@ -1,6 +1,7 @@
 ﻿using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
 using Bolnica.View.LekarFolder.NalogLekara;
+using Bolnica.View.LekarView;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -253,6 +254,11 @@ namespace Bolnica.LekarFolder
                     VerifikacijaLekova(sender, e);
                 }
             }
+        }
+
+        private void KreirajFeedback(object sender, RoutedEventArgs e)
+        {
+            PromenaPogleda(new FeedbackLekar());
         }
     }
 }

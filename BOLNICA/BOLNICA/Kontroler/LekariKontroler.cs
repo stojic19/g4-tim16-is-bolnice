@@ -67,5 +67,10 @@ namespace Bolnica.Kontroler
         {
             return lekariServis.PretraziPoId(idLekara).Specijalizacija;
         }
+
+        public String DobaviId(String korisnickoIme)
+        {
+            return lekariServis.PretraziPoId(korisnickoIme).IdOsobe;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bolnica.LekarFolder;
+using Bolnica.ViewModel.LekarViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +17,16 @@ using System.Windows.Shapes;
 
 namespace Bolnica.View.LekarView
 {
-    /// <summary>
-    /// Interaction logic for FeedbackLekar.xaml
-    /// </summary>
     public partial class FeedbackLekar : UserControl
     {
+        private FeedbackLekarViewModel feedbackViewModel;
         public FeedbackLekar()
         {
             InitializeComponent();
+            LekarGlavniProzor.postaviPrethodnu();
+            LekarGlavniProzor.postaviTrenutnu(this);
+            feedbackViewModel = new FeedbackLekarViewModel();
+            this.DataContext = feedbackViewModel;
         }
     }
 }

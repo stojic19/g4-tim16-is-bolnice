@@ -158,12 +158,13 @@
             <MenuItem Header="{p:LocExtension ZahtevOdsustvo}" Height="50" Width="220" FontSize="15" Click="KreiranjeOdsustva"/>
         </Menu>
 
-        <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="250" VerticalAlignment="Top" Width="160" 
+        <Menu Grid.Row="2" Grid.Column="1" MouseLeave="menu_MouseLeave" Name="mojProfil" HorizontalAlignment="Right" Height="300" VerticalAlignment="Top" Width="160" 
               BorderBrush="Black" BorderThickness="1" Visibility="Hidden" VerticalContentAlignment="Center" Margin="7,2" >
             <MenuItem Header="{p:LocExtension nalog}" Height="50"  Width="150" Click="PrikazProfila" FontSize="15"/>
             <MenuItem Header="{p:LocExtension Obavestenja}" Height="50"  Width="150" FontSize="15" Click="PrikazObavestenja"/>
             <MenuItem Header="{p:LocExtension IzmenaNaloga}" Height="50" Width="150" FontSize="15" Click="IzmenaNaloga"/>
             <MenuItem Header="{p:LocExtension IzmenaLozinke}" Height="50" Width="150" FontSize="15" Click="PromenaLozinke"/>
+            <MenuItem Header="Feedback" Height="50" Width="150" FontSize="15" Click="KreirajFeedback"/>
             <MenuItem Header="{p:LocExtension Odjava}" Height="50" Width="150" FontSize="15" Click="Odjava"/>
         </Menu>
 

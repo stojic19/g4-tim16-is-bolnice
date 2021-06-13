@@ -360,6 +360,7 @@
     <Compile Include="ViewModel\AdminViewModel\AdminFeedbackViewModel.cs" />
     <Compile Include="ViewModel\AdminViewModel\UklanjanjeFeedbackaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\BazaLekovaViewModel.cs" />
+    <Compile Include="ViewModel\LekarViewModel\FeedbackLekarViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\InformacijeAnamnezaViewModel.cs" />
     <Compile Include="ViewModel\LekarViewModel\LekarRasporedViewModel.cs" />
     <Compile Include="ViewModel\PacijentViewModel\AlergeniPacijentaViewModel.cs" />
@@ -419,6 +420,9 @@
     </Compile>
     <Compile Include="View\AdminView\UklanjanjeFeedbacka.xaml.cs">
       <DependentUpon>UklanjanjeFeedbacka.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LekarView\FeedbackLekar.xaml.cs">
+      <DependentUpon>FeedbackLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LekarView\LekarGlavniProzor.xaml.cs">
       <DependentUpon>LekarGlavniProzor.xaml</DependentUpon>
@@ -827,6 +831,10 @@
     <Page Include="View\AdminView\UklanjanjeFeedbacka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LekarView\FeedbackLekar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LekarView\LekarGlavniProzor.xaml">
       <Generator>MSBuild:Compile</Generator>
