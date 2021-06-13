@@ -7224,3 +7224,5 @@ D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\Uprav
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikView\UklanjanjeRenoviranja.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikView\UklanjanjeZahtjeva.baml
 D:\ŠESTI SEMESTAR\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikView\UpravnikGlavniProzor.baml
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikView\Feedback\DodavanjeFeedbacka.g.cs
+C:\Users\aleks\Desktop\Faks\SIMS\g4-tim16-is-bolnice\BOLNICA\Bolnica\obj\Debug\View\UpravnikView\Feedback\DodavanjeFeedbacka.baml

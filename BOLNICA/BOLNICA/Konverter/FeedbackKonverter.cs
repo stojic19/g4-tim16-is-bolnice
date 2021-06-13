@@ -12,29 +12,18 @@ namespace Bolnica.Konverter
     {
         public FeedbackDTO FeedbackModelUDTO(Feedback feedback)
         {
-            List<string> tipovi = new List<string>();
-            if(feedback.TipFunkcionalnosti.Count() > 0)
-            foreach (TipFunkcije tipFunkcije in feedback.TipFunkcionalnosti)
-            {
-                tipovi.Add(tipFunkcije.ToString());
-            }
             if (feedback.Datum == null)
                 feedback.Datum = DateTime.Now;
-            return new FeedbackDTO(feedback.IdFeedbacka, feedback.IdOsobe, null, null, feedback.TekstFeedbacka, feedback.Datum);
+
+            return new FeedbackDTO(feedback.IdFeedbacka, feedback.IdOsobe, feedback.TipFunkcionalnosti.ToString(), feedback.FunkcionalnostiNaKojeSeOdnosi, feedback.TekstFeedbacka, feedback.Datum);
         }
         public Feedback FeedbackDTOUModel(FeedbackDTO feedback)
         {
-            List<TipFunkcije> tipovi = new List<TipFunkcije>();
-            if(feedback.TipFunkcionalnosti != null)
-            { 
-                Enum.TryParse(feedback.TipFunkcionalnosti.ToLower(), out TipFunkcije tipFunkcije);
-                tipovi.Add(tipFunkcije);
-            }
-            List<string> funkcije = new List<string>();
-            funkcije.Add(feedback.FunkcionalnostiNaKojeSeOdnosi);
+            Enum.TryParse(feedback.TipFunkcionalnosti.ToLower(), out TipFunkcije tipFunkcije);
+
             if (feedback.Datum == null)
                 feedback.Datum = DateTime.Now;
-            return new Feedback(feedback.IdFeedbacka, feedback.IdOsobe, tipovi, funkcije, feedback.TekstFeedbacka, feedback.Datum);
+            return new Feedback(feedback.IdFeedbacka, feedback.IdOsobe, tipFunkcije, feedback.FunkcionalnostiNaKojeSeOdnosi, feedback.TekstFeedbacka, feedback.Datum);
         }
     }
 }

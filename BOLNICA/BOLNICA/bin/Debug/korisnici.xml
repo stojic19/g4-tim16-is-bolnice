@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfKorisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Korisnik>
     <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
@@ -58,5 +58,11 @@
     <KorisnickoIme>admin</KorisnickoIme>
     <Lozinka>admin</Lozinka>
     <TipKorisnika>ADMIN</TipKorisnika>
+  </Korisnik>
+  <Korisnik>
+    <KorisnickoIme />
+    <Lozinka />
+    <TipKorisnika>PACIJENT</TipKorisnika>
+    <IdOsobe>a0f41051-6adc-4480-8f4c-05b82f69b7cc</IdOsobe>
   </Korisnik>
 </ArrayOfKorisnik>

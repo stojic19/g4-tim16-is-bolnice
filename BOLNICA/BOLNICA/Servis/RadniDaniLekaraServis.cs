@@ -15,8 +15,6 @@ namespace Bolnica.Servis
     {
         LekariServis lekariServis = new LekariServis();
         SmenaServis smenaServis;
-        SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        OperacijeServis operacijeServis = new OperacijeServis();
         RadniDanKonverter radniDanKonverter = new RadniDanKonverter();
         String idLekara;
 

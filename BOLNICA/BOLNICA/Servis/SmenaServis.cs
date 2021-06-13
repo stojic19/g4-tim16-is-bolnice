@@ -142,13 +142,13 @@ namespace Bolnica.Servis
             }
             return novaLista;
         }
-        private List<Termin> DobaviZakazaneTermineZaLekara(string idLekara)
+        private List<Termin> DobaviZakazaneTermineZaLekara()
         {
             return zakazaniTerminiRepozitorijum.PretraziPoLekaru(idLekara);
         }
         private List<Termin> DobaviZakazaneTermineZaLekaraNaRadniDan(RadniDan radniDanStari)
         {
-            List<Termin> termini = DobaviZakazaneTermineZaLekara(idLekara);
+            List<Termin> termini = DobaviZakazaneTermineZaLekara();
             List<Termin> novaLista = new List<Termin>();
             foreach (Termin termin in termini)
             {

@@ -12,12 +12,12 @@ namespace Model
     {
         private string idFeedbacka;
         private string idOsobe;
-        private List<TipFunkcije> tipFunkcionalnosti;
-        private List<string> funkcionalnostiNaKojeSeOdnosi;
+        private TipFunkcije tipFunkcionalnosti;
+        private string funkcionalnostiNaKojeSeOdnosi;
         private string tekstFeedbacka;
         private DateTime datum;
         public Feedback() { }
-        public Feedback(string idFeedbacka, string idOsobe, List<TipFunkcije> tipFunkcionalnosti, List<string> funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka, DateTime datum)
+        public Feedback(string idFeedbacka, string idOsobe, TipFunkcije tipFunkcionalnosti, string funkcionalnostiNaKojeSeOdnosi, string tekstFeedbacka, DateTime datum)
         {
             this.IdFeedbacka = idFeedbacka;
             this.IdOsobe = idOsobe;
@@ -30,8 +30,8 @@ namespace Model
         public string IdFeedbacka { get => idFeedbacka; set => idFeedbacka = value; }
         public string IdOsobe { get => idOsobe; set => idOsobe = value; }
         public string TekstFeedbacka { get => tekstFeedbacka; set => tekstFeedbacka = value; }
-        public List<TipFunkcije> TipFunkcionalnosti { get => tipFunkcionalnosti; set => tipFunkcionalnosti = value; }
-        public List<string> FunkcionalnostiNaKojeSeOdnosi { get => funkcionalnostiNaKojeSeOdnosi; set => funkcionalnostiNaKojeSeOdnosi = value; }
+        public TipFunkcije TipFunkcionalnosti { get => tipFunkcionalnosti; set => tipFunkcionalnosti = value; }
+        public string FunkcionalnostiNaKojeSeOdnosi { get => funkcionalnostiNaKojeSeOdnosi; set => funkcionalnostiNaKojeSeOdnosi = value; }
         public DateTime Datum { get => datum; set => datum = value; }
     }
 }

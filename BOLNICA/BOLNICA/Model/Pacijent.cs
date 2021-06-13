@@ -85,6 +85,7 @@ namespace Model
             Email = email;
             this.vrstaNaloga = vrstaNaloga;
             Lozinka = lozinka;
+            ZdravstveniKarton = new ZdravstveniKarton(KorisnickoIme);
         }
         private string generisiID()
         {

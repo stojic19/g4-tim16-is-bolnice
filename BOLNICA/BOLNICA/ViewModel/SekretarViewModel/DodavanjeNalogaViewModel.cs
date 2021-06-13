@@ -110,6 +110,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             else
             {
                 Podaci.VrstaNaloga = VrsteNaloga.gost;
+                Podaci.KorisnickoIme = Guid.NewGuid().ToString();
             }
             if(Podaci.PolInt == 0)
             {
