@@ -36,9 +36,9 @@ namespace Bolnica
                 instance = new UpravnikGlavniProzor();
             return instance;
         }
-        private UpravnikGlavniProzor()
+        public UpravnikGlavniProzor()
         {
-            InitializeComponent();        
+            InitializeComponent();
             prostoriKontroler.ProvjeriDaLiJeProstorRenoviran();
         }
 
@@ -138,6 +138,15 @@ namespace Bolnica
                 System.Windows.MessageBox.Show(ex.Message, "Error Message");
             }
 
+        }
+
+        private void Feedback_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl usc = null;
+            MainPanel.Children.Clear();
+
+            usc = new DodavanjeFeedbacka();
+            MainPanel.Children.Add(usc);
         }
     }
 }

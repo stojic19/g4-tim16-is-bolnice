@@ -10,6 +10,7 @@
     <FunkcionalnostiNaKojeSeOdnosi>
       <string>Pregledi</string>
     </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
   <Feedback>
     <IdFeedbacka>5b95ea57-a601-420a-8c37-2daf1f274abb</IdFeedbacka>
@@ -21,6 +22,7 @@
     <FunkcionalnostiNaKojeSeOdnosi>
       <string>Moj nalog</string>
     </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
   <Feedback>
     <IdFeedbacka>bb842e84-c254-49d6-a814-74e802378fa1</IdFeedbacka>
@@ -32,6 +34,7 @@
     <FunkcionalnostiNaKojeSeOdnosi>
       <string>Lični profil</string>
     </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
   <Feedback>
     <IdFeedbacka>c15eda4b-674a-4ae6-84e8-7fcc836696f4</IdFeedbacka>
@@ -43,5 +46,28 @@
     <FunkcionalnostiNaKojeSeOdnosi>
       <string>Pomoć</string>
     </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
+  </Feedback>
+  <Feedback>
+    <IdFeedbacka>7796620e-5fbd-4270-89ac-f757103a8a47</IdFeedbacka>
+    <TekstFeedbacka>adadsasd</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Uklanjanje prostora</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
+  </Feedback>
+  <Feedback>
+    <IdFeedbacka>700664c5-9645-4c00-b428-0c7ec56f4ac7</IdFeedbacka>
+    <TekstFeedbacka>Prostori se ne uklanjaju!</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Uklanjanje prostora</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
 </ArrayOfFeedback>

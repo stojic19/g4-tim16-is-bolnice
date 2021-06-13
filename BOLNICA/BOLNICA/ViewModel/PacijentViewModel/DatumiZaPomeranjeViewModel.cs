@@ -89,7 +89,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
                 if (podaciIzmene.Prioritet == 1)
                 {
-                    datumiZaZakazivanje = UcitajDatumePrioritetVreme();
+                    //datumiZaZakazivanje = UcitajDatumePrioritetVreme();
                 }
 
 
@@ -111,13 +111,13 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
 
 
-        private List<TerminDTO> UcitajDatumePrioritetVreme()
+      /*  private List<TerminDTO> UcitajDatumePrioritetVreme()
         {
          
             DateTime pocetakIntervala = StariTermin.Datum.AddDays(-2);
             DateTime krajIntervala = StariTermin.Datum.AddDays(2);
-            return terminKontroler.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
-        }
+            //return terminKontroler.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
+        }*/
         private RelayCommand prikaziTermineKomanda;
 
         public RelayCommand PrikaziTermineKomanda

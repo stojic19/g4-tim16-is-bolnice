@@ -107,7 +107,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 
         private List<TerminDTO> UcitajDatumePrioritetVreme()
         {
-            return terminKontroler.NadjiTermineUIntervalu(datumiUIntervalu[0], datumiUIntervalu[1]);
+            return new List<TerminDTO>(); //terminKontroler.NadjiTermineUIntervalu(datumiUIntervalu[0], datumiUIntervalu[1]);
         }
         private RelayCommand prikaziTermineKomanda;
 

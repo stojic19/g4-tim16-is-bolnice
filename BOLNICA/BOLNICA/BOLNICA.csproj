@@ -394,6 +394,7 @@
     <Compile Include="ViewModel\SekretarViewModel\IzmenaAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\DodavanjeAlergenaViewModel.cs" />
     <Compile Include="ViewModel\SekretarViewModel\UklanjanjeNalogaViewModel.cs" />
+    <Compile Include="ViewModel\UpravnikViewModel\UpravnikFeedbackViewModel.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="Model\Enumi\VrsteOdgovora.cs" />
     <Compile Include="View\AdminView\GlavniProzorAdmin.xaml.cs">
@@ -729,6 +730,9 @@
     </Compile>
     <Compile Include="View\UpravnikView\DodavanjeZahtjeva.xaml.cs">
       <DependentUpon>DodavanjeZahtjeva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpravnikView\Feedback\DodavanjeFeedbacka.xaml.cs">
+      <DependentUpon>DodavanjeFeedbacka.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpravnikView\IzmenaOpreme.xaml.cs">
       <DependentUpon>IzmenaOpreme.xaml</DependentUpon>
@@ -1274,6 +1278,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\UpravnikView\Feedback\DodavanjeFeedbacka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UpravnikView\IzmenaOpreme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1573,6 +1581,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\UpravnikSlike\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\UpravnikSlike\feedback.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

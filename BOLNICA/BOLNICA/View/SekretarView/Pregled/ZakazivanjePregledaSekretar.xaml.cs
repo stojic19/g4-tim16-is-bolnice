@@ -394,7 +394,7 @@ namespace Bolnica.Sekretar.Pregled
                 }
                 else if (prioritet.SelectedIndex == 1)//Prioritet datum
                 {
-                    pomocna = terminKontroler.NadjiTermineUIntervalu(pom, pom1);
+                    //pomocna = terminKontroler.NadjiTermineUIntervalu(pom, pom1);
                     foreach (TerminDTO t in pomocna)
                     {
                         nasao = false;
