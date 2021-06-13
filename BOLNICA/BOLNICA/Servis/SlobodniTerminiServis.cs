@@ -79,7 +79,7 @@ namespace Bolnica.Servis
             return datumServis.SortTerminaPoPocetnomVremenu(termini);
         }
        
-        public List<Termin> DobaviSveSlobodneDatumeZaPomeranje(Termin termin, String idLekara)
+        public List<Termin> DobaviSveSlobodneTermineZaPomeranje(Termin termin, String idLekara)
         {
             List<DateTime> intervalPomeranja = datumServis.PodesiIntervalPomeranjaTermina(termin.Datum);
             List<Termin> datumiUIntervalu = datumServis.NadjiTermineUIntervalu(intervalPomeranja,DobaviSve());

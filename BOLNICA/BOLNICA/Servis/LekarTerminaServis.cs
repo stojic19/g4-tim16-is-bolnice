@@ -15,16 +15,6 @@ namespace Bolnica.Servis
                 termin.Lekar.Specijalizacija == SpecijalizacijeLekara.nema) return true;
             return false;
         }
-        public List<Termin> FiltrirajTerminePoSpecijalizacijiLekara(List<Termin> terminiSvihLekara)
-        {
-            List<Termin> terminiOpstePrakse = new List<Termin>();
-            foreach (Termin termin in terminiSvihLekara)
-            {
-                if (termin.Lekar.Specijalizacija.Equals(SpecijalizacijeLekara.nema))
-                    terminiOpstePrakse.Add(termin);
-            }
-            return terminiOpstePrakse;
-        }
 
         public bool LekariTerminaSuIsti(Termin termin, Termin izabraniTermin)
         {

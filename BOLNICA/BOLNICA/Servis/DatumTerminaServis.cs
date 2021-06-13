@@ -20,7 +20,23 @@ namespace Bolnica.Servis
         {
             return nesrotiraniDatumi.OrderBy(user => user.Datum.Date).ToList();
         }
+        public List<DateTime> PodesiIntervalPomeranjaTermina(DateTime datumTermina)
+        {
+            List<DateTime> intervalPomeranja = new List<DateTime>();
+            intervalPomeranja.Add(datumTermina.AddDays(-2));
+            intervalPomeranja.Add(datumTermina.AddDays(2));
+            return intervalPomeranja;
+        }
+        public bool ProveriMogucnostPomeranjaTermina(Termin terminZaPomeranje)
+        {
+            if (!TerminJeUBuducnosti(terminZaPomeranje.Datum)) return false;
 
+            else if (TerminJeSutra(terminZaPomeranje.Datum))
+            {
+                if (!ProveriMogucnostPomeranjaVreme(terminZaPomeranje.PocetnoVreme)) return false;
+            }
+            return true;
+        }
         public bool ProveriMogucnostPomeranjaVreme(String vreme)
         {
             DateTime vremePregleda = KonverzijaPocetnogVremena(vreme);
@@ -29,7 +45,27 @@ namespace Bolnica.Servis
             else if (!SatPregledaJeJednakSadasnjemSatu(vremePregleda) && !MinutPregledaJeKasnijiOdSadasnjeg(vremePregleda)) return false;
             return true;
         }
-
+        public bool DatumPregledaJeKasnijiOdPocetkaIntervala(Termin termin, DateTime pocetakIntervala)
+        {
+            if (DateTime.Compare(termin.Datum, pocetakIntervala) >= 0) return true;
+            return false;
+        }
+        public bool DatumPregledaJeRanijiOdKrajaIntervala(Termin termin, DateTime krajIntervala)
+        {
+            if (DateTime.Compare(termin.Datum, krajIntervala) <= 0) return true;
+            return false;
+        }
+        public List<Termin> NadjiTermineUIntervalu(List<DateTime> interval, List<Termin> sviTermini)
+        {
+            List<Termin> terminiUIntervalu = new List<Termin>();
+            foreach (Termin termin in sviTermini)
+            {
+                if (DatumPregledaJeKasnijiOdPocetkaIntervala(termin, interval[0]) &&
+                    DatumPregledaJeRanijiOdKrajaIntervala(termin, interval[1]))
+                    terminiUIntervalu.Add(termin);
+            }
+            return UkloniDupleDatumeTermina(SortTerminaPoDatumu(terminiUIntervalu));
+        }
         public DateTime KonverzijaPocetnogVremena(String vremePregleda)
         {
             return DateTime.ParseExact(vremePregleda, "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
@@ -65,34 +101,13 @@ namespace Bolnica.Servis
             if (DateTime.Compare(DateTime.Now, datumTermina) < 0)
                 return true;
             return false;
-        }
-        public bool ProveriMogucnostPomeranjaTermina(Termin terminZaPomeranje)
+        }       
+        public bool DatumiTerminaSuIsti(DateTime datumTermina, DateTime datumIzabranog)
         {
-            if (!TerminJeUBuducnosti(terminZaPomeranje.Datum)) return false;
-
-            else if (TerminJeDanas(terminZaPomeranje))
-            {
-                if (!ProveriMogucnostPomeranjaVreme(terminZaPomeranje.PocetnoVreme)) return false;
-            }
-            return true;
+            if (DateTime.Compare(datumTermina.Date, datumIzabranog.Date) == 0) return true;
+            return false;
         }
        
-        public bool DatumiTerminaSuIsti(Termin termin, Termin izabraniTermin)
-        {
-            if (DateTime.Compare(termin.Datum.Date, izabraniTermin.Datum.Date) == 0) return true;
-            return false;
-        }
-        public bool DatumPregledaJeKasnijiOdPocetkaIntervala(Termin termin, DateTime pocetakIntervala)
-        {
-            if (DateTime.Compare(termin.Datum, pocetakIntervala) >= 0) return true;
-            return false;
-        }
-        public bool DatumPregledaJeRanijiOdKrajaIntervala(Termin termin, DateTime krajIntervala)
-        {
-            if (DateTime.Compare(termin.Datum, krajIntervala) <= 0) return true;
-            return false;
-        }
-
         public List<Termin> UkloniDupleDatumeTermina(List<Termin> dupliTermini)
         {
             List<Termin> jedinstveniTermini = new List<Termin>();
@@ -101,54 +116,18 @@ namespace Bolnica.Servis
             return jedinstveniTermini;
         }
 
-        public List<Termin> ObrisiDatumeTerminaIzProslosti(List<Termin> sviTermini)
-        {
-            List<Termin> terminiUBuducnosti = new List<Termin>();
-            foreach (Termin termin in sviTermini)
-            {
-                if (!TerminJeUProslosti(termin.Datum)) terminiUBuducnosti.Add(termin);
-            }
-            return terminiUBuducnosti;
-        }
-
-        public bool ProveriZaOtkazivanje(DateTime datumTerminaZaOtkazivanje)
+        public bool ProveriDatumZaOtkazivanje(DateTime datumTerminaZaOtkazivanje)
         {
             if (DateTime.Compare(datumTerminaZaOtkazivanje, DateTime.Now) <= 0) return false;
             return true;
         }
 
-        public bool TerminJeUProslosti(DateTime datumTermina)
+        private bool TerminJeSutra(DateTime datumTermina)
         {
-            if (DateTime.Compare(datumTermina, DateTime.Now.AddDays(1)) > 0) return false;
-            return true;
-        }
-
-        private bool TerminJeDanas(Termin termin)
-        {
-            if (DateTime.Compare(termin.Datum.Date, DateTime.Now.AddDays(1).Date) == 0) return true;
+            if (DateTime.Compare(datumTermina.Date, DateTime.Now.AddDays(1).Date) == 0) return true;
             return false;
         }
 
-        public List<Termin> NadjiTermineUIntervalu(List<DateTime> interval,List<Termin> sviTermini)
-        {
-            List<Termin> terminiUIntervalu = new List<Termin>();
-            foreach (Termin termin in sviTermini)
-            {
-                if (DatumPregledaJeKasnijiOdPocetkaIntervala(termin, interval[0]) &&
-                    DatumPregledaJeRanijiOdKrajaIntervala(termin, interval[1]))
-                    terminiUIntervalu.Add(termin);
-            }
-            return ObrisiDatumeTerminaIzProslosti(SortTerminaPoDatumu(terminiUIntervalu));
-        }
 
-        public List<DateTime> PodesiIntervalPomeranjaTermina(DateTime datumTermina)
-        {
-            List<DateTime> intervalPomeranja = new List<DateTime>();
-            intervalPomeranja.Add(datumTermina.AddDays(-2));
-            intervalPomeranja.Add(datumTermina.AddDays(2));
-            return intervalPomeranja;
-        }
-
-      
     }
 }

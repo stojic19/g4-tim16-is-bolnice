@@ -62,12 +62,12 @@ namespace Bolnica.Izvestaj.Pacijent
             ukupnoLekova.AutoLayout = true;
             prvaStranica.Elements.Add(ukupnoLekova);
 
-            /////drugi grafik
-            ///
+            //drugi grafik
+          
             Chart odnosKolicina = new Chart(-30, 430, 600, 300);
             PlotArea plotArea2 = odnosKolicina.PlotAreas.Add(50, 50, 500, 300);
-            Title tTitle = new Title("Odnos ukupne kolicine propisanih lekova");
-            odnosKolicina.HeaderTitles.Add(tTitle);
+            Title drugiNaslov = new Title("Odnos ukupne kolicine propisanih lekova");
+            odnosKolicina.HeaderTitles.Add(drugiNaslov);
 
             AutoGradient[] autoGradients = DobaviBojeGrafika();
 
@@ -102,22 +102,13 @@ namespace Bolnica.Izvestaj.Pacijent
             prvaStranica.Elements.Add(odnosKolicina);
 
 
-            //TRECI GRAFIK
-            
-
-            Page page2 = new Page();
-            document.Pages.Add(page2);
-
-            // Create a chart
-            Chart chart3 = new Chart(0, 0, 500, 300);
-            // Add a plot area to the chart
-            PlotArea plotArea22 = chart3.PlotAreas.Add(50, 50, 500, 300);
-
-            // Create header titles and add it to the chart
+            //treci grafik
+            Page drugaStranica = new Page();
+            document.Pages.Add(drugaStranica);
+            Chart treciGrafik = new Chart(0, 0, 500, 300);
+            PlotArea plotArea22 = treciGrafik.PlotAreas.Add(50, 50, 500, 300);
             Title title11 = new Title("Dnevna kolicina propisanih lekova");
-            chart3.HeaderTitles.Add(title11);
-
-            // Create a indexed stacked column series elements and add values to it
+            treciGrafik.HeaderTitles.Add(title11);
             IndexedStackedColumnSeriesElement seriesElement11 = new IndexedStackedColumnSeriesElement("Lek");
            
             for(int i = 0; i < sveTerapije.Count;i++)
@@ -126,20 +117,10 @@ namespace Bolnica.Izvestaj.Pacijent
                 Console.WriteLine("kolicina  " + sveKolicine[i]);
             }
 
-            // Create autogradient and assign it to series
             seriesElement11.Color = new AutoGradient(90f, CmykColor.LightBlue, CmykColor.Lavender);
-           
-
-            // Create a Indexed Stacked Column Series
             IndexedStackedColumnSeries columnSeries = new IndexedStackedColumnSeries();
-            // Add indexed stacked column series elements to the Indexed Stacked Column Series
             columnSeries.Add(seriesElement11);
-            
-           
-            // Add series to the plot area
             plotArea22.Series.Add(columnSeries);
-
-            // Create a title and add it to the yaxis
             Title lTitle = new Title("Kolicina lekova");
             columnSeries.YAxis.Titles.Add(lTitle);
             for (int i = 0; i < sveTerapije.Count; i++)
@@ -147,59 +128,54 @@ namespace Bolnica.Izvestaj.Pacijent
                 columnSeries.XAxis.Labels.Add(new IndexedXAxisLabel(sviLekovi[i], i));
             }
 
-            page2.Elements.Add(chart3);
+            drugaStranica.Elements.Add(treciGrafik);
+            //tabela
+            Page trecaStranica = new Page();
+            document.Pages.Add(trecaStranica);
 
+            Table2 tabela = new Table2(-30, 0,700, 800);
+            tabela.CellDefault.Border.Color = RgbColor.LightBlue;
+            tabela.CellDefault.Border.LineStyle = LineStyle.Solid;
+            tabela.CellDefault.Padding.Value = 3.0f;
 
-            ///////////////////////////////////TABELA
-            // Create a Page and add it to the document 
-            Page page = new Page();
-            document.Pages.Add(page);
+            tabela.Columns.Add(80);
+            tabela.Columns.Add(80);
+            tabela.Columns.Add(80);
+            tabela.Columns.Add(80);
+            tabela.Columns.Add(80);
+            tabela.Columns.Add(80);
 
-            Table2 table = new Table2(-30, 0,700, 800);
-            table.CellDefault.Border.Color = RgbColor.LightBlue;
-            table.CellDefault.Border.LineStyle = LineStyle.Solid;
-            table.CellDefault.Padding.Value = 3.0f;
-
-            // Add columns to the table
-            table.Columns.Add(80);
-            table.Columns.Add(80);
-            table.Columns.Add(80);
-            table.Columns.Add(80);
-            table.Columns.Add(80);
-            table.Columns.Add(80);
-            // The first row is used as a table heading
-            Row2 row1 = table.Rows.Add(20, Font.HelveticaBold, 14, RgbColor.Black,
+            Row2 naslovTabele = tabela.Rows.Add(20, Font.HelveticaBold, 14, RgbColor.Black,
             RgbColor.Gray);
-            row1.CellDefault.Align = TextAlign.Center;
-            row1.CellDefault.VAlign = VAlign.Center;
-            row1.Cells.Add("Terapije "+ interval[0].Date.ToString("dd.MM.yyyy.") + " - " + interval[1].Date.ToString("dd.MM.yyyy."), 6);
+            naslovTabele.CellDefault.Align = TextAlign.Center;
+            naslovTabele.CellDefault.VAlign = VAlign.Center;
+            naslovTabele.Cells.Add("Terapije "+ interval[0].Date.ToString("dd.MM.yyyy.") + " - " + interval[1].Date.ToString("dd.MM.yyyy."), 6);
 
-            // The second row is the column headings
-            Row2 row2 = table.Rows.Add(Font.HelveticaBoldOblique, 12);
-            row2.CellDefault.Align = TextAlign.Center;
+            Row2 sadrzajZaglavlja = tabela.Rows.Add(Font.HelveticaBoldOblique, 12);
+            sadrzajZaglavlja.CellDefault.Align = TextAlign.Center;
             
-            row2.Cells.Add("Naziv");
-            row2.Cells.Add("Jacina");
-            row2.Cells.Add("Kolicina");
-            row2.Cells.Add("Satnica");
-            row2.Cells.Add("Pocetak");
-            row2.Cells.Add("Kraj");
+            sadrzajZaglavlja.Cells.Add("Naziv");
+            sadrzajZaglavlja.Cells.Add("Jacina");
+            sadrzajZaglavlja.Cells.Add("Kolicina");
+            sadrzajZaglavlja.Cells.Add("Satnica");
+            sadrzajZaglavlja.Cells.Add("Pocetak");
+            sadrzajZaglavlja.Cells.Add("Kraj");
 
-            Row2 row3;
+            Row2 sadrzajTabele;
             
             for (int i=0; i < sveTerapije.Count; i++)
             {
-                row3 =table.Rows.Add(30);
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].Lek.NazivLeka, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].Lek.Jacina, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].Kolicina.ToString(), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].Satnica, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].PocetakTerapije.ToString("dd/MM//yyyy"), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
-                row3.Cells.Add(new FormattedTextArea(sveTerapije[i].KrajTerapije.ToString("dd/MM/yyyy"), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele =tabela.Rows.Add(30);
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].Lek.NazivLeka, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].Lek.Jacina, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].Kolicina.ToString(), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].Satnica, 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].PocetakTerapije.ToString("dd/MM//yyyy"), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
+                sadrzajTabele.Cells.Add(new FormattedTextArea(sveTerapije[i].KrajTerapije.ToString("dd/MM/yyyy"), 0, 0, 140, 50, FontFamily.Helvetica, 12, false));
               
             }
 
-            page.Elements.Add(table);
+            trecaStranica.Elements.Add(tabela);
 
             string nazivIzvestaja = "IzvestajiPacijent/NedeljniIzvestaj" + DateTime.Now.ToString("dd.MM.yyyy.HH.mm") + ".pdf";
             document.Draw(nazivIzvestaja);
@@ -217,24 +193,24 @@ namespace Bolnica.Izvestaj.Pacijent
 
         private AutoGradient[] DobaviBojeGrafika()
         {
-            AutoGradient[] autoGradients = new AutoGradient[16];
-            autoGradients[0] = (new AutoGradient(90f, CmykColor.Red, CmykColor.DeepPink));
-            autoGradients[1] = (new AutoGradient(90f, CmykColor.Green, CmykColor.Lavender));
-            autoGradients[2] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkMagenta));
-            autoGradients[3] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Beige));
-            autoGradients[4] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkTurquoise));
-            autoGradients[5] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Chocolate));
-            autoGradients[6] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.AliceBlue));
-            autoGradients[7] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Azure));
-            autoGradients[8] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.BlanchedAlmond));
-            autoGradients[9] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkOrange));
-            autoGradients[10] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkMagenta));
-            autoGradients[11] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DeepSkyBlue));
-            autoGradients[12] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DimGray));
-            autoGradients[13] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.GoldenRod));
-            autoGradients[14] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Gainsboro));
-            autoGradients[15] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Gold));
-            return autoGradients;
+            AutoGradient[] bojeGrafika = new AutoGradient[16];
+            bojeGrafika[0] = (new AutoGradient(90f, CmykColor.Red, CmykColor.DeepPink));
+            bojeGrafika[1] = (new AutoGradient(90f, CmykColor.Green, CmykColor.Lavender));
+            bojeGrafika[2] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkMagenta));
+            bojeGrafika[3] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Beige));
+            bojeGrafika[4] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkTurquoise));
+            bojeGrafika[5] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Chocolate));
+            bojeGrafika[6] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.AliceBlue));
+            bojeGrafika[7] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Azure));
+            bojeGrafika[8] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.BlanchedAlmond));
+            bojeGrafika[9] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkOrange));
+            bojeGrafika[10] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DarkMagenta));
+            bojeGrafika[11] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DeepSkyBlue));
+            bojeGrafika[12] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.DimGray));
+            bojeGrafika[13] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.GoldenRod));
+            bojeGrafika[14] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Gainsboro));
+            bojeGrafika[15] = (new AutoGradient(90f, CmykColor.Blue, CmykColor.Gold));
+            return bojeGrafika;
         }
     }
 
