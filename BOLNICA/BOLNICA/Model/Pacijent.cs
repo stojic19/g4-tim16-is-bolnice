@@ -66,27 +66,7 @@ namespace Model
             ZloupotrebioSistem = 0;
             Blokiran = false;
         }
-        public Pacijent(string korisnickoIme, string ime, string prezime, DateTime datum, Pol pol, string jmbg, string adresa, string telefon, string email, VrsteNaloga vrstaNaloga)
-        {
-            this.IdOsobe = generisiID();
-            if (korisnickoIme.Length == 0)
-                this.KorisnickoIme = generisiID();
-            else
-                this.KorisnickoIme = korisnickoIme;
-            this.Ime = ime;
-            this.Prezime = prezime;
-            this.DatumRodjenja = datum;
-            this.Pol = pol;
-            this.AdresaStanovanja = adresa;
-            this.Jmbg = jmbg;
-            this.KontaktTelefon = telefon;
-            this.Email = email;
-            this.VrstaNaloga = vrstaNaloga;
-            this.Lozinka = "";
-            this.ZdravstveniKarton = new ZdravstveniKarton(korisnickoIme);
-            ZloupotrebioSistem = 0;
-            Blokiran = false;
-        }
+        
 
         public Pacijent(string idOsobe, string korisnickoIme, string ime, string prezime, DateTime datumRodjenja, Pol pol, string jmbg, string adresaStanovanja, string kontaktTelefon, string email, VrsteNaloga vrstaNaloga, string lozinka)
         {
@@ -105,27 +85,6 @@ namespace Model
             Email = email;
             this.vrstaNaloga = vrstaNaloga;
             Lozinka = lozinka;
-        }
-
-        public String DobaviPolTekst()
-        {
-
-            if (Pol == Pol.zenski)
-            {
-                return "Ž";
-            }
-            return "M";
-
-        }
-
-        public String DobaviVrstuNalogaTekst()
-        {
-
-            if (VrstaNaloga == VrsteNaloga.gost)
-            {
-                return "Gost";
-            }
-            return "Regularan";
         }
         private string generisiID()
         {

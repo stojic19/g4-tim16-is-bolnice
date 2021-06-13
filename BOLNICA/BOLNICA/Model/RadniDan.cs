@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    public class RadniDan : INotifyPropertyChanged
+    public class RadniDan 
     {
         private String idRadnogDana;
         private DateTime pocetakSmene;
@@ -59,13 +59,6 @@ namespace Bolnica.Model
                 krajSmene = value;
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
+       
     }
 }

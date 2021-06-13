@@ -70,4 +70,16 @@
     </FunkcionalnostiNaKojeSeOdnosi>
     <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>69f6beda-525e-4997-9917-7e143e126ac6</IdFeedbacka>
+    <IdOsobe>magdalena</IdOsobe>
+    <TekstFeedbacka>Ne radi.</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Lični profil</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>2021-06-13T14:44:41.1170905+02:00</Datum>
+  </Feedback>
 </ArrayOfFeedback>

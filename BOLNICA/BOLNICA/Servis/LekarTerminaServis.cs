@@ -16,9 +16,9 @@ namespace Bolnica.Servis
             return false;
         }
 
-        public bool LekariTerminaSuIsti(Termin termin, Termin izabraniTermin)
+        public bool LekariTerminaSuIsti(String lekarTermina, String izabraniLekar)
         {
-            if (izabraniTermin.Lekar.KorisnickoIme.Equals(termin.Lekar.KorisnickoIme)) return true;
+            if (lekarTermina.Equals(izabraniLekar)) return true;
             return false;
         }
 

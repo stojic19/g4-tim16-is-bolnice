@@ -73,7 +73,7 @@ namespace Bolnica.Servis
             foreach (Termin termin in DobaviSve())
             {
                 if (datumServis.DatumiTerminaSuIsti(termin.Datum, izabraniTermin.Datum) &&
-                 lekarTerminaServis.LekariTerminaSuIsti(termin, izabraniTermin))
+                 lekarTerminaServis.LekariTerminaSuIsti(termin.Lekar.KorisnickoIme, izabraniTermin.Lekar.KorisnickoIme))
                     termini.Add(termin);
             }
             return datumServis.SortTerminaPoPocetnomVremenu(termini);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    public class Odsustvo : INotifyPropertyChanged
+    public class Odsustvo 
     {
         private String idOdsustva;
         private DateTime pocetakOdsustva;
@@ -59,13 +59,6 @@ namespace Bolnica.Model
                 krajOdsustva = value;
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
+        
     }
 }

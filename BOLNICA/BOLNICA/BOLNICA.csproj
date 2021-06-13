@@ -266,7 +266,7 @@
     <Compile Include="Kontroler\RenoviranjeKontroler.cs" />
     <Compile Include="Kontroler\SekretarKontroler.cs" />
     <Compile Include="Kontroler\SlobodniTerminiKontroler.cs" />
-    <Compile Include="Kontroler\TerminKontroler.cs" />
+    <Compile Include="Kontroler\ZakazaniTerminiKontroler.cs" />
     <Compile Include="Kontroler\ZahtjeviKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />
     <Compile Include="Konverter\AlergeniKonverter.cs" />
@@ -555,7 +555,6 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Anketa.cs" />
-    <Compile Include="Model\Enumi\OcenaPitanja.cs" />
     <Compile Include="Model\Enumi\TipoviUputa.cs" />
     <Compile Include="Model\Oprema.cs" />
     <Compile Include="Model\Pacijent.cs" />

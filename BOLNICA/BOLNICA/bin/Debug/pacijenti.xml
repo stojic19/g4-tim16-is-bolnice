@@ -599,8 +599,8 @@
             <Terapija>
               <IDTerapije>4bd46eec-5db3-4dfa-9c20-40a6fc0ecf07</IDTerapije>
               <IDAnamneze>663c1ab7-4e0b-42b9-b71a-02247b1216c0</IDAnamneze>
-              <PocetakTerapije>2021-06-01T00:00:00</PocetakTerapije>
-              <KrajTerapije>2021-06-04T00:00:00</KrajTerapije>
+              <PocetakTerapije>2021-06-10T00:00:00</PocetakTerapije>
+              <KrajTerapije>2021-06-18T00:00:00</KrajTerapije>
               <Kolicina>3</Kolicina>
               <Satnica>8</Satnica>
               <UputsvoKonzumiranja>Pij</UputsvoKonzumiranja>
@@ -664,7 +664,7 @@
               <IDTerapije>818976bd-6d30-4d9b-b4a9-600a76f98594</IDTerapije>
               <IDAnamneze>9532c876-eb14-4f6f-9601-94689467b992</IDAnamneze>
               <PocetakTerapije>2021-06-07T00:00:00</PocetakTerapije>
-              <KrajTerapije>2021-06-15T00:00:00</KrajTerapije>
+              <KrajTerapije>2021-06-17T00:00:00</KrajTerapije>
               <Kolicina>1</Kolicina>
               <Satnica>24</Satnica>
               <UputsvoKonzumiranja />

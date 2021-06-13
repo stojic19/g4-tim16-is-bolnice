@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace Model
 {
-    public class Obavestenje : INotifyPropertyChanged
+    public class Obavestenje 
     {
         private string idObavestenja;
         private string naslov;
@@ -44,18 +44,6 @@ namespace Model
         }
         public Obavestenje() { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-        public string[] DobaviPrimaoce()
-        {
-            return IdPrimaoca.Split(' ');
-        }
         private static string generisiID()
         {
             return Guid.NewGuid().ToString();

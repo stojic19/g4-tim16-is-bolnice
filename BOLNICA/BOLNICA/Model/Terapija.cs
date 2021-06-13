@@ -15,17 +15,6 @@ namespace Model
         private Lek preporucenLek;
         public Terapija() { }
 
-        public Terapija(string iDTerapije, DateTime pocetakTerapije, DateTime krajTerapije, string kolicina, string satnica, string uputsvoKonzumiranja, Lek preporucenLek)
-        {
-            IDTerapije = iDTerapije;
-            PocetakTerapije = pocetakTerapije;
-            KrajTerapije = krajTerapije;
-            Kolicina = kolicina;
-            Satnica = satnica;
-            UputsvoKonzumiranja = uputsvoKonzumiranja;
-            PreporucenLek = preporucenLek;
-        }
-
         public Terapija(string iDTerapije, string iDAnamneze, DateTime pocetakTerapije, DateTime krajTerapije, string kolicina, string satnica, string uputsvoKonzumiranja, Lek preporucenLek)
         {
             IDTerapije = iDTerapije;
