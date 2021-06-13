@@ -15,7 +15,7 @@ namespace Bolnica.ViewModel
     {
         private String korisnickoIme;
         private ObservableCollection<TerminDTO> zakazaniTerminiPacijenta;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         private TerminDTO selektovaniTermin;
         private String poruka;

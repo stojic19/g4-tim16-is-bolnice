@@ -27,7 +27,7 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class TerminiPregledaSekretar : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         public static ObservableCollection<TerminDTO> TerminiPregleda { get; set; }
         public TerminiPregledaSekretar()
         {

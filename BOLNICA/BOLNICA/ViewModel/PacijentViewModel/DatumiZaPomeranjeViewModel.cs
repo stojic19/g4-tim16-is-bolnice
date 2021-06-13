@@ -13,10 +13,11 @@ namespace Bolnica.ViewModel.PacijentViewModel
     public class DatumiZaPomeranjeViewModel : ViewModel
     {
         private ObservableCollection<TerminDTO> slobodniDatumi;
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         private TerminDTO selektovaniTermin;
         private TerminDTO stariTermin = new TerminDTO();
         private String poruka;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private ZakazivanjePregledaDTO podaciIzmene;
         public DatumiZaPomeranjeViewModel(TerminDTO izabraniTermin, ZakazivanjePregledaDTO podaci)
         {
@@ -79,7 +80,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
             if (PodaciIzmene.IzabraniLekar == null) return;
 
             String idLekara = PodaciIzmene.IzabraniLekar.KorisnickoIme;
-            List<TerminDTO> datumiZaZakazivanje = terminKontroler.DobaviSveSlobodneDatumeZaPomeranje(StariTermin, idLekara);
+            List<TerminDTO> datumiZaZakazivanje = slobodniTerminiKontroler.DobaviSveSlobodneDatumeZaPomeranje(StariTermin, idLekara);
             if (datumiZaZakazivanje.Count != 0)
             {
                 UcitajUKolekciju(datumiZaZakazivanje);
@@ -111,13 +112,15 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
 
 
-      /*  private List<TerminDTO> UcitajDatumePrioritetVreme()
+        private List<TerminDTO> UcitajDatumePrioritetVreme()
         {
-         
+            List<DateTime> interval = new List<DateTime>();
             DateTime pocetakIntervala = StariTermin.Datum.AddDays(-2);
             DateTime krajIntervala = StariTermin.Datum.AddDays(2);
-            //return terminKontroler.NadjiTermineUIntervalu(pocetakIntervala, krajIntervala);
-        }*/
+            interval.Add(pocetakIntervala);
+            interval.Add(krajIntervala);
+            return slobodniTerminiKontroler.NadjiTermineUIntervalu(interval);
+        }
         private RelayCommand prikaziTermineKomanda;
 
         public RelayCommand PrikaziTermineKomanda

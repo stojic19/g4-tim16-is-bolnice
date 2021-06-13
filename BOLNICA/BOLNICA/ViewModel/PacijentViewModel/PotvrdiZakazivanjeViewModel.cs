@@ -13,7 +13,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
     {
         private TerminDTO izabraniTermin;
         private ZakazivanjePregledaDTO podaciZaPrikaz;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         public PotvrdiZakazivanjeViewModel(TerminDTO izabraniTermin, ZakazivanjePregledaDTO podaciZaPrikaz)
         {
             this.IzabraniTermin = izabraniTermin;

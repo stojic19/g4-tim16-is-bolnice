@@ -11,7 +11,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
 {
     public class PotvrdiOtkazivanjeViewModel: ViewModel
     {
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private TerminDTO selektovaniTermin;
         private String korisnickoIme;
         public PotvrdiOtkazivanjeViewModel(TerminDTO izabranZaOtkazivanje)

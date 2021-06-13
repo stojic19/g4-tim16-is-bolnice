@@ -14,7 +14,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private TerminDTO stariTermin = new TerminDTO();
         private ZakazivanjePregledaDTO podaci = new ZakazivanjePregledaDTO();
         private TerminDTO noviTermin;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
 
         public PotvrdiPomeranjeViewModel(List<TerminDTO> terminiZaIzmenu, ZakazivanjePregledaDTO podaci)
         {

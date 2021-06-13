@@ -12,7 +12,8 @@ namespace Bolnica.LekarFolder
     public partial class ZakazivanjeIzUputa : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
 
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
@@ -152,7 +153,7 @@ namespace Bolnica.LekarFolder
 
             TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, null, izabranaVrstaTermina);
 
-            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista, izabranoTrajanje))
+            foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista, izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
                 Console.WriteLine(t.Vreme);

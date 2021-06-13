@@ -24,13 +24,11 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjePregledaTerminiSekretar.xaml
-    /// </summary>
     public partial class ZakazivanjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
-        TerminKontroler terminKontroler = new TerminKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
 
         private static String IdPacijenta;
         public static ObservableCollection<TerminDTO> SlobodniDatumi { get; set; }
@@ -78,7 +76,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             bool postoji = false;
             TerminDTO termin = new TerminDTO();
-            foreach (TerminDTO t in terminKontroler.DobaviSveSlobodneTermine())
+            foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((TerminDTO)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

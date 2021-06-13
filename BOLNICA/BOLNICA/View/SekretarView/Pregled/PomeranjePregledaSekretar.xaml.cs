@@ -22,13 +22,11 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
-    /// <summary>
-    /// Interaction logic for PomeranjePregledaSekretar.xaml
-    /// </summary>
     public partial class PomeranjePregledaSekretar : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private static TerminDTO termin;
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         public PomeranjePregledaSekretar(TerminDTO t)
         {
             datumPocetak.DisplayDateStart = DateTime.Today;
@@ -57,7 +55,7 @@ namespace Bolnica.Sekretar.Pregled
 
             datumi.Clear();
 
-            pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), termin.Lekar.KorisnickoIme);
+            pomocna = slobodniTerminiKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), termin.Lekar.KorisnickoIme);
             foreach (TerminDTO t in pomocna)
             {
                 nasao = false;
@@ -121,7 +119,7 @@ namespace Bolnica.Sekretar.Pregled
 
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
-             return terminKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
+             return slobodniTerminiKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

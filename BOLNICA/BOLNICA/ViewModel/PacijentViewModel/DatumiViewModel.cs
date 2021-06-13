@@ -13,7 +13,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
     public class DatumiViewModel: ViewModel
     {
         private ObservableCollection<TerminDTO> slobodniDatumi;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         private List<DateTime> datumiUIntervalu = new List<DateTime>();
         private ZakazivanjePregledaDTO podaciZakazivanja;
         private TerminDTO selektovaniTermin;
@@ -60,7 +61,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         private void ProveriPrioritet()
         {
-            List<TerminDTO> datumiZaZakazivanje = terminKontroler.DobaviSlobodneTermineZaZakazivanje(datumiUIntervalu, podaciZakazivanja.IzabraniLekar.KorisnickoIme);
+            List<TerminDTO> datumiZaZakazivanje = slobodniTerminiKontroler.DobaviSlobodneTermineZaZakazivanje(datumiUIntervalu, podaciZakazivanja.IzabraniLekar.KorisnickoIme);
             if (datumiZaZakazivanje.Count != 0)
             {
                 UcitajUKolekciju(datumiZaZakazivanje);
@@ -102,12 +103,12 @@ namespace Bolnica.ViewModel.PacijentViewModel
             List<DateTime> intervalDatuma = new List<DateTime>();
             intervalDatuma.Add(datumOd);
             intervalDatuma.Add(datumDo);
-            return terminKontroler.DobaviSlobodneTermineZaZakazivanje(intervalDatuma, podaciZakazivanja.IzabraniLekar.KorisnickoIme);
+            return slobodniTerminiKontroler.DobaviSlobodneTermineZaZakazivanje(intervalDatuma, podaciZakazivanja.IzabraniLekar.KorisnickoIme);
         }
 
         private List<TerminDTO> UcitajDatumePrioritetVreme()
         {
-            return new List<TerminDTO>(); //terminKontroler.NadjiTermineUIntervalu(datumiUIntervalu[0], datumiUIntervalu[1]);
+            return slobodniTerminiKontroler.NadjiTermineUIntervalu(datumiUIntervalu);
         }
         private RelayCommand prikaziTermineKomanda;
 

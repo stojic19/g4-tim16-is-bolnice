@@ -1519,4 +1519,27 @@ vremenski interval između doza:
     <JeProcitano>false</JeProcitano>
     <IdPrimaoca>magdalena</IdPrimaoca>
   </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>9818a360-6c1b-485d-a82e-8f8a7308286c</IdObavestenja>
+    <Naslov>Obaveštenje o zakazanom pregledu</Naslov>
+    <Tekst>Termin pregleda kod lekara 
+ Jelena Hrnjak 
+ biće održan 18/06/2021 u 18:30h. </Tekst>
+    <Datum>2021-06-16T18:30:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
+  <Obavestenje>
+    <IdObavestenja>0e184910-d4b9-412c-aae0-2eac7cc653bc</IdObavestenja>
+    <Naslov>Obaveštenje o pomerenom pregledu</Naslov>
+    <Tekst>Upravo ste pomerili pregled 
+kod lekara Jelena Hrnjak
+18/06/2021 u 18:30h. 
+Novi pregled je zakazan kod
+lekara Jelena Hrnjak
+18/06/2021 u 17:30 h.</Tekst>
+    <Datum>2021-06-13T14:20:26.6257111+02:00</Datum>
+    <JeProcitano>false</JeProcitano>
+    <IdPrimaoca>magdalena</IdPrimaoca>
+  </Obavestenje>
 </ArrayOfObavestenje>

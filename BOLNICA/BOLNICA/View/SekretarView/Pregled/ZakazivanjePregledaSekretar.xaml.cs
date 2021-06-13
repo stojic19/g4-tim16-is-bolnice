@@ -24,15 +24,13 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace Bolnica.Sekretar.Pregled
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjePregledaSekretar.xaml
-    /// </summary>
     public partial class ZakazivanjePregledaSekretar : System.Windows.Controls.UserControl
     {
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
 
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         public static ObservableCollection<PacijentDTO> SviPacijenti { get; set; }
         public static ObservableCollection<LekarDTO> SviLekari { get; set; }
         CancellationTokenSource cts;
@@ -334,7 +332,7 @@ namespace Bolnica.Sekretar.Pregled
 
                 datumi.Clear();
 
-                pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
+                pomocna = slobodniTerminiKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
             foreach (TerminDTO t in pomocna)
                 {
                     nasao = false;
@@ -359,7 +357,7 @@ namespace Bolnica.Sekretar.Pregled
                     DateTime tr1 = pom.AddDays(-7);
                     DateTime tr2 = pom.AddDays(7);
 
-                    pomocna = terminKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
+                    pomocna = slobodniTerminiKontroler.PretraziPoLekaruUIntervalu(NadjiDatumUIntervalu((DateTime)datumPocetak.SelectedDate, (DateTime)datumKraj.SelectedDate), idLekara);
 
                     foreach (TerminDTO t in pomocna)
                     {
@@ -463,7 +461,7 @@ namespace Bolnica.Sekretar.Pregled
 
         public List<Termin> NadjiDatumUIntervalu(DateTime datumOd, DateTime datumDo)
         {
-            return terminKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
+            return slobodniTerminiKontroler.NadjiTermineUIntervaluSekretar(datumOd, datumDo);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -26,8 +26,8 @@ namespace Bolnica.Sekretar.Pregled
 {
     public partial class PomeranjePregledaTerminiSekretar : System.Windows.Controls.UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
-
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         private static TerminDTO terminStari;
         public static ObservableCollection<TerminDTO> SlobodniDatumi { get; set; }
         public PomeranjePregledaTerminiSekretar(TerminDTO stariTermin,List<TerminDTO> termini)
@@ -74,7 +74,7 @@ namespace Bolnica.Sekretar.Pregled
         {
             TerminDTO termin = new TerminDTO();
             bool postoji = false;
-            foreach (TerminDTO t in terminKontroler.DobaviSveSlobodneTermine())
+            foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSveSlobodneTermine())
             {
                 if (t.IdTermina.Equals(((Termin)slobodniTerminiLista.SelectedItem).IdTermina))
                 {

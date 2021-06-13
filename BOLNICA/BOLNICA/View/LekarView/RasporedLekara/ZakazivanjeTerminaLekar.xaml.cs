@@ -16,8 +16,9 @@ namespace Bolnica
     public partial class ZakazivanjeTerminaLekar : System.Windows.Controls.UserControl
     {
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
 
         DateTime izabranDatum;
         String izabranLekar = null;
@@ -196,7 +197,7 @@ namespace Bolnica
 
             TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, null, izabranaVrstaTermina);
            
-            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar, izabranoTrajanje))
+            foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar, izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
                 Console.WriteLine(t.Vreme);

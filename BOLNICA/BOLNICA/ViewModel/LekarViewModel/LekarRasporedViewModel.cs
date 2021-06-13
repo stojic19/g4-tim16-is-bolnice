@@ -13,7 +13,7 @@ namespace Bolnica.ViewModel.LekarViewModel
 
     public class LekarRasporedViewModel : ViewModel
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private PreglediKontroler preglediKontroler = new PreglediKontroler();
         private DispatcherTimer dispatcherTimer;
         private ObservableCollection<TerminDTO> termini;

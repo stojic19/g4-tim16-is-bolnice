@@ -13,7 +13,8 @@ namespace Bolnica.ViewModel.PacijentViewModel
     public class VremenaPomeranjaViewModel: ViewModel
     {
         private ObservableCollection<TerminDTO> slobodniTermini;
-        private TerminKontroler terminKontroler = new TerminKontroler();
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
+        private ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private ZakazivanjePregledaDTO podaci = new ZakazivanjePregledaDTO();
         private String poruka;
 
@@ -34,7 +35,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
         private void UcitajUKolekciju(TerminDTO izabraniTermin)
         {
             SlobodniTermini = new ObservableCollection<TerminDTO>();
-            foreach (TerminDTO termin in terminKontroler.NadjiVremeTermina(izabraniTermin))
+            foreach (TerminDTO termin in slobodniTerminiKontroler.NadjiVremeTermina(izabraniTermin))
                 SlobodniTermini.Add(termin);
         }
         public ObservableCollection<TerminDTO> SlobodniTermini

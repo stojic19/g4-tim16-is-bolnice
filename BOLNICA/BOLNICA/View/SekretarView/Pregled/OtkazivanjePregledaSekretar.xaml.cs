@@ -25,7 +25,7 @@ namespace Bolnica.Sekretar.Pregled
     /// </summary>
     public partial class OtkazivanjePregledaSekretar : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         private static String termin;
 
         public OtkazivanjePregledaSekretar(String idTermina)

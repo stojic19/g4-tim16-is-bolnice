@@ -104,6 +104,7 @@ namespace Bolnica.ViewModel.PacijentViewModel
             {
                 Podaci.IdFeedbacka = Guid.NewGuid().ToString();
                 Podaci.IdOsobe = korisnickoIme;
+                Podaci.Datum = DateTime.Now;
                 feedbackKontroler.Dodaj(Podaci);
                 Poruka = "Problem uspešno prijavljen. Hvala na pomoći!";
 

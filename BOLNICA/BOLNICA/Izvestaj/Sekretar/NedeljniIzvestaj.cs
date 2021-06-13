@@ -13,7 +13,7 @@ namespace Bolnica.Izvestaj.Sekretar
 {
     public class NedeljniIzvestaj
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
         HitnaOperacijaKontroler hitnaOperacijaKontroler = new HitnaOperacijaKontroler();
 
         public void StampajIzvestaj()

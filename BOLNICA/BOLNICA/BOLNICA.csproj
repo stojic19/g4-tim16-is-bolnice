@@ -265,6 +265,7 @@
     <Compile Include="Kontroler\PreglediKontorler.cs" />
     <Compile Include="Kontroler\RenoviranjeKontroler.cs" />
     <Compile Include="Kontroler\SekretarKontroler.cs" />
+    <Compile Include="Kontroler\SlobodniTerminiKontroler.cs" />
     <Compile Include="Kontroler\TerminKontroler.cs" />
     <Compile Include="Kontroler\ZahtjeviKontroler.cs" />
     <Compile Include="Kontroler\ZdravstvenKartoniKontroler.cs" />

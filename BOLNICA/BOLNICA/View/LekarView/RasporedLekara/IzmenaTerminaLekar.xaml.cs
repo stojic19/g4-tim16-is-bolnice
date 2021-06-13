@@ -14,7 +14,8 @@ namespace Bolnica
 {
     public partial class IzmenaTerminaLekar : UserControl
     {
-        TerminKontroler terminKontroler = new TerminKontroler();
+        ZakazaniTerminiKontroler terminKontroler = new ZakazaniTerminiKontroler();
+        private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         LekariKontroler lekariKontroler = new LekariKontroler();
         String izabranTermin = null;
         DateTime izabranDatum;
@@ -167,7 +168,7 @@ namespace Bolnica
 
             TerminDTO terminZaPoredjenje = new TerminDTO(izabranDatum, null, izabranaVrstaTermina); 
 
-            foreach (TerminDTO t in terminKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, LekarGlavniProzor.DobaviKorisnickoIme(), izabranoTrajanje))
+            foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, LekarGlavniProzor.DobaviKorisnickoIme(), izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
                 Console.WriteLine(t.Vreme);
