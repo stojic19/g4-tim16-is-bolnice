@@ -16,6 +16,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
     public class IzmenaNalogaViewModel : PotvrdiOdustaniViewModel
     {
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
+        KorisnikKontroler korisnikKontroler = new KorisnikKontroler();
         private PacijentDTO podaci;
         private int tipNaloga;
         private string korisnickoIme;
@@ -46,6 +47,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
             if (IspravniUnetiPodaci())
             {
                 naloziPacijenataKontroler.IzmeniNalog(Podaci);
+                korisnikKontroler.IzmeniPacijenta(Podaci);
 
                 UserControl usc = null;
                 GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();

@@ -168,7 +168,7 @@ namespace Bolnica.Izvestaj.Sekretar
 
             page2.Elements.Add(chart4);
 
-            string nazivIzvestaja = "IzvestajiSekretar/NedeljniIzvestaj" + DateTime.Now.ToString("dd.MM.yyyy.HH.mm") + ".pdf";
+            string nazivIzvestaja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiSekretar\NedeljniIzvestaj" + DateTime.Now.ToString("dd.MM.yyyy.HH.mm") + ".pdf";
             // Save the PDF
             document.Draw(nazivIzvestaja);
         }

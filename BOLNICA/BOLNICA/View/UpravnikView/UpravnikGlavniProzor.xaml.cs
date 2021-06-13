@@ -124,7 +124,7 @@ namespace Bolnica
                 DataTable dtbl = lijekIzvjestaj.MakeDataTable();
                 String naslov = "Izvestaj lijekova";
                 String datum = DateTime.Now.ToString("dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                String putanja = @"IzvjestajiUpravnik\IzvjestajLijek_" + datum + ".pdf";
+                String putanja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiUpravnik\IzvjestajLijek_" + datum + ".pdf";
                 lijekIzvjestaj.ExportDataTableToPdf(dtbl, putanja, naslov);
 
                 if (System.Windows.MessageBox.Show("Izvjestaj izgenerisan! Pogledati ga?", "Izvestaj lijekova", MessageBoxButton.YesNo) == MessageBoxResult.Yes)

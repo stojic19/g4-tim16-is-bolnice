@@ -177,8 +177,9 @@ namespace Bolnica.Izvestaj.Pacijent
 
             trecaStranica.Elements.Add(tabela);
 
-            string nazivIzvestaja = "IzvestajiPacijent/NedeljniIzvestaj" + DateTime.Now.ToString("dd.MM.yyyy.HH.mm") + ".pdf";
+            string nazivIzvestaja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiPacijent\NedeljniIzvestaj" + DateTime.Now.ToString("dd.MM.yyyy.HH.mm") + ".pdf";
             document.Draw(nazivIzvestaja);
+
         }
 
         private float IzracunajUkupnuTerapiju(float kolicina,float satnica)

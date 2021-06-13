@@ -253,6 +253,7 @@
     <Compile Include="Kontroler\BeleskaKontroler.cs" />
     <Compile Include="Kontroler\FeedbackKontroler.cs" />
     <Compile Include="Kontroler\HitnaOperacijaKontroler.cs" />
+    <Compile Include="Kontroler\KorisnikKontroler.cs" />
     <Compile Include="Kontroler\LekariKontroler.cs" />
     <Compile Include="Kontroler\OdsustvoKontroler.cs" />
     <Compile Include="Kontroler\OpremaKontroler.cs" />
@@ -293,16 +294,21 @@
     <Compile Include="Konverter\TerminKonverter.cs" />
     <Compile Include="Konverter\UputKonverter.cs" />
     <Compile Include="Konverter\ZahtjevKonverter.cs" />
+    <Compile Include="LoginFactory.cs" />
     <Compile Include="Lokalizacija\Prevod.cs" />
     <Compile Include="Model\Beleska.cs" />
     <Compile Include="Model\Entitet.cs" />
     <Compile Include="Model\Enumi\BracniStatus.cs" />
     <Compile Include="Model\Enumi\TipFunkcije.cs" />
+    <Compile Include="Model\Enumi\TipoviKorisnika.cs" />
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\Godisnji.cs" />
+    <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Odsustvo.cs" />
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
+    <Compile Include="Repozitorijum\Interfejsi\KorisnikRepozitorijumInterfejs.cs" />
+    <Compile Include="Repozitorijum\KorisnikRepozitorijum.cs" />
     <Compile Include="Repozitorijum\SekretariRepozitorijum.cs" />
     <Compile Include="Repozitorijum\FeedbackRepozitorijum.cs" />
     <Compile Include="Repozitorijum\GlavniRepozitorijum.cs" />
@@ -336,6 +342,7 @@
     <Compile Include="Servis\BeleskaServis.cs" />
     <Compile Include="Servis\DatumTerminaServis.cs" />
     <Compile Include="Servis\FeedbackServis.cs" />
+    <Compile Include="Servis\KorisnikServis.cs" />
     <Compile Include="Servis\LekariServis.cs" />
     <Compile Include="Servis\LekarTerminaServis.cs" />
     <Compile Include="Servis\OdsustvoLekaraServis.cs" />

@@ -15,6 +15,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
     public class UklanjanjeNalogaViewModel : PotvrdiOdustaniViewModel
     {
         private String korisnickoIme;
+        private KorisnikKontroler korisnikKontroler = new KorisnikKontroler();
         private NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
 
         public UklanjanjeNalogaViewModel(String korisnickoImePacijenta)
@@ -27,7 +28,7 @@ namespace Bolnica.ViewModel.SekretarViewModel
         public override void Potvrdi()
         {
             naloziPacijenataKontroler.UkolniNalog(korisnickoIme);
-
+            korisnikKontroler.ObrisiKorisnikaPoKorImenu(korisnickoIme);
             UserControl usc = null;
             GlavniProzorSekretar.getInstance().MainPanel.Children.Clear();
 

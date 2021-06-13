@@ -14,11 +14,6 @@
     <Pol>muski</Pol>
     <RadniDani>
       <RadniDan>
-        <IdRadnogDana>c95ff407-4da5-41d4-bf22-92d9ac5bc235</IdRadnogDana>
-        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
         <IdRadnogDana>2bc0dc86-bc64-4360-9b3f-216d92aa394d</IdRadnogDana>
         <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
         <KrajSmene>2021-06-14T15:00:00</KrajSmene>
@@ -116,16 +111,6 @@
         <KrajSmene>2021-06-23T23:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
-        <IdRadnogDana>5d146026-db25-402a-88d1-ca3e14a9a239</IdRadnogDana>
-        <PocetakSmene>2021-06-10T15:00:00</PocetakSmene>
-        <KrajSmene>2021-06-10T23:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>8185ac0c-b6ee-40f7-90d4-65313b33776f</IdRadnogDana>
-        <PocetakSmene>2021-06-11T15:00:00</PocetakSmene>
-        <KrajSmene>2021-06-11T23:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
         <IdRadnogDana>7961145e-3332-452a-aa06-6521045e2060</IdRadnogDana>
         <PocetakSmene>2021-06-14T15:00:00</PocetakSmene>
         <KrajSmene>2021-06-14T23:00:00</KrajSmene>
@@ -218,11 +203,6 @@
         <KrajSmene>2021-06-21T23:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
-        <IdRadnogDana>5b910d2f-8161-42a7-8303-dc6de4b5538c</IdRadnogDana>
-        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
         <IdRadnogDana>1cd7826e-19d3-4de8-a5ae-e3448d2f60ff</IdRadnogDana>
         <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
         <KrajSmene>2021-06-14T15:00:00</KrajSmene>
@@ -303,16 +283,6 @@
         <IdRadnogDana>3f46f993-d884-4a82-826c-378ab6d46bd6</IdRadnogDana>
         <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
         <KrajSmene>2021-06-29T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>8e0e654d-bef2-4946-99ec-2ad9d9ec2ee0</IdRadnogDana>
-        <PocetakSmene>2021-06-10T15:00:00</PocetakSmene>
-        <KrajSmene>2021-06-10T23:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>342e92b7-3391-4393-8b6e-a1ac0a984119</IdRadnogDana>
-        <PocetakSmene>2021-06-11T15:00:00</PocetakSmene>
-        <KrajSmene>2021-06-11T23:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
         <IdRadnogDana>fea8c5a7-4188-41d4-8580-286d4786b417</IdRadnogDana>
@@ -415,11 +385,6 @@
         <IdRadnogDana>cb29b991-e709-47fe-8583-abc791dee88f</IdRadnogDana>
         <PocetakSmene>2021-07-02T07:00:00</PocetakSmene>
         <KrajSmene>2021-07-02T15:00:00</KrajSmene>
-      </RadniDan>
-      <RadniDan>
-        <IdRadnogDana>dfab34cf-3a6e-4b80-b8a3-93d84729b9d1</IdRadnogDana>
-        <PocetakSmene>2021-06-11T07:00:00</PocetakSmene>
-        <KrajSmene>2021-06-11T15:00:00</KrajSmene>
       </RadniDan>
       <RadniDan>
         <IdRadnogDana>0e02156b-cb25-4e6e-b9bf-90d2a92c4ff1</IdRadnogDana>

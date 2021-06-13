@@ -82,4 +82,16 @@
     </FunkcionalnostiNaKojeSeOdnosi>
     <Datum>2021-06-13T14:44:41.1170905+02:00</Datum>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>1435448a-bd50-44ff-a951-ba1974914b7b</IdFeedbacka>
+    <IdOsobe>b8b38fc5-6e37-444e-a47f-bdf51ecb9735</IdOsobe>
+    <TekstFeedbacka>Proba</TekstFeedbacka>
+    <TipFunkcionalnosti>
+      <TipFunkcije>interfejs</TipFunkcije>
+    </TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>
+      <string>Alergeni</string>
+    </FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>2021-06-13T16:33:55.4527778+02:00</Datum>
+  </Feedback>
 </ArrayOfFeedback>

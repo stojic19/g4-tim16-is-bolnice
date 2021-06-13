@@ -1,4 +1,5 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Kontroler;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.SekretarFolder;
 using Model;
@@ -22,6 +23,7 @@ namespace Bolnica
     {
         private static GlavniProzorSekretar instance = null;
         private static SekretarDTO Sekretar;
+        private SekretarKontroler sekretarKontroler = new SekretarKontroler();
         public SekretarDTO getSekretar()
         {
             return Sekretar;
@@ -34,11 +36,11 @@ namespace Bolnica
             }
             return instance;
         }
-        public static GlavniProzorSekretar getInstance(SekretarDTO sekretar)
+        public static GlavniProzorSekretar getInstance(String idSekretara)
         {
             if (instance == null)
             {
-                instance = new GlavniProzorSekretar(sekretar);
+                instance = new GlavniProzorSekretar(idSekretara);
             }
             return instance;
         }
@@ -52,9 +54,9 @@ namespace Bolnica
             usc = new GlavniProzorSadrzaj();
             MainPanel.Children.Add(usc);
         }
-        public GlavniProzorSekretar(SekretarDTO sekretar)
+        public GlavniProzorSekretar(String idSekretara)
         {
-            Sekretar = sekretar;
+            Sekretar = sekretarKontroler.pretraziPoId(idSekretara);
             InitializeComponent();
 
             UserControl usc = null;

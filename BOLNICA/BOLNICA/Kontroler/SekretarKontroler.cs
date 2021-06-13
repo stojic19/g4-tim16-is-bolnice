@@ -26,5 +26,10 @@ namespace Bolnica.Kontroler
             }
             return sekretari;
         }
+
+        public SekretarDTO pretraziPoId(string korIme)
+        {
+            return sekretarKonverter.SekretarModelUDTO(sekretariServis.PretraziPoId(korIme));
+        }
     }
 }

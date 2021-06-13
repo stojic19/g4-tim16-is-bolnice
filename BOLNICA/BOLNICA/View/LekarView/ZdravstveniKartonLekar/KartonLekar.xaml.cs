@@ -130,7 +130,7 @@ namespace Bolnica
                 String naslov = "Izveštaj recepata@@Pacijent " + p.Ime + " " + p.Prezime;
                 naslov = naslov.Replace("@", System.Environment.NewLine);
                 String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                String putanja = @"IzvestajiLekar\Recepti_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
+                String putanja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiLekar\Recepti_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
                 receptiIzvestaj.ExportDataTableToPdf(dtbl, putanja, naslov);
 
                 if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj recepata", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -162,10 +162,11 @@ namespace Bolnica
 
             try
             {
-                String naslov = "Izveštaj recepata@@Pacijent " + p.Ime + " " + p.Prezime;
+
+                String naslov = "Izveštaj anamneza@@Pacijent " + p.Ime + " " + p.Prezime;
                 naslov = naslov.Replace("@", System.Environment.NewLine);
                 String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                String putanja = @"IzvestajiLekar\Anamneze_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
+                String putanja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiLekar\Anamneze_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
                 anamnezeIzvestaj.ExportDataTableToPdf(izabranPregled.Termin, putanja, naslov);
 
                 if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj anamneza", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
