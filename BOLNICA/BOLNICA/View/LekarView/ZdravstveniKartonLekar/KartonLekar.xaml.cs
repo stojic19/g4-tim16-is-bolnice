@@ -1,5 +1,7 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Interfejsi.Lekar;
 using Bolnica.Izvestaj.Lekar;
+using Bolnica.Izvestaj.Lekar.Anamneze;
 using Bolnica.Kontroler;
 using Bolnica.LekarFolder;
 using Bolnica.LekarFolder.ZdravstveniKartonLekar;
@@ -19,9 +21,12 @@ namespace Bolnica
         NaloziPacijenataKontroler naloziPacijenataKontroler = new NaloziPacijenataKontroler();
         PreglediKontroler preglediKontroler = new PreglediKontroler();
         ZdravstvenKartoniKontroler zdravstvenKartoniKontroler = new ZdravstvenKartoniKontroler();
-        ReceptiIzvestaj receptiIzvestaj = new ReceptiIzvestaj();
-        AnamnezeIzvestaj anamnezeIzvestaj = new AnamnezeIzvestaj();
+        LekariKontroler lekariKontroler = new LekariKontroler();
         PregledDTO izabranPregled = null;
+
+        IzvestajiAnamnezaInterfejs anamnezeIzvestaj = IzborAdapteraAnamneze.DobaviAdapter();
+        IzvestajiRecepataInterfejs receptiIzvestaj = IzborAdapteraRecepti.DobaviAdapter();
+
         public static ObservableCollection<ReceptDTO> Recepti { get; set; }
         public static ObservableCollection<AnamnezaDTO> Anamneze { get; set; }
         public static ObservableCollection<UputDTO> Uputi { get; set; }
@@ -126,17 +131,10 @@ namespace Bolnica
 
             try
             {
-                DataTable dtbl = receptiIzvestaj.MakeDataTable(izabranPregled.Termin);
-                String naslov = "Izveštaj recepata@@Pacijent " + p.Ime + " " + p.Prezime;
-                naslov = naslov.Replace("@", System.Environment.NewLine);
-                String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                String putanja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiLekar\Recepti_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
-                receptiIzvestaj.ExportDataTableToPdf(dtbl, putanja, naslov);
-
-                if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj recepata", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    System.Diagnostics.Process.Start(putanja);
-                }
+                receptiIzvestaj.ProslediPodatke(zdravstvenKartoniKontroler.DobaviReceptePacijenta(p.KorisnickoIme));
+                receptiIzvestaj.ProslediLekara(lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme));
+                receptiIzvestaj.ProslediPacijenta(p.Ime + " " + p.Prezime);
+                receptiIzvestaj.KreirajIzvestaj();
 
             }
             catch (Exception ex)
@@ -163,16 +161,11 @@ namespace Bolnica
             try
             {
 
-                String naslov = "Izveštaj anamneza@@Pacijent " + p.Ime + " " + p.Prezime;
-                naslov = naslov.Replace("@", System.Environment.NewLine);
-                String datum = DateTime.Now.ToString("_dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                String putanja = @"..\..\..\..\KreiraniIzvestaji\IzvestajiLekar\Anamneze_" + p.Ime + "_" + p.Prezime + datum + ".pdf";
-                anamnezeIzvestaj.ExportDataTableToPdf(izabranPregled.Termin, putanja, naslov);
+                anamnezeIzvestaj.ProslediPodatke(zdravstvenKartoniKontroler.DobaviAnamnezePacijenta(p.KorisnickoIme));
+                anamnezeIzvestaj.ProslediLekara(lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme));
+                anamnezeIzvestaj.ProslediPacijenta(p.Ime + " " + p.Prezime);
+                anamnezeIzvestaj.KreirajIzvestaj();
 
-                if (System.Windows.MessageBox.Show("Izveštaj izgenerisan! Pogledati ga?", "Izveštaj anamneza", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    System.Diagnostics.Process.Start(putanja);
-                }
 
             }
             catch (Exception ex)
