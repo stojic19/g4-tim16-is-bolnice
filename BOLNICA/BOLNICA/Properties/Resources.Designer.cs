@@ -304,6 +304,15 @@ namespace Bolnica.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mišljenje o aplikaciji.
+        /// </summary>
+        internal static string Feedback {
+            get {
+                return ResourceManager.GetString("Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ime.
         /// </summary>
         internal static string Ime {

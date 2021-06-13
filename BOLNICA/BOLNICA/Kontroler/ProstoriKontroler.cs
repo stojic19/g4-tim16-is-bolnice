@@ -105,5 +105,15 @@ namespace Bolnica.Kontroler
         {
             return prostoriServis.ProveraRenoviranjaUBuducnosti(idProstora, krajLecenja);
         }
+
+        public List<Prostor> DobaviProstoreModel()
+        {
+            return prostoriServis.SviProstori();
+        }
+
+        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        {
+            return prostoriServis.DobaviZakazaneTermineZaVreme(datum);
+        }
     }
 }

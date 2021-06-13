@@ -198,6 +198,9 @@
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
   <data name="Ime" xml:space="preserve">
     <value>First name</value>
   </data>

@@ -1,3 +1,4 @@
+using Bolnica.Model;
 using System;
 using System.ComponentModel;
 using System.Xml;
@@ -99,23 +100,29 @@ namespace Model
             this.prostor = prostor;
             this.pocetnoVreme = pocetnoVreme;
         }
-        public override string ToString()
-        {
-            return base.ToString();
-        }
 
-        public String getVrstaTerminaString()
+        public object DobaviVrstuTerminaInterfejs()
         {
-
-            if (VrstaTermina == VrsteTermina.operacija)
+            if (this.vrstaTermina == VrsteTermina.operacija)
             {
-                return "Operacija";
+                return new ProstorOperacija();
             }
             else
             {
-                return "Pregled";
+                return new ProstorPregled();
             }
+
+            return null;
         }
+
+
+
+        //private object vrstaTerminaLekar;
+        //public object VrstaTerminaLekar
+        //{
+        //    get { return vrstaTerminaLekar; }
+        //    set { vrstaTerminaLekar = value; }
+        //}
 
     }
 }

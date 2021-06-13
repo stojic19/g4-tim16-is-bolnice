@@ -67,7 +67,7 @@ namespace Model
             }
             return null;
         }
-        private List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
         {
             List<Termin> termini = new List<Termin>();
             foreach (Termin termin in terminiServis.DobaviSveZakazaneTermine())

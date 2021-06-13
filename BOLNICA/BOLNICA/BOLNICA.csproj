@@ -241,6 +241,7 @@
     <Compile Include="DTO\UputDTO.cs" />
     <Compile Include="DTO\ZahtjevDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
+    <Compile Include="Interfejsi\Lekar\TipTerminaInterfejs.cs" />
     <Compile Include="Interfejsi\Sekretar\CRUDInterfejs.cs" />
     <Compile Include="Izvestaj\Lekar\AnamnezeIzvestaj.cs" />
     <Compile Include="Izvestaj\Lekar\ReceptiIzvestaj.cs" />
@@ -305,6 +306,8 @@
     <Compile Include="Model\Godisnji.cs" />
     <Compile Include="Model\Korisnik.cs" />
     <Compile Include="Model\Odsustvo.cs" />
+    <Compile Include="Model\ProstorOperacija.cs" />
+    <Compile Include="Model\ProstorPregled.cs" />
     <Compile Include="Model\RadniDan.cs" />
     <Compile Include="Repozitorijum\BeleskaRepozitorijum.cs" />
     <Compile Include="Repozitorijum\Interfejsi\KorisnikRepozitorijumInterfejs.cs" />

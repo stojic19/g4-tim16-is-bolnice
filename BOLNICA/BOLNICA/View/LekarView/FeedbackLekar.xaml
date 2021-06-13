@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Bolnica.View.LekarView.FeedbackLekar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bolnica.View.LekarView"
+             xmlns:p="clr-namespace:Bolnica.Lokalizacija"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="850">
+    <Grid Background="WhiteSmoke" Width="728" Height="345">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="110*"/>
+            
+            <RowDefinition Height="170*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="728" Height="30" Fill="#999999" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Fill="Black" Height="1" Width="728"/>
+        <Label Content="{p:LocExtension Feedback}" Grid.Row="0" Grid.ColumnSpan="2" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="DemiBold"/>
+
+
+
+
+        <Button Content="{p:LocExtension Odustani}" Width="150" Height="22" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="3" Grid.Column="0"  Command="{Binding OdustaniKomanda}"/>
+        <Button Content="{p:LocExtension Potvrdi}" Width="150" Height="22" HorizontalAlignment="Left" Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" Command="{Binding PotvrdiKomanda}"/>
+
+    </Grid>
+</UserControl>

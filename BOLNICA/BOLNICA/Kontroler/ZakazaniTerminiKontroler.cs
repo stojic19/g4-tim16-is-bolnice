@@ -1,4 +1,5 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Interfejsi.Lekar;
 using Bolnica.Konverter;
 using Bolnica.Model;
 using Bolnica.Servis;
@@ -52,7 +53,7 @@ namespace Bolnica.Kontroler
         public void ZakaziPregledPacijent(TerminDTO termin, String korisnickoImePacijenta)
         {
             Termin noviTermin = slobodniTerminiServis.PretraziPoId(termin.IdTermina);
-            noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(termin.Datum);
+            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(noviTermin.Datum);
             zakazaniTerminiServis.ZakaziPregled(noviTermin, korisnickoImePacijenta);
         }
 
@@ -66,7 +67,7 @@ namespace Bolnica.Kontroler
         {
             Termin stari = zakazaniTerminiServis.DobaviZakazanTerminPoId(stariTermin.IdTermina);
             Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
-            novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
+            novi.Prostor = ((TipTerminaInterfejs)novi.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(novi.Datum);
             zakazaniTerminiServis.PomeriPregledPacijent(stari, novi);
         }
 
@@ -89,15 +90,17 @@ namespace Bolnica.Kontroler
             noviTermin.Lekar = lekariServis.PretraziPoId(termin.Lekar.KorisnickoIme);
             noviTermin.Pacijent = naloziPacijenataServis.PretraziPoId(termin.Pacijent.KorisnickoIme);
             noviTermin.Trajanje = termin.TrajanjeDouble;
-            if(noviTermin.VrstaTermina == VrsteTermina.operacija)
-            {
-                noviTermin.Prostor = prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum);
-            }
-            else
-            {
-                noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(noviTermin.Datum);
-            }
-            
+
+            //if (noviTermin.VrstaTermina == VrsteTermina.operacija)
+            //{
+            //    noviTermin.Prostor = prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum);
+            //}
+            //else
+            //{
+            //    noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(noviTermin.Datum);
+            //}
+
+            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(noviTermin.Datum);
             return zakazaniTerminiServis.ZakaziTerminLekar(noviTermin);
         }
 
@@ -107,15 +110,15 @@ namespace Bolnica.Kontroler
             Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
             novi.Trajanje = noviTermin.TrajanjeDouble;
 
-            if (novi.VrstaTermina == VrsteTermina.operacija)
-            {
-                novi.Prostor = prostoriServis.DodeliProstorZaOperaciju(novi.Datum);
-            }
-            else
-            {
-                novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
-            }
-
+            //if (novi.VrstaTermina == VrsteTermina.operacija)
+            //{
+            //    novi.Prostor = prostoriServis.DodeliProstorZaOperaciju(novi.Datum);
+            //}
+            //else
+            //{
+            //    novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
+            //}
+            novi.Prostor = ((TipTerminaInterfejs)novi.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(novi.Datum);
             zakazaniTerminiServis.IzmeniTermin(stari, novi);
         }
 
