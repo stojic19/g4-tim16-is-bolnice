@@ -29,10 +29,9 @@ namespace Bolnica.Sekretar.Pregled
         private SlobodniTerminiKontroler slobodniTerminiKontroler = new SlobodniTerminiKontroler();
         public PomeranjePregledaSekretar(TerminDTO t)
         {
+            InitializeComponent();
             datumPocetak.DisplayDateStart = DateTime.Today;
             datumKraj.DisplayDateStart = DateTime.Today;
-
-            InitializeComponent();
             termin = t;
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
