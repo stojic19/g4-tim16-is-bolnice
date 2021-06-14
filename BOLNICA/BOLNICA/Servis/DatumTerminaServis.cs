@@ -128,6 +128,17 @@ namespace Bolnica.Servis
             return false;
         }
 
-
+        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum, List<Termin> termini)
+        {
+            List<Termin> pogodniTermini = new List<Termin>();
+            foreach (Termin termin in termini)
+            {
+                if (DatumiTerminaSuIsti(termin.Datum, datum))
+                {
+                    pogodniTermini.Add(termin);
+                }
+            }
+            return pogodniTermini;
+        }
     }
 }

@@ -17,31 +17,7 @@ namespace Model
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
-        
-        public Prostor DodeliProstorZaOperaciju(DateTime datum)
-        {
-            List<Termin> termini = terminiServis.DobaviZakazaneTermineZaVreme(datum);
-            foreach (Prostor prostor in SviProstori())
-            {
-                if (prostor.VrstaProstora == VrsteProstora.sala)
-                {
-                    bool zauzet = false;
-                    foreach (Termin terminZaProveru in termini)
-                    {
-                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
-                        {
-                            zauzet = true;
-                            break;
-                        }
-                    }
-                    if (!zauzet)
-                    {
-                        return prostor;
-                    }
-                }
-            }
-            return null;
-        }
+        DatumTerminaServis datumServis = new DatumTerminaServis();
         
         public void DodajProstor(Prostor p)
         {
@@ -245,7 +221,7 @@ namespace Model
         public bool ProveriZauzetostProstora(string id, DateTime datum)
         {
             bool zauzet = false;
-            foreach (Termin terminZaProveru in terminiServis.DobaviZakazaneTermineZaVreme(datum))
+            foreach (Termin terminZaProveru in datumServis.DobaviZakazaneTermineZaVreme(datum, terminiServis.DobaviSveZakazaneTermine()))
             {
                 if (terminZaProveru.Prostor.IdProstora.Equals(id))
                 {

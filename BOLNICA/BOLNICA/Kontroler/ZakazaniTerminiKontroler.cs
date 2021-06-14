@@ -132,7 +132,7 @@ namespace Bolnica.Kontroler
         }
         public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
         {
-            return zakazaniTerminiServis.DobaviZakazaneTermineZaVreme(datum);
+            return datumTerminaServis.DobaviZakazaneTermineZaVreme(datum, zakazaniTerminiServis.DobaviSveZakazaneTermine());
         }
 
     }

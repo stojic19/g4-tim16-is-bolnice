@@ -65,15 +65,6 @@ namespace Bolnica.Kontroler
             return false;
         }
 
-        /*public void DodajSamoKolicinu(Prostor prostorUKojiPrebacujemo, Oprema oprema, int kolicina)
-        {
-            prostoriServis.DodajSamoKolicinu(prostorUKojiPrebacujemo, oprema, kolicina);
-        }
-
-        public void DodajOpremuProstoru(Prostor prostorUKojiPrebacujemo, Oprema oprema)
-        {
-            prostoriServis.DodajOpremuProstoru(prostorUKojiPrebacujemo, oprema);
-        }*/
 
         public Boolean ProvjeriZakazaneTermine(DateTime pocetniDatum, DateTime zavrsniDatum)
         {
@@ -106,19 +97,14 @@ namespace Bolnica.Kontroler
             return prostoriServis.ProveraRenoviranjaUBuducnosti(idProstora, krajLecenja);
         }
 
-        public List<Prostor> DobaviProstoreModel()
-        {
-            return prostoriServis.SviProstori();
-        }
-
         public List<Prostor> DobaviOrdinacije()
         {
-            return prostoriServis.SviProstori();
+            return prostoriServis.DobaviOrdinacije();
         }
 
         public List<Prostor> DobaviSale()
         {
-            return prostoriServis.SviProstori();
+            return prostoriServis.DobaviSale();
         }
 
         public Boolean ProveriZauzetostProstora(String id,DateTime datum)

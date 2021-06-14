@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTermin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Termin>
     <IdTermina>ec5e87a5-b1aa-4854-adb5-bbecc7d6cad0</IdTermina>
@@ -65,33 +65,6 @@
     <PocetnoVreme>15:30</PocetnoVreme>
     <Trajanje>30</Trajanje>
     <Datum>2021-06-17T15:30:00</Datum>
-    <Lekar>
-      <Ime>Jelena</Ime>
-      <Prezime>Hrnjak</Prezime>
-      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
-      <Jmbg>431</Jmbg>
-      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
-      <KontaktTelefon>06343</KontaktTelefon>
-      <Email>jelenah@lekar.com</Email>
-      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
-      <Lozinka>jelenahrnjak</Lozinka>
-      <Pol>zenski</Pol>
-      <RadniDani />
-      <Godisnji>
-        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
-        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
-      </Godisnji>
-      <Odsustva />
-      <Specijalizacija>nema</Specijalizacija>
-      <Dostupnost>false</Dostupnost>
-    </Lekar>
-  </Termin>
-  <Termin>
-    <IdTermina>6db5f506-6080-4dea-baa5-3139029f9290</IdTermina>
-    <VrstaTermina>pregled</VrstaTermina>
-    <PocetnoVreme>16:00</PocetnoVreme>
-    <Trajanje>30</Trajanje>
-    <Datum>2021-06-17T16:00:00</Datum>
     <Lekar>
       <Ime>Jelena</Ime>
       <Prezime>Hrnjak</Prezime>
@@ -22113,6 +22086,239 @@
       <Lozinka>jelenahrnjak</Lozinka>
       <Pol>zenski</Pol>
       <RadniDani />
+      <Godisnji>
+        <GodinaZaGodisnji>2021</GodinaZaGodisnji>
+        <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
+      </Godisnji>
+      <Odsustva />
+      <Specijalizacija>nema</Specijalizacija>
+      <Dostupnost>false</Dostupnost>
+    </Lekar>
+  </Termin>
+  <Termin>
+    <IdTermina>6db5f506-6080-4dea-baa5-3139029f9290</IdTermina>
+    <VrstaTermina>pregled</VrstaTermina>
+    <PocetnoVreme>16:00</PocetnoVreme>
+    <Trajanje>30</Trajanje>
+    <Datum>2021-06-17T16:00:00</Datum>
+    <Prostor>
+      <BrojSlobodnihKreveta>0</BrojSlobodnihKreveta>
+      <IdProstora>f0482fe3-2189-4188-a730-e87e71ad6057</IdProstora>
+      <NazivProstora>o10</NazivProstora>
+      <VrstaProstora>ordinacija</VrstaProstora>
+      <Sprat>3</Sprat>
+      <Kvadratura>555</Kvadratura>
+      <JeRenoviranje>false</JeRenoviranje>
+      <Oprema />
+    </Prostor>
+    <Pacijent>
+      <IdOsobe>260c3c07-94dd-48c3-9565-122dac1e9084</IdOsobe>
+      <Ime>Milenko</Ime>
+      <Prezime>Milenkic</Prezime>
+      <DatumRodjenja>2021-05-08T15:49:43.0114386+02:00</DatumRodjenja>
+      <Jmbg>19011901</Jmbg>
+      <AdresaStanovanja />
+      <KontaktTelefon />
+      <Email />
+      <KorisnickoIme>6402af5d-a72a-403e-a26d-e77958808da3</KorisnickoIme>
+      <Lozinka />
+      <Pol>muski</Pol>
+      <PoslednjaZloupotreba>0001-01-01T00:00:00</PoslednjaZloupotreba>
+      <VrstaNaloga>gost</VrstaNaloga>
+      <ZdravstveniKarton>
+        <IDPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IDPacijenta>
+        <Alergeni>
+          <Alergeni>
+            <IdAlergena>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IdAlergena>
+            <Lek>
+              <IDLeka>2f356518-5c4b-4fb5-9d6f-46a2aea33bb0</IDLeka>
+              <NazivLeka>Brufen</NazivLeka>
+              <Jacina>500mg</Jacina>
+              <Kolicina>3232</Kolicina>
+              <Proizvodjac>Biofarm</Proizvodjac>
+              <Sastojci>
+                <Sastojak>
+                  <Naziv>s1</Naziv>
+                  <Kolicina>100</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s2</Naziv>
+                  <Kolicina>200</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s3</Naziv>
+                  <Kolicina>300</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s7</Naziv>
+                  <Kolicina>2</Kolicina>
+                </Sastojak>
+                <Sastojak>
+                  <Naziv>s33</Naziv>
+                  <Kolicina>4</Kolicina>
+                </Sastojak>
+              </Sastojci>
+              <Zamene>
+                <Lek>
+                  <IDLeka>44eb6252-f8cd-41be-8dba-f6e03c79c571</IDLeka>
+                  <NazivLeka>Roaccutane</NazivLeka>
+                  <Jacina>20mg</Jacina>
+                  <Kolicina>432</Kolicina>
+                  <Proizvodjac>Biofarm</Proizvodjac>
+                  <Sastojci>
+                    <Sastojak>
+                      <Naziv>s4</Naziv>
+                      <Kolicina>4</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s5</Naziv>
+                      <Kolicina>5</Kolicina>
+                    </Sastojak>
+                    <Sastojak>
+                      <Naziv>s8</Naziv>
+                      <Kolicina>2</Kolicina>
+                    </Sastojak>
+                  </Sastojci>
+                  <Zamene />
+                  <Verifikacija>true</Verifikacija>
+                </Lek>
+              </Zamene>
+              <Verifikacija>true</Verifikacija>
+            </Lek>
+            <OpisReakcije>1212</OpisReakcije>
+            <VremeZaPojavu>1212</VremeZaPojavu>
+          </Alergeni>
+        </Alergeni>
+        <Recepti>
+          <Recept>
+            <IDRecepta>d0dd5575-8d70-4c2f-be53-d300d216c906</IDRecepta>
+            <Datum>2021-06-09T06:07:16.2711779+02:00</Datum>
+            <Lek>
+              <IDLeka>60e46f31-c546-4ceb-8b3c-5f14700b0d64</IDLeka>
+              <NazivLeka>Rapidol</NazivLeka>
+              <Jacina>500mg</Jacina>
+              <Kolicina>0</Kolicina>
+              <Sastojci />
+              <Zamene />
+              <Verifikacija>false</Verifikacija>
+            </Lek>
+          </Recept>
+        </Recepti>
+        <Anamneze>
+          <Anamneza>
+            <IdAnamneze>c1fcede6-8832-4ea2-a9c6-647d7c7fdd8c</IdAnamneze>
+            <IdLekara>JelenaHrnjak</IdLekara>
+            <ImeIPrezimeLekara>Jelena Hrnjak</ImeIPrezimeLekara>
+            <IdPacijenta>6402af5d-a72a-403e-a26d-e77958808da3</IdPacijenta>
+            <Datum>2021-06-09T02:53:57.6499561+02:00</Datum>
+            <Dijagnoza>Pacijent se žali na slabost.</Dijagnoza>
+            <Terapije>
+              <Terapija>
+                <IDTerapije>fe00aa0c-da05-4e78-b2d1-238409e3bb50</IDTerapije>
+                <IDAnamneze>c1fcede6-8832-4ea2-a9c6-647d7c7fdd8c</IDAnamneze>
+                <PocetakTerapije>2021-06-10T00:00:00</PocetakTerapije>
+                <KrajTerapije>2021-06-25T00:00:00</KrajTerapije>
+                <Kolicina>3</Kolicina>
+                <Satnica>8</Satnica>
+                <UputsvoKonzumiranja>Pij posle obroka</UputsvoKonzumiranja>
+                <PreporucenLek>
+                  <IDLeka>ecbc5b09-4418-44d5-bdcb-98d95740eddb</IDLeka>
+                  <NazivLeka>Aerius</NazivLeka>
+                  <Jacina>15mg</Jacina>
+                  <Kolicina>0</Kolicina>
+                  <Sastojci />
+                  <Zamene />
+                  <Verifikacija>false</Verifikacija>
+                </PreporucenLek>
+              </Terapija>
+            </Terapije>
+          </Anamneza>
+        </Anamneze>
+        <Uputi />
+        <BracniStatus>ozenjenUdata</BracniStatus>
+      </ZdravstveniKarton>
+      <ZloupotrebioSistem>0</ZloupotrebioSistem>
+      <Blokiran>false</Blokiran>
+    </Pacijent>
+    <Lekar>
+      <IdOsobe>cd5ab0e3-bf30-4038-a059-74a2cd1f8c4a</IdOsobe>
+      <Ime>Jelena</Ime>
+      <Prezime>Hrnjak</Prezime>
+      <DatumRodjenja>2021-05-26T12:10:13.636182+02:00</DatumRodjenja>
+      <Jmbg>431</Jmbg>
+      <AdresaStanovanja>Adresa Adresić 9</AdresaStanovanja>
+      <KontaktTelefon>06343</KontaktTelefon>
+      <Email>jelenah@lekar.com</Email>
+      <KorisnickoIme>JelenaHrnjak</KorisnickoIme>
+      <Lozinka>jelenahrnjak</Lozinka>
+      <Pol>zenski</Pol>
+      <RadniDani>
+        <RadniDan>
+          <IdRadnogDana>654759e1-c354-422c-8933-eb58d9593701</IdRadnogDana>
+          <PocetakSmene>2021-06-17T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-17T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>f600f452-9439-40d5-a215-a4813600f6cb</IdRadnogDana>
+          <PocetakSmene>2021-06-18T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-18T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>ee214775-0110-40c7-8a8f-8a6e09772aad</IdRadnogDana>
+          <PocetakSmene>2021-06-21T15:00:00</PocetakSmene>
+          <KrajSmene>2021-06-21T23:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>1cd7826e-19d3-4de8-a5ae-e3448d2f60ff</IdRadnogDana>
+          <PocetakSmene>2021-06-14T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-14T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>5f043876-1ee4-4d52-ae5c-357b59b72e57</IdRadnogDana>
+          <PocetakSmene>2021-06-15T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-15T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>94c007f5-93f0-4169-b274-84cf84ab4b2c</IdRadnogDana>
+          <PocetakSmene>2021-06-16T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-16T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>680bbf67-9392-4703-9979-2145271d7604</IdRadnogDana>
+          <PocetakSmene>2021-06-22T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-22T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>84bb3364-b688-4097-9fad-7c4d211e646f</IdRadnogDana>
+          <PocetakSmene>2021-06-23T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-23T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>7ae07a74-d06a-4f5e-b87d-8692e2050303</IdRadnogDana>
+          <PocetakSmene>2021-06-24T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-24T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>95a649aa-0d38-4297-8b86-b9e8ae7405ff</IdRadnogDana>
+          <PocetakSmene>2021-06-25T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-25T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>934be2d3-408b-4df9-a418-89ba48d94c28</IdRadnogDana>
+          <PocetakSmene>2021-06-28T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-28T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>a55320a1-e8be-43b9-a6f8-42908061f4e5</IdRadnogDana>
+          <PocetakSmene>2021-06-29T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-29T15:00:00</KrajSmene>
+        </RadniDan>
+        <RadniDan>
+          <IdRadnogDana>5e6dd45c-7808-48f2-8aa5-74c87f6a409a</IdRadnogDana>
+          <PocetakSmene>2021-06-30T07:00:00</PocetakSmene>
+          <KrajSmene>2021-06-30T15:00:00</KrajSmene>
+        </RadniDan>
+      </RadniDani>
       <Godisnji>
         <GodinaZaGodisnji>2021</GodinaZaGodisnji>
         <PreostaliBrojSlobodnihDana>20</PreostaliBrojSlobodnihDana>
