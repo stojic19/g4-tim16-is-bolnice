@@ -123,5 +123,17 @@ namespace Model
             return zakazaniTerminiRepozitorijum.PretraziPoLekaru(korisnickoIme);
         }
 
+        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        {
+            List<Termin> termini = new List<Termin>();
+            foreach (Termin termin in DobaviSveZakazaneTermine())
+            {
+                if (DateTime.Compare(termin.Datum, datum) == 0)
+                {
+                    termini.Add(termin);
+                }
+            }
+            return termini;
+        }
     }
 }

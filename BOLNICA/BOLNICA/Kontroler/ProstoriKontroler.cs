@@ -111,9 +111,19 @@ namespace Bolnica.Kontroler
             return prostoriServis.SviProstori();
         }
 
-        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        public List<Prostor> DobaviOrdinacije()
         {
-            return prostoriServis.DobaviZakazaneTermineZaVreme(datum);
+            return prostoriServis.SviProstori();
+        }
+
+        public List<Prostor> DobaviSale()
+        {
+            return prostoriServis.SviProstori();
+        }
+
+        public Boolean ProveriZauzetostProstora(String id,DateTime datum)
+        {
+            return prostoriServis.ProveriZauzetostProstora(id, datum);
         }
     }
 }

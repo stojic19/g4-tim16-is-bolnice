@@ -1,4 +1,5 @@
 ﻿using Bolnica.DTO;
+using Bolnica.Interfejsi.Lekar;
 using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Konverter;
 using Bolnica.Repozitorijum;
@@ -261,8 +262,9 @@ namespace Bolnica.Model
         {
             Pacijent pacijent = naloziPacijenataServis.PretraziPoId(noviTermin.Pacijent.KorisnickoIme);
             Lekar lekar = lekariServis.PretraziPoId(noviTermin.Lekar.KorisnickoIme);
-            Termin termin = new Termin(generisiID(), VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum), pacijent, lekar);
-            
+            Termin termin = new Termin(generisiID(), VrsteTermina.operacija, noviTermin.Vreme, double.Parse(noviTermin.Trajanje), noviTermin.Datum, null, pacijent, lekar);
+            termin.Prostor = ((TipTerminaInterfejs)termin.VrstaTerminaInterfejs).DodeliProstorTerminu(termin.Datum);
+
             foreach (Termin terminZaUklanaje in slobodniTerminiServis.DobaviSveSlobodneTermineZaOperacije())
             {
                 if (terminZaUklanaje.IdTermina.Equals(termin.IdTermina))

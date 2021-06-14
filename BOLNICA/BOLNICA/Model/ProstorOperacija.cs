@@ -15,26 +15,14 @@ namespace Bolnica.Model
 
         public Prostor DodeliProstorTerminu(DateTime datum)
         {
-            List<Termin> termini = prostoriKontroler.DobaviZakazaneTermineZaVreme(datum);
-            foreach (Prostor prostor in prostoriKontroler.DobaviProstoreModel())
+            foreach (Prostor prostor in prostoriKontroler.DobaviSale())
             {
-                if (prostor.VrstaProstora == VrsteProstora.sala)
+                if (!prostoriKontroler.ProveriZauzetostProstora(prostor.IdProstora, datum))
                 {
-                    bool zauzet = false;
-                    foreach (Termin terminZaProveru in termini)
-                    {
-                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
-                        {
-                            zauzet = true;
-                            break;
-                        }
-                    }
-                    if (!zauzet)
-                    {
-                        return prostor;
-                    }
+                    return prostor;
                 }
             }
+
             return null;
         }
     }

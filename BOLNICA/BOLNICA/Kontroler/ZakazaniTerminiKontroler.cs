@@ -130,5 +130,10 @@ namespace Bolnica.Kontroler
             Termin termin = zakazaniTerminiServis.DobaviZakazanTerminPoId(izabranTermin);
             return datumTerminaServis.ProveriDatumZaOtkazivanje(termin.Datum);
         }
+        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
+        {
+            return zakazaniTerminiServis.DobaviZakazaneTermineZaVreme(datum);
+        }
+
     }
 }

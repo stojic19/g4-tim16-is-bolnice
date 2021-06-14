@@ -17,35 +17,10 @@ namespace Model
         ZakazaniTerminiServis terminiServis = new ZakazaniTerminiServis();
         ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
         RenoviranjeServis renoviranjeServis = new RenoviranjeServis();
-        //public static List<Oprema> oprema = new List<Oprema>();
-
-        public Prostor DodeliProstorZaTermin(DateTime datum)
-        {
-            List<Termin> termini = DobaviZakazaneTermineZaVreme(datum);
-            foreach (Prostor prostor in SviProstori())
-            {
-                if (prostor.VrstaProstora == VrsteProstora.ordinacija)
-                {
-                    bool zauzet = false;
-                    foreach (Termin terminZaProveru in termini)
-                    {
-                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
-                        {
-                            zauzet = true;
-                            break;
-                        }
-                    }
-                    if (!zauzet)
-                    {
-                        return prostor;
-                    }
-                }
-            }
-            return null;
-        }
+        
         public Prostor DodeliProstorZaOperaciju(DateTime datum)
         {
-            List<Termin> termini = DobaviZakazaneTermineZaVreme(datum);
+            List<Termin> termini = terminiServis.DobaviZakazaneTermineZaVreme(datum);
             foreach (Prostor prostor in SviProstori())
             {
                 if (prostor.VrstaProstora == VrsteProstora.sala)
@@ -67,19 +42,7 @@ namespace Model
             }
             return null;
         }
-        public List<Termin> DobaviZakazaneTermineZaVreme(DateTime datum)
-        {
-            List<Termin> termini = new List<Termin>();
-            foreach (Termin termin in terminiServis.DobaviSveZakazaneTermine())
-            {
-                if (DateTime.Compare(termin.Datum, datum) == 0)
-                {
-                    termini.Add(termin);
-                }
-            }
-            return termini;
-        }
-
+        
         public void DodajProstor(Prostor p)
         {
             prostoriRepozitorijum.DodajObjekat(p);
@@ -148,6 +111,30 @@ namespace Model
         public List<Prostor> SviProstori()
         {
             return prostoriRepozitorijum.DobaviSveObjekte();
+        }
+
+        public List<Prostor> DobaviSale()
+        {
+            List<Prostor> sale = new List<Prostor>();
+
+            foreach(Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
+            {
+                if (p.VrstaProstora == VrsteProstora.sala) sale.Add(p);
+            }
+
+            return sale;
+        }
+
+        public List<Prostor> DobaviOrdinacije()
+        {
+            List<Prostor> ordinacije = new List<Prostor>();
+
+            foreach (Prostor p in prostoriRepozitorijum.DobaviSveObjekte())
+            {
+                if (p.VrstaProstora == VrsteProstora.ordinacija) ordinacije.Add(p);
+            }
+
+            return ordinacije;
         }
 
         public void OduzmiKolicinuOpreme(Prostor prostorIzKojegPremjestamo, Oprema oprema, int kolicina)
@@ -248,7 +235,6 @@ namespace Model
 
         }
 
-
         public void SmanjiBrojSlobodnihKreveta(String idProstora)
         {
             Prostor zaIzmenu = prostoriRepozitorijum.PretraziProstorPoId(idProstora);
@@ -256,5 +242,18 @@ namespace Model
             prostoriRepozitorijum.IzmenaProstora(zaIzmenu);
         }
 
+        public bool ProveriZauzetostProstora(string id, DateTime datum)
+        {
+            bool zauzet = false;
+            foreach (Termin terminZaProveru in terminiServis.DobaviZakazaneTermineZaVreme(datum))
+            {
+                if (terminZaProveru.Prostor.IdProstora.Equals(id))
+                {
+                    zauzet = true;
+                    break;
+                }
+            }
+            return zauzet;
+        }
     }
 }

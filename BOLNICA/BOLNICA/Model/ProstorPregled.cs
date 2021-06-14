@@ -12,29 +12,18 @@ namespace Bolnica.Model
     public class ProstorPregled : TipTerminaInterfejs
     {
         ProstoriKontroler prostoriKontroler = new ProstoriKontroler();
+        ZakazaniTerminiKontroler zakazaniTerminiKontroler = new ZakazaniTerminiKontroler();
 
         public Prostor DodeliProstorTerminu(DateTime datum)
         {
-            List<Termin> termini = prostoriKontroler.DobaviZakazaneTermineZaVreme(datum);
-            foreach (Prostor prostor in prostoriKontroler.DobaviProstoreModel())
+            foreach (Prostor prostor in prostoriKontroler.DobaviOrdinacije())
             {
-                if (prostor.VrstaProstora == VrsteProstora.ordinacija)
+                if (!prostoriKontroler.ProveriZauzetostProstora(prostor.IdProstora, datum))
                 {
-                    bool zauzet = false;
-                    foreach (Termin terminZaProveru in termini)
-                    {
-                        if (terminZaProveru.Prostor.IdProstora.Equals(prostor.IdProstora))
-                        {
-                            zauzet = true;
-                            break;
-                        }
-                    }
-                    if (!zauzet)
-                    {
-                        return prostor;
-                    }
+                    return prostor;
                 }
             }
+
             return null;
         }
     }
