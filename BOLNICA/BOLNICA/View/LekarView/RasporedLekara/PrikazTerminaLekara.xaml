@@ -39,7 +39,7 @@
                 <DataGridTextColumn Header="{p:LocExtension ImePacijenta}" Binding="{Binding Pacijent.Ime}" Width="95*"/>
                 <DataGridTextColumn Header="{p:LocExtension PrezimePacijenta}" Binding="{Binding Pacijent.Prezime}" Width="112*"/>
                 <DataGridTextColumn Header="{p:LocExtension Datum}" Binding="{Binding Datum, StringFormat={}{0:dd/MM/yyyy}}" Width="80*"/>
-                <DataGridTextColumn Header="{p:LocExtension Pocetak}" Binding="{Binding Vreme}" Width="55*"/>
+                <DataGridTextColumn Header="{p:LocExtension Pocetak}" Binding="{Binding Datum, StringFormat={}{0:HH:mm}}" Width="55*"/>
                 <DataGridTextColumn Header="{p:LocExtension Trajanje}" Binding="{Binding Trajanje}" Width="55*"/>
                 <DataGridTextColumn Header="{p:LocExtension Prostorija}" Binding="{Binding Prostor}" Width="65*"/>
 

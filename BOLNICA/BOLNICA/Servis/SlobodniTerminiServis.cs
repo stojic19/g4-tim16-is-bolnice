@@ -42,9 +42,9 @@ namespace Bolnica.Servis
         public void ObrisiStareSlobodneTermine()
         {
             List<Termin> termini = slobodniTerminiRepozitorijum.DobaviSveObjekte();
-            foreach(Termin termin in termini)
+            foreach (Termin termin in termini)
             {
-                if(!datumServis.TerminJeUBuducnosti(termin.Datum)) Ukloni(termin);
+                if (!datumServis.TerminJeUBuducnosti(termin.Datum)) Ukloni(termin);
             }
         }
         public List<Termin> DobaviSlobodneTermineZaLekara(string idLekara)
@@ -59,7 +59,7 @@ namespace Bolnica.Servis
             List<Termin> termini = new List<Termin>();
             foreach (Termin termin in slobodniTerminiRepozitorijum.DobaviSveObjekte())
             {
-                if (termin.VrstaTermina == VrsteTermina.operacija)  termini.Add(termin);
+                if (termin.VrstaTermina == VrsteTermina.operacija) termini.Add(termin);
             }
             return termini;
         }
@@ -78,13 +78,13 @@ namespace Bolnica.Servis
             }
             return datumServis.SortTerminaPoPocetnomVremenu(termini);
         }
-       
+
         public List<Termin> DobaviSveSlobodneTermineZaPomeranje(Termin termin, String idLekara)
         {
             List<DateTime> intervalPomeranja = datumServis.PodesiIntervalPomeranjaTermina(termin.Datum);
-            List<Termin> datumiUIntervalu = datumServis.NadjiTermineUIntervalu(intervalPomeranja,DobaviSve());
+            List<Termin> datumiUIntervalu = datumServis.NadjiTermineUIntervalu(intervalPomeranja, DobaviSve());
             List<Termin> sviSlobodniDatumi = lekarTerminaServis.PretraziTerminePoLekaru(datumiUIntervalu, idLekara);
-            return sviSlobodniDatumi; 
+            return sviSlobodniDatumi;
         }
 
         public List<Termin> DobaviSlobodneTermineZaZakazivanje(List<DateTime> intervalZakazivanja, String idLekara)
@@ -94,6 +94,20 @@ namespace Bolnica.Servis
             List<Termin> terminiIzabranogLekara = lekarTerminaServis.PretraziTerminePoLekaru(terminiIntervala, idLekara);
             return terminiIzabranogLekara;
         }
+
+        public void DodajSledece(Termin terminZaBrisanje)
+        {
+            Double brojZaDodavanje = terminZaBrisanje.Trajanje / 30;
+            brojZaDodavanje--;
+            DateTime datum = terminZaBrisanje.Datum;
+
+            for(int j = 0; j < brojZaDodavanje; j++)
+            {
+                datum =  datum.AddMinutes(30);
+                slobodniTerminiRepozitorijum.DodajObjekat(new Termin(Guid.NewGuid().ToString(),terminZaBrisanje.VrstaTermina,datum.ToString("HH:mm"),30,datum,null,null,terminZaBrisanje.Lekar));
+            }
+        }
+
         public List<Termin> DobaviSlobodneTermineLekara(Termin terminZaPoredjenje, String izabranLekar, int brojTermina)
         {
             List<Termin> slobodniTermini = slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
@@ -111,6 +125,29 @@ namespace Bolnica.Servis
                     terminiUIntervalu.Add(termin);
             }
             return terminiUIntervalu;
+        }
+
+        public List<Termin> DobaviZaLekaraIDatum(Termin terminZaPoredjenje, String izabranLekar)
+        {
+            return slobodniTerminiRepozitorijum.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar);
+        }
+
+        public void UkloniSledece(Termin termin)
+        {
+            Double brojTermina = termin.Trajanje / 30;
+            brojTermina--;
+            List<Termin> terminiLekara = DobaviZaLekaraIDatum(termin, termin.Lekar.KorisnickoIme);
+
+            for (int i = 0; i < terminiLekara.Count(); i++)
+            {
+                if (terminiLekara[i].IdTermina.Equals(termin.IdTermina))
+                {
+                    for (int j = 1; j <= brojTermina; j++)
+                    {
+                        Ukloni(terminiLekara[i + j]);
+                    }
+                }
+            }
         }
     }
 }

@@ -45,7 +45,6 @@ namespace Bolnica.ViewModel.PacijentViewModel
         }
         public void VratiSe()
         {
-            Console.WriteLine(Pacijent.KorisnickoIme);
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Clear();
             PacijentGlavniProzor.GetGlavniSadrzaj().Children.Add(new PrikazKartona(Pacijent.KorisnickoIme));
         }

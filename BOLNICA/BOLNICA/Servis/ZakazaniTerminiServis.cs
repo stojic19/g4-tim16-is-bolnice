@@ -87,6 +87,7 @@ namespace Model
         public Boolean OtkaziTerminLekar(string idTermina)
         {
             Termin terminZaBrisanje = DobaviZakazanTerminPoId(idTermina);
+            slobodniTerminiServis.DodajSledece(terminZaBrisanje);
             slobodniTerminiServis.Dodaj(terminZaBrisanje);
             return zakazaniTerminiRepozitorijum.OtkaziTerminLekar(idTermina);
         }
@@ -94,6 +95,7 @@ namespace Model
         public Boolean ZakaziTerminLekar(Termin termin)
         {
             zakazaniTerminiRepozitorijum.DodajObjekat(termin);
+            slobodniTerminiServis.UkloniSledece(termin);
             slobodniTerminiServis.Ukloni(termin);
             return zakazaniTerminiRepozitorijum.DaLiPostojiTermin(termin);
 
@@ -102,11 +104,9 @@ namespace Model
         public void IzmeniTermin(Termin stariTermin, Termin noviTermin)
         {
             noviTermin = KopirajPodatke(stariTermin, noviTermin);
-            stariTermin.Trajanje = 30;
             stariTermin.Pacijent = null;
-            zakazaniTerminiRepozitorijum.ObrisiZakazanTermin(stariTermin.IdTermina);
-            slobodniTerminiServis.Dodaj(stariTermin);
             ZakaziTerminLekar(noviTermin);
+            OtkaziTerminLekar(stariTermin.IdTermina);
         }
 
         public Termin KopirajPodatke(Termin stari, Termin novi)

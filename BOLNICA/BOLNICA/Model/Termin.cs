@@ -2,13 +2,13 @@ using Bolnica.Model;
 using System;
 using System.ComponentModel;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Model
 {
-    public class Termin 
+    public class Termin
     {
         private String idTermina;
-        private VrsteTermina vrstaTermina;
         private String pocetnoVreme;
         private double trajanje;
         private DateTime datum;
@@ -16,15 +16,39 @@ namespace Model
         private Pacijent pacijent;
         private Lekar lekar;
 
+        private object vrstaTerminaInterfejs;
+        [XmlIgnore()]
+        public object VrstaTerminaInterfejs
+        {
+            get { return vrstaTerminaInterfejs; }
+            set { vrstaTerminaInterfejs = value; }
+        }
         public String IdTermina
         {
             get { return idTermina; }
             set { idTermina = value; }
         }
+
+        private VrsteTermina vrstaTermina;
         public VrsteTermina VrstaTermina
         {
             get { return vrstaTermina; }
-            set { vrstaTermina = value; }
+            set
+            {
+                vrstaTermina = value;
+                if (value == VrsteTermina.operacija)
+                {
+                    VrstaTerminaInterfejs = new ProstorOperacija();
+                }
+                else if (value == VrsteTermina.pregled)
+                {
+                    VrstaTerminaInterfejs = new ProstorPregled();
+                }
+                else
+                {
+                    vrstaTerminaInterfejs = null;
+                }
+            }
         }
         public String PocetnoVreme
         {
@@ -101,28 +125,17 @@ namespace Model
             this.pocetnoVreme = pocetnoVreme;
         }
 
-        public object DobaviVrstuTerminaInterfejs()
+        public Termin(object vrstaTerminaInterfejs, string idTermina, VrsteTermina vrstaTermina, string pocetnoVreme, double trajanje, DateTime datum, Prostor prostor, Pacijent pacijent, Lekar lekar)
         {
-            if (this.vrstaTermina == VrsteTermina.operacija)
-            {
-                return new ProstorOperacija();
-            }
-            else
-            {
-                return new ProstorPregled();
-            }
-
-            return null;
+            VrstaTerminaInterfejs = vrstaTerminaInterfejs;
+            IdTermina = idTermina;
+            VrstaTermina = vrstaTermina;
+            PocetnoVreme = pocetnoVreme;
+            Trajanje = trajanje;
+            Datum = datum;
+            Prostor = prostor;
+            Pacijent = pacijent;
+            Lekar = lekar;
         }
-
-
-
-        //private object vrstaTerminaLekar;
-        //public object VrstaTerminaLekar
-        //{
-        //    get { return vrstaTerminaLekar; }
-        //    set { vrstaTerminaLekar = value; }
-        //}
-
     }
 }

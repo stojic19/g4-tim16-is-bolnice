@@ -114,7 +114,6 @@ namespace Bolnica.Izvestaj.Pacijent
             for(int i = 0; i < sveTerapije.Count;i++)
             {
                 seriesElement11.Values.Add(sveKolicine[i]);
-                Console.WriteLine("kolicina  " + sveKolicine[i]);
             }
 
             seriesElement11.Color = new AutoGradient(90f, CmykColor.LightBlue, CmykColor.Lavender);

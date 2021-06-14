@@ -156,7 +156,6 @@ namespace Bolnica.LekarFolder
             foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, idLekarSpecijalista, izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
-                Console.WriteLine(t.Vreme);
             }
         }
 

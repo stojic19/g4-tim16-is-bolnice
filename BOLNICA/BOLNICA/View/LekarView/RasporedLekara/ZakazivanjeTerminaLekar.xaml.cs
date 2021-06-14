@@ -68,7 +68,6 @@ namespace Bolnica
             t.Pacijent = (PacijentDTO)TabelaPacijenata.SelectedItems[0];
 
             t.TrajanjeDouble = izabranoTrajanje*30;
-            Console.WriteLine(izabranoTrajanje);
 
             terminKontroler.ZakaziTerminLekar(t);
 
@@ -200,7 +199,6 @@ namespace Bolnica
             foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, izabranLekar, izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
-                Console.WriteLine(t.Vreme);
             }
 
         }

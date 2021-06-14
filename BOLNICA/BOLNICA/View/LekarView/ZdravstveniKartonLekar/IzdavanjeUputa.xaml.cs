@@ -103,7 +103,6 @@ namespace Bolnica.LekarFolder
 
             String imeprezime = lekariKontroler.ImeiPrezime(izabranPregled.Termin.Lekar.KorisnickoIme);
             noviUput = new UputDTO(Guid.NewGuid().ToString(), TipoviUputa.SPECIJALISTA, DateTime.Now, imeprezime, idLekaraSpecijaliste, this.nalazMisljenje.Text);
-            Console.WriteLine(this.nalazMisljenje.Text);
 
             zdravstvenKartoniKontroler.DodajUput(izabranPregled.Termin.Pacijent.KorisnickoIme, noviUput);
             preglediKontroler.DodajUput(izabranPregled.IdPregleda, noviUput);

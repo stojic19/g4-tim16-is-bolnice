@@ -171,7 +171,6 @@ namespace Bolnica
             foreach (TerminDTO t in slobodniTerminiKontroler.DobaviSlobodneTermineLekara(terminZaPoredjenje, LekarGlavniProzor.DobaviKorisnickoIme(), izabranoTrajanje))
             {
                 slobodniTermini.Add(t);
-                Console.WriteLine(t.Vreme);
             }
         }
 

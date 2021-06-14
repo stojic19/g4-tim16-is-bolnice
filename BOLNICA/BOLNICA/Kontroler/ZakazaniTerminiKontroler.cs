@@ -19,7 +19,6 @@ namespace Bolnica.Kontroler
         private NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         private DatumTerminaServis datumTerminaServis = new DatumTerminaServis();
         private LekariServis lekariServis = new LekariServis();
-        private ProstoriServis prostoriServis = new ProstoriServis();
         private TerminKonverter terminKonverter = new TerminKonverter();
 
         public List<TerminDTO> DobaviSveZakazaneTermine()
@@ -53,7 +52,7 @@ namespace Bolnica.Kontroler
         public void ZakaziPregledPacijent(TerminDTO termin, String korisnickoImePacijenta)
         {
             Termin noviTermin = slobodniTerminiServis.PretraziPoId(termin.IdTermina);
-            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(noviTermin.Datum);
+            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.VrstaTerminaInterfejs).DodeliProstorTerminu(noviTermin.Datum);
             zakazaniTerminiServis.ZakaziPregled(noviTermin, korisnickoImePacijenta);
         }
 
@@ -67,7 +66,7 @@ namespace Bolnica.Kontroler
         {
             Termin stari = zakazaniTerminiServis.DobaviZakazanTerminPoId(stariTermin.IdTermina);
             Termin novi = slobodniTerminiServis.PretraziPoId(noviTermin.IdTermina);
-            novi.Prostor = ((TipTerminaInterfejs)novi.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(novi.Datum);
+            novi.Prostor = ((TipTerminaInterfejs)novi.VrstaTerminaInterfejs).DodeliProstorTerminu(novi.Datum);
             zakazaniTerminiServis.PomeriPregledPacijent(stari, novi);
         }
 
@@ -90,7 +89,6 @@ namespace Bolnica.Kontroler
             noviTermin.Lekar = lekariServis.PretraziPoId(termin.Lekar.KorisnickoIme);
             noviTermin.Pacijent = naloziPacijenataServis.PretraziPoId(termin.Pacijent.KorisnickoIme);
             noviTermin.Trajanje = termin.TrajanjeDouble;
-
             //if (noviTermin.VrstaTermina == VrsteTermina.operacija)
             //{
             //    noviTermin.Prostor = prostoriServis.DodeliProstorZaOperaciju(noviTermin.Datum);
@@ -100,7 +98,7 @@ namespace Bolnica.Kontroler
             //    noviTermin.Prostor = prostoriServis.DodeliProstorZaTermin(noviTermin.Datum);
             //}
 
-            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(noviTermin.Datum);
+            noviTermin.Prostor = ((TipTerminaInterfejs)noviTermin.VrstaTerminaInterfejs).DodeliProstorTerminu(noviTermin.Datum);
             return zakazaniTerminiServis.ZakaziTerminLekar(noviTermin);
         }
 
@@ -118,7 +116,7 @@ namespace Bolnica.Kontroler
             //{
             //    novi.Prostor = prostoriServis.DodeliProstorZaTermin(novi.Datum);
             //}
-            novi.Prostor = ((TipTerminaInterfejs)novi.DobaviVrstuTerminaInterfejs()).DodeliProstorTerminu(novi.Datum);
+            novi.Prostor = ((TipTerminaInterfejs)novi.VrstaTerminaInterfejs).DodeliProstorTerminu(novi.Datum);
             zakazaniTerminiServis.IzmeniTermin(stari, novi);
         }
 

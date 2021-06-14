@@ -31,7 +31,8 @@ namespace Bolnica
         List<Upravnik> Upravnici = new List<Upravnik>();
 
         KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
-
+        SlobodniTerminiRepozitorijum slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
+        LekariServis lekariServis = new LekariServis();
         public Login()
         {
             InitializeComponent();

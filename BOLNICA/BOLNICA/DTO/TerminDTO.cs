@@ -18,6 +18,7 @@ namespace Bolnica.DTO
         private String idPacijenta;
         private PacijentDTO pacijent;
         private Double trajanjeDouble;
+       
 
         public String IdTermina
         {
