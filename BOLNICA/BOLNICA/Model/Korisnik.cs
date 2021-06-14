@@ -1,4 +1,5 @@
 ﻿using Bolnica.Model.Enumi;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Model
 {
-    public class Korisnik
+    public class Korisnik : Osoba
     {
-        private String idOsobe;
-        private String korisnickoIme;
-        private String lozinka;
         private TipoviKorisnika tipKorisnika;
 
         public Korisnik()
@@ -33,9 +31,7 @@ namespace Bolnica.Model
             TipKorisnika = tipKorisnika;
         }
 
-        public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
-        public string Lozinka { get => lozinka; set => lozinka = value; }
         public TipoviKorisnika TipKorisnika { get => tipKorisnika; set => tipKorisnika = value; }
-        public string IdOsobe { get => idOsobe; set => idOsobe = value; }
+
     }
 }

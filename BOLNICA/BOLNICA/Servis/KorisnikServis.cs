@@ -12,9 +12,6 @@ namespace Bolnica.Servis
 {
     public class KorisnikServis
     {
-        NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
-        SekretariServis sekretariServis = new SekretariServis();
-        LekariServis lekariServis = new LekariServis();
        
         KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
 
