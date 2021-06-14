@@ -241,9 +241,9 @@
     <Compile Include="DTO\UputDTO.cs" />
     <Compile Include="DTO\ZahtjevDTO.cs" />
     <Compile Include="DTO\ZakazivanjePregledaDTO.cs" />
-    <Compile Include="Interfejsi\Lekar\IzvestajiAnamnezaInterfejs.cs" />
-    <Compile Include="Interfejsi\Lekar\IzvestajiRecepataInterfejs.cs" />
-    <Compile Include="Interfejsi\Lekar\TipTerminaInterfejs.cs" />
+    <Compile Include="Izvestaj\Lekar\Anamneze\IzvestajiAnamnezaInterfejs.cs" />
+    <Compile Include="Izvestaj\Lekar\Recepti\IzvestajiRecepataInterfejs.cs" />
+    <Compile Include="Model\TipTerminaInterfejs.cs" />
     <Compile Include="Interfejsi\Sekretar\CRUDInterfejs.cs" />
     <Compile Include="Izvestaj\Lekar\Anamneze\AnamnezeIzvestaj.cs" />
     <Compile Include="Izvestaj\Lekar\Anamneze\ITextSharpAnamnezeAdapter.cs" />

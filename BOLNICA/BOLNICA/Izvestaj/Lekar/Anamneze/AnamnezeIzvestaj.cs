@@ -84,30 +84,6 @@ namespace Bolnica.Izvestaj.Lekar
             return prgAuthor;
         }
 
-        private PdfPTable KreiranjeTabele(DataTable dtblTable)
-        {
-            PdfPTable table = new PdfPTable(dtblTable.Columns.Count);
-            //Table header
-            BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font fntColumnHeader = new Font(btnColumnHeader, 10, 1, Color.DARK_GRAY);
-            for (int i = 0; i < dtblTable.Columns.Count; i++)
-            {
-                PdfPCell cell = new PdfPCell();
-                cell.BackgroundColor = new Color(153, 204, 255);
-                cell.AddElement(new Chunk(dtblTable.Columns[i].ColumnName.ToUpper(), fntColumnHeader));
-                table.AddCell(cell);
-            }
-
-            for (int i = 0; i < dtblTable.Rows.Count; i++)
-            {
-                for (int j = 0; j < dtblTable.Columns.Count; j++)
-                {
-                    table.AddCell(dtblTable.Rows[i][j].ToString());
-                }
-            }
-
-            return table;
-        }
 
         private Paragraph KreirajZaglavlje(String strHeader)
         {
