@@ -51,6 +51,13 @@ namespace Bolnica.Kontroler
             lekoviServis.IzmenaLeka(lekKonverter.LekSaKolicinomModel(noviPodaci), konvertovaniSastojci);
         }
 
+        
+
+        public void IzmjenaLijeka(LekDTO noviPodaci)
+        {
+            lekoviServis.IzmijeniLijek(lekKonverter.LekDTOUModel(noviPodaci));
+        }
+
         public void IzmenaZamenskihLekova(String idLeka, List<LekDTO> noviZamenski)
         {
             List<Lek> zamenskiLekovi = new List<Lek>();

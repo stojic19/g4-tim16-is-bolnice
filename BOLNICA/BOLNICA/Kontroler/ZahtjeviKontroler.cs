@@ -54,7 +54,7 @@ namespace Bolnica.Kontroler
 
         public void IzmeniZahtjev(LekDTO noviPodaci)
         {
-            zahtjeviServis.IzmeniZahtjev(lekKonverter.LekSaKolicinomModel(noviPodaci));
+            zahtjeviServis.IzmeniZahtjev(lekKonverter.LekDTOUModel(noviPodaci));
         }
 
         public Boolean ProvjeriValidnostNaziva(String nazivLijeka)
@@ -72,6 +72,11 @@ namespace Bolnica.Kontroler
         public void DodajSastojak(SastojakDTO sastojak, String idLeka)
         {
             zahtjeviServis.DodajSastojak(sastojciKonverter.SastojakDTOuModel(sastojak), idLeka);
+        }
+
+        public void UkloniSastojak(SastojakDTO sastojak , String idLeka)
+        {
+            zahtjeviServis.UkloniSastojak(sastojciKonverter.SastojakDTOuModel(sastojak), idLeka);
         }
 
         public LekDTO pretraziLekPoId(String idLeka)

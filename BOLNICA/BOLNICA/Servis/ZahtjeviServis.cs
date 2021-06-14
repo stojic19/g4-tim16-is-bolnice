@@ -77,6 +77,7 @@ namespace Bolnica.Model.Rukovanja
             z.Lijek.Jacina = noviPodaci.Jacina;
             z.Lijek.Kolicina = int.Parse(noviPodaci.Kolicina.ToString());
             z.Lijek.Proizvodjac = noviPodaci.Proizvodjac;
+            z.Lijek.Sastojci = noviPodaci.Sastojci;
 
             zahtjeviRepozitorijum.IzmenaZahtjeva(z);
         }
@@ -98,6 +99,18 @@ namespace Bolnica.Model.Rukovanja
                 }
             }
 
+        }
+
+        public void UkloniSastojak(Sastojak sastojak , String idLeka)
+        {
+            foreach(Zahtjev z in zahtjeviRepozitorijum.DobaviSveObjekte())
+            {
+                if (z.Lijek.IDLeka.Equals(idLeka))
+                {
+                    z.Lijek.Sastojci.Remove(sastojak);
+                    zahtjeviRepozitorijum.IzmenaZahtjeva(z);
+                }
+            }
         }
 
         public Boolean ProvjeriValidnostNaziva(String nazivLijeka)

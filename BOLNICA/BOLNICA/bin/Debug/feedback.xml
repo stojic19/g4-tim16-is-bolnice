@@ -31,4 +31,18 @@
     <FunkcionalnostiNaKojeSeOdnosi>Dodavanje anamneze</FunkcionalnostiNaKojeSeOdnosi>
     <Datum>2021-06-13T19:48:58.8131817+02:00</Datum>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>9e62b2a8-54f7-4c22-ab35-7c427ca0fb5b</IdFeedbacka>
+    <TekstFeedbacka>Nije dobar prikaz</TekstFeedbacka>
+    <TipFunkcionalnosti>interfejs</TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>Prikaz lijekova</FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
+  </Feedback>
+  <Feedback>
+    <IdFeedbacka>2e946d2b-4fcb-426c-b761-517cc78cc7e5</IdFeedbacka>
+    <TekstFeedbacka>ne svidja mi se </TekstFeedbacka>
+    <TipFunkcionalnosti>interfejs</TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>Prikaz opreme</FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>0001-01-01T00:00:00</Datum>
+  </Feedback>
 </ArrayOfFeedback>

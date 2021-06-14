@@ -39,6 +39,11 @@ namespace Bolnica.Model.Rukovanja
 
         }
 
+        public void IzmijeniLijek(Lek noviPodaci)
+        {
+            lekoviRepozitorijum.IzmenaLeka(noviPodaci);
+        }
+
         public Lek KopiranjePodatakaLeka(Lek stariPodaci, Lek noviPodaci, List<Sastojak> noviSastojci)
         {
             stariPodaci.NazivLeka = noviPodaci.NazivLeka;

@@ -104,7 +104,7 @@ namespace Bolnica.ViewModel.UpravnikViewModel
             {
                 Podaci.IdFeedbacka = Guid.NewGuid().ToString();
                 feedbackKontroler.Dodaj(Podaci);
-                Poruka = "Problem uspešno prijavljen. Hvala na pomoći!";
+                System.Windows.MessageBox.Show("Problem uspjesno prijavljen. Hvala na pomoci!"); 
 
                 UserControl usc = null;
                 UpravnikGlavniProzor.getInstance().MainPanel.Children.Clear();
@@ -117,7 +117,7 @@ namespace Bolnica.ViewModel.UpravnikViewModel
         {
             if (Podaci.TekstFeedbacka.Equals(""))
             {
-                Poruka = "Morate uneti tekst feedback-a!";
+                System.Windows.MessageBox.Show("Morate uneti tekst feedback-a!"); 
                 return false;
             }
             return true;

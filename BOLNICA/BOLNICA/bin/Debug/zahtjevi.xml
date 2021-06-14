@@ -153,4 +153,24 @@
     <RazlogOdbijanja>Sastojak se ne uklapa</RazlogOdbijanja>
     <DatumSlanja>2021-06-11T16:07:26.392963+02:00</DatumSlanja>
   </Zahtjev>
+  <Zahtjev>
+    <IdZahtjeva>e70ad3e7-c038-4700-a360-5704ef940bcc</IdZahtjeva>
+    <Lijek>
+      <IDLeka>cf0dbd87-f91b-4cc8-ab27-bcbd2bf333ee</IDLeka>
+      <NazivLeka>Limulid</NazivLeka>
+      <Jacina>200mg</Jacina>
+      <Kolicina>0</Kolicina>
+      <Proizvodjac>Perppos</Proizvodjac>
+      <Sastojci>
+        <Sastojak>
+          <Naziv>limun</Naziv>
+          <Kolicina>33</Kolicina>
+        </Sastojak>
+      </Sastojci>
+      <Zamene />
+      <Verifikacija>false</Verifikacija>
+    </Lijek>
+    <Odgovor>Čekanje</Odgovor>
+    <DatumSlanja>2021-06-14T11:40:09.8532423+02:00</DatumSlanja>
+  </Zahtjev>
 </ArrayOfZahtjev>

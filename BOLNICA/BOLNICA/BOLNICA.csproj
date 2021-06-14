@@ -761,6 +761,9 @@
     <Compile Include="View\UpravnikView\IzmenaProstora.xaml.cs">
       <DependentUpon>IzmenaProstora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UpravnikView\IzmjenaKolicineLijeka.xaml.cs">
+      <DependentUpon>IzmjenaKolicineLijeka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UpravnikView\IzmjenaZahtjeva.xaml.cs">
       <DependentUpon>IzmjenaZahtjeva.xaml</DependentUpon>
     </Compile>
@@ -1314,6 +1317,10 @@
     <Page Include="View\UpravnikView\IzmenaProstora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UpravnikView\IzmjenaKolicineLijeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UpravnikView\IzmjenaZahtjeva.xaml">
       <Generator>MSBuild:Compile</Generator>

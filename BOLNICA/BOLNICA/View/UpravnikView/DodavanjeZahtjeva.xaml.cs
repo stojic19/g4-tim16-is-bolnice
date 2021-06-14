@@ -61,7 +61,7 @@ namespace Bolnica
             {
                 SastojakDTO sastojak = new SastojakDTO(this.nazivSastojka.Text, double.Parse(this.kolicinaSastojka.Text));
                 Sastojci.Add(sastojak);
-                this.dataGridSastojci.DataContext = Sastojci;
+                this.dataGridSastojci.ItemsSource = Sastojci;
                 this.nazivSastojka.Text = String.Empty;
                 this.kolicinaSastojka.Text = String.Empty;
             }
@@ -71,12 +71,17 @@ namespace Bolnica
             }
         }
 
+        /*private void PopuniSastojke()
+        {
+      
+        }*/
         private void UkloniSastojak_Click(object sender, RoutedEventArgs e)
         {
             if (dataGridSastojci.SelectedItems.Count == 1)
             {
                 SastojakDTO sastojak = (SastojakDTO)dataGridSastojci.SelectedItem;
-                dataGridSastojci.Items.RemoveAt(dataGridSastojci.SelectedIndex);
+                Sastojci.Remove(sastojak);
+                this.dataGridSastojci.ItemsSource = Sastojci;
             }
             else
             {

@@ -24,18 +24,20 @@ namespace Bolnica
     {
         String stari = null;
         ZahtjeviKontroler zahtjeviKontroler = new ZahtjeviKontroler();
+        public List<SastojakDTO> SastojciLista;
         public IzmjenaZahtjeva(String id)
         {
             InitializeComponent();
 
             ZahtjevDTO zahtjev = zahtjeviKontroler.PretraziPoId(id);
             stari = id;
-            LekDTO lijek = zahtjev.Lek;
-
-            NazivLijeka.Text = lijek.NazivLeka;
-            Jacina.Text = lijek.Jacina;
-            Proizvodjac.Text = lijek.Proizvodjac;
-            dataGridSastojci.DataContext = lijek.Sastojci;
+   
+            NazivLijeka.Text = zahtjev.Lek.NazivLeka;
+            Jacina.Text = zahtjev.Lek.Jacina;
+            Proizvodjac.Text = zahtjev.Lek.Proizvodjac;
+            this.dataGridSastojci.ItemsSource = zahtjev.Lek.Sastojci;
+            SastojciLista = new List<SastojakDTO>();
+            SastojciLista = zahtjev.Lek.Sastojci;
         }
         private void Odustani_Click(object sender, RoutedEventArgs e)
         {
@@ -44,42 +46,43 @@ namespace Bolnica
 
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if (zahtjeviKontroler.ProvjeriValidnostNaziva(this.NazivLijeka.Text))
-            {
+           // if (zahtjeviKontroler.ProvjeriValidnostNaziva(this.NazivLijeka.Text))
+           // {
                 LekDTO lijek = new LekDTO(stari, NazivLijeka.Text, Jacina.Text, 0, new List<SastojakDTO>(), Proizvodjac.Text);
                 zahtjeviKontroler.IzmeniZahtjev(lijek);
 
                 this.Close();
-            }
+            //}
         }
 
         private void DodajSastojak_Click(object sender, RoutedEventArgs e)
         {
-           /* if (this.nazivSastojka != null && this.kolicinaSastojka != null)
+            if (this.NazivSastojka.Text != String.Empty && this.KolicinaSastojka.Text != String.Empty)
             {
-                SastojakDTO sastojak = new SastojakDTO(this.nazivSastojka.Text, double.Parse(this.kolicinaSastojka.Text));
-                Sastojci.Add(sastojak);
-                this.dataGridSastojci.DataContext = Sastojci;
-                this.nazivSastojka.Text = String.Empty;
-                this.kolicinaSastojka.Text = String.Empty;
+                SastojakDTO sastojak = new SastojakDTO(this.NazivSastojka.Text, double.Parse(this.KolicinaSastojka.Text));
+                SastojciLista.Add(sastojak);
+                this.dataGridSastojci.ItemsSource = SastojciLista;
+                this.NazivSastojka.Text = String.Empty;
+                this.KolicinaSastojka.Text = String.Empty;
             }
             else
             {
                 System.Windows.MessageBox.Show("Morate unijeti i naziv i kolicinu da bi dodali sastojak!");
-            }*/
+            }
         }
 
         private void UkloniSastojak_Click(object sender, RoutedEventArgs e)
         {
-            /*if (dataGridSastojci.SelectedItems.Count == 1)
+            if (dataGridSastojci.SelectedItems.Count == 1)
             {
-                SastojakDTO sastojka = (SastojakDTO)dataGridSastojci.SelectedItem;
-                dataGridSastojci.Items.RemoveAt(dataGridSastojci.SelectedIndex);
+                SastojakDTO sastojak = (SastojakDTO)dataGridSastojci.SelectedItem;
+                SastojciLista.Remove(sastojak);
+                this.dataGridSastojci.ItemsSource = SastojciLista;
             }
             else
             {
                 System.Windows.MessageBox.Show("Morate izabrati sastojak da biste ga uklonili!");
-            }*/
+            }
         }
     }
 }

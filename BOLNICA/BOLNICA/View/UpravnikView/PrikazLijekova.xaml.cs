@@ -40,22 +40,6 @@ namespace Bolnica
 
         }
 
-        private void IzmjeniKolicinu_Click(object sender, RoutedEventArgs e)
-        {
-           /* LekDTO izabran = (LekDTO)dataGridLijekovi.SelectedItem;
-
-            if (izabran != null)
-            {
-
-                IzmjenaKolicineLijeka izmjena = new IzmjenaKolicineLijeka(izabran.IdLeka);
-                izmjena.Show();
-            }
-            else
-            {
-                MessageBox.Show("Izaberite lijek ciju kolicinu zelite da promjenite!");
-            }*/
-        }
-
         private void UkloniLijek_Click(object sender, RoutedEventArgs e)
         {
             LekDTO izabranZaBrisanje = (LekDTO)dataGridLijekovi.SelectedItem;
@@ -87,6 +71,22 @@ namespace Bolnica
             else
             {
                 MessageBox.Show("Izaberite lijek cije sastojke zelite da vidite!");
+            }
+        }
+
+        private void IzmijeniKolicinu_Click(object sender, RoutedEventArgs e)
+        {
+            LekDTO izabran = (LekDTO)dataGridLijekovi.SelectedItem;
+
+            if (izabran != null)
+            {
+
+                IzmjenaKolicineLijeka izmjena = new IzmjenaKolicineLijeka(izabran);
+                izmjena.Show();
+            }
+            else
+            {
+                MessageBox.Show("Izaberite lijek ciju kolicinu zelite da promjenite!");
             }
         }
     }
