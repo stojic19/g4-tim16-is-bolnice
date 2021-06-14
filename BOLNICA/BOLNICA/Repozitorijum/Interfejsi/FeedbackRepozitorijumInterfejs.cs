@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum.Interfejsi
 {
-    interface FeedbackRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Feedback>
+    public interface FeedbackRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Feedback>
     {
         void Izmeni(Feedback feedback);
     }

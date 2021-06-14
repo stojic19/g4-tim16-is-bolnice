@@ -3,6 +3,8 @@ using Bolnica;
 using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +12,7 @@ namespace Model
 {
     public class NaloziPacijenataServis : CRUDInterfejs<Pacijent>
     {
-        private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
+        private NaloziPacijenataRepozitorijumInterfejs naloziPacijenataRepozitorijum = NaloziPacijenataFactory.DobaviRepozitorijum();
 
         public void Dodaj(Pacijent pacijentZaDodavanje)
         {

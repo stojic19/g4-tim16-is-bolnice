@@ -2,6 +2,8 @@
 using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Konverter;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Bolnica.SekretarFolder.Operacija;
 using Bolnica.Servis;
 using Model;
@@ -16,7 +18,7 @@ namespace Bolnica.Model
     class OperacijeServis : CRUDInterfejs<Termin>
     {
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        OperacijeRepozitorijum operacijeRepozitorijum = new OperacijeRepozitorijum();
+        OperacijeRepozitorijumInterfejs operacijeRepozitorijum = OperacijeFactory.DobaviRepozitorijum();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         LekariServis lekariServis = new LekariServis();
         PacijentKonverter pacijentKonverter = new PacijentKonverter();

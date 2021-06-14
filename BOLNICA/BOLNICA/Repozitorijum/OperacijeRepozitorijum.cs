@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Bolnica.Repozitorijum
 {
-    class OperacijeRepozitorijum : GlavniRepozitorijum<Termin>, OperacijeRepozitorijumInterfejs
+    public class OperacijeRepozitorijum : GlavniRepozitorijum<Termin>, OperacijeRepozitorijumInterfejs
     {
         public OperacijeRepozitorijum()
         {
@@ -24,7 +24,7 @@ namespace Bolnica.Repozitorijum
             DodajObjekat(termin);
         }
 
-        internal void UkloniOperaciju(Termin termin)
+        public void UkloniOperaciju(Termin termin)
         {
             ObrisiObjekat("//ArrayOfTermin/Termin[IdTermina='" + termin.IdTermina + "']");
         }

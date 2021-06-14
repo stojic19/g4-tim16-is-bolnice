@@ -1,5 +1,7 @@
 ﻿using Bolnica;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +12,7 @@ namespace Model
 {
     public class OpremaServis
     {
-        OpremaRepozitorijum opremaRepozitorijum = new OpremaRepozitorijum();
+        OpremaRepozitorijumInterfejs opremaRepozitorijum = OpremaFactory.DobaviRepozitorijum();
         ProstoriServis prostoriServis = new ProstoriServis();
 
         public void DodajOpremu(Oprema o)

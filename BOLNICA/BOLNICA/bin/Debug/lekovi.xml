@@ -219,4 +219,19 @@
     <Zamene />
     <Verifikacija>false</Verifikacija>
   </Lek>
+  <Lek>
+    <IDLeka>cf0dbd87-f91b-4cc8-ab27-bcbd2bf333ee</IDLeka>
+    <NazivLeka>Limulid</NazivLeka>
+    <Jacina>200mg</Jacina>
+    <Kolicina>0</Kolicina>
+    <Proizvodjac>Perppos</Proizvodjac>
+    <Sastojci>
+      <Sastojak>
+        <Naziv>limun</Naziv>
+        <Kolicina>33</Kolicina>
+      </Sastojak>
+    </Sastojci>
+    <Zamene />
+    <Verifikacija>false</Verifikacija>
+  </Lek>
 </ArrayOfLek>

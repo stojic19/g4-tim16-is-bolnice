@@ -45,4 +45,12 @@
     <FunkcionalnostiNaKojeSeOdnosi>Prikaz opreme</FunkcionalnostiNaKojeSeOdnosi>
     <Datum>0001-01-01T00:00:00</Datum>
   </Feedback>
+  <Feedback>
+    <IdFeedbacka>be86faab-062a-425f-a8c7-0a36326fac2a</IdFeedbacka>
+    <IdOsobe>cd5ab0e3-bf30-4038-a059-74a2cd1f8c4a</IdOsobe>
+    <TekstFeedbacka>Malo nabijeno</TekstFeedbacka>
+    <TipFunkcionalnosti>interfejs</TipFunkcionalnosti>
+    <FunkcionalnostiNaKojeSeOdnosi>Dodavanje anamneze</FunkcionalnostiNaKojeSeOdnosi>
+    <Datum>2021-06-14T13:32:56.9371695+02:00</Datum>
+  </Feedback>
 </ArrayOfFeedback>

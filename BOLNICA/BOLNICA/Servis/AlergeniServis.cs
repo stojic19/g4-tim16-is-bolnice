@@ -1,6 +1,8 @@
 ﻿using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Model.Rukovanja;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,7 @@ namespace Bolnica.Servis
 {
     class AlergeniServis : CRUDInterfejs<Alergeni>
     {
-        private NaloziPacijenataRepozitorijum naloziPacijenataRepozitorijum = new NaloziPacijenataRepozitorijum();
+        private NaloziPacijenataRepozitorijumInterfejs naloziPacijenataRepozitorijum = NaloziPacijenataFactory.DobaviRepozitorijum();
         private LekoviServis lekoviServis = new LekoviServis();
         private string idPacijenta;
         public AlergeniServis(String idPacijenta)

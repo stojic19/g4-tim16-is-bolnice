@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Bolnica.Servis
 {
     public class PitanjaServis
     {
-        private PitanjaRepozitorijumInterfejs pitanjaRepozitorijum = new PitanjaRepozitorijum();
+        private PitanjaRepozitorijumInterfejs pitanjaRepozitorijum = PitanjaFactory.DobaviRepozitorijum();
 
         public List<Pitanje> DobaviPitanjaOBolnici()
         {

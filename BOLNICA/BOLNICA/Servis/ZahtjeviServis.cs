@@ -1,5 +1,7 @@
 ﻿using Bolnica.Kontroler;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,7 @@ namespace Bolnica.Model.Rukovanja
 {
     public class ZahtjeviServis
     {
-        ZahtjeviRepozitorijum zahtjeviRepozitorijum = new ZahtjeviRepozitorijum();
+        ZahtjeviRepozitorijumInterfejs zahtjeviRepozitorijum = ZahteviFactory.DobaviRepozitorijum();
 
         public Zahtjev PretraziPoId(String idZahtjeva)
         {

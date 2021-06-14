@@ -1,5 +1,6 @@
 ﻿using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
@@ -12,7 +13,7 @@ namespace Bolnica.Servis
 {
     public class FeedbackServis : CRUDInterfejs<Feedback>
     {
-        private FeedbackRepozitorijumInterfejs feedbackRepozitorijum = new FeedbackRepozitorijum();
+        private FeedbackRepozitorijumInterfejs feedbackRepozitorijum = FeedbackFactory.DobaviRepozitorijum();
 
         public List<Feedback> DobaviSve()
         {

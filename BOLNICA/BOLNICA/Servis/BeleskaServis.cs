@@ -1,5 +1,7 @@
 ﻿using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,7 @@ namespace Bolnica.Servis
 {
     public class BeleskaServis
     {
-        private BeleskaRepozitorijum beleskaRepozitorijum = new BeleskaRepozitorijum();
-
+        private BeleskaRepozitorijumInterfejs beleskaRepozitorijum = BeleskaFactory.DobaviRepozitorijum();
 
         public void SacuvajBelesku(Beleska beleska)
         {

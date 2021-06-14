@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum.Interfejsi
 {
-    interface SekretariRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Model.Sekretar>
+    public interface SekretariRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Model.Sekretar>
     {
         void Izmeni(Model.Sekretar sekretar);
     }

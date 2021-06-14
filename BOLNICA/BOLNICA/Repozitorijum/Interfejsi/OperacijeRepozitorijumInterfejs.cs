@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum.Interfejsi
 {
-    interface OperacijeRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Termin>
+    public interface OperacijeRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Termin>
     {
         void IzmeniTermin(Termin termin);
+        List<Termin> DobaviOperacijePoIdLekara(String idLekara);
+        void UkloniOperaciju(Termin termin);
     }
 }

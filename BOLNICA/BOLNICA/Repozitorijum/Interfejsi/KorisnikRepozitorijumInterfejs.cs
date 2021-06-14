@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bolnica.Repozitorijum.Interfejsi
 {
-    interface KorisnikRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Korisnik>
+    public interface KorisnikRepozitorijumInterfejs : GlavniRepozitorijumInterfejs<Korisnik>
     {
 
         Korisnik PretraziKorisnikaPoKorImenu(String idLeka);

@@ -7,6 +7,8 @@ using Bolnica;
 using Bolnica.DTO;
 using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +18,7 @@ namespace Model
 {
    public class ObavestenjaServis : CRUDInterfejs<Obavestenje>
    {
-        ObavestenjaRepozitorijum obavestenjaRepozitorijum = new ObavestenjaRepozitorijum();
+        ObavestenjaRepozitorijumInterfejs obavestenjaRepozitorijum = ObavestenjaFactory.DobaviRepozitorijum();
 
       public void Dodaj(Obavestenje obavestenje)
       {

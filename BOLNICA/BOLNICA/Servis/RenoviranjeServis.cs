@@ -1,5 +1,7 @@
 ﻿using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Bolnica.UpravnikFolder;
 using Model;
 using System;
@@ -14,8 +16,8 @@ namespace Bolnica.Servis
 {
     class RenoviranjeServis
     {
-        RenoviranjeRepozitorijum renoviranjeRepozitorijum = new RenoviranjeRepozitorijum();
-        ProstoriRepozitorijum prostoriRepozitorijum = new ProstoriRepozitorijum();
+        RenoviranjeRepozitorijumInterfejs renoviranjeRepozitorijum = RenoviranjeFactory.DobaviRepozitorijum();
+        ProstoriRepozitorijumInterfejs prostoriRepozitorijum = ProstoriFactory.DobaviRepozitorijum();
 
         public List<Renoviranje> SvaRenoviranja()
         {

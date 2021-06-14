@@ -1,6 +1,7 @@
 ﻿using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using MoreLinq;
@@ -14,7 +15,7 @@ namespace Bolnica.Servis
 {
     public class SlobodniTerminiServis : CRUDInterfejs<Termin>
     {
-        SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = new SlobodniTerminiRepozitorijum();
+        SlobodniTerminiRepozitorijumInterfejs slobodniTerminiRepozitorijum = SlobodniTerminiFactory.DobaviRepozitorijum();
         DatumTerminaServis datumServis = new DatumTerminaServis();
         LekarTerminaServis lekarTerminaServis = new LekarTerminaServis();
 

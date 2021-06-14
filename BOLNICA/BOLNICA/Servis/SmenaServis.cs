@@ -1,6 +1,8 @@
 ﻿using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,8 @@ namespace Bolnica.Servis
     class SmenaServis : CRUDInterfejs<RadniDan>
     {
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
-        OperacijeRepozitorijum operacijeRepozitorijum = new OperacijeRepozitorijum();
-        ZakazaniTerminiRepozitorijum zakazaniTerminiRepozitorijum = new ZakazaniTerminiRepozitorijum();
+        OperacijeRepozitorijumInterfejs operacijeRepozitorijum = OperacijeFactory.DobaviRepozitorijum();
+        ZakazaniTerminiRepozitorijumInterfejs zakazaniTerminiRepozitorijum = ZakazaniTerminiFactory.DobaviRepozitorijum();
         LekariServis lekariServis = new LekariServis();
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();
         String idLekara;

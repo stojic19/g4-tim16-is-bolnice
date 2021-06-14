@@ -1,5 +1,6 @@
 ﻿using Bolnica.Interfejsi.Sekretar;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Bolnica.Servis
 {
     class SekretariServis : CRUDInterfejs<Model.Sekretar>
     {
-        private SekretariRepozitorijumInterfejs sekretariRepozitorijum = new SekretariRepozitorijum();
+        private SekretariRepozitorijumInterfejs sekretariRepozitorijum = SekretariFactory.DobaviRepozitorijum();
 
         public List<Model.Sekretar> DobaviSve()
         {

@@ -1,6 +1,8 @@
 ﻿using Bolnica.Model;
 using Bolnica.Model.Enumi;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
+using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -12,12 +14,12 @@ namespace Bolnica.Servis
 {
     public class KorisnikServis
     {
-       
-        KorisnikRepozitorijum korisnikRepozitorijum = new KorisnikRepozitorijum();
+
+        KorisnikRepozitorijumInterfejs korisnikRepozitorijum = KorisnikFactory.DobaviRepozitorijum();
 
         public bool ProveriPostojanje(String korIme)
         {
-            foreach(Korisnik k in korisnikRepozitorijum.DobaviSveObjekte())
+            foreach (Korisnik k in korisnikRepozitorijum.DobaviSveObjekte())
             {
                 if (k.KorisnickoIme.Equals(korIme)) return true;
             }

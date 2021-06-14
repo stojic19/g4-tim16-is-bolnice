@@ -1,5 +1,6 @@
 ﻿using Bolnica.Model.Enumi;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using Model;
 using System;
@@ -14,7 +15,8 @@ namespace Bolnica.Model.Rukovanja
 {
     public class AnketeServis
     {
-        private AnketeRepozitorijumInterfejs anketeRepozitorijum = new AnketeRepozitorijum();
+        private AnketeRepozitorijumInterfejs anketeRepozitorijum = AnketeFactory.DobaviRepozitorijum();
+
         private PreglediServis preglediServis = new PreglediServis();
         private NaloziPacijenataServis naloziPacijentaServis = new NaloziPacijenataServis();
         public bool DostupnaAnketaOBolnici(Pacijent pacijent)

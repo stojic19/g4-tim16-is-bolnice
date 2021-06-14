@@ -21,7 +21,7 @@ namespace Bolnica.Kontroler
             List<LekDTO> sviLekoviDTO = new List<LekDTO>();
             foreach (Lek l in lekoviServis.DobaviSveLekove())
             {
-                sviLekoviDTO.Add(lekKonverter.LekModelUDTO(l));
+                sviLekoviDTO.Add(lekKonverter.LekSaKolicinomDTO(l));
             }
             return sviLekoviDTO;
         }

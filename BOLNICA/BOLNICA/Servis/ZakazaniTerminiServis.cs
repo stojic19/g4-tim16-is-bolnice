@@ -1,6 +1,7 @@
 ﻿using Bolnica;
 using Bolnica.Model;
 using Bolnica.Repozitorijum;
+using Bolnica.Repozitorijum.Factory;
 using Bolnica.Repozitorijum.Interfejsi;
 using Bolnica.Sekretar.Pregled;
 using Bolnica.Servis;
@@ -15,7 +16,7 @@ namespace Model
 {
     public class ZakazaniTerminiServis
     {
-        ZakazaniTerminiRepozitorijum zakazaniTerminiRepozitorijum = new ZakazaniTerminiRepozitorijum();
+        ZakazaniTerminiRepozitorijumInterfejs zakazaniTerminiRepozitorijum = ZakazaniTerminiFactory.DobaviRepozitorijum();
         SlobodniTerminiServis slobodniTerminiServis = new SlobodniTerminiServis();
         NaloziPacijenataServis naloziPacijenataServis = new NaloziPacijenataServis();
         ObavestenjaServis obavestenjaServis = new ObavestenjaServis();

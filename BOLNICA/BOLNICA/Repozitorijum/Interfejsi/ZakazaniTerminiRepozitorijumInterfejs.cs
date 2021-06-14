@@ -22,5 +22,7 @@ namespace Bolnica.Repozitorijum.Interfejsi
         void ObrisiZakazanTermin(String terminZaBrisanje);
 
         void IzmeniTermin(Termin termin);
+
+        Termin DobaviZakazanTerminPoId(String idTermina);
     }
 }
